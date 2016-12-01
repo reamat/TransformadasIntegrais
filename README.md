@@ -15,8 +15,9 @@ O código LaTeX está testado em computador [Linux](https://pt.wikipedia.org/wik
 
 Isto gera o livro em formato PDF (main.pdf), o qual é o formato principal. Também, o código pode ser compilado em formato PS ou DVI:
 
-    $ make PS
+    $ make ps
 ou
+
     $ make dvi
 
 Alguma vezes a compilação pode gerar erros devido a incompatibilidade com antigos arquivos temporários. Para limpar os arquivos temporários gerados durante a compilação, digite:
