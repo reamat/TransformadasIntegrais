@@ -1,0 +1,218 @@
+\documentclass[Main.tex]{subfiles}
+\begin{document}
+\chapter{Tabelas de propriedades, transformadas e séries}
+\section{Tabelas de Transformadas de Laplace}{\label{ap_A}}
+As principais transformadas de Laplace e suas inversas estão tabelas nas tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2}. Algumas constantes e funções especiais que são usadas nas tabelas são as seguintes:
+\begin{description}
+\item[a)] Função Gamma
+$$
+\Gamma(k)=\int_0^\infty e^{-x}x^{k-1}dx, \qquad (k>0)
+$$
+\item[b)] Função Bessel modificada de ordem $\nu$
+$$
+I_\nu(x)=\sum_{m=0}^\infty \frac{1}{m!\Gamma(m+\nu+1)}\left(\frac{x}{2}\right)^{2m+\nu}
+$$
+\item[c)] Função Bessel de ordem $0$
+$$
+J_0(x)=1-\frac{x^2}{2^2(1!)^2}+\frac{x^4}{2^4(2!)^2}-\frac{x^6}{2^6(3!)^2}+\cdots
+$$
+\item[d)] Integral seno
+$$
+\hbox{Si}\ \!(t)=\int_0^t\frac{\sen(x)}{x}dx
+$$
+\item[e)] Constante de Euler - Mascheroni
+$$
+\gamma=0.57721566490153286060651209008240243104215933593992 ...
+$$
+\end{description}
+\begin{table}[H]
+\begin{small}
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu}{|cc|c|}
+\hline
+ &$\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\
+\hline 
+1.& $\displaystyle \frac{1}{s} $&$\displaystyle  1$ \\ 
+\hline 
+2.& $\displaystyle \frac{1}{s^2} $&$\displaystyle  t$ \\ 
+\hline 
+3.& $\displaystyle \frac{1}{s^n}, \qquad (n=1,2,3,...) $&$\displaystyle  \frac{t^{n-1}}{(n-1)!}$ \\
+\hline 
+4.& $\displaystyle \frac{1}{\sqrt{s}}, $&$\displaystyle  \frac{1}{\sqrt{\pi t}}$ \\ 
+\hline 
+5.& $\displaystyle \frac{1}{s^{\frac{3}{2}}}, $&$\displaystyle  2\sqrt{\frac{t}{\pi}}$ \\ 
+\hline 
+6.& $\displaystyle \frac{1}{s^{k}},\qquad (k>0)  $&$\displaystyle  \frac{t^{k-1}}{\Gamma(k)}$ \\ 
+\hline 
+7.& $\displaystyle \frac{1}{s-a} $&$\displaystyle  e^{ at}$ \\ 
+\hline 
+8.& $\displaystyle \frac{1}{(s-a)^2} $&$\displaystyle  te^{at}$ \\ 
+\hline 
+9.& $\displaystyle \frac{1}{(s-a)^n},\qquad (n=1,2,3...) $&$\displaystyle  \frac{1}{(n-1)!}t^{n-1}e^{at}$ \\ 
+\hline
+10.& $\displaystyle \frac{1}{(s-a)^k},\qquad (k>0) $&$\displaystyle  \frac{1}{\Gamma(k)}t^{k-1}e^{at}$ \\ 
+\hline 
+11.& $\displaystyle \frac{1}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(e^{at}-e^{bt}\right)$ \\ 
+\hline 
+12.& $\displaystyle \frac{s}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(ae^{at}-be^{bt}\right)$ \\ 
+\hline 
+13.& $\displaystyle \frac{1}{s^2+w^2} $&$\displaystyle  \frac{1}{w}\sen(wt)$ \\ 
+\hline 
+14.& $\displaystyle \frac{s}{s^2+w^2} $&$\displaystyle  \cos(wt)$ \\ 
+\hline 
+15.& $\displaystyle \frac{1}{s^2-a^2} $&$\displaystyle   \frac{1}{a}\senh(at)$ \\ 
+\hline 
+16.& $\displaystyle \frac{s}{s^2-a^2} $&$\displaystyle  \cosh(at)$ \\ 
+\hline 
+17.& $\displaystyle \frac{1}{(s-a)^2+w^2} $&$\displaystyle  \frac{1}{w}e^{at}\sen(wt)$ \\ 
+\hline 
+18.& $\displaystyle \frac{s-a}{(s-a)^2+w^2} $&$\displaystyle  e^{at}\cos(wt)$ \\ 
+\hline
+19.& $\displaystyle \frac{1}{s(s^2+w^2)} $&$\displaystyle  \frac{1}{w^2}(1-\cos(wt))$ \\ 
+\hline
+20.& $\displaystyle \frac{1}{s^2(s^2+w^2)} $&$\displaystyle  \frac{1}{w^3}(wt-\sen(wt))$ \\ 
+\hline
+21.& $\displaystyle \frac{1}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w^3}(\sen(wt)-wt\cos(wt))$ \\ 
+\hline
+22.& $\displaystyle \frac{s}{(s^2+w^2)^2} $&$\displaystyle  \frac{t}{2w}\sen(wt)$ \\ 
+\hline
+\end{tabu}}
+\caption{\label{tab_trans_Lap_1}Tabela de transformadas de Laplace - parte 1}
+\end{center}
+\end{small}
+\end{table}	
+
+\begin{table}[H]
+\begin{small}
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu}{|cc|c|}
+\hline
+ &$\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\
+\hline
+23.& $\displaystyle \frac{s^2}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w}(\sen(wt)+wt\cos(wt))$ \\ 
+\hline
+24.& $\displaystyle \frac{s}{(s^2+a^2)(s^2+b^2)},\qquad (a^2\neq b^2) $&$\displaystyle  \frac{1}{b^2-a^2}(\cos(at)-\cos(bt))$ \\ 
+\hline
+25.& $\displaystyle \frac{1}{(s^4+4a^4)}$&$\displaystyle  \frac{1}{4a^3}(\sen(at)\cosh(at)-\cos(at)\senh(at))$ \\ 
+\hline
+26.& $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sen(at)\senh(at))$ \\ 
+\hline
+27.& $\displaystyle \frac{1}{(s^4-a^2)} $&$\displaystyle  \frac{1}{2a^3}(\senh(at)-\sen(at))$ \\ 
+\hline
+28.& $\displaystyle \frac{s}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^2}(\cosh(at)-\cos(at))$ \\ 
+\hline
+29.& $\displaystyle \sqrt{s-a}-\sqrt{s-b} $&$ \displaystyle  \frac{1}{2\sqrt{\pi t^3}}(e^{bt}-e^{at})$ \\ 
+\hline
+30.& $\displaystyle \frac{1}{\sqrt{s+a}\sqrt{s+b}} $&$\displaystyle  e^{\frac{-(a+b)t}{2}}I_0\left(\frac{a-b}{2}t\right)$ \\ 
+\hline
+31.& $\displaystyle \frac{1}{\sqrt{s^2+a^2}} $&$\displaystyle  J_0(at)$ \\ 
+\hline
+32.& $\displaystyle \frac{s}{(s-a)^{\frac{3}{2}}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}e^{at}(1+2at)$ \\ 
+\hline
+33.& $\displaystyle \frac{1}{(s^2-a^2)^k},\qquad (k>0) $&$\displaystyle  \frac{\sqrt{\pi}}{\Gamma(k)}\left(\frac{t}{2a}\right)^{k-\frac{1}{2}}I_{k-\frac{1}{2}}(at)$ \\ 
+\hline
+34.& $\displaystyle \frac{1}{s}e^{-\frac{k}{s}},\qquad (k>0)$&$\displaystyle  J_0(2\sqrt{kt})$ \\ 
+\hline
+35.& $\displaystyle \frac{1}{\sqrt{s}}e^{-\frac{k}{s}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}\cos(2\sqrt{k t})$ \\ 
+\hline
+36.& $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\senh(2\sqrt{k t})$ \\ 
+\hline
+37.& $\displaystyle e^{-k\sqrt{s}},\qquad (k>0) $&$\displaystyle  \frac{k}{2\sqrt{\pi t^3}}e^{-\frac{k^2}{4t}}$ \\ 
+\hline
+38.& $\displaystyle \frac{1}{s}\ln(s)$&$\displaystyle  -\ln(t)-\gamma,\qquad (\gamma\approx 0,5772) $  \\ 
+\hline
+39.& $\displaystyle \ln\left(\frac{s-a}{s-b}\right) $&$\displaystyle  \frac{1}{t}\left(e^{bt}-e^{at}\right)$ \\ 
+\hline
+40.& $\displaystyle \ln\left(\frac{s^2+w^2}{s^2}\right) $&$\displaystyle  \frac{2}{t}\left(1-\cos(wt)\right)$ \\ 
+\hline
+41.& $\displaystyle \ln\left(\frac{s^2-a^2}{s^2}\right)$&$\displaystyle  \frac{2}{t}\left(1-\cosh(at)\right)$ \\ 
+\hline
+42.& $\displaystyle \tan^{-1}\left(\frac{w}{s}\right)$&$\displaystyle  \frac{1}{t}\sen(wt)$ \\ 
+\hline
+43.& $\displaystyle \frac{1}{s}\cot^{-1}(s) $&$\displaystyle  \hbox{Si}\ \!(t)$ \\ 
+\hline
+\end{tabu}}
+\caption{\label{tab_trans_Lap_2}Tabela de transformadas de Laplace - parte 2}
+\end{center}
+\end{small}
+\end{table}
+
+\newpage
+\section{Tabela de propriedades da transformada de Laplace}{\label{ap_A2}}
+A tabela \ref{prop_transf_Lap} apresenta as principais propriedades da transformada de Laplace.
+
+\begin{table}[H]
+\begin{small}
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu}{|l|c|c|}
+\hline
+1.& Linearidade &$\displaystyle \mathcal{L}\left\{\alpha f(t)+\beta g(t)\right\}=\alpha\mathcal{L}\left\{ f(t)\right\}+\beta\mathcal{L}\left\{g(t)\right\}$ \\ 
+\hline
+2.& Transformada da derivada &\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{f'(t)\right\}=s\mathcal{L}\left\{f(t)\right\}-f(0)$\\$\displaystyle \mathcal{L}\left\{f''(t)\right\}=s^2\mathcal{L}\left\{f(t)\right\}-sf(0)-f'(0)$ \end{tabu}\\ 
+\hline
+3.& Deslocamento no eixo $s$ &$\displaystyle \mathcal{L}\left\{e^{at}f(t)\right\}=F(s-a)$ \\ 
+\hline
+4.& Deslocamento no eixo $t$ &\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{u(t-a)f(t-a)\right\}=e^{-as}F(s) $\\ $\displaystyle \mathcal{L}\left\{u(t-a)\right\}=\frac{e^{-as}}{s} $\end{tabu}  \\ 
+\hline
+5.& Transformada da integral &$\displaystyle \mathcal{L}\left\{\int_0^t f(\tau)d\tau\right\}=\frac{F(s)}{s} $ \\ 
+\hline
+6.& Transformada da Delta de Dirac &$\displaystyle \mathcal{L}\left\{\delta(t-a)\right\}=e^{-as} $ \\ 
+\hline
+7.& Teorema da Convolução &\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{(f*g)(t)\right\}=F(s)G(s), $ \\onde \quad $\displaystyle (f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau $\end{tabu} \\ 
+\hline
+8.& Transformada de funções periódicas&$\displaystyle \mathcal{L}\left\{f(t)\right\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-s\tau}f(\tau)d\tau $ \\ 
+\hline
+9.& Derivada da transformada &$\displaystyle \mathcal{L}\left\{tf(t)\right\}=-\frac{dF(s)}{ds} $ \\ 
+\hline
+10.& Integral da transformada &$\displaystyle \mathcal{L}\left\{\frac{f(t)}{t}\right\}=\int_s^\infty F(\hat{s})d\hat{s} $ \\ 
+\hline
+\end{tabu}}
+\caption{\label{prop_transf_Lap}Tabela de séries de potências}
+\end{center}
+\end{small}
+\end{table}	
+
+\newpage
+\section{Tabela de séries de potência}{\label{ap_A3}}
+A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis.
+
+\begin{table}[H]
+\begin{small}
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu}{|l|c|c|}
+\hline
+& Série &Intervalo de convergência \\ 
+\hline
+1.& $\displaystyle \frac{1}{1-x}=\sum_{n=0}^\infty x^n=1+x+x^2+x^3+\cdots,$ &$\displaystyle -1<x<1$ \\ 
+\hline
+2.& $\displaystyle \frac{x}{(1-x)^2}=\sum_{n=1}^\infty n x^n=x+2x^2+3x^3+4x^4+\cdots,$ &$\displaystyle -1<x<1$ \\ 
+\hline
+3.& $\displaystyle e^x=\sum_{n=0}^\infty \frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots,$ &$\displaystyle -\infty<x<\infty$ \\ 
+\hline
+4.& $\displaystyle \ln(1+x)=\sum_{n=0}^\infty(-1)^n \frac{x^{n+1}}{n+1}=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots,$ &$\displaystyle -1<x<1$ \\ 
+\hline
+5.& $\displaystyle \arctan(x)=\sum_{n=0}^\infty(-1)^n \frac{x^{2n+1}}{2n+1}=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots,$ &$\displaystyle -1<x<1$ \\ 
+\hline
+6.& $\displaystyle \sen(x)=\sum_{n=0}^\infty(-1)^n \frac{x^{2n+1}}{(2n+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots,$ &$\displaystyle -\infty<x<\infty$ \\ 
+\hline
+7.& $\displaystyle \cos(x)=\sum_{n=0}^\infty(-1)^n \frac{x^{2n}}{(2n)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots,$ &$\displaystyle -\infty<x<\infty$ \\ 
+\hline
+8.& $\displaystyle \senh(x)=\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots,$ &$\displaystyle -\infty<x<\infty$ \\ 
+\hline
+9.& $\displaystyle \cosh(x)=\sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots,$ &$\displaystyle -\infty<x<\infty$ \\ 
+\hline
+10.& $\displaystyle (1+x)^m=1+\sum_{n=1}^\infty \frac{m(m-1)\cdots (m-n+1)}{n!}x^n$ &$\displaystyle -1<x<1$, $m\neq 0,1,2,...$ \\ 
+\hline
+\end{tabu}}
+\caption{\label{series_de_potencias}Tabela de séries de potências}
+\end{center}
+\end{small}
+\end{table}	
+
+
+
+\end{document}

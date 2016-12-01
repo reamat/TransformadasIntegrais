@@ -1,0 +1,97 @@
+\documentclass{book}
+
+ \usepackage{tabu}
+\usepackage{ccicons}
+\usepackage{subfiles}
+\usepackage[latin1]{inputenc}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+%\usepackage[a5paper]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[portuges]{babel}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage[normalem]{ulem}
+\usepackage{pstricks,pst-plot}
+\usepackage[dvips]{graphicx}%
+\usepackage{pst-math}
+\usepackage{pst-plot}
+\usepackage{pst-circ}
+
+%\usepackage{hyperref}
+
+%\usepackage[lastexercise]{exercise}
+\usepackage[answerdelayed,lastexercise]{exercise}
+\usepackage{chngcntr}
+\counterwithin{Exercise}{chapter}
+\counterwithin{Answer}{chapter}
+
+
+
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin\medskip}}}
+
+\renewcommand{\AnswerHeader}{\medskip{\textbf{Resposta do exercício \ExerciseHeaderNB}\smallskip}:~}
+
+
+
+
+\newtheorem{teo}{Teorema}
+\newtheorem{lem}{Lema}
+\newtheorem{prop}{Proposi\c{c}{\~a}o}
+\newtheorem{propr}{Propriedade}
+\newtheorem{corol}{Corolario}	
+\newtheorem{ex}{Exemplo}	
+\newtheorem{prob}{Problema}
+\newtheorem{obs}{Observa\c{c}{\~a}o}
+\newtheorem{defn}{Defini\c{c}{\~a}o}
+\newcommand{\senh}{\operatorname{senh}}
+\newcommand{\sen}{\operatorname{sen}}
+
+
+\title{Transformada de Laplace}
+\author{Fábio Azevedo, Esequia Sauter, Irene Maria Fonseca Strauch}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+
+\chapter*{Licença}
+Este material está licenciado por seus autores sob a licença Atribuição-CompartilhaIgual 3.0 Não Adaptada (CC BY-SA 3.0) %ver \url{https://creativecommons.org/licenses/by-sa/3.0/deed.pt}.
+
+%\ccbysa 3.0
+
+
+
+
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+\subfile{capitulo01.tex}
+\subfile{capitulo02.tex}
+\subfile{capitulo03.tex}
+\subfile{capitulo04.tex}
+\subfile{capitulo05.tex}
+\subfile{capitulo06.tex}
+\subfile{capitulo07.tex}
+
+\appendix
+\subfile{apendice.tex}
+
+
+\chapter*{Resposta dos Exercícios}
+\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
+Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualização do livro, as respostas podem conter imprecisões e erros.
+\shipoutAnswer  
+
+
+
+\bibliographystyle{acm}
+\bibliography{bib}
+
+\end{document} 
