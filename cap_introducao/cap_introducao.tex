@@ -1,12 +1,12 @@
 \documentclass[Main.tex]{subfiles}
 \begin{document}
 \chapter{Introdu\c{c}\~{a}o}
-A modelagem de muitos problemas encontrados na fÌsica, quÌmica e engenharias tais como massa-mola, ou circuitos em sÈrie, envolve funÁ\~{o}es descontÌnuas. Um exemplo disso È uma funÁ„o do tipo chave liga/desliga, que È zero o inÌcio do fenÙmeno, depois sobe instantaneamente a um valor constante durante algum tempo e, finalmente, zero novamente. MÈtodos analÌticos para resolver equaÁıes diferenciais, como fator integrante, separaÁ„o de vari·veis, coeficientes a determinar e variaÁ„o de par‚metros, funcionam bem quando as funÁıes e envolvidas s„o contÌnuas. O mÈtodo que vamos introduzir aqui, chamado de transformada de Laplace, resolve esse tipo de problema. Essencialmente, a transformada de Laplace È uma transformaÁ„o similar a derivaÁ„o ou integraÁ„o, pois leva funÁ„o em outra funÁ„o. Alem disso, essa transformaÁ„o leva a derivada de uma funÁ„o em produtos da funÁ„o original. Isso significa que essa transformaÁ„o leva uma equaÁ„o diferencial a uma nova equaÁ„o em termos da funÁ\~{a}o transformada que È algÈbrica e pode ser resolvida facilmente. Uma vez que a transformada de Laplace È conhecida, temos que calcular a transformada inversa para obter a soluÁ„o do problema (\cite{ZILL} and \cite{STRAUCH}). 
+A modelagem de muitos problemas encontrados na f√≠sica, qu√≠mica e engenharias tais como massa-mola, ou circuitos em s√©rie, envolve fun√ß\~{o}es descont√≠nuas. Um exemplo disso √© uma fun√ß√£o do tipo chave liga/desliga, que √© zero o in√≠cio do fen√¥meno, depois sobe instantaneamente a um valor constante durante algum tempo e, finalmente, zero novamente. M√©todos anal√≠ticos para resolver equa√ß√µes diferenciais, como fator integrante, separa√ß√£o de vari√°veis, coeficientes a determinar e varia√ß√£o de par√¢metros, funcionam bem quando as fun√ß√µes e envolvidas s√£o cont√≠nuas. O m√©todo que vamos introduzir aqui, chamado de transformada de Laplace, resolve esse tipo de problema. Essencialmente, a transformada de Laplace √© uma transforma√ß√£o similar a deriva√ß√£o ou integra√ß√£o, pois leva fun√ß√£o em outra fun√ß√£o. Alem disso, essa transforma√ß√£o leva a derivada de uma fun√ß√£o em produtos da fun√ß√£o original. Isso significa que essa transforma√ß√£o leva uma equa√ß√£o diferencial a uma nova equa√ß√£o em termos da fun√ß\~{a}o transformada que √© alg√©brica e pode ser resolvida facilmente. Uma vez que a transformada de Laplace √© conhecida, temos que calcular a transformada inversa para obter a solu√ß√£o do problema (\cite{ZILL} and \cite{STRAUCH}). 
 
-Para cursar essas disciplina o estudante deve conhecer tÈcnicas b·sicas estudadas em disciplinas como C·lculo Diferencial e Integral e EquaÁıes Diferenciais. Nesse sentido, propomos alguns exercÌcios revisando algumas tÈcnicas ˙teis.
-\section{ExercÌcios de Revis„o}
+Para cursar essas disciplina o estudante deve conhecer t√©cnicas b√°sicas estudadas em disciplinas como C√°lculo Diferencial e Integral e Equa√ß√µes Diferenciais. Nesse sentido, propomos alguns exerc√≠cios revisando algumas t√©cnicas √∫teis.
+\section{Exerc√≠cios de Revis√£o}
 \begin{Exercise}
-Use as expressıes $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}$, $\cos x=\frac{e^{ix}+e^{-ix}}{2}$ e $\sen x=\frac{e^{ix}-e^{-ix}}{2i}$  para calcular as seguintes integrais:
+Use as express√µes $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}$, $\cos x=\frac{e^{ix}+e^{-ix}}{2}$ e $\sen x=\frac{e^{ix}-e^{-ix}}{2i}$  para calcular as seguintes integrais:
 \begin{itemize}
 \item[a)] $\int_{0}^{\infty} \sen(t)e^{-t}dt$
 \item[b)] $\int_{0}^{\infty} \cos(wt)e^{-t}dt$
@@ -34,7 +34,7 @@ Use as expressıes $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}$
 \begin{Exercise}
  Calcule o valor da integral
 $$\int_0^\infty \sen(wt) e^{-st}dt$$
-como uma funÁ„o de $w$ e $s$ sabendo que $s$ e $w$ s„o constantes reais positivas.
+como uma fun√ß√£o de $w$ e $s$ sabendo que $s$ e $w$ s√£o constantes reais positivas.
 \end{Exercise}
 \begin{Answer}
  $\frac{w}{s^2+w^2}$
@@ -43,27 +43,27 @@ como uma funÁ„o de $w$ e $s$ sabendo que $s$ e $w$ s„o constantes reais positiva
 
 \begin{Exercise} Calcule o valor da integral
 $$\int_0^a  e^{-st}dt$$
-como uma funÁ„o de $a$ e $s$ sabendo que $a$ e $s$ s„o constantes reais positivas.
+como uma fun√ß√£o de $a$ e $s$ sabendo que $a$ e $s$ s√£o constantes reais positivas.
 \end{Exercise}
 \begin{Answer}
  $\frac{1-e^{-as}}{s}$
 \end{Answer}
 
 
-\begin{Exercise}  Mostre que se $|x|<1$ ent„o
+\begin{Exercise}  Mostre que se $|x|<1$ ent√£o
 \begin{itemize}
 \item[a)] $\sum_{k=0}^\infty x^k=\frac{1}{1-x}$
 \item[b)] $\sum_{k=0}^\infty kx^k=\frac{x}{(1-x)^2}$
 \end{itemize}
 \end{Exercise}
 
-\begin{Exercise} Use o resultado anterior para resolver os seguintes somatÛrios
+\begin{Exercise} Use o resultado anterior para resolver os seguintes somat√≥rios
 \begin{itemize}
 \item[a)]$\sum_{k=0}^\infty e^{-sk}$
 \item[b)]$\sum_{k=0}^\infty (-1)^ke^{-sk}$
 \item[c)]$\sum_{k=0}^\infty ke^{-sk}$
 \end{itemize}
-onde $s$ È uma constante real positiva. 
+onde $s$ √© uma constante real positiva. 
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
@@ -75,7 +75,7 @@ onde $s$ È uma constante real positiva.
 
 
 
-\begin{Exercise} Use a tÈcnica de integraÁ„o por partes para realizar as seguintes integrais:
+\begin{Exercise} Use a t√©cnica de integra√ß√£o por partes para realizar as seguintes integrais:
 \begin{itemize}
 \item[a)]$\int_0^\infty t e^{-t}dt$
 \item[b)]$\int_0^\infty t^2 e^{-t} dt$
@@ -92,7 +92,7 @@ onde $s$ È uma constante real positiva.
 
 \begin{Exercise} Calcule a integral
 $$I=\int_0^\infty \left|\sen(\pi t)\right| e^{-t}dt$$
-escrevendo-o como o somatÛrio
+escrevendo-o como o somat√≥rio
 $$I=\sum_{k=0}^\infty(-1)^k\int_{k}^{k+1} \sen(\pi t) e^{-t}dt.$$
 \end{Exercise}
 

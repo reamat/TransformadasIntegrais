@@ -1,40 +1,40 @@
 \documentclass[Main.tex]{subfiles}
 \begin{document}
 \chapter{Transformada de Laplace}
-\section{DefiniÁ„o de transformada de Laplace}{\label{sec_1}}
-\begin{defn}Seja $f(t)$ uma funÁ„o definida nos reais n„o negativos. Quando a integral
+\section{Defini√ß√£o de transformada de Laplace}{\label{sec_1}}
+\begin{defn}Seja $f(t)$ uma fun√ß√£o definida nos reais n√£o negativos. Quando a integral
 $$
 \mathcal{L}\{f(t)\}=\int_0^\infty f(t)e^{-st}dt
 $$
-for convergente, ela ser· chamada de transformada de Laplace da funÁ„o $f(t)$.
+for convergente, ela ser√° chamada de transformada de Laplace da fun√ß√£o $f(t)$.
 \end{defn}
-A transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma funÁ„o $f(t)$ È uma funÁ„o da vari·vel $s$. A notaÁ„o usual neste contexto È letra min˙scula para a funÁ„o e letra mai˙scula para a transformada: $\mathcal{L}\{f(t)\}=F(s)$, $\mathcal{L}\{g(t)\}=G(s)$, $\mathcal{L}\{h(t)\}=H(s)$.
+A transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma fun√ß√£o $f(t)$ √© uma fun√ß√£o da vari√°vel $s$. A nota√ß√£o usual neste contexto √© letra min√∫scula para a fun√ß√£o e letra mai√∫scula para a transformada: $\mathcal{L}\{f(t)\}=F(s)$, $\mathcal{L}\{g(t)\}=G(s)$, $\mathcal{L}\{h(t)\}=H(s)$.
 
-Nos prÛximos exemplos, vamos aplicar a definiÁ„o para calcular a transformadas de Laplace de algumas funÁıes.
-\begin{ex}\label{ex1} Vamos calcular a transformada de Laplace da funÁ„o $f(t)=1$:
+Nos pr√≥ximos exemplos, vamos aplicar a defini√ß√£o para calcular a transformadas de Laplace de algumas fun√ß√µes.
+\begin{ex}\label{ex1} Vamos calcular a transformada de Laplace da fun√ß√£o $f(t)=1$:
 \begin{eqnarray*}
 \mathcal{L}\{1\}&=&\int_0^\infty 1\cdot e^{-st}dt\\
 &=&\lim_{a\to\infty}\int_0^a  e^{-st}dt\\
 &=&\lim_{a\to\infty} \frac{1-e^{-sa}}{s}.\\
 \end{eqnarray*}
-O limite $\displaystyle\lim_{a\to\infty}\frac{1-e^{-sa}}{s}$ sÛ existe se $s>0$. Portanto,
+O limite $\displaystyle\lim_{a\to\infty}\frac{1-e^{-sa}}{s}$ s√≥ existe se $s>0$. Portanto,
 \begin{eqnarray*}
 \mathcal{L}\{1\}=\frac{1}{s},\qquad s>0.\\
 \end{eqnarray*}
 \end{ex}
-\begin{ex}\label{ex2} A transformada de Laplace da funÁ„o $f(t)=t$ È calculada fazendo integraÁ„o por partes:
+\begin{ex}\label{ex2} A transformada de Laplace da fun√ß√£o $f(t)=t$ √© calculada fazendo integra√ß√£o por partes:
 \begin{eqnarray*}
 \mathcal{L}\{t\}&=&\int_0^\infty te^{-st}dt\\
 &=&\left.-\frac{te^{-st}}{s}\right|_0^\infty-\int_0^\infty \left(-\frac{e^{-st}}{s}\right)dt .\\
 &=&\left.-\frac{te^{-st}}{s}\right|_0^\infty+\frac{1}{s}\int_0^\infty e^{-st}dt .\\
 \end{eqnarray*}
-onde a notaÁ„o $\displaystyle\left.-\frac{te^{-st}}{s}\right|_0^\infty$ indica $\displaystyle\lim_{a\to\infty}\left(\left.-\frac{te^{-st}}{s} \right|_0^a\right)$. Observe que, se $s>0$, a primeira parcela do lado direito È zero e a segunda È $\frac{1}{s}\mathcal{L}\{1\}$, isto È,
+onde a nota√ß√£o $\displaystyle\left.-\frac{te^{-st}}{s}\right|_0^\infty$ indica $\displaystyle\lim_{a\to\infty}\left(\left.-\frac{te^{-st}}{s} \right|_0^a\right)$. Observe que, se $s>0$, a primeira parcela do lado direito √© zero e a segunda √© $\frac{1}{s}\mathcal{L}\{1\}$, isto √©,
 \begin{eqnarray*}
 \mathcal{L}\{t\}&=&\frac{1}{s}\mathcal{L}\{1\}=\frac{1}{s^2},\qquad s>0.\\
 \end{eqnarray*}
 onde usamos o resultado do exemplo \ref{ex1}.
 \end{ex}
-\begin{ex} Para calcular a transformada de Laplace da funÁ„o $f(t)=t^n$ usamos a ideia introduzida no exemplo \ref{ex2} e escrevemos-a em termos da transformada de $t^{n-1}$. Observe primeiro a transformada de $t^2$ e $t^3$
+\begin{ex} Para calcular a transformada de Laplace da fun√ß√£o $f(t)=t^n$ usamos a ideia introduzida no exemplo \ref{ex2} e escrevemos-a em termos da transformada de $t^{n-1}$. Observe primeiro a transformada de $t^2$ e $t^3$
 \begin{eqnarray*}
 \mathcal{L}\{t^2\}&=&\int_0^\infty t^2e^{-st}dt\\
 &=&\left.-\frac{t^2 e^{-st}}{s}\right|_0^\infty-\int_0^\infty \left(-2t\frac{e^{-st}}{s}\right)dt .\\
@@ -45,13 +45,13 @@ onde usamos o resultado do exemplo \ref{ex1}.
 &=&\left.-\frac{t^3 e^{-st}}{s}\right|_0^\infty-\int_0^\infty \left(-3t^2\frac{e^{-st}}{s}\right)dt .\\
 &=&\frac{3}{s}\int_0^\infty t^2e^{-st}dt=\frac{3}{s}\mathcal{L}\{t^2\}=\frac{3}{s}\frac{2}{s^3}=\frac{3!}{s^4},\qquad s>0
 \end{eqnarray*}
-Agora j· podemos intuir qual seria a express„o para a transformada de $t^n$:
+Agora j√° podemos intuir qual seria a express√£o para a transformada de $t^n$:
 $$
 \mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}},\qquad s>0.
 $$
-Essa express„o pode ser formalmente demonstrada pelo mÈtodo de induÁ„o matem·tica (ver exercÌcio \ref{inducao_tn}).
+Essa express√£o pode ser formalmente demonstrada pelo m√©todo de indu√ß√£o matem√°tica (ver exerc√≠cio \ref{inducao_tn}).
 \end{ex}
-\begin{ex}{\label{ex_trans_exp}}A transformada de Laplace da funÁ„o $f(t)=e^{-at}$ pode ser obtida por integraÁ„o direta:
+\begin{ex}{\label{ex_trans_exp}}A transformada de Laplace da fun√ß√£o $f(t)=e^{-at}$ pode ser obtida por integra√ß√£o direta:
 \begin{eqnarray*}
 \mathcal{L}\{e^{-at}\}&=&\int_0^\infty e^{-at}e^{-st}dt\\
 &=&\int_0^\infty e^{-(s+a)t}dt\\
@@ -60,7 +60,7 @@ Essa express„o pode ser formalmente demonstrada pelo mÈtodo de induÁ„o matem·tic
 
 \end{ex}
 
-\begin{ex}{\label{ex_trans_sin}}A transformada de Laplace da funÁ„o $f(t)=\sen(w t)$ pode ser obtida integrando por partes duas vezes:
+\begin{ex}{\label{ex_trans_sin}}A transformada de Laplace da fun√ß√£o $f(t)=\sen(w t)$ pode ser obtida integrando por partes duas vezes:
 \begin{eqnarray*}
 \mathcal{L}\{\sen(wt)\}&=&\int_0^\infty \sen(wt)e^{-st}dt\\
 &=&\left.-\frac{\sen(wt)e^{-st}}{s}\right|_0^\infty-\frac{1}{s}\int_0^\infty \left(w\cos(wt)\right)\left(-e^{-st}\right)dt\\
@@ -69,20 +69,20 @@ Essa express„o pode ser formalmente demonstrada pelo mÈtodo de induÁ„o matem·tic
 &=&\frac{w}{s}\left(\frac{1}{s}-\frac{w}{s}\int_0^\infty \sen(wt)e^{-st}dt\right)\\
 &=&\frac{w}{s^2}-\frac{w^2}{s^2}\mathcal{L}\{\sen(wt)\} .
 \end{eqnarray*}
-Observe que obtemos uma equaÁ„o para $\mathcal{L}\{\sen(wt)\}$:
+Observe que obtemos uma equa√ß√£o para $\mathcal{L}\{\sen(wt)\}$:
 $$
 \mathcal{L}\{\sen(wt)\} =\frac{w}{s^2}-\frac{w^2}{s^2}\mathcal{L}\{\sen(wt)\} .
 $$
-Resolvemos essa equaÁ„o e obtemos
+Resolvemos essa equa√ß√£o e obtemos
 $$
 \mathcal{L}\{\sen(wt)\}\left(1+\frac{w^2}{s^2}\right)=\frac{w}{s^2},
 $$
-isto È,
+isto √©,
 $$
 \mathcal{L}\{\sen(wt)\}=\frac{w}{s^2+w^2},\qquad s>0.
 $$
 \end{ex}
-\begin{ex} Vamos agora calcular a transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma funÁ„o $f(t)$ descontÌnua definida por partes:
+\begin{ex} Vamos agora calcular a transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma fun√ß√£o $f(t)$ descont√≠nua definida por partes:
 $$
 f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 4\\ 5, & t> 4.
 \end{array}\right.
@@ -96,9 +96,9 @@ Aqui usamos a seguinte propriedade de integral: $\int_a^b f(t)dt=\int_a^x f(t)dt
 \end{eqnarray*}
 
 \end{ex}
-\begin{prob}Calcule a transforma de Laplace da funÁ„o $f(t)=\cos(wt)$ usando a definiÁ„o. 
+\begin{prob}Calcule a transforma de Laplace da fun√ß√£o $f(t)=\cos(wt)$ usando a defini√ß√£o. 
 \end{prob}
-\begin{prob}Calcule a transforma de Laplace da funÁ„o $f(t)$ definida por partes:
+\begin{prob}Calcule a transforma de Laplace da fun√ß√£o $f(t)$ definida por partes:
 $$
 f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 3\\ 1, & 3\leq t\leq 5,\\0,&t>5.
 \end{array}\right.
@@ -106,12 +106,12 @@ $$
  
 \end{prob}
 
-\section{CondiÁ„o de existÍncia da transformada de Laplace}
-A integral que define a transformada de Laplace nem sempre converge e, nesse caso, dizemos que a funÁ„o n„o possui transformada de Laplace. As funÁıes $f(t)=e^{t^2}$ e $f(t)=\frac{1}{t}$ s„o alguns exemplo de funÁıes que n„o possuem transformada de Laplace. Nessa seÁ„o, vamos introduzir uma famÌlia de funÁıes que possuem transformada de Laplace. Neste contexto, vamos considerar as funÁıes que s„o contÌnuas por partes, ou seja, aquelas que possui um n˙mero finito de descontinuidade.
+\section{Condi√ß√£o de exist√™ncia da transformada de Laplace}
+A integral que define a transformada de Laplace nem sempre converge e, nesse caso, dizemos que a fun√ß√£o n√£o possui transformada de Laplace. As fun√ß√µes $f(t)=e^{t^2}$ e $f(t)=\frac{1}{t}$ s√£o alguns exemplo de fun√ß√µes que n√£o possuem transformada de Laplace. Nessa se√ß√£o, vamos introduzir uma fam√≠lia de fun√ß√µes que possuem transformada de Laplace. Neste contexto, vamos considerar as fun√ß√µes que s√£o cont√≠nuas por partes, ou seja, aquelas que possui um n√∫mero finito de descontinuidade.
 
-\begin{defn}Dizemos que uma funÁ„o $f(t)$ È de ordem exponencial $c$ se existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. 
+\begin{defn}Dizemos que uma fun√ß√£o $f(t)$ √© de ordem exponencial $c$ se existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. 
 \end{defn}
-\begin{ex}As funÁıes $f(t)=t^2$, $g(t)=\sen(t)$, $h(t)=e^{-t}$ s„o de ordem exponencial, pois
+\begin{ex}As fun√ß√µes $f(t)=t^2$, $g(t)=\sen(t)$, $h(t)=e^{-t}$ s√£o de ordem exponencial, pois
 $$
 |t^2|\leq e^t,\qquad t>0,
 $$
@@ -159,13 +159,13 @@ A figura \ref{ordem_exp} ilustra o crescimento de $f$, $g$ e $h$
 \end{figure}
 \end{ex}
 
-\begin{teo}\label{ordem_exp_exist} Se $f(t)$ È contÌnua por partes no intervalo $[0,\infty)$ e de ordem exponencial $c$, ent„o a transformada de Laplace de $f(t)$ existe para $s>c$.
+\begin{teo}\label{ordem_exp_exist} Se $f(t)$ √© cont√≠nua por partes no intervalo $[0,\infty)$ e de ordem exponencial $c$, ent√£o a transformada de Laplace de $f(t)$ existe para $s>c$.
 \end{teo}
-\begin{proof}Como a funÁ„o $f(t)$ È de ordem exponencial $c$, ent„o existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. Assim, se $\hat{T}$ È maior ou igual a $T$, a transformada de Laplace  pode ser escrita como a seguinte soma:
+\begin{proof}Como a fun√ß√£o $f(t)$ √© de ordem exponencial $c$, ent√£o existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. Assim, se $\hat{T}$ √© maior ou igual a $T$, a transformada de Laplace  pode ser escrita como a seguinte soma:
 $$
 \mathcal{L}\{f(t)\}=\int_0^\infty f(t)e^{-st}dt=\int_0^{\hat{T}} f(t)e^{-st}dt+\int_{\hat{T}}^\infty f(t)e^{-st}dt.
 $$
-A primeira parcela do lado direito È uma integral definida de uma funÁ„o contÌnua por partes, logo est· bem definida para qualquer $\hat{T}$.
+A primeira parcela do lado direito √© uma integral definida de uma fun√ß√£o cont√≠nua por partes, logo est√° bem definida para qualquer $\hat{T}$.
 
 Agora, como $\hat{T}\geq T$, podemos estimar
 \begin{eqnarray*}
@@ -173,20 +173,20 @@ Agora, como $\hat{T}\geq T$, podemos estimar
 &=&M \int_{\hat{T}}^\infty e^{-(s-c)t}dt
 =\left.\frac{M}{c-s} e^{-(s-c)t}\right|_{\hat{T}}^\infty =\frac{M}{s-c}e^{-(s-c)\hat{T}} ,\qquad s>c.
 \end{eqnarray*}
-Como $\lim_{\hat{T}\to \infty} \frac{M}{s-c}e^{-(s-c)\hat{T}}=0$, a integral $\int_0^\infty f(t)e^{-st}dt$ converge para todo $s>c$, ou seja, a transformada de Laplace existe neste domÌnio.
+Como $\lim_{\hat{T}\to \infty} \frac{M}{s-c}e^{-(s-c)\hat{T}}=0$, a integral $\int_0^\infty f(t)e^{-st}dt$ converge para todo $s>c$, ou seja, a transformada de Laplace existe neste dom√≠nio.
 \end{proof}
 
-\begin{obs} O teorema \ref{ordem_exp_exist} apresenta condiÁıes suficientes para existÍncia da transformada de Laplace, estas condiÁıes n„o s„o, no entanto, necess·rias. Por exemplo, a funÁ„o $f(t)=\ln(t)$ n„o È contÌnua na origem, sequer È limitada quando $t\to 0+$, mas admite uma Transformada de Laplace.
+\begin{obs} O teorema \ref{ordem_exp_exist} apresenta condi√ß√µes suficientes para exist√™ncia da transformada de Laplace, estas condi√ß√µes n√£o s√£o, no entanto, necess√°rias. Por exemplo, a fun√ß√£o $f(t)=\ln(t)$ n√£o √© cont√≠nua na origem, sequer √© limitada quando $t\to 0+$, mas admite uma Transformada de Laplace.
  \end{obs}
 
 
-\begin{teo} (Comportamento no infinito) Se a transformada de Laplace de uma funÁ„o limitada $f(t)$ existe, $F(s)=\mathcal{L}\{f(t)\}$, ent„o
+\begin{teo} (Comportamento no infinito) Se a transformada de Laplace de uma fun√ß√£o limitada $f(t)$ existe, $F(s)=\mathcal{L}\{f(t)\}$, ent√£o
 $$
 \lim_{s\to\infty}F(s)=0.
 $$
 \end{teo}
 \begin{proof}
- Por definiÁ„o,
+ Por defini√ß√£o,
  $$
  F(s)=\int_0^\infty f(t)e^{-st}dt.
  $$
@@ -194,7 +194,7 @@ Fazendo $u=st$, temos:
 $$
  F(s)=\frac{1}{s}\int_0^\infty f\left(\frac{u}{s}\right)e^{-u}du.
  $$
- Usando o fato que $f$ È limitada, existe $M$ tal que $|f(t)|<M$ e, assim,
+ Usando o fato que $f$ √© limitada, existe $M$ tal que $|f(t)|<M$ e, assim,
 $$
 | F(s) |\leq \frac{M}{s}\int_0^\infty e^{-u}du = \frac{M}{s}.
  $$ 
@@ -206,7 +206,7 @@ $$
 \end{proof}
 
 \section{A transformada inversa de Laplace}
-Se $F(s)=\mathcal{L}\{ f(t)\}$ È a transformada de Laplace de $f(t)$, ent„o dizemos que $f(t)=\mathcal{L}^{-1}\{ F(s)\}$ È a transformada inversa de Laplace da funÁ„o $F(s)$. Essa definiÁ„o sÛ faz sentido se a transformaÁ„o definida no conjunto de funÁıes que possuem transformada de Laplace for "bijetora", ou seja, cada funÁ„o $f(t)$ est· relacionada a uma ˙nica transformada $F(s)$. … f·cil observar que duas funÁıes iguais a partir de $t=0$ possuem a mesma transformada de Laplace. PorÈm, se duas transformadas s„o iguais para $s>s_0$, por exemplo, $F(s)=G(s)$, ent„o
+Se $F(s)=\mathcal{L}\{ f(t)\}$ √© a transformada de Laplace de $f(t)$, ent√£o dizemos que $f(t)=\mathcal{L}^{-1}\{ F(s)\}$ √© a transformada inversa de Laplace da fun√ß√£o $F(s)$. Essa defini√ß√£o s√≥ faz sentido se a transforma√ß√£o definida no conjunto de fun√ß√µes que possuem transformada de Laplace for "bijetora", ou seja, cada fun√ß√£o $f(t)$ est√° relacionada a uma √∫nica transformada $F(s)$. √â f√°cil observar que duas fun√ß√µes iguais a partir de $t=0$ possuem a mesma transformada de Laplace. Por√©m, se duas transformadas s√£o iguais para $s>s_0$, por exemplo, $F(s)=G(s)$, ent√£o
 $$
 \int_0^\infty f(t)e^{-st}dt=\int_0^\infty g(t)e^{-st}dt
 $$
@@ -214,27 +214,27 @@ ou seja,
 $$
 \int_0^\infty (f(t)-g(t))e^{-st}dt=0
 $$
-para cada $s>s_0$. Mas, o fato dessa integral ser nula, n„o significa que a funÁ„o $f(t)-g(t)$ È nula. Tome como exemplo a funÁ„o
+para cada $s>s_0$. Mas, o fato dessa integral ser nula, n√£o significa que a fun√ß√£o $f(t)-g(t)$ √© nula. Tome como exemplo a fun√ß√£o
 $$
 h(t)=\left\{\begin{array}{ll} 0,& 0\leq t< 3,\\1,& t= 3,\\0,& t> 3,  \end{array}\right.
 $$
-que n„o È nula, mas a integral 
+que n√£o √© nula, mas a integral 
 \begin{equation}{\label{eq_int_inv}}
 \int_0^\infty h(t)e^{-st}dt=0\qquad \forall s>s_0.
 \end{equation}
-No entanto, a funÁ„o $f(t)-g(t)$ n„o pode ser diferente de zero em um conjunto muito grande. Basta tomar como exemplo uma funÁ„o que n„o se anula em um intervalo pequeno:
+No entanto, a fun√ß√£o $f(t)-g(t)$ n√£o pode ser diferente de zero em um conjunto muito grande. Basta tomar como exemplo uma fun√ß√£o que n√£o se anula em um intervalo pequeno:
 $$
 h(t)=\left\{\begin{array}{ll} 1,& 0\leq t< \epsilon,\\0,& t\geq \epsilon  \end{array}\right.
 $$
-para $0<\epsilon<<1$. Por menor que seja $\epsilon$, a integral (\ref{eq_int_inv}) n„o se anula para $s>0$. Existe um conceito que diz que duas funÁıes $h_1(t)$ e $h_2(t)$ s„o iguais quase-sempre em $[a,b]$ se 
+para $0<\epsilon<<1$. Por menor que seja $\epsilon$, a integral (\ref{eq_int_inv}) n√£o se anula para $s>0$. Existe um conceito que diz que duas fun√ß√µes $h_1(t)$ e $h_2(t)$ s√£o iguais quase-sempre em $[a,b]$ se 
 $$
 \int_a^b |h_1(t)-h_2(t)|dt=0.
 $$
-Observe que o mÛdulo no conceito È importante, pois podemos tomar uma funÁ„o diferente de zero em intervalos grandes e com integral zero, por exemplo,
+Observe que o m√≥dulo no conceito √© importante, pois podemos tomar uma fun√ß√£o diferente de zero em intervalos grandes e com integral zero, por exemplo,
 \begin{equation}{\label{eq_lap_inv}}
 h_3(t)=\left\{\begin{array}{ll} 1,& 0\leq t< 1,\\-1,& 1\leq t< 2,\\0,& t\geq 2,  \end{array}\right..
 \end{equation}
-Observe que a integral (\ref{eq_int_inv}) dever· ser zero para todo $s>s_0$, o que compensa a falta do mÛdulo. Por exemplo, a integral (\ref{eq_int_inv}) aplicada a funÁ„o (\ref{eq_lap_inv}) n„o È zero:
+Observe que a integral (\ref{eq_int_inv}) dever√° ser zero para todo $s>s_0$, o que compensa a falta do m√≥dulo. Por exemplo, a integral (\ref{eq_int_inv}) aplicada a fun√ß√£o (\ref{eq_lap_inv}) n√£o √© zero:
 \begin{eqnarray*}
 \int_0^\infty h_3(t)e^{-st}dt&=&\int_0^\epsilon e^{-st}dt-\int_\epsilon^{2\epsilon} e^{-st}dt\\
 &=&\left.\frac{ e^{-st}}{-s}\right|_0^\epsilon-\left.\frac{e^{-st}}{-s}\right|_{\epsilon}^{2\epsilon}\\
@@ -242,9 +242,9 @@ Observe que a integral (\ref{eq_int_inv}) dever· ser zero para todo $s>s_0$, o q
 \end{eqnarray*}
 
 
-Usando esse conceito, se duas transformadas de Laplace s„o iguais, as respectivas inversas s„o iguais quase-sempre. Nesse sentido, uma funÁ„o que possui transformada de Laplace est· contida numa classe de funÁıes que possuem a mesma transformada de Laplace. Se olharmos cada classe de funÁıes como um elemento de um conjunto, ent„o a transformada de Laplace È "bijetora". Isso significa que a transformada inversa est· bem definida, mesmo que n„o escrevemos uma forma integral fechada para ela. Uma forma integral fechada para a transformada inversa de Laplace aparecer· naturalmente na teoria de transformada de Fourier.
+Usando esse conceito, se duas transformadas de Laplace s√£o iguais, as respectivas inversas s√£o iguais quase-sempre. Nesse sentido, uma fun√ß√£o que possui transformada de Laplace est√° contida numa classe de fun√ß√µes que possuem a mesma transformada de Laplace. Se olharmos cada classe de fun√ß√µes como um elemento de um conjunto, ent√£o a transformada de Laplace √© "bijetora". Isso significa que a transformada inversa est√° bem definida, mesmo que n√£o escrevemos uma forma integral fechada para ela. Uma forma integral fechada para a transformada inversa de Laplace aparecer√° naturalmente na teoria de transformada de Fourier.
 
-Abaixo segue a pequena tabela \ref{tab_1} das transformadas de Laplace que calculamos na seÁ„o \ref{sec_1} e suas respectivas inversas. Observe que cada funÁ„o da segunda coluna representa uma classe de funÁıes iguais quase-sempre. As tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2} do apÍndice \ref{ap_A} est„o mais completas. As tabelas de transformadas s„o ˙teis quando estamos resolvendo uma equaÁ„o diferencial, pois na pr·tica, consultamos uma tabela para calcular a inversa.
+Abaixo segue a pequena tabela \ref{tab_1} das transformadas de Laplace que calculamos na se√ß√£o \ref{sec_1} e suas respectivas inversas. Observe que cada fun√ß√£o da segunda coluna representa uma classe de fun√ß√µes iguais quase-sempre. As tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2} do ap√™ndice \ref{ap_A} est√£o mais completas. As tabelas de transformadas s√£o √∫teis quando estamos resolvendo uma equa√ß√£o diferencial, pois na pr√°tica, consultamos uma tabela para calcular a inversa.
 \begin{table}
 \begin{small}
 \begin{center}
@@ -274,12 +274,12 @@ $\displaystyle \frac{1}{s+a} $&$\displaystyle  e^{ -at}$ \\ &\\
 \end{small}
 \end{table}
 
-\begin{ex}Para calcular a transformada inversa da funÁ„o $F(s)=\frac{10}{100+s^2}$, fixamos $a=10$ na quarta linha da tabela \ref{tab_1} e obtemos
+\begin{ex}Para calcular a transformada inversa da fun√ß√£o $F(s)=\frac{10}{100+s^2}$, fixamos $a=10$ na quarta linha da tabela \ref{tab_1} e obtemos
 $$
 \mathcal{L }^{-1}\left\{ \frac{10}{100+s^2}\right\}=\sen(10t)
 $$
 \end{ex}
-\begin{ex}Da mesma forma, para calcular a transformada inversa da funÁ„o $F(s)=\frac{1}{s^{30}}$, fixamos $n=30$ na terceira linha da tabela \ref{tab_1} e obtemos
+\begin{ex}Da mesma forma, para calcular a transformada inversa da fun√ß√£o $F(s)=\frac{1}{s^{30}}$, fixamos $n=30$ na terceira linha da tabela \ref{tab_1} e obtemos
 $$
 \mathcal{L }^{-1}\left\{ \frac{1}{s^{30}}\right\}=\frac{t^{29}}{29!}.
 $$
@@ -287,8 +287,8 @@ $$
 
 
 
-\section{ExercÌcios}
-\begin{Exercise}{\label{ex_cap_3_1}} Use a definiÁ„o de transformada de Laplace para calcular as transformadas das funÁıes dadas nos gr·ficos abaixo:
+\section{Exerc√≠cios}
+\begin{Exercise}{\label{ex_cap_3_1}} Use a defini√ß√£o de transformada de Laplace para calcular as transformadas das fun√ß√µes dadas nos gr√°ficos abaixo:
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=\pslinewidth}
  \begin{pspicture}(-1.0,-1.0)(3.5,3.5)
@@ -367,7 +367,7 @@ $$
  \end{itemize}
 
 \end{Answer}
-\begin{Exercise}Use a definiÁ„o de transformada de Laplace para calcular as transformadas das funÁıes dadas a seguir:
+\begin{Exercise}Use a defini√ß√£o de transformada de Laplace para calcular as transformadas das fun√ß√µes dadas a seguir:
  \begin{itemize}
   \item[a)] $f(t)=at$
   \item[b)] $f(t)=\left\{\begin{array}{ll}0, & 0\leq t< 2\\2,&  2\leq t< 3\\0,&t>3 \end{array}\right.$
@@ -391,17 +391,17 @@ $$
   \end{itemize}
 
 \end{Answer}
- \begin{Exercise}\label{inducao_tn}(PrincÌpio da InduÁ„o) Mostre que $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ seguindo os seguintes passos:
+ \begin{Exercise}\label{inducao_tn}(Princ√≠pio da Indu√ß√£o) Mostre que $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ seguindo os seguintes passos:
  \begin{itemize}
-  \item[a)] Mostre que a fÛrmula È v·lida para $n=0,\ 1,\ 2$ e $3$.\footnote{De fato, bastaria mostrar para $n=0$.}
-  \item[b)] Mostre que $\displaystyle\mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^{n}}$ È v·lida, ent„o $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ tambÈm o È.
+  \item[a)] Mostre que a f√≥rmula √© v√°lida para $n=0,\ 1,\ 2$ e $3$.\footnote{De fato, bastaria mostrar para $n=0$.}
+  \item[b)] Mostre que $\displaystyle\mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^{n}}$ √© v√°lida, ent√£o $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ tamb√©m o √©.
  \end{itemize}
 
   
  \end{Exercise}
 
  
- \begin{Exercise}Use a tabela \ref{tab_trans_Lap_1} para calcular a transformada Inversa de Laplace das funÁıes:
+ \begin{Exercise}Use a tabela \ref{tab_trans_Lap_1} para calcular a transformada Inversa de Laplace das fun√ß√µes:
  \begin{itemize}
   \item[a)] $F(s)=\frac{1}{s^2+4}$
   \item[b)] $F(s)=\frac{1}{s^2-4}$

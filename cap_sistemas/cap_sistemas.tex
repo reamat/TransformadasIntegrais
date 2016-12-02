@@ -2,10 +2,10 @@
 \begin{document}
 
 
-\chapter{Sistemas de equações diferenciais ordinárias}
+\chapter{Sistemas de equaÃ§Ãµes diferenciais ordinÃ¡rias}
 
 \section{Transformada de Laplace para resolver sistemas}
-O método de transformada de Laplace pode ser aplicado para resolver sistemas de equações diferenciais. Para isso, aplica-se a transformada de Laplace a todas equações envolvidas, levando o sistema de equações diferenciais em um sistema de equações algébricas. Depois de resolver o sistema de equações algébricas no espaço de transformadas, calcula-se as transformadas inversas para obter a solução.
+O mÃ©todo de transformada de Laplace pode ser aplicado para resolver sistemas de equaÃ§Ãµes diferenciais. Para isso, aplica-se a transformada de Laplace a todas equaÃ§Ãµes envolvidas, levando o sistema de equaÃ§Ãµes diferenciais em um sistema de equaÃ§Ãµes algÃ©bricas. Depois de resolver o sistema de equaÃ§Ãµes algÃ©bricas no espaÃ§o de transformadas, calcula-se as transformadas inversas para obter a soluÃ§Ã£o.
 \begin{ex}Vamos resolver o seguinte problema de valor inicial:
 \begin{eqnarray*}
 y'&=&x\\
@@ -13,17 +13,17 @@ x'&=&y\\
 x(0)&=&0\\
 y(0)&=&1.
 \end{eqnarray*}
-Aplicamos a transformada de Laplace em cada uma das equações:
+Aplicamos a transformada de Laplace em cada uma das equaÃ§Ãµes:
 \begin{eqnarray*}
 sY(s)-y(0)&=&X(s)\\
 sX(s)-x(0)&=&Y(s),
 \end{eqnarray*}
-onde usamos a propriedade \ref{prop_der} e a notação $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. Substituímos as condições iniciais para obter o seguinte sistema de equações algébricas
+onde usamos a propriedade \ref{prop_der} e a notaÃ§Ã£o $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. SubstituÃ­mos as condiÃ§Ãµes iniciais para obter o seguinte sistema de equaÃ§Ãµes algÃ©bricas
 \begin{eqnarray}
 \label{sis_eq_1}-X(s)+sY(s)&=&1\\
 \label{sis_eq_2} sX(s)-Y(s)&=&0.
 \end{eqnarray}
-Multiplicamos a equação (\ref{sis_eq_1}) por $s$, $-sX(s)+s^2Y(s)=s$, e somamos com a equação (\ref{sis_eq_2}) para obter
+Multiplicamos a equaÃ§Ã£o (\ref{sis_eq_1}) por $s$, $-sX(s)+s^2Y(s)=s$, e somamos com a equaÃ§Ã£o (\ref{sis_eq_2}) para obter
 $$
 (s^2-1)Y(s)=s.
 $$
@@ -31,11 +31,11 @@ Logo
 $$
 Y(s)=\frac{s}{s^2-1}.
 $$
-Resolvemos $X(s)$ usando a equação (\ref{sis_eq_2}):
+Resolvemos $X(s)$ usando a equaÃ§Ã£o (\ref{sis_eq_2}):
 $$
 X(s)=\frac{Y(s)}{s}=\frac{1}{s^2-1}.
 $$
-As transformadas inversas de $X(s)$ e $Y(s)$ estão tabeladas:
+As transformadas inversas de $X(s)$ e $Y(s)$ estÃ£o tabeladas:
 \begin{eqnarray*}
 x(t)&=&\senh(t)\\
 y(t)&=&\cosh(t).
@@ -52,12 +52,12 @@ x'(0)&=&0\\
 y(0)&=&-1\\
 y'(0)&=&10.
 \end{eqnarray*}
-Aplicamos a transformada de Laplace em cada uma das equações:
+Aplicamos a transformada de Laplace em cada uma das equaÃ§Ãµes:
 \begin{eqnarray*}
 2s^2X(s)-2sx(0)-2x'(0)+s^2Y(s)-sy(0)-y'(0)&=&\frac{2}{s^3}\\
 s^2X(s)-sx(0)-x'(0)-s^2Y(s)+sy(0)+y'(0)&=&\frac{4}{s^2},
 \end{eqnarray*}
-onde usamos a propriedade \ref{prop_der} e a notação $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. Substituímos as condições iniciais para obter o seguinte sistema de equações algébricas
+onde usamos a propriedade \ref{prop_der} e a notaÃ§Ã£o $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. SubstituÃ­mos as condiÃ§Ãµes iniciais para obter o seguinte sistema de equaÃ§Ãµes algÃ©bricas
 \begin{eqnarray*}
 2s^2X(s)-4s+0+s^2Y(s)+s-10&=&\frac{2}{s^3}\\
 s^2X(s)-2s+0-s^2Y(s)-s+10&=&\frac{4}{s^2}.
@@ -67,7 +67,7 @@ ou seja,
 \label{sis_eq_3}2s^2X(s)+s^2Y(s)&=&\frac{2}{s^3}+10+3s\\
 \label{sis_eq_4} s^2X(s)-s^2Y(s)&=&\frac{4}{s^2}-10+3s.
 \end{eqnarray}
-A soma das equações (\ref{sis_eq_3}) e (\ref{sis_eq_4}) resulta em
+A soma das equaÃ§Ãµes (\ref{sis_eq_3}) e (\ref{sis_eq_4}) resulta em
 $$
 3s^2X(s)=\frac{2}{s^3}+\frac{4}{s^2}+6s.
 $$
@@ -83,14 +83,14 @@ Assim,
 $$
 Y(s)=\frac{2}{3s^5}-\frac{8}{3s^4}+\frac{10}{s^2}-\frac{1}{s}.
 $$
-As transformadas inversas estão tabeladas:
+As transformadas inversas estÃ£o tabeladas:
 \begin{eqnarray*}
 x(t)&=&\frac{t^4}{36}+\frac{2t^3}{9}+2\\
 y(t)&=&\frac{t^4}{36}-\frac{4t^3}{9}+10t-1.
 \end{eqnarray*}
 \end{ex}
-\section{Aplicação: circuito de duas malhas}
-Considere o circuito da figura \ref{fig_circ_2_malha}, constituído de duas malhas com correntes $i_1$ e $i_2$, respectivamente. Vamos modelar $i_1$ e $i_2$ considerando $i_1(0)=i_2(0)=0$. 
+\section{AplicaÃ§Ã£o: circuito de duas malhas}
+Considere o circuito da figura \ref{fig_circ_2_malha}, constituÃ­do de duas malhas com correntes $i_1$ e $i_2$, respectivamente. Vamos modelar $i_1$ e $i_2$ considerando $i_1(0)=i_2(0)=0$. 
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -162,7 +162,7 @@ ou, ainda,
 \left[\begin{array}{cc}  \left(s+45\right) &40\\20& \left(s+25\right) \end{array}\right]\left[\begin{array}{c}I_1(s)\\I_2(s)\end{array}\right]=\left[\begin{array}{c}\frac{110}{s}\\ \\
 \frac{55}{s}\end{array}\right]
 \end{equation*}
-A solução desse sistema é dada por
+A soluÃ§Ã£o desse sistema Ã© dada por
 \begin{equation*}
 \left[\begin{array}{c}I_1(s)\\I_2(s)\end{array}\right]=\frac{1}{(s+25)(s+45)-800}\left[\begin{array}{cc}  \left(s+25\right) &-40\\-20& \left(s+45\right) \end{array}\right]\left[\begin{array}{c}\frac{110}{s}\\ \\
 \frac{55}{s}\end{array}\right]
@@ -187,24 +187,24 @@ Como $i_1(t)=2i_2(t)$, temos:
 $$
 i_1(t)=\frac{22}{13}\left(1-e^{-65t}\right).
 $$
-\section{Aplicação: duplo massa mola}
+\section{AplicaÃ§Ã£o: duplo massa mola}
 
-Considere o duplo sistema massa-mola, onde as molas possuem constantes $k_1$ e $k_2$ e as massas envolvidas são $m_1$ e $m_2$. Desconsiderando o amortecimento, temos o seguinte sistema:
+Considere o duplo sistema massa-mola, onde as molas possuem constantes $k_1$ e $k_2$ e as massas envolvidas sÃ£o $m_1$ e $m_2$. Desconsiderando o amortecimento, temos o seguinte sistema:
 \begin{eqnarray*}
  m_1 \ddot{x}_1(t) &=&  - k_1 x_1(t) + k_2\left[x_2(t)-x_1(t)\right]+f_1(t)\\
  m_2 \ddot{x}_2(t) &=&  - k_2\left[x_2(t)-x_1(t)\right]+f_2(t),
 \end{eqnarray*}
-onde $x_1$ e $x_2$ representam o deslocamento de cada uma das massas e $f_1$ e $f_2$ são as forças externas aplicadas. Tomando transformada de Laplace, obtemos:
+onde $x_1$ e $x_2$ representam o deslocamento de cada uma das massas e $f_1$ e $f_2$ sÃ£o as forÃ§as externas aplicadas. Tomando transformada de Laplace, obtemos:
 \begin{eqnarray*}
  m_1 (s^2X_1(s)-\dot{x}_1(0)-sx_1(0)) &=&  - (k_1+k_2) X_1(s) + k_2X_2(s)+F_1(s)\\
  m_2 (s^2X_2(s)-\dot{x}_2(0)-sx_2(0)) &=&  - k_2X_2(s)+k_2X_1(s)+F_2(s)
 \end{eqnarray*}
-isto é:
+isto Ã©:
 \begin{eqnarray*}
  \left(m_1 s^2+k_1+k_2\right)X_1(s)- k_2X_2(s) &=&   F_1(s)+m_1\dot{x}_1(0)+sm_1x_1(0)\\
  -k_2X_1(s)+\left(m_2 s^2+k_2\right)X_2(s) &=&  F_2(s)+m_2\dot{x}_2(0)+sm_2x_2(0)
 \end{eqnarray*}
-A representação matricial do sistema é:
+A representaÃ§Ã£o matricial do sistema Ã©:
 \begin{eqnarray*}
 \left[\begin{array}{cc}
        m_1 s^2+k_1+k_2 &- k_2\\
@@ -221,7 +221,7 @@ F_2(s)+m_2\dot{x}_2(0)+sm_2x_2(0)
        \end{array}
 \right]
 \end{eqnarray*}
-e sua solução pode ser escrita como:
+e sua soluÃ§Ã£o pode ser escrita como:
 \begin{eqnarray}{\label{eq_transf_2_massa_mola}}
 \left[\begin{array}{c}
        X_1(s)\\
@@ -264,7 +264,7 @@ Usando (\ref{eq_transf_2_massa_mola}), temos:
        \end{array}
 \right].
 \end{eqnarray*}
-Para completar o sistema, impondo as seguintes condições iniciais: $x_1(0)=x_2(0)=0$, $\dot{x}_1(0)=1$ e $\dot{x}_2(0)=-1$:
+Para completar o sistema, impondo as seguintes condiÃ§Ãµes iniciais: $x_1(0)=x_2(0)=0$, $\dot{x}_1(0)=1$ e $\dot{x}_2(0)=-1$:
 \begin{eqnarray*}
 \left[\begin{array}{c}
        X_1(s)\\
@@ -291,7 +291,7 @@ e
 $$
 X(s)=\frac{1}{s^4+14s^2+24}\left(4-s^2-10\right)=\frac{-s^2-6}{s^4+14s^2+24}.
 $$
-Usamos frações parciais para escrever
+Usamos fraÃ§Ãµes parciais para escrever
 \begin{eqnarray*}
 \frac{s^2}{s^4+14s^2+24}=\frac{s^2}{(s^2+2)(s^2+12)}&=&\frac{A}{s^2+2}+\frac{B}{s^2+12}\\&=&\frac{A(s^2+12)+B(s^2+2)}{(s^2+2)(s^2+12)}\\
 &=&\frac{(A+B)s^2+12A+2B}{(s^2+2)(s^2+12)},
@@ -314,7 +314,7 @@ e
 y(t)&=&-\frac{3}{5\sqrt{12}}\sen(\sqrt{12}t)-\frac{2}{5\sqrt{2}}\sen(\sqrt{2}t)\\
 &=&-\frac{\sqrt{3}}{10}\sen(2\sqrt{3}t)-\frac{\sqrt{2}}{5}\sen(\sqrt{2}t).
 \end{eqnarray*}
-A figura \ref{fig_massa_mola_2_malha} apresenta os gráficos de $x(t)$ e $y(t)$:
+A figura \ref{fig_massa_mola_2_malha} apresenta os grÃ¡ficos de $x(t)$ e $y(t)$:
  \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =0.5cm,yunit=4cm, linewidth=1\pslinewidth}
@@ -341,36 +341,36 @@ A figura \ref{fig_massa_mola_2_malha} apresenta os gráficos de $x(t)$ e $y(t)$:
 \caption{\label{fig_massa_mola_2_malha}}
 \end{figure}
 
-\section{Aplicação: reação química}
-Considere o mecanismo simplificado de reação química apresentado a seguir:
+\section{AplicaÃ§Ã£o: reaÃ§Ã£o quÃ­mica}
+Considere o mecanismo simplificado de reaÃ§Ã£o quÃ­mica apresentado a seguir:
 $$R\longrightarrow S \longrightarrow T$$
-onde a concentração de $R$, $S$ e $T$ são dadas em $\hbox{mol}/l$ por $x(t)$, $y(t)$ e $z(t)$, respectivamente e são regidas pelo seguinte sistema de equações diferenciais ordinárias:
+onde a concentraÃ§Ã£o de $R$, $S$ e $T$ sÃ£o dadas em $\hbox{mol}/l$ por $x(t)$, $y(t)$ e $z(t)$, respectivamente e sÃ£o regidas pelo seguinte sistema de equaÃ§Ãµes diferenciais ordinÃ¡rias:
 \begin{eqnarray*}
 x'(t)&=&-\alpha x(t) \\
 y'(t)&=&\alpha x(t)-\gamma y(t)\\
 z'(t)&=&\gamma y(t),
 \end{eqnarray*} 
-onde $\alpha$ e $\gamma$ são constantes positivas. Sabendo que as concentrações iniciais são dadas por:
+onde $\alpha$ e $\gamma$ sÃ£o constantes positivas. Sabendo que as concentraÃ§Ãµes iniciais sÃ£o dadas por:
 $$x(0)=1,~~~~ y(0)=z(0)=0.$$
-Usando a teoria das Transformadas de Laplace, vamos obter a solução dada pelas funções $x(t)$, $y(t)$ e $z(t)$ quando $\alpha=1$, e $\gamma=2$. Calculamos a Transformada de Laplace do sistema usando a propriedade da linearidade \ref{prop_lin} e da derivada \ref{prop_der}:
+Usando a teoria das Transformadas de Laplace, vamos obter a soluÃ§Ã£o dada pelas funÃ§Ãµes $x(t)$, $y(t)$ e $z(t)$ quando $\alpha=1$, e $\gamma=2$. Calculamos a Transformada de Laplace do sistema usando a propriedade da linearidade \ref{prop_lin} e da derivada \ref{prop_der}:
 \begin{eqnarray*}
 sX(s)-x(0)&=&-\alpha X(s) \\
 sY(s)-y(0)&=&\alpha X(s)-\gamma Y(s)\\
 sZ(s)-z(0)&=&\gamma Y(s).
 \end{eqnarray*} 
-Da primeira equação, temos:
+Da primeira equaÃ§Ã£o, temos:
 \begin{equation}
 \label{eqX}X(s)=\frac{x(0)}{s+\alpha}=\frac{1}{s+1}.
 \end{equation}
-Da segunda equação, temos:
+Da segunda equaÃ§Ã£o, temos:
 $$
 Y(s)=\frac{\alpha X(s)}{s+\gamma}=\frac{\alpha x(0) }{(s+\gamma)(s+\alpha)}=\frac{1}{(s+1)(s+2)}.
 $$
-Da terceira equação temos:
+Da terceira equaÃ§Ã£o temos:
 $$
 Z(s)=\frac{\gamma Y(s)}{s}=\frac{2}{s(s+1)(s+2)}.
 $$
-Agora, podemos obter as funções $x(t)$, $y(t)$ e $z(t)$ através da Transformada Inversa de Laplace:
+Agora, podemos obter as funÃ§Ãµes $x(t)$, $y(t)$ e $z(t)$ atravÃ©s da Transformada Inversa de Laplace:
 $$
 x(t)=\mathcal{L}^{-1}\left\{X(s)\right\}=e^{-t}
 $$
@@ -383,7 +383,7 @@ onde usamos item 11 da tabela \ref{tab_trans_Lap_1} com $a=2$ e $b=-1$;
 z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s}\right\}\\&=&2\int_0^ty(\tau)d\tau\\
 &=&2\int_0^t\left(-e^{-2\tau}+e^{-\tau}\right)d\tau\\&=&2\left(\frac{e^{-2t}-1}{2}-\left(e^{-t}-1\right)\right)\\&=&e^{-2t}-2e^{-t}+1,
 \end{eqnarray*}
- onde usamos a propriedade da convolução \ref{prop_conv} na passagem da primeira para a segunda linha. A figura \ref{reacao} apresenta o gráfico de das funções $x(t)$, $y(t)$ e $z(t)$.
+ onde usamos a propriedade da convoluÃ§Ã£o \ref{prop_conv} na passagem da primeira para a segunda linha. A figura \ref{reacao} apresenta o grÃ¡fico de das funÃ§Ãµes $x(t)$, $y(t)$ e $z(t)$.
  \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=4cm, linewidth=1\pslinewidth}
@@ -404,7 +404,7 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
 \end{figure}
 
 
-\section{Exercícios}
+\section{ExercÃ­cios}
 \begin{Exercise}
 Considere o seguinte problema de valor inicial:
  
@@ -412,7 +412,7 @@ Considere o seguinte problema de valor inicial:
 x'(t)&=&-2x(t) +  y(t)\\
 y'(t)&=&\alpha x(t) - 2y(t)\\
 \end{eqnarray*}
-Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
+Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ Ã© uma constante real.
 \begin{itemize}
  \item[a)] Assinale a alternativa que indica o tipo de amortecimento do sistema dado para os valores de $\alpha$ dados respectivamente por $-1$, $0$, $1$ e $2$:
  \subitem(~~) Sem amortecimento, subamortecido, criticamente amortecido e superamortecido.
@@ -421,7 +421,7 @@ Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
  \subitem(~~) Superamortecido, superamortecido, criticamente amortecido e subamortecido.
  \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e subamortecido.
  \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e sem amortecimento.
-\item [b)] Use a Use a técnica da Transformada de Laplace para encontrar uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
+\item [b)] Use a Use a tÃ©cnica da Transformada de Laplace para encontrar uma expressÃ£o para $x(t)$ e $y(t)$ quando $\alpha=1$. 
 \end{itemize}
 \end{Exercise}
 
@@ -429,17 +429,17 @@ Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
 \begin{Exercise}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
 
 $$\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)$$
-onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
+onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ Ã© temperatura ambiente, considerada constante, $q(t)$ Ã© a potÃªncia de aquecimento e $\lambda$ Ã© uma constante relacionada Ã s trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a tÃ©cnicas das transformadas de Laplace, faÃ§a o que se pede:
 \begin{itemize}
  \item [a)] Mostre que $U(s)=\frac{50}{s}+\frac{Q(s)}{s+4}$.
- \item [b)] Calcule a temperatura $u(t)$ quando  $q(t)=100 \delta(t-1)$. Esboce o gráfico de $u(t)$.
- \item [c)] Suponha, agora, que a temperatura é regulada por um sistema de controle automático que aumenta a potência $q(t)$ sempre que a temperatura está abaixo da temperatura de ajuste e reduz a potência sempre que a temperatura se encontra acima da temperatura de ajuste. O sistema de controle automático reage conforme a seguinte equação:
+ \item [b)] Calcule a temperatura $u(t)$ quando  $q(t)=100 \delta(t-1)$. Esboce o grÃ¡fico de $u(t)$.
+ \item [c)] Suponha, agora, que a temperatura Ã© regulada por um sistema de controle automÃ¡tico que aumenta a potÃªncia $q(t)$ sempre que a temperatura estÃ¡ abaixo da temperatura de ajuste e reduz a potÃªncia sempre que a temperatura se encontra acima da temperatura de ajuste. O sistema de controle automÃ¡tico reage conforme a seguinte equaÃ§Ã£o:
  $$\frac{dq(t)}{dt} = \eta (u_a-u(t)).$$
- onde $u_a$ é a temperatura de ajuste e $\eta$ é uma constante positiva. Calcule o valor de $\eta$ para que o sistema resultante do acoplamente entre o modelo do forno e o sistema de controle automático seja criticamente amortecido. Mostre que $U(s)=\frac{200}{s}-\frac{150}{s+2}-\frac{300}{(s+2)^2}+\frac{q(0)}{(s+2)^2}$.
+ onde $u_a$ Ã© a temperatura de ajuste e $\eta$ Ã© uma constante positiva. Calcule o valor de $\eta$ para que o sistema resultante do acoplamente entre o modelo do forno e o sistema de controle automÃ¡tico seja criticamente amortecido. Mostre que $U(s)=\frac{200}{s}-\frac{150}{s+2}-\frac{300}{(s+2)^2}+\frac{q(0)}{(s+2)^2}$.
  \item[d)] Use a propriedade do valor final para obter $\displaystyle\lim_{t\to+\infty} u(t)$ no item c).
  \item[e)] Resolva o problema acoplado usando a constante $\eta$ calculada no item c, considerando $u_a=200$ e $q(0)=600$.
-  \item[f)] Observe que a solução obtida no item e) satisfaz a condição inicial e tem a propriedade $\displaystyle\lim_{t\to \infty}u(t)=u_a$. Verifique também que $q(0)=\lim_{t\to+\infty} q(t)$.
- \item [g)] Esboce o gráfico da $u(t)$ obtida no item d).
+  \item[f)] Observe que a soluÃ§Ã£o obtida no item e) satisfaz a condiÃ§Ã£o inicial e tem a propriedade $\displaystyle\lim_{t\to \infty}u(t)=u_a$. Verifique tambÃ©m que $q(0)=\lim_{t\to+\infty} q(t)$.
+ \item [g)] Esboce o grÃ¡fico da $u(t)$ obtida no item d).
  \end{itemize}
 \end{Exercise}
 \begin{Answer}
@@ -491,7 +491,7 @@ onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura am
 \end{Answer}
 
 
-\begin{Exercise} Considere o seguinte problema de valor inicial para um sistema de equações integro-diferenciais:
+\begin{Exercise} Considere o seguinte problema de valor inicial para um sistema de equaÃ§Ãµes integro-diferenciais:
 \begin{eqnarray*}
  x'(t) +x(t) = 2 y(t)\\
  x(t) = \int_0^t y(\tau) d\tau + 1

@@ -1,18 +1,18 @@
 \documentclass[Main.tex]{subfiles}
 \begin{document}
-\chapter{Tabelas de propriedades, transformadas e séries}
+\chapter{Tabelas de propriedades, transformadas e sÃ©ries}
 \section{Tabelas de Transformadas de Laplace}{\label{ap_A}}
-As principais transformadas de Laplace e suas inversas estão tabelas nas tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2}. Algumas constantes e funções especiais que são usadas nas tabelas são as seguintes:
+As principais transformadas de Laplace e suas inversas estÃ£o tabelas nas tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2}. Algumas constantes e funÃ§Ãµes especiais que sÃ£o usadas nas tabelas sÃ£o as seguintes:
 \begin{description}
-\item[a)] Função Gamma
+\item[a)] FunÃ§Ã£o Gamma
 $$
 \Gamma(k)=\int_0^\infty e^{-x}x^{k-1}dx, \qquad (k>0)
 $$
-\item[b)] Função Bessel modificada de ordem $\nu$
+\item[b)] FunÃ§Ã£o Bessel modificada de ordem $\nu$
 $$
 I_\nu(x)=\sum_{m=0}^\infty \frac{1}{m!\Gamma(m+\nu+1)}\left(\frac{x}{2}\right)^{2m+\nu}
 $$
-\item[c)] Função Bessel de ordem $0$
+\item[c)] FunÃ§Ã£o Bessel de ordem $0$
 $$
 J_0(x)=1-\frac{x^2}{2^2(1!)^2}+\frac{x^4}{2^4(2!)^2}-\frac{x^6}{2^6(3!)^2}+\cdots
 $$
@@ -161,23 +161,23 @@ A tabela \ref{prop_transf_Lap} apresenta as principais propriedades da transform
 \hline
 6.& Transformada da Delta de Dirac &$\displaystyle \mathcal{L}\left\{\delta(t-a)\right\}=e^{-as} $ \\ 
 \hline
-7.& Teorema da Convolução &\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{(f*g)(t)\right\}=F(s)G(s), $ \\onde \quad $\displaystyle (f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau $\end{tabu} \\ 
+7.& Teorema da ConvoluÃ§Ã£o &\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{(f*g)(t)\right\}=F(s)G(s), $ \\onde \quad $\displaystyle (f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau $\end{tabu} \\ 
 \hline
-8.& Transformada de funções periódicas&$\displaystyle \mathcal{L}\left\{f(t)\right\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-s\tau}f(\tau)d\tau $ \\ 
+8.& Transformada de funÃ§Ãµes periÃ³dicas&$\displaystyle \mathcal{L}\left\{f(t)\right\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-s\tau}f(\tau)d\tau $ \\ 
 \hline
 9.& Derivada da transformada &$\displaystyle \mathcal{L}\left\{tf(t)\right\}=-\frac{dF(s)}{ds} $ \\ 
 \hline
 10.& Integral da transformada &$\displaystyle \mathcal{L}\left\{\frac{f(t)}{t}\right\}=\int_s^\infty F(\hat{s})d\hat{s} $ \\ 
 \hline
 \end{tabu}}
-\caption{\label{prop_transf_Lap}Tabela de séries de potências}
+\caption{\label{prop_transf_Lap}Tabela de sÃ©ries de potÃªncias}
 \end{center}
 \end{small}
 \end{table}	
 
 \newpage
-\section{Tabela de séries de potência}{\label{ap_A3}}
-A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis.
+\section{Tabela de sÃ©ries de potÃªncia}{\label{ap_A3}}
+A tabela \ref{series_de_potencias} apresenta algumas sÃ©ries de potÃªncia Ãºteis.
 
 \begin{table}[H]
 \begin{small}
@@ -185,7 +185,7 @@ A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis.
 {\tabulinesep=1.2mm
 \begin{tabu}{|l|c|c|}
 \hline
-& Série &Intervalo de convergência \\ 
+& SÃ©rie &Intervalo de convergÃªncia \\ 
 \hline
 1.& $\displaystyle \frac{1}{1-x}=\sum_{n=0}^\infty x^n=1+x+x^2+x^3+\cdots,$ &$\displaystyle -1<x<1$ \\ 
 \hline
@@ -208,7 +208,7 @@ A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis.
 10.& $\displaystyle (1+x)^m=1+\sum_{n=1}^\infty \frac{m(m-1)\cdots (m-n+1)}{n!}x^n$ &$\displaystyle -1<x<1$, $m\neq 0,1,2,...$ \\ 
 \hline
 \end{tabu}}
-\caption{\label{series_de_potencias}Tabela de séries de potências}
+\caption{\label{series_de_potencias}Tabela de sÃ©ries de potÃªncias}
 \end{center}
 \end{small}
 \end{table}	

@@ -1,9 +1,18 @@
-\documentclass{book}
+%Este trabalho est√° licenciado sob a Licen√ßa Creative Commons Atribui√ß√£o-CompartilhaIgual 3.0 N√£o Adaptada. Para ver uma c√≥pia desta licen√ßa, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATEN√á√ÉO
+%
+% POR SEGURAN√áA, N√ÉO EDITE ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{book}
 
  \usepackage{tabu}
 \usepackage{ccicons}
 \usepackage{subfiles}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
 %\usepackage[a5paper]{geometry}
 \usepackage{amsfonts}
@@ -32,7 +41,7 @@
 \renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
 \renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin\medskip}}}
 
-\renewcommand{\AnswerHeader}{\medskip{\textbf{Resposta do exercÌcio \ExerciseHeaderNB}\smallskip}:~}
+\renewcommand{\AnswerHeader}{\medskip{\textbf{Resposta do exerc√≠cio \ExerciseHeaderNB}\smallskip}:~}
 
 
 
@@ -50,26 +59,30 @@
 \newcommand{\sen}{\operatorname{sen}}
 
 
-\title{Transformada de Laplace}
-\author{F·bio Azevedo, Esequia Sauter, Irene Maria Fonseca Strauch}
-\date{\today}
+
 \begin{document}
 
+\frontmatter
+\title{Transformada de Laplace}
+\date{\today}
+\author{}
 \maketitle
 
-
-\chapter*{LicenÁa}
-Este material est· licenciado por seus autores sob a licenÁa AtribuiÁ„o-CompartilhaIgual 3.0 N„o Adaptada (CC BY-SA 3.0) %ver \url{https://creativecommons.org/licenses/by-sa/3.0/deed.pt}.
-
-%\ccbysa 3.0
+\include{organizadores}
+\include{licenca}
+%\include{nota_organizadores}
+%\include{prefacio}
 
 
 
 
 
 \tableofcontents
+
 %\listoffigures
 %\listoftables
+
+\mainmatter
 
 
 \subfile{./cap_introducao/cap_introducao.tex}
@@ -81,12 +94,12 @@ Este material est· licenciado por seus autores sob a licenÁa AtribuiÁ„o-Comparti
 \subfile{./cap_sistemas/cap_sistemas.tex}
 
 \appendix
-\subfile{./apendice/apendice.tex}
+%\subfile{./apendice/apendice.tex}
 
 
-\chapter*{Resposta dos ExercÌcios}
-\addcontentsline{toc}{chapter}{Respostas dos ExercÌcios}
-Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualizaÁ„o do livro, as respostas podem conter imprecisıes e erros.
+\chapter*{Resposta dos Exerc√≠cios}
+\addcontentsline{toc}{chapter}{Respostas dos Exerc√≠cios}
+Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualiza√ß√£o do livro, as respostas podem conter imprecis√µes e erros.
 \shipoutAnswer  
 
 

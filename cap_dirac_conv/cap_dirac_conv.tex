@@ -1,32 +1,32 @@
 \documentclass[Main.tex]{subfiles}
 \begin{document}
-\chapter{A funÁ„o Delta de Dirac e a propriedade da convoluÁ„o}
+\chapter{A fun√ß√£o Delta de Dirac e a propriedade da convolu√ß√£o}
 
-\section{A funÁ„o Delta de Dirac}
-Muitos fenÙmenos fÌsicos exigem a representaÁ„o de uma forÁa muito grande em um intervalo de tempo muito pequeno, por exemplo:
+\section{A fun√ß√£o Delta de Dirac}
+Muitos fen√¥menos f√≠sicos exigem a representa√ß√£o de uma for√ßa muito grande em um intervalo de tempo muito pequeno, por exemplo:
 \begin{itemize}
- \item um circuito elÈtrico recebe uma forÁa eletromotriz grande em um curto intervalo de tempo.
- \item um sistema massa-mola È atingido por uma martelo.
- \item uma bola de futebol parada recebe um chute, ou seja, uma forÁa quase instant‚nea, que a coloca em movimento.
- \item um avi„o È atingido por um raio.
+ \item um circuito el√©trico recebe uma for√ßa eletromotriz grande em um curto intervalo de tempo.
+ \item um sistema massa-mola √© atingido por uma martelo.
+ \item uma bola de futebol parada recebe um chute, ou seja, uma for√ßa quase instant√¢nea, que a coloca em movimento.
+ \item um avi√£o √© atingido por um raio.
 \end{itemize}
-Para representar essa forÁa, vamos tomar a funÁ„o pulso unit·rio em um curto intervalo de tempo $[-\epsilon,\epsilon]$ em torno da origem, isto È, um pulso com integral unit·ria:
+Para representar essa for√ßa, vamos tomar a fun√ß√£o pulso unit√°rio em um curto intervalo de tempo $[-\epsilon,\epsilon]$ em torno da origem, isto √©, um pulso com integral unit√°ria:
 $$
 \delta_\epsilon(t)=\frac{1}{2\epsilon}\left(u(t+\epsilon)-u(t-\epsilon)\right)=\left\{\begin{array}{ll}0,&t<-\epsilon\\ \frac{1}{2\epsilon},&-\epsilon<t<\epsilon\\0,&t>\epsilon.\end{array}\right.
 $$
-Um pulso unit·rio em torno de $t=a$ È representado por
+Um pulso unit√°rio em torno de $t=a$ √© representado por
 \begin{equation}{\label{def_delta_dirac}}
 \delta_\epsilon(t-a)=\frac{1}{2\epsilon}\left(u(t-(a-\epsilon))-u(t-(a+\epsilon))\right)=\left\{\begin{array}{ll}0,&t<a-\epsilon\\ \frac{1}{2\epsilon},&a-\epsilon<t<a+\epsilon\\0,&t>a+\epsilon.\end{array}\right.
 \end{equation}
-Observe que $\int_{-\infty}^\infty\delta_\epsilon(t-a)=1$ para qualquer $\epsilon>0$. A figura \ref{fig_delta_dirac} apresenta o gr·fico de $\delta_\epsilon(t-a)$ para $a>0$ e $\epsilon=1$, $\epsilon=\frac{1}{2}$, $\epsilon=\frac{1}{4}$, $\epsilon=\frac{1}{8}$ e $\epsilon=\frac{1}{12}$.
+Observe que $\int_{-\infty}^\infty\delta_\epsilon(t-a)=1$ para qualquer $\epsilon>0$. A figura \ref{fig_delta_dirac} apresenta o gr√°fico de $\delta_\epsilon(t-a)$ para $a>0$ e $\epsilon=1$, $\epsilon=\frac{1}{2}$, $\epsilon=\frac{1}{4}$, $\epsilon=\frac{1}{8}$ e $\epsilon=\frac{1}{12}$.
 
-A funÁ„o que representa uma grande forÁa instant‚nea È chamada de {\bf funÁ„o impulso} ou {\bf funÁ„o Delta de Dirac} e pode ser definida pelo limite das funÁıes pulsos:
+A fun√ß√£o que representa uma grande for√ßa instant√¢nea √© chamada de {\bf fun√ß√£o impulso} ou {\bf fun√ß√£o Delta de Dirac} e pode ser definida pelo limite das fun√ß√µes pulsos:
 $$
 \delta(t-a)=\lim_{\epsilon\to 0}\delta_\epsilon(t-a).
 $$
-Este limite n„o pode ser interpretado pontualmente, isto È, como o limite usual de funÁıes reais, mas apenas no contexto de uma integral, como veremos.
+Este limite n√£o pode ser interpretado pontualmente, isto √©, como o limite usual de fun√ß√µes reais, mas apenas no contexto de uma integral, como veremos.
 
-A figura \ref{fig_delta_dirac} apresenta o gr·fico de $\delta_\epsilon(t-a)$ quando $\epsilon$ diminui e uma representaÁ„o gr·fica para $\delta(t-a)$.
+A figura \ref{fig_delta_dirac} apresenta o gr√°fico de $\delta_\epsilon(t-a)$ quando $\epsilon$ diminui e uma representa√ß√£o gr√°fica para $\delta(t-a)$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -122,14 +122,14 @@ A figura \ref{fig_delta_dirac} apresenta o gr·fico de $\delta_\epsilon(t-a)$ qua
 \caption{\label{fig_delta_dirac}}
 \end{figure}
 
-\begin{obs}A funÁ„o delta de Dirac pode ser definida como limite de outras sequÍncias de funÁıes com propriedades an·logas a sequÍncia de pulsos. Por exemplo, podemos definir $\delta(t)$ como limite das funÁıes
+\begin{obs}A fun√ß√£o delta de Dirac pode ser definida como limite de outras sequ√™ncias de fun√ß√µes com propriedades an√°logas a sequ√™ncia de pulsos. Por exemplo, podemos definir $\delta(t)$ como limite das fun√ß√µes
 $$
 f_\epsilon(t)=\frac{1}{\epsilon\sqrt{\pi}}e^{-\frac{t^2}{\epsilon^2}}
 $$
 \end{obs}
 
 
-A funÁ„o Impulso È zero em todo ponto, exceto em $t=a$:
+A fun√ß√£o Impulso √© zero em todo ponto, exceto em $t=a$:
 $$
 \delta(t-a)=\left\{\begin{array}{ll}0,&t\neq a\\\infty,&t=a  \end{array}\right.
 $$
@@ -138,13 +138,13 @@ $$
 \int_{-\infty}^\infty\delta(t-a)dt=1
 $$
 
-A funÁ„o Delta de Dirac deve ser sempre compreendida como o limite de funÁıes reais no contexto de uma integraÁ„o, isto conduz ‡ chamada  {\bf propriedade da filtragem}, que define totalmente a Delta da Dirac:
+A fun√ß√£o Delta de Dirac deve ser sempre compreendida como o limite de fun√ß√µes reais no contexto de uma integra√ß√£o, isto conduz √† chamada  {\bf propriedade da filtragem}, que define totalmente a Delta da Dirac:
 
-Se $f(t)$ for um funÁ„o contÌnua em torno de $t=a$, ent„o
+Se $f(t)$ for um fun√ß√£o cont√≠nua em torno de $t=a$, ent√£o
 \begin{equation}{\label{prop_filtragem_dirac}}
 \int_{-\infty}^\infty \delta(t-a)f(t)dt=f(a). 
 \end{equation}
-Para chegar a esta conclus„o, definimos $F(t)=\int_a^t f(\tau)d\tau$ e calculamos:
+Para chegar a esta conclus√£o, definimos $F(t)=\int_a^t f(\tau)d\tau$ e calculamos:
 \begin{eqnarray*}
 \int_{-\infty}^\infty \delta(t-a)f(t)dt&=&\lim_{\varepsilon\to 0+}
 \int_{-\infty}^\infty \delta_\varepsilon(t-a)f(t)dt\\
@@ -153,12 +153,12 @@ Para chegar a esta conclus„o, definimos $F(t)=\int_a^t f(\tau)d\tau$ e calculamo
 &=&F'(0)=f(a).
 \end{eqnarray*}
 
-\subsection{Delta de Dirac como derivada distribucional da funÁ„o Heaviside}
-Na equaÁ„o (\ref{def_delta_dirac}) definimos a funÁ„o Delta de Dirac como
+\subsection{Delta de Dirac como derivada distribucional da fun√ß√£o Heaviside}
+Na equa√ß√£o (\ref{def_delta_dirac}) definimos a fun√ß√£o Delta de Dirac como
 $$
 \delta(t-a)=\lim_{\epsilon\to 0}\frac{1}{2\epsilon}\left(u(t-(a-\epsilon))-u(t-(a+\epsilon))\right).
 $$
-Por outro lado, usamos a definiÁ„o de derivada para escrever
+Por outro lado, usamos a defini√ß√£o de derivada para escrever
 $$
 \lim_{\epsilon\to 0}\frac{1}{2\epsilon}\left(u((t-a)+\epsilon))-u((t-a)-\epsilon))\right)=\frac{d}{dt}u(t-a)
 $$
@@ -166,9 +166,9 @@ ou seja,
 $$
 \delta(t-a)=\frac{d}{dt}u(t-a).
 $$
-Observe que as funÁıes de Heaviside e de Dirac n„o s„o funÁıes no sentido do c·lculo diferencial e integral. Naturalmente, a derivada acima tambÈm vale somente num sentido generalizado, mas È coerente quando olhamos a funÁ„o de Heaviside como limite de funÁıes rampas (ver figura \ref{fig_Heaviside_1}), pois na origem a derivada tende ao infinito.
+Observe que as fun√ß√µes de Heaviside e de Dirac n√£o s√£o fun√ß√µes no sentido do c√°lculo diferencial e integral. Naturalmente, a derivada acima tamb√©m vale somente num sentido generalizado, mas √© coerente quando olhamos a fun√ß√£o de Heaviside como limite de fun√ß√µes rampas (ver figura \ref{fig_Heaviside_1}), pois na origem a derivada tende ao infinito.
 
-A transformada de Laplace de funÁ„o Delta de Dirac È obtido pela propriedade da filtragem dada na equaÁ„o (\ref{prop_filtragem_dirac}):
+A transformada de Laplace de fun√ß√£o Delta de Dirac √© obtido pela propriedade da filtragem dada na equa√ß√£o (\ref{prop_filtragem_dirac}):
 \begin{equation}{\label{prop_trans_delta_dirac}}
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
@@ -182,8 +182,8 @@ $$\left\{\begin{array}{l}
  $$
 \end{prob}
 
-\section{AplicaÁ„o: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
-Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tens„o $V(t)$ aplicada do tipo pulso,
+\section{Aplica√ß√£o: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
+Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tens√£o $V(t)$ aplicada do tipo pulso,
 $$
 V(t)=V_0\left(u(t-a)-u(t-b)\right).
 $$
@@ -221,17 +221,17 @@ O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
 \begin{equation}{\label{modelo_corrente}}
 Li'(t)+ Ri(t)+\frac{1}{C}q(t)=V_0\left(u(t-a)-u(t-b)\right),
 \end{equation}
-onde $q(t)$ È a carga no capacitor, $\frac{1}{C}q(t)$ È a tens„o no capacitor de capacit‚ncia $C$, $Ri(t)$ È a tens„o no resistor de resistÍncia $R$ e $Li'(t)$ È a tens„o no indutor de indut‚ncia $L$. Considere as condiÁıes iniciais $i(0)=0$ e $q(0)=0$.
+onde $q(t)$ √© a carga no capacitor, $\frac{1}{C}q(t)$ √© a tens√£o no capacitor de capacit√¢ncia $C$, $Ri(t)$ √© a tens√£o no resistor de resist√™ncia $R$ e $Li'(t)$ √© a tens√£o no indutor de indut√¢ncia $L$. Considere as condi√ß√µes iniciais $i(0)=0$ e $q(0)=0$.
 
-Dado que $\frac{dq(t)}{dt}=i(t)$, derivamos a equaÁ„o (\ref{modelo_corrente}) para obter a seguinte equaÁ„o diferencial:
+Dado que $\frac{dq(t)}{dt}=i(t)$, derivamos a equa√ß√£o (\ref{modelo_corrente}) para obter a seguinte equa√ß√£o diferencial:
 \begin{equation}{\label{modelo_corrente_2}}
 Li''(t)+ Ri'(t)+\frac{1}{C}i(t)=V_0\left(\delta(t-a)-\delta(t-b)\right),
 \end{equation}
-onde usamos que a derivada da funÁ„o de Heaviside È a funÁ„o delta de Dirac. As condiÁıes iniciais para a equaÁ„o (\ref{modelo_corrente_2}) s„o $i'(0)=0$ e $i(0)=0$. Com o objetivo de resolver a problema de valor inicial, aplicamos a transformada de Laplace para obter a equaÁ„o subsidi·ria
+onde usamos que a derivada da fun√ß√£o de Heaviside √© a fun√ß√£o delta de Dirac. As condi√ß√µes iniciais para a equa√ß√£o (\ref{modelo_corrente_2}) s√£o $i'(0)=0$ e $i(0)=0$. Com o objetivo de resolver a problema de valor inicial, aplicamos a transformada de Laplace para obter a equa√ß√£o subsidi√°ria
 \begin{equation*}
 Ls^2I(s)+ RsI(s)+\frac{1}{C}I(s)=V_0\left(e^{-as}-e^{-bs}\right),
 \end{equation*}
-que tem soluÁ„o
+que tem solu√ß√£o
 \begin{eqnarray*}
 I(s)&=&\frac{V_0\left(e^{-as}-e^{-bs}\right)}{Ls^2+Rs+\frac{1}{C}}\\
 &=&\frac{1}{L}\frac{V_0\left(e^{-as}-e^{-bs}\right)}{\left(s+\frac{R}{2L}\right)^2-\left(\frac{R}{2L}\right)^2+\frac{1}{LC}}\\
@@ -251,7 +251,7 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
  $$
  i(t)=\frac{10}{3}\left(u(t-1)e^{-(t-1)}\sen\left(3 (t-1)\right)-u(t-5) e^{-(t-5)}\sen\left(3 (t-5)\right)\right).
  $$
- O gr·fico da corrente È apresentado na figura \ref{fig_circ_RCL_1}.
+ O gr√°fico da corrente √© apresentado na figura \ref{fig_circ_RCL_1}.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -285,7 +285,7 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
  &=&\frac{5}{\sqrt{3}}u(t-1)\left(e^{\left(\sqrt{3}-2\right) (t-1)}-e^{-\left(\sqrt{3}+2\right) (t-1)}\right)+\\
  &+&\frac{5}{\sqrt{3}}u(t-5)\left(e^{\left(\sqrt{3}-2\right) (t-5)}-e^{-\left(\sqrt{3}+2\right) (t-5)}\right)
  \end{eqnarray*}
- O gr·fico da corrente È apresentado na figura \ref{fig_circ_RCL_2}.
+ O gr√°fico da corrente √© apresentado na figura \ref{fig_circ_RCL_2}.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -317,7 +317,7 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
  $$
  i(t)=10\left(u(t-1)e^{-(t-1)} (t-1)-u(t-5)e^{-(t-5)} (t-5)\right).
  $$
-O gr·fico da corrente È apresentado na figura \ref{fig_circ_RCL_3}.
+O gr√°fico da corrente √© apresentado na figura \ref{fig_circ_RCL_3}.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -343,8 +343,8 @@ O gr·fico da corrente È apresentado na figura \ref{fig_circ_RCL_3}.
 
 \end{itemize}
 
-\section{AplicaÁ„o: c·lculo da deflex„o em vigas sujeitas a cargas concentradas}
-Considere uma viga el·stica horizontal de comprimento $L$ sob a aÁ„o de forÁas verticais. Colocamos o eixo horizontal $x$ com origem no extremo a esquerda da viga e, portanto, $x=L$ È o outro extremo. Supomos que a viga est· sujeita a uma carga $W(x)$ que provoca uma deflex„o em cada ponto $x\in[0,L]$. Ent„o, para pequenas deflexıes podemos aproximar a curvatura $k(x)$ pela variaÁ„o instant‚nea de $\theta(x)$, onde $\theta(x)$ È o ‚ngulo entre o eixo $x$ e a tangente, ou seja, 
+\section{Aplica√ß√£o: c√°lculo da deflex√£o em vigas sujeitas a cargas concentradas}
+Considere uma viga el√°stica horizontal de comprimento $L$ sob a a√ß√£o de for√ßas verticais. Colocamos o eixo horizontal $x$ com origem no extremo a esquerda da viga e, portanto, $x=L$ √© o outro extremo. Supomos que a viga est√° sujeita a uma carga $W(x)$ que provoca uma deflex√£o em cada ponto $x\in[0,L]$. Ent√£o, para pequenas deflex√µes podemos aproximar a curvatura $k(x)$ pela varia√ß√£o instant√¢nea de $\theta(x)$, onde $\theta(x)$ √© o √¢ngulo entre o eixo $x$ e a tangente, ou seja, 
 \begin{equation}{\label{def_viga01}}
 k(x)=\frac{d\theta(x)}{dx}.
 \end{equation}
@@ -356,19 +356,19 @@ e, para $\theta(x)$ pequeno, $\tan(\theta(x))\approx \theta(x)$, temos:
 \begin{equation}{\label{def_viga02}}
 \frac{dy(x)}{dx}=\theta(x),
 \end{equation}
-Derivamos a equaÁ„o (\ref{def_viga02}) e substituÌmos na equaÁ„o (\ref{def_viga01}) para obter
+Derivamos a equa√ß√£o (\ref{def_viga02}) e substitu√≠mos na equa√ß√£o (\ref{def_viga01}) para obter
 \begin{equation}{\label{def_viga03}}
 \frac{d^2y(x)}{dx^2}=k(x).
 \end{equation}
-Por outro lado, a lei de Hooke para materiais nos d· $k(x)=\frac{M(x)}{EI}$, onde $E$ È o mÛdulo de Young, $I$ È o momento de inÈrcia da viga e $M(x)$ È o momento fletor. Assim, substituindo na equaÁ„o (\ref{def_viga03}),
+Por outro lado, a lei de Hooke para materiais nos d√° $k(x)=\frac{M(x)}{EI}$, onde $E$ √© o m√≥dulo de Young, $I$ √© o momento de in√©rcia da viga e $M(x)$ √© o momento fletor. Assim, substituindo na equa√ß√£o (\ref{def_viga03}),
 \begin{equation}{\label{def_viga04}}
 \frac{d^2y(x)}{dx^2}=\frac{M(x)}{EI}.
 \end{equation}
-A variaÁ„o do momento de inÈrcia $M(x)$ È a forÁa de cisalamento $V(x)$:
+A varia√ß√£o do momento de in√©rcia $M(x)$ √© a for√ßa de cisalamento $V(x)$:
 $$
 \frac{d}{dx}M(x)=V(x)
 $$
-e a variaÁ„o da forÁa de cisalamento È a carga:
+e a varia√ß√£o da for√ßa de cisalamento √© a carga:
 $$
 \frac{d}{dx}V(x)=W(x).
 $$
@@ -376,24 +376,24 @@ Logo,
 \begin{equation}{\label{def_viga05}}
 \frac{d^2}{dx^2}M(x)=W(x).
 \end{equation}
-Derivamos a equaÁ„o (\ref{def_viga04}) duas vezes e substituÌmos na equaÁ„o (\ref{def_viga05}) para obter a equaÁ„o de Euler-Bernoulli:
+Derivamos a equa√ß√£o (\ref{def_viga04}) duas vezes e substitu√≠mos na equa√ß√£o (\ref{def_viga05}) para obter a equa√ß√£o de Euler-Bernoulli:
 \begin{equation}
 \label{eq}\frac{d^4}{dx^4}y(x)=\frac{1}{EI}W(x).
 \end{equation}
 Consideraremos aqui uma viga engastada, ou seja: $$y(0)=y'(0)=y(L)=y'(L)=0.$$
-A carga est· concentrada na posiÁ„o $x=\frac{L}{3}$ e tem intensidade $P_0$, sendo modelada pela seguinte express„o:
+A carga est√° concentrada na posi√ß√£o $x=\frac{L}{3}$ e tem intensidade $P_0$, sendo modelada pela seguinte express√£o:
 $$W(x)=P_0\delta\left(x-\frac{L}{3}\right).$$
 Aplicando a transformada de Laplace em (\ref{eq}) e usando o fato que $\mathcal{L}\left(\delta\left(x-\frac{L}{3}\right)\right)=e^{-\frac{L}{3}s}$, obtemos
 $$s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)=\frac{P_0}{EI}e^{-\frac{L}{3}s}$$
-Substituimos $y(0)=y'(0)=0$, $y''(0)=C_1$ e $y'''(0)=C_2$ onde $C_1$ e $C_2$ s„o constantes a determinar:
+Substituimos $y(0)=y'(0)=0$, $y''(0)=C_1$ e $y'''(0)=C_2$ onde $C_1$ e $C_2$ s√£o constantes a determinar:
 $$s^4Y(s)-sC_1-C_2=\frac{P_0}{EI}e^{-\frac{L}{3}s}$$
 finalmente:
 $$Y(s)=\frac{C_1}{s^3}+\frac{C_2}{s^4}+\frac{P_0}{EI}\frac{e^{-\frac{L}{3}s}}{s^4}$$
-e recuperamos a soluÁ„o do domÌnio $x$ atravÈs da transformada inversa de Laplace:
+e recuperamos a solu√ß√£o do dom√≠nio $x$ atrav√©s da transformada inversa de Laplace:
 $$y(x)=\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!}u(x-L/3).$$
-A express„o para $y(x)$ pode ser escrita como funÁ„o definida por partes na forma:
+A express√£o para $y(x)$ pode ser escrita como fun√ß√£o definida por partes na forma:
 $$y(x)=\left\{\begin{array}{ll}\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3,&0\leq x\leq\frac{L}{3} \\ \frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!},&\frac{L}{3}<x\leq L .\end{array}\right.$$
-Para calcular o valor das constantes $C_1$ e $C_2$ calculamos  $y(L)$ e $y'(L)$ usando a segunda parte da funÁ„o $y(x)$:
+Para calcular o valor das constantes $C_1$ e $C_2$ calculamos  $y(L)$ e $y'(L)$ usando a segunda parte da fun√ß√£o $y(x)$:
 \begin{eqnarray*}
 0=y(L)&=&\frac{C_1}{2}L^2+\frac{C_2}{6}L^3+\frac{4}{81}\frac{P_0}{EI}L^3\\
 0=y'(L)&=&C_1 L+\frac{C_2}{2}L^2+\frac{2}{9}\frac{P_0}{EI}L^2
@@ -426,7 +426,7 @@ C_2\end{array}
 -\frac{2}{9}\frac{P_0}{EI}L^2\end{array}
 \right],
 $$
-o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figura \ref{viga} apresenta o gr·fico da funÁ„o $y(x)$ quando $L=5$ e $\frac{P_0}{EI}=1$.
+o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figura \ref{viga} apresenta o gr√°fico da fun√ß√£o $y(x)$ quando $L=5$ e $\frac{P_0}{EI}=1$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -449,28 +449,28 @@ o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figur
 \end{center}
 \caption{\label{viga}}
 \end{figure}
-\section{AplicaÁ„o: metabolismo de uma medicaÁ„o}
-Durante um perÌodo de consumo de uma medicaÁ„o, a concentraÁ„o da subst‚ncia ingerida na corrente sanguinea evolui segundo um modelo simples da seguinte forma:
+\section{Aplica√ß√£o: metabolismo de uma medica√ß√£o}
+Durante um per√≠odo de consumo de uma medica√ß√£o, a concentra√ß√£o da subst√¢ncia ingerida na corrente sanguinea evolui segundo um modelo simples da seguinte forma:
 \begin{itemize}
- \item No caso de ausÍncia de dosagens, a variaÁ„o da concentraÁ„o È proporcional a concentraÁ„o.
+ \item No caso de aus√™ncia de dosagens, a varia√ß√£o da concentra√ß√£o √© proporcional a concentra√ß√£o.
  \item  O organismo metaboliza o medicamento com uma taxa $\tau$.
-  \item As doses de medicamento s„o liberadas e entra na corrente sanguinea instantaneamente e homogeneamente.
+  \item As doses de medicamento s√£o liberadas e entra na corrente sanguinea instantaneamente e homogeneamente.
 \end{itemize}
-O modelo que descreve esse fenÙmeno È
+O modelo que descreve esse fen√¥meno √©
 $$
 c'(t)+\frac{1}{\tau}c(t)=x(t),\qquad t>0
 $$
-onde $c(t)$ È a concentraÁ„o e $x(t)$ representa a dosagem ao longo do tempo $t$. Em geral, as dosagens n„o s„o ˙nicas e s„o tomadas periodicamente. Seja $c_0$ a concentraÁ„o administrada instantaneamente a cada perÌodo $T$, ent„o
+onde $c(t)$ √© a concentra√ß√£o e $x(t)$ representa a dosagem ao longo do tempo $t$. Em geral, as dosagens n√£o s√£o √∫nicas e s√£o tomadas periodicamente. Seja $c_0$ a concentra√ß√£o administrada instantaneamente a cada per√≠odo $T$, ent√£o
 $$
 x(t)=c_0\left(\delta(t)+\delta(t-T)+\delta(t-2T)+\delta(t-3T)+\cdots\right)
 $$
-Supondo que $c(0)=0$, ou seja, inicialmente n„o havia subst‚ncia no organismo, vamos calcular $c(t)$. 
+Supondo que $c(0)=0$, ou seja, inicialmente n√£o havia subst√¢ncia no organismo, vamos calcular $c(t)$. 
 
-ComeÁamos aplicando a transformada de Laplace:
+Come√ßamos aplicando a transformada de Laplace:
 $$
 sC(s)+\frac{1}{\tau}C(s)=c_0\left(1+e^{-sT}+e^{-2sT}+e^{-3sT}+\cdots\right)=c_0\sum_{n=0}^\infty\left( e^{-sT}\right)^n.
 $$
-%Usando a soma de sÈrie geomÈtrica, temos:
+%Usando a soma de s√©rie geom√©trica, temos:
 %$$
 %C(s)\left(\frac{\tau s+1}{\tau}\right)=c_0 \sum_{n=0}^\infty\left( e^{-sT}\right)^n
 %$$
@@ -483,7 +483,7 @@ Calculamos a transformada inversa usando a propriedade do deslocamento no eixo $
 c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
 &=&c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}u(t-T)+e^{\frac{2T}{\tau}}u(t-2T)+e^{\frac{3T}{\tau}}u(t-3T)+\cdots\right)
 \end{eqnarray*}
- O gr·fico da concentraÁ„o È apresentado na figura \ref{concentracao}, usando $c_0=1$, $\tau=1$ e $T=1$.
+ O gr√°fico da concentra√ß√£o √© apresentado na figura \ref{concentracao}, usando $c_0=1$, $\tau=1$ e $T=1$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -520,7 +520,7 @@ c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{
 \end{center}
 \caption{\label{concentracao}}
 \end{figure}
-O salto em cada descontinuidade È exatamente $c_0$, pois os limites laterais s„o
+O salto em cada descontinuidade √© exatamente $c_0$, pois os limites laterais s√£o
 \begin{eqnarray*}
 \lim_{t\to nT^-}c(t)&=&\lim_{t\to nT^-}\left(c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
@@ -532,12 +532,12 @@ e
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}+ e^{\frac{nT}{\tau}}\right)\right)\\
 &=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),\\
 \end{eqnarray*}
-que possuem diferenÁa igual a $c_0$. 
+que possuem diferen√ßa igual a $c_0$. 
 
-Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condiÁ„o inicial dada, que È $c(0)=0$. Apesar de parecer estranho, n„o est· errado. Tudo È consequÍncia da presenÁa do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto ser· discutido na seÁ„o \ref{problemas_na_origem}.
+Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condi√ß√£o inicial dada, que √© $c(0)=0$. Apesar de parecer estranho, n√£o est√° errado. Tudo √© consequ√™ncia da presen√ßa do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto ser√° discutido na se√ß√£o \ref{problemas_na_origem}.
 
 \section{Problemas na origem}\label{problemas_na_origem}
-Para entender melhor esse fenÙmeno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
+Para entender melhor esse fen√¥meno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
 \begin{equation*}
 \left\{
 \begin{array}{rcl}
@@ -554,11 +554,11 @@ sY(s)-y(0)+Y(s)=1
 ou seja, $Y(s)=\frac{1}{s+1}$, o que implica
 $$y(t)=e^{-t}.$$
 
-Observamos que $y(0)=1\neq 0$, ou seja, a condiÁ„o inicial n„o È satisfeita.
+Observamos que $y(0)=1\neq 0$, ou seja, a condi√ß√£o inicial n√£o √© satisfeita.
 
-Para entendermos o que est· acontecendo, devemos lembrar que a Transformada de Laplace sÛ produz a soluÁ„o para $t>0$ e interpretar $y(t)$ como
+Para entendermos o que est√° acontecendo, devemos lembrar que a Transformada de Laplace s√≥ produz a solu√ß√£o para $t>0$ e interpretar $y(t)$ como
 $$y(t)=u(t)e^{-t}.$$
-Desta forma $y(0)$ simplesmente n„o est· definido. De fato, para compreender esse comportamento, vamos definir um problema auxiliar colocando no lugar da funÁ„o delta de Dirac uma funÁ„o pulso:
+Desta forma $y(0)$ simplesmente n√£o est√° definido. De fato, para compreender esse comportamento, vamos definir um problema auxiliar colocando no lugar da fun√ß√£o delta de Dirac uma fun√ß√£o pulso:
 \begin{equation*}
 \left\{
 \begin{array}{rcl}
@@ -567,11 +567,11 @@ y(0)&=&0
 \end{array}
 \right.
 \end{equation*}
-onde $\varepsilon$ È uma constante positiva pequena. Sabemos que o termo $$\frac{u(t)-u(t-\varepsilon)}{\varepsilon}$$ converge para $\delta(t)$ quando $\varepsilon \to 0+$. Aplicando a Transformada de Laplace e resolvendo para $Y(s)$, temos:
+onde $\varepsilon$ √© uma constante positiva pequena. Sabemos que o termo $$\frac{u(t)-u(t-\varepsilon)}{\varepsilon}$$ converge para $\delta(t)$ quando $\varepsilon \to 0+$. Aplicando a Transformada de Laplace e resolvendo para $Y(s)$, temos:
 $$Y(s)=\frac{1}{s(s+1)}\frac{1-e^{-\varepsilon s}}{\varepsilon}=\left(\frac{1}{s}-\frac{1}{s+1}\right)\frac{1-e^{-\varepsilon s}}{\varepsilon},$$
 ou seja,
 $$y(t)=\frac{1-e^{-t}}{\varepsilon}u(t)-u(t-\varepsilon)\frac{1-e^{-(t-\varepsilon)}}{\varepsilon}.$$
-Esta soluÁ„o pode ser escrita como uma funÁ„o contÌnua:
+Esta solu√ß√£o pode ser escrita como uma fun√ß√£o cont√≠nua:
 $$y(t)=\left\{\begin{array}{ll}
 0,&t\leq 0,\\~\\
 \frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\~\\
@@ -579,7 +579,7 @@ $$y(t)=\left\{\begin{array}{ll}
 e^{-t},&t\geq \varepsilon.
 \end{array}
 \right.$$
-Para $\varepsilon>0$ pequeno podemos usar a seguinte aproximaÁ„o:
+Para $\varepsilon>0$ pequeno podemos usar a seguinte aproxima√ß√£o:
 $$e^t=1+t+\frac{t^2}{2}+\frac{t^3}{3!}+\ldots \approx 1+t$$
 Assim, temos:
 $$y(t)\approx\left\{\begin{array}{ll}
@@ -589,7 +589,7 @@ e^{-t},&t\geq \varepsilon.
 \end{array}
 \right.$$
 
-Ou seja, existe uma pequena regi„o de transiÁ„o entre $0$ e $\varepsilon$ onde a soluÁ„o $y(t)$ sobe rapidamente. O gr·fico apresentado na figura \ref{concentracao_2} mostra o comportamento de $y(t)$ para $\varepsilon=0.2$, $\varepsilon=0.1$ e $\varepsilon=0.05$ em azul, vermelho e verde, respectivamente, assim como a soluÁ„o limite $e^{-t}u(t)$ em preto.
+Ou seja, existe uma pequena regi√£o de transi√ß√£o entre $0$ e $\varepsilon$ onde a solu√ß√£o $y(t)$ sobe rapidamente. O gr√°fico apresentado na figura \ref{concentracao_2} mostra o comportamento de $y(t)$ para $\varepsilon=0.2$, $\varepsilon=0.1$ e $\varepsilon=0.05$ em azul, vermelho e verde, respectivamente, assim como a solu√ß√£o limite $e^{-t}u(t)$ em preto.
 \begin{figure}[!ht]
 \begin{center}
  \begin{pspicture}(-1,-.5)(10,4)
@@ -612,9 +612,9 @@ Ou seja, existe uma pequena regi„o de transiÁ„o entre $0$ e $\varepsilon$ onde a
 \caption{\label{concentracao_2}}
  \end{figure}
 
-\section{Propriedade da convoluÁ„o}
+\section{Propriedade da convolu√ß√£o}
 
-Dada duas funÁıes contÌnuas por partes em $[0,\infty]$, a convoluÁ„o  de $f$ e $g$ denotada por $f*g$ È definida pela integral
+Dada duas fun√ß√µes cont√≠nuas por partes em $[0,\infty]$, a convolu√ß√£o  de $f$ e $g$ denotada por $f*g$ √© definida pela integral
 \begin{equation}{\label{def_conv}}
  (f*g)(t)=\int_0^t f(\tau)g(t-\tau)d\tau.
 \end{equation}
@@ -631,7 +631,7 @@ onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau\left(\cos(t-
 \end{prob}
 
 
-\begin{propr}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, ent„o
+\begin{propr}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, ent√£o
 \begin{equation}{\label{eq_prop_conv}}
  \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
 \end{equation}
@@ -640,7 +640,7 @@ ou
  \mathcal{L}^{-1}\{F(s)G(s)\}=(f*g)(t).
 \end{equation}
 \end{propr}
-\begin{proof}Partimos da definiÁ„o das transformadas:
+\begin{proof}Partimos da defini√ß√£o das transformadas:
 $$
 F(s)=\mathcal{L}\{f(t) \}=\int_0^\infty f(t)e^{-st}dt
 $$
@@ -653,11 +653,11 @@ Logo,
  F(s)G(s)&=&\int_0^\infty f(t)e^{-st}dt\int_0^\infty g(\tau)e^{-s\tau}d\tau\\
 &=&\int_0^\infty f(t) \int_0^\infty g(\tau)e^{-s(t+\tau)} d\tau dt\\
 \end{eqnarray*}
-Mantemos $t$ fixo e fazemos a mudanÁa de vari·vel $v=t+\tau$ para obter:
+Mantemos $t$ fixo e fazemos a mudan√ßa de vari√°vel $v=t+\tau$ para obter:
 \begin{eqnarray*}
  F(s)G(s)=\int_0^\infty f(t) \int_t^\infty g(v-t)e^{-sv}dv dt\\
 \end{eqnarray*}
-Agora, vamos mudar a ordem de integraÁ„o na regi„o que È a metade inferior do primeiro quadrante: em vez de variar $v$ em $[t,\infty]$ depois $t$ em $[0,\infty]$, primeiro vamos variar $t$ em $[0,v]$, depois $v$ em $[0,\infty]$, ou seja,
+Agora, vamos mudar a ordem de integra√ß√£o na regi√£o que √© a metade inferior do primeiro quadrante: em vez de variar $v$ em $[t,\infty]$ depois $t$ em $[0,\infty]$, primeiro vamos variar $t$ em $[0,v]$, depois $v$ em $[0,\infty]$, ou seja,
 \begin{eqnarray*}
  F(s)G(s)&=&\int_0^\infty  \int_0^v f(t) g(v-t)e^{-sv} dt dv\\
  &=&\int_0^\infty \left( \int_0^v f(t) g(v-t)dt\right)e^{-sv}  dv\\
@@ -666,25 +666,25 @@ Agora, vamos mudar a ordem de integraÁ„o na regi„o que È a metade inferior do pr
 \end{eqnarray*}
 \end{proof}
 
-\begin{ex}Vamos calcular a transformada inversa de $\frac{s}{(s-1)(s^2+1)}$. Primeiro observamos que a express„o pode ser escrita como um produto de duas funÁıes tabelas:
+\begin{ex}Vamos calcular a transformada inversa de $\frac{s}{(s-1)(s^2+1)}$. Primeiro observamos que a express√£o pode ser escrita como um produto de duas fun√ß√µes tabelas:
 $$
 \frac{s}{(s-1)(s^2+1)}=\frac{1}{s-1}\frac{s}{s^2+1},
 $$
- onde $\mathcal{L}^{-1}\left\{\frac{1}{s-1}\right\}=e^t$ e $\mathcal{L}^{-1}\left\{\frac{s}{s^2+1}\right\}=\cos(t)$. Usando a propriedade \ref{prop_conv} da convoluÁ„o, temos
+ onde $\mathcal{L}^{-1}\left\{\frac{1}{s-1}\right\}=e^t$ e $\mathcal{L}^{-1}\left\{\frac{s}{s^2+1}\right\}=\cos(t)$. Usando a propriedade \ref{prop_conv} da convolu√ß√£o, temos
  $$
  \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}=\int_0^t e^\tau \cos(t-\tau)d\tau.
  $$
- A convoluÁ„o acima foi calculada no exemplo \ref{ex_conv_1}, logo
+ A convolu√ß√£o acima foi calculada no exemplo \ref{ex_conv_1}, logo
 $$
  \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}= \frac{1}{2}\left(e^t-\cos(t)+\sen(t)  \right).
  $$
  \end{ex}
- A propriedade \ref{prop_conv} da convoluÁ„o pode ser ˙til para resolver equaÁıes integrais, como veremos no prÛximo exemplo.
- \begin{ex} Vamos resolver a seguinte equaÁ„o integral:
+ A propriedade \ref{prop_conv} da convolu√ß√£o pode ser √∫til para resolver equa√ß√µes integrais, como veremos no pr√≥ximo exemplo.
+ \begin{ex} Vamos resolver a seguinte equa√ß√£o integral:
  $$
  y(t)=4+9\int_0^t y(\tau)(t-\tau)d\tau.
  $$
- Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convoluÁ„o com $f(t)=y(t)$ e $g(t)=t$ para obter:
+ Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convolu√ß√£o com $f(t)=y(t)$ e $g(t)=t$ para obter:
  $$
  \mathcal{L}\{y(t)\}=\frac{4}{s}+9\mathcal{L}\{y(t)\}\mathcal{L}\{t\}
  $$
@@ -702,18 +702,18 @@ $$
  $$
  
 \end{ex}
-\begin{prob}Resolva a seguinte equaÁ„o integral:
+\begin{prob}Resolva a seguinte equa√ß√£o integral:
 $$
 y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
 $$
  
 \end{prob}
 
-\section{ExercÌcios}
+\section{Exerc√≠cios}
 
 
 
-\begin{Exercise}{\label{ex_delta_dirac0}} Considere as funÁıes $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
+\begin{Exercise}{\label{ex_delta_dirac0}} Considere as fun√ß√µes $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
 \begin{eqnarray*}
  f_\varepsilon(t)&=&\left\{\begin{array}{ll}
 			    \frac{t}{\varepsilon^2}, ~~ &0\leq t < \varepsilon\\~\\
@@ -730,17 +730,17 @@ g_\varepsilon(t)&=&\left\{\begin{array}{ll}
 \end{eqnarray*}
 
 
-onde $\varepsilon$ È um par‚metro positivo.
+onde $\varepsilon$ √© um par√¢metro positivo.
 
 \begin{itemize}
-  \item [a)] Esboce sob o mesmo plano cartesiano o gr·fico da funÁ„o $f_\varepsilon$ para $\varepsilon=1$, $\varepsilon=\frac{1}{2}$ e $\varepsilon=\frac{1}{4}$. FaÁa o mesmo em outro plano cartesiano para a funÁ„o $g_\varepsilon(t)$. Lembre de indicar os eixos e pontos not·veis (ex. pontos de zero e m·ximo)
-  \item [b)] Calcule as transformada de Laplace, $F_\varepsilon(s)=\mathcal{L}\left\{f_\varepsilon(t)\right\}$ e $G_\varepsilon(s)=\mathcal{L}\left\{g_\varepsilon(t)\right\}$. Aqui $\varepsilon$ È um par‚metro positivo genÈrico.
-\item [c)] Estude o comportamento das funÁıes $f_\varepsilon(t)$, $g_\varepsilon(t)$, $F_\varepsilon(s)$ e $G_\varepsilon(s)$ no limite $\varepsilon\to 0+$. Discuta os resultados obtidos analisando as funÁ„o no domÌnio tempo e no domÌnio frequÍncia (s). Qual a relaÁ„o que se observa entre $f_\varepsilon(t)$ e $g_\varepsilon(t)$ e entre suas transformadas de Laplace?
+  \item [a)] Esboce sob o mesmo plano cartesiano o gr√°fico da fun√ß√£o $f_\varepsilon$ para $\varepsilon=1$, $\varepsilon=\frac{1}{2}$ e $\varepsilon=\frac{1}{4}$. Fa√ßa o mesmo em outro plano cartesiano para a fun√ß√£o $g_\varepsilon(t)$. Lembre de indicar os eixos e pontos not√°veis (ex. pontos de zero e m√°ximo)
+  \item [b)] Calcule as transformada de Laplace, $F_\varepsilon(s)=\mathcal{L}\left\{f_\varepsilon(t)\right\}$ e $G_\varepsilon(s)=\mathcal{L}\left\{g_\varepsilon(t)\right\}$. Aqui $\varepsilon$ √© um par√¢metro positivo gen√©rico.
+\item [c)] Estude o comportamento das fun√ß√µes $f_\varepsilon(t)$, $g_\varepsilon(t)$, $F_\varepsilon(s)$ e $G_\varepsilon(s)$ no limite $\varepsilon\to 0+$. Discuta os resultados obtidos analisando as fun√ß√£o no dom√≠nio tempo e no dom√≠nio frequ√™ncia (s). Qual a rela√ß√£o que se observa entre $f_\varepsilon(t)$ e $g_\varepsilon(t)$ e entre suas transformadas de Laplace?
 \end{itemize}
 \end{Exercise}
 
 \begin{Exercise}
-Um capacitor de capacit‚ncia $C$ est· inicialmente carregado de forma que seu potencial seja $V_0$. A partir de $t=0$, o capacitor se descarrega atravÈs de um resistor de resistÍncia $R$ (veja figura \ref{circ_1}). Use o mÈtodo da transformada de Laplace para encontrar a carga $q(t)$ no capacitor.
+Um capacitor de capacit√¢ncia $C$ est√° inicialmente carregado de forma que seu potencial seja $V_0$. A partir de $t=0$, o capacitor se descarrega atrav√©s de um resistor de resist√™ncia $R$ (veja figura \ref{circ_1}). Use o m√©todo da transformada de Laplace para encontrar a carga $q(t)$ no capacitor.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -777,7 +777,7 @@ Um capacitor de capacit‚ncia $C$ est· inicialmente carregado de forma que seu po
 \end{Answer}
 
 \begin{Exercise}
-Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faÁa seu gr·fico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
+Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e fa√ßa seu gr√°fico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -860,17 +860,17 @@ $$
 \end{Answer}
 
 \begin{Exercise}
-Dada a equaÁ„o do movimento de um oscilador harmÙnico simples (OHS)
+Dada a equa√ß√£o do movimento de um oscilador harm√¥nico simples (OHS)
 \begin{equation}\label{ohs}
 -k y(t) - \gamma y'(t) + f = my''(t),
 \end{equation}
-calcule a resposta $y(t)$ deste oscilador sujeito a forÁas externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
+calcule a resposta $y(t)$ deste oscilador sujeito a for√ßas externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
 
 \begin{itemize}
   \item[(a)] $\displaystyle f(t) = \left\{
                                          \begin{array}{ll}
                                            1, & \hbox{ se } t\in [1,2] \\
-                                           0, & \hbox{caso contr·rio}
+                                           0, & \hbox{caso contr√°rio}
                                          \end{array}
                                        \right.
   $
@@ -890,10 +890,10 @@ calcule a resposta $y(t)$ deste oscilador sujeito a forÁas externas $f$ do tipo 
 
 
 \begin{Exercise}
-Considere um OHS n„o amortecido, isto È, $\gamma = 0$ na equaÁ„o diferencial associada \eqref{ohs}. Suponha que este oscilador est· sujeito a uma forÁa externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
+Considere um OHS n√£o amortecido, isto √©, $\gamma = 0$ na equa√ß√£o diferencial associada \eqref{ohs}. Suponha que este oscilador est√° sujeito a uma for√ßa externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
 \begin{itemize}
-  \item[(a)] Use o mÈtodo da transformada de Laplace para calcular as oscilaÁıes forÁadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
-  \item[(b)] Como se comporta o gr·fico destas oscilaÁıes? Que fenÙmeno fÌsico vocÍ identifica?
+  \item[(a)] Use o m√©todo da transformada de Laplace para calcular as oscila√ß√µes for√ßadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
+  \item[(b)] Como se comporta o gr√°fico destas oscila√ß√µes? Que fen√¥meno f√≠sico voc√™ identifica?
 \end{itemize}
 \end{Exercise}
 
@@ -903,7 +903,7 @@ Considere um OHS n„o amortecido, isto È, $\gamma = 0$ na equaÁ„o diferencial ass
 \end{Answer}
 
 \begin{Exercise}
-Encontre por integraÁ„o:
+Encontre por integra√ß√£o:
 
 \begin{itemize}
   \item[(a)] $1\ast 1$
@@ -927,7 +927,7 @@ Encontre por integraÁ„o:
 
 
 \begin{Exercise}
-Achar a soluÁ„o dos seguintes problemas de valor inicial:
+Achar a solu√ß√£o dos seguintes problemas de valor inicial:
 
 \begin{itemize}
   \item[(a)] $\displaystyle \left\{
@@ -967,7 +967,7 @@ Achar a soluÁ„o dos seguintes problemas de valor inicial:
 
 
 \begin{Exercise}
-Justifique as seguintes propriedades da operaÁ„o de convoluÁ„o:
+Justifique as seguintes propriedades da opera√ß√£o de convolu√ß√£o:
 
 \begin{itemize}
   \item[(a)] $f\ast g = g \ast f$
@@ -975,7 +975,7 @@ Justifique as seguintes propriedades da operaÁ„o de convoluÁ„o:
   \item[(c)] $f\ast (g + h) = f\ast g + f\ast h$
   \item[(d)] $(\delta\ast f)(t) = f(t)$
 \end{itemize}
-{\it [Dica: cuidado para n„o confundir as vari·veis de integraÁ„o que aparecer„o no item (b).}
+{\it [Dica: cuidado para n√£o confundir as vari√°veis de integra√ß√£o que aparecer√£o no item (b).}
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
@@ -999,7 +999,7 @@ Justifique as seguintes propriedades da operaÁ„o de convoluÁ„o:
    &=& \int_0^t f(u) \left[(g\ast h)(t-u)\right]  du \\
    &=&f \ast (g \ast h)
   \end{eqnarray*}
-  onde se fez a mudanÁa $v=\tau-u$, $dv=d\tau$.
+  onde se fez a mudan√ßa $v=\tau-u$, $dv=d\tau$.
 \end{itemize}
  
 \end{Answer}
@@ -1007,13 +1007,13 @@ Justifique as seguintes propriedades da operaÁ„o de convoluÁ„o:
 
 
 \begin{Exercise}
-A equaÁ„o do movimento de um OHS n„o amortecido sujeito a oscilaÁıes forÁadas pode ser escrita como
+A equa√ß√£o do movimento de um OHS n√£o amortecido sujeito a oscila√ß√µes for√ßadas pode ser escrita como
 $$
 y''(t) + \omega^2 y(t) = r(t), \quad \hbox{ onde } \ \omega= \sqrt{\frac{k}{m}} \ \hbox{ e } \ r(t) = \frac{f(t)}{m}.
 $$
 \begin{itemize}
-  \item[(a)] Pelo mÈtodo da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
-  \item[(b)] Com o auxÌlio do Teorema da ConvoluÁ„o, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
+  \item[(a)] Pelo m√©todo da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
+  \item[(b)] Com o aux√≠lio do Teorema da Convolu√ß√£o, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
 \end{itemize}
 \end{Exercise}
 \begin{Answer}
@@ -1027,7 +1027,7 @@ $$
 
 
 \begin{Exercise}
-Use o Teorema da ConvoluÁ„o para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).$$
+Use o Teorema da Convolu√ß√£o para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).$$
 \end{Exercise}
 \begin{Answer}
  $\displaystyle \frac{1}{2} \big[ \sen t - \cos t + e^{-t} \big] $
@@ -1035,7 +1035,7 @@ Use o Teorema da ConvoluÁ„o para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+
 
 
 \begin{Exercise}
-Use o Teorema da ConvoluÁ„o para resolver as seguintes equaÁıes integrais:
+Use o Teorema da Convolu√ß√£o para resolver as seguintes equa√ß√µes integrais:
 
 \begin{itemize}
   \item[(a)] $\displaystyle y(t) = 1 + \int_0^t y(\tau) \ d\tau$

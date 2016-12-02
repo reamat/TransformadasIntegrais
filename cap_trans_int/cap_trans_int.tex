@@ -1,9 +1,9 @@
 \documentclass[Main.tex]{subfiles}
 \begin{document}
-\chapter{As propriedades de translaÁ„o e da transformada da integral}
+\chapter{As propriedades de transla√ß√£o e da transformada da integral}
 
-\section{Propriedade de translaÁ„o no eixo $s$}
-Nessa seÁ„o vamos calcular a transformada inversa do deslocamento $F(s-a)$ sabendo a transformada inversa de $F(s)$. %O gr·fico da figura \ref{fig_trans_1} mostra um exemplo de funÁ„o com deslocamentos ‡ direita e ‡ esqueda.
+\section{Propriedade de transla√ß√£o no eixo $s$}
+Nessa se√ß√£o vamos calcular a transformada inversa do deslocamento $F(s-a)$ sabendo a transformada inversa de $F(s)$. %O gr√°fico da figura \ref{fig_trans_1} mostra um exemplo de fun√ß√£o com deslocamentos √† direita e √† esqueda.
 %\begin{figure}[!ht]
 %\begin{center}
 
@@ -26,7 +26,7 @@ Nessa seÁ„o vamos calcular a transformada inversa do deslocamento $F(s-a)$ saben
 %\caption{\label{fig_trans_1}}
 %\end{figure}
 
-\begin{propr}{\label{prop_trans_s}}Se $F(s)$ È a transformada de Laplace de $f(t)$, ent„o $e^{at}f(t)$ È a transformada inversa de $F(s-a)$, isto È
+\begin{propr}{\label{prop_trans_s}}Se $F(s)$ √© a transformada de Laplace de $f(t)$, ent√£o $e^{at}f(t)$ √© a transformada inversa de $F(s-a)$, isto √©
 \begin{equation}
 \mathcal{L}\left\{e^{at}f(t)\right\} =F(s-a),\qquad s>a
 \end{equation}
@@ -35,7 +35,7 @@ ou
 \mathcal{L}^{-1} \left\{F(s-a)\right\} =e^{at}f(t),\qquad s>a.
 \end{equation} 
 \end{propr}
-\begin{proof}… direto da aplicaÁ„o da definiÁ„o da transformada de Laplace $F(s-a)$:
+\begin{proof}√â direto da aplica√ß√£o da defini√ß√£o da transformada de Laplace $F(s-a)$:
 \begin{eqnarray*}
  F(s-a)&=&\int_0^\infty f(t)e^{-(s-a)t}dt\\
 &=&\int_0^\infty f(t)e^{at}e^{-st}dt\\
@@ -45,11 +45,11 @@ ou
 
 Agora vamos calcular algumas transformadas de Laplace usando a propriedade \ref{prop_trans_s}.
 
-\begin{ex}Para calcular a transformada de Laplace de $f(t)=te^{at}$, que È o item 8 da tabela \ref{tab_trans_Lap_1}, usamos o item 2 da mesma tabela,
+\begin{ex}Para calcular a transformada de Laplace de $f(t)=te^{at}$, que √© o item 8 da tabela \ref{tab_trans_Lap_1}, usamos o item 2 da mesma tabela,
 $$
 \mathcal{L}\{t\}=\frac{1}{s^2}=F(s),
 $$
-e a propriedade de translaÁ„o \ref{prop_trans_s} com $f(t)=t$:
+e a propriedade de transla√ß√£o \ref{prop_trans_s} com $f(t)=t$:
 $$
 \mathcal{L}\left\{e^{at}t\right\} =F(s-a)=\frac{1}{(s-a)^2},\qquad s>a
 $$
@@ -89,7 +89,7 @@ De fato,
 $$
 \mathcal{L}\{\cosh(2t)\}=\frac{s}{ s^2-4}=F(s).
 $$
-Agora use a propriedade da translaÁ„o no eixo $s$
+Agora use a propriedade da transla√ß√£o no eixo $s$
 \begin{equation}
 \mathcal{L}\left\{e^{-t}\cosh(2t)\right\} =F(s+1)=\frac{s+1}{ (s+1)^2-4},\qquad s>-1
 \end{equation}
@@ -103,11 +103,11 @@ Agora use a propriedade da translaÁ„o no eixo $s$
 \end{itemize}
 \end{prob}
 \begin{ex}
- \item[a)] Agora vamos usar a propriedade \ref{prop_trans_s} e o item 15 da tabela \ref{tab_trans_Lap_1} para calcular a transformadas inversa de Laplace da funÁ„o $F(s)=\frac{1}{s^2-2s-3}$. Primeiro escrevemos $F(s)$ numa forma conveniente:
+ \item[a)] Agora vamos usar a propriedade \ref{prop_trans_s} e o item 15 da tabela \ref{tab_trans_Lap_1} para calcular a transformadas inversa de Laplace da fun√ß√£o $F(s)=\frac{1}{s^2-2s-3}$. Primeiro escrevemos $F(s)$ numa forma conveniente:
 $$
 F(s)=\frac{1}{s^2-2s-3}=\frac{1}{(s-1)^2-1-3}=\frac{1}{(s-1)^2-4}.
 $$
-Observe no item 16 da tabela que $\displaystyle\mathcal{L}\left\{\frac{1}{2}\senh(2t)\right\}=\frac{1}{ s^2-4}=G(s)$ e, tambÈm, pela propriedade da translaÁ„o no eixo $s$ dada na equaÁ„o (\ref{eq_trans_s_inv})
+Observe no item 16 da tabela que $\displaystyle\mathcal{L}\left\{\frac{1}{2}\senh(2t)\right\}=\frac{1}{ s^2-4}=G(s)$ e, tamb√©m, pela propriedade da transla√ß√£o no eixo $s$ dada na equa√ß√£o (\ref{eq_trans_s_inv})
 $$
 \mathcal{L}^{-1}\{F(s)\}=\mathcal{L}^{-1}\{G(s-1)\}=\frac{1}{2}e^{t}\senh(2t).
 $$
@@ -119,8 +119,8 @@ $$
 \item[b)] $F(s)=\frac{s-1}{(s^2-2s+5)(s^2-2s+10)}$
 \end{itemize}
 \end{prob}
-\section{AplicaÁ„o: Oscilador HarmÙnico}
-Uma mola el·stica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Conside que o corpo esteja sujeito a uma forÁa de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e a que mola obedeÁa a lei de Hooke com constante $k$.
+\section{Aplica√ß√£o: Oscilador Harm√¥nico}
+Uma mola el√°stica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Conside que o corpo esteja sujeito a uma for√ßa de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e a que mola obede√ßa a lei de Hooke com constante $k$.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -157,27 +157,27 @@ Uma mola el·stica com uma extremidade fixada prende um corpo de massa $m$ na out
 \caption{\label{massa-mola}}
 \end{figure} 
 
-Seja $y(t)$ o deslocamento do corpo da sua posiÁ„o de equilÌbrio est·tico em funÁ„o do tempo $t$. A equaÁ„o do movimento È obtida a partir da segunda lei de Newton:
+Seja $y(t)$ o deslocamento do corpo da sua posi√ß√£o de equil√≠brio est√°tico em fun√ß√£o do tempo $t$. A equa√ß√£o do movimento √© obtida a partir da segunda lei de Newton:
 $$
 ma=\sum_i f_i,
 $$
-onde $a=y''(t)$ È a aceleraÁ„o e $\sum_i \vec{f}_i$ representa a soma de todas as forÁas. No caso tratado aqui, existem apenas trÍs forÁas, a saber:
+onde $a=y''(t)$ √© a acelera√ß√£o e $\sum_i \vec{f}_i$ representa a soma de todas as for√ßas. No caso tratado aqui, existem apenas tr√™s for√ßas, a saber:
 \begin{itemize}
- \item[i)] a forÁa da mola, que È proporcional ao descocamento (lei de Hooke), com constante de proporcionalidade $k$, $f_1=-k y(t)$,
- \item[ii)] a forÁa de atrito, que È proporcional a velocidade, com constante de amortecimento $\gamma$, $f_2=-\gamma y'(t)$, e
- \item[iii)] a forÁa externa, $f_3(t)=f(t)$
+ \item[i)] a for√ßa da mola, que √© proporcional ao descocamento (lei de Hooke), com constante de proporcionalidade $k$, $f_1=-k y(t)$,
+ \item[ii)] a for√ßa de atrito, que √© proporcional a velocidade, com constante de amortecimento $\gamma$, $f_2=-\gamma y'(t)$, e
+ \item[iii)] a for√ßa externa, $f_3(t)=f(t)$
 \end{itemize}
 Logo,
 $$
 my''(t)=f_1+f_2+f_3=-ky(t)-\gamma y'(t)+f(t),
 $$
-ou seja, a equaÁ„o para o deslocamento $y(t)$ È dada por
+ou seja, a equa√ß√£o para o deslocamento $y(t)$ √© dada por
 \begin{equation}{\label{eq_massa_mola}}
 my''(t)+\gamma y'(t)+ky(t)=f(t).
 \end{equation}
-O modelo fica completo quando impomos as condiÁıes iniciais $y(0)=y_0$ e $y'(0)=y_0'$. 
+O modelo fica completo quando impomos as condi√ß√µes iniciais $y(0)=y_0$ e $y'(0)=y_0'$. 
 
-Agora, vamos usar o mÈtodo da transformada de Laplace para resolver a equaÁ„o. Aplicamos a transformada de Laplace na equaÁ„o (\ref{eq_massa_mola}) e obtemos:
+Agora, vamos usar o m√©todo da transformada de Laplace para resolver a equa√ß√£o. Aplicamos a transformada de Laplace na equa√ß√£o (\ref{eq_massa_mola}) e obtemos:
 $$
 m\mathcal{L}\{y''(t)\}+\gamma \mathcal{L}\{y'(t)\}+k\mathcal{L}\{y(t)\}=\mathcal{L}\{f(t)\}.
 $$
@@ -185,51 +185,51 @@ Aplicamos a propriedade \ref{prop_der} e obtemos
 $$
 ms^2\mathcal{L}\{y(t)\}-msy(0)-my'(0)+\gamma s\mathcal{L}\{y(t)\}-\gamma y(0)+k\mathcal{L}\{y(t)\}=\mathcal{L}\{f(t)\}.
 $$
-Impomos as condiÁıes iniciais para obter a seguinte equaÁ„o subsidi·ria:
+Impomos as condi√ß√µes iniciais para obter a seguinte equa√ß√£o subsidi√°ria:
 $$
 ms^2Y(s)-msy_0-my_0'+\gamma sY(s)-\gamma y_0+kY(s)=F(s),
 $$
-onde $F(s)=\mathcal{L}\{f(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. Resolvemos a equaÁ„o para $Y(s)$:
+onde $F(s)=\mathcal{L}\{f(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. Resolvemos a equa√ß√£o para $Y(s)$:
 $$
 Y(s)=\frac{F(s)+msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}.
 $$
-A soluÁ„o do problema pode ser representado por $y(t)=\mathcal{L}^{-1}\{Y(s)\}$. 
+A solu√ß√£o do problema pode ser representado por $y(t)=\mathcal{L}^{-1}\{Y(s)\}$. 
 
 O sistema massa mola pode ser classificado das seguintes formas:
 \begin{itemize}
- \item[i)] Oscilador harmonico forÁado: quando a forÁa externa n„o È nula.
- \item[ii)] Oscilador harmÙnico livre: quando n„o h· forÁa externa, ou seja, $f(t)=0$, o que implica em $F(s)=0$. Nesse caso
+ \item[i)] Oscilador harmonico for√ßado: quando a for√ßa externa n√£o √© nula.
+ \item[ii)] Oscilador harm√¥nico livre: quando n√£o h√° for√ßa externa, ou seja, $f(t)=0$, o que implica em $F(s)=0$. Nesse caso
 $$
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}.
 $$
-\item[iii)] Oscilador harmÙnico subamortecido: quando $\gamma^2< 4mk$. No caso $F(s)=0$, temos:
+\item[iii)] Oscilador harm√¥nico subamortecido: quando $\gamma^2< 4mk$. No caso $F(s)=0$, temos:
 $$
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2-\frac{\gamma^2}{4m} +k},
 $$
-onde $-\frac{\gamma^2}{4m} +k>0$. Olhando os itens 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluÌmos que as soluÁıes s„o s„o senos e cossenos multiplicados por exponenciais.
-\item[iv)] Oscilador harmÙnico superamortecido: quando $\gamma^2> 4mk$. No caso $F(s)=0$, temos:
+onde $-\frac{\gamma^2}{4m} +k>0$. Olhando os itens 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, conclu√≠mos que as solu√ß√µes s√£o s√£o senos e cossenos multiplicados por exponenciais.
+\item[iv)] Oscilador harm√¥nico superamortecido: quando $\gamma^2> 4mk$. No caso $F(s)=0$, temos:
 $$
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2-\frac{\gamma^2}{4m} +k},
 $$
-onde $-\frac{\gamma^2}{4m} +k<0$. Olhando os itens 15 e 16 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluÌmos que as soluÁıes s„o s„o senos e cossenos hiperbÛlicos multiplicados por exponenciais, ou seja, somas de exponenciais puras (lembre-se que $\displaystyle 2\senh(at)=e^{at}-e^{-at}$ e $\displaystyle2\cosh(at)=e^{at}+e^{-at}$).
-\item[v)] Oscilador harmÙnico criticamente amortecido: quando $\gamma^2= 4mk$. No caso $F(s)=0$, temos:
+onde $-\frac{\gamma^2}{4m} +k<0$. Olhando os itens 15 e 16 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, conclu√≠mos que as solu√ß√µes s√£o s√£o senos e cossenos hiperb√≥licos multiplicados por exponenciais, ou seja, somas de exponenciais puras (lembre-se que $\displaystyle 2\senh(at)=e^{at}-e^{-at}$ e $\displaystyle2\cosh(at)=e^{at}+e^{-at}$).
+\item[v)] Oscilador harm√¥nico criticamente amortecido: quando $\gamma^2= 4mk$. No caso $F(s)=0$, temos:
 $$
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2},
 $$
-Olhando para o item 3 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluÌmos que as soluÁıes s„o polinÙmios multiplicados por exponenciais.
-\item[vi)] Oscilador harmÙnico n„o amortecido: quando $\gamma= 0$. No caso $F(s)=0$, temos:
+Olhando para o item 3 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, conclu√≠mos que as solu√ß√µes s√£o polin√¥mios multiplicados por exponenciais.
+\item[vi)] Oscilador harm√¥nico n√£o amortecido: quando $\gamma= 0$. No caso $F(s)=0$, temos:
 $$
 Y(s)=\frac{msy_0+my_0'}{ms^2 +k}=\frac{sy_0+y_0'}{s^2+\frac{k}{m}},
 $$
-Olhando os items 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} concluÌmos que as soluÁıes s„o senos e cossenos puros.
+Olhando os items 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} conclu√≠mos que as solu√ß√µes s√£o senos e cossenos puros.
 
 \end{itemize}
 
-Para ilustrar, tomemos um caso subamortecido, por exemplo, $\gamma=2$, $m=1$ e $k=5$, sujeitos ‡s condiÁıes iniciais $y_0=1$ e $y_0'=-2$. A funÁ„o $Y(s)$ toma a forma: 
+Para ilustrar, tomemos um caso subamortecido, por exemplo, $\gamma=2$, $m=1$ e $k=5$, sujeitos √†s condi√ß√µes iniciais $y_0=1$ e $y_0'=-2$. A fun√ß√£o $Y(s)$ toma a forma: 
 $$
 Y(s)=\frac{s}{s^2+2 s +5}.
 $$
-A transformada inversa nos leva a soluÁ„o do problema:
+A transformada inversa nos leva a solu√ß√£o do problema:
 $$
 y(t)=\mathcal{L}^{-1}\left\{\frac{s}{s^2+2 s +5}\right\}.
 $$
@@ -242,11 +242,11 @@ Usamos a propriedade \ref{prop_lin} para concluir o resultado
 y(t)&=&\mathcal{L}^{-1}\left\{\frac{s+1}{(s+1)^2 +2^2}\right\}-\frac{1}{2}\mathcal{L}^{-1}\left\{\frac{2}{(s+1)^2 +2^2}\right\}\\
 &=&e^{-t}\cos(2t)-\frac{1}{2}e^{-t}\sen(2t).
 \end{eqnarray*}
-Para identificar a amplitude e a fase, escrevemos a express„o em termos de exponencial vezes cosseno:
+Para identificar a amplitude e a fase, escrevemos a express√£o em termos de exponencial vezes cosseno:
 $$
 e^{-t}\left(\cos(2t)-\frac{1}{2}\sen(2t)\right)=Ae^{-t}\cos(2t+\delta)=Ae^{-t}\left(\cos(2t)\cos(\delta)-\sen(2t)\sen(\delta)\right).
 $$
-Isso È verdade se
+Isso √© verdade se
 \begin{eqnarray*}
 A\cos(\delta)&=&1\\
 A\sen(\delta)&=&\frac{1}{2}
@@ -255,7 +255,7 @@ ou seja,
 $$
 A=\sqrt{1+\frac{1}{4}}=\frac{\sqrt{5}}{2}
 $$
-e $\delta$ È uma fase no primeiro quadrante onde
+e $\delta$ √© uma fase no primeiro quadrante onde
 $$
 \cos(\delta)=\frac{2}{\sqrt{5}}=\frac{2\sqrt{5}}{5},
 $$
@@ -263,7 +263,7 @@ o que implica em $\delta\approx 0,463648\ \hbox{rad} \approx 26,57^0$. Portanto,
 $$
 y(t)=\frac{\sqrt{5}}{2}e^{-t}\cos(2t+0,463648).
 $$
-A figura \ref{fig_massa_mola} ilustra o gr·fico de $y(t)$.
+A figura \ref{fig_massa_mola} ilustra o gr√°fico de $y(t)$.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -283,16 +283,16 @@ A figura \ref{fig_massa_mola} ilustra o gr·fico de $y(t)$.
 {\caption{\label{fig_massa_mola}}}
 \end{figure}
 
-\section{A funÁ„o de Heaviside}
-A {\bf funÁ„o de Heaviside} ou {\bf funÁ„o degrau unit·rio} È nula para argumento negativo e vale 1 para argumento positivo. Quando o argumento È zero a funÁ„o n„o precisa estar definida (ou pode-se definir qualquer valor, dependendo do contexto, por exemplo $1/2$). Observe que esta È uma funÁ„o contÌnua por partes:
+\section{A fun√ß√£o de Heaviside}
+A {\bf fun√ß√£o de Heaviside} ou {\bf fun√ß√£o degrau unit√°rio} √© nula para argumento negativo e vale 1 para argumento positivo. Quando o argumento √© zero a fun√ß√£o n√£o precisa estar definida (ou pode-se definir qualquer valor, dependendo do contexto, por exemplo $1/2$). Observe que esta √© uma fun√ß√£o cont√≠nua por partes:
 \begin{equation}
  u(t)=\left\{ \begin{array}{ll} 0, &t<0\\1,&t>0. \end{array}\right.
 \end{equation}
-A funÁ„o de Heaviside com descontinuidade em $t=a$ È da forma
+A fun√ß√£o de Heaviside com descontinuidade em $t=a$ √© da forma
 \begin{equation}
  u(t-a)=\left\{ \begin{array}{ll} 0, &t<a\\1,&t>a. \end{array}\right.
 \end{equation}
-A figura \ref{fig_Heaviside} apresenta os gr·ficos de $u(t)$ e $u(t-a)$ para $a>0$.
+A figura \ref{fig_Heaviside} apresenta os gr√°ficos de $u(t)$ e $u(t-a)$ para $a>0$.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -317,11 +317,11 @@ A figura \ref{fig_Heaviside} apresenta os gr·ficos de $u(t)$ e $u(t-a)$ para $a>
 \caption{\label{fig_Heaviside}}
 \end{figure}
 
-Observe que a representaÁ„o gr·fica em $t=a$ n„o est· com o rigor matem·tico para funÁıes, pois deveria estar esboÁado bolinhas abertas indicando que em $t=a$ a funÁ„o n„o est· definida. Esse tipo de representaÁ„o gr·fico È usado no contexto de transformada de Laplace. Quando realmente for necess·rio definir um transiÁ„o em $t=0$, toma-se uma aproximaÁ„o linear e contÌnua para a funÁ„o de Heaviside, chamada de {\bf funÁ„o rampa}:
+Observe que a representa√ß√£o gr√°fica em $t=a$ n√£o est√° com o rigor matem√°tico para fun√ß√µes, pois deveria estar esbo√ßado bolinhas abertas indicando que em $t=a$ a fun√ß√£o n√£o est√° definida. Esse tipo de representa√ß√£o gr√°fico √© usado no contexto de transformada de Laplace. Quando realmente for necess√°rio definir um transi√ß√£o em $t=0$, toma-se uma aproxima√ß√£o linear e cont√≠nua para a fun√ß√£o de Heaviside, chamada de {\bf fun√ß√£o rampa}:
 $$
 g_\epsilon(t)=\left\{\begin{array}{ll}0,& t<-\epsilon\\ \frac{1}{2\epsilon}t+\frac{1}{2},&-\epsilon\leq t \leq \epsilon\\1,&t>\epsilon, \end{array}\right.
 $$
-para $\epsilon<<1$. A figura \ref{fig_Heaviside_1} ilustra o gr·fico de $g_\epsilon(t)$ para $\epsilon=1/2$.
+para $\epsilon<<1$. A figura \ref{fig_Heaviside_1} ilustra o gr√°fico de $g_\epsilon(t)$ para $\epsilon=1/2$.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -337,17 +337,17 @@ para $\epsilon<<1$. A figura \ref{fig_Heaviside_1} ilustra o gr·fico de $g_\epsi
 \caption{\label{fig_Heaviside_1}}
 \end{figure}
 
-A funÁ„o de Heaviside È o limite de $g_\epsilon(t)$ se $t\neq 0$:
+A fun√ß√£o de Heaviside √© o limite de $g_\epsilon(t)$ se $t\neq 0$:
 $$
 \lim_{\epsilon\to 0}g_\epsilon(t) =u(t),\qquad t\neq 0.
 $$
 
-Uma funÁ„o importante em aplicaÁıes È a {\bf funÁ„o pulso}, definida por:
+Uma fun√ß√£o importante em aplica√ß√µes √© a {\bf fun√ß√£o pulso}, definida por:
 \begin{equation}
  f_p(t)=\left\{ \begin{array}{ll} 0, &t<a\\1,&a<t<b\\0,&t>b., \end{array}\right.
 \end{equation}
 com $a<b$
-A figura \ref{fig_Heaviside_2} apresenta uma representaÁ„o gr·fica para a funÁ„o pulso.
+A figura \ref{fig_Heaviside_2} apresenta uma representa√ß√£o gr√°fica para a fun√ß√£o pulso.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -368,12 +368,12 @@ A figura \ref{fig_Heaviside_2} apresenta uma representaÁ„o gr·fica para a funÁ„o
 \end{center}
 \caption{\label{fig_Heaviside_2}}
 \end{figure}
-A funÁ„o pulso normalmente È representada em termos da diferenÁa de duas funÁ„o de Heaviside:
+A fun√ß√£o pulso normalmente √© representada em termos da diferen√ßa de duas fun√ß√£o de Heaviside:
 $$
 f_p(t)=u(t-a)-u(t-b),\qquad a<b.
 $$
 
-A funÁ„o pulso geralmente indica uma chave ``liga-desliga''. Por exemplo, o produto $f_p(t)f(t)$ significa que $f$ estava ``desligada'' para $t<a$, $f$ foi ``ligada'' em $t=a$ e ``desligada'' em $t=b$. Analogamente, o produto $u(t-a)f(t)$ indica que a funÁ„o foi ligada em $t=a$. Observe o gr·fico de $u(t-1)\sen(t)$ na figura \ref{fig_Heaviside_3}.
+A fun√ß√£o pulso geralmente indica uma chave ``liga-desliga''. Por exemplo, o produto $f_p(t)f(t)$ significa que $f$ estava ``desligada'' para $t<a$, $f$ foi ``ligada'' em $t=a$ e ``desligada'' em $t=b$. Analogamente, o produto $u(t-a)f(t)$ indica que a fun√ß√£o foi ligada em $t=a$. Observe o gr√°fico de $u(t-1)\sen(t)$ na figura \ref{fig_Heaviside_3}.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -386,10 +386,10 @@ A funÁ„o pulso geralmente indica uma chave ``liga-desliga''. Por exemplo, o prod
 \rput(0.0,1.7){$u(t-1)\sen(t)$}
 \end{pspicture}
 \end{center}
-\caption{\label{fig_Heaviside_3}Gr·fico da funÁ„o $u(t-1)\sen(t)$.}
+\caption{\label{fig_Heaviside_3}Gr√°fico da fun√ß√£o $u(t-1)\sen(t)$.}
 \end{figure}
 
-\begin{ex} Representar algebricamente em termos da funÁ„o de Heaviside a funÁ„o dada no gr·fico da figura \ref{fig_Heaviside_4}.
+\begin{ex} Representar algebricamente em termos da fun√ß√£o de Heaviside a fun√ß√£o dada no gr√°fico da figura \ref{fig_Heaviside_4}.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -413,16 +413,16 @@ Observe que podemos representar $f(t)$ da seguinte forma:
 \begin{equation}
  f(t)=\left\{ \begin{array}{ll} 0, &t<1\\2,&1<t<3\\-3,& 3<t<5\\0,&t>5. \end{array}\right.
 \end{equation}
-Para representar em termos da funÁ„o de Heaviside, olhe para o gr·fico pensando em dois pulsos: $2(u(t-1)-u(t-3))$ e $-3(u(t-3)-u(t-5))$. A soma deles È a funÁ„o desejada:
+Para representar em termos da fun√ß√£o de Heaviside, olhe para o gr√°fico pensando em dois pulsos: $2(u(t-1)-u(t-3))$ e $-3(u(t-3)-u(t-5))$. A soma deles √© a fun√ß√£o desejada:
 $$
 f(t)=2(u(t-1)-u(t-3))-3(u(t-3)-u(t-5)).
 $$
 
 \end{ex}
-\begin{prob}Esboce o gr·fico da funÁ„o $f(t)=(u(t)-u(t-2\pi))\sen(t)$.
+\begin{prob}Esboce o gr√°fico da fun√ß√£o $f(t)=(u(t)-u(t-2\pi))\sen(t)$.
  
 \end{prob}
-\begin{prob}Escreva uma express„o em termos da funÁ„o de Heaviside para a funÁ„o dada no gr·fico \ref{fig_Heaviside_prob}.
+\begin{prob}Escreva uma express√£o em termos da fun√ß√£o de Heaviside para a fun√ß√£o dada no gr√°fico \ref{fig_Heaviside_prob}.
  \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -446,20 +446,20 @@ $$
 \end{prob}
 
 
-A transformada de Laplace da funÁ„o de Heaviside È obtida direto da definiÁ„o. Primeiro considere $a\geq 0$:
+A transformada de Laplace da fun√ß√£o de Heaviside √© obtida direto da defini√ß√£o. Primeiro considere $a\geq 0$:
 \begin{eqnarray}
 \nonumber \mathcal{L}\{u(t-a)\}&=&\int_0^\infty u(t-a) e^{-st}dt\\
 \nonumber &=&\int_a^\infty  e^{-st}dt\\
  &=&\left.  \frac{1}{-s}e^{-st}\right|_a^\infty=\frac{e^{-as}}{s}. {\label{Heaviside_trans}}
 \end{eqnarray}
-Se $a<0$, ent„o
+Se $a<0$, ent√£o
 $$
  \mathcal{L}\{u(t-a)\}=\mathcal{L}\{1\}=\frac{1}{s}.
 $$
 
  \section{Propriedade do deslocamento no eixo $t$}
 
-\begin{propr}{\label{prop_trans_t}}Se $F(s)$ È a transformada de $f(t)$, ent„o $f(t-a)u(t-a)$ È a transformada inversa de $e^{-as}F(s)$, isto È
+\begin{propr}{\label{prop_trans_t}}Se $F(s)$ √© a transformada de $f(t)$, ent√£o $f(t-a)u(t-a)$ √© a transformada inversa de $e^{-as}F(s)$, isto √©
 \begin{equation}
 \mathcal{L}\left\{u(t-a)f(t-a)\right\} =e^{-as}F(s),\qquad a>0
 \end{equation}
@@ -468,13 +468,13 @@ ou
 \mathcal{L}^{-1} \left\{e^{-as}F(s)\right\} =u(t-a)f(t-a),\qquad a>0.
 \end{equation} 
 \end{propr}
-\begin{proof}Aplicamos a definiÁ„o da transformada de Laplace e obtemos:
+\begin{proof}Aplicamos a defini√ß√£o da transformada de Laplace e obtemos:
 \begin{eqnarray*}
 \mathcal{L}\left\{u(t-a)f(t-a)\right\}&=&\int_0^\infty u(t-a)f(t-a)e^{-st}dt\\
 &=&\int_0^a u(t-a)f(t-a)e^{-st}dt+\int_a^\infty u(t-a)f(t-a)e^{-st}dt\\
 &=&\int_a^\infty f(t-a)e^{-st}dt,
 \end{eqnarray*}
-pois $u(t-a)$ È zero no intervalo $[0,a)$ e um no intervalo $(a,\infty)$. Depois usamos a mudanÁa de vari·vel $v=t-a$ na ˙ltima integral:
+pois $u(t-a)$ √© zero no intervalo $[0,a)$ e um no intervalo $(a,\infty)$. Depois usamos a mudan√ßa de vari√°vel $v=t-a$ na √∫ltima integral:
 \begin{equation*}
 \int_a^\infty f(t-a)e^{-st}dt=\int_0^\infty f(v)e^{-s(v+a)}dv=e^{-as}\int_0^\infty f(v)e^{-sv}dv.
 \end{equation*}
@@ -487,19 +487,19 @@ Observe que tomando $f(t)=1$ na propriedade \ref{prop_trans_t}, temos:
 \begin{equation}{\label{Heaviside_trans_1}}
 \mathcal{L}\left\{u(t-a)\right\} =\frac{e^{-as}}{s},\qquad a>0
 \end{equation}
-que coincide com a fÛrmula calculada na equaÁ„o (\ref{Heaviside_trans}). Quando $a=0$ na equaÁ„o (\ref{Heaviside_trans_1}), recaÌmos no item 1 da tabela \ref{tab_trans_Lap_1}.
+que coincide com a f√≥rmula calculada na equa√ß√£o (\ref{Heaviside_trans}). Quando $a=0$ na equa√ß√£o (\ref{Heaviside_trans_1}), reca√≠mos no item 1 da tabela \ref{tab_trans_Lap_1}.
 \begin{ex} Aplicando diretamente a propriedade \ref{prop_trans_t} e usando que $\mathcal{L}\{t^2\}=\frac{2}{s^3}$, calculamos a transformada inversa de Laplace de $e^{-3s}\frac{2}{s^3}$:
 $$
 \mathcal{L}^{-1}\left\{e^{-3s}\frac{2}{s^3}\right\}=u(t-3)(t-3)^2.
 $$
 \end{ex}
-\begin{prob}Use a propriedade \ref{prop_trans_t}, calcule a transformada inversa de Laplace e esboce um gr·fico para cada item:
+\begin{prob}Use a propriedade \ref{prop_trans_t}, calcule a transformada inversa de Laplace e esboce um gr√°fico para cada item:
 \begin{itemize}
 \item[a)] $G(s)=e^{-2s}\frac{s}{s^2+4}$
 \item[b)] $G(s)=e^{-s}\frac{1}{s^2}-3e^{-3s}\frac{1}{s^2}$
 \end{itemize}
 \end{prob}
-\begin{ex} Vamos calcular a transformada inversa de Laplace da funÁ„o
+\begin{ex} Vamos calcular a transformada inversa de Laplace da fun√ß√£o
 $$
 F(s)=e^{-s}\frac{1}{(s+1)^2-1}.
 $$
@@ -519,8 +519,8 @@ F(s)=\frac{e^{-2s}(s-1)}{s^2 -2s+5}.
 $$
 \end{prob}
 
-\section{A propriedade da transformada de Laplace da integral de uma funÁ„o}
-\begin{propr}{\label{prop_trans_int}}Se $F(s)$ È a transformada de Laplace de uma funÁ„o contÌnua por partes $f(t)$, ent„o $\int_0^tf(\tau)d\tau$ È a transformada inversa de $\frac{1}{s}F(s)$, isto È
+\section{A propriedade da transformada de Laplace da integral de uma fun√ß√£o}
+\begin{propr}{\label{prop_trans_int}}Se $F(s)$ √© a transformada de Laplace de uma fun√ß√£o cont√≠nua por partes $f(t)$, ent√£o $\int_0^tf(\tau)d\tau$ √© a transformada inversa de $\frac{1}{s}F(s)$, isto √©
 \begin{equation}{\label{eq_trans_int}}
 \mathcal{L}\left\{\int_0^tf(\tau)d\tau\right\} =\frac{1}{s}F(s),
 \end{equation}
@@ -529,7 +529,7 @@ ou
 \mathcal{L}^{-1} \left\{\frac{1}{s}F(s)\right\} =\int_0^tf(\tau)d\tau.
 \end{equation} 
 \end{propr}
-\begin{proof}Seja $g(t)=\int_0^tf(\tau)d\tau$. Ent„o $g'(t)=f(t)$. Aplicamos a propriedade da transformada da derivada \ref{prop_der} e temos:
+\begin{proof}Seja $g(t)=\int_0^tf(\tau)d\tau$. Ent√£o $g'(t)=f(t)$. Aplicamos a propriedade da transformada da derivada \ref{prop_der} e temos:
 $$
 \mathcal{L}\{g'(t)\}=s\mathcal{L}\{g(t)\}-g(0).
 $$
@@ -541,14 +541,14 @@ Usando o fato que $g(0)=0$, temos
 &=&\frac{1}{s}F(s).
 \end{eqnarray*}
 \end{proof}
-Essa propriedade ser· ˙til na aplicaÁ„o de um circuito RC discutido na seÁ„o \ref{sec_circ}.
+Essa propriedade ser√° √∫til na aplica√ß√£o de um circuito RC discutido na se√ß√£o \ref{sec_circ}.
 
-\section{AplicaÁ„o: circuito RC a um pulso de amplitude $V_0$.}{\label{sec_circ}}
-Considere o circuito Resistor/Capacitor representado na figura \ref{fig_circ} com uma tens„o $V(t)$ aplicada do tipo pulso,
+\section{Aplica√ß√£o: circuito RC a um pulso de amplitude $V_0$.}{\label{sec_circ}}
+Considere o circuito Resistor/Capacitor representado na figura \ref{fig_circ} com uma tens√£o $V(t)$ aplicada do tipo pulso,
 $$
 V(t)=V_0\left(u(t-a)-u(t-b)\right).
 $$
-ou seja, o circuito estava em repouso atÈ $t=a$ e foi aplicada a tens„o $V_0$ entre $t=a$ e $t=b$.
+ou seja, o circuito estava em repouso at√© $t=a$ e foi aplicada a tens√£o $V_0$ entre $t=a$ e $t=b$.
 \begin{figure}[!ht]
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -583,15 +583,15 @@ O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
 \begin{equation}{\label{modelo_corrente_0}}
  Ri(t)+\frac{1}{C}q(t)=V(t),
 \end{equation}
-onde $q(t)$ È a carga no capacitor, $\frac{1}{C}q(t)$ È a tens„o no capacitor de capacit‚ncia $C$ e $Ri(t)$ È a tens„o no resistor de resistÍncia $R$. Usando o fato que $q(t)=\int_0^t i(\tau)d\tau$, obtemos uma equaÁ„o integral para $i(t)$:
+onde $q(t)$ √© a carga no capacitor, $\frac{1}{C}q(t)$ √© a tens√£o no capacitor de capacit√¢ncia $C$ e $Ri(t)$ √© a tens√£o no resistor de resist√™ncia $R$. Usando o fato que $q(t)=\int_0^t i(\tau)d\tau$, obtemos uma equa√ß√£o integral para $i(t)$:
 $$
 Ri(t)+\frac{1}{C}\int_0^t i(\tau)d\tau=V_0\left(u(t-a)-u(t-b)\right).
 $$
-Para resolver esse problema de valor incial, aplicamos a transformada de Laplace na equaÁ„o acima e usamos a propriedade \ref{prop_trans_int}:
+Para resolver esse problema de valor incial, aplicamos a transformada de Laplace na equa√ß√£o acima e usamos a propriedade \ref{prop_trans_int}:
 $$
 \mathcal{L}\left\{i(t)\right\}+\frac{1}{sRC}\mathcal{L}\left\{i(t)\right\}=\frac{V_0}{Rs}\left(e^{-as}-e^{-bs}\right),
 $$
-ou seja, obtemos a seguinte equaÁ„o subsidi·ria:
+ou seja, obtemos a seguinte equa√ß√£o subsidi√°ria:
 $$
 sI(s)+\frac{1}{RC}I(s)=\frac{V_0}{R}\left(e^{-as}-e^{-bs}\right),
 $$
@@ -599,18 +599,18 @@ onde $I(s)=\mathcal{L}\left\{i(t)\right\}$. Logo,
 $$
 I(s)=\frac{V_0 C}{RCs+1}\left(e^{-as}-e^{-bs}\right)=\frac{V_0}{R}\frac{1}{s+\frac{1}{RC}}\left(e^{-as}-e^{-bs}\right).
 $$
-O item 7 da tabela de transformadas \ref{tab_trans_Lap_1} nos d· $\mathcal{L}^{-1}\left\{\frac{1}{s-d}\right\}=e^{dt}$. Tome $d=-\frac{1}{RC}$ e obtemos
+O item 7 da tabela de transformadas \ref{tab_trans_Lap_1} nos d√° $\mathcal{L}^{-1}\left\{\frac{1}{s-d}\right\}=e^{dt}$. Tome $d=-\frac{1}{RC}$ e obtemos
 $$
 \mathcal{L}^{-1}\left\{\frac{1}{s+\frac{1}{RC}}\right\}=e^{-\frac{t}{RC}}.
 $$
-Agora, usamos a propriedade \ref{prop_trans_t} do deslocamento no eixo $t$ para calcular a funÁ„o corrente:
+Agora, usamos a propriedade \ref{prop_trans_t} do deslocamento no eixo $t$ para calcular a fun√ß√£o corrente:
 \begin{eqnarray*}
 i(t)&=&\mathcal{L}^{-1}\left\{\frac{V_0}{R}\frac{1}{s+\frac{1}{RC}}\left(e^{-as}-e^{-bs}\right)\right\}\\
 &=&\frac{V_0}{R}\left[\mathcal{L}^{-1}\left\{\frac{1}{s+\frac{1}{RC}}e^{-as}\right\}-\mathcal{L}^{-1}\left\{\frac{1}{s+\frac{1}{RC}}e^{-bs}\right\}\right]\\
 &=&\frac{V_0}{R}\left[u(t-a)e^{-\frac{(t-a)}{RC}}-u(t-b)e^{-\frac{(t-b)}{RC}}\right]\\
 &=&\frac{V_0}{R}\left[u(t-a)e^{\frac{a}{RC}}-u(t-b)e^{\frac{b}{RC}}\right]e^{-\frac{t}{RC}}.
 \end{eqnarray*}
-Olhando numa notaÁ„o de funÁ„o definida por partes, podemos escrecer
+Olhando numa nota√ß√£o de fun√ß√£o definida por partes, podemos escrecer
 $$
 i(t)=\left\{\begin{array}{ll}0,&t<a  \\A e^{-\frac{t}{RC}}, &a<t<b, \\ \left(A-B\right)e^{-\frac{t}{RC}}, &t>b, \end{array}\right.
 $$
@@ -618,7 +618,7 @@ onde
 $$
 A=\frac{V_0}{R}e^{\frac{a}{RC}}\qquad\hbox{e}\qquad B=\frac{V_0}{R}e^{\frac{b}{RC}}.
 $$
-Observe que $A>0$, $B>0$ e $A<B$, ou seja, para $t>b$ a corrente È negativa e se aproxima exponencialmente de zero. Essa È a chamada corrente de descarga. A figura \ref{fig_circ_1} apresenta um gr·fico da corrente quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$.
+Observe que $A>0$, $B>0$ e $A<B$, ou seja, para $t>b$ a corrente √© negativa e se aproxima exponencialmente de zero. Essa √© a chamada corrente de descarga. A figura \ref{fig_circ_1} apresenta um gr√°fico da corrente quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -661,19 +661,19 @@ Observe que $A>0$, $B>0$ e $A<B$, ou seja, para $t>b$ a corrente È negativa e se
 \caption{\label{fig_circ_10}}
 \end{figure}
 
-Agora, vamos obter o modelo para a carga $q(t)$. Voltamos a equaÁ„o (\ref{modelo_corrente_0}) e usamos $i(t)=\frac{dq(t)}{dt}$
+Agora, vamos obter o modelo para a carga $q(t)$. Voltamos a equa√ß√£o (\ref{modelo_corrente_0}) e usamos $i(t)=\frac{dq(t)}{dt}$
 $$
  Rq'(t)+\frac{1}{C}q(t)=V_0\left(u(t-a)-u(t-b)\right).
 $$
-Obtemos a equaÁ„o subsidi·ria aplicando a transformada de Laplace:
+Obtemos a equa√ß√£o subsidi√°ria aplicando a transformada de Laplace:
 \begin{equation*}
   R\left(sQ(s)-q(0)\right)+\frac{1}{C}Q(s)=\frac{V_0}{s}\left(e^{-as}-e^{-bs}\right).
 \end{equation*}
-onde $Q(s)=\mathcal{L}\{q(t)\}$. Como o fenÙmeno estava em repouso no inÌcio, $q(0)=0$. A soluÁ„o da equaÁ„o subsidi·ria È
+onde $Q(s)=\mathcal{L}\{q(t)\}$. Como o fen√¥meno estava em repouso no in√≠cio, $q(0)=0$. A solu√ß√£o da equa√ß√£o subsidi√°ria √©
 $$
 Q(s)=\frac{C}{RCs+1}\frac{V_0}{s}\left(e^{-as}-e^{-bs}\right)=\frac{V_0}{R}\frac{1}{s\left(s+\frac{1}{CR}\right)}\left(e^{-as}-e^{-bs}\right).
 $$
-O item 11 da tabela \ref{tab_trans_Lap_1} nos d· 
+O item 11 da tabela \ref{tab_trans_Lap_1} nos d√° 
 $$
 \mathcal{L}^{-1}\left\{\frac{1}{(s-d_1)(s-d_2)}\right\}=\frac{1}{d_1-d_2}\left(e^{d_1t}-e^{d_2t}\right).
 $$
@@ -681,18 +681,18 @@ Colocamos $d_1=0$, $d_2=-\frac{1}{CR}$
 $$
 \mathcal{L}^{-1}\left\{\frac{1}{s\left(s+\frac{1}{CR}\right)}\right\}=CR\left(1-e^{-\frac{t}{CR}}\right).
 $$
-Agora usamos a propriedade \ref{prop_trans_t} da translaÁ„o no eixo $t$ e obtemos:
+Agora usamos a propriedade \ref{prop_trans_t} da transla√ß√£o no eixo $t$ e obtemos:
 $$
 q(t)=CV_0\left(u(t-a)\left(1-e^{-\frac{t-a}{CR}}\right)-u(t-b)\left(1-e^{-\frac{t-b}{CR}}\right) \right).
 $$
-Olhando numa notaÁ„o de funÁ„o definida por partes, podemos escrecer
+Olhando numa nota√ß√£o de fun√ß√£o definida por partes, podemos escrecer
 $$
 q(t)=\left\{\begin{array}{ll}0,&t<a  \\ CV_0\left(1-e^{-\frac{t-a}{CR}}\right), &a<t<b, \\ CV_0\left(e^{-\frac{t-b}{CR}}-e^{-\frac{t-a}{CR}} \right), &t>b, \end{array}\right.
 $$
-A figura \ref{fig_circ_10} apresenta um gr·fico da carga quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$. Observe a consitÍncia com o gr·fico da figura \ref{fig_circ_1}.
+A figura \ref{fig_circ_10} apresenta um gr√°fico da carga quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$. Observe a consit√™ncia com o gr√°fico da figura \ref{fig_circ_1}.
 
-\section{ExercÌcios}
-\begin{Exercise}{\label{ex_Heaviside0}}Esboce o gr·fico das seguintes funÁıes:
+\section{Exerc√≠cios}
+\begin{Exercise}{\label{ex_Heaviside0}}Esboce o gr√°fico das seguintes fun√ß√µes:
 \begin{itemize}
    \item[(a)] $\displaystyle (t-\pi)u(t-\pi)$
   \item[(b)] $\displaystyle t \ u(t-2)$
@@ -748,7 +748,7 @@ A figura \ref{fig_circ_10} apresenta um gr·fico da carga quando $a=0.5$, $b=2$, 
 \end{itemize}
 
 \end{Answer}
-\begin{Exercise} Calcule a transformada de Laplace para cada item do exercÌcio \ref{ex_Heaviside0}.
+\begin{Exercise} Calcule a transformada de Laplace para cada item do exerc√≠cio \ref{ex_Heaviside0}.
 \end{Exercise}
 \begin{Answer}
  \begin{itemize}
@@ -764,7 +764,7 @@ A figura \ref{fig_circ_10} apresenta um gr·fico da carga quando $a=0.5$, $b=2$, 
 
 
 
-\begin{Exercise}{\label{ex_Heaviside1}}Escreva uma express„o para cada funÁ„o em termos da funÁ„o de Heaviside.
+\begin{Exercise}{\label{ex_Heaviside1}}Escreva uma express√£o para cada fun√ß√£o em termos da fun√ß√£o de Heaviside.
 \begin{itemize}
 
 \item[a)]
@@ -863,7 +863,7 @@ A figura \ref{fig_circ_10} apresenta um gr·fico da carga quando $a=0.5$, $b=2$, 
  \end{itemize}
 
 \end{Answer}
-\begin{Exercise} Calcule a transformada de Laplace para cada item do exercÌcio \ref{ex_Heaviside1}.
+\begin{Exercise} Calcule a transformada de Laplace para cada item do exerc√≠cio \ref{ex_Heaviside1}.
 \end{Exercise}
 \begin{Answer}
  \begin{itemize}
@@ -876,7 +876,7 @@ A figura \ref{fig_circ_10} apresenta um gr·fico da carga quando $a=0.5$, $b=2$, 
 \end{Answer}
 \begin{Exercise}
 \begin{itemize}
-\item[a)] Use os itens c) e d) do exercÌcio \ref{ex_Heaviside1} e a propriedade da translaÁ„o no eixo $t$ para calcular a transformada de Laplace das seguintes funÁıes:
+\item[a)] Use os itens c) e d) do exerc√≠cio \ref{ex_Heaviside1} e a propriedade da transla√ß√£o no eixo $t$ para calcular a transformada de Laplace das seguintes fun√ß√µes:
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -954,7 +954,7 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
   \end{Answer}
 
 
- \begin{Exercise}Use as propriedades de translaÁ„o e a tabela de transformadas para calcular as transformadas inversa de Laplace da funÁ„o $F(s)$:
+ \begin{Exercise}Use as propriedades de transla√ß√£o e a tabela de transformadas para calcular as transformadas inversa de Laplace da fun√ß√£o $F(s)$:
  \begin{itemize}
   \item[a)] $\displaystyle F(s)=\frac{2s}{s^2+2s+5}$
     \item[b)] $\displaystyle F(s)=\frac{2s-2}{(s^2-2s+5)(s^2-2s+10)}$
@@ -981,7 +981,7 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
 \end{Answer}
  
  \begin{Exercise}
-Encontre a transformada inversa das funÁıes $F(s)$ abaixo:
+Encontre a transformada inversa das fun√ß√µes $F(s)$ abaixo:
 \begin{itemize}
   \item[(a)] $\displaystyle \frac{n\pi}{(s+2)^2 + n^2\pi^2}$
   \item[(b)] $\displaystyle \frac{s}{(s+3)^2+1}$
@@ -1015,7 +1015,7 @@ Encontre a transformada inversa das funÁıes $F(s)$ abaixo:
  
 \end{Answer}
 
-\begin{Exercise}Esboce o gr·fico e calcule a transformada de Laplace das seguintes funÁıes:
+\begin{Exercise}Esboce o gr√°fico e calcule a transformada de Laplace das seguintes fun√ß√µes:
  \begin{itemize}
   \item[a)] $f(t)=tu(t-1)$
   \item[b)] $f(t)=t^2u(t-1)$
@@ -1041,7 +1041,7 @@ Mostre que:
 \end{Exercise}
 
 
-\begin{Exercise}(Resson‚ncia) Considere o oscilador harmÙnico n„o amortecido com termo forÁante $F(t)=F_0\sen\left(\sqrt{\frac{k}{m}}t\right)$ descrito pelo problema de valor inicial
+\begin{Exercise}(Resson√¢ncia) Considere o oscilador harm√¥nico n√£o amortecido com termo for√ßante $F(t)=F_0\sen\left(\sqrt{\frac{k}{m}}t\right)$ descrito pelo problema de valor inicial
 $$\left\{
 \begin{array}{l}
  my''(t)+ky(t)=F(t)\\
@@ -1050,12 +1050,12 @@ $$\left\{
 \end{array}
 \right..
 $$
-Use o mÈtodo de transformada de Laplace para calcular a soluÁ„o, observando que a frequÍncia de oscilaÁ„o natural do sistema coincide com a frequÍncia do termo forÁante.
+Use o m√©todo de transformada de Laplace para calcular a solu√ß√£o, observando que a frequ√™ncia de oscila√ß√£o natural do sistema coincide com a frequ√™ncia do termo for√ßante.
 \end{Exercise}
 \begin{Answer}
 $\displaystyle y(t)=\frac{F_0}{2k}\left(\sen\left(\sqrt{\frac{k}{m}}t\right)-\sqrt{\frac{k}{m}}t\cos\left(\sqrt{\frac{k}{m}}t\right)\right)$
 \end{Answer}
-\begin{Exercise}Considere o oscilador harmÙnico amortecido com termo forÁante $F(t)=2(u(t-1)-u(t-2))$ descrito pelo problema de valor inicial
+\begin{Exercise}Considere o oscilador harm√¥nico amortecido com termo for√ßante $F(t)=2(u(t-1)-u(t-2))$ descrito pelo problema de valor inicial
 $$\left\{
 \begin{array}{l}
  y''(t)+3y'(t)+2y(t)=F(t)\\
@@ -1064,7 +1064,7 @@ $$\left\{
 \end{array}
 \right..
 $$
-Use o mÈtodo de transformada de Laplace para calcular a soluÁ„o.
+Use o m√©todo de transformada de Laplace para calcular a solu√ß√£o.
 \end{Exercise}
 \begin{Answer}
 $\displaystyle y(t)=(1-2e^{-(t-1)}+e^{-2(t-1)})u(t-1)-(1-2e^{-(t-2)}+e^{-2(t-2)})u(t-2)$
@@ -1075,8 +1075,8 @@ $\displaystyle y(t)=(1-2e^{-(t-1)}+e^{-2(t-1)})u(t-1)-(1-2e^{-(t-2)}+e^{-2(t-2)}
 \begin{eqnarray*}
  m y''(t) +\alpha y'(t) + \kappa y(t) &=& f(t)
  \end{eqnarray*}
-Onde $f(t)$ È a forÁa externa e a condiÁıes iniciais $y(0)$ e $y'(0)$ s„o nulas.
- Supondo $m=4$ e $\kappa=1$, responda ‡s alternativas a seguir:
+Onde $f(t)$ √© a for√ßa externa e a condi√ß√µes iniciais $y(0)$ e $y'(0)$ s√£o nulas.
+ Supondo $m=4$ e $\kappa=1$, responda √†s alternativas a seguir:
  \begin{itemize}
   \item [a)] Encontre o conjunto de valores $\alpha$ para que o sistema seja amortecido.
   \item [b)] Encontre o conjunto de valores $\alpha$ para que o sistema seja sub-amortecido.
@@ -1100,7 +1100,7 @@ Onde $f(t)$ È a forÁa externa e a condiÁıes iniciais $y(0)$ e $y'(0)$ s„o nulas.
 
 
 \begin{Exercise}
-Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $\mathcal{L}\{f \} $ È:
+Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $\mathcal{L}\{f \} $ √©:
 
 \begin{itemize}
   \item[(a)] $\displaystyle \frac{5}{s^3 - 5s}$
@@ -1110,7 +1110,7 @@ Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $
 
 \end{Exercise}
 \begin{Exercise}
-Encontre $g(t)$ e faÁa um esboÁo de seu gr·fico, sendo $\mathcal{L}\{ g(t)\}$ igual a:
+Encontre $g(t)$ e fa√ßa um esbo√ßo de seu gr√°fico, sendo $\mathcal{L}\{ g(t)\}$ igual a:
 
 \begin{itemize}
   \item[(a)] $\displaystyle \frac{2e^{-2s} - 2 e^{-4s}}{s}$
