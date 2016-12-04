@@ -3,22 +3,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ATENÇÃO
 %
-% POR SEGURANÇA, NÃO EDITE ESTE ARQUIVO
+% POR SEGURANÇA, EVITE EDITAR ESTE ARQUIVO
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[12pt]{book}
 
- \usepackage{tabu}
-\usepackage{ccicons}
+\usepackage{tabu}
+%\usepackage{ccicons}
 \usepackage{subfiles}
+
+%opções de linguagem
 \usepackage[utf8]{inputenc}
-\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+
+%\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
 %\usepackage[a5paper]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage[T1]{fontenc}
-\usepackage[portuges]{babel}
 \usepackage{amsthm}
 \usepackage{graphics}
 \usepackage[normalem]{ulem}
@@ -28,11 +31,15 @@
 \usepackage{pst-plot}
 \usepackage{pst-circ}
 
+\usepackage[pdfborder={0 0 0 [0 0]},colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
+
+
 %\usepackage{hyperref}
 
 %\usepackage[lastexercise]{exercise}
 \usepackage[answerdelayed,lastexercise]{exercise}
 \usepackage{chngcntr}
+
 \counterwithin{Exercise}{chapter}
 \counterwithin{Answer}{chapter}
 
@@ -70,8 +77,8 @@
 
 \include{organizadores}
 \include{licenca}
-%\include{nota_organizadores}
-%\include{prefacio}
+\include{nota_organizadores}
+\include{prefacio}
 
 
 
@@ -94,7 +101,7 @@
 \subfile{./cap_sistemas/cap_sistemas.tex}
 
 \appendix
-%\subfile{./apendice/apendice.tex}
+\subfile{./apendice/apendice.tex}
 
 
 \chapter*{Resposta dos Exercícios}
