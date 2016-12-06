@@ -11,7 +11,7 @@
 
 \usepackage{tabu}
 %\usepackage{ccicons}
-\usepackage{subfiles}
+%\usepackage{subfiles}
 
 %opções de linguagem
 \usepackage[utf8]{inputenc}
@@ -92,16 +92,17 @@
 \mainmatter
 
 
-\subfile{./cap_introducao/cap_introducao.tex}
-\subfile{./cap_definicao/cap_definicao.tex}
-\subfile{./cap_linear_deriva/cap_linear_deriva.tex}
-\subfile{./cap_trans_int/cap_trans_int.tex}
-\subfile{./cap_dirac_conv/cap_dirac_conv.tex}
-\subfile{./cap_especiais_coef_var/cap_especiais_coef_var.tex}
-\subfile{./cap_sistemas/cap_sistemas.tex}
+\include{./cap_introducao/cap_introducao}
+
+\include{./cap_definicao/cap_definicao}
+\include{./cap_linear_deriva/cap_linear_deriva}
+\include{./cap_trans_int/cap_trans_int}
+\include{./cap_dirac_conv/cap_dirac_conv}
+\include{./cap_especiais_coef_var/cap_especiais_coef_var}
+\include{./cap_sistemas/cap_sistemas}
 
 \appendix
-\subfile{./apendice/apendice.tex}
+\include{./apendice/apendice}
 
 
 \chapter*{Resposta dos Exercícios}
