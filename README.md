@@ -1,6 +1,6 @@
-# Transformada de Laplace: Um Livro Colaborativo
+# Transformadas Integrais: Um Livro Colaborativo
 
-Este é um livro colaborativo que versa sobre tranformada de Laplace e aplicações normalmente estudadas em cursos de graduação das áreas exatas e da terra.
+Este é um livro colaborativo que versa sobre transformadas integrais, em especial a tranformada de Laplace e de Fourier com aplicações normalmente estudadas em cursos de graduação das áreas exatas e da terra.
 
 ## Licença
 Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite <http://creativecommons.org/licenses/by-sa/3.0/> ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
