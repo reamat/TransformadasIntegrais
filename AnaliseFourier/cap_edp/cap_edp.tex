@@ -1,0 +1,406 @@
+%\documentclass[Main.tex]{subfiles}
+%\begin{document}
+\chapter{Equa\c{c}\~{o}es diferenciais parciais}
+
+\section{Equação do Calor}
+Considere o problema evolutivo de difusão de temperatura numa barra infinita, dado pela equação de calor
+\begin{subequations}{\label{eq_calor}}
+\begin{eqnarray}
+{\label{eq_calor_1}}&&\frac{\partial u}{\partial t}(x,t)=\mu\frac{\partial^2u}{\partial
+x^2}(x,t),\quad x\in(-\infty,\infty),\ \ t>0,\\
+{\label{eq_calor_2}}&&u(x,0)=f(x)
+\end{eqnarray}
+\end{subequations}
+Tomando a transformada de Fourier desse problema na variável $x$, obtemos
+\begin{eqnarray*}
+&&\frac{\partial (\mathcal{F}_x\{u(x,t)\})}{\partial t}=-\mu k^2 (\mathcal{F}_x \{u(x,t)\}) \\
+&&\mathcal{F}_x\{u(x,0)\}=\mathcal{F}_x \{f(x)\},
+\end{eqnarray*}
+onde se usou a propriedade \ref{prop_der} da transformada da derivada. Denotando $\mathcal{F}_x\{u(x,t)\}:=U(k,t)$, podemos escrever o problema de uma forma mais limpa:
+\begin{eqnarray*}
+&&\frac{\partial U}{\partial t}=-\mu k^2 U \\
+&&U(k,0)=F(k),
+\end{eqnarray*}
+Essa é uma equação que pode ser resolvida por vários métodos, entre eles separação de variáveis:
+\begin{eqnarray*}
+\frac{1}{U}\frac{\partial U}{\partial t}&=&-\mu k^2 \\
+&\Downarrow&\\
+\ln(U)&=&-\mu k^2t+C \\
+&\Downarrow&\\
+U&=&e^{-\mu k^2t+C }=Ke^{-\mu k^2t }
+\end{eqnarray*}
+onde $K=e^C$ é uma constante de integração que é calculada com a condição inicial:
+$$
+U(k,0)=Ke^{-\mu k^2 \cdot 0 }=F(k)\Rightarrow K=F(k),
+$$
+Logo,
+\begin{equation}\label{eq_trans_eq_calor}
+U(k,t) =\mathcal{F}_x\{u(x,t)\}=F(k)e^{-\mu k^2 t}.
+\end{equation}
+Agora, precisamos calcular a transformada inversa de $U(k,t)$ para obter a solução $u(x,t)$ do problema original. O resultado do exercício \ref{ex_inv_exp_kk} da página \pageref{ex_inv_exp_kk}, temos que
+$$
+\mathcal{F}^{-1}_k\{e^{-k^2}\}=\frac{1}{2\sqrt{\pi}} e^{-\frac{x^2}{4}}
+$$
+Usando a propriedade de mudança de escala \ref{prop_mud_esc} com $a=\sqrt{\mu t}$, temos
+$$
+\mathcal{F}_k^{-1}\{e^{-\mu t k^2}\}=\mathcal{F}_k^{-1}\{e^{-(\sqrt{\mu t} k)^2}\}=\frac{1}{2\sqrt{\pi}}\frac{1}{\sqrt{\mu t}} e^{-\frac{\left(x/\sqrt{\mu t}\right)^2}{4}}
+$$
+ou seja,
+\begin{equation}{\label{eq_calor_02}}
+\mathcal{F}_k^{-1}\{e^{-\mu t k^2}\}=\frac{1}{\sqrt{4\pi\mu t}} e^{-\frac{x^2}{4\mu t}}.
+\end{equation}
+Aplicando esse resultado juntamente com o teorema da convolução descrito na propriedade \ref{prop_teo_conv} na equação (\ref{eq_trans_eq_calor}), obtemos
+\begin{equation}{\label{eq_dif_calor}}
+u(x,t)=\frac{1}{\sqrt{4\pi \mu t}}\int_{-\infty}^\infty
+f(y)e^{-\frac{(x-y)^2}{4\mu t}}dy.
+\end{equation}
+
+\begin{ex}Considere o caso particular da equação do calor (\ref{eq_calor}) onde
+$$
+f(x)=\left\{\begin{array}{ll}
+u_0,& |x|\leq 1\\
+0,& |x|>1.\\
+\end{array}\right.
+$$
+Então,
+\begin{equation*}
+u(x,t)=\frac{u_0}{\sqrt{4\pi \mu t}}\int_{-1}^1
+e^{-\frac{(x-y)^2}{4\mu t}}dy.
+\end{equation*}
+Fazendo a mudança de variável $z=\frac{y-x}{2\sqrt{\mu t}}$ e definindo $z_1=\frac{-1-x}{2\sqrt{\mu t}}$ e $z_2=\frac{1-x}{2\sqrt{\mu t}}$, temos:
+\begin{equation*}
+u(x,t)=\frac{u_02\sqrt{\mu t}}{\sqrt{4\pi \mu t}}\int_{z_1}^{z_2}
+e^{-z^2}dz=\frac{u_0}{\sqrt{\pi }}\int_{z_1}^{z_2}
+e^{-z^2}dz.
+\end{equation*}
+Essa expressão pode ser escrita da forma:
+\begin{eqnarray*}
+u(x,t)&=&\frac{u_0}{\sqrt{\pi }}\int_{z_1}^{0}
+e^{-z^2}dz+\frac{u_0}{\sqrt{\pi }}\int_{0}^{z_2}
+e^{-z^2}dz\\
+&=&\frac{u_0}{\sqrt{\pi }}\int_{0}^{z_2}
+e^{-z^2}dz-\frac{u_0}{\sqrt{\pi }}\int_{0}^{z_1}
+e^{-z^2}dz\\
+&=&\frac{u_0}{2}\hbox{erf}\ \!(z_2)-\frac{u_0}{2}\hbox{erf}\ \!(z_1),
+\end{eqnarray*}
+onde $\hbox{erf}\ \!(z)$ é a função erro dada por
+$$
+\hbox{erf}\ \!(x)=\frac{2}{\sqrt{\pi }}\int_{0}^{x}
+e^{-z^2}dz
+$$
+\end{ex}
+\begin{ex}{\label{ex_eq_dif_2}}
+Considere o fenômeno de difusão de sal ao longo de um cano longo e fino. Suponha que no tempo $t=0$ uma quantidade $Q$ de sal foi introduzida no ponto $x_0$. A equação que modela esse fenômeno é
+\begin{eqnarray*}
+&&\frac{\partial \rho}{\partial t}=\mu \frac{\partial^2
+\rho}{\partial x^2},\quad -\infty<x<\infty,\ \ t>0\\
+&&\rho(x,0)=\frac{Q}{A}\delta(x-x_0),
+\end{eqnarray*}
+onde $A$ é a área da seção transversal do cano e $\rho(x,t)$ é a concentração de sal no ponto $x$ e tempo $t$. A solução desse problema é dada pela equação (\ref{eq_dif_calor}) com $f(x)=\frac{Q}{A}\delta(x-x_0)$:
+\begin{equation*}
+\rho(x,t)=\frac{Q}{A\sqrt{4\pi \mu t}}\int_{-\infty}^\infty
+\delta(y-x_0)e^{-\frac{(x-y)^2}{4\mu t}}dy.
+\end{equation*}
+Usando a propriedade da filtragem, temos:
+\begin{equation*}
+\rho(x,t)=\frac{Q}{A\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}.
+\end{equation*}
+
+
+\end{ex}
+
+\section{Equação do calor com termo fonte}
+Considere o problema evolutivo de difusão de temperatura numa barra infinita com um termo fonte
+\begin{eqnarray*}
+&&\frac{\partial u}{\partial t}=\mu \frac{\partial^2u}{\partial
+x^2}+f(x,t),\quad x\in(-\infty,\infty),\ \ t>0.\\
+&&u(x,0)=0
+\end{eqnarray*}
+Tomando a transformada de Fourier na variável $x$ obtemos
+\begin{eqnarray*}
+&&\frac{\partial \mathcal{F}_x\{u(x,t)\}}{\partial t}=-\mu k^2 (\mathcal{F}_x \{u(x,t)\})+\mathcal{F}_x \{f(x,t)\} \\
+&&\mathcal{F}_x\{u(x,0)\}=0.
+\end{eqnarray*}
+Denotando $\mathcal{F}_x\{u(x,t)\}:=U(k,t)$, podemos escrever o problema de uma forma mais limpa:
+\begin{eqnarray*}
+&&\frac{\partial U}{\partial t}=-\mu k^2 U+F \\
+&&U(k,0)=0.
+\end{eqnarray*}
+Essa equação pode ser resolvida pelo método do fator integrante:
+\begin{eqnarray*}
+\frac{\partial U}{\partial t}+\mu k^2 U&=&F \\
+&\Downarrow&\\
+e^{\mu k^2t}\frac{\partial U}{\partial t}+e^{\mu k^2t}\mu k^2 U&=&e^{\mu k^2t}F \\
+&\Downarrow&\\
+\frac{\partial }{\partial t}\left(Ue^{\mu k^2t}\right)&=&e^{\mu k^2t}F \\
+&\Downarrow&\\
+ U(k,t)e^{\mu k^2 t}-U(k,0)e^{\mu k^2 \cdot 0}&=&\int_0^t e^{\mu k^2\tau}F(k,\tau) d\tau\\
+&\Downarrow&\\
+ U(k,t)&=&e^{-\mu k^2 t}\int_0^t e^{\mu k^2\tau}F(k,\tau) d\tau
+\end{eqnarray*}
+ou seja,
+\begin{equation*}
+ U(k,t)=\mathcal{F}_x\{u(x,t)\}=\int_0^t
+e^{-\mu (t-\tau)k^2}F(k,\tau)d\tau.
+\end{equation*}
+Agora, precisamos obter a solução do problema original $u(x,t)$, que é a transformada inversa de $U(k,t)$. Usando a equação (\ref{eq_calor_02}), temos que
+\begin{equation*}
+\mathcal{F}^{-1}_k\{e^{-\mu (t-\tau) k^2}\}=\frac{1}{\sqrt{4\pi\mu (t-\tau)}} e^{-\frac{x^2}{4\mu (t-\tau)}}.
+\end{equation*}
+Usando o teorema da convolução dado na propriedade \ref{prop_teo_conv}, temos
+\begin{eqnarray*}
+u(x,t)&=&\int_0^t \left(\mathcal{F}_k^{-1}\left\{
+e^{-\mu k^2 (t-\tau)}\right\}\ast f(x,\tau)\right)d\tau\\
+&=&\int_0^t \left[\left(\frac{1}{\sqrt{4\pi\mu (t-\tau)}} e^{-\frac{x^2}{4\mu (t-\tau)}}\right) \ast f(x,\tau)\right]d\tau\\
+&=&\frac{1}{\sqrt{4\pi\mu}}\int_0^t \left[\frac{1}{\sqrt{ (t-\tau)}} \int_{-\infty}^\infty e^{-\frac{(x-y)^2}{4\mu (t-\tau)}}f(y,\tau)dy\right]d\tau.\\
+\end{eqnarray*}
+
+\section{Equação da Onda}
+Considere a equação da onda dada por
+\begin{eqnarray*}
+&&\frac{1}{c^2}\frac{\partial^2 y}{\partial t^2}=\frac{\partial^2
+y}{\partial x^2},\quad -\infty<x<\infty,\ \ t>0\\
+&&y(x,0)=f(x)\\
+&&\frac{\partial y}{\partial t}(x,0)=g(x).
+\end{eqnarray*}
+Usando a notação
+\begin{eqnarray*}
+&&Y(k,t)=\mathcal{F} \{y(x,t)\}\\
+&&Y(k,0)=\mathcal{F}\{f(x)\}\\
+&&\frac{d Y}{d t}(k,0)=\mathcal{F}\{g(x)\}.
+\end{eqnarray*}
+e tomando a transformada de Fourier da equação, temos
+\begin{eqnarray*}
+&&\frac{d^2 Y}{d
+t^2}(k,t)+c^2k^2Y(k,t)=0\\
+&&Y(k,0)=\mathcal{F}\{f(x)\}=F(k)\\
+&&\frac{d Y}{d t}(k,0)=\mathcal{F}\{g(x)\}=G(k).
+\end{eqnarray*}
+A solução desse problema é dada em termos de senos e cossenos:
+$$
+Y=A\cos(ckt)+B\sen(ckt).
+$$
+Impondo as condições de contorno, temos:
+\begin{eqnarray*}
+Y(0)&=&A=F(k)\\
+Y'(0)&=&ckB=G(k).
+\end{eqnarray*}
+ou seja, $A=F(k)$ e $B=\frac{G(k)}{ck}$. Portanto,
+\begin{equation*}
+Y=F(k)\cos(ckt)+\frac{G(k)}{ck}\sen(ckt).
+\end{equation*}
+ou
+\begin{equation*}
+Y=\frac{1}{2}F(k)(e^{ickt}+e^{-ickt})+\frac{G(k)}{2ick}(e^{ickt}-e^{-ickt}).
+\end{equation*}
+
+Tomando a transformada de Fourier inversa obtemos
+\begin{eqnarray*}
+y(x,t)&=&\frac{1}{2}\left(\frac{1}{2
+\pi}\int_{-\infty}^\infty
+F(k)(e^{ik(x+ct)}+e^{ik(x-ct)})dk\right)+\\&+&\frac{1}{2c}\left(\frac{1}{2
+\pi}\int_{-\infty}^\infty
+\frac{G(k)}{ik}(e^{ik(x+ct)}-e^{ik(x-ct)})dk \right).
+\end{eqnarray*}
+Sabemos que
+\begin{equation*}
+f(x\pm ct)=\frac{1}{2\pi}\int_{-\infty}^\infty
+F(k)e^{ik (x\pm ct)}dk,
+\end{equation*}
+\begin{equation*}
+g(x)=\frac{1}{2\pi}\int_{-\infty}^\infty G(k)e^{ik
+x}dk
+\end{equation*}
+e
+\begin{equation*}
+\int_{x-ct}^{x+ct}
+g(\eta)d\eta=\frac{1}{2\pi}\int_{-\infty}^\infty
+\frac{G(k)}{i k} (e^{ik(x+ct)}-e^{ik(x-ct)})dk.
+\end{equation*}
+Portanto,
+\begin{equation*}
+y(x,t)=\frac{1}{2} \left( f(x+ct)+f(x-ct)
+\right)+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\eta)d\eta.
+\end{equation*}
+
+
+\section{Vibrações livres transversais} 
+Considere o problema de vibrações livres transversais de uma barra infinita governada por
+\begin{eqnarray*}
+&&\frac{\partial^4 y}{\partial x^4}+\frac{1}{a^2}\frac{\partial^2
+y}{\partial t^2}=0,\quad t>0, x\in (-\infty,\infty)\\
+&&y(x,0)=f(x)\\
+&&\frac{\partial y}{\partial t}(x,0)=ag''(x).\\
+\end{eqnarray*}
+Tomando a transformada de Fourier e pondo $Y(k,t)=\mathcal{F}\{y(x,t)\}$,
+obtemos
+\begin{eqnarray*}
+&&\frac{\partial^2 Y}{\partial t^2}+k^4a^2Y=0\\
+&&Y(0)=\mathcal{F}\{f\}=F(k)\\
+&&\frac{\partial Y}{\partial t}(0)=-ak^2G(k).\\
+\end{eqnarray*}
+tendo a solução
+\begin{equation*}
+Y(k,t)=F(k)\cos (ak^2t)-G(k)\sen (ak^2t).
+\end{equation*}
+Tomando a transformada inversa de Fourier
+\begin{equation*}
+y(k,t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(k)\cos
+(ak^2 t)e^{ik
+x}dk-\frac{1}{2\pi}\int_{-\infty}^\infty G(k)\sen
+(ak^2 t)e^{ik x}dk.
+\end{equation*}
+Usando o fato que,
+\begin{equation*}
+\int_{-\infty}^\infty e^{-k^2 a}e^{ik
+x}dk=\frac{\sqrt{\pi}}{\sqrt{a}}e^{-\frac{x^2}{4a}}
+\end{equation*}
+e
+\begin{equation*}
+\frac{1}{(a i)^{\frac{1}{2}}}=\frac{1}{\sqrt{a
+}}e^{-i\frac{1}{4}\pi},
+\end{equation*}
+trocamos $a$ por $ai$ para obter
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty (\cos (ak^2 t)-i\sen
+(ak^2 t))e^{ik
+x}dk=\frac{1}{2\sqrt{\pi a}}e^{i\left(\frac{x^2}{4a}-\frac{\pi}{4}\right)}.
+\end{equation*}
+Tomando as partes real e imaginária nesta equação obtemos que
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty \cos (ak^2)e^{ik
+x}dk=\frac{\sqrt{2}}{4\sqrt{\pi a}}\left(\cos \left(\frac{x^2}{4a}\right)+\sen\left(
+\frac{x^2}{4a}\right)\right)
+\end{equation*}
+e
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty \sen (ak^2)e^{ik
+x}dk=\frac{\sqrt{2}}{4\sqrt{\pi a}}\left(\cos\left( \frac{x^2}{4a}\right)-\sen\left(
+\frac{x^2}{4a}\right)\right).
+\end{equation*}
+Utilizando o resultado sobre convoluções dado na propriedade \ref{prop_teo_conv}, obtemos que
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty F(k)\cos (ak^2
+t)e^{ik x}dk=\frac{\sqrt{2}}{4\sqrt{\pi a t}}\int_{-\infty}^\infty
+f(x-y)\left[\cos \left(\frac{y^2}{4at}\right)+\sen\left( \frac{y^2}{4at}\right)\right]dy
+\end{equation*}
+e 
+\begin{equation*}
+\frac{1}{2\pi}\int_{-\infty}^\infty G(k)\sen (ak^2
+t)e^{ik x}dk=\frac{\sqrt{2}}{4\sqrt{\pi a t}}\int_{-\infty}^\infty
+g(x-y)\left[\cos \left(\frac{y^2}{4at}\right)-\sen\left( \frac{y^2}{4at}\right)\right]dy
+\end{equation*}
+ou seja,
+\begin{eqnarray*}
+y(x,t)&=&\frac{1}{2\sqrt{2\pi a t}}\int_{-\infty}^\infty
+f(x-y)\left(\cos\left( \frac{y^2}{4at}\right)+\sen\left( \frac{y^2}{4at}\right)\right)dy-\\
+&-&\frac{1}{2\sqrt{2\pi a t}}\int_{-\infty}^\infty
+g(x-y)\left(\cos \left(\frac{y^2}{4at}\right)-\sen\left( \frac{y^2}{4at}\right)\right)dy.
+\end{eqnarray*}
+Escrevendo $u^2=\dfrac{y^2}{4at}$, obtemos:
+\begin{eqnarray*}
+y(x,t)&=&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty
+f(x-2u a^{\frac{1}{2}}t^{\frac{1}{2}})\left(\cos (u^2)+\sen (u^2)\right)du-\\
+&-&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(x-2u
+a^{\frac{1}{2}}t^{\frac{1}{2}})\left(\sen (u^2)-\cos (u^2)\right)du.
+\end{eqnarray*}
+
+\section{Exercícios}
+
+\begin{Exercise}No exemplo \ref{ex_eq_dif_2}, mostre que a solução satisfaz a condição inicial: 
+$$
+\lim_{t\to 0}u(x,t)=\frac{Q}{A}\delta(x-x_0)
+$$
+e, como esperado, vale zero nos limites para infinito:
+$$
+\lim_{x\to\pm\infty}u(x,t)=0.
+$$
+\end{Exercise}
+\begin{Answer}
+\begin{eqnarray*}
+\lim_{t\to 0} u(x,t)&=&\frac{Q}{A}\lim_{t\to 0} \frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}\\
+&=&\left\{\begin{array}{ll}0,&x\neq x_0\\ \infty, &x=x_0\end{array}\right.
+\end{eqnarray*}
+Como,
+\begin{eqnarray*}
+\int_{-\infty}^\infty\frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}dx&=&\frac{2}{\sqrt{4\pi \mu t}}\int_{0}^\infty e^{-\frac{x^2}{4\mu t}}dx\\
+&=&\frac{2}{\sqrt{4\pi \mu t}}\frac{\sqrt{\pi} \sqrt{4\mu t}}{2}=1,
+\end{eqnarray*}
+onde se usou item 8 da tabela de integrais \ref{tab_int_def} com $a=\frac{1}{\sqrt{4\mu t}}$, então
+$$
+\lim_{t\to 0} u(x,t)=\frac{Q}{A} \delta(x-x_0)
+$$
+\end{Answer}
+\begin{Exercise} Enconte a solução da equação da onda dada
+\begin{eqnarray*}
+&&\frac{\partial^2 y}{\partial t^2}=\frac{\partial^2
+y}{\partial x^2},\quad -\infty<x<\infty,\ \ t>0\\
+&&y(x,0)=f(x)\\
+&&\frac{\partial y}{\partial t}(x,0)=g(x).
+\end{eqnarray*}
+\begin{itemize}
+ \item a) Dados $f(x)=e^{-|x|}$ e $g(x)=0$.
+  \item b) Dados $f(x)=e^{-3|x|}$ e $g(x)=e^{-x^2}$.
+\end{itemize}
+
+\end{Exercise}
+\begin{Answer}
+
+\begin{itemize}
+ \item a) 
+ \begin{equation*}
+y(x,t)=\frac{1}{2} \left( e^{-|x+t|}+e^{-|x-t|}
+\right).
+\end{equation*}
+\item b) 
+ \begin{equation*}
+y(x,t)=\frac{1}{2} \left(  e^{-3|x+t|}+e^{-3|x-t|}
+\right)+\frac{1}{2}\int_{x-t}^{x+t}e^{-\eta^2}d\eta.
+\end{equation*}
+\end{itemize}
+
+\end{Answer}
+
+
+\begin{Exercise} Considere uma viga infinita repousada sobre um suporte elástico e $y(x)$ seu deslocamento vertical em cada ponto $x$. Suponha que o suporte exerce uma força de reação proporcional ao deslocamento $y(x)$ e que a viga é carregada em $x=0$ por um força concentrada $P\delta(x)$. A equação que modela o fenômeno é dada por:
+$$
+EI\frac{d^4 y}{dx^4}=P\delta(x)-Cy(x),\qquad -\infty<x<\infty,
+$$
+onde $C$ é uma constante de proporcionalidade relacionada ao suporte, $E$ é o módulo de Young e $I$ é o momento de inércia da viga. Calcule o deslocamento $y(x)$ da viga.
+\end{Exercise}
+\begin{Answer}
+\begin{eqnarray*}
+y(x)=\frac{P}{EI}\frac{\sqrt{2}}{8a^3}e^{-ax}\sen\left(ax+\frac{\pi}{4}\right),
+\end{eqnarray*}
+onde $a=\left(\frac{C}{4EI}\right)^{\frac{1}{4}}$.
+\end{Answer}
+
+
+\begin{Exercise}
+Um fluido se desloca em um tubo termicamente isolado com velocidade constante $v$ de forma que a evolução da temperatura $u(x,t)$ como uma função da coordenada $x$ e do tempo é descrita pelo seguinte modelo simplificado:
+$$u_t-vu_x-u_{xx}=0.$$
+Sabendo que no instante $t=0$, a temperatura foi bruscamente aquecida em uma região muito pequena, de forma que podemos considerar
+$$u(x,0)=500 \delta(x).$$ 
+Use a técnica das transformadas de Fourier para obter a solução desta equação diferencial quando $v=1m/s$.
+\end{Exercise}
+\begin{Answer}
+Aplicamos a transforma de Fourier na variável $x$, obtemos a seguinte expressão para a equação transformada
+$$U_t(k,t)-v(ik)U(k,t)-(ik)^2U(k,t)=0$$
+onde foi usada a propriedade da derivada.
+A condição inicial se torna:
+$$U(k,0)=500\int_{-\infty}^\infty \delta(x)e^{-ikx}=500$$
+Portanto temos o seguinte problema de valor inicial:
+$$U_t(k,t)=(-k^2+ivk)U(k,t)$$
+$$U(k,0)=500$$
+cuja solução é
+$$U(k,t)=500e^{(-k^2+ivk)t}=500 e^{ivkt}e^{-k^2t}$$
+A multiplicação por $e^{ivtk}$ indica um deslocamento no eixo $x$. Logo precisamos calcular:
+\begin{eqnarray*}
+\mathcal{F}^{-1}_x\left\{e^{-k^2t}\right\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty e^{-k^2t} e^{ikx}dk=\frac{1}{\pi}\int_{0}^\infty e^{-k^2t} \cos({ikx})dk\\
+&=&\frac{1}{\pi}\frac{\sqrt{\pi}}{2\sqrt{t}}e^{-\frac{x^2}{4t}}=\frac{1}{2\sqrt{\pi t}}e^{-\frac{x^2}{4t}}
+\end{eqnarray*}
+Portanto
+$$u(x,t)=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+vt)^2}{4t}}=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+t)^2}{4t}}$$
+
+\end{Answer}
+%\end{document}
