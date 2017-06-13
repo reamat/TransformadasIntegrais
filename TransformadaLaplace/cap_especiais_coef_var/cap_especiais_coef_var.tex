@@ -443,7 +443,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \subsection{Transformada de Laplace inversa de funções envolvendo expansão em séries de potências}
 Em algumas situações, é conveniente expandir em séries de potência um termo de uma função para calcular sua transformada inversa. Vejamos alguns exemplos.
 
-\begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-t})}$, usando o fato que
+\begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-s})}$, usando o fato que
 $$\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.$$
 E, portanto, temos:
  $$ F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
@@ -723,9 +723,11 @@ não usamos-a para calcular a solução. De fato, o problema possui um singulari
 
 
 \section{Propriedade da integral da transformada de Laplace}
-\begin{propr}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$, e o limite
+\begin{propr}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
+
+e o limite
 $$
-\lim_{t\to 0^+}\frac{f(t)}{t}
+\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau
 $$
 existe, então
 \begin{equation}
@@ -740,7 +742,8 @@ existe, então
 &=&\int_0^\infty \frac{f(t)}{t} e^{-st}  dt\\
 &=&\mathcal{L}\left\{ \frac{f(t)}{t} \right\}.
 \end{eqnarray*}
-Observe que a última igualdade é válida pois, o fato de o limite $\lim_{t\to 0^+}\frac{f(t)}{t}$ existir, garante que $\frac{f(t)}{t}$ é integrável perto da origem e, portanto, a transformada de Laplace existe.
+%Observe que a última igualdade é válida pois, o fato de o limite $\lim_{t\to 0^+}\frac{f(t)}{t}$ existir, garante que $\frac{f(t)}{t}$ é integrável perto da origem e, portanto, a transformada de Laplace existe.
+Observe que a existência do limite $\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau$ é fundamental para a existência da Transformada de Laplace e para os procedimentos analíticos acima.
 \end{proof}
 \begin{ex}Vamos mostrar o item 29 da tabela \ref{tab_trans_Lap_2}:
 $$
