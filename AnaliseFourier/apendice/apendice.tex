@@ -1,0 +1,164 @@
+%\documentclass[Main.tex]{subfiles}
+%\begin{document}
+\chapter{Tabelas}
+
+\begin{table}
+\begin{small}
+\begin{center}
+{\tabulinesep=1.2mm
+\begin{tabu}{|c|c|}
+\hline 
+$\displaystyle 1.\ \int_0^\infty e^{-ax}\cos(mx)dx=\frac{a}{a^2+m^2}\qquad (a>0) $& $\displaystyle 2.\ \int_0^\infty e^{-ax}\sen(mx)dx=\frac{m}{a^2+m^2}\qquad (a>0) $ \\ \hline
+$\displaystyle 3.\ \int_0^\infty \frac{\cos(mx)}{a^2+x^2}dx=\frac{\pi}{2a}e^{-ma}\qquad (a>0,\ m\geq 0) $& $\displaystyle 4.\ \int_0^\infty \frac{x\sen(mx)}{a^2+x^2}dx=\frac{\pi}{2}e^{-ma}\qquad (a\geq0,\ m> 0) $ \\ \hline
+$\displaystyle 5.\ \int_0^\infty \frac{\sen(mx)\cos(nx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ n<m\\\\\frac{\pi }{4},\ \ n=m,\ \begin{array}{c} \!\!(m>0,\\ \ n>0)\end{array}\\\\ 0,\ \ n>m \end{array}\right. $& $\displaystyle 6.\ \int_0^\infty \frac{\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ m>0\\\\ 0,\ \ m=0\\\\-\frac{\pi }{2},\ \ m<0 \end{array}\right. $ \\ \hline
+$\displaystyle 7.\ \int_0^\infty e^{-r^2x^2}dx=\frac{\sqrt{\pi}}{2r}\qquad (r>0) $& $\displaystyle 8.\ \int_0^\infty e^{-a^2x^2}\cos(mx)dx=\frac{\sqrt{\pi}}{2a}e^{-\frac{m^2}{4a^2}}\qquad (a>0) $ \\ \hline
+$\displaystyle 9.\ \int_0^\infty xe^{-ax}\sen(mx)dx=\frac{2am}{(a^2+m^2)^2}\qquad (a>0) $& \begin{tabular}{l}$\displaystyle 10.\ \int_0^\infty e^{-ax}\sen(mx)\cos(nx)dx=$ \\\hspace{30pt}$\displaystyle=\frac{m(a^2+m^2-n^2)}{(a^2+(m-n)^2)(a^2+(m+n)^2)}\quad (a>0) $\end{tabular} \\\hline
+$\displaystyle 11.\ \int_0^\infty xe^{-ax}\cos(mx)dx=\frac{a^2-m^2}{(a^2+m^2)^2}\qquad (a>0) $&$\displaystyle 12.\ \int_0^\infty \frac{\cos(mx)}{x^4+4a^4}dx=\frac{\pi}{8a^3}e^{-ma}(\sen(ma)+\cos(ma)) $ \\ \hline
+$\displaystyle 13.\ \int_0^\infty \frac{\sen^2(mx)}{x^2}dx=|m|\frac{\pi}{2} $& $\displaystyle 14.\ erf(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-z^2}dz $ \\ \hline
+$\displaystyle 15.\ \int_0^\infty \frac{\sen^2(ax)\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{4},\ (0<m<2a)\\\\\frac{\pi }{8},\ (0<2a=m)\\\\ 0,\ (0<2a<m) \end{array}\right. $& $\displaystyle 16.\ \int_0^\infty \frac{\sen(mx)\sen(nx)}{x^2}dx=\left\{\begin{array}{l}\frac{\pi m}{2},\ (0<m\leq n)\\\\\frac{\pi n}{2},\ (0<n\leq m) \end{array}\right. $ \\ \hline
+$\displaystyle 17.\ \int_0^\infty x^2e^{-ax}\sen(mx)dx=\frac{2m(3a^2-m^2)}{(a^2+m^2)^3}\qquad (a>0) $& $\displaystyle 18.\ \int_0^\infty x^2e^{-ax}\cos(mx)dx=\frac{2a(a^2-3m^2)}{(a^2+m^2)^3}\quad (a>0) $ \\ \hline
+$\displaystyle 19.\ \int_0^\infty \frac{\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a^3}(1+ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $& $\displaystyle 20.\ \int_0^\infty \frac{x\sen(mx)}{(a^2+x^2)^2}dx=\frac{\pi m}{4a}e^{-ma} \quad (a>0,\ m>0) $ \\ \hline
+$\displaystyle 21.\ \int_0^\infty \frac{x^2\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a}(1-ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $& $\displaystyle 22.\ \int_0^\infty xe^{-a^2x^2}\sen(mx)dx=\frac{ m \sqrt{\pi}}{4a^3}e^{-\frac{m^2}{4a^2}} \quad (a>0) $\\ \hline
+\end{tabu}
+}
+\caption{\label{tab_int_def}Tabela de integrais definidas (ver \cite{DWIGHT})}
+\end{center}
+\end{small}
+\end{table}
+
+
+\begin{table}
+\begin{center}
+{\tabulinesep=1.2mm \begin{tabu}{ccc}
+
+{\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 2 - Si 2 } \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	65,41	&	15289	\\ \hline
+D\'{o} $\sharp$	&	69,30	&	14431	\\ \hline
+R\'{e}	&	73,42	&	13621	\\ \hline
+R\'{e} $\sharp$	&	77,78	&	12856	\\ \hline
+Mi	&	82,41	&	12135	\\ \hline
+F\'{a}	&	87,31	&	11454	\\ \hline
+F\'{a} $\sharp$	&	92,50	&	10811	\\ \hline
+Sol	&	98,00	&	10204	\\ \hline
+Sol $\sharp$	&	103,8	&	9631	\\ \hline
+L\'{a}	&	110,0	&	9091	\\ \hline
+L\'{a} $\sharp$	&	116,5	&	8581	\\ \hline
+Si	&	123,5	&	8099	\\ \hline
+
+
+ \end{tabu}}&
+{\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 3 - Si 3 } \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	130,8	&	7645	\\ \hline
+D\'{o} $\sharp$	&	138,6	&	7215	\\ \hline
+R\'{e}	&	146,8	&	6810	\\ \hline
+R\'{e} $\sharp$	&	155,6	&	6428	\\ \hline
+Mi	&	164,8	&	6067	\\ \hline
+F\'{a}	&	174,6	&	5727	\\ \hline
+F\'{a} $\sharp$	&	185,0	&	5405	\\ \hline
+Sol	&	196,0	&	5102	\\ \hline
+Sol $\sharp$	&	207,7	&	4816	\\ \hline
+L\'{a}	&	220,0	&	4545	\\ \hline
+L\'{a} $\sharp$	&	233,1	&	4290	\\ \hline
+Si	&	246,9	&	4050	\\ \hline
+ \end{tabu}}&
+ {\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 4 - Si 4 } \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	261,6	&	3822	\\ \hline
+D\'{o} $\sharp$	&	277,2	&	3608	\\ \hline
+R\'{e}	&	293,7	&	3405	\\ \hline
+R\'{e} $\sharp$	&	311,1	&	3214	\\ \hline
+Mi	&	329,6	&	3034	\\ \hline
+F\'{a}	&	349,2	&	2863	\\ \hline
+F\'{a} $\sharp$	&	370,0	&	2703	\\ \hline
+Sol	&	392,0	&	2551	\\ \hline
+Sol $\sharp$	&	415,3	&	2408	\\ \hline
+L\'{a}	&	440,0	&	2273	\\ \hline
+L\'{a} $\sharp$	&	466,2	&	2145	\\ \hline
+Si	&	493,9	&	2025	\\ \hline
+
+ \end{tabu}}\\
+ 
+ {\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 5 - Si 5 } \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	523,3	&	1911	\\ \hline
+D\'{o} $\sharp$	&	554,4	&	1804	\\ \hline
+R\'{e}	&	587,3	&	1703	\\ \hline
+R\'{e} $\sharp$	&	622,3	&	1607	\\ \hline
+Mi	&	659,3	&	1517	\\ \hline
+F\'{a}	&	698,5	&	1432	\\ \hline
+F\'{a} $\sharp$	&	740,0	&	1351	\\ \hline
+Sol	&	784,0	&	1276	\\ \hline
+Sol $\sharp$	&	830,6	&	1204	\\ \hline
+L\'{a}	&	880,0	&	1136	\\ \hline
+L\'{a} $\sharp$	&	932,3	&	1073	\\ \hline
+Si	&	987,8	&	1012	\\ \hline
+
+
+
+ \end{tabu}}&
+{\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 6 - Si 6} \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	1047	&	955,6	\\ \hline
+D\'{o} $\sharp$	&	1109	&	901,9	\\ \hline
+R\'{e}	&	1175	&	851,3	\\ \hline
+R\'{e} $\sharp$	&	1245	&	803,5	\\ \hline
+Mi	&	1319	&	758,4	\\ \hline
+F\'{a}	&	1397	&	715,9	\\ \hline
+F\'{a} $\sharp$	&	1480	&	675,7	\\ \hline
+Sol	&	1568	&	637,8	\\ \hline
+Sol $\sharp$	&	1661	&	602,0	\\ \hline
+L\'{a}	&	1760	&	568,2	\\ \hline
+L\'{a} $\sharp$	&	1865	&	536,3	\\ \hline
+Si	&	1976	&	506,2	\\ \hline
+
+
+ \end{tabu}}&
+ {\tabulinesep=1.2mm
+\begin{tabu}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{D\'{o} 7 - Si 7 } \\ \hline
+Nota 	&	f (Hz)	&	T ($\mu$s)	\\ \hline
+D\'{o}	&	2093	&	477,8	\\ \hline
+D\'{o} $\sharp$	&	2217	&	451,0	\\ \hline
+R\'{e}	&	2349	&	425,7	\\ \hline
+R\'{e} $\sharp$	&	2489	&	401,8	\\ \hline
+Mi	&	2637	&	379,2	\\ \hline
+F\'{a}	&	2794	&	357,9	\\ \hline
+F\'{a} $\sharp$	&	2960	&	337,8	\\ \hline
+Sol	&	3136	&	318,9	\\ \hline
+Sol $\sharp$	&	3322	&	301,0	\\ \hline
+L\'{a}	&	3520	&	284,1	\\ \hline
+L\'{a} $\sharp$	&	3729	&	268,1	\\ \hline
+Si	&	3951	&	253,1	\\ \hline
+
+ \end{tabu}}
+ \end{tabu}}
+ \caption{\label{tab_notas}Tabela de notas musicais}
+\end{center}
+\end{table}
+
+
+%Tabela de transformadas de Fourier
+
+
+
+
+
+%\end{document}
