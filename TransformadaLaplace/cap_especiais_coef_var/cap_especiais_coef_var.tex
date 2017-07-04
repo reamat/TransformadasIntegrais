@@ -1002,6 +1002,38 @@ Use o método das séries de potências para mostrar que \[\mathcal{L} \{\sen \s
 \emph{Sugestão}: Use que \[\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}.\]
 \end{Exercise}
 
+\begin{Answer}
+ \begin{eqnarray*}
+f(t)&=&\sin\sqrt{t}= \sum_{n=0}^{\infty}(-1)^n\frac{t^{(2n+1)/2}}{(2n+1)!}\\
+F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\Gamma\left((2n+3)/2\right)\frac{1}{s^{(2n+3)/2}}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\frac{(2n+1)!}{n!}\frac{\sqrt{\pi}}{2^{2n+1}}\frac{1}{s^{(2n+3)/2}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}{(-1)^n}\frac{1}{n!}\frac{1}{2^{2n}}\frac{1}{s^{n}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}\frac{1}{n!}{\left(-\frac{1}{4s}\right)^{n}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}e^{-\frac{1}{4s}}
+\end{eqnarray*}
+
+Para mostrar a identidade $\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}$ , usamos a relação de recorrência
+$$\Gamma(x+1)=x\Gamma(x)$$
+e o fato bem conhecido  de que
+$$\Gamma(1/2)=\sqrt{\pi}$$
+Para obter
+\begin{eqnarray*}
+\Gamma(3/2)&=&\Gamma(1+1/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt{\pi}}{2}\\
+\Gamma(5/2)&=&\Gamma(1+3/2)=\frac{3}{2}\Gamma(3/2)=\frac{3\sqrt{\pi}}{2^2}\\
+\Gamma(7/2)&=&\Gamma(1+5/2)=\frac{5}{2}\Gamma(5/2)=\frac{5 \cdot 3\sqrt{\pi}}{2^3}\\
+\Gamma(9/2)&=&\Gamma(1+7/2)=\frac{7}{2}\Gamma(7/2)=\frac{7\cdot 5 \cdot 3\sqrt{\pi}}{2^4}\\
+\end{eqnarray*}
+E generalizando, temos:
+\begin{eqnarray*}
+\Gamma\left(\frac{2n+1}{2}\right)&=&\Gamma\left(1+\frac{2n-1}{2}\right)=\frac{2n-1}{2}\Gamma\left(\frac{2n-1}{2}\right)={(2n-1)(2n-3)\cdots 3}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{(2n-2)(2n-4)\cdots 2}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{2^{n-1}(n-1)(n-2)\cdots 1}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)!}{(n-1)!}\frac{\sqrt{\pi}}{2^{2n-1}}
+\end{eqnarray*}
+\end{Answer}
+
 
 \begin{Exercise}
 Usando a derivada da transformada de Laplace, calcule:
