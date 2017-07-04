@@ -696,19 +696,70 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \section{Exercícios}
 \begin{Exercise}{\label{ex_Heaviside0}}Esboce o gráfico das seguintes funções:
 \begin{itemize}
-   \item[(a)] $\displaystyle (t-\pi)u(t-\pi)$
-  \item[(b)] $\displaystyle t \ u(t-2)$
-  \item[(c)] $\displaystyle (\sen t) u(t-\pi)$
- \item[(d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
- \item[(e)] $f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
- \end{itemize}
+ \item [a)] $\displaystyle (t-\pi)u(t-\pi)$
+ \item [b)] $\displaystyle t \ u(t-2)$
+ \item [c)] $\displaystyle (\sen t) u(t-\pi)$
+ \item [d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
+ \item [e)] $f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
+ \item [f)] $f(t)=\left[u(t)+u(t-1)\right]^2$
+ \item [g)] $f(t)=u(t-1)\left[1-u(t-2)\right] $
+\end{itemize}
+
+\end{Exercise}
 
  
-\end{Exercise}
+
 \begin{Answer}
  \begin{itemize}
 
-\item[d)]
+ \item [a)] $\displaystyle (t-\pi)u(t-\pi)$
+
+ \begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{3.14}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.14}{6.5}{x 3.14 sub}
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ \item [b)] $\displaystyle t \ u(t-2)$
+
+  \begin{center}
+\psset{xunit =1cm,yunit=.5cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,7.5)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,7.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{2}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2}{6.5}{x}
+\psline[linecolor=blue](2.0,0)(2.0,2)
+\rput(6.6,.3){$t$}
+\rput(0.0,7.8){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ \item [c)] $\displaystyle (\sen t) u(t-\pi)$
+
+
+ \begin{center}
+\psset{xunit =1cm,yunit=2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-1.5)(6.5,1.5)
+ \psaxes[labels,Dy=.5]{->}(0,0)(-.5,-1.5)(6.5,1.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{3.1416}{0}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.1416}{6.5}{x 180 3.1416 div mul sin}
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ 
+\item[d)]$f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -726,7 +777,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
   
-\item[e)]
+\item[e)]$f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -747,6 +798,44 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
 
+\item[f)] $f(t)=\left[u(t)+u(t-1)\right]^2=u(t)+3u(t-1)$
+
+\begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{0.0}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{1}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{6.5}{4}
+\psline[linecolor=blue](1.0,1)(1.0,4)
+
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ \item [g)] $f(t)=u(t-1)\left[1-u(t-2)\right]=u(t-1)-u(t-2) $
+
+ \begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{0.1}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{1}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{6.5}{0}
+\psline[linecolor=blue](1.0,0)(1.0,1)
+\psline[linecolor=blue](2.0,0)(2.0,1)
+
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+ 
+
 \end{itemize}
 
 \end{Answer}
@@ -754,12 +843,14 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{Exercise}
 \begin{Answer}
  \begin{itemize}
-   \item[(a)] $\displaystyle \frac{e^{-\pi s}}{s^2}$
-  \item[(b)] $\displaystyle e^{-2s}\bigg(\frac{1}{s^2}  + \frac{2}{s}\bigg)$
-  \item[(c)] $\displaystyle - \frac{e^{-\pi s}}{s^2 +1}$
+ \item [a)] $F(s)=\displaystyle \frac{e^{-\pi s}}{s^2}$
+ \item [b)] $F(s)=\displaystyle e^{-2s}\bigg(\frac{1}{s^2}  + \frac{2}{s}\bigg)$
+ \item [c)] $F(s)=\displaystyle - \frac{e^{-\pi s}}{s^2 +1}$
+ \item [d)] $F(s)=\frac{1}{s}\left(e^{-s}+3e^{-3s}-4e^{-5s}\right)$
+ \item [e)] $F(s)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$ 
+ \item [f)]$F(s) = \frac{1+3e^{-s}}{s}$
+ \item [g)] $F(s) = \frac{e^{-s}-e^{-2s}}{s}$ 
 
- \item[(d)] $f(t)=\frac{1}{s}\left(e^{-s}+3e^{-3s}-4e^{-5s}\right)$
-    \item[(e)] $f(t)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$ 
  \end{itemize}
 
 \end{Answer}
@@ -876,6 +967,9 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
  \end{itemize}
 
 \end{Answer}
+
+
+
 \begin{Exercise}
 \begin{itemize}
 \item[a)] Use os itens c) e d) do exercício \ref{ex_Heaviside1} e a propriedade da translação no eixo $t$ para calcular a transformada de Laplace das seguintes funções:
@@ -943,6 +1037,7 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
   \item[(b)] $e^{-2t} \sen {4t}$
   \item[(c)] $e^{4t} \cosh (5t)$
   \item[(d)] $e^{-2t} \left( 3 \cos(6t) - 5 \sen (6t) \right)$
+  
 \end{itemize}
 \end{Exercise}
 
@@ -1084,7 +1179,7 @@ Onde $f(t)$ é a força externa e a condições iniciais $y(0)$ e $y'(0)$ são n
   \item [b)] Encontre o conjunto de valores $\alpha$ para que o sistema seja sub-amortecido.
   \item [c)] Encontre o conjunto de valores $\alpha$ para que o sistema seja criticamente amortecido.
   \item [d)] Encontre o conjunto de valores $\alpha$ para que o sistema seja superamortecido. 
-  \item [e)] Encontre a resposta $y(t)$ do sistema criticamente amortecido quando $f(t)=delta(t-1)$.
+  \item [e)] Encontre a resposta $y(t)$ do sistema criticamente amortecido quando $f(t)=\ delta(t-1)$.
  \end{itemize}
 
 \end{Exercise}
