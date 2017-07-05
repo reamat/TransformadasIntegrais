@@ -16,12 +16,12 @@ O livro está escrito em língua portuguesa, seguindo os costumes linguísticos 
 
 Deve-se usar maiúscula apenas em nomes próprios, ex: método de Newton, métodos dos mínimos quadrados. 
 
-
 ## Código fonte LaTeX
 
 O livro está escrito em [LaTex](https://latex-project.org/). O arquivo principal `main.tex` escontra-se no diretório principal `CalculoNumerico`. O código LaTeX de cada capítulo encontra-se em um subdiretório específico com nome `cap_abrev`, onde `abrev` é uma abreviação que lembre o conteúdo do capítulo. Por exemplo, o código do capítulo sobre técnicas numéricas para sistemas lineares está no subdiretório `cap_linsis`.
 
 Para informações sobre como compilar o código fonte, leia o arquivo `README.md`.
+
 
 ### Compatibilidade
 
@@ -105,9 +105,9 @@ O livro usa o pacote LaTeX [`icomma`](https://www.ctan.org/pkg/icomma). Desta fo
 
 #### Números em notação científica
 
-Números em notação científica podem ser representados, tando usando `$\times 10^$` como usando o macro `\E`, por exemplo:
+Números em notação científica devem ser representados usando `$\times 10^$`, por exemplo:
 
-    1,25673\times 10^{-13} = 1,25673\E-13.
+    1,25673\times 10^{-13}.
 
 ### Exercícios
 
@@ -149,3 +149,16 @@ Caso o exercício tenha resposta (final, para resolução completa, veja a subse
 	   Excreva aqui a resposta do exercício.
 	\end{resp}
 
+
+#### Itens de exercícios
+
+A itemização dos exercícios devem ser feita pelo ambiente 'itemize' e devem ser indicados por letras latinas seguidas de ')', exemplo:
+
+    \begin{itemize}
+      \item[a)] $t^2 e^{3t}$
+      \item[b)] $e^{-2t} \sen {4t}$
+      \item[c)] $e^{4t} \cosh (5t)$
+      \item[d)] $e^{-2t} \left( 3 \cos(6t) - 5 \sen (6t) \right)$
+    \end{itemize}
+
+	
