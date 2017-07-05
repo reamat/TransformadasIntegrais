@@ -40,12 +40,53 @@
 
 %\usepackage{hyperref}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Exercises and Answers %%%%
 %\usepackage[lastexercise]{exercise}
 \usepackage[answerdelayed,lastexercise]{exercise}
 \usepackage{chngcntr}
-
 \counterwithin{Exercise}{chapter}
 \counterwithin{Answer}{chapter}
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseName}{E}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}}}
+\renewcommand{\ExerciseHeader}{\textbf{\ExerciseName\ \ExerciseHeaderNB.}\,}
+
+% change font for answers header
+\renewcommand{\AnswerHeader}{\tiny\textbf{\ExerciseName\ \ExerciseHeaderNB.}\smallskip}
+% change font for answers list header
+\renewcommand{\AnswerListHeader}{{\tiny\textbf{\AnswerListName\
+(\ExerciseListName\ \ExerciseHeaderNB)\ ---\ }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{exer}
+{\begin{Exercise}}
+{\end{Exercise}}
+
+\newenvironment{resp}
+{\begin{Answer}\begin{tiny}}
+{\end{tiny}\end{Answer}}
+
+\newenvironment{sol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercícios Resolvidos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{exeresol}{ER}[section]
+\newenvironment{resol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
