@@ -869,21 +869,21 @@ Dada a equação do movimento de um oscilador harmônico simples (OHS)
 calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
 
 \begin{itemize}
-  \item[(a)] $\displaystyle f(t) = \left\{
+  \item[a)] $\displaystyle f(t) = \left\{
                                          \begin{array}{ll}
                                            1, & \hbox{ se } t\in [1,2] \\
                                            0, & \hbox{caso contrário}
                                          \end{array}
                                        \right.
   $
-  \item[(b)] $\displaystyle f(t) = \delta (t-1)$
+  \item[b)] $\displaystyle f(t) = \delta (t-1)$
 \end{itemize}
 
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
-\item[(a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
-  \item[(b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
+\item[a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
+  \item[b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
  
 \end{itemize}
 
@@ -894,8 +894,8 @@ calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo
 \begin{Exercise}
 Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial associada \eqref{ohs}. Suponha que este oscilador está sujeito a uma força externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
 \begin{itemize}
-  \item[(a)] Use o método da transformada de Laplace para calcular as oscilações forçadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
-  \item[(b)] Como se comporta o gráfico destas oscilações? Que fenômeno físico você identifica?
+  \item[a)] Use o método da transformada de Laplace para calcular as oscilações forçadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
+  \item[b)] Como se comporta o gráfico destas oscilações? Que fenômeno físico você identifica?
 \end{itemize}
 \end{Exercise}
 
@@ -908,10 +908,10 @@ Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial
 Encontre por integração:
 
 \begin{itemize}
-  \item[(a)] $1\ast 1$
-  \item[(b)] $t \ast e^t $
-  \item[(c)] $1\ast \cos(\omega t)$
-  \item[(d)] $e^{kt}\ast e^{-kt}$
+  \item[a)] $1\ast 1$
+  \item[b)] $t \ast e^t $
+  \item[c)] $1\ast \cos(\omega t)$
+  \item[d)] $e^{kt}\ast e^{-kt}$
 \end{itemize}
 
 \end{Exercise}
@@ -919,10 +919,10 @@ Encontre por integração:
 \begin{itemize}
  
 
-  \item[(a)] $\displaystyle t$
-  \item[(b)] $\displaystyle e^{t} - t - 1$
-  \item[(c)] $\displaystyle \frac{1}{\omega}\sen (\omega t)$
-  \item[(d)] $\displaystyle \frac{1}{2k} (e^{kt} - e^{-kt}) = \frac{1}{k}\senh (k t)$
+  \item[a)] $\displaystyle t$
+  \item[b)] $\displaystyle e^{t} - t - 1$
+  \item[c)] $\displaystyle \frac{1}{\omega}\sen (\omega t)$
+  \item[d)] $\displaystyle \frac{1}{2k} (e^{kt} - e^{-kt}) = \frac{1}{k}\senh (k t)$
 \end{itemize}
  
 \end{Answer}
@@ -932,21 +932,21 @@ Encontre por integração:
 Achar a solução dos seguintes problemas de valor inicial:
 
 \begin{itemize}
-  \item[(a)] $\displaystyle \left\{
+  \item[a)] $\displaystyle \left\{
                               \begin{array}{ll}
                                 y'' + 2y'+2y = \delta(t-\pi)\\
                                 y(0) = 1, \quad y'(0)=0
                               \end{array}
                             \right.
   $
-  \item[(b)] $\displaystyle \left\{
+  \item[b)] $\displaystyle \left\{
                               \begin{array}{ll}
                                 y'' + 3y'+2y = \delta(t-5) - u(t-10)\\
                                 y(0) = 0, \quad y'(0)=1/2
                                 \end{array}
                             \right.
   $
-  \item[(c)] $\displaystyle \left\{
+  \item[c)] $\displaystyle \left\{
                               \begin{array}{ll}
                                 y'' + y = \delta(t-2\pi)\\
                                 y(0) = 0, \quad y'(0)=1
@@ -958,9 +958,9 @@ Achar a solução dos seguintes problemas de valor inicial:
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
-  \item[(a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
-  \item[(b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
-  \item[(c)] $\displaystyle y(t) = \sen t + \sen(t-2\pi) u(t-2\pi)$
+  \item[a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
+  \item[b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
+  \item[c)] $\displaystyle y(t) = \sen t + \sen(t-2\pi) u(t-2\pi)$
 
 \end{itemize}
  
@@ -972,16 +972,16 @@ Achar a solução dos seguintes problemas de valor inicial:
 Justifique as seguintes propriedades da operação de convolução:
 
 \begin{itemize}
-  \item[(a)] $f\ast g = g \ast f$
-  \item[(b)] $(f\ast g)\ast h = f \ast (g \ast h)$
-  \item[(c)] $f\ast (g + h) = f\ast g + f\ast h$
-  \item[(d)] $(\delta\ast f)(t) = f(t)$
+  \item[a)] $f\ast g = g \ast f$
+  \item[b)] $(f\ast g)\ast h = f \ast (g \ast h)$
+  \item[c)] $f\ast (g + h) = f\ast g + f\ast h$
+  \item[d)] $(\delta\ast f)(t) = f(t)$
 \end{itemize}
 {\it [Dica: cuidado para não confundir as variáveis de integração que aparecerão no item (b).}
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
-  \item[(a)] 
+  \item[a)] 
   \begin{eqnarray*}
    f\ast g&=&\int_0^t f(\tau)g(t-\tau)d\tau\\
    &=&-\int_t^0 f(t-u)g(u)du\\
@@ -991,7 +991,7 @@ Justifique as seguintes propriedades da operação de convolução:
 
  
   
-  \item[(b)] 
+  \item[b)] 
     \begin{eqnarray*}
    (f\ast g)\ast h&=& \int_0^t \left(\int_0^\tau f(u) g(\tau-u) du \right) h(t-\tau) d\tau \\
    &=& \int_0^t \int_0^\tau f(u) g(\tau-u) h(t-\tau) du d\tau \\
@@ -1014,14 +1014,14 @@ $$
 y''(t) + \omega^2 y(t) = r(t), \quad \hbox{ onde } \ \omega= \sqrt{\frac{k}{m}} \ \hbox{ e } \ r(t) = \frac{f(t)}{m}.
 $$
 \begin{itemize}
-  \item[(a)] Pelo método da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
-  \item[(b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
+  \item[a)] Pelo método da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
+  \item[b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
 \end{itemize}
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
-   \item[(a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
-  \item[(b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
+   \item[a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
+  \item[b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
 
 \end{itemize}
  
@@ -1040,19 +1040,19 @@ Use o Teorema da Convolução para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(
 Use o Teorema da Convolução para resolver as seguintes equações integrais:
 
 \begin{itemize}
-  \item[(a)] $\displaystyle y(t) = 1 + \int_0^t y(\tau) \ d\tau$
-  \item[(b)] $\displaystyle y(t) = 1 - \int_0^t y(\tau) (t-\tau) \ d\tau$
-  \item[(c)] $\displaystyle y(t) = te^{t} -2 e^t \int_0^t e^{-\tau} y(\tau) \ d\tau$
-  \item[(d)] $\displaystyle y(t) = 1 - \senh t + \int_0^t (1+ \tau )y(t- \tau) \ d\tau$
+  \item[a)] $\displaystyle y(t) = 1 + \int_0^t y(\tau) \ d\tau$
+  \item[b)] $\displaystyle y(t) = 1 - \int_0^t y(\tau) (t-\tau) \ d\tau$
+  \item[c)] $\displaystyle y(t) = te^{t} -2 e^t \int_0^t e^{-\tau} y(\tau) \ d\tau$
+  \item[d)] $\displaystyle y(t) = 1 - \senh t + \int_0^t (1+ \tau )y(t- \tau) \ d\tau$
 \end{itemize}
 
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
-  \item[(a)] $\displaystyle y(t) = e^{t}$
-  \item[(b)] $\displaystyle y(t) = \cos t$
-  \item[(c)] $\displaystyle y(t) = \senh t$
-  \item[(d)] $\displaystyle y(t) = \cosh t$
+  \item[a)] $\displaystyle y(t) = e^{t}$
+  \item[b)] $\displaystyle y(t) = \cos t$
+  \item[c)] $\displaystyle y(t) = \senh t$
+  \item[d)] $\displaystyle y(t) = \cosh t$
 
 \end{itemize}
  
@@ -1062,18 +1062,18 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
 \begin{Exercise}
 Encontre
 \begin{itemize}
-  \item[(a)] $\displaystyle \mathcal{L} \big\{ t u(t-1) + t^2 \delta(t-1) \big\}$
-  \item[(b)] $\displaystyle \mathcal{L} \big\{ (\cos t) ( \ln t ) \delta(t-\pi) \big\}$
-  \item[(c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
+  \item[a)] $\displaystyle \mathcal{L} \big\{ t u(t-1) + t^2 \delta(t-1) \big\}$
+  \item[b)] $\displaystyle \mathcal{L} \big\{ (\cos t) ( \ln t ) \delta(t-\pi) \big\}$
+  \item[c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
 \end{itemize}
 \end{Exercise}
 
 
 \begin{Answer}
 \begin{itemize}
-  \item[(a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
-  \item[(b)] $\displaystyle -e^{-\pi s} \ln \pi $
-  \item[(c)] $\displaystyle e^{1-s}$
+  \item[a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
+  \item[b)] $\displaystyle -e^{-\pi s} \ln \pi $
+  \item[c)] $\displaystyle e^{1-s}$
   \end{itemize}
  
 \end{Answer}
