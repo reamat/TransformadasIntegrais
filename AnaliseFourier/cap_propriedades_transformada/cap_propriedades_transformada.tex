@@ -1198,4 +1198,51 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 \end{resp}
 
 
+
+
+\begin{Exercise} Considere uma aproximação do diagrama de espectro de magnitudes de uma nota tocada por um instrumento musical e representado por uma função $f(t)$:
+\begin{center}
+\psset{xunit =1.0cm,yunit=3.0cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1,-0.3)(7,1.3)
+ \psaxes[labels,Dy=.5,Dx=100]{->}(0,0)(-.1,0.0)(5.5,1.1)
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=1000]{0}{5}{2.72 x 1 sub x 1 sub  mul -100 mul exp 2.72 x 2 sub x 2 sub  mul -100 mul exp .5 mul add 2.72 x 3 sub x 3 sub  mul -100 mul exp .7 mul add 2.72 x 4 sub x 4 sub  mul -100 mul exp .2 mul add}
+
+
+\rput(1,-.1){$220\pi$}
+\psline[linewidth=1pt](1,-.05)(1,.05)
+\psline[linewidth=1pt](2,-.05)(2,.05)
+\psline[linewidth=1pt](3,-.05)(3,.05)
+\psline[linewidth=1pt](4,-.05)(4,.05)
+\rput(2,-.1){$440\pi$}
+\rput(3,-.1){$660\pi$}
+\rput(4,-.1){$880\pi$}
+
+
+\rput(5.5,-.1){$w$ (rad/s)}
+\rput(0.0,1.2){$|F(w)|$}
+\end{pspicture}
+\end{center}
+
+\begin{itemize}
+ \item[a)] Identifique a frequência fundamental $w_f$ (em rad/s) e $f_f$ (em Hz).
+ \item[b)] Identifique a nota musical correspondente a acelerar em $1,5$ a velocidade de reprodução do sinal.
+ \item[c)] Identifique a nota musical correspondente a modular o sinal na frequência $1110\pi$ rad/s ($f(t)\cos(1100\pi t)$).
+ \item[d)] Identifique a nota musical correspondente à função $f(2t)$.
+ \item[e)] Identifique a nota musical correspondente à função $g(t)=f(t)+f(2t)$. Qual a sensação fisiológica produzida?
+ \end{itemize}
+
+\end{Exercise}
+\begin{Answer}
+\begin{itemize}
+ \item[a)] $w_f=220\pi$ rad/s e $f_f=110$ Hz, equivalente ao Lá da escala 1.
+ \item[b)] Mi da escala 2.
+ \item[c)] Lá da escala 1.
+ \item[d)] Lá da escala 2.
+ \item[e)] Lá da escala 1. Percebe-se alteração na composição harmônica da nota, isto é, identicamos como uma alteração de timbre.
+ \end{itemize}
+ 
+\end{Answer}
+
+
 %\end{document}
