@@ -418,6 +418,145 @@ $$
 \item[g)]$F(s)=\frac{1}{s^2(s-2)}$
 \end{itemize}
 \end{Exercise}
+\begin{Answer}
+\begin{itemize}
+ \item [a)]
+ \begin{eqnarray*}
+F(s)&=&\frac{s^2-6s+4}{s^3-3s^2+2s}=\frac{s^2-6s+4}{s(s^2-3s+2)}=\frac{s^2-6s+4}{s(s-1)(s-2)}=\frac{A}{s}+\frac{B}{s-1}+\frac{C}{s-2}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+A&=&\lim_{s\to 0}sF(s)=\lim_{s\to 0}\frac{s^2-6s+4}{(s-1)(s-2)}=\left.\frac{s^2-6s+4}{(s-1)(s-2)}\right|_{s=0}=2\\
+B&=&\lim_{s\to 1}(s-1)F(s)=\lim_{s\to 1}\frac{s^2-6s+4}{s(s-2)}=\left.\frac{s^2-6s+4}{s(s-2)}\right|_{s=1}=1\\
+C&=&\lim_{s\to 2}(s-2)F(s)=\lim_{s\to 2}\frac{s^2-6s+4}{s(s-1)}=\left.\frac{s^2-6s+4}{s(s-1)}\right|_{s=2}=-2\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\mathcal{L}^{-1}\left\{F(s)\right\}&=&\mathcal{L}^{-1}\left\{\frac{2}{s}+\frac{1}{s-1}-\frac{2}{s-2}\right\}\\
+&=&2+e^{t}-2e^{2t},t>0
+\end{eqnarray*}
+
+ \item [b)]
+
+\begin{eqnarray*}
+F(s)&=&\frac{s^2+s-2}{(s+1)^3}=\frac{A}{(s+1)^3}+\frac{B}{(s+1)^2}+\frac{C}{(s+1)}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+A&=&\lim_{s\to -1}(s+1)^3F(s)=\lim_{s\to 1}(s^2+s-2)=\left.(s^2+s-2)\right|_{s=-1}=-2\\
+\end{eqnarray*}
+Conhecendo o valor de $A$, reduzimos o problema a
+\begin{eqnarray*}
+\frac{s^2+s-2}{(s+1)^3}+\frac{2}{(s+1)^3}=\frac{B}{(s+1)^2}+\frac{C}{(s+1)}
+\end{eqnarray*}
+Simplificando o lado da esquerda, temos:
+\begin{eqnarray*}
+\frac{s^2+s-2}{(s+1)^3}+\frac{2}{(s+1)^3}=\frac{s^2+s}{(s+1)^3}=\frac{s(s+1)}{(s+1)^3}=\frac{s}{(s+1)^2}
+\end{eqnarray*}
+\begin{eqnarray*}
+B&=&\lim_{s\to -1}(s+1)^2\frac{s}{(s+1)^2}=-1\\
+\end{eqnarray*}
+Reduzimos mais uma vez o problema a
+\begin{eqnarray*}
+\frac{s}{(s+1)^2}+\frac{1}{(s+1)^2}=\frac{C}{s+1}
+\end{eqnarray*}
+Simplificando o lado da esquerda, temos:
+\begin{eqnarray*}
+\frac{s}{(s+1)^2}+\frac{1}{(s+1)^2}=\frac{s+1}{(s+1)^2}=\frac{1}{s+1}
+\end{eqnarray*}
+o que implica $C=1$. Portanto temos:
+
+\begin{eqnarray*}
+F(s)&=&\frac{s^2+s-2}{(s+1)^3}=-\frac{2}{(s+1)^3}-\frac{1}{(s+1)^2}+\frac{1}{(s+1)}
+\end{eqnarray*}
+e, assim,
+\begin{eqnarray*}
+f(t)&=&e^{-t}\left(-t^2-t+1\right)
+\end{eqnarray*}
+
+\item [c)]
+\begin{eqnarray*}
+F(s)&=&\frac{s}{(s+1)^3}=\frac{s+1}{(s+1)^3}-\frac{1}{(s+1)^3}=\frac{1}{(s+1)^2}-\frac{1}{(s+1)^3}
+\end{eqnarray*}
+\begin{eqnarray*}
+f(t)&=&e^{-t}\left(t-\frac{t^2}{2}\right)
+\end{eqnarray*}
+
+
+ \item [d)]
+
+\begin{eqnarray*}
+F(s)&=&\frac{5s^2-15s-11}{(s+1)(s-2)^3}=\frac{A}{s+1}+\frac{B}{(s-2)^3}+\frac{C}{(s-2)^2}+\frac{D}{(s-2)}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+A&=&\lim_{s\to -1}(s+1)F(s)=-\frac{1}{3}\\
+B&=&\lim_{s\to 2}(s-2)^3F(s)=-7\\
+\end{eqnarray*}
+Obtém-se também
+\begin{eqnarray*}
+C&=&4\\
+D&=&\frac{1}{3}
+\end{eqnarray*}
+Portanto
+$$f(t)=-\frac{1}{3}e^{-t}+\left(-\frac{7}{2}t^2+4t+\frac{1}{3}\right)e^{2t}$$
+
+ \item [e)]
+
+\begin{eqnarray*}
+F(s)&=&\frac{3s^2-2s-1}{(s-3)(s^2+1)}=\frac{A}{s-3}+\frac{Bs+C}{s^2+1}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+A=\lim_{s\to 3}(s-3)F(s)=2\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+Bs+C&=&\left(F(s)-\frac{A}{s-3}\right)(s^2+1)\\
+&=&\left(\frac{3s^2-2s-1}{(s-3)(s^2+1)}-\frac{2}{s-3}\right)(s^2+1)\\
+&=&\left(\frac{3s^2-2s-1-2(s^2+1)}{(s-3)(s^2+1)}\right)(s^2+1)\\
+&=&\frac{s^2-2s-3}{(s-3)}=\frac{(s+1)(s-3)}{(s-3)}=s+1
+\end{eqnarray*}
+Assim, $B=C=1$ e temos
+$f(t)=e^{3t}+\cos(t)+\sin(t)$
+
+ \item [f)]
+
+\begin{eqnarray*}
+F(s)&=&\frac{s^2+2s+3}{(s^2+2s+2)(s^2+2s+5)}=\frac{As+B}{s^2+2s+2}+\frac{Cs+D}{s^2+2s+5}\\
+&=&\frac{(As+B)(s^2+2s+5)+(Cs+D)(s^2+2s+2)}{(s^2+2s+2)(s^2+2s+5)}\\
+&=&\frac{(A+C)s^3+(2A+2C+B+D)s^2+(5A+2D+2B+2C)s+(5B+2D)}{(s^2+2s+2)(s^2+2s+5)}\\
+\end{eqnarray*}
+Comparando coeficientes, temos:
+\begin{eqnarray*}
+A+C&=&0\\
+2A+2C+B+D&=&1\\
+5A+2D+2B+2C&=&2\\
+5B+2D&=&3
+\end{eqnarray*}
+\begin{eqnarray*}
+A&=&0  \\
+B&=&\frac{1}{3}  \\
+C&=& 0 \\
+D&=&\frac{2}{3}  
+\end{eqnarray*}
+
+\begin{eqnarray*}
+F(s)&=&\frac{1}{3}\frac{1}{s^2+2s+2}+\frac{2}{3}\frac{1}{s^2+2s+5}\\
+&=&\frac{1}{3}\frac{1}{(s+1)^2+1}+\frac{2}{3}\frac{1}{(s+1)^2+2^2}
+\end{eqnarray*}
+\begin{eqnarray*}
+f(t)=\frac{1}{3}e^{-t}\left[\sin(t)+\sin(2t)\right]
+\end{eqnarray*}
+
+ \item [g)]
+\begin{eqnarray*}
+F(s)&=&\frac{1}{s^2(s-2)}=\frac{A}{s}+\frac{B}{s^2}+\frac{C}{s-2}
+\end{eqnarray*}
+
+\end{itemize}
+ 
+\end{Answer}
 
 
 

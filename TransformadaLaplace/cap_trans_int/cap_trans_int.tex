@@ -693,22 +693,73 @@ q(t)=\left\{\begin{array}{ll}0,&t<a  \\ CV_0\left(1-e^{-\frac{t-a}{CR}}\right), 
 $$
 A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$. Observe a consitência com o gráfico da figura \ref{fig_circ_1}.
 
-\section{Exercícios}
+\section*{Exercícios}
 \begin{Exercise}{\label{ex_Heaviside0}}Esboce o gráfico das seguintes funções:
 \begin{itemize}
-   \item[(a)] $\displaystyle (t-\pi)u(t-\pi)$
-  \item[(b)] $\displaystyle t \ u(t-2)$
-  \item[(c)] $\displaystyle (\sen t) u(t-\pi)$
- \item[(d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
- \item[(e)] $f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
- \end{itemize}
+ \item [a)] $\displaystyle (t-\pi)u(t-\pi)$
+ \item [b)] $\displaystyle t \ u(t-2)$
+ \item [c)] $\displaystyle (\sen t) u(t-\pi)$
+ \item [d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
+ \item [e)] $f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
+ \item [f)] $f(t)=\left[u(t)+u(t-1)\right]^2$
+ \item [g)] $f(t)=u(t-1)\left[1-u(t-2)\right] $
+\end{itemize}
+
+\end{Exercise}
 
  
-\end{Exercise}
+
 \begin{Answer}
  \begin{itemize}
 
-\item[d)]
+ \item [a)] $\displaystyle (t-\pi)u(t-\pi)$
+
+ \begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{3.14}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.14}{6.5}{x 3.14 sub}
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ \item [b)] $\displaystyle t \ u(t-2)$
+
+  \begin{center}
+\psset{xunit =1cm,yunit=.5cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,7.5)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,7.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{2}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2}{6.5}{x}
+\psline[linecolor=blue](2.0,0)(2.0,2)
+\rput(6.6,.3){$t$}
+\rput(0.0,7.8){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ \item [c)] $\displaystyle (\sen t) u(t-\pi)$
+
+
+ \begin{center}
+\psset{xunit =1cm,yunit=2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-1.5)(6.5,1.5)
+ \psaxes[labels,Dy=.5]{->}(0,0)(-.5,-1.5)(6.5,1.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{3.1416}{0}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.1416}{6.5}{x 180 3.1416 div mul sin}
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ 
+ 
+\item[d)]$f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -726,7 +777,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
   
-\item[e)]
+\item[e)]$f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -747,6 +798,44 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
 
+\item[f)] $f(t)=\left[u(t)+u(t-1)\right]^2=u(t)+3u(t-1)$
+
+\begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{0.0}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{1}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{6.5}{4}
+\psline[linecolor=blue](1.0,1)(1.0,4)
+
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+
+ \item [g)] $f(t)=u(t-1)\left[1-u(t-2)\right]=u(t-1)-u(t-2) $
+
+ \begin{center}
+\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(6.5,4.8)
+ \psaxes[labels]{->}(0,0)(-0.5,-0.2)(6.5,4.3)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{0.1}{0}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{1}
+
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{6.5}{0}
+\psline[linecolor=blue](1.0,0)(1.0,1)
+\psline[linecolor=blue](2.0,0)(2.0,1)
+
+\rput(6.6,.3){$t$}
+\rput(0.0,4.5){$f(t)$}
+\end{pspicture}
+\end{center}
+ 
+
 \end{itemize}
 
 \end{Answer}
@@ -754,12 +843,14 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{Exercise}
 \begin{Answer}
  \begin{itemize}
-   \item[(a)] $\displaystyle \frac{e^{-\pi s}}{s^2}$
-  \item[(b)] $\displaystyle e^{-2s}\bigg(\frac{1}{s^2}  + \frac{2}{s}\bigg)$
-  \item[(c)] $\displaystyle - \frac{e^{-\pi s}}{s^2 +1}$
+ \item [a)] $F(s)=\displaystyle \frac{e^{-\pi s}}{s^2}$
+ \item [b)] $F(s)=\displaystyle e^{-2s}\bigg(\frac{1}{s^2}  + \frac{2}{s}\bigg)$
+ \item [c)] $F(s)=\displaystyle - \frac{e^{-\pi s}}{s^2 +1}$
+ \item [d)] $F(s)=\frac{1}{s}\left(e^{-s}+3e^{-3s}-4e^{-5s}\right)$
+ \item [e)] $F(s)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$ 
+ \item [f)]$F(s) = \frac{1+3e^{-s}}{s}$
+ \item [g)] $F(s) = \frac{e^{-s}-e^{-2s}}{s}$ 
 
- \item[(d)] $f(t)=\frac{1}{s}\left(e^{-s}+3e^{-3s}-4e^{-5s}\right)$
-    \item[(e)] $f(t)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$ 
  \end{itemize}
 
 \end{Answer}
@@ -769,7 +860,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \begin{Exercise}{\label{ex_Heaviside1}}Escreva uma expressão para cada função em termos da função de Heaviside.
 \begin{itemize}
 
-\item[a)]
+\item[a)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -788,7 +879,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
   
-\item[b)]
+\item[b)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -806,7 +897,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
 
-\item[c)]
+\item[c)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -833,7 +924,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
 
-\item[d)]
+\item[d)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -876,9 +967,12 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
  \end{itemize}
 
 \end{Answer}
-\begin{Exercise}
+
+
+
+\begin{Exercise} Use os itens c) e d) do exercício \ref{ex_Heaviside1} e a propriedade da translação no eixo $t$ para calcular a transformada de Laplace das seguintes funções:
 \begin{itemize}
-\item[a)] Use os itens c) e d) do exercício \ref{ex_Heaviside1} e a propriedade da translação no eixo $t$ para calcular a transformada de Laplace das seguintes funções:
+\item[a)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -905,7 +999,7 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{pspicture}
 \end{center}
 
-\item[b)]
+\item[b)]~
 
 \begin{center}
 \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
@@ -936,22 +1030,22 @@ A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$,
 \end{Answer}
 
 
-\begin{Exercise}
+\begin{exer}
 Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada de Laplace de:
 \begin{itemize}
-  \item[(a)] $t^2 e^{3t}$
-  \item[(b)] $e^{-2t} \sen {4t}$
-  \item[(c)] $e^{4t} \cosh (5t)$
-  \item[(d)] $e^{-2t} \left( 3 \cos(6t) - 5 \sen (6t) \right)$
-\end{itemize}
-\end{Exercise}
+  \item[a)] $t^2 e^{3t}$
+  \item[b)] $e^{-2t} \sen {4t}$
+  \item[c)] $e^{4t} \cosh (5t)$
+  \item[d)] $e^{-2t} \left( 3 \cos(6t) - 5 \sen (6t) \right)$
+  \end{itemize}
+\end{exer}
 
 \begin{Answer}
 \begin{itemize}
-   \item[(a)] $\displaystyle \frac{2}{(s-3)^3}$
-  \item[(b)] $\displaystyle \frac{4}{s^2 +4s +20}$
-  \item[(c)] $\displaystyle \frac{s-4}{s^2 - 8s - 9}$
-  \item[(d)] $\displaystyle \frac{3s -24}{s^2 +4s + 40}$
+   \item[a)] $\displaystyle \frac{2}{(s-3)^3}$
+  \item[b)] $\displaystyle \frac{4}{s^2 +4s +20}$
+  \item[c)] $\displaystyle \frac{s-4}{s^2 - 8s - 9}$
+  \item[d)] $\displaystyle \frac{3s -24}{s^2 +4s + 40}$
 \end{itemize}
   \end{Answer}
 
@@ -985,19 +1079,19 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
  \begin{Exercise}
 Encontre a transformada inversa das funções $F(s)$ abaixo:
 \begin{itemize}
-  \item[(a)] $\displaystyle \frac{n\pi}{(s+2)^2 + n^2\pi^2}$
-  \item[(b)] $\displaystyle \frac{s}{(s+3)^2+1}$
-  \item[(c)] $\displaystyle \frac{6s-4}{s^2 - 4s +20}$
-  \item[(d)] $\displaystyle \frac{4s + 12}{s^2 + 8s + 16}$
+  \item[a)] $\displaystyle \frac{n\pi}{(s+2)^2 + n^2\pi^2}$
+  \item[b)] $\displaystyle \frac{s}{(s+3)^2+1}$
+  \item[c)] $\displaystyle \frac{6s-4}{s^2 - 4s +20}$
+  \item[d)] $\displaystyle \frac{4s + 12}{s^2 + 8s + 16}$
 \end{itemize}
 \end{Exercise}
 
 \begin{Answer}
 \begin{itemize}
-\item[(a)] $\displaystyle e^{-2t} \sen (n\pi t)$
-  \item[(b)] $\displaystyle e^{-3t} (\cos t - 3\sen  t)$
-  \item[(c)] $e^{2t} \big(6\cos (4t) + 2 \sen (4t)\big)$
-  \item[(d)] $\displaystyle 4e^{-4t} (1-t)$
+\item[a)] $\displaystyle e^{-2t} \sen (n\pi t)$
+  \item[b)] $\displaystyle e^{-3t} (\cos t - 3\sen  t)$
+  \item[c)] $e^{2t} \big(6\cos (4t) + 2 \sen (4t)\big)$
+  \item[d)] $\displaystyle 4e^{-4t} (1-t)$
 \end{itemize}
   \end{Answer}
 
@@ -1035,23 +1129,24 @@ Encontre a transformada inversa das funções $F(s)$ abaixo:
 \begin{Exercise}
 Mostre que:
 \begin{itemize}
-  \item[(a)] $\displaystyle \mathcal{L}\{ \cosh (at) \sen (at) \} = \frac{a (s^2 + 2 a^2)}{s^4 + 4a^4}$
-  \item[(b)] $\displaystyle \mathcal{L} \{ \senh (at) \cos (at) \} = \frac{a (s^2 - 2 a^2)}{s^4 + 4a^4}$
-  \item[(c)] $\displaystyle \mathcal{L} \{ \senh (at) \sen (at) \} = \frac{2 a^2 s}{s^4 + 4a^4}$
+  \item[a)] $\displaystyle \mathcal{L}\{ \cosh (at) \sen (at) \} = \frac{a (s^2 + 2 a^2)}{s^4 + 4a^4}$
+  \item[b)] $\displaystyle \mathcal{L} \{ \senh (at) \cos (at) \} = \frac{a (s^2 - 2 a^2)}{s^4 + 4a^4}$
+  \item[c)] $\displaystyle \mathcal{L} \{ \senh (at) \sen (at) \} = \frac{2 a^2 s}{s^4 + 4a^4}$
 \end{itemize}
  \noindent A partir destas, mostre que $$\mathcal{L}^{-1}\left\{ \frac{1}{s^4 + 4a^4}\right\} = \frac{1}{4a^3} \left[\cosh (at) \sen (at) - \senh (at) \cos(at)\right]. $$
 \end{Exercise}
 
 
-\begin{Exercise}(Ressonância) Considere o oscilador harmônico não amortecido com termo forçante $F(t)=F_0\sen\left(\sqrt{\frac{k}{m}}t\right)$ descrito pelo problema de valor inicial
+\begin{Exercise}(Ressonância) Considere o oscilador harmônico não amortecido com termo forçante descrito pelo problema de valor inicial dado por:
 $$\left\{
 \begin{array}{l}
  my''(t)+ky(t)=F(t)\\
  y(0)=0\\
  y'(0)=0
 \end{array}
-\right..
+\right.,
 $$
+onde $F(t)=F_0\sen\left(\sqrt{\frac{k}{m}}t\right)$.
 Use o método de transformada de Laplace para calcular a solução, observando que a frequência de oscilação natural do sistema coincide com a frequência do termo forçante.
 \end{Exercise}
 \begin{Answer}
@@ -1084,7 +1179,7 @@ Onde $f(t)$ é a força externa e a condições iniciais $y(0)$ e $y'(0)$ são n
   \item [b)] Encontre o conjunto de valores $\alpha$ para que o sistema seja sub-amortecido.
   \item [c)] Encontre o conjunto de valores $\alpha$ para que o sistema seja criticamente amortecido.
   \item [d)] Encontre o conjunto de valores $\alpha$ para que o sistema seja superamortecido. 
-  \item [e)] Encontre a resposta $y(t)$ do sistema criticamente amortecido quando $f(t)=\ delta(t-1)$.
+  \item [e)] Encontre a resposta $y(t)$ do sistema criticamente amortecido quando $f(t)=\delta(t-1)$.
  \end{itemize}
 
 \end{Exercise}
@@ -1105,9 +1200,9 @@ Onde $f(t)$ é a força externa e a condições iniciais $y(0)$ e $y'(0)$ são n
 Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $\mathcal{L}\{f \} $ é:
 
 \begin{itemize}
-  \item[(a)] $\displaystyle \frac{5}{s^3 - 5s}$
-  \item[(b)] $\displaystyle \frac{10}{s^3 - \pi s^2}$
-  \item[(c)] $\displaystyle \frac{1}{s^4 + s^2}$
+  \item[a)] $\displaystyle \frac{5}{s^3 - 5s}$
+  \item[b)] $\displaystyle \frac{10}{s^3 - \pi s^2}$
+  \item[c)] $\displaystyle \frac{1}{s^4 + s^2}$
 \end{itemize}
 
 \end{Exercise}
@@ -1115,11 +1210,11 @@ Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $
 Encontre $g(t)$ e faça um esboço de seu gráfico, sendo $\mathcal{L}\{ g(t)\}$ igual a:
 
 \begin{itemize}
-  \item[(a)] $\displaystyle \frac{2e^{-2s} - 2 e^{-4s}}{s}$
-  \item[(b)] $\displaystyle \frac{e^{-as}}{s^2}$
-  \item[(c)] $\displaystyle \frac{se^{-\pi s}}{s^2+4}$
-  \item[(d)] $\displaystyle \frac{e^{-\pi s}}{s^2 + 2s +2}$
-  \item[(e)] $\displaystyle \frac{e^{-s}+ e^{-2s} -3 e^{-3s} +6 e^{-6s}}{s^2}$
+  \item[a)] $\displaystyle \frac{2e^{-2s} - 2 e^{-4s}}{s}$
+  \item[b)] $\displaystyle \frac{e^{-as}}{s^2}$
+  \item[c)] $\displaystyle \frac{se^{-\pi s}}{s^2+4}$
+  \item[d)] $\displaystyle \frac{e^{-\pi s}}{s^2 + 2s +2}$
+  \item[e)] $\displaystyle \frac{e^{-s}+ e^{-2s} -3 e^{-3s} +6 e^{-6s}}{s^2}$
 \end{itemize}
 
 \end{Exercise}
@@ -1127,11 +1222,11 @@ Encontre $g(t)$ e faça um esboço de seu gráfico, sendo $\mathcal{L}\{ g(t)\}$
  
 \begin{itemize}
 
-\item[(a)] $\displaystyle 2 \big( u(t-2) - u(t-4) \big)$
-  \item[(b)] $\displaystyle (t-a)u(t-a)$
-  \item[(c)] $\displaystyle \cos\big(2(t-\pi)\big)u(t-\pi)$
-  \item[(d)] $\displaystyle e^{-(t-\pi)} \sen(t-\pi)u(t-\pi)$
-  \item[(e)] $\displaystyle (t-1)u(t-1) + (t-2)u(t-2) -3(t-3)u(t-3) + 6(t-6)u(t-6)$
+\item[a)] $\displaystyle 2 \big( u(t-2) - u(t-4) \big)$
+  \item[b)] $\displaystyle (t-a)u(t-a)$
+  \item[c)] $\displaystyle \cos\big(2(t-\pi)\big)u(t-\pi)$
+  \item[d)] $\displaystyle e^{-(t-\pi)} \sen(t-\pi)u(t-\pi)$
+  \item[e)] $\displaystyle (t-1)u(t-1) + (t-2)u(t-2) -3(t-3)u(t-3) + 6(t-6)u(t-6)$
 \end{itemize}
 
 \end{Answer}
