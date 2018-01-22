@@ -33,11 +33,9 @@ e
 
     $ make dvi
 
-Para testar a compilação de todos os formatos disponíveis, digite:
+ou
 
-    $ make all
-
-ATENÇÃO: a compilação de todos os formatos pode levar vários minutos!
+    $ make ps
 
 #### Instruções LaTeX não compatíveis
 
@@ -81,24 +79,13 @@ Sempre que possível, forneça o código fonte da figura armazenando-o na pasta 
 
 Veja, por exemplo, `.cap_equacao1d/pics/ex_metodo_da_bissecao`.
 
-### Códigos computacionais
-
-O livro deve ser versátil o suficiente para não depender de qualquer pacote computacional em específico. Para tanto, textos envolvendo algum pacote (ou alguma linguagem) computacional devem ser encapsulados dentro de uma declaração `se ... então`. Por exemplo, o texto:
-
-    No Scilab, \verb+%eps+ fornece o $\epsilon$ de máquina.
-
-deve ser inserido no livro como:
-
-    \ifisscilab
-      No Scilab, \verb+%eps+ fornece o $\epsilon$ de máquina.
-    \fi
-
-Em breve iremos disponibilizar mais informações sobre como gerar uma versão do livro com outras linguagens computacionais.
 
 ### Equações e símbolos matemáticos
 
 As equações e símbolos matemáticos estão escritos usando a coleção de pacotes [AMS-LaTeX](http://www.ams.org/publications/authors/tex/amslatex).
 
+<<<<<<< HEAD
+=======
 #### Uso da vírgula
 
 O livro usa o pacote LaTeX [`icomma`](https://www.ctan.org/pkg/icomma). Desta forma, para que um espaço apareça após uma vírgula é necessário por o espaço no código LaTeX. Por exemplo, o código LaTeX `$1,24$` produz o número 1,24, enquanto o código `$1, 24$` porduz os números 1 e 24 separados por uma vírgula e um espaço.
@@ -148,6 +135,7 @@ Caso o exercício tenha resposta (final, para resolução completa, veja a subse
     \begin{resp}
 	   Excreva aqui a resposta do exercício.
 	\end{resp}
+>>>>>>> 2e303f50b0d823db1b8ee5aa6dae3c33dba45044
 
 
 #### Itens de exercícios
