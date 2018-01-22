@@ -9,7 +9,7 @@
 
 \documentclass[12pt]{book}
 
-\usepackage{tabu}
+%\usepackage{tabu}
 %\usepackage{ccicons}
 %\usepackage{subfiles}
 
@@ -40,12 +40,53 @@
 
 %\usepackage{hyperref}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Exercises and Answers %%%%
 %\usepackage[lastexercise]{exercise}
 \usepackage[answerdelayed,lastexercise]{exercise}
 \usepackage{chngcntr}
-
 \counterwithin{Exercise}{chapter}
 \counterwithin{Answer}{chapter}
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseName}{E}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}}}
+\renewcommand{\ExerciseHeader}{\textbf{\ExerciseName\ \ExerciseHeaderNB.}\,}
+
+% change font for answers header
+\renewcommand{\AnswerHeader}{\tiny\textbf{\ExerciseName\ \ExerciseHeaderNB.}\smallskip}
+% change font for answers list header
+\renewcommand{\AnswerListHeader}{{\tiny\textbf{\AnswerListName\
+(\ExerciseListName\ \ExerciseHeaderNB)\ ---\ }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{exer}
+{\begin{Exercise}}
+{\end{Exercise}}
+
+\newenvironment{resp}
+{\begin{Answer}\begin{tiny}}
+{\end{tiny}\end{Answer}}
+
+\newenvironment{sol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercícios Resolvidos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{exeresol}{ER}[section]
+\newenvironment{resol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -116,7 +157,7 @@
 \include{./AnaliseFourier/cap_diagramas_espectro/cap_diagramas_espectro}
 \include{./AnaliseFourier/cap_propriedades_series/cap_propriedades_series}
 \include{./AnaliseFourier/cap_transformada_de_fourier/cap_transformada_de_fourier}
-\include{./AnaliseFourier/cap_diagramas_espectro_transformada/cap_diagramas_espectro_transformda}
+\include{./AnaliseFourier/cap_diagramas_espectro_transformada/cap_diagramas_espectro_transformada}
 \include{./AnaliseFourier/cap_propriedades_transformada/cap_propriedades_transformada}
 \include{./AnaliseFourier/cap_edp/cap_edp}
 

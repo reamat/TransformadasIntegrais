@@ -1,4 +1,4 @@
-#Folha de Estilo
+# Folha de Estilo
 
 Este documento contém informações sobre os padrões de estilo de escrita e organização do livro colaborativo. Antes de submeter uma colaboração, verifique que seu trabalho está de acordo com todos os pontos observados nesta folha de estilo.
 
@@ -16,12 +16,12 @@ O livro está escrito em língua portuguesa, seguindo os costumes linguísticos 
 
 Deve-se usar maiúscula apenas em nomes próprios, ex: método de Newton, métodos dos mínimos quadrados. 
 
-
 ## Código fonte LaTeX
 
 O livro está escrito em [LaTex](https://latex-project.org/). O arquivo principal `main.tex` escontra-se no diretório principal `CalculoNumerico`. O código LaTeX de cada capítulo encontra-se em um subdiretório específico com nome `cap_abrev`, onde `abrev` é uma abreviação que lembre o conteúdo do capítulo. Por exemplo, o código do capítulo sobre técnicas numéricas para sistemas lineares está no subdiretório `cap_linsis`.
 
 Para informações sobre como compilar o código fonte, leia o arquivo `README.md`.
+
 
 ### Compatibilidade
 
@@ -84,4 +84,69 @@ Veja, por exemplo, `.cap_equacao1d/pics/ex_metodo_da_bissecao`.
 
 As equações e símbolos matemáticos estão escritos usando a coleção de pacotes [AMS-LaTeX](http://www.ams.org/publications/authors/tex/amslatex).
 
+<<<<<<< HEAD
+=======
+#### Uso da vírgula
 
+O livro usa o pacote LaTeX [`icomma`](https://www.ctan.org/pkg/icomma). Desta forma, para que um espaço apareça após uma vírgula é necessário por o espaço no código LaTeX. Por exemplo, o código LaTeX `$1,24$` produz o número 1,24, enquanto o código `$1, 24$` porduz os números 1 e 24 separados por uma vírgula e um espaço.
+
+#### Números em notação científica
+
+Números em notação científica devem ser representados usando `$\times 10^$`, por exemplo:
+
+    1,25673\times 10^{-13}.
+
+### Exercícios
+
+O livro conta com três tipos de exercícios, os chamados: Exercícios Resolvidos, Exercícios e Exercícios Finais.
+
+#### Exercícios Resolvidos
+
+Esercícios Resolvidos são exercícios com resolução completa. Eles devem ser colocados em subseção da seção que se referem. A subseção deve ser não numerada e intitulada "Exercícios Resolvidos" , i.e.:
+
+    \subsection*{Exercícios Resolvidos}
+
+O enunciado de um exercício resolvido  deve ser colocado dentro de um ambiente `exeresol` como, por exemplo:
+
+    \begin{exeresol}
+	    Escreva aqui o enunciado do exercício resolvido.
+    \end{exersol}
+
+A resolução do exercício deve ser colocada dentro de um ambiente `resol`, colocado logo abaixo do `\end{exeresol}`, por exemplo:
+
+    \begin{resol}
+	    Escreva aqui a resolução completa (detalhada) do exercício.
+	\end{resol}
+
+#### Exercícios
+
+Exercícios com resposta ou sem devem ser colocados em subseção da seção que se referem. A subseção deve ser não numerada e intitulada "Exercícios", i.e.:
+
+    \subsection*{Exercícios}
+
+O enunciado de um exercício com resposta ou sem deve ser colocado dentro de um ambiente `exer` como, por exemplo:
+
+    \begin{exer}
+	   Excreva aqui o enunciado do exercício com resposta ou sem.
+	\end{exer}
+
+Caso o exercício tenha resposta (final, para resolução completa, veja a subsecção Exercícios Resolvidos) ela deve ser colocado em um ambiente `resp` logo abaixo do ambiente que o exercício se refere como, por exemplo:
+
+    \begin{resp}
+	   Excreva aqui a resposta do exercício.
+	\end{resp}
+>>>>>>> 2e303f50b0d823db1b8ee5aa6dae3c33dba45044
+
+
+#### Itens de exercícios
+
+A itemização dos exercícios devem ser feita pelo ambiente 'itemize' e devem ser indicados por letras latinas seguidas de ')', exemplo:
+
+    \begin{itemize}
+      \item[a)] $t^2 e^{3t}$
+      \item[b)] $e^{-2t} \sen {4t}$
+      \item[c)] $e^{4t} \cosh (5t)$
+      \item[d)] $e^{-2t} \left( 3 \cos(6t) - 5 \sen (6t) \right)$
+    \end{itemize}
+
+	
