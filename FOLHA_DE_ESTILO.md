@@ -33,11 +33,9 @@ e
 
     $ make dvi
 
-Para testar a compilação de todos os formatos disponíveis, digite:
+ou
 
-    $ make all
-
-ATENÇÃO: a compilação de todos os formatos pode levar vários minutos!
+    $ make ps
 
 #### Instruções LaTeX não compatíveis
 
@@ -81,71 +79,9 @@ Sempre que possível, forneça o código fonte da figura armazenando-o na pasta 
 
 Veja, por exemplo, `.cap_equacao1d/pics/ex_metodo_da_bissecao`.
 
-### Códigos computacionais
-
-O livro deve ser versátil o suficiente para não depender de qualquer pacote computacional em específico. Para tanto, textos envolvendo algum pacote (ou alguma linguagem) computacional devem ser encapsulados dentro de uma declaração `se ... então`. Por exemplo, o texto:
-
-    No Scilab, \verb+%eps+ fornece o $\epsilon$ de máquina.
-
-deve ser inserido no livro como:
-
-    \ifisscilab
-      No Scilab, \verb+%eps+ fornece o $\epsilon$ de máquina.
-    \fi
-
-Em breve iremos disponibilizar mais informações sobre como gerar uma versão do livro com outras linguagens computacionais.
 
 ### Equações e símbolos matemáticos
 
 As equações e símbolos matemáticos estão escritos usando a coleção de pacotes [AMS-LaTeX](http://www.ams.org/publications/authors/tex/amslatex).
 
-#### Uso da vírgula
-
-O livro usa o pacote LaTeX [`icomma`](https://www.ctan.org/pkg/icomma). Desta forma, para que um espaço apareça após uma vírgula é necessário por o espaço no código LaTeX. Por exemplo, o código LaTeX `$1,24$` produz o número 1,24, enquanto o código `$1, 24$` porduz os números 1 e 24 separados por uma vírgula e um espaço.
-
-#### Números em notação científica
-
-Números em notação científica podem ser representados, tando usando `$\times 10^$` como usando o macro `\E`, por exemplo:
-
-    1,25673\times 10^{-13} = 1,25673\E-13.
-
-### Exercícios
-
-O livro conta com três tipos de exercícios, os chamados: Exercícios Resolvidos, Exercícios e Exercícios Finais.
-
-#### Exercícios Resolvidos
-
-Esercícios Resolvidos são exercícios com resolução completa. Eles devem ser colocados em subseção da seção que se referem. A subseção deve ser não numerada e intitulada "Exercícios Resolvidos" , i.e.:
-
-    \subsection*{Exercícios Resolvidos}
-
-O enunciado de um exercício resolvido  deve ser colocado dentro de um ambiente `exeresol` como, por exemplo:
-
-    \begin{exeresol}
-	    Escreva aqui o enunciado do exercício resolvido.
-    \end{exersol}
-
-A resolução do exercício deve ser colocada dentro de um ambiente `resol`, colocado logo abaixo do `\end{exeresol}`, por exemplo:
-
-    \begin{resol}
-	    Escreva aqui a resolução completa (detalhada) do exercício.
-	\end{resol}
-
-#### Exercícios
-
-Exercícios com resposta ou sem devem ser colocados em subseção da seção que se referem. A subseção deve ser não numerada e intitulada "Exercícios", i.e.:
-
-    \subsection*{Exercícios}
-
-O enunciado de um exercício com resposta ou sem deve ser colocado dentro de um ambiente `exer` como, por exemplo:
-
-    \begin{exer}
-	   Excreva aqui o enunciado do exercício com resposta ou sem.
-	\end{exer}
-
-Caso o exercício tenha resposta (final, para resolução completa, veja a subsecção Exercícios Resolvidos) ela deve ser colocado em um ambiente `resp` logo abaixo do ambiente que o exercício se refere como, por exemplo:
-
-    \begin{resp}
-	   Excreva aqui a resposta do exercício.
-	\end{resp}
 
