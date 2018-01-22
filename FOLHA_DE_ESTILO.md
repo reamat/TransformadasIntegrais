@@ -56,6 +56,14 @@ Fazemos a conversão do livro de código LaTeX para HTML usando o pacote [TeX4ht
 
 * Não colocar `label` dentre de colchetes.
 
+* Capítulos e seções não podem conter colchetes extras. Um exemplo do que não fazer é
+
+	\chapter{Este \'{e} um capítulo}
+
+no lugar, use:
+
+	\chapter{Este é um capítulo}
+
 ### Capítulos
 
 Dentro de cada subdiretório de um capítulo, por exemplo  `cap_foo`, devem estar presentes todos os arquivos referentes ao texto deste. As imagens devem ser colocadas no subdiretório `cap_foo/pics` e os códigos computacionais em `cap_foo/codes`. De preferência, deve-se criar um subdiretório para cada figura e código computacional. Quando possível, as figuras devem ser acompanhadas de seu código fonte.
