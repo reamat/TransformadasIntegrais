@@ -1,0 +1,57 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, EVITE EDITAR ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{book}
+
+\input preambulo.tex
+
+\begin{document}
+
+\frontmatter
+\title{Análise de Fourier\\\small{Um Livro Colaborativo}}
+\date{\today}
+\author{}
+\maketitle
+
+\include{organizadores}
+\include{licenca}
+\include{nota_organizadores}
+\include{prefacio}
+
+\ifishtml
+\else
+\tableofcontents
+\fi
+
+\mainmatter
+
+\include{./cap_introducao/cap_introducao}
+\include{./cap_num_complexos/cap_num_complexos}
+\include{./cap_series/cap_series_de_fourier}
+\include{./cap_diagramas_espectro/cap_diagramas_espectro}
+\include{./cap_propriedades_series/cap_propriedades_series}
+\include{./cap_transformada_de_fourier/cap_transformada_de_fourier}
+\include{./cap_diagramas_espectro_transformada/cap_diagramas_espectro_transformada}
+\include{./cap_propriedades_transformada/cap_propriedades_transformada}
+\include{./cap_edp/cap_edp}
+
+\appendix
+\include{./apendice/apendice}
+
+
+\chapter*{Resposta dos Exercícios}
+\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
+Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualização do livro, as respostas podem conter imprecisões e erros.
+\shipoutAnswer  
+
+\bibliographystyle{acm}
+\bibliography{bib}
+
+
+\end{document} 
