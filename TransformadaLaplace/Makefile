@@ -46,12 +46,14 @@ main.html: main.tex
 	latex main
 	latex main
 	latex main
-	mk4ht htlatex main "myconfig,3,notoc*" "" "-d./html/"
+	htlatex main.tex "myconfig.cfg,3,notoc*" " -cunihtf" "-d./html/"
+#	mk4ht htlatex main "myconfig,3,notoc*" "-cunihtf" "-d./html/"
+#	htlatex main 'xhtml,mathml,charset=utf-8' ' -cunihtf'
 	cp config-pdf.knd config.knd
 
 
 clean: 
 	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
 	rm -rf */*.aux */*.log */*.out */*.toc */*.bbl */*.idx */*.ilg */*.ind */*.blg */*.backup 
-	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup 
+	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup *.html
 
