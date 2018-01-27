@@ -1,38 +1,11 @@
-# Transformadas Integrais: Um Livro Colaborativo
+# REAMAT - Transformadas Integrais
 
-Este é um livro colaborativo que versa sobre transformadas integrais, em especial a tranformada de Laplace e de Fourier com aplicações normalmente estudadas em cursos de graduação das áreas exatas e da terra.
+Este é um projeto de escrita colaborativa de materiais didáticos sobre transformadas integrais. Veja mais sobre o projeto em https://www.ufrgs.br/reamat/TransformadasIntegrais. Veja, também, os outros projetos de escritas colaborativas em https://www.ufrgs.br/reamat.
 
-## Licença
-Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite <http://creativecommons.org/licenses/by-sa/3.0/> ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+Qualquer dúvida, poste no nosso fórum https://www.ufrgs.br/reamat/forum.html, crie um _issue_ no repositório do livro ou escreva para reamat@ufrgs.br.
 
-## Sobre o código fonte
-O código fonte está escrito em [Latex](https://latex-project.org/) e as referências bibliográficas em [BibTex](http://www.bibtex.org/), testados em computador Linux com o pacote [TexLive](http://www.tug.org/texlive/). O texto está em formatação **utf-8**.
+## Lista de recursos
 
-## Compilando
-O código LaTeX está testado em computador [Linux](https://pt.wikipedia.org/wiki/Linux) com o pacote [TexLive](https://www.tug.org/texlive/) instalado. O livro pode ser compilado com:
+* AnaliseFourier: livro colaborativo sobre Análise de Fourier
 
-    $ make
-
-Isto gera o livro em formato PDF (main.pdf), o qual é o formato principal. Também, o código pode ser compilado em formato PS ou DVI:
-
-    $ make ps
-ou
-
-    $ make dvi
-
-Alguma vezes a compilação pode gerar erros devido a incompatibilidade com antigos arquivos temporários. Para limpar os arquivos temporários gerados durante a compilação, digite:
-
-    $ make clean
-
-Alternativamente, o livro pode ser compilado com os comandos usuais `latex main`, `bibtex main` etc. Lembrando que `main.tex` é o arquivo LaTeX principal.
-
-### Outros sistemas operacionais
-O código LaTeX pode ser compilado em outros sistemas operacionais, usando os seguintes comandos:
-
-    latex main
-    bibtex main
-    latex main
-    latex main
-    dvips main.dvi
-    ps2pdf main.ps
-
+* TransformadaLaplace: livro colaboarativo sobre Transformadas de Laplace
