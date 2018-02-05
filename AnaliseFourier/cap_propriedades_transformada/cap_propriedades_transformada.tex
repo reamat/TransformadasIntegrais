@@ -1,5 +1,5 @@
-%\documentclass[Main.tex]{subfiles}
-%\begin{document}
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
 \chapter{Propriedades da transformada de Fourier}
 
 
@@ -672,13 +672,13 @@ onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja
 \begin{center}
 \psset{unit =1cm, linewidth=1\pslinewidth}
 
-\begin{pspicture}(-2.0,-1.0)(2.0,2.0)
-  \psaxes[labels]{->}(0,0)(-1.5,-0.3)(1.5,1.3)
+\begin{pspicture}(-2.0,-1.0)(2.0,3.5)
+  \psaxes[labels=none]{->}(0,0)(-1.5,-0.3)(1.5,2.3)
 \psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 2 mul -1 mul 1 add}
+\psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 4 mul 2 add }
+\psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 4 mul -1 mul 2 add}
 
-	\rput(0.0,1.5){$|F(w)|$}
+	\rput(0.0,2.5){$|F(w)|$}
 	\rput(0.5,-0.2){$w_c$}
 	\rput(-0.5,-0.18){$-w_c$}
 	\rput(1.6,0.3){$w$}
@@ -686,7 +686,7 @@ onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja
 \end{pspicture} 
 
 \begin{pspicture}(-6.0,-1.0)(6.0,2.0)
-  \psaxes[labels=none]{->}(0,0)(-5.5,-0.3)(5.5,1.3)
+  \psaxes[labels=none]{->}(0,0)(-5.5,-0.3)(5.5,1.7)
 \psset{linecolor=blue}
 \psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 2 mul 1 add }
 \psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 2 mul -1 mul 1 add}
@@ -705,22 +705,28 @@ onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja
 
 
 
-	\rput(0.0,1.5){$|F_T(w)|$}
+	\rput(0.0,2.0){$|F_T(w)|$}
 	\rput(5.0,0.3){$w$}
 	
-	\rput(0.5,-0.2){$w_c$}
-	\rput(-0.5,-0.18){$-w_c$}
-	
-	
+	\rput(0.5,-0.3){$w_c$}
+	\rput(-0.5,-0.3){$-w_c$}
+		\rput(1.1,-0.3){$w_a$}
+	\rput(-1.3,-0.3){$-w_a$}
+		\rput(-0.3,1.1){$\frac{1}{T}$}
+
+        \rput(1.1,-0.3){$w_a$}
+	\rput(-1.3,-0.3){$-w_a$}
+
+		
 \end{pspicture}
 \end{center}
 \caption{\label{sinal_discreto1}}
 \end{figure}
-\begin{obs}Observamos que se a frequência de amostragem $w_a$ for superior a $2w_c$, então $F_T(w)$ coincide exatamente com $F(w)$ em todo o intervalo $[-w_c,w_c]$ e, portanto, toda a informação de $f(t)$ é preservada. De fato, neste caso, podemos escrever:
+\begin{obs}Observamos que se a frequência de amostragem $w_a$ for superior a $2w_c$, então $F_T(w)=\frac{1}{T}F(w)$ no intervalo $[-w_c,w_c]$ e, portanto, toda a informação de $f(t)$ é preservada. De fato, neste caso, podemos escrever:
 \begin{eqnarray*}
 f(t)&=&\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw\\
 &=&\frac{1}{2\pi}\int_{-w_c}^{w_c} F(w)e^{iwt}dw\\
-&=&\frac{1}{2\pi}\int_{-w_c}^{w_c} F_T(w)e^{iwt}dw
+&=&\frac{1}{2\pi}\int_{-w_c}^{w_c} TF_T(w)e^{iwt}dw
 \end{eqnarray*}
 Como $F_T(w)$ pode ser calculada apenas com base nos pontos de amostragem, $f(t)$ pode ser reconstruída. Se $w_a<2w_c$, então existe superposição espectral, o que impede a reconstrução da $f(t)$. Este resultado é conhecido como teorema da amostragem de Nyquist-Shannon ou teorema cardinal da interpolação.
 \end{obs}
@@ -732,26 +738,27 @@ $$
 \end{teo}
 \begin{proof} Seja $F_T(w)$ a transformada de Fourier do sinal amostrado, conforme vimos, vale a expressão:
 $$
-F_T(w)=\frac{1}{T}\sum_{n=-\infty}^\infty F(w-w_n).
+TF_T(w)=\sum_{n=-\infty}^\infty F(w-w_n).
 $$
-Observe que $F_T(w)$ é uma função periódica de período $w_a$ (veja figura \ref{sinal_discreto1}), de forma que $F_T(w)$ admite uma representação em série de Fourier:
+Observe que $TF_T(w)$ é uma função periódica de período $w_a$ (veja figura \ref{sinal_discreto1}), de forma que $TF_T(w)$ admite uma representação em série de Fourier:
 $$
-F_T(w)=\sum_{-\infty}^\infty D_n e^{iv_n w}=\sum_{-\infty}^\infty D_n e^{in Tw},
+TF_T(w)=\sum_{-\infty}^\infty D_n e^{iv_n w}=\sum_{-\infty}^\infty D_n e^{in Tw},
 $$
 onde usamos que $v_n=\frac{2\pi n}{w_a}=Tn$ e 
 \begin{eqnarray*}
-D_n&=&\frac{1}{w_a}\int_{-w_a/2}^{w_a/2}F_T(w)e^{-in Tw}dw\\
+D_n&=&\frac{1}{w_a}\int_{-w_a/2}^{w_a/2}TF_T(w)e^{-in Tw}dw\\
 &=&\frac{1}{w_a}\int_{-w_a/2}^{w_a/2}F(w)e^{-in Tw}dw\\
 &=&\frac{1}{w_a}\int_{-\infty}^{\infty}F(w)e^{-in T w}dw,\quad \hbox{pois}\ F(w)=0\ \hbox{se}\ |w|>\frac{w_a}{2}>w_c\\
 &=&\frac{2\pi}{w_a}f(-nT)=Tf(-nT),\quad \hbox{usando a transformada inversa}.
 \end{eqnarray*}
 Logo,
 $$
-F_T(w)=T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw}.
+TF_T(w)=T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw}.
 $$
 Usando a transformada inversa, temos:
 \begin{eqnarray*}
-f(t)&=&\frac{1}{2\pi}\int_{-w_a/2}^{w_a/2}T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw} e^{i w t}dw\\
+f(t)&=&\frac{1}{2\pi}\int_{-w_a/2}^{w_a/2}TF_T(w) e^{i w t}dw\\
+&=&\frac{1}{2\pi}\int_{-w_a/2}^{w_a/2}T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw} e^{i w t}dw\\
 &=&\frac{T}{2\pi}\int_{-w_a/2}^{w_a/2}\sum_{n=-\infty}^\infty f(-nT) e^{iw(t+nT)} dw\\
 &=&\frac{1}{w_a}\sum_{n=-\infty}^\infty f(-nT)\int_{-w_a/2}^{w_a/2}  e^{iw(t+nT)} dw\\
 &=&\frac{1}{w_a}\sum_{n=-\infty}^\infty f(-nT)\int_{-w_a/2}^{w_a/2}  \cos(w(t+nT)) dw,\quad \hbox{pois o seno é ímpar}\\

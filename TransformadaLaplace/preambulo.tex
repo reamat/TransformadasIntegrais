@@ -1,0 +1,133 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, EVITE EDITAR ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Predefinicoes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\ifispdf        % O layout será book?
+\newif\ifishtml        % O layout será html?
+
+\def\tfn{config.knd}     % Arquivo que guarda as definições do tipo de saída
+\def \tdata{}          % Definições do tipo de saída: book, slide ou html.
+
+\openin1=\tfn\relax    % Leitura das definições de saída
+\read1 to \tdata
+\closein1
+
+\tdata                 % Definições de saída
+
+%\usepackage{tabu}
+%\usepackage{ccicons}
+%\usepackage{subfiles}
+
+%opções de linguagem
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+
+%Indentar primeiro parágrafo de cada seção
+\usepackage{indentfirst} 
+
+
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+%\usepackage[a5paper]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage[normalem]{ulem}
+\usepackage{pstricks,pst-plot}
+\usepackage[dvips]{graphicx}%
+\usepackage{pst-math}
+\usepackage{pst-plot}
+\usepackage{pst-circ}
+
+\usepackage[pdfborder={0 0 0 [0 0]},colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
+
+
+%\usepackage{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Exercises and Answers %%%%
+%\usepackage[lastexercise]{exercise}
+\usepackage[answerdelayed,lastexercise]{exercise}
+\usepackage{chngcntr}
+\counterwithin{Exercise}{chapter}
+\counterwithin{Answer}{chapter}
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseName}{E}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}}}
+\renewcommand{\ExerciseHeader}{\textbf{\ExerciseName\ \ExerciseHeaderNB.}\,}
+
+% change font for answers header
+\renewcommand{\AnswerHeader}{\tiny\textbf{\ExerciseName\ \ExerciseHeaderNB.}\smallskip}
+% change font for answers list header
+\renewcommand{\AnswerListHeader}{{\tiny\textbf{\AnswerListName\
+(\ExerciseListName\ \ExerciseHeaderNB)\ ---\ }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{exer}
+{\begin{Exercise}}
+{\end{Exercise}}
+
+\newenvironment{resp}
+{\begin{Answer}\begin{tiny}}
+{\end{tiny}\end{Answer}}
+
+\newenvironment{sol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercícios Resolvidos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{exeresol}{ER}[section]
+\newenvironment{resol}
+{\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\Diamond$}
+  \begin{proof}[\bfseries\upshape Solução]}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin\medskip}}}
+
+\renewcommand{\AnswerHeader}{\medskip{\textbf{Resposta do exercício \ExerciseHeaderNB}\smallskip}:~}
+
+
+
+
+\newtheorem{teo}{Teorema}
+\newtheorem{lem}{Lema}
+\newtheorem{prop}{Proposi\c{c}{\~a}o}
+\newtheorem{propr}{Propriedade}
+\newtheorem{corol}{Corolario}	
+\newtheorem{ex}{Exemplo}	
+\newtheorem{prob}{Problema}
+\newtheorem{obs}{Observa\c{c}{\~a}o}
+\newtheorem{defn}{Defini\c{c}{\~a}o}
+\newcommand{\senh}{\operatorname{senh}}
+\newcommand{\sen}{\operatorname{sen}}
+
+
+\newcommand{\emconstrucao}{
+  \begin{tabular}{|c|}\hline
+    Em construção ... Gostaria de participar na escrita deste material? Veja como em:\\
+    \url{https://www.ufrgs.br/reamat}\\\hline
+  \end{tabular}
+}

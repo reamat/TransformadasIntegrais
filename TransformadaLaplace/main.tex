@@ -1,0 +1,58 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, EVITE EDITAR ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{book}
+
+\input preambulo.tex
+
+\begin{document}
+
+\frontmatter
+\title{Transformada de Laplace\\\small{Um Livro Colaborativo}}
+\date{\today}
+\author{}
+\maketitle
+
+\include{organizadores}
+\include{licenca}
+\include{nota_organizadores}
+\include{prefacio}
+
+\ifishtml
+\else
+\tableofcontents
+\fi
+
+
+\mainmatter
+
+
+\include{./cap_introducao/cap_introducao}
+
+\include{./cap_definicao/cap_definicao}
+\include{./cap_linear_deriva/cap_linear_deriva}
+\include{./cap_trans_int/cap_trans_int}
+\include{./cap_dirac_conv/cap_dirac_conv}
+\include{./cap_especiais_coef_var/cap_especiais_coef_var}
+\include{./cap_sistemas/cap_sistemas}
+\appendix
+\include{./apendice/apendice}
+
+\chapter*{Resposta dos Exercícios}
+\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
+Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualização do livro, as respostas podem conter imprecisões e erros.
+\shipoutAnswer  
+
+
+
+\bibliographystyle{acm}
+\bibliography{bib}
+
+
+\end{document} 

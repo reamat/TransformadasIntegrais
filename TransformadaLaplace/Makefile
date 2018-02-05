@@ -10,6 +10,7 @@
 
 
 pdf: main.tex
+	cp config-pdf.knd config.knd
 	latex 	main
 	bibtex 	main
 #	makeindex main
@@ -20,6 +21,7 @@ pdf: main.tex
 
 
 ps: main.tex
+	cp config-pdf.knd config.knd
 	latex 	main
 	bibtex 	main
 #	makeindex main
@@ -28,16 +30,30 @@ ps: main.tex
 	dvips 	main.dvi
 
 dvi: main.tex
+	cp config-pdf.knd config.knd
 	latex 	main
 	bibtex 	main
 #	makeindex main
 	latex 	main
 	latex 	main
 
+html: main.html
+
+main.html: main.tex
+	cp config-html.knd config.knd
+	rm -f html/*
+	mkdir -p html
+	latex main
+	latex main
+	latex main
+	htlatex main.tex "myconfig.cfg,3,notoc*" " -cunihtf" "-d./html/"
+#	mk4ht htlatex main "myconfig,3,notoc*" "-cunihtf" "-d./html/"
+#	htlatex main 'xhtml,mathml,charset=utf-8' ' -cunihtf'
+	cp config-pdf.knd config.knd
 
 
 clean: 
 	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
 	rm -rf */*.aux */*.log */*.out */*.toc */*.bbl */*.idx */*.ilg */*.ind */*.blg */*.backup 
-	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup 
+	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup *.html *.4ct *.4tc *.lg *.tmp *.xref
 

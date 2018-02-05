@@ -7,9 +7,23 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt]{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Predefinicoes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{tabu}
+\newif\ifispdf        % O layout será book?
+\newif\ifishtml        % O layout será html?
+
+\def\tfn{config.knd}     % Arquivo que guarda as definições do tipo de saída
+\def \tdata{}          % Definições do tipo de saída: book, slide ou html.
+
+\openin1=\tfn\relax    % Leitura das definições de saída
+\read1 to \tdata
+\closein1
+
+\tdata                 % Definições de saída
+
+%\usepackage{tabu}
 %\usepackage{ccicons}
 %\usepackage{subfiles}
 
@@ -112,74 +126,9 @@
 \newcommand{\sen}{\operatorname{sen}}
 
 
-
-\begin{document}
-
-\frontmatter
-\title{Transformadas Integrais}
-\date{\today}
-\author{}
-\maketitle
-
-\include{organizadores}
-\include{licenca}
-\include{nota_organizadores}
-\include{prefacio}
-
-
-
-
-
-\tableofcontents
-
-%\listoffigures
-%\listoftables
-
-\mainmatter
-
-
-\part{Transformada de Laplace}
-\include{./TransformadaLaplace/cap_introducao/cap_introducao}
-
-\include{./TransformadaLaplace/cap_definicao/cap_definicao}
-\include{./TransformadaLaplace/cap_linear_deriva/cap_linear_deriva}
-\include{./TransformadaLaplace/cap_trans_int/cap_trans_int}
-\include{./TransformadaLaplace/cap_dirac_conv/cap_dirac_conv}
-\include{./TransformadaLaplace/cap_especiais_coef_var/cap_especiais_coef_var}
-\include{./TransformadaLaplace/cap_sistemas/cap_sistemas}
-
-
-
-\part{Transformada de Fourier}
-
-\include{./AnaliseFourier/cap_introducao/cap_introducao}
-\include{./AnaliseFourier/cap_num_complexos/cap_num_complexos}
-\include{./AnaliseFourier/cap_series/cap_series_de_fourier}
-\include{./AnaliseFourier/cap_diagramas_espectro/cap_diagramas_espectro}
-\include{./AnaliseFourier/cap_propriedades_series/cap_propriedades_series}
-\include{./AnaliseFourier/cap_transformada_de_fourier/cap_transformada_de_fourier}
-\include{./AnaliseFourier/cap_diagramas_espectro_transformada/cap_diagramas_espectro_transformada}
-\include{./AnaliseFourier/cap_propriedades_transformada/cap_propriedades_transformada}
-\include{./AnaliseFourier/cap_edp/cap_edp}
-
-%\appendix
-%\subfile{apendice.tex}
-
-\part{Apêndices}
-\appendix
-\include{./TransformadaLaplace/apendice/apendice}
-\include{./AnaliseFourier/apendice/apendice}
-
-
-\chapter*{Resposta dos Exercícios}
-\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
-Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualização do livro, as respostas podem conter imprecisões e erros.
-\shipoutAnswer  
-
-
-
-\bibliographystyle{acm}
-\bibliography{./TransformadaLaplace/bib}
-
-
-\end{document} 
+\newcommand{\emconstrucao}{
+  \begin{tabular}{|c|}\hline
+    Em construção ... Gostaria de participar na escrita deste material? Veja como em:\\
+    \url{https://www.ufrgs.br/reamat}\\\hline
+  \end{tabular}
+}
