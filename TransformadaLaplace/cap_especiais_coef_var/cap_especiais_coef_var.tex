@@ -133,11 +133,11 @@ $$
 \section{Transformada de Laplace de funções periódicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
 
-\begin{propr}{\label{prop_fun_per}}Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
+\begin{prop}{\label{prop_fun_per}}Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
 $$
 \mathcal{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Aplicamos a definição e separamos a integral nos períodos da função $f(t)$ para obter:
 \begin{eqnarray*}
  \mathcal{L}\{f(t)\}&=&\int_0^\infty f(t)e^{-st}dt \\
@@ -576,19 +576,19 @@ A série acima está apresentada no item 3 da tabela \ref{series_de_potencias}, 
 
 
 
-\begin{prob}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
+\begin{exer}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
 $$
 \mathcal{L}\left\{\frac{\cos(2\sqrt{t})}{\sqrt{t}}\right\}=\frac{\sqrt{\pi}}{\sqrt{s}}e^{-\frac{1}{s}}.
 $$
-\end{prob}
+\end{exer}
 
 \section{A derivada da transformada de Laplace}
-\begin{propr}{\label{prop_der_transf}}
+\begin{prop}{\label{prop_der_transf}}
 Se $F(s)=\mathcal{L}\{f(t)\}$, então
 \begin{equation}
 \frac{d}{ds}F(s)=-\mathcal{L}\{tf(t)\}.
 \end{equation} 
-\end{propr}
+\end{prop}
 \begin{proof}
 Usando a definição de transformada de Laplace, temos
 \begin{eqnarray*}
@@ -608,8 +608,8 @@ Usando a definição de transformada de Laplace, temos
 &=&\frac{s^2-w^2}{(s^2+w^2)^2}\\
 \end{eqnarray*}
 \end{ex}
-\begin{prob}Calcule $\mathcal{L}\{t^2\sen(wt)\}$ usando a propriedade \ref{prop_der_transf}.
-\end{prob}
+\begin{exer}Calcule $\mathcal{L}\{t^2\sen(wt)\}$ usando a propriedade \ref{prop_der_transf}.
+\end{exer}
 
 
 \section{Equações diferenciais com coeficientes não constantes}
@@ -721,7 +721,7 @@ não usamos-a para calcular a solução. De fato, o problema possui um singulari
 
 
 \section{Propriedade da integral da transformada de Laplace}
-\begin{propr}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
+\begin{prop}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
 
 e o limite
 $$
@@ -731,7 +731,7 @@ existe, então
 \begin{equation}
 \int_s^\infty F(v)dv =\mathcal{L}\left\{\frac{f(t)}{t}\right\}.
 \end{equation}
- \end{propr}
+ \end{prop}
 \begin{proof} Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 \int_s^\infty F(v)dv&=&\int_s^\infty\left(\int_0^\infty f(t)e^{-vt}dt\right)dv\\
@@ -823,8 +823,8 @@ Na penúltima igualdade usamos o seguinte limite no infinito:
 \end{eqnarray*}
 Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
 \end{ex}
-\begin{prob}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
-\end{prob}
+\begin{exer}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
+\end{exer}
 
 \begin{ex}{\label{ex_sint_t}}Vamos demonstrar o item 42 da tabela \ref{tab_trans_Lap_2}:
 $$
@@ -870,7 +870,7 @@ $$
 $$
 \end{ex}
 \section{Propriedades do Valor Inicial e Final}
-\begin{propr}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
+\begin{prop}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
 $$
 \lim_{t\to\infty}f(t)=L,
 $$
@@ -878,7 +878,7 @@ então
 $$
 \lim_{s\to 0^+} sF(s)=L.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
@@ -897,7 +897,7 @@ $$
 
 
 
-\begin{propr}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
+\begin{prop}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
 $$
 \lim_{t\to 0^+}f(t)=L,
 $$
@@ -905,7 +905,7 @@ então
 $$
 \lim_{s\to \infty} sF(s)=L.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
@@ -966,7 +966,7 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
 
 
 
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle f(t) = 4e^{3t} - e^{-t}$
   \item[b)] $\displaystyle f(t) = \frac{1}{2} t^2 e^{2t}$
@@ -981,7 +981,7 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
   \item[k)] $\displaystyle f(t) = -\frac{1}{6} e^{-t} -\frac{4}{3} e^{2t} + \frac{7}{2} e^{3t}$
   \item[l)] $\displaystyle f(t) = \frac{1}{3} \bigg[ \sen t - \frac{1}{2}\sen(2t) \bigg]$
 \end{itemize}
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1000,7 +1000,7 @@ Use o método das séries de potências para mostrar que \[\mathcal{L} \{\sen \s
 \emph{Sugestão}: Use que \[\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}.\]
 \end{Exercise}
 
-\begin{Answer}
+\begin{resp}
  \begin{eqnarray*}
 f(t)&=&\sin\sqrt{t}= \sum_{n=0}^{\infty}(-1)^n\frac{t^{(2n+1)/2}}{(2n+1)!}\\
 F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
@@ -1030,7 +1030,7 @@ E generalizando, temos:
 &=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{2^{n-1}(n-1)(n-2)\cdots 1}\frac{\sqrt{\pi}}{2^{n}}\\
 &=&\frac{(2n-1)!}{(n-1)!}\frac{\sqrt{\pi}}{2^{2n-1}}
 \end{eqnarray*}
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1040,14 +1040,14 @@ Usando a derivada da transformada de Laplace, calcule:
   \item[b)] $\displaystyle \mathcal{L} \{ t \cosh (at) \}$
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle \frac{2as}{(s^2 - a^2)^2}$
   \item[b)] $\displaystyle \frac{s^2 + 9}{(s^2 - 9)^2}$
  
  \end{itemize}
 
-\end{Answer}
+\end{resp}
 
 
 
@@ -1064,10 +1064,10 @@ Resolva
 \right.
 \] \emph{Sugestão}: Utilize que $\displaystyle \lim_{s\to + \infty} Y(s) = 0.$
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  $\displaystyle y(t) = \frac{\sen t}{t}$
 
-\end{Answer}
+\end{resp}
 
 
 
@@ -1079,7 +1079,7 @@ Utilize a integral da transformada de Laplace para demonstrar que:
   \item[c)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cosh (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 - \omega^2}{s^2}\bigg)$
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle \frac{ 3 - 3 e^{-2s} - 6s e^{-4s} }{s^2 (1 - e^{-4s})}$
   \item[b)] $\displaystyle \frac{  e^{2\pi(1-s)} -1 }{(1-s) (1 - e^{-2\pi s})}$
@@ -1087,7 +1087,7 @@ Utilize a integral da transformada de Laplace para demonstrar que:
 
  \end{itemize}
 
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1104,12 +1104,12 @@ $
   \item[b)] $\displaystyle f(t) = |\sen (\omega t)|$.
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{8} \Big( 1 - \cos \big(2(t-a)\big) \Big)u(t-a) $
   \item[b)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{4} \sen(2t)$
  \end{itemize}
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1175,9 +1175,9 @@ Considere o OHS não amortecido representado na figura \ref{massa-mola-1}. Supon
 \end{figure} 
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
   $\displaystyle y(t) = \frac{F_0}{\sqrt{km}} \sen \left(\sqrt{\frac{k}{m}} t\right)$
-\end{Answer}
+\end{resp}
 
 
 %\end{document}

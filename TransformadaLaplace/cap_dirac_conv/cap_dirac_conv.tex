@@ -175,14 +175,14 @@ A transformada de Laplace de função Delta de Dirac é obtido pela propriedade 
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
 
-\begin{prob}Resolva o seguinte problema de valor inicial:
+\begin{exer}Resolva o seguinte problema de valor inicial:
 $$\left\{\begin{array}{l}
    y''-2y'=1+\delta(t-2)\\
    y(0)=0\\
    y'(0)=1
   \end{array}\right.
  $$
-\end{prob}
+\end{exer}
 
 \section{Aplicação: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
 Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
@@ -629,11 +629,11 @@ Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f
 \end{eqnarray*}
 onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau\left(\cos(t-\tau)-\sen(t-\tau)  \right)+\ \!$constante.
 \end{ex}
-\begin{prob}Mostre que $f*g=g*f$.
-\end{prob}
+\begin{exer}Mostre que $f*g=g*f$.
+\end{exer}
 
 
-\begin{propr}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
+\begin{prop}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
 \begin{equation}{\label{eq_prop_conv}}
  \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
 \end{equation}
@@ -641,7 +641,7 @@ ou
 \begin{equation}{\label{eq_inv_prop_conv}}
  \mathcal{L}^{-1}\{F(s)G(s)\}=(f*g)(t).
 \end{equation}
-\end{propr}
+\end{prop}
 \begin{proof}Partimos da definição das transformadas:
 $$
 F(s)=\mathcal{L}\{f(t) \}=\int_0^\infty f(t)e^{-st}dt
@@ -704,12 +704,12 @@ $$
  $$
  
 \end{ex}
-\begin{prob}Resolva a seguinte equação integral:
+\begin{exer}Resolva a seguinte equação integral:
 $$
 y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
 $$
  
-\end{prob}
+\end{exer}
 
 \section{Exercícios}
 
@@ -774,9 +774,9 @@ Um capacitor de capacitância $C$ está inicialmente carregado de forma que seu 
 \end{figure}
 \end{Exercise}
 
-\begin{Answer}
+\begin{resp}
  $\displaystyle q(t) = C V_0 e^{-t/RC}$
-\end{Answer}
+\end{resp}
 
 \begin{Exercise}
 Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
@@ -812,9 +812,9 @@ Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça se
 \end{figure}
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  $\displaystyle i(t) = \sen t - \sen(t-a) u(t-a)$
-\end{Answer}
+\end{resp}
 
 \begin{Exercise}
 Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
@@ -857,9 +857,9 @@ $$
 \end{figure} 
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  $\displaystyle i(t) = e^{-t}\sen t - u(t-2)  e^{2-t} \sen (t-2)$
-\end{Answer}
+\end{resp}
 
 \begin{Exercise}
 Dada a equação do movimento de um oscilador harmônico simples (OHS)
@@ -880,7 +880,7 @@ calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo
 \end{itemize}
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
 \item[a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
   \item[b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
@@ -888,7 +888,7 @@ calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo
 \end{itemize}
 
 
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -900,9 +900,9 @@ Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial
 \end{Exercise}
 
 
-\begin{Answer}
+\begin{resp}
  $\displaystyle \frac{F_0}{2k} \big[ \sen(\sqrt{k/m}t) - \sqrt{k/m}t \cos(\sqrt{k/m}t) \big] $
-\end{Answer}
+\end{resp}
 
 \begin{Exercise}
 Encontre por integração:
@@ -915,7 +915,7 @@ Encontre por integração:
 \end{itemize}
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
  
 
@@ -925,7 +925,7 @@ Encontre por integração:
   \item[d)] $\displaystyle \frac{1}{2k} (e^{kt} - e^{-kt}) = \frac{1}{k}\senh (k t)$
 \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -956,7 +956,7 @@ Achar a solução dos seguintes problemas de valor inicial:
 \end{itemize}
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
   \item[b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
@@ -964,7 +964,7 @@ Achar a solução dos seguintes problemas de valor inicial:
 
 \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 
@@ -979,7 +979,7 @@ Justifique as seguintes propriedades da operação de convolução:
 \end{itemize}
 {\it [Dica: cuidado para não confundir as variáveis de integração que aparecerão no item (b).}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] 
   \begin{eqnarray*}
@@ -1004,7 +1004,7 @@ Justifique as seguintes propriedades da operação de convolução:
   onde se fez a mudança $v=\tau-u$, $dv=d\tau$.
 \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 
@@ -1018,22 +1018,22 @@ $$
   \item[b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
    \item[a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
   \item[b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
 
 \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
 Use o Teorema da Convolução para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).$$
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  $\displaystyle \frac{1}{2} \big[ \sen t - \cos t + e^{-t} \big] $
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1047,7 +1047,7 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
 \end{itemize}
 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = e^{t}$
   \item[b)] $\displaystyle y(t) = \cos t$
@@ -1056,7 +1056,7 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
 
 \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 \begin{Exercise}
@@ -1069,14 +1069,14 @@ Encontre
 \end{Exercise}
 
 
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
   \item[b)] $\displaystyle -e^{-\pi s} \ln \pi $
   \item[c)] $\displaystyle e^{1-s}$
   \end{itemize}
  
-\end{Answer}
+\end{resp}
 
 
 
