@@ -1,0 +1,14 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.0,-3.5)(9,3.0)
+ \psaxes[labels]{->}(0,0)(-0.5,-3.2)(7.5,2.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.5}{1.0}{0}
+\psline[linecolor=blue](1.0,0)(1.0,2)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{3.0}{2}
+\psline[linecolor=blue](3.0,-3)(3.0,2)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{5.0}{-3}
+\psline[linecolor=blue](5.0,-3)(5.0,0)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{7.5}{0}
+\rput(7.6,.3){$t$}
+\rput(0.0,2.7){$f(t)$}
+\end{pspicture}
+\end{document}

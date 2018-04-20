@@ -1,0 +1,12 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document} \begin{pspicture}(-1,-.5)(10,4)
+ \psset{yunit=3cm,xunit=5cm}
+   \psaxes(0,0)(-.2,0)(2,1.1)        % sets up axis
+    \psplot[linecolor=blue, linewidth=1pt]{0}{.2}{1 2.71828 x -1 mul exp sub .2 div}
+    \psplot[linecolor=blue, linewidth=1pt]{.2}{2}{2.71828 .2 exp 1 sub .2 div 2.71828 x -1 mul exp  mul}
+    \psplot[linecolor=red, linewidth=1pt]{0}{.1}{1 2.71828 x -1 mul exp sub .1 div}
+    \psplot[linecolor=red, linewidth=1pt]{.1}{2}{2.71828 .1 exp 1 sub .1 div 2.71828 x -1 mul exp  mul}
+	\psplot[linecolor=green, linewidth=1pt]{0}{.05}{1 2.71828 x -1 mul exp sub .05 div}
+    \psplot[linecolor=green, linewidth=1pt]{.05}{2}{2.71828 .05 exp 1 sub .05 div 2.71828 x -1 mul exp  mul}
+    \psplot[linecolor=black, linewidth=.5pt]{.0}{2}{2.71828 x -1 mul exp }
+ \end{pspicture}
+\end{document}

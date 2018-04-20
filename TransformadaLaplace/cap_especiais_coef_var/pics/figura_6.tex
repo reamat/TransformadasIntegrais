@@ -1,0 +1,20 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.3,-1.0)(7.0,2.5)
+ \psaxes{->}(0,0)(0.0,-0.8)(6.5,2.2)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{2.71828 x -1 mul exp}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add }
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add }
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add 2.71828 x 5 sub -1 mul exp add}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add 2.71828 x 5 sub -1 mul exp add 2.71828 x 6 sub -1 mul exp add}
+\psline[linecolor=blue,linestyle=dashed](1,0.368)(1,1.368)
+\psline[linecolor=blue,linestyle=dashed](2,0.503)(2,1.503)
+\psline[linecolor=blue,linestyle=dashed](3,0.553)(3,1.553)
+\psline[linecolor=blue,linestyle=dashed](4,0.571)(4,1.571)
+\psline[linecolor=blue,linestyle=dashed](5,0.578)(5,1.578)
+\psline[linecolor=blue,linestyle=dashed](6,0.581)(6,1.581)
+\rput(6.6,.3){$t$}
+\rput(0.0,2.5){$f(t)$}
+\end{pspicture}
+\end{document}

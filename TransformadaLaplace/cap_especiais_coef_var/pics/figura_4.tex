@@ -1,0 +1,20 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.3,-1.0)(7.0,2.0)
+ \psaxes[labels=y]{->}(0,0)(0.0,-0.8)(6.5,1.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{x 180 mul sin}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{x 180 mul sin -1 mul}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{x 180 mul sin}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{x 180 mul sin -1 mul}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 180 mul sin}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{x 180 mul sin -1 mul}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{x 180 mul sin}
+\rput(6.6,.3){$t$}
+\rput(0.0,1.7){$p(t)$}
+\rput(1.0,-.4){$\frac{\pi}{w}$}
+\rput(2.0,-.4){$\frac{2\pi}{w}$}
+\rput(3.0,-.4){$\frac{3\pi}{w}$}
+\rput(4.0,-.4){$\frac{4\pi}{w}$}
+\rput(5.0,-.4){$\frac{5\pi}{w}$}
+\rput(6.0,-.4){$\frac{6\pi}{w}$}
+\end{pspicture}
+\end{document}

@@ -1,9 +1,4 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-
-
 \chapter{A função Delta de Dirac e a propriedade da convolução}
-
 \section{A função Delta de Dirac}
 Muitos fenômenos físicos exigem a representação de uma força muito grande em um intervalo de tempo muito pequeno, por exemplo:
 \begin{itemize}
@@ -21,116 +16,30 @@ Um pulso unitário em torno de $t=a$ é representado por
 \delta_\epsilon(t-a)=\frac{1}{2\epsilon}\left(u(t-(a-\epsilon))-u(t-(a+\epsilon))\right)=\left\{\begin{array}{ll}0,&t<a-\epsilon\\ \frac{1}{2\epsilon},&a-\epsilon<t<a+\epsilon\\0,&t>a+\epsilon.\end{array}\right.
 \end{equation}
 Observe que $\int_{-\infty}^\infty\delta_\epsilon(t-a)=1$ para qualquer $\epsilon>0$. A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ para $a>0$ e $\epsilon=1$, $\epsilon=\frac{1}{2}$, $\epsilon=\frac{1}{4}$, $\epsilon=\frac{1}{8}$ e $\epsilon=\frac{1}{12}$.
-
 A função que representa uma grande força instantânea é chamada de {\bf função impulso} ou {\bf função Delta de Dirac} e pode ser definida pelo limite das funções pulsos:
 $$
 \delta(t-a)=\lim_{\epsilon\to 0}\delta_\epsilon(t-a).
 $$
 Este limite não pode ser interpretado pontualmente, isto é, como o limite usual de funções reais, mas apenas no contexto de uma integral, como veremos.
-
 A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ quando $\epsilon$ diminui e uma representação gráfica para $\delta(t-a)$.
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.5cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(2.8,4.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,3.5)
+\includegraphics{cap_dirac_conv/pics/figura_1}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_2}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_3}
 
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.0}{0}
-\psline[linecolor=blue](0,0)(0,0.5)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{2.0}{0.5}
-\psline[linecolor=blue](2,0)(2,0.5)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,3.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=1$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-\begin{pspicture}(-0.3,-1.0)(2.8,4.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,3.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.5}{0}
-\psline[linecolor=blue](0.5,0)(0.5,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.5}{1}
-\psline[linecolor=blue](1.5,0)(1.5,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.5}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,3.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=\frac{1}{2}$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-\begin{pspicture}(-0.3,-1.0)(2.8,4.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,3.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.75}{0}
-\psline[linecolor=blue](0.75,0)(0.75,2)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.75}{1.25}{2}
-\psline[linecolor=blue](1.25,0)(1.25,2)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.25}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,3.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=\frac{1}{4}$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-
-\begin{pspicture}(-0.3,-1.0)(2.8,5.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,4.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.875}{0}
-\psline[linecolor=blue](0.875,0)(0.875,4)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.875}{1.125}{4}
-\psline[linecolor=blue](1.125,0)(1.125,4)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.125}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,4.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=\frac{1}{8}$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-\begin{pspicture}(-0.3,-1.0)(2.8,7.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,6.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.9166}{0}
-\psline[linecolor=blue](0.9166,0)(0.9166,6)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.9166}{1.0833}{6}
-\psline[linecolor=blue](1.0833,0)(1.0833,6)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0833}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,6.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=\frac{1}{12}$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-\begin{pspicture}(-0.3,-1.0)(2.8,4.0)
- \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,3.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{1.0}{0}
-\psline[linecolor=blue]{->}(1,0)(1,3.5)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.5}{0}
-
-\rput(2.4,.3){$t$}
-\rput(0.5,3.7){$\delta(t-a)$,\ $a=1$}
-\rput(1.0,-.3){$a$}
-\end{pspicture}
-
-
-
+\includegraphics{cap_dirac_conv/pics/figura_4}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_5}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_6}
 \end{center}
 \caption{\label{fig_delta_dirac}}
 \end{figure}
-
 \begin{obs}A função delta de Dirac pode ser definida como limite de outras sequências de funções com propriedades análogas a sequência de pulsos. Por exemplo, podemos definir $\delta(t)$ como limite das funções
 $$
 f_\epsilon(t)=\frac{1}{\epsilon\sqrt{\pi}}e^{-\frac{t^2}{\epsilon^2}}
 $$
 \end{obs}
-
-
 A função Impulso é zero em todo ponto, exceto em $t=a$:
 $$
 \delta(t-a)=\left\{\begin{array}{ll}0,&t\neq a\\\infty,&t=a  \end{array}\right.
@@ -139,9 +48,7 @@ e
 $$
 \int_{-\infty}^\infty\delta(t-a)dt=1
 $$
-
 A função Delta de Dirac deve ser sempre compreendida como o limite de funções reais no contexto de uma integração, isto conduz à chamada  {\bf propriedade da filtragem}, que define totalmente a Delta da Dirac:
-
 Se $f(t)$ for um função contínua em torno de $t=a$, então
 \begin{equation}{\label{prop_filtragem_dirac}}
 \int_{-\infty}^\infty \delta(t-a)f(t)dt=f(a). 
@@ -154,7 +61,6 @@ Para chegar a esta conclusão, definimos $F(t)=\int_a^t f(\tau)d\tau$ e calculam
 &=&\frac{F(\varepsilon)-F(-\varepsilon)}{2\varepsilon}\\
 &=&F'(0)=f(a).
 \end{eqnarray*}
-
 \subsection{Delta de Dirac como derivada distribucional da função Heaviside}
 Na equação (\ref{def_delta_dirac}) definimos a função Delta de Dirac como
 $$
@@ -169,12 +75,10 @@ $$
 \delta(t-a)=\frac{d}{dt}u(t-a).
 $$
 Observe que as funções de Heaviside e de Dirac não são funções no sentido do cálculo diferencial e integral. Naturalmente, a derivada acima também vale somente num sentido generalizado, mas é coerente quando olhamos a função de Heaviside como limite de funções rampas (ver figura \ref{fig_Heaviside_1}), pois na origem a derivada tende ao infinito.
-
 A transformada de Laplace de função Delta de Dirac é obtido pela propriedade da filtragem dada na equação (\ref{prop_filtragem_dirac}):
 \begin{equation}{\label{prop_trans_delta_dirac}}
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
-
 \begin{exer}Resolva o seguinte problema de valor inicial:
 $$\left\{\begin{array}{l}
    y''-2y'=1+\delta(t-2)\\
@@ -183,7 +87,6 @@ $$\left\{\begin{array}{l}
   \end{array}\right.
  $$
 \end{exer}
-
 \section{Aplicação: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
 Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
 $$
@@ -191,40 +94,15 @@ V(t)=V_0\left(u(t-a)-u(t-b)\right).
 $$
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(7.0,5.0)
-\psset{linecolor=blue}
-%\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.0}{0}
 
-
-\psline(0,0)(2.0,0)
-\psline(4.0,0)(6.0,0)
-\coil(2.0,0.0)(4.0,0.0){$L$}
-
-\psline(6,0.0)(6,1.0)
-\psline(6,3.0)(6,4)
-\capacitor(6,1.0)(6,3.0){$C$}
-
-\psline(0,0)(0,1.0)
-\psline(0,3.0)(0,4)
-\resistor[dipolestyle=zigzag](0,1.0)(0,3.0){$R$}
-
-\psline(0,4)(2.5,4)
-\psline(3.5,4)(6,4)
-\Ucc(2.5,4.0)(3.5,4.0){$V$}
-
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_7}\end{center}
 \caption{\label{fig_circ_2}}
 \end{figure} 
-
 O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
 \begin{equation}{\label{modelo_corrente}}
 Li'(t)+ Ri(t)+\frac{1}{C}q(t)=V_0\left(u(t-a)-u(t-b)\right),
 \end{equation}
 onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor de capacitância $C$, $Ri(t)$ é a tensão no resistor de resistência $R$ e $Li'(t)$ é a tensão no indutor de indutância $L$. Considere as condições iniciais $i(0)=0$ e $q(0)=0$.
-
 Dado que $\frac{dq(t)}{dt}=i(t)$, derivamos a equação (\ref{modelo_corrente}) para obter a seguinte equação diferencial:
 \begin{equation}{\label{modelo_corrente_2}}
 Li''(t)+ Ri'(t)+\frac{1}{C}i(t)=V_0\left(\delta(t-a)-\delta(t-b)\right),
@@ -257,26 +135,9 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.5,-3.0)(9.5,4.0)
- \psaxes[labels]{->}(0,0)(-1.0,-2.5)(9.0,3.5)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-1.0}{1.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{5.0}{2.72 -1 x 1 sub mul exp 171.887338539 x 1 sub mul sin mul 10 3 div  mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{9.0}{2.72 -1 x 1 sub mul exp 171.887338539 x 1 sub mul sin mul 10 3 div mul 2.72 -1 x 5 sub mul exp 171.887338539 x 5 sub mul sin mul 10 3 div mul sub}
-
-\rput(8.9,.3){$t$}
-\rput(0.0,3.7){$i(t)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_8}\end{center}
 \caption{\label{fig_circ_RCL_1}}
 \end{figure}
-
  \item Caso superamortecido ($\eta<0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=4\Omega$. Nesse caso
  $$
  I(s)=10\left[\frac{e^{-s}}{\left(s+2\right)^2-3 }-\frac{e^{-5s}}{\left(s+2\right)^2-3}\right].
@@ -291,26 +152,9 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.5,-2.0)(9.5,6.0)
- \psaxes[labels]{->}(0,0)(-1.0,-1.5)(9.0,5.5)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-1.0}{1.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{5.0}{2.72 -2 x 1 sub mul exp 1.73205080757 x 1 sub mul SINH mul 5.7735026919 mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{9.0}{2.72 -2 x 1 sub mul exp 1.73205080757 x 1 sub mul SINH mul 5.7735026919 mul 2.72 -2 x 5 sub mul exp 1.73205080757 x 5 sub mul SINH mul 5.7735026919 mul sub}
-
-\rput(8.9,.3){$t$}
-\rput(0.0,5.7){$i(t)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_9}\end{center}
 \caption{\label{fig_circ_RCL_2}}
 \end{figure}
- 
 \item Caso criticamente amortecido ($\eta=0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=2\Omega$. Nesse caso
  $$
  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2}-\frac{e^{-5s}}{\left(s+1\right)^2}\right].
@@ -323,28 +167,10 @@ O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_3}.
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1cm,yunit=4cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.5,-0.5)(9.5,1.0)
- \psaxes[labels]{->}(0,0)(-1.0,-0.3)(9.0,0.8)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-1.0}{1.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{5.0}{2.72 -1 x 1 sub mul exp  x 1 sub mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{9.0}{2.72 -1 x 1 sub mul exp x 1 sub mul 2.72 -1 x 5 sub mul exp x 5 sub mul sub}
-
-\rput(8.9,.1){$t$}
-\rput(0.0,0.9){$i(t)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_10}\end{center}
 \caption{\label{fig_circ_RCL_3}}
 \end{figure}
-
 \end{itemize}
-
 \section{Aplicação: cálculo da deflexão em vigas sujeitas a cargas concentradas}
 Considere uma viga elástica horizontal de comprimento $L$ sob a ação de forças verticais. Colocamos o eixo horizontal $x$ com origem no extremo a esquerda da viga e, portanto, $x=L$ é o outro extremo. Supomos que a viga está sujeita a uma carga $W(x)$ que provoca uma deflexão em cada ponto $x\in[0,L]$. Então, para pequenas deflexões podemos aproximar a curvatura $k(x)$ pela variação instantânea de $\theta(x)$, onde $\theta(x)$ é o ângulo entre o eixo $x$ e a tangente, ou seja, 
 \begin{equation}{\label{def_viga01}}
@@ -432,23 +258,7 @@ o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figur
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-2.0)(6.0,1.0)
- \psaxes[labels,xlabelPos=top,dy=-.5]{->}(0,0)(-0.1,0.5)(5.5,-1.5)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.666667}{0.37037037 x mul x mul 0.12345679 x mul x mul x mul sub -1 mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.666667}{5.0}{0.37037037 x mul x mul 0.12345679 x mul x mul x mul sub  x 1.666667 sub x 1.666667 sub mul x 1.666667 sub mul 6 div add -1 mul}
-
-
-
-\rput(5.4,.3){$x$}
-\rput(0.0,-1.7){$y(x)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_11}\end{center}
 \caption{\label{viga}}
 \end{figure}
 \section{Aplicação: metabolismo de uma medicação}
@@ -467,15 +277,10 @@ $$
 x(t)=c_0\left(\delta(t)+\delta(t-T)+\delta(t-2T)+\delta(t-3T)+\cdots\right)
 $$
 Supondo que $c(0)=0$, ou seja, inicialmente não havia substância no organismo, vamos calcular $c(t)$. 
-
 Começamos aplicando a transformada de Laplace:
 $$
 sC(s)+\frac{1}{\tau}C(s)=c_0\left(1+e^{-sT}+e^{-2sT}+e^{-3sT}+\cdots\right)=c_0\sum_{n=0}^\infty\left( e^{-sT}\right)^n.
 $$
-%Usando a soma de série geométrica, temos:
-%$$
-%C(s)\left(\frac{\tau s+1}{\tau}\right)=c_0 \sum_{n=0}^\infty\left( e^{-sT}\right)^n
-%$$
 e encontramos:
 $$
 C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\right)^n.
@@ -489,37 +294,7 @@ c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{
 \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(6.0,3.0)
- \psaxes[labels]{->}(0,0)(-0.1,-0.1)(5.5,2.5)
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{2.72 -1 x mul exp}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{2.72 -1 x mul exp 2.72 1 exp 1 add mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{2.72 -1 x mul exp 2.72 1 exp 1 add 2.72 2 exp  add mul }
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{2.72 -1 x mul exp 2.72 1 exp 1 add 2.72 2 exp add 2.72 3 exp add mul }
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{2.72 -1 x mul exp 2.72 1 exp 1 add 2.72 2 exp add 2.72 3 exp add 2.72 4 exp add mul }
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{5.4}{2.72 -1 x mul exp 2.72 1 exp 1 add 2.72 2 exp add 2.72 3 exp add 2.72 4 exp add 2.72 5 exp add mul }
-
-
-\psline[linecolor=blue,linestyle=dashed](1,0.368)(1,1.368)
-\psline[linecolor=blue,linestyle=dashed](2,0.503)(2,1.503)
-\psline[linecolor=blue,linestyle=dashed](3,0.553)(3,1.553)
-\psline[linecolor=blue,linestyle=dashed](4,0.571)(4,1.571)
-\psline[linecolor=blue,linestyle=dashed](5,0.578)(5,1.578)
-
-
-\rput(5.4,.3){$t$}
-\rput(0.0,2.7){$c(t)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_12}\end{center}
 \caption{\label{concentracao}}
 \end{figure}
 O salto em cada descontinuidade é exatamente $c_0$, pois os limites laterais são
@@ -535,9 +310,7 @@ e
 &=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),\\
 \end{eqnarray*}
 que possuem diferença igual a $c_0$. 
-
 Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
-
 \section{Problemas na origem}\label{problemas_na_origem}
 Para entender melhor esse fenômeno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
 \begin{equation*}
@@ -549,15 +322,12 @@ y(0)&=&0
 \right.
 \end{equation*}
 Tomando a Transformada de Laplace, temos:
-
 \begin{equation*}
 sY(s)-y(0)+Y(s)=1
 \end{equation*}
 ou seja, $Y(s)=\frac{1}{s+1}$, o que implica
 $$y(t)=e^{-t}.$$
-
 Observamos que $y(0)=1\neq 0$, ou seja, a condição inicial não é satisfeita.
-
 Para entendermos o que está acontecendo, devemos lembrar que a Transformada de Laplace só produz a solução para $t>0$ e interpretar $y(t)$ como
 $$y(t)=u(t)e^{-t}.$$
 Desta forma $y(0)$ simplesmente não está definido. De fato, para compreender esse comportamento, vamos definir um problema auxiliar colocando no lugar da função delta de Dirac uma função pulso:
@@ -590,37 +360,18 @@ $$y(t)\approx\left\{\begin{array}{ll}
 e^{-t},&t\geq \varepsilon.
 \end{array}
 \right.$$
-
 Ou seja, existe uma pequena região de transição entre $0$ e $\varepsilon$ onde a solução $y(t)$ sobe rapidamente. O gráfico apresentado na figura \ref{concentracao_2} mostra o comportamento de $y(t)$ para $\varepsilon=0.2$, $\varepsilon=0.1$ e $\varepsilon=0.05$ em azul, vermelho e verde, respectivamente, assim como a solução limite $e^{-t}u(t)$ em preto.
 \begin{figure}[!ht]
 \begin{center}
- \begin{pspicture}(-1,-.5)(10,4)
- \psset{yunit=3cm,xunit=5cm}
-   \psaxes(0,0)(-.2,0)(2,1.1)        % sets up axis
-    \psplot[linecolor=blue, linewidth=1pt]{0}{.2}{1 2.71828 x -1 mul exp sub .2 div}
-    \psplot[linecolor=blue, linewidth=1pt]{.2}{2}{2.71828 .2 exp 1 sub .2 div 2.71828 x -1 mul exp  mul}
- 
-    \psplot[linecolor=red, linewidth=1pt]{0}{.1}{1 2.71828 x -1 mul exp sub .1 div}
-    \psplot[linecolor=red, linewidth=1pt]{.1}{2}{2.71828 .1 exp 1 sub .1 div 2.71828 x -1 mul exp  mul}
 
-	\psplot[linecolor=green, linewidth=1pt]{0}{.05}{1 2.71828 x -1 mul exp sub .05 div}
-    \psplot[linecolor=green, linewidth=1pt]{.05}{2}{2.71828 .05 exp 1 sub .05 div 2.71828 x -1 mul exp  mul}
-
-    \psplot[linecolor=black, linewidth=.5pt]{.0}{2}{2.71828 x -1 mul exp }
-
- \end{pspicture}
-
- \end{center}
+\includegraphics{cap_dirac_conv/pics/figura_13} \end{center}
 \caption{\label{concentracao_2}}
  \end{figure}
-
 \section{Propriedade da convolução}
-
 Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f$ e $g$ denotada por $f*g$ é definida pela integral
 \begin{equation}{\label{def_conv}}
  (f*g)(t)=\int_0^t f(\tau)g(t-\tau)d\tau.
 \end{equation}
-
 \begin{ex}{\label{ex_conv_1}}Dadas $f(t)=e^t$ e $g(t)=\cos(t)$, vamos calcular $f*g$:
 \begin{eqnarray*}
  (f*g)(t)&=&\int_0^t e^{\tau} \cos(t-\tau)d\tau\\
@@ -631,8 +382,6 @@ onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau\left(\cos(t-
 \end{ex}
 \begin{exer}Mostre que $f*g=g*f$.
 \end{exer}
-
-
 \begin{prop}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
 \begin{equation}{\label{eq_prop_conv}}
  \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
@@ -667,7 +416,6 @@ Agora, vamos mudar a ordem de integração na região que é a metade inferior d
    &=&\mathcal{L}\{f*g\}
 \end{eqnarray*}
 \end{proof}
-
 \begin{ex}Vamos calcular a transformada inversa de $\frac{s}{(s-1)(s^2+1)}$. Primeiro observamos que a expressão pode ser escrita como um produto de duas funções tabelas:
 $$
 \frac{s}{(s-1)(s^2+1)}=\frac{1}{s-1}\frac{s}{s^2+1},
@@ -702,19 +450,13 @@ $$
  $$
  y(t)=4\cosh(3t)
  $$
- 
 \end{ex}
 \begin{exer}Resolva a seguinte equação integral:
 $$
 y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
 $$
- 
 \end{exer}
-
 \section{Exercícios}
-
-
-
 \begin{Exercise}{\label{ex_delta_dirac0}} Considere as funções $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
 \begin{eqnarray*}
  f_\varepsilon(t)&=&\left\{\begin{array}{ll}
@@ -730,92 +472,37 @@ g_\varepsilon(t)&=&\left\{\begin{array}{ll}
 			    \end{array}
 \right.
 \end{eqnarray*}
-
-
 onde $\varepsilon$ é um parâmetro positivo.
-
 \begin{itemize}
   \item [a)] Esboce sob o mesmo plano cartesiano o gráfico da função $f_\varepsilon$ para $\varepsilon=1$, $\varepsilon=\frac{1}{2}$ e $\varepsilon=\frac{1}{4}$. Faça o mesmo em outro plano cartesiano para a função $g_\varepsilon(t)$. Lembre de indicar os eixos e pontos notáveis (ex. pontos de zero e máximo)
   \item [b)] Calcule as transformada de Laplace, $F_\varepsilon(s)=\mathcal{L}\left\{f_\varepsilon(t)\right\}$ e $G_\varepsilon(s)=\mathcal{L}\left\{g_\varepsilon(t)\right\}$. Aqui $\varepsilon$ é um parâmetro positivo genérico.
 \item [c)] Estude o comportamento das funções $f_\varepsilon(t)$, $g_\varepsilon(t)$, $F_\varepsilon(s)$ e $G_\varepsilon(s)$ no limite $\varepsilon\to 0+$. Discuta os resultados obtidos analisando as função no domínio tempo e no domínio frequência (s). Qual a relação que se observa entre $f_\varepsilon(t)$ e $g_\varepsilon(t)$ e entre suas transformadas de Laplace?
 \end{itemize}
 \end{Exercise}
-
 \begin{Exercise}
 Um capacitor de capacitância $C$ está inicialmente carregado de forma que seu potencial seja $V_0$. A partir de $t=0$, o capacitor se descarrega através de um resistor de resistência $R$ (veja figura \ref{circ_1}). Use o método da transformada de Laplace para encontrar a carga $q(t)$ no capacitor.
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(7.0,5.0)
-\psset{linecolor=blue}
-%\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.0}{0}
 
-
-\psline(0,0)(6.0,0)
-
-
-\psline(6,0.0)(6,1.0)
-\psline(6,3.0)(6,4)
-
-\capacitor(6,1.0)(6,3.0){$C$}
-
-\psline(0,0)(0,1.0)
-\psline(0,3.0)(0,4)
-\resistor[dipolestyle=zigzag](0,1.0)(0,3.0){$R$}
-
-\psline(0,4)(2.5,4)
-\psline(3.5,4)(6,4)
-\Ucc(2.5,4.0)(3.5,4.0){$V$}
-
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_14}\end{center}
 \caption{\label{circ_1}}
 \end{figure}
 \end{Exercise}
-
 \begin{resp}
  $\displaystyle q(t) = C V_0 e^{-t/RC}$
 \end{resp}
-
 \begin{Exercise}
 Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(7.0,5.0)
-\psset{linecolor=blue}
-%\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.0}{0}
 
-
-\psline(0,0)(6.0,0)
-
-
-\psline(6,0.0)(6,1.0)
-\psline(6,3.0)(6,4)
-
-\capacitor(6,1.0)(6,3.0){$C$}
-
-
-\psline(0,0)(0,1.0)
-\psline(0,3)(0,4)
-\coil(0.0,1.0)(0.0,3.0){$L$}
-
-\psline(0,4)(2.5,4)
-\psline(3.5,4)(6,4)
-\Ucc(2.5,4.0)(3.5,4.0){$V$}
-
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_15}\end{center}
 \caption{\label{circ_2}}
 \end{figure}
-
 \end{Exercise}
 \begin{resp}
  $\displaystyle i(t) = \sen t - \sen(t-a) u(t-a)$
 \end{resp}
-
 \begin{Exercise}
 Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
 $$
@@ -828,46 +515,20 @@ V(t) = \left\{
 $$
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(7.0,5.0)
-\psset{linecolor=blue}
-%\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.0}{0}
 
-
-\psline(0,0)(2.0,0)
-\psline(4.0,0)(6.0,0)
-\coil(2.0,0.0)(4.0,0.0){$L$}
-
-\psline(6,0.0)(6,1.0)
-\psline(6,3.0)(6,4)
-\capacitor(6,1.0)(6,3.0){$C$}
-
-\psline(0,0)(0,1.0)
-\psline(0,3.0)(0,4)
-\resistor[dipolestyle=zigzag](0,1.0)(0,3.0){$R$}
-
-\psline(0,4)(2.5,4)
-\psline(3.5,4)(6,4)
-\Ucc(2.5,4.0)(3.5,4.0){$V$}
-
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_dirac_conv/pics/figura_16}\end{center}
 \caption{\label{circ_3}}
 \end{figure} 
-
 \end{Exercise}
 \begin{resp}
  $\displaystyle i(t) = e^{-t}\sen t - u(t-2)  e^{2-t} \sen (t-2)$
 \end{resp}
-
 \begin{Exercise}
 Dada a equação do movimento de um oscilador harmônico simples (OHS)
 \begin{equation}\label{ohs}
 -k y(t) - \gamma y'(t) + f = my''(t),
 \end{equation}
 calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
-
 \begin{itemize}
   \item[a)] $\displaystyle f(t) = \left\{
                                          \begin{array}{ll}
@@ -878,19 +539,13 @@ calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo
   $
   \item[b)] $\displaystyle f(t) = \delta (t-1)$
 \end{itemize}
-
 \end{Exercise}
 \begin{resp}
 \begin{itemize}
 \item[a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
   \item[b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
- 
 \end{itemize}
-
-
 \end{resp}
-
-
 \begin{Exercise}
 Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial associada \eqref{ohs}. Suponha que este oscilador está sujeito a uma força externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
 \begin{itemize}
@@ -898,39 +553,28 @@ Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial
   \item[b)] Como se comporta o gráfico destas oscilações? Que fenômeno físico você identifica?
 \end{itemize}
 \end{Exercise}
-
-
 \begin{resp}
  $\displaystyle \frac{F_0}{2k} \big[ \sen(\sqrt{k/m}t) - \sqrt{k/m}t \cos(\sqrt{k/m}t) \big] $
 \end{resp}
-
 \begin{Exercise}
 Encontre por integração:
-
 \begin{itemize}
   \item[a)] $1\ast 1$
   \item[b)] $t \ast e^t $
   \item[c)] $1\ast \cos(\omega t)$
   \item[d)] $e^{kt}\ast e^{-kt}$
 \end{itemize}
-
 \end{Exercise}
 \begin{resp}
 \begin{itemize}
- 
-
   \item[a)] $\displaystyle t$
   \item[b)] $\displaystyle e^{t} - t - 1$
   \item[c)] $\displaystyle \frac{1}{\omega}\sen (\omega t)$
   \item[d)] $\displaystyle \frac{1}{2k} (e^{kt} - e^{-kt}) = \frac{1}{k}\senh (k t)$
 \end{itemize}
- 
 \end{resp}
-
-
 \begin{Exercise}
 Achar a solução dos seguintes problemas de valor inicial:
-
 \begin{itemize}
   \item[a)] $\displaystyle \left\{
                               \begin{array}{ll}
@@ -954,23 +598,16 @@ Achar a solução dos seguintes problemas de valor inicial:
                             \right.
   $
 \end{itemize}
-
 \end{Exercise}
 \begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
   \item[b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
   \item[c)] $\displaystyle y(t) = \sen t + \sen(t-2\pi) u(t-2\pi)$
-
 \end{itemize}
- 
 \end{resp}
-
-
-
 \begin{Exercise}
 Justifique as seguintes propriedades da operação de convolução:
-
 \begin{itemize}
   \item[a)] $f\ast g = g \ast f$
   \item[b)] $(f\ast g)\ast h = f \ast (g \ast h)$
@@ -988,9 +625,6 @@ Justifique as seguintes propriedades da operação de convolução:
    &=&\int_0^t g(u)f(t-u)du\\
    &=&g\ast f
   \end{eqnarray*}
-
- 
-  
   \item[b)] 
     \begin{eqnarray*}
    (f\ast g)\ast h&=& \int_0^t \left(\int_0^\tau f(u) g(\tau-u) du \right) h(t-\tau) d\tau \\
@@ -1003,11 +637,7 @@ Justifique as seguintes propriedades da operação de convolução:
   \end{eqnarray*}
   onde se fez a mudança $v=\tau-u$, $dv=d\tau$.
 \end{itemize}
- 
 \end{resp}
-
-
-
 \begin{Exercise}
 A equação do movimento de um OHS não amortecido sujeito a oscilações forçadas pode ser escrita como
 $$
@@ -1022,30 +652,22 @@ $$
 \begin{itemize}
    \item[a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
   \item[b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
-
 \end{itemize}
- 
 \end{resp}
-
-
 \begin{Exercise}
 Use o Teorema da Convolução para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).$$
 \end{Exercise}
 \begin{resp}
  $\displaystyle \frac{1}{2} \big[ \sen t - \cos t + e^{-t} \big] $
 \end{resp}
-
-
 \begin{Exercise}
 Use o Teorema da Convolução para resolver as seguintes equações integrais:
-
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = 1 + \int_0^t y(\tau) \ d\tau$
   \item[b)] $\displaystyle y(t) = 1 - \int_0^t y(\tau) (t-\tau) \ d\tau$
   \item[c)] $\displaystyle y(t) = te^{t} -2 e^t \int_0^t e^{-\tau} y(\tau) \ d\tau$
   \item[d)] $\displaystyle y(t) = 1 - \senh t + \int_0^t (1+ \tau )y(t- \tau) \ d\tau$
 \end{itemize}
-
 \end{Exercise}
 \begin{resp}
 \begin{itemize}
@@ -1053,12 +675,8 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
   \item[b)] $\displaystyle y(t) = \cos t$
   \item[c)] $\displaystyle y(t) = \senh t$
   \item[d)] $\displaystyle y(t) = \cosh t$
-
 \end{itemize}
- 
 \end{resp}
-
-
 \begin{Exercise}
 Encontre
 \begin{itemize}
@@ -1067,19 +685,10 @@ Encontre
   \item[c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
 \end{itemize}
 \end{Exercise}
-
-
 \begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
   \item[b)] $\displaystyle -e^{-\pi s} \ln \pi $
   \item[c)] $\displaystyle e^{1-s}$
   \end{itemize}
- 
 \end{resp}
-
-
-
-
-
-%\end{document}

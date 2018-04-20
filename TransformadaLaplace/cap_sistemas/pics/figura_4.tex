@@ -1,0 +1,12 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1cm,yunit=4cm, linewidth=1\pslinewidth}
+\begin{pspicture}(-0.5,-0.5)(6.0,1.5)
+ \psaxes[labels=none]{->}(0,0)(-0.1,-0.1)(5.5,1.2)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -1 x mul exp}
+\psplot[linecolor=red,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -1 x mul exp 2.72 -2 x mul exp sub}
+\psplot[linecolor=green,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -2 x mul exp 2.72 -1 x mul exp 2 mul sub 1 add}
+\rput(5.7,.05){$t$}
+\rput(0.5,1.0){$x(t)$}
+\rput(3.2,1.0){$z(t)$}
+\rput(0.4,0.29){$y(t)$}
+\end{pspicture}
+\end{document}
