@@ -1,0 +1,32 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.3,-.3)(4.3,1.3)
+ \psaxes{->}(0,0)(-1.1,-.1)(4.2,1.1)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve]{-1}{0}{0 x sub}
+\psplot[plotstyle=curve]{0}{1}{x}
+\psplot[plotstyle=curve]{1}{2}{2 x sub}
+\psplot[plotstyle=curve]{2}{3}{x 2 sub}
+\psplot[plotstyle=curve]{3}{4}{4 x sub}
+\rput(.3,1.3){$y=f(t)$}
+\rput(4.1,.1){$t$}
+\end{pspicture}
+\end{document}

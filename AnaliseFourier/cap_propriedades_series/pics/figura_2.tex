@@ -1,0 +1,34 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.3,-1.3)(4.3,1.3)
+ \psaxes{->}(0,0)(-1.1,-1.2)(4.2,1.2)
+\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{-1}{0}{-1}
+\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{0}{1}{1}
+\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{1}{2}{-1}
+\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{2}{3}{1}
+\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{3}{4}{-1}
+\psplot[plotstyle=curve,linewidth=.4pt,linecolor=red,plotpoints=1000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add 4 mul 3.1416 div }
+\psplot[plotstyle=curve,linewidth=.4pt,linecolor=green,plotpoints=1000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add 4 mul 3.1416 div }
+\psplot[plotstyle=curve,linewidth=.4pt,linecolor=blue,plotpoints=4000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add x 180 mul 19 mul sin 19 div add x 180 mul 21 mul sin 21 div add x 180 mul 23 mul sin 23 div add x 180 mul 25 mul sin 25 div add x 180 mul 27 mul sin 27 div add x 180 mul 29 mul sin 29 div add x 180 mul 31 mul sin 31 div add 4 mul 3.1416 div }
+\rput(.3,1.3){$y=g(t)$}
+\rput(4.1,.1){$t$}
+\end{pspicture}
+\end{document}

@@ -1,9 +1,5 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 \chapter{Representações da transformada de Fourier e diagramas de espectro}
-
 Neste capítulo apresentaremos as representações da transformada de Fourier e introduziremos o conceito de diagramas de espectro.
-
 \section{Forma trigonométrica}
 A forma exponencial da transformada de Fourier de uma função $f(t)$ foi definida no capítulo \ref{trans_Fourier} e é dada por
 $$
@@ -33,7 +29,6 @@ f(t)&=&\frac{1}{2\pi}\int_{-\infty}^\infty\left(A(w)\cos(wt)+ B(w)\sen(wt)\right
 &=&\frac{1}{\pi}\int_{0}^\infty\left( A(w)\cos(wt)+ B(w)\sen(wt)\right)dw
 \end{eqnarray*}
 A tabela abaixo compara as formas trigonométrica e exponencial das séries e transformadas de Fourier
-
 $$
 \begin{array}{|c|c|c|}
 \hline &&\\
@@ -56,15 +51,11 @@ A(w)&=&\frac{a}{a^2+w^2}\\
 B(w)&=&\frac{w}{a^2+w^2}
 \end{eqnarray*}
 \end{ex}
-
 \section{Diagramas de espectro}
 Diagrama de espectro da transformada de Fourier é a representação gráfica da transformada de Fourier $F(w)$ associadas a uma função $f(t)$. Da mesma forma como o diagrama de espectro da série de Fourier se divide em amplitude e fase, o diagrama de espectro da transformada de Fourier se divide em magnitude e fase. Ou seja, o gráfico de $|F(w)|$ é a diagrama de magnitude e o gráfico de $\phi(w)$ é o diagrama de fase, onde
 $$
 F(w)=|F(w)|e^{i\phi(w)},
 $$
-
-
-
 \begin{ex}No exemplo \ref{ex_Transf_1} da página \pageref{ex_Transf_1} calculamos a transformada de Fourier da função $f(t)=e^{-|t|}$:
 $$
 F(w)=\frac{2}{w^2+1}.
@@ -72,20 +63,11 @@ $$
 O gráfico da magnitude $|F(w)|$ é dado na figura \ref{diag_espec_trans_1}. Devido o fato de $F(w)$ ser real, a fase é uma função nula.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,3.0)
- \psaxes[labels=none]{->}(0,0)(-5.0,-.1)(5.3,2.2)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{2 x x mul 1 add div}
-\rput(0,2.5){$|F(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
 
-\end{center}
+\includegraphics{cap_diagramas_espectro_transformada/pics/figura_1}\end{center}
 \caption{\label{diag_espec_trans_1}}
 \end{figure}
 \end{ex}
-
 \begin{ex} O exemplo \ref{ex_trans_rep_1} da página \pageref{ex_trans_rep_1} apresenta a transformada de Fourier da função $f(t)=e^{-at}u(t)$ onde $a$ é uma constante positiva e $u(t)$ é a função Heaviside: 
 \begin{equation*}
 F(w)=\frac{a}{a^2+w^2}-\frac{iw}{a^2+w^2}.
@@ -102,33 +84,12 @@ $$
 A figura \ref{diag_espec_trans_2} apresenta o diagrama de espectro de magnitude e fase da transformada $F(w)$ de $f(t)$ quando $a=1$.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,1.6)
- \psaxes[labels=none]{->}(0,0)(-5.0,-.1)(5.3,1.4)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{1 x x mul 1 add sqrt div}
-\rput(0,1.6){$|F(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
-\psset{algebraic,unit=1cm,linewidth=1pt}
- \begin{pspicture}(-5.3,-2.5)(5.5,2.5)
- \psaxes[labels]{->}(0,0)(-5.0,-1.9)(5.3,2.0)
-\psset{linecolor=blue}
-\psplot{-5}{5.3}{-ATAN(x)}
-\rput(0,2.2){$\phi(w)$}
-\rput(5.2,.3){$w$}
-\rput(-.4,1.57){$\frac{\pi}{2}$}
-\rput(-.5,-1.57){$-\frac{\pi}{2}$}
-\psline[linecolor=black,linewidth=.4pt](-.14,1.57)(.14,1.57)
-\psline[linecolor=black,linewidth=.4pt](-.14,-1.57)(.14,-1.57)
-\end{pspicture}
-\end{center}
+
+\includegraphics{cap_diagramas_espectro_transformada/pics/figura_2}
+\includegraphics{cap_diagramas_espectro_transformada/pics/figura_3}\end{center}
 \caption{\label{diag_espec_trans_2}}
 \end{figure}
-
 \end{ex}
-
-
 \section{Exercícios}
 \begin{Exercise}Mostre que a representação trigonométrica da transformada de Fourier $F(w)$ de uma função real $f(t)$ separa-a em parte ímpar e parte par. Isto é,
 \begin{eqnarray*}
@@ -141,7 +102,6 @@ e
 \end{Exercise}
 \begin{Exercise}Mostre que se $f(t)$ é real, $F(-w)=\overline{F(w)}$.
 \end{Exercise}
-
 \begin{Exercise}{\label{exer_te_t2}} Calcule a transformada de Fourier e trace o diagrama de espectro da função $f(t)=te^{-t^2}$. [Dica: Use integração por partes para transformar a integral dada numa integral tabelada].
 \end{Exercise}
 \begin{Answer}
@@ -159,33 +119,8 @@ onde
 \end{array}\right.
 \end{eqnarray*}
 Veja o diagrama de espectro na figura abaixo.
-
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,1.6)
- \psaxes[labels=y]{->}(0,0)(-5.0,-.1)(5.3,1.4)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{3.14 sqrt 2 div 2.72 -1 x x mul mul 4 div exp mul x abs mul}
-\rput(0,1.6){$|F(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
-\psset{algebraic,unit=1cm,linewidth=1pt}
- \begin{pspicture}(-5.3,-3.5)(5.5,3.5)
- \psaxes[labels=x]{->}(0,0)(-5.0,-2.5)(5.3,2.5)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve]{-5}{0}{ 1.57}
-\psplot[plotstyle=curve]{0}{5}{-1.57}
-\rput(0,2.8){$\phi(w)$}
-\rput(5.4,.3){$w$}
-\rput(.4,1.57){$\frac{\pi}{2}$}
-\rput(-.5,-1.57){$-\frac{\pi}{2}$}
-\psline[linecolor=black,linewidth=.4pt](-.14,1.57)(.14,1.57)
-\psline[linecolor=black,linewidth=.4pt](-.14,-1.57)(.14,-1.57)
-\end{pspicture}
-\end{center}
 
-
-
+\includegraphics{cap_diagramas_espectro_transformada/pics/figura_4}
+\includegraphics{cap_diagramas_espectro_transformada/pics/figura_5}\end{center}
 \end{Answer}
-
-%\end{document}
