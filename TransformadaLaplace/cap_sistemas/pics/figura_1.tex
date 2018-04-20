@@ -1,0 +1,25 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-0.5)(10.5,6.5)
+\psset{linecolor=blue}
+\psline(0,0)(0.0,5.0)
+\psline(0,5)(2.0,5.0)
+\resistor[dipolestyle=zigzag,intensitylabel=$i$](2,5.0)(4,5.0){$40\Omega$}
+\psline(4,5)(6.0,5.0)
+\pnodes(6,5){A}(8,5){B}
+\Ucc[labelInside=2](A)(B){$110$\ \! V}
+\psline(8,5)(10.0,5.0)
+\psline(0,2.5)(2.0,2.5)
+\resistor[dipolestyle=zigzag,intensitylabel=$i_1$](4,2.5)(2,2.5){$5\Omega$}
+\psline(4,2.5)(6.0,2.5)
+\coil(8.0,2.5)(6.0,2.5){$1$\ \!H}
+\psline(8,2.5)(10.0,2.5)
+\psline(0,0)(2.0,0)
+\resistor[dipolestyle=zigzag,intensitylabel=$i_2$](4,0)(2,0){$10\Omega$}
+\psline(4,0)(6.0,0)
+\coil(8.0,0)(6.0,0){$2$\ \!H}
+\psline(8,0)(10,0)
+\tension(10,5)(10,3){}
+\tension(10,2.5)(10,0.5){}
+\psline(10,0)(10,5)
+\end{pspicture}
+\end{document}

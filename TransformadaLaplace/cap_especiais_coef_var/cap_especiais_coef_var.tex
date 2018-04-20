@@ -1,13 +1,6 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-
-
 \chapter{Funções especiais e equações com coeficientes variáveis}
-
 Nesse capítulo discutiremos a transformada de Laplace envolvendo funções especiais, tais como função de Bessel, função Gama e funções Seno Integrado. Também, desenvolveremos ferramentas capaz de resolver alguns problemas de valor iniciais com coeficientes não constantes.
-
 Para iniciar as discussões vamos demonstrar o item 6 da tabela \ref{tab_trans_Lap_1} no próximo exemplo.
-
 \begin{ex}Vamos calcular a transformada de Laplace da funçao $t^{k-1}$, dada por:
 $$
 \mathcal{L}\{t^{k-1} \}=\int_0^\infty t^{k-1} e^{-st}dt.
@@ -43,7 +36,6 @@ $$
 \Gamma(2)=1,\qquad \Gamma(3)=2\cdot 1=2!,\qquad \Gamma(4)=3\Gamma(3)=3\cdot 2!=3!,\cdots
 $$
 Logo, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$.
-
 \begin{ex} Os itens 4 e 5 da tabela são casos particulares do item 6:
  $$
  \mathcal{L}\{t^{-\frac{1}{2}}\}=\frac{\Gamma\left(\frac{1}{2}\right)}{s^{\frac{1}{2}}}
@@ -92,7 +84,6 @@ $$
  \mathcal{L}\{t^{\frac{1}{2}}\}=\frac{\sqrt{\pi}}{2s^{\frac{3}{2}}}.
 $$
  \end{ex}
-
 \begin{ex}Vamos calcular a transformada de Laplace da função $\ln(t)$ (item 38 da tabela \ref{tab_trans_Lap_2}). Com esse objetivo, usamos a transformada de Laplace de $t^k$ dada no item 6 da tabela \ref{tab_trans_Lap_2}:
 $$
 \int_0^\infty t^ke^{-st}dt=\frac{\Gamma(k+1)}{s^{k+1}}.
@@ -103,8 +94,6 @@ Agora, como o integrando do lado esquerdo é uma função contínua e tem deriva
 &\Downarrow&\\
 \int_0^\infty t^k \ln(t) e^{-st}dt&=&\frac{s^{k+1}\Gamma'(k+1)-\Gamma(k+1)s^{k+1}\ln(s)}{s^{2(k+1)}}
 \end{eqnarray*}
-
-
 Agora, fazemos $k\to 0$ para obter
 $$
 \int_0^\infty \ln(t) e^{-st}dt=\frac{s^{1}\Gamma'(1)-\Gamma(1)s^{1}\ln(s)}{s^{2}},
@@ -125,19 +114,14 @@ Essa constante $\gamma$ é chamada de constante de Euler - Mascheroni. Finalment
 $$
 \mathcal{L}\{\ln(t)\}=\frac{\gamma-\ln(s)}{s}
 $$
-
 \end{ex}
- 
- 
- 
 \section{Transformada de Laplace de funções periódicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
-
-\begin{propr}{\label{prop_fun_per}}Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
+\begin{prop}{\label{prop_fun_per}}Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
 $$
 \mathcal{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Aplicamos a definição e separamos a integral nos períodos da função $f(t)$ para obter:
 \begin{eqnarray*}
  \mathcal{L}\{f(t)\}&=&\int_0^\infty f(t)e^{-st}dt \\
@@ -169,44 +153,14 @@ e usando a propriedade \ref{prop_fun_per}:
 &=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\frac{s-se^{-s\frac{2\pi }{w}}}{s^2+w^2}\\
 &=&\frac{s}{s^2+w^2}.
 \end{eqnarray*}
- 
 \end{ex}
 \begin{ex}{\label{ex_onda_quadrada}}A função $f(t)$ apresentada no gráfico da figura \ref{fig_onda_quadrada} é chamada de {\bf onda quadrada} de período $2a$.
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.5)(7.0,2.0)
- \psaxes[labels=y]{->}(0,0)(0.0,-1.2)(6.5,1.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{1}
-\psline[linecolor=blue,linestyle=dashed](1,1)(1,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{-1}
-\psline[linecolor=blue,linestyle=dashed](2,1)(2,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{1}
-\psline[linecolor=blue,linestyle=dashed](3,1)(3,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{-1}
-\psline[linecolor=blue,linestyle=dashed](4,1)(4,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{1}
-\psline[linecolor=blue,linestyle=dashed](5,1)(5,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{-1}
-\psline[linecolor=blue,linestyle=dashed](6,1)(6,-1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{1}
-
-\rput(6.4,.3){$t$}
-\rput(0.0,1.7){$f(t)$}
-\rput(0.8,-.3){$a$}
-\rput(1.8,-.3){$2a$}
-\rput(2.8,-.3){$3a$}
-\rput(3.8,-.3){$4a$}
-\rput(4.8,-.3){$5a$}
-\rput(5.8,-.3){$6a$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_1}\end{center}
 \caption{\label{fig_onda_quadrada}}
 \end{figure}
-
 Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} colocando $T=2a$
 \begin{eqnarray*}
 \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-2sa}}\int_0^{2a}f(t)e^{-st}dt\\
@@ -222,44 +176,13 @@ Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de
 &=&\frac{1}{s} \tanh\left(\frac{as}{2}\right).
 \end{eqnarray*}
 \end{ex}
-
 \begin{ex}A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é chamada de {\bf onda triangular} de perído $2a$.
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(7.0,2.0)
- \psaxes[labels=y]{->}(0,0)(0.0,-0.8)(6.5,1.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{x}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{-1 x mul 2 add}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{x 2 sub}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{-1 x mul 4 add}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 4 sub}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{-1 x mul 6 add}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{x 6 sub}
-
-\rput(6.6,.3){$t$}
-\rput(0.0,1.7){$g(t)$}
-
-\rput(1.8,-.3){$2a$}
-
-\rput(3.8,-.3){$4a$}
-
-\rput(5.8,-.3){$6a$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_2}\end{center}
 \caption{\label{fig_onda_triangular}}
 \end{figure}
-
-
 Para calcular a transformada de Laplace, observe que:
 \begin{itemize}
  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
@@ -277,7 +200,6 @@ e, portanto, usando o fato que a onda triangular vale zero na origem e o resulta
 \mathcal{L}\{g(t)\}&=&\frac{1}{as}\frac{1}{s} \tanh\left(\frac{as}{2}\right)\\
 &=&\frac{1}{as^2} \tanh\left(\frac{as}{2}\right).
 \end{eqnarray*}
-
 \end{ex}
 \begin{ex} A função $h(t)$ dada por
 $$
@@ -287,38 +209,9 @@ $h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia on
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(7.0,2.0)
- \psaxes[labels=y]{->}(0,0)(0.0,-0.8)(6.5,1.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{0}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{x 180 mul sin}
-
-\rput(6.6,.3){$t$}
-\rput(0.0,1.7){$h(t)$}
-\rput(0.8,-.3){$\frac{\pi}{w}$}
-\rput(1.8,-.3){$\frac{2\pi}{w}$}
-\rput(2.8,-.3){$\frac{3\pi}{w}$}
-\rput(3.8,-.3){$\frac{4\pi}{w}$}
-\rput(4.8,-.3){$\frac{5\pi}{w}$}
-\rput(5.8,-.3){$\frac{6\pi}{w}$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_3}\end{center}
 \caption{\label{fig_ret_meia_onda}}
 \end{figure}
-
 Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{2\pi}{w}$
 \begin{eqnarray*}
 \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
@@ -327,11 +220,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
 &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
 \end{eqnarray*}
-
-
 \end{ex}
-
-
 \begin{ex} A função $p(t)$ dada por
 $$
 p(t)=|\sen(wt)|
@@ -340,38 +229,9 @@ $$
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(7.0,2.0)
- \psaxes[labels=y]{->}(0,0)(0.0,-0.8)(6.5,1.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{x 180 mul sin -1 mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{x 180 mul sin -1 mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 180 mul sin}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{x 180 mul sin -1 mul}
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{x 180 mul sin}
-
-\rput(6.6,.3){$t$}
-\rput(0.0,1.7){$p(t)$}
-\rput(1.0,-.4){$\frac{\pi}{w}$}
-\rput(2.0,-.4){$\frac{2\pi}{w}$}
-\rput(3.0,-.4){$\frac{3\pi}{w}$}
-\rput(4.0,-.4){$\frac{4\pi}{w}$}
-\rput(5.0,-.4){$\frac{5\pi}{w}$}
-\rput(6.0,-.4){$\frac{6\pi}{w}$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_4}\end{center}
 \caption{\label{fig_ret_onda_completa}}
 \end{figure}
-
 Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{\pi}{w}$
 \begin{eqnarray*}
 \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
@@ -380,11 +240,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 &=&  \frac{w}{s^2+w^2}\frac{e^{\frac{s\pi}{2w}}+e^{-\frac{s\pi}{2w}}}{e^{\frac{s\pi}{2w}}-e^{-\frac{s\pi}{2w}}}\\
 &=&  \frac{w}{s^2+w^2}\coth\left( \frac{\pi s}{2w}\right)
 \end{eqnarray*}
-
-
 \end{ex}
-
-
 \begin{ex} A função $q(t)$ dada por
 $$
 \left\{\begin{array}{ll}q(t)=\frac{t}{a},&0\leq t<a\\ q\left(t+a\right)=q(t), & \end{array}\right.
@@ -393,38 +249,9 @@ $$
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(7.0,2.0)
- \psaxes[labels=y]{->}(0,0)(0.0,-0.8)(6.5,1.5)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{x}
-\psline[linecolor=blue,linestyle=dashed](1,0)(1,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{x 1 sub}
-\psline[linecolor=blue,linestyle=dashed](2,0)(2,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{x 2 sub}
-\psline[linecolor=blue,linestyle=dashed](3,0)(3,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{x 3 sub}
-\psline[linecolor=blue,linestyle=dashed](4,0)(4,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 4 sub}
-\psline[linecolor=blue,linestyle=dashed](5,0)(5,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{x 5 sub}
-\psline[linecolor=blue,linestyle=dashed](6,0)(6,1)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{x 6 sub}
-
-\rput(6.6,.3){$t$}
-\rput(0.0,1.7){$q(t)$}
-\rput(1.0,-.3){$a$}
-\rput(2.0,-.3){$2a$}
-\rput(3.0,-.3){$3a$}
-\rput(4.0,-.3){$4a$}
-\rput(5.0,-.3){$5a$}
-\rput(6.0,-.3){$6a$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_5}\end{center}
 \caption{\label{fig_dente_de_serra}}
 \end{figure}
-
 Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=a$:
 \begin{eqnarray*}
 \mathcal{L}\{q(t)\}&=& \frac{1}{1-e^{-sa}} \int_0^{a} \frac{t}{a} e^{-st}dt\\
@@ -433,63 +260,27 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 &=&\frac{1}{1-e^{-sa}}\left(\frac{1-e^{-sa}-e^{-sa} as)}{s^2a} \right)\\
 &=&\frac{1}{as^2}-\frac{e^{-sa} }{s\left(1-e^{-sa}\right)}.
 \end{eqnarray*}
-
-
 \end{ex}
 \section{Séries de potências}
-
 \subsection{Transformada de Laplace inversa de funções envolvendo expansão em séries de potências}
 Em algumas situações, é conveniente expandir em séries de potência um termo de uma função para calcular sua transformada inversa. Vejamos alguns exemplos.
-
 \begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-s})}$, usando o fato que
 $$\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.$$
 E, portanto, temos:
  $$ F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
  $$
  Como, pelo item 7 da tabela de transformadas $\mathcal{L}^{-1}\left\{\frac{1}{s+1}\right\}=e^{-t}.$
-
 Aplicando a propriedade do deslocamento no eixo $t$, temos:
-
  $$ f(t)= e^{-t}+ u(t-1) e^{-(t-1)}+ u(t-2) e^{-(t-2)}+ u(t-3) e^{-(t-3)}+\cdots.
  $$
 O gráfico desta função é apresentado na figura \ref{fig_exp_iterada}.
- 
-
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(7.0,2.5)
- \psaxes{->}(0,0)(0.0,-0.8)(6.5,2.2)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{2.71828 x -1 mul exp}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add }
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add }
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add 2.71828 x 5 sub -1 mul exp add}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{6.5}{2.71828 x -1 mul exp 2.71828 x 1 sub -1 mul exp add 2.71828 x 2 sub -1 mul exp add 2.71828 x 3 sub -1 mul exp add 2.71828 x 4 sub -1 mul exp add 2.71828 x 5 sub -1 mul exp add 2.71828 x 6 sub -1 mul exp add}
-
-
-
-\psline[linecolor=blue,linestyle=dashed](1,0.368)(1,1.368)
-\psline[linecolor=blue,linestyle=dashed](2,0.503)(2,1.503)
-\psline[linecolor=blue,linestyle=dashed](3,0.553)(3,1.553)
-\psline[linecolor=blue,linestyle=dashed](4,0.571)(4,1.571)
-\psline[linecolor=blue,linestyle=dashed](5,0.578)(5,1.578)
-\psline[linecolor=blue,linestyle=dashed](6,0.581)(6,1.581)
-
-
-\rput(6.6,.3){$t$}
-\rput(0.0,2.5){$f(t)$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_6}\end{center}
 \caption{\label{fig_exp_iterada}}
 \end{figure}
 \end{ex}
-
-
 \begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{e^{-s}}{s^2}\frac{\left(1-e^{-s}\right)^2}{1-e^{-3s}}$, usando o fato que
 $$\frac{1}{1-e^{-3s}}=1+e^{-3s}+e^{-6s}+e^{-9s}+\cdots.$$
 Agora observamos que se $g(t)=\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}$, então:
@@ -504,46 +295,16 @@ f(t)&=&g(t)+u(t-3)g(t-3)+u(t-6)g(t-6)+u(t-9)g(t-9)+\cdots\\
 \end{eqnarray*}
 o que implica
 $$f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (2t-4-6k)\right]$$
-
 O gráfico desta função é apresentado na figura \ref{fig_trian_periodica}.
- 
-
  \begin{figure}[!ht]
 \begin{center}
 
-\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.3,-1.0)(10.0,1.5)
- \psaxes{->}(0,0)(0.0,-0.2)(9.5,1.2)
-
- 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.0}{0}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0}{2.0}{x 1 sub }
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{2.0}{3.0}{3 x sub }
-
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{3.0}{4.0}{0}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{4.0}{5.0}{x 4 sub }
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{5.0}{6.0}{6 x sub }
-
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{6.0}{7.0}{0}
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{7.0}{8.0}{x 7 sub }
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{8.0}{9.0}{9 x sub }
-
-
-\rput(9.6,.3){$t$}
-\rput(0.0,1.5){$f(t)$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_7}\end{center}
 \caption{\label{fig_trian_periodica}}
 \end{figure}
-
-
 \end{ex}
-
 \subsection{Transformada de Laplace de funções envolvendo expansão em séries de potências}
 Nesta seção, vamos calcular a transformada de Laplace usando a série de potências das funções e a linearidade da transformada.
-
-
 \begin{ex}Vamos calcular $\mathcal{L}\{J_0(at)\}$ (item 31 da tabela \ref{tab_trans_Lap_2}), onde $J_0(at)$ é a função de Bessel de ordem zero dada por
 $$
 J_0(at)=1-\left(\frac{at}{2}\right)^2+\frac{1}{(2!)^2}\left(\frac{at}{2}\right)^4-\frac{1}{(3!)^2}\left(\frac{at}{2}\right)^6+\cdots.
@@ -572,23 +333,18 @@ A série acima está apresentada no item 3 da tabela \ref{series_de_potencias}, 
 \mathcal{L}\left\{J_0(2\sqrt{kt})\right\}&=&\frac{1}{s}e^{-\frac{k}{s}}
 \end{eqnarray*}
 \end{ex}
-
-
-
-
-\begin{prob}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
+\begin{exer}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
 $$
 \mathcal{L}\left\{\frac{\cos(2\sqrt{t})}{\sqrt{t}}\right\}=\frac{\sqrt{\pi}}{\sqrt{s}}e^{-\frac{1}{s}}.
 $$
-\end{prob}
-
+\end{exer}
 \section{A derivada da transformada de Laplace}
-\begin{propr}{\label{prop_der_transf}}
+\begin{prop}{\label{prop_der_transf}}
 Se $F(s)=\mathcal{L}\{f(t)\}$, então
 \begin{equation}
 \frac{d}{ds}F(s)=-\mathcal{L}\{tf(t)\}.
 \end{equation} 
-\end{propr}
+\end{prop}
 \begin{proof}
 Usando a definição de transformada de Laplace, temos
 \begin{eqnarray*}
@@ -599,7 +355,6 @@ Usando a definição de transformada de Laplace, temos
 &=&-\mathcal{L}\{tf(t)\}.
 \end{eqnarray*}
 \end{proof}
-
 \begin{ex}Para calcular $\mathcal{L}\{t\cos(wt)\}$, usamos a propriedade \ref{prop_der_transf}:
 \begin{eqnarray*}
 \mathcal{L}\{t\cos(wt)\}&=&-\frac{d}{ds}\mathcal{L}\{\cos(wt)\}\\
@@ -608,13 +363,10 @@ Usando a definição de transformada de Laplace, temos
 &=&\frac{s^2-w^2}{(s^2+w^2)^2}\\
 \end{eqnarray*}
 \end{ex}
-\begin{prob}Calcule $\mathcal{L}\{t^2\sen(wt)\}$ usando a propriedade \ref{prop_der_transf}.
-\end{prob}
-
-
+\begin{exer}Calcule $\mathcal{L}\{t^2\sen(wt)\}$ usando a propriedade \ref{prop_der_transf}.
+\end{exer}
 \section{Equações diferenciais com coeficientes não constantes}
 A propriedade \ref{prop_der_transf} da derivada da transformada de Laplace tem uma aplicação importante na solução de equações diferenciais com coeficientes variáveis.
-
 \begin{ex}Vamos resolver o seguinte problema de valor inicial
 \begin{eqnarray*}
 ty''(t)+y'(t)+9ty(t)&=&0\\
@@ -659,7 +411,6 @@ y(t)=5J_0(3t).
 $$
 Observe que a solução satisfaz $y'(0)=0$, porém essa condição não é necessária. De fato, existe uma solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
-
 \begin{ex}Vamos resolver a equação de Laguerre dada por
 $$
 ty''(t)+(1-t)y'(t)+2y(t)=0,
@@ -718,11 +469,8 @@ y'(0)=0-2=-2,
 $$
 não usamos-a para calcular a solução. De fato, o problema possui um singularidade na origem que não é percebida pela transformada de Laplace. A solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
-
-
 \section{Propriedade da integral da transformada de Laplace}
-\begin{propr}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
-
+\begin{prop}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
 e o limite
 $$
 \lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau
@@ -731,7 +479,7 @@ existe, então
 \begin{equation}
 \int_s^\infty F(v)dv =\mathcal{L}\left\{\frac{f(t)}{t}\right\}.
 \end{equation}
- \end{propr}
+ \end{prop}
 \begin{proof} Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 \int_s^\infty F(v)dv&=&\int_s^\infty\left(\int_0^\infty f(t)e^{-vt}dt\right)dv\\
@@ -740,7 +488,6 @@ existe, então
 &=&\int_0^\infty \frac{f(t)}{t} e^{-st}  dt\\
 &=&\mathcal{L}\left\{ \frac{f(t)}{t} \right\}.
 \end{eqnarray*}
-%Observe que a última igualdade é válida pois, o fato de o limite $\lim_{t\to 0^+}\frac{f(t)}{t}$ existir, garante que $\frac{f(t)}{t}$ é integrável perto da origem e, portanto, a transformada de Laplace existe.
 Observe que a existência do limite $\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau$ é fundamental para a existência da Transformada de Laplace e para os procedimentos analíticos acima.
 \end{proof}
 \begin{ex}Vamos mostrar o item 29 da tabela \ref{tab_trans_Lap_2}:
@@ -756,7 +503,6 @@ Aplicamos a propriedade \ref{prop_trans_s} da translação no eixo $s$ na equaç
 \mathcal{L}\left\{\frac{1}{\sqrt{\pi t}}e^{at}\right\}=\frac{1}{\sqrt{s-a}}.
 \end{equation*}
 Finalmente, usando a propriedade \ref{prop_int_transf} da integral da transformada, obtemos:
-
 \begin{eqnarray*}
 \mathcal{L}\left\{\frac{1}{2\sqrt{\pi t^3}}\left(e^{bt}-e^{at}\right)\right\}&=&\frac{1}{2}\mathcal{L}\left\{\frac{1}{t}\left(\frac{1}{\sqrt{\pi t}}e^{bt}-\frac{1}{\sqrt{\pi t}}e^{at}\right)\right\}\\
 &=&\frac{1}{2}\int_s^\infty\left(   \frac{1}{\sqrt{v-b}}-  \frac{1}{\sqrt{v-a}}\right)dv\\
@@ -772,7 +518,6 @@ Observe que aqui usamos o seguinte limite no infinito
 &=&0.
 \end{eqnarray*}
 \end{ex}
-
 \begin{ex}Vamos mostrar o item 39 da tabela \ref{tab_trans_Lap_2}:
 $$
 \mathcal{L}\left\{\frac{1}{t}\left(e^{bt}-e^{at}\right)\right\}=\ln\left(\frac{s-a}{s-b}\right).
@@ -797,7 +542,6 @@ Na penúltima igualdade usamos o seguinte limite no infinito:
 \end{eqnarray*}
 Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
 \end{ex}
-
 \begin{ex}Vamos mostrar o item 40 da tabela \ref{tab_trans_Lap_2}:
 $$
 \mathcal{L}\left\{\frac{2}{t}\left(1-\cos(wt)\right)\right\}=\ln\left(\frac{s^2+w^2}{s^2}\right).
@@ -823,9 +567,8 @@ Na penúltima igualdade usamos o seguinte limite no infinito:
 \end{eqnarray*}
 Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
 \end{ex}
-\begin{prob}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
-\end{prob}
-
+\begin{exer}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
+\end{exer}
 \begin{ex}{\label{ex_sint_t}}Vamos demonstrar o item 42 da tabela \ref{tab_trans_Lap_2}:
 $$
 \mathcal{L}\left\{\frac{1}{t}\sen(wt)\right\}=\arctan\left(\frac{w}{s}\right).
@@ -850,7 +593,6 @@ Também, se $\gamma=\cot^{-1}\left(\frac{s}{w}\right)$, então $\cot\gamma=\frac
 \mathcal{L}\left\{\frac{1}{t}\sen(wt)\right\}=\arctan\left(\frac{w}{s}\right)
 \end{eqnarray*}
 \end{ex}
-
 \begin{ex}Vamos agora mostrar o item 43 da tabela \ref{tab_trans_Lap_2}:
 $$
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\cot^{-1}(s),
@@ -859,7 +601,6 @@ onde $\hbox{Si}\ \!(t)$ é função integral seno dada por:
 $$
 \hbox{Si}\ \!(t)=\int_0^t\frac{\sen(x)}{x}dx.
 $$
-
 Primeiro aplicamos a propriedade \ref{prop_trans_int} para obter
 $$
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\mathcal{L}\left\{\int_0^t\frac{\sen(x)}{x}dx\right\}=\frac{1}{s}\mathcal{L}\left\{\frac{\sen(t)}{t}\right\}.
@@ -870,7 +611,7 @@ $$
 $$
 \end{ex}
 \section{Propriedades do Valor Inicial e Final}
-\begin{propr}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
+\begin{prop}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
 $$
 \lim_{t\to\infty}f(t)=L,
 $$
@@ -878,7 +619,7 @@ então
 $$
 \lim_{s\to 0^+} sF(s)=L.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
@@ -894,10 +635,7 @@ $$
 \lim_{s\to 0^+} sF(s)=L.
 $$ 
 \end{proof}
-
-
-
-\begin{propr}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
+\begin{prop}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
 $$
 \lim_{t\to 0^+}f(t)=L,
 $$
@@ -905,7 +643,7 @@ então
 $$
 \lim_{s\to \infty} sF(s)=L.
 $$
-\end{propr}
+\end{prop}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
@@ -933,20 +671,15 @@ $$
 \lim_{s\to \infty} sF(s)=L.
 $$ 
 \end{proof}
-
 \section{Exercícios}
 \begin{Exercise}
  Demonstre o item (32) da tabela usando os itens (4) e (5) e a propriedade \ref{prop_trans_s} do deslocamento no eixo $s$. 
 \end{Exercise}
-
 \begin{Exercise}
 Use a propriedade da derivada da transformada para calcular $\displaystyle \mathcal{L}\{ t \cos (\omega t) \}$. A partir desta, prove que $$ \mathcal{L}\{ \sen (\omega t) - \omega t \cos (\omega t) \} = \frac{2 \omega^3 }{(s^2 + \omega^2)^2}. $$
 \end{Exercise}
-
-
 \begin{Exercise}
 Encontre a transformada inversa das funções abaixo utlizando o método que achar adequado.
-
 \begin{itemize}
 \item[a)] $\displaystyle F(s)= \frac{3s + 7}{s^2 - 2 s - 3}$.
 \item[b)] $\displaystyle F(s)= \frac{1}{(s-2)^3}$.
@@ -961,12 +694,8 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
 \item[k)] $\displaystyle F(s)= \frac{2s^2 -4}{(s+1)(s-2)(s-3)}$.
 \item[l)] $\displaystyle F(s)= \frac{1}{(s^2+4)(s^2 +1)}$.
 \end{itemize}
-
 \end{Exercise}
-
-
-
-\begin{Answer}
+\begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle f(t) = 4e^{3t} - e^{-t}$
   \item[b)] $\displaystyle f(t) = \frac{1}{2} t^2 e^{2t}$
@@ -981,26 +710,20 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
   \item[k)] $\displaystyle f(t) = -\frac{1}{6} e^{-t} -\frac{4}{3} e^{2t} + \frac{7}{2} e^{3t}$
   \item[l)] $\displaystyle f(t) = \frac{1}{3} \bigg[ \sen t - \frac{1}{2}\sen(2t) \bigg]$
 \end{itemize}
-\end{Answer}
-
-
+\end{resp}
 \begin{Exercise}
 Use a tabela da transformada de Laplace para mostrar que:
-
 \begin{itemize}
   \item[a)] $\displaystyle \mathcal{L} \big\{ t^{1/2}+ t^{-1/2} \big\} = \frac{\sqrt{\pi}(2s+1)}{2s^{3/2}}$
   \item[b)] $\displaystyle \mathcal{L} \bigg\{ \frac{e^{-2t}}{\sqrt{t}} \bigg\} = \sqrt{\frac{\pi}{s+2}}$
   \item[c)] $\displaystyle \mathcal{L} \bigg\{ \frac{\cos(2\sqrt{t}) }{\sqrt{t}} \bigg\} = e^{-1/s}\sqrt{\frac{\pi}{s}}$
 \end{itemize}
 \end{Exercise}
-
-
 \begin{Exercise}
 Use o método das séries de potências para mostrar que \[\mathcal{L} \{\sen \sqrt{t} \} =  \frac{\sqrt{\pi} e^{-1/4s}}{2s^{3/2}}.\]
 \emph{Sugestão}: Use que \[\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}.\]
 \end{Exercise}
-
-\begin{Answer}
+\begin{resp}
  \begin{eqnarray*}
 f(t)&=&\sin\sqrt{t}= \sum_{n=0}^{\infty}(-1)^n\frac{t^{(2n+1)/2}}{(2n+1)!}\\
 F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
@@ -1011,7 +734,6 @@ F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}
 &=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}\frac{1}{n!}{\left(-\frac{1}{4s}\right)^{n}}\\
 &=&\frac{\sqrt{\pi}}{2s^{3/2}}e^{-\frac{1}{4s}}
 \end{eqnarray*}
-
 Para mostrar a identidade $\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}$ , usamos a relação de recorrência
 $$\Gamma(x+1)=x\Gamma(x)$$
 e o fato bem conhecido  de que
@@ -1030,9 +752,7 @@ E generalizando, temos:
 &=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{2^{n-1}(n-1)(n-2)\cdots 1}\frac{\sqrt{\pi}}{2^{n}}\\
 &=&\frac{(2n-1)!}{(n-1)!}\frac{\sqrt{\pi}}{2^{2n-1}}
 \end{eqnarray*}
-\end{Answer}
-
-
+\end{resp}
 \begin{Exercise}
 Usando a derivada da transformada de Laplace, calcule:
 \begin{itemize}
@@ -1040,19 +760,12 @@ Usando a derivada da transformada de Laplace, calcule:
   \item[b)] $\displaystyle \mathcal{L} \{ t \cosh (at) \}$
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle \frac{2as}{(s^2 - a^2)^2}$
   \item[b)] $\displaystyle \frac{s^2 + 9}{(s^2 - 9)^2}$
- 
  \end{itemize}
-
-\end{Answer}
-
-
-
-
-
+\end{resp}
 \begin{Exercise}
 Resolva
 \[
@@ -1064,13 +777,9 @@ Resolva
 \right.
 \] \emph{Sugestão}: Utilize que $\displaystyle \lim_{s\to + \infty} Y(s) = 0.$
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  $\displaystyle y(t) = \frac{\sen t}{t}$
-
-\end{Answer}
-
-
-
+\end{resp}
 \begin{Exercise}
 Utilize a integral da transformada de Laplace para demonstrar que:
 \begin{itemize}
@@ -1079,17 +788,13 @@ Utilize a integral da transformada de Laplace para demonstrar que:
   \item[c)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cosh (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 - \omega^2}{s^2}\bigg)$
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle \frac{ 3 - 3 e^{-2s} - 6s e^{-4s} }{s^2 (1 - e^{-4s})}$
   \item[b)] $\displaystyle \frac{  e^{2\pi(1-s)} -1 }{(1-s) (1 - e^{-2\pi s})}$
   \item[c)] $\displaystyle \frac{\omega}{s^2 + \omega^2} \coth \bigg(\frac{\pi s}{2 \omega^2} \bigg)$
-
  \end{itemize}
-
-\end{Answer}
-
-
+\end{resp}
 \begin{Exercise}
 Faça o gráfico de $f(t)$ e calcule $\mathcal{L}\big\{f(t)\big\}$.
 \begin{itemize}
@@ -1104,14 +809,12 @@ $
   \item[b)] $\displaystyle f(t) = |\sen (\omega t)|$.
 \end{itemize}
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{itemize}
   \item[a)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{8} \Big( 1 - \cos \big(2(t-a)\big) \Big)u(t-a) $
   \item[b)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{4} \sen(2t)$
  \end{itemize}
-\end{Answer}
-
-
+\end{resp}
 \begin{Exercise}
 Para $k$ constante, encontre a solução de
 \begin{itemize}
@@ -1131,53 +834,15 @@ $
 $
 \end{itemize}
 \end{Exercise}
-
-
-
-
 \begin{Exercise}
 Considere o OHS não amortecido representado na figura \ref{massa-mola-1}. Suponha que, em $t=0$, a massa $m$ está em sua posição de equilíbrio. Encontre o deslocamento $x(t)$ para $t>0$, se uma força $F_0 \delta(t)$ é aplicada.
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,1.0)(8.0,5.0)
-\psset{linecolor=blue}
 
-\psline(0.0,1.47)(0.0,5.0)
-
-\coil(0.0,2.5)(2.0,2.5){}
-\coil(2.0,2.5)(4.0,2.5){}
-\psline(4.0,1.5)(4.0,3.5)
-\psline(4.0,1.5)(6.0,1.5)
-\psline(4.0,3.5)(6.0,3.5)
-\psline(6.0,1.5)(6.0,3.5)
-
-\psline(0.0,1.5)(-.3,1.8)
-\psline(0.0,2.0)(-.3,2.3)
-\psline(0.0,2.5)(-.3,2.8)
-\psline(0.0,3.0)(-.3,3.3)
-\psline(0.0,3.5)(-.3,3.8)
-\psline(0.0,4.0)(-.3,4.3)
-\psline(0.0,4.5)(-.3,4.8)
-\psline(0.0,5.0)(-.3,5.3)
-
-\psline{->}(0.0,1.47)(7.5,1.47)
-
-\psline(5.0,1.37)(5.0,1.57)
-
-\rput(7.8,1.17){$x(t)$}
-\rput(5.0,1.17){$0$}
-\rput(5.0,2.57){$m$}
-\rput(2.0,2.17){$k$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_especiais_coef_var/pics/figura_8}\end{center}
 \caption{\label{massa-mola-1}}
 \end{figure} 
-
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
   $\displaystyle y(t) = \frac{F_0}{\sqrt{km}} \sen \left(\sqrt{\frac{k}{m}} t\right)$
-\end{Answer}
-
-
-%\end{document}
+\end{resp}

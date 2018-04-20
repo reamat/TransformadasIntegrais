@@ -1,0 +1,12 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\begin{pspicture}(-0.3,-1.0)(2.8,7.0)
+ \psaxes[labels=none]{->}(0,0)(-0.3,-0.5)(2.5,6.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{-0.3}{0.9166}{0}
+\psline[linecolor=blue](0.9166,0)(0.9166,6)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.9166}{1.0833}{6}
+\psline[linecolor=blue](1.0833,0)(1.0833,6)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.0833}{2.5}{0}
+\rput(2.4,.3){$t$}
+\rput(0.5,6.7){$\delta_\epsilon(t-a)$,\ $a=1$ e $\epsilon=\frac{1}{12}$}
+\rput(1.0,-.3){$a$}
+\end{pspicture}
+\end{document}

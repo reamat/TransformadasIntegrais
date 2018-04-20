@@ -1,17 +1,17 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ATENÇÃO
 %
-% POR SEGURANÇA, EVITE EDITAR ESTE ARQUIVO
+% POR SEGURANÇA, NÃO EDITE ESTE ARQUIVO.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Predefinicoes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newif\ifispdf        % O layout será book?
+\newif\ifisbook         % O layout será book?
 \newif\ifishtml        % O layout será html?
 
 \def\tfn{config.knd}     % Arquivo que guarda as definições do tipo de saída
@@ -23,111 +23,192 @@
 
 \tdata                 % Definições de saída
 
-%\usepackage{tabu}
-%\usepackage{ccicons}
-%\usepackage{subfiles}
-
-%opções de linguagem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Opcões de Linguagem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[portuges]{babel}
 \usepackage[T1]{fontenc}
+%\usepackage{xunicode} é o pacote necessário para a codificação UTF-8 no XeTeX
 
-%Indentar primeiro parágrafo de cada seção
-\usepackage{indentfirst} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{Cálculo Numérico}
+\fancyhead[LO]{\rightmark}
+\fancyhead[LE,RO]{\thepage}
 
+%license footnote
+\cfoot{\tiny{Licença \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC-BY-SA-3.0}. Contato: \url{reamat@ufrgs.br}}}
 
-\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
-%\usepackage[a5paper]{geometry}
-\usepackage{amsfonts}
+%%%% no blank pages between chapters %%%%
+\let\cleardoublepage\clearpage
+
+%%%% independent chapters %%%%
+\usepackage{subfiles}
+
+%%%% ams-latex %%%%
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{graphics}
-\usepackage[normalem]{ulem}
-\usepackage{pstricks,pst-plot}
-\usepackage[dvips]{graphicx}%
-\usepackage{pst-math}
-\usepackage{pst-plot}
-\usepackage{pst-circ}
+\usepackage{mathtools}
 
+%%%% graphics %%%%
+\usepackage{graphics}
+%\usepackage{graphicx}
+%\usepackage{caption}z
+\usepackage[normalem]{ulem}
+%\usepackage{pstricks,pst-plot}
+\usepackage[dvips]{graphicx}%
+%\usepackage{pst-math}
+%\usepackage{pst-plot}
+%\usepackage{pst-circ}
+
+
+
+
+%%%% links %%%%
 \usepackage[pdfborder={0 0 0 [0 0]},colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
 
+%%%% copy and paste from PDF (correctly) %%%%
+\usepackage{upquote}
+\usepackage{lmodern}
 
-%\usepackage{hyperref}
+%%%% code insert (verbatim) %%%%
+\usepackage{verbatim}
+\usepackage{listings}
 
+%%%% indent first line %%%%
+\usepackage{indentfirst}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Exercises and Answers %%%%
-%\usepackage[lastexercise]{exercise}
-\usepackage[answerdelayed,lastexercise]{exercise}
-\usepackage{chngcntr}
-\counterwithin{Exercise}{chapter}
-\counterwithin{Answer}{chapter}
-\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
-\renewcommand{\ExerciseName}{E}
-\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}}}
-\renewcommand{\ExerciseHeader}{\textbf{\ExerciseName\ \ExerciseHeaderNB.}\,}
+%%%% comma as a decimal separator %%%%
+\usepackage{icomma}
 
-% change font for answers header
-\renewcommand{\AnswerHeader}{\tiny\textbf{\ExerciseName\ \ExerciseHeaderNB.}\smallskip}
-% change font for answers list header
-\renewcommand{\AnswerListHeader}{{\tiny\textbf{\AnswerListName\
-(\ExerciseListName\ \ExerciseHeaderNB)\ ---\ }}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% citation %%%%
+\usepackage{cite}
 
+%%%% lists %%%%
+\usepackage{enumerate}
 
-\newenvironment{exer}
-{\begin{Exercise}}
-{\end{Exercise}}
-
-\newenvironment{resp}
-{\begin{Answer}\begin{tiny}}
-{\end{tiny}\end{Answer}}
-
-\newenvironment{sol}
-{\let\oldqedsymbol=\qedsymbol
-  \renewcommand{\qedsymbol}{$\Diamond$}
-  \begin{proof}[\bfseries\upshape Solução]}
-  {\end{proof}
-  \renewcommand{\qedsymbol}{\oldqedsymbol}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Exercícios Resolvidos
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheorem{exeresol}{ER}[section]
-\newenvironment{resol}
-{\let\oldqedsymbol=\qedsymbol
-  \renewcommand{\qedsymbol}{$\Diamond$}
-  \begin{proof}[\bfseries\upshape Solução]}
-  {\end{proof}
-  \renewcommand{\qedsymbol}{\oldqedsymbol}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% index %%%%
+\usepackage{makeidx}
 
 
+%%%% miscellaneous %%%%
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\renewcommand{\arraystretch}{1.5} %space between rows in tables
+\usepackage{array,booktabs}
+\usepackage{xcolor}
+\usepackage{tikz}
 
-\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
-\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin\medskip}}}
 
-\renewcommand{\AnswerHeader}{\medskip{\textbf{Resposta do exercício \ExerciseHeaderNB}\smallskip}:~}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MACROS E NOVOS COMANDOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\newcommand{\RED}[1]{{\color{red}{#1}}}
+\newcommand{\BLU}[1]{{\color{blue}{#1}}}
+\newcommand{\GRE}[1]{{\color{darkgreen}{#1}}}
+\newcommand{\matdd}[4]{\begin{bmatrix} #1&#2\\#3&#4 \end{bmatrix}}
+\newcommand{\matddd}[9]{\begin{bmatrix} #1&#2&#3 \\ #4&#5&#6 \\ #7&#8&#9 \end{bmatrix}}
+\newcommand{\vetdd}[2]{\begin{bmatrix} #1 \\#2 \end{bmatrix}}
+\newcommand{\vetddd}[3]{\begin{bmatrix} #1 \\ #2\\ #3 \end{bmatrix}}
+\newcommand{\field}[1]{\mathbb{#1}}
+%emphasis \emph
+\DeclareTextFontCommand{\emph}{\bfseries}
+\newcommand{\sen}{\operatorname{sen}\,}
+\newcommand{\senh}{\operatorname{senh}\,}
+\renewcommand{\sin}{\operatorname{sen}\,}
+\renewcommand{\sinh}{\operatorname{senh}\,}
+\newcommand{\tg}{\operatorname{tg}\,}
+\newcommand{\p}{\partial}
+\newcommand{\Dom}{\operatorname{Dom}\,}
+\newcommand{\diag}{\operatorname{diag}\,}
+
+%E = 10^
+\def\E#1{\mathrm{E}\!#1\!}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AVISOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\newtheorem{teo}{Teorema}
-\newtheorem{lem}{Lema}
-\newtheorem{prop}{Proposi\c{c}{\~a}o}
-\newtheorem{propr}{Propriedade}
-\newtheorem{corol}{Corolario}	
-\newtheorem{ex}{Exemplo}	
-\newtheorem{prob}{Problema}
-\newtheorem{obs}{Observa\c{c}{\~a}o}
-\newtheorem{defn}{Defini\c{c}{\~a}o}
-\newcommand{\senh}{\operatorname{senh}}
-\newcommand{\sen}{\operatorname{sen}}
-
+\newcommand{\foraDoEstilo}{
+  \begin{tabular}{|c|}\hline
+    Esta parte do material não está de acordo com o estilo do livro. Ajude-nos a corrigir, veja como em:\\
+    \url{https://www.ufrgs.br/reamat/participe.html}\\\hline
+  \end{tabular}
+}
 
 \newcommand{\emconstrucao}{
   \begin{tabular}{|c|}\hline
-    Em construção ... Gostaria de participar na escrita deste material? Veja como em:\\
-    \url{https://www.ufrgs.br/reamat}\\\hline
+    Em construção ... Gostaria de participar na escrita deste livro? Veja como em:\\
+    \url{https://www.ufrgs.br/reamat/participe.html}\\\hline
   \end{tabular}
 }
+
+\newcommand{\construirSec}{
+\begin{center}
+  Esta seção (ou subseção) está sugerida. Participe da sua escrita. Veja como em:\\
+  \url{https://www.ufrgs.br/reamat/participe.html}  
+\end{center}
+}
+
+\newcommand{\construirExeresol}{
+  \begin{center}
+    \begin{tabular}{|c|}\hline
+      Esta seção carece de exercícios resolvidos. Participe da sua escrita.\\
+      Veja como em:\\
+      \url{https://www.ufrgs.br/reamat/participe.html}\\\hline
+    \end{tabular}
+  \end{center}
+}
+
+\newcommand{\construirResol}{
+\begin{center}
+  Este exercício está sem resolução. Ajude-nos a construir-lá, veja como em:\\
+  \url{https://www.ufrgs.br/reamat/participe.html}  
+\end{center}
+}
+
+
+\newcommand{\construirExer}{
+  \begin{center}
+    \begin{tabular}{|c|}\hline
+      Esta seção carece de exercícios. Participe da sua escrita.\\
+      Veja como em:\\
+      \url{https://www.ufrgs.br/reamat/participe.html}\\\hline
+    \end{tabular}
+  \end{center}
+}
+
+\newcommand{\construirResp}{
+\begin{center}
+  Este exercício está sem resposta sugerida. Proponha uma resposta. Veja como em:\\
+  \url{https://www.ufrgs.br/reamat/participe.html}  
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% + INTRUCOES PARA O FORMATO LIVRO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifisbook
+\input preambulo_book.tex
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% + INTRUCOES PARA O FORMATO HTML
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifishtml
+\input preambulo_html.tex
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

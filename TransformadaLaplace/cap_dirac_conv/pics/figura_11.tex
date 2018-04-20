@@ -1,0 +1,9 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1.0cm,yunit=1.0cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-0.5,-2.0)(6.0,1.0)
+ \psaxes[labels,xlabelPos=top,dy=-.5]{->}(0,0)(-0.1,0.5)(5.5,-1.5)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.666667}{0.37037037 x mul x mul 0.12345679 x mul x mul x mul sub -1 mul}
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1.666667}{5.0}{0.37037037 x mul x mul 0.12345679 x mul x mul x mul sub  x 1.666667 sub x 1.666667 sub mul x 1.666667 sub mul 6 div add -1 mul}
+\rput(5.4,.3){$x$}
+\rput(0.0,-1.7){$y(x)$}
+\end{pspicture}
+\end{document}

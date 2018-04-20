@@ -1,9 +1,4 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-
-
 \chapter{Sistemas de equações diferenciais ordinárias}
-
 \section{Transformada de Laplace para resolver sistemas}
 O método de transformada de Laplace pode ser aplicado para resolver sistemas de equações diferenciais. Para isso, aplica-se a transformada de Laplace a todas equações envolvidas, levando o sistema de equações diferenciais em um sistema de equações algébricas. Depois de resolver o sistema de equações algébricas no espaço de transformadas, calcula-se as transformadas inversas para obter a solução.
 \begin{ex}Vamos resolver o seguinte problema de valor inicial:
@@ -40,9 +35,7 @@ As transformadas inversas de $X(s)$ e $Y(s)$ estão tabeladas:
 x(t)&=&\senh(t)\\
 y(t)&=&\cosh(t).
 \end{eqnarray*}
-
 \end{ex}
-
 \begin{ex}Considere o seguinte problema de valor inicial:
 \begin{eqnarray*}
 2\frac{d^2x}{dt^2}+\frac{d^2y}{dt^2}&=&t^2\\
@@ -93,43 +86,8 @@ y(t)&=&\frac{t^4}{36}-\frac{4t^3}{9}+10t-1.
 Considere o circuito da figura \ref{fig_circ_2_malha}, constituído de duas malhas com correntes $i_1$ e $i_2$, respectivamente. Vamos modelar $i_1$ e $i_2$ considerando $i_1(0)=i_2(0)=0$. 
 \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-0.5,-0.5)(10.5,6.5)
-\psset{linecolor=blue}
-%\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.5}{1.0}{0}
 
-
-\psline(0,0)(0.0,5.0)
-
-\psline(0,5)(2.0,5.0)
-\resistor[dipolestyle=zigzag,intensitylabel=$i$](2,5.0)(4,5.0){$40\Omega$}
-\psline(4,5)(6.0,5.0)
-
-\pnodes(6,5){A}(8,5){B}
-\Ucc[labelInside=2](A)(B){$110$\ \! V}
-
-\psline(8,5)(10.0,5.0)
-
-
-\psline(0,2.5)(2.0,2.5)
-\resistor[dipolestyle=zigzag,intensitylabel=$i_1$](4,2.5)(2,2.5){$5\Omega$}
-\psline(4,2.5)(6.0,2.5)
-\coil(8.0,2.5)(6.0,2.5){$1$\ \!H}
-\psline(8,2.5)(10.0,2.5)
-
-
-\psline(0,0)(2.0,0)
-\resistor[dipolestyle=zigzag,intensitylabel=$i_2$](4,0)(2,0){$10\Omega$}
-\psline(4,0)(6.0,0)
-\coil(8.0,0)(6.0,0){$2$\ \!H}
-\psline(8,0)(10,0)
-
-\tension(10,5)(10,3){}
-\tension(10,2.5)(10,0.5){}
-\psline(10,0)(10,5)
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_sistemas/pics/figura_1}\end{center}
 \caption{\label{fig_circ_2_malha}}
 \end{figure}
 Usamos a lei de Kirchoff para obter
@@ -188,7 +146,6 @@ $$
 i_1(t)=\frac{22}{13}\left(1-e^{-65t}\right).
 $$
 \section{Aplicação: duplo massa mola}
-
 Considere o duplo sistema massa-mola, onde as molas possuem constantes $k_1$ e $k_2$ e as massas envolvidas são $m_1$ e $m_2$. Desconsiderando o amortecimento, temos o seguinte sistema:
 \begin{eqnarray*}
  m_1 \ddot{x}_1(t) &=&  - k_1 x_1(t) + k_2\left[x_2(t)-x_1(t)\right]+f_1(t)\\
@@ -317,30 +274,11 @@ y(t)&=&-\frac{3}{5\sqrt{12}}\sen(\sqrt{12}t)-\frac{2}{5\sqrt{2}}\sen(\sqrt{2}t)\
 A figura \ref{fig_massa_mola_2_malha} apresenta os gráficos de $x(t)$ e $y(t)$:
  \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =0.5cm,yunit=4cm, linewidth=1\pslinewidth}
-\begin{pspicture}(-0.5,-0.6)(20.5,0.7)
- \psaxes[labels=none]{->}(0,0)(-0.1,-0.5)(20.0,0.6)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{20}{x 198.4842 mul sin 0.3464 mul x 81.0309 mul sin 0.141421 mul sub}
 
-\rput(19.8,.05){$t$}
-\rput(0.1,0.65){$x(t)$}
-
-\end{pspicture}
-
-\begin{pspicture}(-0.5,-0.6)(20.5,0.7)
- \psaxes[labels=none]{->}(0,0)(-0.1,-0.5)(20.0,0.6)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{20}{x 198.4842 mul sin -0.1732 mul x 81.0309 mul sin -0.282842 mul add}
-
-\rput(19.8,.05){$t$}
-\rput(0.1,0.65){$y(t)$}
-
-\end{pspicture}
-
-
-\end{center}
+\includegraphics{cap_sistemas/pics/figura_2}
+\includegraphics{cap_sistemas/pics/figura_3}\end{center}
 \caption{\label{fig_massa_mola_2_malha}}
 \end{figure}
-
 \section{Aplicação: reação química}
 Considere o mecanismo simplificado de reação química apresentado a seguir:
 $$R\longrightarrow S \longrightarrow T$$
@@ -386,28 +324,13 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
  onde usamos a propriedade da convolução \ref{prop_conv} na passagem da primeira para a segunda linha. A figura \ref{reacao} apresenta o gráfico de das funções $x(t)$, $y(t)$ e $z(t)$.
  \begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=4cm, linewidth=1\pslinewidth}
-\begin{pspicture}(-0.5,-0.5)(6.0,1.5)
- \psaxes[labels=none]{->}(0,0)(-0.1,-0.1)(5.5,1.2)
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -1 x mul exp}
-\psplot[linecolor=red,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -1 x mul exp 2.72 -2 x mul exp sub}
-\psplot[linecolor=green,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -2 x mul exp 2.72 -1 x mul exp 2 mul sub 1 add}
 
-\rput(5.7,.05){$t$}
-\rput(0.5,1.0){$x(t)$}
-\rput(3.2,1.0){$z(t)$}
-\rput(0.4,0.29){$y(t)$}
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_sistemas/pics/figura_4}\end{center}
 \caption{\label{reacao}}
 \end{figure}
-
-
 \section{Exercícios}
 \begin{Exercise}
 Considere o seguinte problema de valor inicial:
- 
 \begin{eqnarray*}
 x'(t)&=&-2x(t) +  y(t)\\
 y'(t)&=&\alpha x(t) - 2y(t)\\
@@ -424,10 +347,7 @@ Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
 \item [b)] Use a Use a técnica da Transformada de Laplace para encontrar uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
 \end{itemize}
 \end{Exercise}
-
-
 \begin{Exercise}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
-
 $$\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)$$
 onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
 \begin{itemize}
@@ -442,55 +362,22 @@ onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura a
  \item [g)] Esboce o gráfico da $u(t)$ obtida no item d).
  \end{itemize}
 \end{Exercise}
-\begin{Answer}
-
+\begin{resp}
 \begin{itemize}
  \item [a)] Observe que $U(s)=\frac{50}{s+4}+\frac{200}{s(s+4)}+\frac{100}{s+4}e^{-s}$ pode ser escrito como $U(s)=\frac{50}{s}+\frac{100}{s+4}e^{-s}$ 
   \item [b)] $u(t)=50+100u(t-1)e^{-4(t-1)}$.
-   
   \begin{center}
-\psset{xunit =2cm,yunit=.03cm, linewidth=1\pslinewidth}
-\begin{pspicture}(-0.5,-0.5)(4.0,180)
- \psaxes[Dy=25]{->}(0,0)(-0.1,-0.1)(3.5,180)
- \psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1}{50}
- 
- \psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{1}{3}{50 2.718 -4 x 1 sub mul exp 100 mul add}
-\rput(5.7,.05){$t$}
 
-\rput(.3,165){$u(t)$}
-\psline[linecolor=blue](1,50)(1,150)
-\end{pspicture}
-\end{center}
-
+\includegraphics{cap_sistemas/pics/figura_5}\end{center}
   \item [c)] $\eta=4$
  \item [d)] 200
-   
  \item[e)] $u(t)=200-150e^{-2t}\left(1+2t\right)$
-
  \item [g)] 
 \end{itemize}
-  
- %\begin{figure}[!ht]
 \begin{center}
-\psset{xunit =1cm,yunit=.02cm, linewidth=1\pslinewidth}
-\begin{pspicture}(-0.5,-0.5)(6.0,250)
- \psaxes[Dy=25]{->}(0,0)(-0.1,-0.1)(5.5,250)
- \psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{5}{2.72 -2 x mul exp -150 mul 2 x mul 1 add mul 200 add}
- 
-\rput(5.7,.05){$t$}
 
-\rput(.5,240){$u(t)$}
-\end{pspicture}
-\end{center}
-%\caption{\label{reacao}}
-%\end{figure}
-
-%
-
-
-\end{Answer}
-
-
+\includegraphics{cap_sistemas/pics/figura_6}\end{center}
+\end{resp}
 \begin{Exercise} Considere o seguinte problema de valor inicial para um sistema de equações integro-diferenciais:
 \begin{eqnarray*}
  x'(t) +x(t) = 2 y(t)\\
@@ -499,16 +386,9 @@ onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura a
 com $x(0)=0$. Usando a teoria das Transformadas de Laplace, resolve o sistema, obtendo $x(t)$ e $y(t)$.
 {\bf Obs:}  Este sistema apresenta ``problemas na origem''. 
 \end{Exercise}
-\begin{Answer}
+\begin{resp}
  \begin{eqnarray}
   x(t)&=&2e^t  \\
   y(t)&=&\delta(t)+e^t
  \end{eqnarray}
-
-\end{Answer}
-
-
-
-
-
-%\end{document}
+\end{resp}
