@@ -1,0 +1,46 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}  \begin{pspicture}(-6,-3.0) (6,3.0)
+ \psset{xunit=1,yunit=1}
+  \psaxes[labels=none]{->}(0,0)(-5.5,-2.4)(5.5,2.4)
+  \psline[linecolor=blue,linewidth=2pt]{-}(1,0)(1,-1)
+  \psline[linecolor=blue,linewidth=2pt]{-}(-1,0)(-1,1)
+   \psline[linecolor=blue,linewidth=2pt]{-}(3,0)(3,-1)
+  \psline[linecolor=blue,linewidth=2pt]{-}(-3,0)(-3,1)
+   \psline[linecolor=blue,linewidth=2pt]{-}(5,0)(5,-1)
+  \psline[linecolor=blue,linewidth=2pt]{-}(-5,0)(-5,1)
+     \rput(-5.0,-.4){$-5\pi$}
+   \rput(-4.0,-.4){$-4\pi$}
+   \rput(-3.0,-.4){$-3\pi$}
+   \rput(-2.0,-.4){$-2\pi$}
+   \rput(-1.0,-.4){$-\pi$}
+   \rput(1.0,.4){$\pi$}
+   \rput(2.0,.4){$2\pi$}
+   \rput(3.0,.4){$3\pi$}
+   \rput(4.0,.4){$4\pi$}
+   \rput(5.0,.4){$5\pi$}
+  \rput(0,2.8){$\phi_n$}
+  \rput(5.7,-.2){$w_n$}
+  \rput(-.3,1.0){$\frac{\pi}{2}$}
+  \rput(-.5,-1.0){$-\frac{\pi}{2}$}
+  \rput(-.3,2.0){$\pi$}
+  \rput(-.5,-2.0){$-\pi$}
+  \end{pspicture}
+\end{document}

@@ -1,8 +1,4 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 \chapter{Propriedades da transformada de Fourier}
-
-
 \section{Propriedades}
 \begin{propr}[Linearidade ou superposição]\label{prop_linear}
 Dadas duas funções $f(t)$ e $g(t)$ com transformadas de Fourier $F(w)$ e $G(w)$, respectivamente, e $\alpha$ e $\beta$ duas constantes reais ou complexas, então
@@ -24,7 +20,6 @@ $$
 \mathcal{F}\left\{5 f(t)-3 g(t)\right\}=5 \frac{2}{w^2+1}-3e^{-w^2}
 $$
 \end{ex}
-
 \begin{propr}[Transformada da derivada]{\label{prop_der}} Dada uma função diferenciável $f(t)$ tal que 
 $$\lim_{t\to \pm \infty}f(t)=0
 $$
@@ -76,34 +71,15 @@ De modo geral,
 \begin{eqnarray*}
 \mathcal{F}\{f^{(n)}(t)\}=(iw)^nF(w).
 \end{eqnarray*}
-
 \end{obs}
 \begin{prob}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,2)
- \psaxes[labels=y]{->}(0,0)(-5.0,-.1)(5.3,1.6)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{-3}{0}
-\psplot[plotstyle=curve,plotpoints=200]{-3}{-2}{x 3 add}
-\psplot[plotstyle=curve,plotpoints=200]{-2}{-1}{1}
-\psplot[plotstyle=curve,plotpoints=200]{-1}{0}{x -1 mul}
-\psplot[plotstyle=curve,plotpoints=200]{0}{1}{x}
-\psplot[plotstyle=curve,plotpoints=200]{1}{2}{1}
-\psplot[plotstyle=curve,plotpoints=200]{2}{3}{3 x sub}
-\psplot[plotstyle=curve,plotpoints=200]{3}{5.3}{0}
 
-
-\rput(0,1.8){$|F(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_1}\end{center}
 \caption{\label{fig_graf_1}}
 \end{figure}
-
 \end{prob}
-
 \begin{propr}[Deslocamento no eixo $w$]\label{prop_desl_w} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{e^{at}f(t)\right\}=F(w+ia).
@@ -139,37 +115,12 @@ onde
 Veja os diagramas de espectro de $G(w)$ quando $a=b=1$ na figura \ref{diag_espec_trans_4}.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,2)
- \psaxes[labels=y]{->}(0,0)(-5.0,-.1)(5.3,1.6)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{0.69 2.72 -1 x x mul mul 4 div exp mul x x mul 1 add sqrt mul}
-\rput(0,1.8){$|G(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
-\psset{algebraic,unit=1cm,linewidth=1pt}
- \begin{pspicture}(-6.3,-4.0)(6.5,4.0)
- \psaxes[labels=x,ticks=x]{->}(0,0)(-6.0,-3.5)(6.3,3.5)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-6}{-3.6732}{-6.28 -x/2-ATAN(x) }
-\psplot[plotstyle=curve,plotpoints=200]{-3.6732}{3.6732}{ -x/2-ATAN(x) }
-\psplot[plotstyle=curve,plotpoints=200]{3.6732}{6}{6.28+ -x/2-ATAN(x) }
-
-
-\rput(0,3.7){$\phi(w)$}
-\rput(6.4,.3){$w$}
-\rput(.4,3.14){$\pi$}
-\rput(-.5,-3.14){$-\pi$}
-\psline[linecolor=black,linewidth=.4pt](-.14,3.14)(.14,3.14)
-\psline[linecolor=black,linewidth=.4pt](-.14,-3.14)(.14,-3.14)
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_2}
+\includegraphics{cap_propriedades_transformada/pics/figura_3}\end{center}
 \caption{\label{diag_espec_trans_4}}
 \end{figure}
-
 \end{ex}
-
 \begin{propr}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{f(t-a)\right\}=e^{-iaw}F(w).
@@ -191,9 +142,7 @@ G(w)=\frac{2}{w^2+1}e^{-2iw}
 $$
 \end{ex}
 \begin{obs} Um deslocamento real no tempo não altera o módulo da transformada de Fourier, pois $|e^{-iaw}|=1$ sempre que $a$ e $w$ são reais.
-
 \end{obs}
-
 \begin{propr}[Transformada da integral]\label{prop_int} Dada uma função integrável $f(t)$ tal que sua transformada de Fourier $F(w)$ satisfaça $F(0)=0$, então
 $$
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau \right\}=\frac{1}{iw}F(w).
@@ -229,7 +178,6 @@ $$
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau\right\}=\frac{1}{iw}F(w).
 $$
 \end{proof}
-
 \begin{propr}[Teorema da modulação]\label{prop_mod}  Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{f(t)\cos(w_0t) \right\}=\frac{1}{2}F(w-w_0)+\frac{1}{2}F(w+w_0),
@@ -252,7 +200,6 @@ De fato,
 &=&\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}
 \end{eqnarray*}
 \end{ex}
-
 \begin{propr} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
 \begin{itemize}
 \item[a)] (Convolução no tempo)
@@ -288,7 +235,6 @@ Substituindo a equação (\ref{eq_teo_conv_1}) na equação (\ref{eq_teo_conv}),
 &=&F_2(w)\int_{-\infty}^\infty \left[f_1(\tau) e^{-iw\tau}\right]d\tau\\
 &=&F_1(w)F_2(w)
 \end{eqnarray*}
-
 \item[b)] Analogamente, usando as definições, temos:
 \begin{eqnarray}
 \nonumber\mathcal{F}^{-1}\{(F_1*F_2)(w)\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty (F_1*F_2)(w)e^{iwt}dw\\
@@ -308,10 +254,8 @@ Substituindo a equação (\ref{eq_teo_conv_3}) na equação (\ref{eq_teo_conv_2}
 &=&f_2(t)\int_{-\infty}^\infty F_1(v) e^{ivt} dv\\
 &=&2\pi f_1(t)f_2(t)
 \end{eqnarray*}
-
 \end{itemize}
 \end{proof}
-
 \begin{ex}Considere as funções $f(t)=te^{-t^2}$ e $g(t)=e^{-a|t|}$, $a>0$ e suas respectivas transformadas de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$ e $G(w)=\frac{2a}{w^2+a^2}$. A transformada de Fourier da função 
 $$
 h(t)=\int_{-\infty}^\infty f(t-\tau)g(\tau)d\tau=\int_{-\infty}^\infty (t-\tau)e^{-(t-\tau)^2}e^{-a|\tau|}d\tau
@@ -321,8 +265,6 @@ $$
 H(w)=F(w)G(w)=-iwa\frac{\sqrt{\pi}}{w^2+a^2}e^{-\frac{w^2}{4}}
 $$
 \end{ex}
-
-
 \begin{propr}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \overline{F(w)}=F(-w)
@@ -338,7 +280,6 @@ De fato,
 &=&F(-w)
 \end{eqnarray*}
 \end{proof}
-
 \begin{obs} Se $f(t)$ não é uma função real, esta propriedade não se aplica.
 \end{obs}
 \begin{ex}Considere as funções $f(t)=te^{-t^2}$ e sua transformada de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$. Então,
@@ -350,7 +291,6 @@ $$
 \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
 $$
 \end{ex}
-
 \begin{propr}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então $$\mathcal{F}\left\{f(-t)\right\}=F(-w).$$
 \end{propr}
 \begin{proof}
@@ -366,9 +306,6 @@ procedemos com a mudança de variáveis $\tau=-t$:
 &=&F(-w)
 \end{eqnarray*}
 \end{proof}
-
-
-
 \begin{propr}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 $$
 f(-w)=\frac{1}{2\pi}\mathcal{F}\{F(t)\}
@@ -386,9 +323,7 @@ Ou seja,
 $$
 f(-w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{-itw}dt=\frac{1}{2\pi}\mathcal{F}\{F(t)\}.
 $$
-
 \end{proof}
-
 \begin{propr}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 $$
 \mathcal{F}\{f(at)\}=\frac{1}{|a|}F\left(\frac{w}{a}\right),~~ \forall a\neq 0.
@@ -399,14 +334,12 @@ $$
 \mathcal{F}\{f(at)\}=\int_{-\infty}^{\infty} f(at)e^{-iwt}dt
 $$
 Fazendo a mudança $\tau= at$, distinguindo dois casos: $a>0$ e $a<0$.
-
 Para o caso $a>0$, temos:
 \begin{eqnarray*}
 \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
 &=&\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}\frac{d\tau}{a}\\
 &=&\frac{1}{a}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau
 \end{eqnarray*}
-
 Para o caso $a<0$, temos:
 \begin{eqnarray*}
 \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
@@ -421,8 +354,6 @@ Em ambos os casos, temos:
 \end{proof}
 \begin{obs} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
 \end{obs}
-
-
 \begin{propr}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
 $$\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw$$
 \end{propr}
@@ -435,7 +366,6 @@ e consequentemente:
 \begin{eqnarray*}
 \overline{f(t)}=\frac{1}{2\pi}\int_{-\infty}^\infty \overline{F(w)}e^{-iwt}dw
 \end{eqnarray*}
-
 e inserimos essa expressão na integral envolvida:
 \begin{eqnarray*}
 \int_{-\infty}^\infty |f(t)|^2dt &=&\int_{-\infty}^\infty f(t)\overline{f(t)} dt\\
@@ -449,7 +379,6 @@ e inserimos essa expressão na integral envolvida:
 \end{proof}
 \begin{obs}Esta integral está associada ao conceito de energia total de um sinal. 
 \end{obs}
-
 \begin{ex}Considere a função $f(t)=e^{-a|t|}$, $a>0$, e sua transformada de Fourier $F(w)=\frac{2a}{w^2+a^2}$. A energia associada a essa função pode ser calculada de duas maneiras distintas:
 \begin{eqnarray*}
 \int_{-\infty}^\infty |f(t)|^2dt&=&\int_{-\infty}^\infty |e^{-a|t|}|^2dt\\
@@ -472,14 +401,11 @@ Portanto,
 \frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw=\frac{4a^2}{\pi}\frac{\pi}{4a^3}=\frac{1}{a}.
 \end{eqnarray*}
 \end{ex}
-
-
 \begin{propr}[Princípio da Incerteza*]\label{prop_princ_incert} Seja $f(t)$ uma função real que satisfaz $\lim_{t\to\pm\infty}f(t)=0$ e $F(w)=\mathcal{F}\{f(t)\}$ sua transformada de Fourier. Então vale a seguinte estimativa:
 \begin{eqnarray*}
 \int_{-\infty}^\infty  | tf(t)|^2dt\cdot \int_{-\infty}^\infty \left|w F(w)\right|^2dw\geq \frac{\pi}{2}
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
-
 \end{propr}
 \begin{proof}
 Primeiro observamos que
@@ -509,7 +435,6 @@ e, finalmente,
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
 \end{proof}
-
 \section{Passagem do contínuo para o discreto}
 Nesta seção vamos calcular a transformada de Fourier de uma função periódica $f(t)$ que possui representação em série de Fourier. Para esse propósito, observe que, colocando $F(w)=2\pi \delta(w-w_0)$, temos 
 \begin{equation*}
@@ -540,7 +465,6 @@ $$
 F(w)=\pi\delta(w-w_0)+\pi\delta(w+w_0)
 $$
 \end{ex}
-
 \begin{ex} Considere a função não periódica $g(t)=e^{-a|t|}\cos(w_0 t)$, $a>0$. A transformada de Fourier de $g(t)$ é dada por $G(w)=\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}$ (ver exemplo (\ref{ex_prop_trans_1.0})). Observe que 
 $$
 \lim_{a\to 0}g(t)=\lim_{a\to 0} e^{-a|t|}\cos(w_0 t)=\cos(w_0 t).
@@ -554,49 +478,17 @@ Comparando com o exemplo \ref{ex_ant}, é esperado que $G(w)$ convirja para $F(w
 e a curva $G(w)$ converge para 0, exceto em $w=w_0$ e $w=-w_0$. Portanto o limite de $G(w)$ é $F(w)$. Os diagramas de magnitude de $F(w)$ e de $G(w)$ para alguns valores de $a>0$ e $w_0=1$ são apresentados na figura \ref{diag_espec_05}.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-3.0,-.3)(3.0,3.0)
- \psaxes[labels]{->}(0,0)(-2.0,-.1)(2.3,2.2)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-2}{2.3}{1 x 1 sub 2 exp 1 add div 1 x 1 add 2 exp 1 add div add}
-\rput(0,2.5){$|G(w)|$}
-\rput(2.2,.3){$w$}
-\rput(2.0,2.0){$w_0=1,\ a=1$}
-\end{pspicture}
-\begin{pspicture}(-3.0,-.3)(3.0,4.0)
- \psaxes[labels]{->}(0,0)(-2.0,-.1)(2.3,3.2)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-2}{2.3}{0.5 x 1 sub 2 exp 0.25 add div 0.5 x 1 add 2 exp 0.25 add div add}
-\rput(0,3.5){$|G(w)|$}
-\rput(2.2,.3){$w$}
-\rput(2.5,2.5){$w_0=1,\ a=0.5$}
-\end{pspicture}
 
-\begin{pspicture}(-3.0,-.3)(3.0,6.0)
- \psaxes[labels]{->}(0,0)(-2.0,-.1)(2.3,4.6)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-2}{2.3}{0.25 x 1 sub 2 exp 0.0625 add div 0.25 x 1 add 2 exp 0.0625 add div add}
-\rput(0,4.8){$|G(w)|$}
-\rput(2.2,.3){$w$}
-\rput(2.5,2.5){$w_0=1,\ a=0.25$}
-\end{pspicture}
-\begin{pspicture}(-3.0,-.3)(3.0,4.0)
- \psaxes[labels]{->}(0,0)(-2.0,-.1)(2.3,3.2)
-\psset{linecolor=blue}
-\psline{->}(-1,0)(-1,3.2)
-\psline{->}(1,0)(1,3.2)
-\rput(0,3.5){$|F(w)|$}
-\rput(2.2,.3){$w$}
-\end{pspicture}
+\includegraphics{cap_propriedades_transformada/pics/figura_4}
+\includegraphics{cap_propriedades_transformada/pics/figura_5}
 
-\end{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_6}
+\includegraphics{cap_propriedades_transformada/pics/figura_7}\end{center}
 \caption{\label{diag_espec_05}}
 \end{figure}
-
 \end{ex}
 \section{Aplicação: Sinais Discretos}
 Nessa seção vamos discutir sobre discretização de sinais, em especial, pretendemos responder com que frequência precisamos amostrar um sinal real para podermos reconstruí-lo. Vamos considerar que o espectro da função $f(t)$ é composto apenas por frequências inferiores a $w_c$, onde $w_c$ é chamado de frequência de corte. Mostraremos que se conhecermos apenas os valores de $f(t)$ para $t=kT$, $k\in\mathbb{Z}$, onde $T$ é o período de amostragem e $w_a:=\frac{2\pi }{T}>2w_c$  é a frequência de amostragem, então podemos reconstruir exatamente $f(t)$ em todos instantes de tempo.
-
 Considere $f(t)$ uma função real, definiremos $f_T(t)$ uma versão discretizada deste sinal da seguinte forma:
 $$
 f_T(t)=\sum_{k=-\infty}^\infty f(kT) \delta (t-kT),
@@ -604,42 +496,8 @@ $$
 assim $f_T(t)$ é um trem de Dirac's cujas amplitudes coincidem com o valor da função $f(t)$ nos pontos de amostragem $kT$. Veja um exemplo na figura \ref{sinal_discreto}.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-6.0,-4.0)(6.0,4.0)
-  \psaxes[labels=none]{->}(0,0)(-5.5,-3.3)(5.5,3.3)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5.5}{5.5}{x 150 mul cos x 100 mul sin 2 mul sub}
 
-\psset{linecolor=red}
-
-  \psline{->}(-5,0)(-5,2.15)  
-  \psline{->}(-4,0)(-4,0.79)  
-  \psline{->}(-3,0)(-3,-1.73)  
-  \psline{->}(-2,0)(-2,-0.18)  
-  \psline{->}(-1,0)(-1,1.1)   
-  \psline{->}(0,0)(0,1.0)    
-  \psline{->}(1,0)(1,-2.84)  
-  \psline{->}(2,0)(2,1.18)  
-  \psline{->}(3,0)(3,1.73)  
-  \psline{->}(4,0)(4,-1.79)  
-  \psline{->}(5,0)(5,-0.42) 
-	\rput(5.5,.3){$t$}
-
-	\rput(0.0,3.6){$\color{blue} f(t),~\color{red} f_T(t)$}
-	\rput(1,.3){$T$}
-	\rput(2,-.3){$2T$}
-	\rput(3,-.3){$3T$}
-	\rput(4,.3){$4T$}
-	\rput(5,.3){$5T$}
-	
-	\rput(-1,-.3){$-T$}
-	\rput(-2,.3){$-2T$}
-	\rput(-3,.3){$-3T$}
-	\rput(-4,-.3){$-4T$}
-	\rput(-5,-.3){$-5T$}
-	
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_8}\end{center}
 \caption{\label{sinal_discreto}}
 \end{figure}
 A fim de calcularmos a transforma de Fourier de $f_T(t)$, observamos que:
@@ -670,56 +528,12 @@ F_T(w)&=&\mathcal{F}\left\{f_T(t)\right\}\\
 onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja um exemplo na figura \ref{sinal_discreto1}.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
 
-\begin{pspicture}(-2.0,-1.0)(2.0,3.5)
-  \psaxes[labels=none]{->}(0,0)(-1.5,-0.3)(1.5,2.3)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 4 mul 2 add }
-\psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 4 mul -1 mul 2 add}
+\includegraphics{cap_propriedades_transformada/pics/figura_9}
 
-	\rput(0.0,2.5){$|F(w)|$}
-	\rput(0.5,-0.2){$w_c$}
-	\rput(-0.5,-0.18){$-w_c$}
-	\rput(1.6,0.3){$w$}
-	
-\end{pspicture} 
+\hspace{10pt}
 
-\begin{pspicture}(-6.0,-1.0)(6.0,2.0)
-  \psaxes[labels=none]{->}(0,0)(-5.5,-0.3)(5.5,1.7)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 2 mul -1 mul 1 add}
-
-\psplot[plotstyle=curve,plotpoints=200]{1.5}{2.0}{x 2 sub 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{2.0}{2.5}{x 2 sub  2 mul -1 mul 1 add}
-
-\psplot[plotstyle=curve,plotpoints=200]{3.5}{4.0}{x 4 sub 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{4.0}{4.5}{x 4 sub  2 mul -1 mul 1 add}
-
-\psplot[plotstyle=curve,plotpoints=200]{-2.5}{-2.0}{x 2 add 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{-2.0}{-1.5}{x 2 add 2 mul -1 mul 1 add}
-
-\psplot[plotstyle=curve,plotpoints=200]{-4.5}{-4.0}{x 4 add 2 mul 1 add }
-\psplot[plotstyle=curve,plotpoints=200]{-4.0}{-3.5}{x 4 add 2 mul -1 mul 1 add}
-
-
-
-	\rput(0.0,2.0){$|F_T(w)|$}
-	\rput(5.0,0.3){$w$}
-	
-	\rput(0.5,-0.3){$w_c$}
-	\rput(-0.5,-0.3){$-w_c$}
-		\rput(1.1,-0.3){$w_a$}
-	\rput(-1.3,-0.3){$-w_a$}
-		\rput(-0.3,1.1){$\frac{1}{T}$}
-
-        \rput(1.1,-0.3){$w_a$}
-	\rput(-1.3,-0.3){$-w_a$}
-
-		
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_10}\end{center}
 \caption{\label{sinal_discreto1}}
 \end{figure}
 \begin{obs}Observamos que se a frequência de amostragem $w_a$ for superior a $2w_c$, então $F_T(w)=\frac{1}{T}F(w)$ no intervalo $[-w_c,w_c]$ e, portanto, toda a informação de $f(t)$ é preservada. De fato, neste caso, podemos escrever:
@@ -730,7 +544,6 @@ f(t)&=&\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw\\
 \end{eqnarray*}
 Como $F_T(w)$ pode ser calculada apenas com base nos pontos de amostragem, $f(t)$ pode ser reconstruída. Se $w_a<2w_c$, então existe superposição espectral, o que impede a reconstrução da $f(t)$. Este resultado é conhecido como teorema da amostragem de Nyquist-Shannon ou teorema cardinal da interpolação.
 \end{obs}
-
 \begin{teo} Suponha que $f(t)$ é uma função real cujo espectro é limitado pela frequência $w_c$, isto é, $F(w)=0$ se $|w|>w_c$, e $T<\frac{\pi}{w_c}$, então
 $$
 f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{w_a(t-nT)}
@@ -769,46 +582,16 @@ Substituindo $n$ por $-n$ obtemos a expressão:
 $$
 f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{w_a(t-nT)}.
 $$
-
 \end{proof}
 \section{Exercícios}
-
 \begin{Exercise}Faça o diagrama de espectro da transformada de Fourier do exemplo \ref{ex_desloc_tempo} da página \pageref{ex_desloc_tempo}.
 \end{Exercise}
 \begin{Answer}Ver figura abaixo.
-
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,3.0)
- \psaxes[labels=none]{->}(0,0)(-5.0,-.1)(5.3,2.2)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{2 x x mul 1 add div}
-\rput(0,2.5){$|F(w)|$}
-\rput(5.2,.3){$w$}
-\end{pspicture}
-\psset{algebraic,unit=1cm,linewidth=1pt}
- \begin{pspicture}(-6.3,-4.0)(6.5,4.0)
- \psaxes[labels=x,ticks=x]{->}(0,0)(-6.0,-3.5)(6.3,3.5)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-1.57}{1.57}{ -2*x }
-\psplot[plotstyle=curve,plotpoints=200]{1.57}{4.71}{ -2*x+2*3.14 }
-\psplot[plotstyle=curve,plotpoints=200]{4.71}{6}{ -2*x+4*3.14 }
-\psplot[plotstyle=curve,plotpoints=200]{-6}{-4.71}{ -2*x-4*3.14 }
-\psplot[plotstyle=curve,plotpoints=200]{-4.71}{-1.57}{ -2*x-2*3.14 }
 
-\rput(0,3.7){$\phi(w)$}
-\rput(6.4,.3){$w$}
-\rput(.4,3.14){$\pi$}
-\rput(-.5,-3.14){$-\pi$}
-\psline[linecolor=black,linewidth=.4pt](-.14,3.14)(.14,3.14)
-\psline[linecolor=black,linewidth=.4pt](-.14,-3.14)(.14,-3.14)
-\end{pspicture}
-
-\end{center}
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_11}
+\includegraphics{cap_propriedades_transformada/pics/figura_12}\end{center}
 \end{Answer}
-
 \begin{Exercise} Em geral não é verdade que módulo da soma é igual a soma dos módulos, isto é, $|x+y|=|x|+|y|$, $x,y\in\mathbb{C}$.
 \begin{itemize}
 \item[a)] Encontre um caso particular onde $|x+y|=|x|+|y|$ com $|x|\neq 0$ e $|y|\neq 0$.
@@ -823,25 +606,11 @@ $$
 \mathcal{F}\left\{f(t)\sen(w_0t) \right\}=\frac{i}{2}F(w+w_0)-\frac{i}{2 }F(w-w_0),
 $$
 para $w_0\in\mathbb{R}$.
-
 \end{Exercise}
-
 \begin{Exercise}Considere uma função real $f(t)$ tal que o diagrama de magnitude é dado na figura abaixo. 
-
 \begin{center}
-\psset{xunit =.01cm,yunit =.1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,30)
- \psaxes[labels,Dx=100,Dy=5]{->}(0,0)(-500,-1)(530,15)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{250 x add 25 div}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div}
-\psplot[plotstyle=curve,plotpoints=200]{-500}{-250}{0}
-\psplot[plotstyle=curve,plotpoints=200]{250}{500}{0}
-\rput(0,18){$|F(w)|$}
-\rput(520,3){$w$}
-\end{pspicture}
-\end{center}
 
+\includegraphics{cap_propriedades_transformada/pics/figura_13}\end{center}
 \begin{itemize}
 \item[a)] Trace o diagrama de magnitude do espectro de $g(t)=f(t-a)$ onde $a$ é uma constante real.
 \item[b)] Trace o diagrama de magnitude do espectro de $g(t)=f(2t)$.
@@ -872,235 +641,73 @@ Logo o diagrama de magnitude é o mesmo do de $f(t)$.
 \left|\mathcal{F}\left\{g(t)\right\}\right|&=&\frac{1}{2}\left|F\left(\frac{w}{2}\right)\right|.
 \end{eqnarray*}
 Onde se usou a propriedade \ref{prop_mud_esc}.
-
 \begin{center}
-\psset{xunit =.01cm,yunit =.1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,30)
- \psaxes[labels,Dx=100,Dy=5]{->}(0,0)(-500,-1)(530,15)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-500}{0}{500 x add 100 div}
-\psplot[plotstyle=curve,plotpoints=200]{0}{500}{500 x sub 100 div}
-\rput(0,18){$|G(w)|$}
-\rput(520,3){$w$}
-\end{pspicture}
-\end{center}
 
+\includegraphics{cap_propriedades_transformada/pics/figura_14}\end{center}
 \item[c)] 
  \begin{eqnarray*}
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(-t)\right\}=F\left(-w\right)\\
 \left|\mathcal{F}\left\{g(t)\right\}\right|&=&\left|F\left(-w\right)\right|=\left|\overline{F\left(w\right)}\right|=\left|F\left(w\right)\right|.
 \end{eqnarray*}
 Onde se usou a propriedade \ref{prop_inv_temp} e, depois, \ref{prop_conj}.
-
 \begin{center}
-\psset{xunit =.01cm,yunit =.05cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,40)
- \psaxes[labels,Dx=100,Dy=10]{->}(0,0)(-500,-1)(530,38)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{250 x add 25 div 3 mul}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div 3 mul}
-\psplot[plotstyle=curve,plotpoints=200]{-500}{-250}{0}
-\psplot[plotstyle=curve,plotpoints=200]{250}{500}{0}
-
-\rput(70,36){$|G(w)|$}
-\rput(520,6){$w$}
-\end{pspicture}
-\end{center}
-
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_15}\end{center}
 \item[d)] 
  \begin{eqnarray*}
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{3f(t)\right\}=3F\left(w\right)\\
 \left|\mathcal{F}\left\{g(t)\right\}\right|&=&3\left|F\left(w\right)\right|.
 \end{eqnarray*}
 Onde se usou a propriedade \ref{prop_linear}.
-
 \item[e)] 
  \begin{eqnarray*}
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos(1000t)\right\}\\
 &=&\frac{1}{2}\left[F(w-1000)+F(w+1000)\right]\\
 \end{eqnarray*}
-
 \begin{center}
-\psset{xunit =.003cm,yunit =.1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1550,-3)(1550,30)
- \psaxes[labels,Dx=500,Dy=5]{->}(0,0)(-1500,-1)(1530,15)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-1500}{-1250}{0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-1250}{-1000}{1250 x add 50  div}
-\psplot[plotstyle=curve,plotpoints=200]{-1000}{-750}{-750 x sub 50 div}
-
-\psplot[plotstyle=curve,plotpoints=200]{-750}{750}{0}
-
-\psplot[plotstyle=curve,plotpoints=200]{750}{1000}{-750 x add 50 div}
-\psplot[plotstyle=curve,plotpoints=200]{1000}{1250}{1250 x sub 50  div}
-
-\psplot[plotstyle=curve,plotpoints=200]{1250}{1500}{0}
-
-\rput(0,18){$|G(w)|$}
-\rput(520,3){$w$}
-\end{pspicture}
-\end{center}
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_16}\end{center}
 \item[f)] 
-
 \begin{eqnarray*}
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos^2(1000t)\right\}\\
 &=&\mathcal{F}\left\{f(t)\frac{\left(1+\cos(2000t)\right)}{2}\right\}\\
 &=&\frac{1}{2}F(w) + \frac{1}{4}\left[F(w-2000)+F(w+2000)\right]
 \end{eqnarray*}
-
 \begin{center}
-\psset{xunit =.002cm,yunit =.2cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-2550,-3)(2550,10)
- \psaxes[labels,Dx=500,Dy=2.5]{->}(0,0)(-2500,-1)(2530,8)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-2500}{-2250}{0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-2250}{-2000}{2250 x add 100  div}
-\psplot[plotstyle=curve,plotpoints=200]{-2000}{-1750}{-1750 x sub 100 div}
-
-\psplot[plotstyle=curve,plotpoints=200]{-1750}{-250}{0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{x 250 add 50 div}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 50 div}
-
-\psplot[plotstyle=curve,plotpoints=200]{250}{1750}{0}
-
-\psplot[plotstyle=curve,plotpoints=200]{1750}{2000}{-1750 x add 100 div}
-\psplot[plotstyle=curve,plotpoints=200]{2000}{2250}{2250 x sub 100  div}
-
-\psplot[plotstyle=curve,plotpoints=200]{2250}{2500}{0}
-
-\rput(0,9){$|G(w)|$}
-\rput(2520,2){$w$}
-\end{pspicture}
-\end{center}
-
-
-
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_17}\end{center}
 \item[g)]
 \begin{eqnarray*}
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
 &=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
 \end{eqnarray*}
-
 Veja o diagrama de magnitudes no gráfico abaixo.
-
-
 \item[h)] 
 $$g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]$$
 \begin{eqnarray*}
 \mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)-\frac{2}{3\pi}(F(w+2000)+F(w-2000))\\&-&\frac{2}{15\pi}(F(w+4000)+F(w-4000))-\frac{2}{35\pi}(F(w+6000)+F(w-6000))+\cdots
 \end{eqnarray*}
 Veja o diagrama de magnitudes no gráfico abaixo.
-
 \begin{center}
-\psset{xunit =.001cm,yunit =.3cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-7100,-3)(7300,12)
- \psaxes[labels,Dx=2000,Dy=5]{->}(0,0)(-7000,-1)(7200,8)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-7000}{-6250}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-6250}{-6000}{ 6250 x add 25 div .02 mul}
-\psplot[plotstyle=curve,plotpoints=200]{-6000}{-5750}{-5750 x sub 25 div .02 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{-5750}{-4250}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-4250}{-4000}{ 4250 x add 25 div .043 mul}
-\psplot[plotstyle=curve,plotpoints=200]{-4000}{-3750}{-3750 x sub 25 div .043 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{-3750}{-2250}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-2250}{-2000}{ 2250 x add 25 div .21 mul}
-\psplot[plotstyle=curve,plotpoints=200]{-2000}{-1750}{-1750 x sub 25 div .21 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{-1750}{-250}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{ 250 x add 25 div .64 mul}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div .64 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{250}{1750}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{1750}{2000}{ -1750 x add 25 div .21 mul}
-\psplot[plotstyle=curve,plotpoints=200]{2000}{2250}{2250 x sub 25 div .21 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{2250}{3750}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{3750}{4000}{ -3750 x add 25 div .043 mul}
-\psplot[plotstyle=curve,plotpoints=200]{4000}{4250}{4250 x sub 25 div .043 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{4250}{5750}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{5750}{6000}{ -5750 x add 25 div .02 mul}
-\psplot[plotstyle=curve,plotpoints=200]{6000}{6250}{6250 x sub 25 div .02 mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{6250}{7200}{ 0}
-
-\rput(0,9){$|G(w)|$}
-\rput(7250,1){$w$}
-\end{pspicture}
-\end{center}
-
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_18}\end{center}
 \item[i)] Usamos a propriedade \ref{prop_der} para obter
 \begin{eqnarray*}
 \mathcal{F}\{g(t)\}=iwF(w).
 \end{eqnarray*}
 Veja o diagrama de magnitudes no gráfico abaixo.
-
 \begin{center}
-\psset{xunit =.003cm,yunit =.003cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1100,-3)(1200,1150)
- \psaxes[labels,Dx=500,Dy=500]{->}(0,0)(-1000,-1)(1100,900)
-\psset{linecolor=blue}
 
-\psplot[plotstyle=curve,plotpoints=200]{-1000}{-250}{ 0}
-
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{ 250 x add 25 div x mul -1 mul}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div x mul}
-
-\psplot[plotstyle=curve,plotpoints=200]{250}{1100}{ 0}
-
-
-\rput(0,1000){$|G(w)|$}
-\rput(1100,70){$w$}
-\end{pspicture}
-\end{center}
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_19}\end{center}
 \item[j)] 
 \begin{eqnarray*}
 \mathcal{F}\{g(t)\}&=&\mathcal{F}\{f(t)\ast f(t)\}=F(w)^2 \\
 |G(w)|&=&|F(w)|^2.
 \end{eqnarray*}
 Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama de magnitudes no gráfico abaixo.
-
 \begin{center}
-\psset{xunit =.01cm,yunit =.02cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,120)
- \psaxes[labels,Dx=100,Dy=25]{->}(0,0)(-500,-1)(530,110)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{250 x add 25 div 2 exp}
-\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div 2 exp}
-\psplot[plotstyle=curve,plotpoints=200]{-500}{-250}{0}
-\psplot[plotstyle=curve,plotpoints=200]{250}{500}{0}
-\rput(10,120){$|G(w)|$}
-\rput(520,15){$w$}
-\end{pspicture}
-\end{center}
 
-
+\includegraphics{cap_propriedades_transformada/pics/figura_20}\end{center}
 \item[k)] 
 \begin{eqnarray*}
 \int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
@@ -1111,31 +718,17 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 &=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
 &=&\frac{25000}{3\pi}
 \end{eqnarray*}
-
 \item[l)] 
 \begin{eqnarray*}
 \int_{-\infty}^\infty f(t)dt&=& F(0)\\
 \left|\int_{-\infty}^\infty f(t)dt\right|&=& |F(0)|=10
 \end{eqnarray*}
-
 \end{itemize}
-
 \end{Answer}
-
 \begin{Exercise} Considere o sinal $f(t)$ associado ao seguinte diagrama de espectro:
-
 \begin{center}
-\psset{xunit =.001cm,yunit =.02cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,120)
- \psaxes[labels,Dx=1,Dy=25,dx=1000]{->}(0,0)(-6500,-1)(6500,110)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=2000]{-6500}{6500}{2.72 x 2070 sub 2 exp -6000 div exp 100 mul 2.72 x 2070 add 2 exp -6000 div exp 100 mul add 2.72 x 4140 sub 2 exp -6000 div exp 40 mul 2.72 x 4140 add 2 exp -6000 div exp 40 mul add add 2.72 x 6210 sub 2 exp -6000 div exp 70 mul 2.72 x 6210 add 2 exp -6000 div exp 70 mul add add}
 
-\rput(10,120){$|F(w)|$}
-\rput(5000,-45){$w$ (em 1000 rad/s)}
-\end{pspicture}
-\end{center}
-
+\includegraphics{cap_propriedades_transformada/pics/figura_21}\end{center}
 \begin{itemize}
 \item[a)] Calcule o valor de $\int_{-\infty}^\infty f(t) dt$.
 \item[b)] Obtenha o valor aproximado da frequência fundamental em $Hz$ e identifique a nota.
@@ -1151,43 +744,18 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 \item[a)] 0
 \item[b)] $f_f=2070 \hbox{rad/s}=329.6 \hbox{Hz}$, equivalente à nota mi.
 \item[c)] O diagrama é dada na figura abaixo.
-
 \begin{center}
-\psset{xunit =.001cm,yunit =.02cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,120)
- \psaxes[labels,Dx=1,Dy=25,dx=1000]{->}(0,0)(-6500,-1)(6500,110)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=2000]{-6500}{6500}{2.72 x 2070 sub 2 exp -6000 div exp 100 mul 2.72 x 2070 add 2 exp -6000 div exp 100 mul add 2.72 x 4140 sub 2 exp -6000 div exp 40 mul 2.72 x 4140 add 2 exp -6000 div exp 40 mul add add 2.72 x 6210 sub 2 exp -6000 div exp 70 mul 2.72 x 6210 add 2 exp -6000 div exp 70 mul add add x abs mul 5000 div}
-\rput(10,120){$|F(w)|$}
-\rput(5000,-45){$w$ (em 1000 rad/s)}
-\end{pspicture}
-\end{center}
 
-
+\includegraphics{cap_propriedades_transformada/pics/figura_22}\end{center}
 \item[d)] Idêntico ao original.
 \item[e)] Idêntico ao original.
 \item[f)] Veja o diagrama abaixo.
-
 \begin{center}
-\psset{xunit =.001cm,yunit =.02cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-510,-3)(550,120)
- \psaxes[labels,Dx=1,Dy=25,dx=1000]{->}(0,0)(-7500,-1)(7500,110)
-\psset{linecolor=blue}
-\psplot[plotstyle=curve,plotpoints=2000]{-7500}{7500}{2.72 x 1.12 div 2070 sub 2 exp -6000 div exp 100 mul 2.72 x 1.12 div  2070 add 2 exp -6000 div exp 100 mul add 2.72 x 1.12 div  4140 sub 2 exp -6000 div exp 40 mul 2.72 x 1.12 div  4140 add 2 exp -6000 div exp 40 mul add add 2.72 x 1.12 div  6210 sub 2 exp -6000 div exp 70 mul 2.72 x 1.12 div  6210 add 2 exp -6000 div exp 70 mul add add  1.12 div }
 
-\rput(10,120){$|F(w)|$}
-\rput(5000,-45){$w$ (em 1000 rad/s)}
-\end{pspicture}
-\end{center}
-
-
-
+\includegraphics{cap_propriedades_transformada/pics/figura_23}\end{center}
 \item[g)] $$a=\frac{392}{329.6}=1.19$$
 \end{itemize}
-
 \end{Answer}
-
-
 \begin{Exercise} Trace o gráfico das seguintes funções, calcule sua transformada de Fourier e trace o diagrama de magnitudes: 
 \begin{itemize}
 \item[a)] $f(t)=e^{-|t|}\cos(10t)$.
@@ -1203,34 +771,10 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 \begin{resp}
  Use o teorema da modulação. No caso c), considere $h(t)=\left[u(t-4)-u(t+4)\right]\cos(10t)$.
 \end{resp}
-
-
-
-
 \begin{Exercise} Considere uma aproximação do diagrama de espectro de magnitudes de uma nota tocada por um instrumento musical e representado por uma função $f(t)$:
 \begin{center}
-\psset{xunit =1.0cm,yunit=3.0cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1,-0.3)(7,1.3)
- \psaxes[labels,Dy=.5,Dx=100]{->}(0,0)(-.1,0.0)(5.5,1.1)
 
-\psplot[linecolor=blue,plotstyle=curve,plotpoints=1000]{0}{5}{2.72 x 1 sub x 1 sub  mul -100 mul exp 2.72 x 2 sub x 2 sub  mul -100 mul exp .5 mul add 2.72 x 3 sub x 3 sub  mul -100 mul exp .7 mul add 2.72 x 4 sub x 4 sub  mul -100 mul exp .2 mul add}
-
-
-\rput(1,-.1){$220\pi$}
-\psline[linewidth=1pt](1,-.05)(1,.05)
-\psline[linewidth=1pt](2,-.05)(2,.05)
-\psline[linewidth=1pt](3,-.05)(3,.05)
-\psline[linewidth=1pt](4,-.05)(4,.05)
-\rput(2,-.1){$440\pi$}
-\rput(3,-.1){$660\pi$}
-\rput(4,-.1){$880\pi$}
-
-
-\rput(5.5,-.1){$w$ (rad/s)}
-\rput(0.0,1.2){$|F(w)|$}
-\end{pspicture}
-\end{center}
-
+\includegraphics{cap_propriedades_transformada/pics/figura_24}\end{center}
 \begin{itemize}
  \item[a)] Identifique a frequência fundamental $w_f$ (em rad/s) e $f_f$ (em Hz).
  \item[b)] Identifique a nota musical correspondente a acelerar em $1,5$ a velocidade de reprodução do sinal.
@@ -1238,7 +782,6 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
  \item[d)] Identifique a nota musical correspondente à função $f(2t)$.
  \item[e)] Identifique a nota musical correspondente à função $g(t)=f(t)+f(2t)$. Qual a sensação fisiológica produzida?
  \end{itemize}
-
 \end{Exercise}
 \begin{Answer}
 \begin{itemize}
@@ -1248,8 +791,4 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
  \item[d)] Lá da escala 2.
  \item[e)] Lá da escala 1. Percebe-se alteração na composição harmônica da nota, isto é, identicamos como uma alteração de timbre.
  \end{itemize}
- 
 \end{Answer}
-
-
-%\end{document}

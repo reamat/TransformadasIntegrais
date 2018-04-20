@@ -1,0 +1,31 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{xunit =.01cm,yunit =.1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-510,-3)(550,30)
+ \psaxes[labels,Dx=100,Dy=5]{->}(0,0)(-500,-1)(530,15)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=200]{-250}{0}{250 x add 25 div}
+\psplot[plotstyle=curve,plotpoints=200]{0}{250}{250 x sub 25 div}
+\psplot[plotstyle=curve,plotpoints=200]{-500}{-250}{0}
+\psplot[plotstyle=curve,plotpoints=200]{250}{500}{0}
+\rput(0,18){$|F(w)|$}
+\rput(520,3){$w$}
+\end{pspicture}
+\end{document}

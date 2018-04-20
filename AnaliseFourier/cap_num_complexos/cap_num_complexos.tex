@@ -1,12 +1,8 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 \chapter{Revisão de números complexos e funções trigonométricas} %Relação de Euler
-
 \section{Funções trigonométricas}
 \begin{defn}
 Dado um número real $\theta$, $0\leq \theta<\frac{\pi}{2}$, seno de $\theta$ ($\sen(\theta)$) é definido pelo número real associado ao triângulo retângulo de ângulos $\theta$ rad, $\frac{\pi}{2}-\theta$ rad e $\frac{\pi}{2}$ rad como a razão do cateto oposto ao ângulo $\theta$ e a hipotenusa. O cosseno é a razão do cateto adjacente ao ângulo $\theta$ e a hipotenusa.
 \end{defn}
-
 \begin{defn}(Extensão das funções trigonométricas)
 \begin{itemize}
 \item[a)] Dado um número real $\theta$, $0\leq \theta<2\pi$, as funções trigonométricas são estendidas da seguinte forma:
@@ -23,11 +19,8 @@ Dado um número real $\theta$, $0\leq \theta<\frac{\pi}{2}$, seno de $\theta$ ($
 \cos(\theta+2k\pi)&=&\cos(\theta),\ k\in\mathbb{Z}\\
 \sen(\theta+2k\pi)&=&\sen(\theta),\ k\in\mathbb{Z}\\
 \end{eqnarray*}
-
 \end{itemize}
 \end{defn}
-
-
 \begin{defn}
 Dado um número real $\theta$, $0\leq \theta<2\pi$, define-se tangente de $\theta$ por
 \begin{eqnarray*}
@@ -47,7 +40,6 @@ cotangente de $\theta$ por
 \cot(\theta)&=&\frac{\cos(\theta)}{\sen(\theta)},\qquad \theta\neq 0\ \hbox{e}\ \theta\neq \pi.\\
 \end{eqnarray*}
 \end{defn}
-
 \begin{prop} Dado $x,\ y\in \mathbb{R}$, valem as seguintes afirmações:
 \begin{itemize}
 \item[a)] $\sen^2(x)+\cos^2(x)=1$
@@ -63,9 +55,6 @@ $$\sen(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k+1}}{(2k+1)!}=x-\frac{x^3}{3!}+\fra
 $$\cos(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k}}{(2k)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots $$
 \end{itemize}
 \end{prop}
-
-
-
 \section{Números complexos e fórmula de Euler}
 \begin{defn} Um número complexo é definido pelo par ordenado $(a,b)$ de números reais que satisfazem as seguintes operações de adição e multiplicação:
 \begin{eqnarray*}
@@ -82,7 +71,6 @@ O conjunto dos números complexos é denotado por $\mathbb{C}$.
 \item[d)] A representação geométrica do número $z=a+bi$ no plano complexo é dada por um plano cartesiano onde um eixo marca a parte real e o outro marca a parte imaginária (veja figura \ref{num_complexo}).
 \end{itemize}
 \end{obs}
-
 \begin{defn}Dado um número complexo $z=a+bi$, definimos módulo de $z$ ($|z|$) por $|z|=\sqrt{a^2+b^2}$. Também definimos argumento $\theta$ para $z\neq 0$ como qualquer  solução do sistema
 \begin{eqnarray}
  \cos(\theta)&=&\frac{a}{\sqrt{a^2+b^2}},\\
@@ -90,7 +78,6 @@ O conjunto dos números complexos é denotado por $\mathbb{C}$.
 \end{eqnarray}
 Observe que este sistema possui infinitas soluções. Ademais, se $\theta_1$ e $\theta_2$ são duas soluções, então diferem por um múltiplo inteiro de $2\pi$, isto é, $\theta_1-\theta_2=2n\pi$, $n$ inteiro.
 \end{defn}
-
 Observe que uma possível solução, com $-\frac{\pi}{2}<\theta\leq \frac{3\pi}{2}$ é dada por
 $$
 \theta=\left\{\begin{array}{cc}\tan^{-1}\left(\frac{b}{a}\right)&\hbox{se}\ a>0\\[5pt]
@@ -98,7 +85,6 @@ $$
 \frac{3\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b<0 \\[5pt] 
 \tan^{-1}\left(\frac{b}{a}\right)+\pi&\hbox{se}\ a<0\end{array}\right.
 $$
-
 Se desejamos $\frac{\pi}{2}\leq \theta < \frac{\pi}{2}$, podemos usar a seguinte expressão:
 $$\theta=\begin{cases}
 \tan^{-1}(\frac b a) &\text{se } a > 0, \\[5pt]
@@ -106,33 +92,14 @@ $$\theta=\begin{cases}
 \tan^{-1}(\frac b a) - \pi &\text{se } a < 0 \text{ e } b < 0, \\[5pt]
 +\frac{\pi}{2} &\text{se } a = 0 \text{ e } b > 0, \\[5pt]
 -\frac{\pi}{2} &\text{se } a = 0 \text{ e } b < 0, \\[5pt]
-%\text{undefined} &\text{if } x = 0 \text{ and } y = 0.
 \end{cases}$$
-
-
 A representação geométrica de $|z|$ e $\theta$ está na figura \ref{num_complexo}.
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.0,-1.0)(6.0,5.0)
-  \psaxes[labels=none]{->}(0,0)(-0.5,-0.5)(5.0,4.5)
-\psset{linecolor=blue}
-\psline[linecolor=blue,linewidth=2pt]{-}(0,0)(4.2,3.6)
-\psline[linecolor=blue,linewidth=1pt,linestyle=dashed]{-}(4.2,0)(4.2,3.6)
-\psline[linecolor=blue,linewidth=1pt,linestyle=dashed]{-}(0,3.6)(4.2,3.6)
-\psline[linewidth=1pt,linearc=.25](.4,.36)(.48,.26)(.55,.13)(.6,0)
-\rput(.4,4.4){Im}
-\rput(4.9,.4){Re}
-\rput(4.2,-.4){$a$}
-\rput(-.4,3.6){$b$}
-\rput(.85,.35){$\theta$}
-\rput(1.7,2.6){$|z|=\sqrt{a^2+b^2}$}
 
-\end{pspicture}
-\end{center}
+\includegraphics{cap_num_complexos/pics/figura_1}\end{center}
 \caption{\label{num_complexo}}
 \end{figure}
-
 \begin{defn}A forma trigonométrica de um número complexo $z=a+bi$ é 
 $$
 z=|z|\left(\cos(\theta)+i\sen(\theta)\right),
@@ -146,7 +113,6 @@ $$
 e^z=1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\frac{z^4}{4!}+\cdots=1+\sum_{k=1}^\infty \frac{z^k}{k!}
 $$
 \end{defn}
-
 \begin{prop}(Fórmula de Euler) Dado $\theta\in\mathbb{R}$, vale a identidade
 $$
 e^{i\theta}=\cos(\theta)+i\sen(\theta).
@@ -160,9 +126,7 @@ e^{i\theta}&=&1+i\theta+\frac{(i \theta)^2}{2!}+\frac{(i\theta)^3}{3!}+\frac{(i\
 &=&1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}+\cdots    +i\left(\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}+\cdots\right)\\
 &=&\cos(\theta)    +i\sen(\theta)
 \end{eqnarray*}
-
 \end{proof}
-
 \begin{defn}A forma exponencial de um número complexo $z=a+bi$ é 
 $$
 z=|z|e^{i\theta},
@@ -171,7 +135,6 @@ onde $|z|=\sqrt{a^2+b^2}$ é o módulo de $z$ e $\theta$ satisfazendo $a=|z|\cos
 \end{defn}
 \begin{ex}Para escrever o número $z=2-2i$ na forma exponencial, calculamos o módulo $|z|=2\sqrt{2}$ e o argumento $\theta=\frac{7\pi}{4}$ e escrevemos $z=2\sqrt{2}e^{i\frac{7\pi}{4}}$. 
 \end{ex}
-
 \begin{prob}{\label{prob_sin_euler}}Mostre que
 $$
 \sen(\theta)=\frac{e^{i\theta}-e^{-i\theta}}{2i}
@@ -192,7 +155,6 @@ e^{-i\theta}=\cos(\theta)-i\sen(\theta).
 \end{equation}
 A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a expressão para o seno e a soma delas nos dá a expressão para o cosseno.
 \end{proof}
-
 \begin{ex}Para calcular $\cos^2(\theta)$ usando as expressões do problema \ref{prob_sin_euler} fazemos o seguinte:
 \begin{eqnarray*}
 \cos^2(\theta)&=&\left(\frac{e^{i\theta}+e^{-i\theta}}{2}\right)^2\\
@@ -201,16 +163,8 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 &=&\frac{1+\frac{e^{2i\theta}+e^{-2i\theta}}{2}}{2}\\
 &=&\frac{1+\cos(2\theta)}{2}
 \end{eqnarray*}
-
 \end{ex}
-
-
-
-
-
-
 \section{Exercícios}
-
 \begin{Exercise}
 Relacione $A$ e $\theta$ com os valores conhecidos de $B$ e $C$ que satisfazem a identidade
 $$A\cos(x-\theta)=B\cos(x)+C\sen(x),~~~~\forall x\in\mathbb{R}$$
@@ -242,9 +196,6 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
  \end{itemize}
  onde $\varphi=\cos^{-1}\left(\frac{3}{5}\right)=\sen^{-1}\left(\frac{4}{5}\right)=\tan^{-1}\left(\frac{4}{3}\right)\approx 0.9272952rad $
 \end{Answer}
-
-
-
 \begin{Exercise}Escreva os seguintes números complexos na forma exponencial. Calcule também o complexo conjugado de cada um. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
 \begin{itemize}
 \item[a)] $2+3i$
@@ -269,8 +220,6 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[g)] $4e^{i\frac{3\pi}{2}}$
 \end{itemize}
 \end{Answer}
-
-
 \begin{Exercise}Escreva os seguintes números complexos na forma retangular. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
 \begin{itemize}
 \item[a)] $e^{5\pi i}$
@@ -281,7 +230,6 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[f)] $5e^{\frac{\pi}{4}i}$
 \end{itemize}
 \end{Exercise}
-
 \begin{Answer}
 \begin{itemize}
 \item[a)] $-1$
@@ -292,8 +240,6 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[f)] $\frac{5\sqrt{2}}{2}\left(1+i\right)$
 \end{itemize}
  \end{Answer}
-
-
 \begin{Exercise}Calcule e escreva na forma retangular.
 \begin{itemize}
 \item[a)] $(2-3i)(4+2i)-e^{i\pi }(2i+1)$
@@ -311,45 +257,33 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item [d)]$3-i$
 \item [e)]$\frac{3i^{2}-i^{3}}{2i-1}=\frac{-3+i}{2i-1}=1+i$
 \end{itemize}
- 
 \end{Answer}
-
-
 \begin{Exercise}Mostre a identidade 
 $$\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)$$
 diretamente a partir das identidades trigonométricas para soma de ângulos.
 \end{Exercise}
-
 \begin{Exercise}Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moîvre:
 $$\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta)$$
 \end{Exercise}
-
 \begin{Exercise}Use a identidade anterior para calcular a razão
 $$\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta)$$
 sem usar a exponencial complexa.
 \end{Exercise}
-
 \begin{Exercise}Repita os três problemas anteriores usando a exponencial complexa dada por
 $$e^{i\theta}=\cos(\theta)+i\sen(\theta).$$
 \end{Exercise}
-
-
 \begin{Exercise} Calcule
 \begin{itemize}
 \item[a)] $\frac{\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)}{\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)}$
 \item[b)] $\left[\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)\right]\left[\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)\right]^3$
 \end{itemize}
 \end{Exercise}
-
 \begin{Answer} 
 \begin{itemize}
 \item[a)] $\cos\left(\frac{\pi}{12}\right)+i\sen\left(\frac{\pi}{12}\right)$
 \item[b)] $\cos\left(\frac{3\pi}{4}\right)+i\sen\left(\frac{3\pi}{4}\right)$
 \end{itemize}
 \end{Answer}
-
-
-
 \begin{Exercise}Mostre as seguintes identidades:
 \begin{eqnarray*}
 \sen^3\theta&=&\frac{3}{4}\sen\theta-\frac{1}{4}\sen 3\theta\\
@@ -357,11 +291,9 @@ $$e^{i\theta}=\cos(\theta)+i\sen(\theta).$$
 \end{eqnarray*}
 Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  binômio de Newton 
 \end{Exercise}
-
 \begin{Exercise}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma 
 $$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
 \end{Exercise}
-
 \begin{Exercise} Deduza as seguintes identidades trigonométricas
 \begin{itemize}
 \item[a)] $\cos(x) \cos(y) = \frac {\cos(x+y) + \cos(x-y)}{2}$
@@ -369,7 +301,6 @@ $$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
 \item[c)] $\sen(x) \cos(y) = \frac {\sen(x+y) + \sen(x-y)}{2}$
 \end{itemize}
 \end{Exercise}
-
 \begin{Exercise}Calcule as seguintes integrais onde $n$ e $m$ são inteiros não negativos.
 \begin{itemize}
 \item [a)] $\int_0^{2\pi}\sen(nx)^2dx$
@@ -388,7 +319,6 @@ $$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
 \item [e)] $0$
 \end{itemize}
 \end{Answer}
-
 \begin{Exercise}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras:
 \begin{itemize}
  \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
@@ -399,9 +329,7 @@ $$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
  \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
  \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
  \end{itemize}
-
 \end{Exercise}
-
 \begin{Answer}
  \begin{itemize}
  \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
@@ -411,9 +339,6 @@ $$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
  \item [f)] Considere $e^{ix}+e^{-ix}$.
  \item [g)] Considere $e^{ix}-e^{-ix}$.
  \end{itemize}
-
 \end{Answer}
-
 \begin{Exercise} Certifique-se que você fez o exercício \ref{familiarize} cuidadosamente.
- 
 \end{Exercise}
