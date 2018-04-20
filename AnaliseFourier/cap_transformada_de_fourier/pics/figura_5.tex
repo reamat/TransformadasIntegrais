@@ -1,0 +1,46 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}  \begin{pspicture}(-4,-1.5) (4,2.7)
+ \psset{xunit=1,yunit=1}
+  \psaxes[labels=y]{->}(0,0)(-3.5,-.4)(3.5,2.3)
+			\psline[linecolor=blue,linewidth=2pt]{-}(-3,0)(-3,0.02)
+		\psline[linecolor=blue,linewidth=2pt]{-}(-2.5,0)(-2.5,0.035)
+	\psline[linecolor=blue,linewidth=2pt]{-}(-2.0,0)(-2.0,0.04)
+  \psline[linecolor=blue,linewidth=2pt]{-}(-1.5,0)(-1.5,0.1)
+	\psline[linecolor=blue,linewidth=2pt]{-}(-1,0)(-1,0.16)
+	\psline[linecolor=blue,linewidth=2pt]{-}(-.5,0)(-.5,.65)
+	\psline[linecolor=blue,linewidth=2pt]{-}(0,0)(0,1.73)
+	\psline[linecolor=blue,linewidth=2pt]{-}(.5,0)(.5,.65)
+	\psline[linecolor=blue,linewidth=2pt]{-}(1,0)(1,0.16)
+        \psline[linecolor=blue,linewidth=2pt]{-}(1.5,0)(1.5,0.1)
+	\psline[linecolor=blue,linewidth=2pt]{-}(2.0,0)(2.0,0.04)
+	\psline[linecolor=blue,linewidth=2pt]{-}(2.5,0)(2.5,0.035)
+	\psline[linecolor=blue,linewidth=2pt]{-}(3,0)(3,0.02)
+	\rput(0,2.5){$|TC_n|$}
+  \rput(3.5,-.3){$w_n$}
+	\rput(2.5,1.8){$T=4$}
+		\rput(1.0,-.3){$\pi$}
+  \rput(2.0,-.3){$2\pi$}
+	\rput(3.0,-.3){$3\pi$}
+		\rput(-1.0,-.3){$-\pi$}
+  \rput(-2.0,-.3){$-2\pi$}
+	\rput(-3.0,-.3){$-3\pi$}
+\end{pspicture}
+\end{document}

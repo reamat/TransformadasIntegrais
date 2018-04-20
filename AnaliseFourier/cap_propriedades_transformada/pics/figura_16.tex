@@ -1,0 +1,34 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{xunit =.003cm,yunit =.1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1550,-3)(1550,30)
+ \psaxes[labels,Dx=500,Dy=5]{->}(0,0)(-1500,-1)(1530,15)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=200]{-1500}{-1250}{0}
+\psplot[plotstyle=curve,plotpoints=200]{-1250}{-1000}{1250 x add 50  div}
+\psplot[plotstyle=curve,plotpoints=200]{-1000}{-750}{-750 x sub 50 div}
+\psplot[plotstyle=curve,plotpoints=200]{-750}{750}{0}
+\psplot[plotstyle=curve,plotpoints=200]{750}{1000}{-750 x add 50 div}
+\psplot[plotstyle=curve,plotpoints=200]{1000}{1250}{1250 x sub 50  div}
+\psplot[plotstyle=curve,plotpoints=200]{1250}{1500}{0}
+\rput(0,18){$|G(w)|$}
+\rput(520,3){$w$}
+\end{pspicture}
+\end{document}

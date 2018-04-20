@@ -1,9 +1,5 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 \chapter{Propriedades das Séries de Fourier}
-
 \section{Teorema de Parseval}
-
 \begin{defn} 
 Define-se a potência média de um função periódica $f(t)$ como
 $$\overline{P}_f=\frac{1}{T}\int_0^T |f(t)|^2dt$$
@@ -45,9 +41,6 @@ $$
 V_{RMS}=\sqrt{\frac{1}{T}\int_0^T V(t)^2 dt}.
 $$
 \end{obs}
-
-  
-
 \begin{teo}[Teorema de Parseval] Seja $f(t)$ uma função periódica representável por uma série de Fourier, então vale a seguinte identidade.
 \begin{equation}\label{teo_parseval} 
 \frac{1}{T}\int_0^T |f(t)|^2dt=\sum_{n=-\infty}^\infty |C_n|^2.
@@ -72,10 +65,7 @@ Substituindo esta expressão para $\overline{f(t)}$ na definição de potência 
 \begin{eqnarray*}
  \frac{1}{T}\int_0^T |f(t)|^2dt&=&\sum_{n=-\infty}^\infty\overline{C_n}C_n = \sum_{n=-\infty}^\infty|C_n|^2
  \end{eqnarray*}
- 
 \end{proof}
-
-
 \begin{ex}\label{ex_quadrada_parseval} Seja $g(t)$ um função dada no exemplo \ref{ex_quadrada}, isto é,
 \begin{eqnarray*}
 g(t)&=&-1, \ \ -1< t<0\\
@@ -85,35 +75,8 @@ g(t+2)&=&g(t),\ \ \forall t\in\mathbb{R}.
 \end{eqnarray*}
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =2cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.3,-1.3)(4.3,1.3)
- \psaxes{->}(0,0)(-1.1,-1.2)(4.2,1.2)
-\psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{-1}{0}{-1}
-\psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{0}{1}{1}
-\psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{1}{2}{-1}
-\psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{2}{3}{1}
-\psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{3}{4}{-1}
-\pscircle[linecolor=blue](0,-1){.05}
-\pscircle[linecolor=blue](0,1){.05}
-\pscircle[linecolor=blue](1,-1){.05}
-\pscircle[linecolor=blue](1,1){.05}
-\pscircle[linecolor=blue](2,-1){.05}
-\pscircle[linecolor=blue](2,1){.05}
-\pscircle[linecolor=blue](3,-1){.05}
-\pscircle[linecolor=blue](3,1){.05}
-\pscircle[linecolor=blue](-1,-1){.05}
-\pscircle[linecolor=blue](4,-1){.05}
-\psset{linecolor=blue}
-\qdisk(-1,0){.05}
-\qdisk(0,0){.05}
-\qdisk(1,0){.05}
-\qdisk(2,0){.05}
-\qdisk(3,0){.05}
-\qdisk(4,0){.05}
-\rput(.3,1.3){$y=g(t)$}
-\rput(4.1,.1){$t$}
-\end{pspicture}
-\end{center}
+
+\includegraphics{cap_propriedades_series/pics/figura_1}\end{center}
 \end{figure}
 Vimos no exemplo \ref{ex_quadrada} que sua expansão em série de Fourie é da forma:
 $$
@@ -136,58 +99,15 @@ usando a equação (\ref{serie_inv_impar}) da página \pageref{serie_inv_impar},
  \overline{P_f}=\frac{1}{2}\left(\frac{4}{\pi}\right)^2\frac{\pi^2}{8}=1
 \end{eqnarray*}
 \end{ex}
-
 \section{Fenômeno de Gibbs}
 A convergência das somas parciais da série de Fourier de uma função suave por partes em torno de um salto apresenta oscilações cujas amplitudes não convergem para zero. A convergência ponto a ponto acontece, mas se olharmos para o valor absoluto da diferença entre a função e soma parcial sempre encontramos um ponto onde esse valor é aproximadamente 8,9\% da amplitude do salto. Esse fenômeno é chamado de Fenômeno de Gibbs
-
 \begin{figure}[!ht]
 \begin{center}
-\psset{unit =2cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-1.3,-1.3)(4.3,1.3)
- \psaxes{->}(0,0)(-1.1,-1.2)(4.2,1.2)
-\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{-1}{0}{-1}
-\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{0}{1}{1}
-\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{1}{2}{-1}
-\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{2}{3}{1}
-\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=black]{3}{4}{-1}
 
-%\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=red,numpoints=400]{-1}{4}{x 180 mul sin 4 mul 3.1416 div }
-
-%\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=red,numpoints=400]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 9 div add 4 mul 3.1416 div }
-%\psplot[plotstyle=curve,linewidth=\pslinewidth,linecolor=red,numpoints=400]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=red,plotpoints=1000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=green,plotpoints=1000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=blue,plotpoints=4000]{-1}{4}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add x 180 mul 19 mul sin 19 div add x 180 mul 21 mul sin 21 div add x 180 mul 23 mul sin 23 div add x 180 mul 25 mul sin 25 div add x 180 mul 27 mul sin 27 div add x 180 mul 29 mul sin 29 div add x 180 mul 31 mul sin 31 div add 4 mul 3.1416 div }
-
-
-\rput(.3,1.3){$y=g(t)$}
-\rput(4.1,.1){$t$}
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_series/pics/figura_2}\end{center}
 \end{figure}
-
-
-
 \begin{figure}[!ht]
 \begin{center}
-\psset{yunit =2cm,xunit=20cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-.1,.75)(0.5,1.25)
- \psaxes{->,Dx=.1}(0,0)(-.01,-.8)(0.5,1.2)
 
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=red,plotpoints=1000]{0}{.5}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=green,plotpoints=1000]{0}{.5}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=blue,plotpoints=4000]{0}{.5}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add x 180 mul 19 mul sin 19 div add x 180 mul 21 mul sin 21 div add x 180 mul 23 mul sin 23 div add x 180 mul 25 mul sin 25 div add x 180 mul 27 mul sin 27 div add x 180 mul 29 mul sin 29 div add x 180 mul 31 mul sin 31 div add 4 mul 3.1416 div }
-
-\psplot[plotstyle=curve,linewidth=.4pt,linecolor=violet,plotpoints=12000]{0}{.5}{x 180 mul sin x 180 mul 3 mul sin 3 div add x 180 mul 5 mul sin 5 div add x 180 mul 7 mul sin 7 div add x 180 mul 9 mul sin 9 div add x 180 mul 11 mul sin 11 div add x 180 mul 13 mul sin 13 div add x 180 mul 15 mul sin 15 div add x 180 mul 17 mul sin 17 div add x 180 mul 19 mul sin 19 div add x 180 mul 21 mul sin 21 div add x 180 mul 23 mul sin 23 div add x 180 mul 25 mul sin 25 div add x 180 mul 27 mul sin 27 div add x 180 mul 29 mul sin 29 div add x 180 mul 31 mul sin 31 div add x 180 mul 33 mul sin 33 div add x 180 mul 35 mul sin 35 div add x 180 mul 37 mul sin 37 div add x 180 mul 39 mul sin 39 div add x 180 mul 41 mul sin 41 div add x 180 mul 43 mul sin 43 div add x 180 mul 45 mul sin 47 div add x 180 mul 41 mul sin 47 div add x 180 mul 49 mul sin 49 div add x 180 mul 51 mul sin 51 div add x 180 mul 53 mul sin 53 div add x 180 mul 55 mul sin 55 div add x 180 mul 57 mul sin 57 div add x 180 mul 59 mul sin 59 div add x 180 mul 61 mul sin 61 div add x 180 mul 63 mul sin 63 div add x 180 mul 65 mul sin 65 div add x 180 mul 67 mul sin 67 div add x 180 mul 69 mul sin 69 div add 4 mul 3.1416 div }
-
-
-\end{pspicture}
-\end{center}
+\includegraphics{cap_propriedades_series/pics/figura_3}\end{center}
 \end{figure}
-
-%\end{document}

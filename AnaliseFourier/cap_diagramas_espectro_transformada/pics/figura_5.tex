@@ -1,0 +1,33 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{algebraic,unit=1cm,linewidth=1pt}
+ \begin{pspicture}(-5.3,-3.5)(5.5,3.5)
+ \psaxes[labels=x]{->}(0,0)(-5.0,-2.5)(5.3,2.5)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve]{-5}{0}{ 1.57}
+\psplot[plotstyle=curve]{0}{5}{-1.57}
+\rput(0,2.8){$\phi(w)$}
+\rput(5.4,.3){$w$}
+\rput(.4,1.57){$\frac{\pi}{2}$}
+\rput(-.5,-1.57){$-\frac{\pi}{2}$}
+\psline[linecolor=black,linewidth=.4pt](-.14,1.57)(.14,1.57)
+\psline[linecolor=black,linewidth=.4pt](-.14,-1.57)(.14,-1.57)
+\end{pspicture}
+\end{document}

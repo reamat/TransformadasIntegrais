@@ -1,0 +1,31 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =1cm, linewidth=1\pslinewidth}
+\begin{pspicture}(-2.0,-1.0)(2.0,3.5)
+  \psaxes[labels=none]{->}(0,0)(-1.5,-0.3)(1.5,2.3)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=200]{-0.5}{0.0}{x 4 mul 2 add }
+\psplot[plotstyle=curve,plotpoints=200]{0.0}{0.5}{x 4 mul -1 mul 2 add}
+	\rput(0.0,2.5){$|F(w)|$}
+	\rput(0.5,-0.2){$w_c$}
+	\rput(-0.5,-0.18){$-w_c$}
+	\rput(1.6,0.3){$w$}
+\end{pspicture} 
+\end{document}

@@ -1,0 +1,28 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{xunit =.001cm,yunit =.02cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-510,-3)(550,120)
+ \psaxes[labels,Dx=1,Dy=25,dx=1000]{->}(0,0)(-6500,-1)(6500,110)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=2000]{-6500}{6500}{2.72 x 2070 sub 2 exp -6000 div exp 100 mul 2.72 x 2070 add 2 exp -6000 div exp 100 mul add 2.72 x 4140 sub 2 exp -6000 div exp 40 mul 2.72 x 4140 add 2 exp -6000 div exp 40 mul add add 2.72 x 6210 sub 2 exp -6000 div exp 70 mul 2.72 x 6210 add 2 exp -6000 div exp 70 mul add add x abs mul 5000 div}
+\rput(10,120){$|F(w)|$}
+\rput(5000,-45){$w$ (em 1000 rad/s)}
+\end{pspicture}
+\end{document}

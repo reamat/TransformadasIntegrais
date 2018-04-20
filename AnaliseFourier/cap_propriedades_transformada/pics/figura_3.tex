@@ -1,0 +1,34 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{algebraic,unit=1cm,linewidth=1pt}
+ \begin{pspicture}(-6.3,-4.0)(6.5,4.0)
+ \psaxes[labels=x,ticks=x]{->}(0,0)(-6.0,-3.5)(6.3,3.5)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=200]{-6}{-3.6732}{-6.28 -x/2-ATAN(x) }
+\psplot[plotstyle=curve,plotpoints=200]{-3.6732}{3.6732}{ -x/2-ATAN(x) }
+\psplot[plotstyle=curve,plotpoints=200]{3.6732}{6}{6.28+ -x/2-ATAN(x) }
+\rput(0,3.7){$\phi(w)$}
+\rput(6.4,.3){$w$}
+\rput(.4,3.14){$\pi$}
+\rput(-.5,-3.14){$-\pi$}
+\psline[linecolor=black,linewidth=.4pt](-.14,3.14)(.14,3.14)
+\psline[linecolor=black,linewidth=.4pt](-.14,-3.14)(.14,-3.14)
+\end{pspicture}
+\end{document}

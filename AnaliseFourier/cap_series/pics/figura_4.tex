@@ -1,0 +1,29 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.3,-1.5)(4.3,1.5)
+ \psaxes{->}(0,0)(-1.1,-1.2)(4.2,1.2)
+\psplot[linecolor=blue,plotstyle=curve,plotpoints=1000]{-1}{4}{180 x mul sin 1.27324 mul}
+\psplot[linecolor=green,plotstyle=curve,plotpoints=1000]{-1}{4}{180 x mul sin 1.27324 mul 540 x mul sin 0.4244 mul add }
+\psplot[linecolor=red,plotstyle=curve,plotpoints=1000]{-1}{4}{180 x mul sin 1.27324 mul 540 x mul sin 0.4244 mul add 900 x mul sin 0.2547 mul add}
+\psplot[linecolor=black,plotstyle=curve,plotpoints=1000]{-1}{4}{180 x mul sin 1.27324 mul 540 x mul sin 0.4244 mul add 900 x mul sin 0.2547 mul add 1260 x mul sin 0.1819 mul add}
+\rput(4.1,.1){$t$}
+\end{pspicture}
+\end{document}

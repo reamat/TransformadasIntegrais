@@ -1,0 +1,48 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =2cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.3,-.3)(4.3,1.3)
+ \psaxes{->}(0,0)(-1.1,-.1)(4.2,1.1)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve]{-1}{0}{1 x add}
+\psplot[plotstyle=curve]{0}{1}{x}
+\psplot[plotstyle=curve]{1}{2}{x 1 sub}
+\psplot[plotstyle=curve]{2}{3}{x 2 sub}
+\psplot[plotstyle=curve]{3}{4}{x 3 sub}
+\pscircle(-1,0){.05}
+\pscircle(0,1){.05}
+\pscircle(0,0){.05}
+\pscircle(1,1){.05}
+\pscircle(1,0){.05}
+\pscircle(2,1){.05}
+\pscircle(2,0){.05}
+\pscircle(3,1){.05}
+\pscircle(3,0){.05}
+\pscircle(4,1){.05}
+\pscircle(4,0){.05}
+\qdisk(0,0.5){.03}
+\qdisk(1,0.5){.03}
+\qdisk(2,0.5){.03}
+\qdisk(3,0.5){.03}
+\qdisk(4,0.5){.03}
+\rput(.3,1.3){$y=h(t)$}
+\rput(4.1,.1){$t$}
+\end{pspicture}
+\end{document}
