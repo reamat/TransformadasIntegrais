@@ -1,11 +1,11 @@
 \chapter{Propriedades da transformada de Fourier}
 \section{Propriedades}
-\begin{propr}[Linearidade ou superposição]\label{prop_linear}
+\begin{prop}[Linearidade ou superposição]\label{prop_linear}
 Dadas duas funções $f(t)$ e $g(t)$ com transformadas de Fourier $F(w)$ e $G(w)$, respectivamente, e $\alpha$ e $\beta$ duas constantes reais ou complexas, então
 $$
 \mathcal{F}\left\{\alpha f(t)+\beta g(t)\right\}=\alpha \mathcal{F}\{ f(t)\}+\beta\mathcal{F}\{ g(t)\}=\alpha F(w)+\beta G(w)
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 O resultado é direto da linearidade da integral:
 \begin{eqnarray*}
@@ -20,14 +20,14 @@ $$
 \mathcal{F}\left\{5 f(t)-3 g(t)\right\}=5 \frac{2}{w^2+1}-3e^{-w^2}
 $$
 \end{ex}
-\begin{propr}[Transformada da derivada]{\label{prop_der}} Dada uma função diferenciável $f(t)$ tal que 
+\begin{prop}[Transformada da derivada]{\label{prop_der}} Dada uma função diferenciável $f(t)$ tal que 
 $$\lim_{t\to \pm \infty}f(t)=0
 $$
 e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\{f'(t)\}=iw F(w)
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 De fato, usando integração por partes, temos
 \begin{eqnarray*}
@@ -72,19 +72,19 @@ De modo geral,
 \mathcal{F}\{f^{(n)}(t)\}=(iw)^nF(w).
 \end{eqnarray*}
 \end{obs}
-\begin{prob}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
+\begin{exer}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
 \begin{figure}[!ht]
 \begin{center}
 
 \includegraphics{cap_propriedades_transformada/pics/figura_1}\end{center}
 \caption{\label{fig_graf_1}}
 \end{figure}
-\end{prob}
-\begin{propr}[Deslocamento no eixo $w$]\label{prop_desl_w} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\end{exer}
+\begin{prop}[Deslocamento no eixo $w$]\label{prop_desl_w} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{e^{at}f(t)\right\}=F(w+ia).
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -121,11 +121,11 @@ Veja os diagramas de espectro de $G(w)$ quando $a=b=1$ na figura \ref{diag_espec
 \caption{\label{diag_espec_trans_4}}
 \end{figure}
 \end{ex}
-\begin{propr}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{prop}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{f(t-a)\right\}=e^{-iaw}F(w).
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -143,11 +143,11 @@ $$
 \end{ex}
 \begin{obs} Um deslocamento real no tempo não altera o módulo da transformada de Fourier, pois $|e^{-iaw}|=1$ sempre que $a$ e $w$ são reais.
 \end{obs}
-\begin{propr}[Transformada da integral]\label{prop_int} Dada uma função integrável $f(t)$ tal que sua transformada de Fourier $F(w)$ satisfaça $F(0)=0$, então
+\begin{prop}[Transformada da integral]\label{prop_int} Dada uma função integrável $f(t)$ tal que sua transformada de Fourier $F(w)$ satisfaça $F(0)=0$, então
 $$
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau \right\}=\frac{1}{iw}F(w).
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 Definimos $g(t)=\int_{-\infty}^t f(\tau)d\tau$ e, usando o teorema fundamental do cálculo, temos $g'(t)=f(t)$. Aplicamos a transformada de Fourier na igualdade e temos:
 $$
@@ -178,12 +178,12 @@ $$
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau\right\}=\frac{1}{iw}F(w).
 $$
 \end{proof}
-\begin{propr}[Teorema da modulação]\label{prop_mod}  Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{prop}[Teorema da modulação]\label{prop_mod}  Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \mathcal{F}\left\{f(t)\cos(w_0t) \right\}=\frac{1}{2}F(w-w_0)+\frac{1}{2}F(w+w_0),
 $$
 para $w_0\in\mathbb{R}$.
-\end{propr}
+\end{prop}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -200,7 +200,7 @@ De fato,
 &=&\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}
 \end{eqnarray*}
 \end{ex}
-\begin{propr} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
+\begin{prop} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
 \begin{itemize}
 \item[a)] (Convolução no tempo)
 $$\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),$$
@@ -213,7 +213,7 @@ onde $*$ indica a convolução de duas funções:
 $$
 (f_1*f_2)(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 \begin{itemize}
 \item[a)] Usando as definições de transformada de Fourier e convolução de duas funções, temos:
@@ -265,11 +265,11 @@ $$
 H(w)=F(w)G(w)=-iwa\frac{\sqrt{\pi}}{w^2+a^2}e^{-\frac{w^2}{4}}
 $$
 \end{ex}
-\begin{propr}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{prop}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
 $$
 \overline{F(w)}=F(-w)
 $$
-\end{propr}
+\end{prop}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -291,8 +291,8 @@ $$
 \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
 $$
 \end{ex}
-\begin{propr}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então $$\mathcal{F}\left\{f(-t)\right\}=F(-w).$$
-\end{propr}
+\begin{prop}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então $$\mathcal{F}\left\{f(-t)\right\}=F(-w).$$
+\end{prop}
 \begin{proof}
 \begin{eqnarray*}
 \mathcal{F}\left\{f(-t)\right\}=\int_{-\infty}^\infty f(-t) e^{-iwt}dt
@@ -306,11 +306,11 @@ procedemos com a mudança de variáveis $\tau=-t$:
 &=&F(-w)
 \end{eqnarray*}
 \end{proof}
-\begin{propr}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+\begin{prop}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 $$
 f(-w)=\frac{1}{2\pi}\mathcal{F}\{F(t)\}
 $$
-\end{propr}
+\end{prop}
 \begin{proof} Da definição de transformada de Fourier, temos
 $$
 f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(w)e^{iwt}dw
@@ -324,11 +324,11 @@ $$
 f(-w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{-itw}dt=\frac{1}{2\pi}\mathcal{F}\{F(t)\}.
 $$
 \end{proof}
-\begin{propr}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+\begin{prop}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 $$
 \mathcal{F}\{f(at)\}=\frac{1}{|a|}F\left(\frac{w}{a}\right),~~ \forall a\neq 0.
 $$
-\end{propr}
+\end{prop}
 \begin{proof} Da definição de transformada de Fourier, temos
 $$
 \mathcal{F}\{f(at)\}=\int_{-\infty}^{\infty} f(at)e^{-iwt}dt
@@ -354,9 +354,9 @@ Em ambos os casos, temos:
 \end{proof}
 \begin{obs} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
 \end{obs}
-\begin{propr}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
+\begin{prop}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
 $$\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw$$
-\end{propr}
+\end{prop}
 \begin{proof}
 Partimos da representação de $f(t)$ em sua integral de Fourier:
 \begin{eqnarray*}
@@ -401,12 +401,12 @@ Portanto,
 \frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw=\frac{4a^2}{\pi}\frac{\pi}{4a^3}=\frac{1}{a}.
 \end{eqnarray*}
 \end{ex}
-\begin{propr}[Princípio da Incerteza*]\label{prop_princ_incert} Seja $f(t)$ uma função real que satisfaz $\lim_{t\to\pm\infty}f(t)=0$ e $F(w)=\mathcal{F}\{f(t)\}$ sua transformada de Fourier. Então vale a seguinte estimativa:
+\begin{prop}[Princípio da Incerteza*]\label{prop_princ_incert} Seja $f(t)$ uma função real que satisfaz $\lim_{t\to\pm\infty}f(t)=0$ e $F(w)=\mathcal{F}\{f(t)\}$ sua transformada de Fourier. Então vale a seguinte estimativa:
 \begin{eqnarray*}
 \int_{-\infty}^\infty  | tf(t)|^2dt\cdot \int_{-\infty}^\infty \left|w F(w)\right|^2dw\geq \frac{\pi}{2}
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
-\end{propr}
+\end{prop}
 \begin{proof}
 Primeiro observamos que
 \begin{eqnarray*}
