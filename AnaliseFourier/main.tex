@@ -45,13 +45,30 @@
 \include{./apendice/apendice}
 
 
-\chapter*{Resposta dos Exercícios}
-\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
-Recomendamos ao leitor o uso criterioso das respostas aqui apresentadas. Devido a ainda muito constante atualização do livro, as respostas podem conter imprecisões e erros.
-\shipoutAnswer  
+%resposta dos exercícios
+\ifishtml
+\else
+\include{respostas}
+\fi
 
-\bibliographystyle{acm}
-\bibliography{bib}
+%references
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{main}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\fancyhead[RE]{Análise de Fourier}
+\fancyhead[LO]{REFERÊNCIAS BIBLIOGRÁFICAS}
+\fancyhead[LE,RO]{\thepage}
+
+\ifishtml
+\else
+\clearpage
+\addcontentsline{toc}{chapter}{Índice Remissivo}
+\fancyhead[RE]{Análise de Fourier}
+\fancyhead[LO]{ÍNDICE REMISSIVO}
+\fancyhead[LE,RO]{\thepage}
+\printindex
+\fi
 
 
 \end{document} 
