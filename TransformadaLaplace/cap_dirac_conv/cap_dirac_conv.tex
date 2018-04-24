@@ -382,7 +382,7 @@ onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau\left(\cos(t-
 \end{ex}
 \begin{exer}Mostre que $f*g=g*f$.
 \end{exer}
-\begin{prop}{\label{prop_conv}}Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
+\begin{teo}{\label{prop_conv}}(Propriedade da convolução) Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
 \begin{equation}{\label{eq_prop_conv}}
  \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
 \end{equation}
@@ -390,7 +390,7 @@ ou
 \begin{equation}{\label{eq_inv_prop_conv}}
  \mathcal{L}^{-1}\{F(s)G(s)\}=(f*g)(t).
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}Partimos da definição das transformadas:
 $$
 F(s)=\mathcal{L}\{f(t) \}=\int_0^\infty f(t)e^{-st}dt
