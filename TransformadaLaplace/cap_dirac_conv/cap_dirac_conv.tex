@@ -79,15 +79,89 @@ A transformada de Laplace de função Delta de Dirac é obtido pela propriedade 
 \begin{equation}{\label{prop_trans_delta_dirac}}
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
-\begin{exer}Resolva o seguinte problema de valor inicial:
-\begin{equation}\left\{\begin{array}{l}
+
+\subsection*{Exercícios}%Delta
+
+\begin{exer}
+Encontre
+\begin{itemize}
+  \item[a)] $\displaystyle \mathcal{L} \big\{ t u(t-1) + t^2 \delta(t-1) \big\}$
+  \item[b)] $\displaystyle \mathcal{L} \big\{ (\cos t) ( \ln t ) \delta(t-\pi) \big\}$
+  \item[c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+  \item[a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
+  \item[b)] $\displaystyle -e^{-\pi s} \ln \pi $
+  \item[c)] $\displaystyle e^{1-s}$
+  \end{itemize}
+\end{resp}
+\begin{exer}
+Calcule a solução dos seguintes problemas de valor inicial:
+\begin{itemize}
+  \item[a)] $\displaystyle \left\{
+                              \begin{array}{ll}
+                                y'' + 2y'+2y = \delta(t-\pi)\\
+                                y(0) = 1, \quad y'(0)=0
+                              \end{array}
+                            \right.
+  $
+  \item[b)] $\displaystyle \left\{
+                              \begin{array}{ll}
+                                y'' + 3y'+2y = \delta(t-5) - u(t-10)\\
+                                y(0) = 0, \quad y'(0)=1/2
+                                \end{array}
+                            \right.
+  $
+  \item[c)] $\displaystyle \left\{
+                              \begin{array}{ll}
+                                y'' + y = \delta(t-2\pi)\\
+                                y(0) = 0, \quad y'(0)=1
+                              \end{array}
+                            \right.
+  $
+  \item[d)] $ \displaystyle \left\{\begin{array}{l}
    y''-2y'=1+\delta(t-2)\\
    y(0)=0\\
    y'(0)=1
   \end{array}\right.
- \end{equation}
+ $
+  
+\end{itemize}
 \end{exer}
-\section{Aplicação: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
+\begin{resp}
+\begin{itemize}
+  \item[a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
+  \item[b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
+  \item[c)] $\displaystyle y(t) = \sen t + \sen(t-2\pi) u(t-2\pi)$
+\end{itemize}
+\end{resp}
+\begin{exer}{\label{ex_delta_dirac0}} Considere as funções $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
+\begin{eqnarray*}
+ f_\varepsilon(t)&=&\left\{\begin{array}{ll}
+			    \frac{t}{\varepsilon^2}, ~~ &0\leq t < \varepsilon\\~\\
+			    \frac{2\varepsilon-t}{\varepsilon^2}, ~~ &\varepsilon\leq t < 2\varepsilon\\~\\
+			    0,&t\geq 2\varepsilon
+			    \end{array}
+\right.\\~\\
+g_\varepsilon(t)&=&\left\{\begin{array}{ll}
+			    \frac{1}{\varepsilon^2}, ~~ &0\leq t < \varepsilon\\~\\
+			    -\frac{1}{\varepsilon^2}, ~~ &\varepsilon< t < 2\varepsilon\\~\\
+			    0,&t>2\varepsilon
+			    \end{array}
+\right.
+\end{eqnarray*}
+onde $\varepsilon$ é um parâmetro positivo.
+\begin{itemize}
+  \item [a)] Esboce sob o mesmo plano cartesiano o gráfico da função $f_\varepsilon$ para $\varepsilon=1$, $\varepsilon=\frac{1}{2}$ e $\varepsilon=\frac{1}{4}$. Faça o mesmo em outro plano cartesiano para a função $g_\varepsilon(t)$. Lembre de indicar os eixos e pontos notáveis (ex. pontos de zero e máximo)
+  \item [b)] Calcule as transformada de Laplace, $F_\varepsilon(s)=\mathcal{L}\left\{f_\varepsilon(t)\right\}$ e $G_\varepsilon(s)=\mathcal{L}\left\{g_\varepsilon(t)\right\}$. Aqui $\varepsilon$ é um parâmetro positivo genérico.
+\item [c)] Estude o comportamento das funções $f_\varepsilon(t)$, $g_\varepsilon(t)$, $F_\varepsilon(s)$ e $G_\varepsilon(s)$ no limite $\varepsilon\to 0+$. Discuta os resultados obtidos analisando as função no domínio tempo e no domínio frequência (s). Qual a relação que se observa entre $f_\varepsilon(t)$ e $g_\varepsilon(t)$ e entre suas transformadas de Laplace?
+\end{itemize}
+\end{exer}
+
+
+\section{Aplicação: circuito RLC}{\label{sec_circ_2}}
 Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
 \begin{equation}
 V(t)=V_0\left(u(t-a)-u(t-b)\right).
@@ -171,6 +245,105 @@ O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_3}.
 \caption{\label{fig_circ_RCL_3}}
 \end{figure}
 \end{itemize}
+
+\subsection*{Exercícios}
+\begin{exer}
+Um capacitor de capacitância $C$ está inicialmente carregado de forma que seu potencial seja $V_0$. A partir de $t=0$, o capacitor se descarrega através de um resistor de resistência $R$ (veja figura \ref{circ_1}). Use o método da transformada de Laplace para encontrar a carga $q(t)$ no capacitor.
+\begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{cap_dirac_conv/pics/figura_14}\end{center}
+\caption{\label{circ_1}}
+\end{figure}
+\end{exer}
+\begin{resp}
+ $\displaystyle q(t) = C V_0 e^{-t/RC}$
+\end{resp}
+\begin{exer}
+Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
+\begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{cap_dirac_conv/pics/figura_15}\end{center}
+\caption{\label{circ_2}}
+\end{figure}
+\end{exer}
+\begin{resp}
+ $\displaystyle i(t) = \sen t - \sen(t-a) u(t-a)$
+\end{resp}
+\begin{exer}
+Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
+\begin{equation}
+V(t) = \left\{
+                                               \begin{array}{ll}
+                                                 1, & \hbox{se } t\in (0,2) \\
+                                                 0, & \hbox{se } t>2
+                                               \end{array}
+                                             \right.
+\end{equation}
+\begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{cap_dirac_conv/pics/figura_16}\end{center}
+\caption{\label{circ_3}}
+\end{figure} 
+\end{exer}
+\begin{resp}
+ $\displaystyle i(t) = e^{-t}\sen t - u(t-2)  e^{2-t} \sen (t-2)$
+\end{resp}
+\begin{exer}
+Dada a equação do movimento de um oscilador harmônico simples (OHS)
+\begin{equation}\label{ohs}
+-k y(t) - \gamma y'(t) + f = my''(t),
+\end{equation}
+calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
+\begin{itemize}
+  \item[a)] $\displaystyle f(t) = \left\{
+                                         \begin{array}{ll}
+                                           1, & \hbox{ se } t\in [1,2] \\
+                                           0, & \hbox{caso contrário}
+                                         \end{array}
+                                       \right.
+  $
+  \item[b)] $\displaystyle f(t) = \delta (t-1)$
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+\item[a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
+  \item[b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
+\end{itemize}
+\end{resp}
+\begin{exer}
+Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial associada \eqref{ohs}. Suponha que este oscilador está sujeito a uma força externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
+\begin{itemize}
+  \item[a)] Use o método da transformada de Laplace para calcular as oscilações forçadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
+  \item[b)] Como se comporta o gráfico destas oscilações? Que fenômeno físico você identifica?
+\end{itemize}
+\end{exer}
+\begin{resp}
+ $\displaystyle \frac{F_0}{2k} \big[ \sen(\sqrt{k/m}t) - \sqrt{k/m}t \cos(\sqrt{k/m}t) \big] $
+\end{resp}
+
+\begin{exer}
+A equação do movimento de um OHS não amortecido sujeito a oscilações forçadas pode ser escrita como
+\begin{equation}
+y''(t) + \omega^2 y(t) = r(t), \quad \hbox{ onde } \ \omega= \sqrt{\frac{k}{m}} \ \hbox{ e } \ r(t) = \frac{f(t)}{m}.
+\end{equation}
+\begin{itemize}
+  \item[a)] Pelo método da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
+  \item[b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+   \item[a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
+  \item[b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
+\end{itemize}
+\end{resp}
+
+
+
 \section{Aplicação: cálculo da deflexão em vigas sujeitas a cargas concentradas}
 Considere uma viga elástica horizontal de comprimento $L$ sob a ação de forças verticais. Colocamos o eixo horizontal $x$ com origem no extremo a esquerda da viga e, portanto, $x=L$ é o outro extremo. Supomos que a viga está sujeita a uma carga $W(x)$ que provoca uma deflexão em cada ponto $x\in[0,L]$. Então, para pequenas deflexões podemos aproximar a curvatura $k(x)$ pela variação instantânea de $\theta(x)$, onde $\theta(x)$ é o ângulo entre o eixo $x$ e a tangente, ou seja, 
 \begin{equation}{\label{def_viga01}}
@@ -261,6 +434,10 @@ o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figur
 \includegraphics{cap_dirac_conv/pics/figura_11}\end{center}
 \caption{\label{viga}}
 \end{figure}
+
+%\subsection*{Exercícios}
+
+
 \section{Aplicação: metabolismo de uma medicação}
 Durante um período de consumo de uma medicação, a concentração da substância ingerida na corrente sanguinea evolui segundo um modelo simples da seguinte forma:
 \begin{itemize}
@@ -311,6 +488,9 @@ e
 \end{eqnarray*}
 que possuem diferença igual a $c_0$. 
 Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
+
+
+
 \section{Problemas na origem}\label{problemas_na_origem}
 Para entender melhor esse fenômeno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
 \begin{equation*}
@@ -367,6 +547,24 @@ Ou seja, existe uma pequena região de transição entre $0$ e $\varepsilon$ ond
 \includegraphics{cap_dirac_conv/pics/figura_13} \end{center}
 \caption{\label{concentracao_2}}
  \end{figure}
+ 
+ \subsection*{Exercícios}
+\begin{exer}
+Considere o seguinte problema de valor inicial:
+ \begin{eqnarray*}
+x'(t)&=&- x(t) -2 y(t)+\delta(t)\\
+y'(t)&=& x(t) - y(t)+\delta(t),
+\end{eqnarray*}
+com $x(0)=0$ e $y(0)=0$.\\
+ \indent  {a)}  Aplique o método de transformada de Laplace e escreva $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$ nos espaços abaixo.
+ 
+\indent  {b)}  Calcule as transformadas inversas e escreva $x(t)$ e $y(t)$ abaixo.
+
+\indent  {c)} Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.\\
+
+\end{exer}
+
+
 \section{Propriedade da convolução}
 Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f$ e $g$ denotada por $f*g$ é definida pela integral
 \begin{equation}{\label{def_conv}}
@@ -380,8 +578,6 @@ Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f
 \end{eqnarray*}
 onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau\left(\cos(t-\tau)-\sen(t-\tau)  \right)+\ \!$constante.
 \end{ex}
-\begin{exer}Mostre que $f*g=g*f$.
-\end{exer}
 \begin{teo}{\label{prop_conv}}(Propriedade da convolução) Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
 \begin{equation}{\label{eq_prop_conv}}
  \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
@@ -451,112 +647,9 @@ Agora, vamos mudar a ordem de integração na região que é a metade inferior d
  y(t)=4\cosh(3t)
  \end{equation}
 \end{ex}
-\begin{exer}Resolva a seguinte equação integral:
-\begin{equation}
-y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
-\end{equation}
-\end{exer}
-\section{Exercícios}
-\begin{Exercise}{\label{ex_delta_dirac0}} Considere as funções $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
-\begin{eqnarray*}
- f_\varepsilon(t)&=&\left\{\begin{array}{ll}
-			    \frac{t}{\varepsilon^2}, ~~ &0\leq t < \varepsilon\\~\\
-			    \frac{2\varepsilon-t}{\varepsilon^2}, ~~ &\varepsilon\leq t < 2\varepsilon\\~\\
-			    0,&t\geq 2\varepsilon
-			    \end{array}
-\right.\\~\\
-g_\varepsilon(t)&=&\left\{\begin{array}{ll}
-			    \frac{1}{\varepsilon^2}, ~~ &0\leq t < \varepsilon\\~\\
-			    -\frac{1}{\varepsilon^2}, ~~ &\varepsilon< t < 2\varepsilon\\~\\
-			    0,&t>2\varepsilon
-			    \end{array}
-\right.
-\end{eqnarray*}
-onde $\varepsilon$ é um parâmetro positivo.
-\begin{itemize}
-  \item [a)] Esboce sob o mesmo plano cartesiano o gráfico da função $f_\varepsilon$ para $\varepsilon=1$, $\varepsilon=\frac{1}{2}$ e $\varepsilon=\frac{1}{4}$. Faça o mesmo em outro plano cartesiano para a função $g_\varepsilon(t)$. Lembre de indicar os eixos e pontos notáveis (ex. pontos de zero e máximo)
-  \item [b)] Calcule as transformada de Laplace, $F_\varepsilon(s)=\mathcal{L}\left\{f_\varepsilon(t)\right\}$ e $G_\varepsilon(s)=\mathcal{L}\left\{g_\varepsilon(t)\right\}$. Aqui $\varepsilon$ é um parâmetro positivo genérico.
-\item [c)] Estude o comportamento das funções $f_\varepsilon(t)$, $g_\varepsilon(t)$, $F_\varepsilon(s)$ e $G_\varepsilon(s)$ no limite $\varepsilon\to 0+$. Discuta os resultados obtidos analisando as função no domínio tempo e no domínio frequência (s). Qual a relação que se observa entre $f_\varepsilon(t)$ e $g_\varepsilon(t)$ e entre suas transformadas de Laplace?
-\end{itemize}
-\end{Exercise}
-\begin{Exercise}
-Um capacitor de capacitância $C$ está inicialmente carregado de forma que seu potencial seja $V_0$. A partir de $t=0$, o capacitor se descarrega através de um resistor de resistência $R$ (veja figura \ref{circ_1}). Use o método da transformada de Laplace para encontrar a carga $q(t)$ no capacitor.
-\begin{figure}[!ht]
-\begin{center}
 
-\includegraphics{cap_dirac_conv/pics/figura_14}\end{center}
-\caption{\label{circ_1}}
-\end{figure}
-\end{Exercise}
-\begin{resp}
- $\displaystyle q(t) = C V_0 e^{-t/RC}$
-\end{resp}
-\begin{Exercise}
-Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
-\begin{figure}[!ht]
-\begin{center}
-
-\includegraphics{cap_dirac_conv/pics/figura_15}\end{center}
-\caption{\label{circ_2}}
-\end{figure}
-\end{Exercise}
-\begin{resp}
- $\displaystyle i(t) = \sen t - \sen(t-a) u(t-a)$
-\end{resp}
-\begin{Exercise}
-Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
-\begin{equation}
-V(t) = \left\{
-                                               \begin{array}{ll}
-                                                 1, & \hbox{se } t\in (0,2) \\
-                                                 0, & \hbox{se } t>2
-                                               \end{array}
-                                             \right.
-\end{equation}
-\begin{figure}[!ht]
-\begin{center}
-
-\includegraphics{cap_dirac_conv/pics/figura_16}\end{center}
-\caption{\label{circ_3}}
-\end{figure} 
-\end{Exercise}
-\begin{resp}
- $\displaystyle i(t) = e^{-t}\sen t - u(t-2)  e^{2-t} \sen (t-2)$
-\end{resp}
-\begin{Exercise}
-Dada a equação do movimento de um oscilador harmônico simples (OHS)
-\begin{equation}\label{ohs}
--k y(t) - \gamma y'(t) + f = my''(t),
-\end{equation}
-calcule a resposta $y(t)$ deste oscilador sujeito a forças externas $f$ do tipo dado abaixo. Considere $m=1$, $k=2$, $\gamma =3$, $y(0)=0$ e $y'(0)=0$.
-\begin{itemize}
-  \item[a)] $\displaystyle f(t) = \left\{
-                                         \begin{array}{ll}
-                                           1, & \hbox{ se } t\in [1,2] \\
-                                           0, & \hbox{caso contrário}
-                                         \end{array}
-                                       \right.
-  $
-  \item[b)] $\displaystyle f(t) = \delta (t-1)$
-\end{itemize}
-\end{Exercise}
-\begin{resp}
-\begin{itemize}
-\item[a)] $\displaystyle y(t) = \frac{1}{2}\big[ 1 -2 e^{1-t} + e^{2-2t} \big]u(t-1) - \frac{1}{2}\big[ 1 - 2 e^{2-t} + e^{4 - 2t} \big]$
-  \item[b)] $\displaystyle y(t) = \big[ e^{1-t} - e^{2-2t}\big] u(t-1)$
-\end{itemize}
-\end{resp}
-\begin{Exercise}
-Considere um OHS não amortecido, isto é, $\gamma = 0$ na equação diferencial associada \eqref{ohs}. Suponha que este oscilador está sujeito a uma força externa dada por $f = F_0 \sen \left( \sqrt{k/m} t\right)$.
-\begin{itemize}
-  \item[a)] Use o método da transformada de Laplace para calcular as oscilações forçadas $y(t)$, sabendo que $y(0) = 0$ e $y'(0)=0$.
-  \item[b)] Como se comporta o gráfico destas oscilações? Que fenômeno físico você identifica?
-\end{itemize}
-\end{Exercise}
-\begin{resp}
- $\displaystyle \frac{F_0}{2k} \big[ \sen(\sqrt{k/m}t) - \sqrt{k/m}t \cos(\sqrt{k/m}t) \big] $
-\end{resp}
-\begin{Exercise}
+\subsection*{Exercícios}%convolução
+\begin{exer}
 Encontre por integração:
 \begin{itemize}
   \item[a)] $1\ast 1$
@@ -564,7 +657,7 @@ Encontre por integração:
   \item[c)] $1\ast \cos(\omega t)$
   \item[d)] $e^{kt}\ast e^{-kt}$
 \end{itemize}
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle t$
@@ -573,40 +666,7 @@ Encontre por integração:
   \item[d)] $\displaystyle \frac{1}{2k} (e^{kt} - e^{-kt}) = \frac{1}{k}\senh (k t)$
 \end{itemize}
 \end{resp}
-\begin{Exercise}
-Achar a solução dos seguintes problemas de valor inicial:
-\begin{itemize}
-  \item[a)] $\displaystyle \left\{
-                              \begin{array}{ll}
-                                y'' + 2y'+2y = \delta(t-\pi)\\
-                                y(0) = 1, \quad y'(0)=0
-                              \end{array}
-                            \right.
-  $
-  \item[b)] $\displaystyle \left\{
-                              \begin{array}{ll}
-                                y'' + 3y'+2y = \delta(t-5) - u(t-10)\\
-                                y(0) = 0, \quad y'(0)=1/2
-                                \end{array}
-                            \right.
-  $
-  \item[c)] $\displaystyle \left\{
-                              \begin{array}{ll}
-                                y'' + y = \delta(t-2\pi)\\
-                                y(0) = 0, \quad y'(0)=1
-                              \end{array}
-                            \right.
-  $
-\end{itemize}
-\end{Exercise}
-\begin{resp}
-\begin{itemize}
-  \item[a)] $\displaystyle y(t) = e^{-t} \sen t + e^\pi e^{-t} \sen (t-\pi) u (t-\pi)  + e^{-t} \cos t  = e^{-t} \sen t \big( 1 - e^\pi u (t-\pi) \big)  + e^{-t} \cos t$
-  \item[b)] $\displaystyle y(t) = \frac{1}{2} ( e^{-t} - e^{-2t} ) +  ( e^{5-t} - e^{10-2t} )u(t-5) - \frac{1}{2} (1 - 2e^{10-t} + e^{20-2t} )u(t-10)$
-  \item[c)] $\displaystyle y(t) = \sen t + \sen(t-2\pi) u(t-2\pi)$
-\end{itemize}
-\end{resp}
-\begin{Exercise}
+\begin{exer}
 Justifique as seguintes propriedades da operação de convolução:
 \begin{itemize}
   \item[a)] $f\ast g = g \ast f$
@@ -615,7 +675,7 @@ Justifique as seguintes propriedades da operação de convolução:
   \item[d)] $(\delta\ast f)(t) = f(t)$
 \end{itemize}
 {\it [Dica: cuidado para não confundir as variáveis de integração que aparecerão no item (b).}
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
   \item[a)] 
@@ -638,29 +698,19 @@ Justifique as seguintes propriedades da operação de convolução:
   onde se fez a mudança $v=\tau-u$, $dv=d\tau$.
 \end{itemize}
 \end{resp}
-\begin{Exercise}
-A equação do movimento de um OHS não amortecido sujeito a oscilações forçadas pode ser escrita como
+
+\begin{exer}Resolva a seguinte equação integral:
 \begin{equation}
-y''(t) + \omega^2 y(t) = r(t), \quad \hbox{ onde } \ \omega= \sqrt{\frac{k}{m}} \ \hbox{ e } \ r(t) = \frac{f(t)}{m}.
+y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
 \end{equation}
-\begin{itemize}
-  \item[a)] Pelo método da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
-  \item[b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
-\end{itemize}
-\end{Exercise}
-\begin{resp}
-\begin{itemize}
-   \item[a)] $\displaystyle F(s) = \frac{sy(0)+y'(0)}{s^2 + w^2} + \frac{R(s)}{s^2 + w^2}$
-  \item[b)] $\displaystyle y(t) = y(0) \cos (\omega t) + \frac{y'(0) \sen (\omega t)}{\omega} + \frac{\sen (\omega t)}{\omega} \ast r(t)$
-\end{itemize}
-\end{resp}
-\begin{Exercise}
+\end{exer}
+\begin{exer}
 Use o Teorema da Convolução para calcular \begin{equation}\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).\end{equation}
-\end{Exercise}
+\end{exer}
 \begin{resp}
  $\displaystyle \frac{1}{2} \big[ \sen t - \cos t + e^{-t} \big] $
 \end{resp}
-\begin{Exercise}
+\begin{exer}
 Use o Teorema da Convolução para resolver as seguintes equações integrais:
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = 1 + \int_0^t y(\tau) \ d\tau$
@@ -668,7 +718,7 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
   \item[c)] $\displaystyle y(t) = te^{t} -2 e^t \int_0^t e^{-\tau} y(\tau) \ d\tau$
   \item[d)] $\displaystyle y(t) = 1 - \senh t + \int_0^t (1+ \tau )y(t- \tau) \ d\tau$
 \end{itemize}
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle y(t) = e^{t}$
@@ -676,19 +726,4 @@ Use o Teorema da Convolução para resolver as seguintes equações integrais:
   \item[c)] $\displaystyle y(t) = \senh t$
   \item[d)] $\displaystyle y(t) = \cosh t$
 \end{itemize}
-\end{resp}
-\begin{Exercise}
-Encontre
-\begin{itemize}
-  \item[a)] $\displaystyle \mathcal{L} \big\{ t u(t-1) + t^2 \delta(t-1) \big\}$
-  \item[b)] $\displaystyle \mathcal{L} \big\{ (\cos t) ( \ln t ) \delta(t-\pi) \big\}$
-  \item[c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
-\end{itemize}
-\end{Exercise}
-\begin{resp}
-\begin{itemize}
-  \item[a)] $\displaystyle \frac{ e^{-s} (s^2 + s + 1) }{s^2}$
-  \item[b)] $\displaystyle -e^{-\pi s} \ln \pi $
-  \item[c)] $\displaystyle e^{1-s}$
-  \end{itemize}
 \end{resp}
