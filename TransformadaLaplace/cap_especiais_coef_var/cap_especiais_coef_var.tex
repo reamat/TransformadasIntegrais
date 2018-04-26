@@ -1,93 +1,94 @@
 \chapter{Funções especiais e equações com coeficientes variáveis}
+\section{Transformada de Laplace de Funções Especiais}
 Nesse capítulo discutiremos a transformada de Laplace envolvendo funções especiais, tais como função de Bessel, função Gama e funções Seno Integrado. Também, desenvolveremos ferramentas capaz de resolver alguns problemas de valor iniciais com coeficientes não constantes.
 Para iniciar as discussões vamos demonstrar o item 6 da tabela \ref{tab_trans_Lap_1} no próximo exemplo.
 \begin{ex}Vamos calcular a transformada de Laplace da funçao $t^{k-1}$, dada por:
-$$
+\begin{equation}
 \mathcal{L}\{t^{k-1} \}=\int_0^\infty t^{k-1} e^{-st}dt.
-$$
+\end{equation}
 Fazemos a mudança de variável $x=st$ para obter:
 \begin{eqnarray*}
  \mathcal{L}\{t^{k-1} \}&=&\int_0^\infty \frac{x^{k-1}}{s^{k-1}}e^{-x}\frac{dx}{s}\\
  &=&\frac{1}{s^k}\int_0^\infty x^{k-1}e^{-x} dx.
  \end{eqnarray*}
 A função que aparece acima é a multiplicação de $\frac{1}{s^k}$ por uma que não depende de $s$, chamada de função Gama e denotada por $\Gamma(k)$. Portanto, demonstramos o item (6) da tabela \ref{tab_trans_Lap_1}:
-$$
+\begin{equation}
 \mathcal{L}\{t^{k-1} \}=\frac{\Gamma(k)}{s^k},\qquad k>0,
-$$
+\end{equation}
 onde
-$$
+\begin{equation}
 \Gamma(k)=\int_0^\infty e^{-x}x^{k-1}dx.
-$$
+\end{equation}
 \end{ex}
 Observe que o item 3 da tabela é
-$$
+\begin{equation}
 \mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^n}, \qquad n\in \mathbb{N}.
-$$
+\end{equation}
 Isso nos indica que, para que os itens 3 e 6 sejam consistentes, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$. De fato, primeiro observe que, se $k=(n+1)\in\mathbb{N}$, temos:
-$$
+\begin{equation}
 \Gamma(n+1)=\int_0^\infty e^{-x}x^{n}dx=\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx=n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
-$$
+\end{equation}
 Como 
-$$
+\begin{equation}
 \Gamma(1)=\int_0^\infty e^{-x}dx=\left[-e^{-x}\right]_0^\infty=1,
-$$
+\end{equation}
 temos
-$$
+\begin{equation}
 \Gamma(2)=1,\qquad \Gamma(3)=2\cdot 1=2!,\qquad \Gamma(4)=3\Gamma(3)=3\cdot 2!=3!,\cdots
-$$
+\end{equation}
 Logo, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$.
 \begin{ex} Os itens 4 e 5 da tabela são casos particulares do item 6:
- $$
+ \begin{equation}
  \mathcal{L}\{t^{-\frac{1}{2}}\}=\frac{\Gamma\left(\frac{1}{2}\right)}{s^{\frac{1}{2}}}
- $$
+ \end{equation}
 e
- $$
+ \begin{equation}
  \mathcal{L}\{t^{\frac{1}{2}}\}=\frac{\Gamma\left(\frac{3}{2}\right)}{s^{\frac{3}{2}}}.
- $$
+ \end{equation}
  Basta calcular os valores de $\Gamma\left(\frac{1}{2}\right)$ e $\Gamma\left(\frac{3}{2}\right)$ para completar a demonstração. Começamos com $\Gamma\left(\frac{1}{2}\right)$:
- $$
+ \begin{equation}
  \Gamma\left(\frac{1}{2}\right)=\int_0^\infty e^{-x}x^{-\frac{1}{2}}dx=\int_0^\infty \frac{e^{-x}}{\sqrt{x}}dx.
- $$
+ \end{equation}
  Fazendo a mudança de variáveis $x=t^{2}$, obtemos $dx=2tdt$ e
-$$\Gamma\left(\frac{1}{2}\right)=2\int_{0}^{\infty}e^{-t^2}dt
-$$
+\begin{equation}\Gamma\left(\frac{1}{2}\right)=2\int_{0}^{\infty}e^{-t^2}dt
+\end{equation}
 Utilizando a técnica de Liouville, definimos:
-$$
+\begin{equation}
 I=\int_{0}^{\infty}e^{-t^2}dt
-$$
+\end{equation}
 Logo
-$$
+\begin{equation}
 I^2=\int_{0}^{\infty}e^{-x^2}dx\int_{0}^{\infty}e^{-y^2}dy=\int_{0}^{\infty}\int_{0}^{\infty}e^{-(x^2+y^2)}dx dy
-$$
+\end{equation}
 A última integral é uma integral dupla que pode ser calculada em coordenadas polares fazendo $r^2=x^2+y^2$ e $dxdy=rdrd\theta$:
-$$
+\begin{equation}
 I^2=\int_{0}^{\frac{\pi}{2}}\int_{0}^{\infty}e^{-r^2}rdr d{\theta}=\frac{\pi}{2}\left[-\frac{e^{-r^2}}{2}\right]_0^\infty=\frac{\pi}{4}
-$$
+\end{equation}
 Assim,
-$$
+\begin{equation}
 I^2=\frac{\pi}{4}\Rightarrow I=\frac{\sqrt{\pi}}{2}
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 \Gamma\left(\frac{1}{2}\right)=2\int_{0}^{\infty}e^{-t^2}dt=2I=\sqrt{\pi}.
-$$
+\end{equation}
 Agora, usando a propriedade da função Gama que $\Gamma(k+1)=k\Gamma(k)$, temos:
-$$
+\begin{equation}
 \Gamma\left(\frac{3}{2}\right)=\frac{1}{2}\Gamma\left(\frac{1}{2}\right)=\frac{\sqrt{\pi}}{2}.
-$$
+\end{equation}
 Portanto, os itens 4 e 5 da tabela são válidos:
-$$
+\begin{equation}
  \mathcal{L}\{t^{-\frac{1}{2}}\}=\frac{\sqrt{\pi}}{\sqrt{s}}
-$$
+\end{equation}
 e
-$$
+\begin{equation}
  \mathcal{L}\{t^{\frac{1}{2}}\}=\frac{\sqrt{\pi}}{2s^{\frac{3}{2}}}.
-$$
+\end{equation}
  \end{ex}
 \begin{ex}Vamos calcular a transformada de Laplace da função $\ln(t)$ (item 38 da tabela \ref{tab_trans_Lap_2}). Com esse objetivo, usamos a transformada de Laplace de $t^k$ dada no item 6 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \int_0^\infty t^ke^{-st}dt=\frac{\Gamma(k+1)}{s^{k+1}}.
-$$
+\end{equation}
 Agora, como o integrando do lado esquerdo é uma função contínua e tem derivada parcial com respeito a $k$ contínua podemos diferenciar ambos os lados com respeito ao parâmetro $k$ usando a regra de Leibniz
 \begin{eqnarray*}
 \frac{d}{dk}\left(\int_0^\infty t^ke^{-st}dt\right)&=&\frac{d}{dk}\left(\frac{\Gamma(k+1)}{s^{k+1}}\right)\\
@@ -95,32 +96,32 @@ Agora, como o integrando do lado esquerdo é uma função contínua e tem deriva
 \int_0^\infty t^k \ln(t) e^{-st}dt&=&\frac{s^{k+1}\Gamma'(k+1)-\Gamma(k+1)s^{k+1}\ln(s)}{s^{2(k+1)}}
 \end{eqnarray*}
 Agora, fazemos $k\to 0$ para obter
-$$
+\begin{equation}
 \int_0^\infty \ln(t) e^{-st}dt=\frac{s^{1}\Gamma'(1)-\Gamma(1)s^{1}\ln(s)}{s^{2}},
-$$
+\end{equation}
 ou seja,
-$$
+\begin{equation}
 \int_0^\infty \ln(t) e^{-st}dt=\frac{\Gamma'(1)-\ln(s)}{s},
-$$
+\end{equation}
 já que $\Gamma(1)=1$. Do lado esquerdo aparece a transformada da função $\ln(t)$ e do lado direito $\Gamma'(1)$. Então calculamos
-$$
+\begin{equation}
 \Gamma'(k)=\int_0^\infty x^{k-1}\ln(x) e^{-x}dx
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 \Gamma'(1)=\int_0^\infty \ln(x) e^{-x} dx=\gamma=0.57721566490153286060651209008240243104215933593992 ...
-$$
+\end{equation}
 Essa constante $\gamma$ é chamada de constante de Euler - Mascheroni. Finalmente, concluímos
-$$
+\begin{equation}
 \mathcal{L}\{\ln(t)\}=\frac{\gamma-\ln(s)}{s}
-$$
+\end{equation}
 \end{ex}
 \section{Transformada de Laplace de funções periódicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
 \begin{teo}{\label{prop_fun_per}}(Propriedade da transformada de funções periódicas) Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
-$$
+\begin{equation}
 \mathcal{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.
-$$
+\end{equation}
 \end{teo}
 \begin{proof}Aplicamos a definição e separamos a integral nos períodos da função $f(t)$ para obter:
 \begin{eqnarray*}
@@ -143,9 +144,9 @@ Fazemos a mudança de variável $\tau=t-nT$ e obtemos
 onde usamos a soma de uma série geométrica de razão $e^{-sT}$.
  \end{proof}
 \begin{ex}Observe o cálculo da transformada da função $f(t)=\cos(wt)$ sabendo que
-$$
+\begin{equation}
 \int \cos(wt)e^{-st}dt=\frac{e^{-st}\left(w\sen(wt)-s\cos(wt)\right)}{s^2+w^2}+\ \!\hbox{Constante}
-$$
+\end{equation}
 e usando a propriedade \ref{prop_fun_per}:
 \begin{eqnarray*} 
 \mathcal{L}\{\cos(wt)\}&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\int_0^{\frac{2\pi }{w}}\cos(wt)e^{-st}dt\\
@@ -187,9 +188,9 @@ Para calcular a transformada de Laplace, observe que:
 \begin{itemize}
  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
  \item[b)] A propriedade \ref{prop_der} nos dá
- $$
+ \begin{equation}
  \mathcal{L}\{g(t)\}=\frac{1}{s}\mathcal{L}\{g'(t)\}+\frac{1}{s}g(0).
- $$
+ \end{equation}
 \end{itemize}
 Logo,
 \begin{eqnarray*}
@@ -202,9 +203,9 @@ e, portanto, usando o fato que a onda triangular vale zero na origem e o resulta
 \end{eqnarray*}
 \end{ex}
 \begin{ex} A função $h(t)$ dada por
-$$
+\begin{equation}
 h(t)=\left\{\begin{array}{ll}\sen(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
-$$
+\end{equation}
 $h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia onda} de período $\frac{2\pi}{w}$. A figura \ref{fig_ret_meia_onda} apresenta o gráfico da função $h(t)$.
  \begin{figure}[!ht]
 \begin{center}
@@ -222,9 +223,9 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \end{eqnarray*}
 \end{ex}
 \begin{ex} A função $p(t)$ dada por
-$$
+\begin{equation}
 p(t)=|\sen(wt)|
-$$
+\end{equation}
 é chamada de {\bf retificador de onda completa} de período $\frac{\pi}{w}$. A figura \ref{fig_ret_onda_completa} apresenta o gráfico da função $p(t)$.
  \begin{figure}[!ht]
 \begin{center}
@@ -242,9 +243,9 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \end{eqnarray*}
 \end{ex}
 \begin{ex} A função $q(t)$ dada por
-$$
+\begin{equation}
 \left\{\begin{array}{ll}q(t)=\frac{t}{a},&0\leq t<a\\ q\left(t+a\right)=q(t), & \end{array}\right.
-$$
+\end{equation}
 é chamada de {\bf onda dente de serra} de período $T=a$. A figura \ref{fig_dente_de_serra} apresenta o gráfico da função $q(t)$.
  \begin{figure}[!ht]
 \begin{center}
@@ -267,12 +268,12 @@ Em algumas situações, é conveniente expandir em séries de potência um termo
 \begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-s})}$, usando o fato que
 \begin{equation}\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.\end{equation}
 E, portanto, temos:
- $$ F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
- $$
+ \begin{equation} F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
+ \end{equation}
  Como, pelo item 7 da tabela de transformadas $\mathcal{L}^{-1}\left\{\frac{1}{s+1}\right\}=e^{-t}.$
 Aplicando a propriedade do deslocamento no eixo $t$, temos:
- $$ f(t)= e^{-t}+ u(t-1) e^{-(t-1)}+ u(t-2) e^{-(t-2)}+ u(t-3) e^{-(t-3)}+\cdots.
- $$
+ \begin{equation} f(t)= e^{-t}+ u(t-1) e^{-(t-1)}+ u(t-2) e^{-(t-2)}+ u(t-3) e^{-(t-3)}+\cdots.
+ \end{equation}
 O gráfico desta função é apresentado na figura \ref{fig_exp_iterada}.
  \begin{figure}[!ht]
 \begin{center}
@@ -306,9 +307,9 @@ O gráfico desta função é apresentado na figura \ref{fig_trian_periodica}.
 \subsection{Transformada de Laplace de funções envolvendo expansão em séries de potências}
 Nesta seção, vamos calcular a transformada de Laplace usando a série de potências das funções e a linearidade da transformada.
 \begin{ex}Vamos calcular $\mathcal{L}\{J_0(at)\}$ (item 31 da tabela \ref{tab_trans_Lap_2}), onde $J_0(at)$ é a função de Bessel de ordem zero dada por
-$$
+\begin{equation}
 J_0(at)=1-\left(\frac{at}{2}\right)^2+\frac{1}{(2!)^2}\left(\frac{at}{2}\right)^4-\frac{1}{(3!)^2}\left(\frac{at}{2}\right)^6+\cdots.
-$$
+\end{equation}
 Aplicando o item 3 da tabela \ref{tab_trans_Lap_1}, temos:
 \begin{eqnarray*}
 \mathcal{L}\left\{J_0(at)\right\}&=&\mathcal{L}\left\{1\right\}-\left(\frac{a}{2}\right)^2\mathcal{L}\left\{t^2\right\}+\frac{1}{(2!)^2}\left(\frac{a}{2}\right)^4\mathcal{L}\left\{t^4\right\}-\frac{1}{(3!)^2}\left(\frac{a}{2}\right)^6\mathcal{L}\left\{t^6\right\}+\cdots\\
@@ -334,9 +335,9 @@ A série acima está apresentada no item 3 da tabela \ref{series_de_potencias}, 
 \end{eqnarray*}
 \end{ex}
 \begin{exer}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
-$$
+\begin{equation}
 \mathcal{L}\left\{\frac{\cos(2\sqrt{t})}{\sqrt{t}}\right\}=\frac{\sqrt{\pi}}{\sqrt{s}}e^{-\frac{1}{s}}.
-$$
+\end{equation}
 \end{exer}
 \section{A derivada da transformada de Laplace}
 \begin{teo}{\label{prop_der_transf}}(Propriedade da derivada da transformada)
@@ -374,107 +375,107 @@ y(0)&=&5\\
 y'(0)&=&0.
 \end{eqnarray*}
 Começamos aplicando a transformada de Laplace na equação diferencial
-$$
+\begin{equation}
 \mathcal{L}\{ty''(t)\}+\mathcal{L}\{y'(t)\}+9\mathcal{L}\{ty(t)\}=0.
-$$
+\end{equation}
 Depois aplicamos a propriedade \ref{prop_der_transf}:
-$$
+\begin{equation}
 -\frac{d}{ds}\mathcal{L}\{y''(t)\}+\mathcal{L}\{y'(t)\}-9\frac{d}{ds}\mathcal{L}\{y(t)\}=0.
-$$
+\end{equation}
 Em seguida aplicamos a propriedade \ref{prop_der} para obter a seguinte equação subsidiária
-$$
+\begin{equation}
 -\frac{d}{ds}\left(s^2Y(s)-5s\right)+sY(s)-5-9\frac{d}{ds}Y(s)=0,
-$$
+\end{equation}
 onde usamos que $y(0)=5$, $y'(0)=0$ e $Y(s)=\mathcal{L}\{y(t)\}$. Agora resolvemos as derivadas e obtemos uma equação diferencial mais simples para $Y(s)$:
-$$
+\begin{equation}
 -s^2Y'(s)-2sY(s)+sY(s)-9Y'(s)=0,
-$$
+\end{equation}
 ou seja,
-$$
+\begin{equation}
 \frac{Y'(s)}{Y(s)}=-\frac{s}{s^2+9}.
-$$
+\end{equation}
 Logo,
-$$
+\begin{equation}
 \ln(Y(s))=-\frac{1}{2}\ln(s^2+9)+C,
-$$
+\end{equation}
 onde $C$ é uma constante de integração. Então
-$$
+\begin{equation}
 Y(s)=K(s^2+9)^{-\frac{1}{2}}=\frac{K}{\sqrt{s^2+9}},
-$$
+\end{equation}
 onde $K=e^{C}$. Pelo item 31 da tabela \ref{tab_trans_Lap_1}, temos
-$$
+\begin{equation}
 y(t)=KJ_0(3t).
-$$
+\end{equation}
 Como $J_0(0)=1$, usamos que $y(0)=5$ para obter $K=5$. Portanto,
-$$
+\begin{equation}
 y(t)=5J_0(3t).
-$$
+\end{equation}
 Observe que a solução satisfaz $y'(0)=0$, porém essa condição não é necessária. De fato, existe uma solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
 \begin{ex}Vamos resolver a equação de Laguerre dada por
-$$
+\begin{equation}
 ty''(t)+(1-t)y'(t)+2y(t)=0,
-$$
+\end{equation}
 com as condições iniciais $y(0)=1$ e $y'(0)=-2$. Primeiro aplicamos a transformada de Laplace nessa equação:
-$$
+\begin{equation}
 \mathcal{L}\{ty''(t)\}+\mathcal{L}\{y'(t)\}-\mathcal{L}\{ty'(t)\}+2\mathcal{L}\{y(t)\}=0.
-$$
+\end{equation}
 Depois usamos a propriedade \ref{prop_der_transf}:
-$$
+\begin{equation}
 -\frac{d}{ds}\mathcal{L}\{y''(t)\}+\mathcal{L}\{y'(t)\}+\frac{d}{ds}\mathcal{L}\{y'(t)\}+2\mathcal{L}\{y(t)\}=0.
-$$
+\end{equation}
 Continuamos usando a propriedade \ref{prop_der} para obter:
-$$
+\begin{equation}
 -\frac{d}{ds}\left(s^2Y(s)-sy(0)-y'(0)\right)+sY(s)-y(0)+\frac{d}{ds}\left(sY(s)-y(0)\right)+2Y(s)=0,
-$$
+\end{equation}
 onde $Y(s)=\mathcal{L}\{y(t)\}$. Aplicando as derivadas chegamos na seguinte equação diferencial para $Y(s)$:
-$$
+\begin{equation}
 -s^2Y'(s)-2sY(s)+y(0)+sY'(s)+Y(s)+sY(s)-y(0)+2Y(s)=0.
-$$
+\end{equation}
 ou seja,
-$$
+\begin{equation}
 Y'(s)\left(-s^2+s\right)+Y(s)\left(-s+3\right)=0.
-$$
+\end{equation}
 Logo,
-$$
+\begin{equation}
 \frac{Y'(s)}{Y(s)}=-\frac{3-s}{s(1-s)}.
-$$
+\end{equation}
 Usamos o método de separação de variáveis para resolver a equação diferencial, temos:
-$$
+\begin{equation}
 \ln(Y(s))=-\int \frac{3-s}{s(1-s)} ds +C
-$$
+\end{equation}
 onde $C$ é uma constante de integração. A antiderivada do lado direito pode ser obtida pelo método de frações parciais:
 \begin{eqnarray*}
 \frac{-3+s}{s(1-s)}=-\frac{3}{s}-\frac{2}{1-s}.
 \end{eqnarray*}
 Isso nos dá
-$$
+\begin{equation}
 \ln(Y(s))=-3\ln(s)+2\ln|1-s|+C=\ln\left(\frac{(1-s)^2}{s^3} \right)+C
-$$
+\end{equation}
 ou
-$$
+\begin{equation}
 Y(s)=K\frac{(1-s)^2}{s^3}=\frac{K}{s^3}-\frac{2K}{s^2}+\frac{K}{s}
-$$
+\end{equation}
 onde $K=e^C$. A transformada inversa fornece uma expressão para $y(t)$:
-$$
+\begin{equation}
 y(t)=K\left(\frac{t^2}{2}-2t+1\right).
-$$
+\end{equation}
 Usando o fato que $y(0)=1$, temos $K=1$ e
-$$
+\begin{equation}
 y(t)=\frac{t^2}{2}-2t+1.
-$$
+\end{equation}
 Observe que, apesar da condição para a derivada ser satisfeita, isto é,
-$$
+\begin{equation}
 y'(0)=0-2=-2,
-$$
+\end{equation}
 não usamos-a para calcular a solução. De fato, o problema possui um singularidade na origem que não é percebida pela transformada de Laplace. A solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
 \section{Propriedade da integral da transformada de Laplace}
 \begin{teo}{\label{prop_int_transf}}(Propriedade da integral da transformada) Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
 e o limite
-$$
+\begin{equation}
 \lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau
-$$
+\end{equation}
 existe, então
 \begin{equation}
 \int_s^\infty F(v)dv =\mathcal{L}\left\{\frac{f(t)}{t}\right\}.
@@ -491,9 +492,9 @@ existe, então
 Observe que a existência do limite $\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau$ é fundamental para a existência da Transformada de Laplace e para os procedimentos analíticos acima.
 \end{proof}
 \begin{ex}Vamos mostrar o item 29 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \mathcal{L}\left\{\frac{1}{2\sqrt{\pi t^3}}\left(e^{bt}-e^{at}\right)\right\}=\sqrt{s-a}-\sqrt{s-b}.
-$$
+\end{equation}
 Para isso vamos usar o item 4, a saber,
 \begin{equation}{\label{eq_item_4}}
 \mathcal{L}\left\{\frac{1}{\sqrt{\pi t}}\right\}=\frac{1}{\sqrt{s}}.
@@ -519,9 +520,9 @@ Observe que aqui usamos o seguinte limite no infinito
 \end{eqnarray*}
 \end{ex}
 \begin{ex}Vamos mostrar o item 39 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \mathcal{L}\left\{\frac{1}{t}\left(e^{bt}-e^{at}\right)\right\}=\ln\left(\frac{s-a}{s-b}\right).
-$$
+\end{equation}
 Para isso vamos usar o item 7, a saber,
 \begin{equation*}
 \mathcal{L}\left\{e^{at}\right\}=\frac{1}{s-a}.
@@ -543,9 +544,9 @@ Na penúltima igualdade usamos o seguinte limite no infinito:
 Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
 \end{ex}
 \begin{ex}Vamos mostrar o item 40 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \mathcal{L}\left\{\frac{2}{t}\left(1-\cos(wt)\right)\right\}=\ln\left(\frac{s^2+w^2}{s^2}\right).
-$$
+\end{equation}
 Para isso vamos usamos o fato que
 \begin{equation*}
 \mathcal{L}\left(1-\cos(wt)\right)=\frac{1}{s}-\frac{s}{s^2+w^2}.
@@ -570,9 +571,9 @@ Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ �
 \begin{exer}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
 \end{exer}
 \begin{ex}{\label{ex_sint_t}}Vamos demonstrar o item 42 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \mathcal{L}\left\{\frac{1}{t}\sen(wt)\right\}=\arctan\left(\frac{w}{s}\right).
-$$
+\end{equation}
 Para isso vamos usamos o fato que
 \begin{equation*}
 \mathcal{L}\{\sen(wt)\}=\frac{w}{s^2+w^2}.
@@ -594,31 +595,31 @@ Também, se $\gamma=\cot^{-1}\left(\frac{s}{w}\right)$, então $\cot\gamma=\frac
 \end{eqnarray*}
 \end{ex}
 \begin{ex}Vamos agora mostrar o item 43 da tabela \ref{tab_trans_Lap_2}:
-$$
+\begin{equation}
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\cot^{-1}(s),
-$$
+\end{equation}
 onde $\hbox{Si}\ \!(t)$ é função integral seno dada por:
-$$
+\begin{equation}
 \hbox{Si}\ \!(t)=\int_0^t\frac{\sen(x)}{x}dx.
-$$
+\end{equation}
 Primeiro aplicamos a propriedade \ref{prop_trans_int} para obter
-$$
+\begin{equation}
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\mathcal{L}\left\{\int_0^t\frac{\sen(x)}{x}dx\right\}=\frac{1}{s}\mathcal{L}\left\{\frac{\sen(t)}{t}\right\}.
-$$
+\end{equation}
 Em seguida usamos o resultado do exemplo \ref{ex_sint_t} (ou item 42 da tabela \ref{tab_trans_Lap_2}) e temos:
-$$
+\begin{equation}
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\arctan\left(\frac{1}{s}\right)=\frac{1}{s}\cot^{-1}\left(s\right).
-$$
+\end{equation}
 \end{ex}
 \section{Propriedades do Valor Inicial e Final}
 \begin{teo}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
-$$
+\begin{equation}
 \lim_{t\to\infty}f(t)=L,
-$$
+\end{equation}
 então
-$$
+\begin{equation}
 \lim_{s\to 0^+} sF(s)=L.
-$$
+\end{equation}
 \end{teo}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
@@ -631,18 +632,18 @@ s\int_a^\infty f(t)e^{-st}dt &\approx &s\int_a^\infty L e^{-st}dt.\\
 &\approx &s\frac{L}{-s}\left[ e^{-st}\right]_a^\infty=Le^{-as}
 \end{eqnarray*}
 Como $e^{-as}\to 1$ quando $s\to 0$, então
-$$
+\begin{equation}
 \lim_{s\to 0^+} sF(s)=L.
-$$ 
+\end{equation} 
 \end{proof}
 \begin{teo}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
-$$
+\begin{equation}
 \lim_{t\to 0^+}f(t)=L,
-$$
+\end{equation}
 então
-$$
+\begin{equation}
 \lim_{s\to \infty} sF(s)=L.
-$$
+\end{equation}
 \end{teo}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
@@ -667,9 +668,9 @@ s\int_0^a f(t)e^{-st}dt &\approx &s\int_0^a L e^{-st}dt.\\
 &\approx &s\frac{L}{-s}\left[ e^{-st}\right]_0^a=L\left(1-e^{-as}\right)
 \end{eqnarray*}
 Como $e^{-as}\to 0$ quando $s\to \infty$, então
-$$
+\begin{equation}
 \lim_{s\to \infty} sF(s)=L.
-$$ 
+\end{equation} 
 \end{proof}
 \section{Exercícios}
 \begin{Exercise}
