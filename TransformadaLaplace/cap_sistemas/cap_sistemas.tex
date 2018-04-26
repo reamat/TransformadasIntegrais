@@ -19,17 +19,17 @@ onde usamos a propriedade \ref{prop_der} e a notação $X(s)=\mathcal{L}\{x(t)\}
 \label{sis_eq_2} sX(s)-Y(s)&=&0.
 \end{eqnarray}
 Multiplicamos a equação (\ref{sis_eq_1}) por $s$, $-sX(s)+s^2Y(s)=s$, e somamos com a equação (\ref{sis_eq_2}) para obter
-$$
+\begin{equation}
 (s^2-1)Y(s)=s.
-$$
+\end{equation}
 Logo
-$$
+\begin{equation}
 Y(s)=\frac{s}{s^2-1}.
-$$
+\end{equation}
 Resolvemos $X(s)$ usando a equação (\ref{sis_eq_2}):
-$$
+\begin{equation}
 X(s)=\frac{Y(s)}{s}=\frac{1}{s^2-1}.
-$$
+\end{equation}
 As transformadas inversas de $X(s)$ e $Y(s)$ estão tabeladas:
 \begin{eqnarray*}
 x(t)&=&\senh(t)\\
@@ -61,21 +61,21 @@ ou seja,
 \label{sis_eq_4} s^2X(s)-s^2Y(s)&=&\frac{4}{s^2}-10+3s.
 \end{eqnarray}
 A soma das equações (\ref{sis_eq_3}) e (\ref{sis_eq_4}) resulta em
-$$
+\begin{equation}
 3s^2X(s)=\frac{2}{s^3}+\frac{4}{s^2}+6s.
-$$
+\end{equation}
 Logo,
-$$
+\begin{equation}
 X(s)=\frac{2}{3s^5}+\frac{4}{3s^4}+\frac{2}{s}.
-$$
+\end{equation}
 Agora, usamos (\ref{sis_eq_4}) para resolver $Y(s)$:
-$$
+\begin{equation}
 s^2\left(\frac{2}{3s^5}+\frac{4}{3s^4}+\frac{2}{s}\right)-s^2Y(s)=\frac{4}{s^2}-10+3s.
-$$
+\end{equation}
 Assim,
-$$
+\begin{equation}
 Y(s)=\frac{2}{3s^5}-\frac{8}{3s^4}+\frac{10}{s^2}-\frac{1}{s}.
-$$
+\end{equation}
 As transformadas inversas estão tabeladas:
 \begin{eqnarray*}
 x(t)&=&\frac{t^4}{36}+\frac{2t^3}{9}+2\\
@@ -126,25 +126,25 @@ A solução desse sistema é dada por
 \frac{55}{s}\end{array}\right]
 \end{equation*}
 Portanto,
-$$
+\begin{equation}
 I_1(s)=\frac{1}{s^2+70s+325}\left(\frac{110}{s}(s+25)-\frac{2200}{s}\right)=\frac{1}{(s+5)(s+65)}\left(110+\frac{550}{s}\right)
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 I_2(s)=\frac{1}{s^2+70s+325}\left(-\frac{2200}{s}+\frac{55}{s}(s+45)\right)=\frac{1}{(s+5)(s+65)}\left(55+\frac{275}{s}\right).
-$$
+\end{equation}
 Aqui percebemos que $I_1(s)=2I_2(s)$ e, assim, vamos calcular apenas $I_2(s)$: 
-$$
+\begin{equation}
 I_2=\frac{1}{(s+5)(s+65)}\left(\frac{55s+275}{s}\right)=\frac{55}{(s+5)(s+65)}\left(\frac{s+5}{s}\right)=\frac{55}{s(s+65)}.
-$$
+\end{equation}
 Logo,
-$$
+\begin{equation}
 i_2(t)=\frac{55}{65}\left(1-e^{-65t}\right)=\frac{11}{13}\left(1-e^{-65t}\right).
-$$
+\end{equation}
 Como $i_1(t)=2i_2(t)$, temos:
-$$
+\begin{equation}
 i_1(t)=\frac{22}{13}\left(1-e^{-65t}\right).
-$$
+\end{equation}
 \section{Aplicação: duplo massa mola}
 Considere o duplo sistema massa-mola, onde as molas possuem constantes $k_1$ e $k_2$ e as massas envolvidas são $m_1$ e $m_2$. Desconsiderando o amortecimento, temos o seguinte sistema:
 \begin{eqnarray*}
@@ -241,31 +241,31 @@ Para completar o sistema, impondo as seguintes condições iniciais: $x_1(0)=x_2
 \right].
 \end{eqnarray*}
 Logo,
-$$
+\begin{equation}
 X(s)=\frac{1}{s^4+14s^2+24}\left(s^2+4-4\right)=\frac{s^2}{s^4+14s^2+24}
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 X(s)=\frac{1}{s^4+14s^2+24}\left(4-s^2-10\right)=\frac{-s^2-6}{s^4+14s^2+24}.
-$$
+\end{equation}
 Usamos frações parciais para escrever
 \begin{eqnarray*}
 \frac{s^2}{s^4+14s^2+24}=\frac{s^2}{(s^2+2)(s^2+12)}&=&\frac{A}{s^2+2}+\frac{B}{s^2+12}\\&=&\frac{A(s^2+12)+B(s^2+2)}{(s^2+2)(s^2+12)}\\
 &=&\frac{(A+B)s^2+12A+2B}{(s^2+2)(s^2+12)},
 \end{eqnarray*}
 ou seja, $A+B=1$ e $12A+2B=0$. Logo, $B=-6A$ e $A-6A=1$, ou seja, $A=-\frac{1}{5}$ e $B=\frac{6}{5}$. Portanto,
-$$
+\begin{equation}
 X(s)=\frac{1}{5}\left(\frac{6}{s^2+12}-\frac{1}{s^2+2}\right)=\frac{6}{5\sqrt{12}}\frac{\sqrt{12}}{s^2+\sqrt{12}^2}-\frac{1}{5\sqrt{2}}\frac{\sqrt{2}}{s^2+\sqrt{2}^2},
-$$
+\end{equation}
 e, calculando a transformada inversa, temos:
 \begin{eqnarray*}
 x(t)&=&\frac{6}{5\sqrt{12}}\sen(\sqrt{12}t)-\frac{1}{5\sqrt{2}}\sen(\sqrt{2}t)\\
 &=&\frac{\sqrt{3}}{5}\sen(2\sqrt{3}t)-\frac{\sqrt{2}}{10}\sen(\sqrt{2}t).
 \end{eqnarray*}
 Da mesma forma,
-$$
+\begin{equation}
 Y(s)=-\frac{3}{5}\left(\frac{1}{s^2+12}-\frac{2}{5}\frac{1}{s^2+2}\right)=-\frac{3}{5\sqrt{12}}\frac{\sqrt{12}}{s^2+\sqrt{12}^2}-\frac{2}{5\sqrt{2}}\frac{\sqrt{2}}{s^2+\sqrt{2}^2},
-$$
+\end{equation}
 e
 \begin{eqnarray*}
 y(t)&=&-\frac{3}{5\sqrt{12}}\sen(\sqrt{12}t)-\frac{2}{5\sqrt{2}}\sen(\sqrt{2}t)\\
@@ -301,21 +301,21 @@ Da primeira equação, temos:
 \label{eqX}X(s)=\frac{x(0)}{s+\alpha}=\frac{1}{s+1}.
 \end{equation}
 Da segunda equação, temos:
-$$
+\begin{equation}
 Y(s)=\frac{\alpha X(s)}{s+\gamma}=\frac{\alpha x(0) }{(s+\gamma)(s+\alpha)}=\frac{1}{(s+1)(s+2)}.
-$$
+\end{equation}
 Da terceira equação temos:
-$$
+\begin{equation}
 Z(s)=\frac{\gamma Y(s)}{s}=\frac{2}{s(s+1)(s+2)}.
-$$
+\end{equation}
 Agora, podemos obter as funções $x(t)$, $y(t)$ e $z(t)$ através da Transformada Inversa de Laplace:
-$$
+\begin{equation}
 x(t)=\mathcal{L}^{-1}\left\{X(s)\right\}=e^{-t}
-$$
+\end{equation}
 onde usamos item 7 da tabela \ref{tab_trans_Lap_1};
-$$
+\begin{equation}
 y(t)=\mathcal{L}^{-1}\left\{Y(s)\right\}=-e^{-2t}+e^{-t},
-$$
+\end{equation}
 onde usamos item 11 da tabela \ref{tab_trans_Lap_1} com $a=2$ e $b=-1$;
 \begin{eqnarray*}
 z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s}\right\}\\&=&2\int_0^ty(\tau)d\tau\\
