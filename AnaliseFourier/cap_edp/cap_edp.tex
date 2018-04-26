@@ -309,29 +309,29 @@ a^{\frac{1}{2}}t^{\frac{1}{2}})\left(\sen (u^2)-\cos (u^2)\right)du.
 
 \begin{Exercise}
 Um fluido se desloca em um tubo termicamente isolado com velocidade constante $v$ de forma que a evolução da temperatura $u(x,t)$ como uma função da coordenada $x$ e do tempo é descrita pelo seguinte modelo simplificado:
-$$u_t-vu_x-u_{xx}=0.$$
+\begin{equation}u_t-vu_x-u_{xx}=0.\end{equation}
 Sabendo que no instante $t=0$, a temperatura foi bruscamente aquecida em uma região muito pequena, de forma que podemos considerar
-$$u(x,0)=500 \delta(x).$$ 
+\begin{equation}u(x,0)=500 \delta(x).\end{equation} 
 Use a técnica das transformadas de Fourier para obter a solução desta equação diferencial quando $v=1m/s$.
 \end{Exercise}
 \begin{Answer}
 Aplicamos a transforma de Fourier na variável $x$, obtemos a seguinte expressão para a equação transformada
-$$U_t(k,t)-v(ik)U(k,t)-(ik)^2U(k,t)=0$$
+\begin{equation}U_t(k,t)-v(ik)U(k,t)-(ik)^2U(k,t)=0\end{equation}
 onde foi usada a propriedade da derivada.
 A condição inicial se torna:
-$$U(k,0)=500\int_{-\infty}^\infty \delta(x)e^{-ikx}=500$$
+\begin{equation}U(k,0)=500\int_{-\infty}^\infty \delta(x)e^{-ikx}=500\end{equation}
 Portanto temos o seguinte problema de valor inicial:
-$$U_t(k,t)=(-k^2+ivk)U(k,t)$$
-$$U(k,0)=500$$
+\begin{equation}U_t(k,t)=(-k^2+ivk)U(k,t)\end{equation}
+\begin{equation}U(k,0)=500\end{equation}
 cuja solução é
-$$U(k,t)=500e^{(-k^2+ivk)t}=500 e^{ivkt}e^{-k^2t}$$
+\begin{equation}U(k,t)=500e^{(-k^2+ivk)t}=500 e^{ivkt}e^{-k^2t}\end{equation}
 A multiplicação por $e^{ivtk}$ indica um deslocamento no eixo $x$. Logo precisamos calcular:
 \begin{eqnarray*}
 \mathcal{F}^{-1}_x\left\{e^{-k^2t}\right\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty e^{-k^2t} e^{ikx}dk=\frac{1}{\pi}\int_{0}^\infty e^{-k^2t} \cos({ikx})dk\\
 &=&\frac{1}{\pi}\frac{\sqrt{\pi}}{2\sqrt{t}}e^{-\frac{x^2}{4t}}=\frac{1}{2\sqrt{\pi t}}e^{-\frac{x^2}{4t}}
 \end{eqnarray*}
 Portanto
-$$u(x,t)=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+vt)^2}{4t}}=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+t)^2}{4t}}$$
+\begin{equation}u(x,t)=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+vt)^2}{4t}}=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+t)^2}{4t}}\end{equation}
 
 \end{Answer}
 

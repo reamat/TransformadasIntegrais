@@ -2,11 +2,11 @@
 Neste capítulo, apresentamos o conceito de Série de Fourier de uma função periódica $f(t)$ e apresentamos exemplos de expansão. A brevidade da apresentação se deve ao fato que esperamos que o estudante já tenha tido um contato prévio com o conceito.
 \section{Funções periódicas}
 \begin{defn} Uma função $f:\mathbb{R}\to\mathbb{R}$ é dita periódica de período $T$ (também chamada de T-periódica) se existe uma constante positiva $T$ tal que
-$$f(t)=f(t+T)$$
+\begin{equation}f(t)=f(t+T)\end{equation}
 para todo $t\in\mathbb{R}.$
 \end{defn}
 \begin{obs} Se uma função $f$ é periódica de período $T$, então, $f$ também é periódica de período $nT$ onde $n\in\mathbb{N}.$, já que
-$$f(t)=f(t+T)=f(t+2T)=f(t+3T)=\cdots =f(t+nT).$$
+\begin{equation}f(t)=f(t+T)=f(t+2T)=f(t+3T)=\cdots =f(t+nT).\end{equation}
  \end{obs}
  \begin{ex}
   As funções $f(t)=\sen(t)$ e $g(t)=\cos(t)$ são periódicas de período $2\pi$.
@@ -23,7 +23,7 @@ $$
 \sen(wT)=\sen(0)=0.
 $$
 Logo, $wT=n\pi$, onde $n$ é um natural positivo. Observe que $\frac{\pi}{w}$ não pode ser o período fundamental, pois tomando $t=\frac{\pi}{2w}$, temos
-$$1=\sen\left(w\left(\frac{\pi}{2w}\right)\right)\neq \sen\left(w\left(\frac{\pi}{2w}+\frac{\pi}{w}\right)\right)=-1.$$
+\begin{equation}1=\sen\left(w\left(\frac{\pi}{2w}\right)\right)\neq \sen\left(w\left(\frac{\pi}{2w}+\frac{\pi}{w}\right)\right)=-1.\end{equation}
 Como, por construção do círculo trigonomético, temos:
 $$
 \sen\left(w\left(t+\frac{2\pi}{w}\right)\right)=\sen(wt+2\pi)=\sen(wt),
@@ -38,9 +38,9 @@ então $\frac{2\pi}{w}$ é o período fundamental. Observe que $w$ é a frequên
  \end{itemize}
 \end{ex}
 \begin{teo} Se $f(t)$ é uma função integrável $T$-periódica, então o valor da integral definida dentro de um período não depende do ponto inicial, isto é:
-$$\int_{x}^{x+T} f(t)dt $$
+\begin{equation}\int_{x}^{x+T} f(t)dt \end{equation}
 não depende do valor $x$. Em especial, vale a identidade:
-$$\int_{0}^{T} f(t)dt= \int_{-T/2}^{T/2} f(t)dt.$$
+\begin{equation}\int_{0}^{T} f(t)dt= \int_{-T/2}^{T/2} f(t)dt.\end{equation}
  \end{teo}
 \begin{proof}
  Primeiro, escrevemos  $\frac{x}{T}=n+\alpha$, isto é, como um número inteiro $n$ mais uma parte fracionária $\alpha\in [0,1)$ e concluímos que podemos escrever $x=nT+y$, onde $y=\alpha T$, isto é $0\leq y <T$.
@@ -49,7 +49,7 @@ $$\int_{0}^{T} f(t)dt= \int_{-T/2}^{T/2} f(t)dt.$$
   &=&\int_{nT+y}^{(n+1)T} f(t)dt+\int_{(n+1)T}^{(n+1)T+y} f(t)dt
   \end{eqnarray*}
   Inserimos a mudança de variáveis $t=nT+u$ e $t=(n+1)T+v$:
-  $$I=\int_{y}^{T} f(u+nT)du+\int_{0}^{y} f(v+(n+1)T)dv$$
+  \begin{equation}I=\int_{y}^{T} f(u+nT)du+\int_{0}^{y} f(v+(n+1)T)dv\end{equation}
    Da periodicidade, temos que $f(u)=f(u+nT)$ e $f(v)=f(v+(n+1)T)$:
    \begin{eqnarray*}
   I&=&\int_{y}^{T} f(u)du+\int_{0}^{y} f(v)dv\\
@@ -63,11 +63,11 @@ $$\int_{0}^{T} f(t)dt= \int_{-T/2}^{T/2} f(t)dt.$$
 \end{proof}
 \section{Séries de Fourier}
 \begin{defn} Seja $T>0$, definimos polinômio trigonomético de grau $N$ uma função do tipo:
-$$f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] $$
+\begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] \end{equation}
 onde $w_n=\frac{2\pi n}{T}$.
 \end{defn}
 \begin{defn} Seja $T>0$, definimos série trigonométrica toda função do tipo:
-$$f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right] $$
+\begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right] \end{equation}
 onde $w_n=\frac{2\pi n}{T}$.
 \end{defn}
  \begin{ex} Mostre que $T$ é um período para séries e  polinômios trigonométricos acima definidos.
@@ -86,26 +86,26 @@ aqui $n$ e $m$ são inteiros não negativos.
 \end{teo}
 \begin{proof}
  Para obter (\ref{rel_ort_ss}), usamos a seguinte identidade trigonométrica:
- $$\sen(a)\sen(b)=\frac{\cos(a-b)-\cos(a+b)}{2}$$
+ \begin{equation}\sen(a)\sen(b)=\frac{\cos(a-b)-\cos(a+b)}{2}\end{equation}
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
- $$\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)}{2}$$
+ \begin{equation}\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)}{2}\end{equation}
 Se $n=m\neq 0$, temos:
- $$\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[1-\cos\left(\frac{4\pi nt}{T}\right)\right]dt=\frac{T}{2}$$
+ \begin{equation}\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[1-\cos\left(\frac{4\pi nt}{T}\right)\right]dt=\frac{T}{2}\end{equation}
  Se $n\neq m$, temos:
- $$\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)\right]dt=0$$
+ \begin{equation}\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)\right]dt=0\end{equation}
  Para obter (\ref{rel_ort_cc}), usamos a seguinte identidade trigonométrica:
- $$\cos(a)\cos(b)=\frac{\cos(a-b)+\cos(a+b)}{2}$$
+ \begin{equation}\cos(a)\cos(b)=\frac{\cos(a-b)+\cos(a+b)}{2}\end{equation}
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
- $$\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)=\frac{\cos\left(\frac{2\pi (n-m)t}{T}\right)+\cos\left(\frac{2\pi (n+m)t}{T}\right)}{2}$$
+ \begin{equation}\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)=\frac{\cos\left(\frac{2\pi (n-m)t}{T}\right)+\cos\left(\frac{2\pi (n+m)t}{T}\right)}{2}\end{equation}
  Se $n=m\neq 0$, temos:
- $$\int_0^T\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[1+\cos\left(\frac{4\pi nt}{T}\right)\right]dt=\frac{T}{2}$$
+ \begin{equation}\int_0^T\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[1+\cos\left(\frac{4\pi nt}{T}\right)\right]dt=\frac{T}{2}\end{equation}
  Se $n\neq m$, temos:
 Caso $n=m= 0$, então $\cos\left(\frac{2\pi nt}{T}\right)=1$, isto é:
-$$\int_0^T\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)dt=\int_0^T 1dt=T$$
+\begin{equation}\int_0^T\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)dt=\int_0^T 1dt=T\end{equation}
  Para obter (\ref{rel_ort_cs}), usamos a seguinte identidade trigonométrica:
-$$\cos(a)\sen(b)=\frac{\sen(a+b)+\sen(a-b)}{2}$$ 
+\begin{equation}\cos(a)\sen(b)=\frac{\sen(a+b)+\sen(a-b)}{2}\end{equation} 
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
- $$\cos\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\sen\left(\frac{2\pi (n+m)t}{T}\right)+\sen\left(\frac{2\pi (n-m)t}{T}\right)}{2}$$
+ \begin{equation}\cos\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\sen\left(\frac{2\pi (n+m)t}{T}\right)+\sen\left(\frac{2\pi (n-m)t}{T}\right)}{2}\end{equation}
 E integrando conforme feito para os casos anteriores, temos o resultado.
  \end{proof}
  \begin{teo} Seja $f(t)$ uma função definida por uma série trigonométrica da forma
@@ -333,14 +333,14 @@ a_n&=&\frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(w_nt)dt=\frac{2}{T}\int_{-d/2}^{d/2}\
 \end{eqnarray*}
 Como
 $w_n=\frac{2\pi n}{T}$, temos $ a_n=\frac{2}{\pi n}\sen\left(\pi n\frac{d}{T}\right)$ e, portanto
-$$f(t)=\frac{d}{T}+\sum_{n=1}^\infty a_n \cos(w_n t)=\frac{d}{T}+\frac{2}{\pi}\sum_{n=1}^\infty \frac{1}{n}\sen\left(\frac{\pi n d}{T}\right) \cos(w_n t)$$
+\begin{equation}f(t)=\frac{d}{T}+\sum_{n=1}^\infty a_n \cos(w_n t)=\frac{d}{T}+\frac{2}{\pi}\sum_{n=1}^\infty \frac{1}{n}\sen\left(\frac{\pi n d}{T}\right) \cos(w_n t)\end{equation}
 \end{Answer}
 \begin{Exercise}Calcule a soma da série
-$$f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)$$
+\begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)\end{equation}
 onde $0<b<1$ e mostre que
-$$f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.$$
+\begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
 Com base neste resultado, obtenha o valor da integral definida dada por
-$$\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt.$$
+\begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt.\end{equation}
 \end{Exercise}
 \begin{Answer}
  Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
@@ -378,7 +378,7 @@ $
  \end{itemize}
 \end{Answer}
 \begin{Exercise}{\label{Fourier_9}}
- Use o item a do exercício anterior para obter uma representação em Série de Fourier da função $$h(t)=|\cos(\pi t)|.$$
+ Use o item a do exercício anterior para obter uma representação em Série de Fourier da função \begin{equation}h(t)=|\cos(\pi t)|.\end{equation}
 \end{Exercise}
 \begin{Answer}
  \begin{eqnarray*}

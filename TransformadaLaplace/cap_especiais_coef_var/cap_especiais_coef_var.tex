@@ -265,7 +265,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \subsection{Transformada de Laplace inversa de funções envolvendo expansão em séries de potências}
 Em algumas situações, é conveniente expandir em séries de potência um termo de uma função para calcular sua transformada inversa. Vejamos alguns exemplos.
 \begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-s})}$, usando o fato que
-$$\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.$$
+\begin{equation}\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.\end{equation}
 E, portanto, temos:
  $$ F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
  $$
@@ -282,7 +282,7 @@ O gráfico desta função é apresentado na figura \ref{fig_exp_iterada}.
 \end{figure}
 \end{ex}
 \begin{ex} Vamos calcular a transformada inversa da função $F(s)=\frac{e^{-s}}{s^2}\frac{\left(1-e^{-s}\right)^2}{1-e^{-3s}}$, usando o fato que
-$$\frac{1}{1-e^{-3s}}=1+e^{-3s}+e^{-6s}+e^{-9s}+\cdots.$$
+\begin{equation}\frac{1}{1-e^{-3s}}=1+e^{-3s}+e^{-6s}+e^{-9s}+\cdots.\end{equation}
 Agora observamos que se $g(t)=\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}$, então:
 \begin{eqnarray*}
  g(t)&=&\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}=\mathcal{L}^{-1}\left\{\frac{e^{-s}\left(1-2e^{-s}+e^{-2s}\right) }{s^2} \right\}\\
@@ -294,7 +294,7 @@ f(t)&=&g(t)+u(t-3)g(t-3)+u(t-6)g(t-6)+u(t-9)g(t-9)+\cdots\\
 &=&g(t)+g(t-3)+g(t-6)+g(t-9)+\cdots= \sum_{k=0}^\infty g(t-3k)
 \end{eqnarray*}
 o que implica
-$$f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (2t-4-6k)\right]$$
+\begin{equation}f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (2t-4-6k)\right]\end{equation}
 O gráfico desta função é apresentado na figura \ref{fig_trian_periodica}.
  \begin{figure}[!ht]
 \begin{center}
@@ -676,7 +676,7 @@ $$
  Demonstre o item (32) da tabela usando os itens (4) e (5) e a propriedade \ref{prop_trans_s} do deslocamento no eixo $s$. 
 \end{Exercise}
 \begin{Exercise}
-Use a propriedade da derivada da transformada para calcular $\displaystyle \mathcal{L}\{ t \cos (\omega t) \}$. A partir desta, prove que $$ \mathcal{L}\{ \sen (\omega t) - \omega t \cos (\omega t) \} = \frac{2 \omega^3 }{(s^2 + \omega^2)^2}. $$
+Use a propriedade da derivada da transformada para calcular $\displaystyle \mathcal{L}\{ t \cos (\omega t) \}$. A partir desta, prove que \begin{equation} \mathcal{L}\{ \sen (\omega t) - \omega t \cos (\omega t) \} = \frac{2 \omega^3 }{(s^2 + \omega^2)^2}. \end{equation}
 \end{Exercise}
 \begin{Exercise}
 Encontre a transformada inversa das funções abaixo utlizando o método que achar adequado.
@@ -735,9 +735,9 @@ F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}
 &=&\frac{\sqrt{\pi}}{2s^{3/2}}e^{-\frac{1}{4s}}
 \end{eqnarray*}
 Para mostrar a identidade $\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}$ , usamos a relação de recorrência
-$$\Gamma(x+1)=x\Gamma(x)$$
+\begin{equation}\Gamma(x+1)=x\Gamma(x)\end{equation}
 e o fato bem conhecido  de que
-$$\Gamma(1/2)=\sqrt{\pi}$$
+\begin{equation}\Gamma(1/2)=\sqrt{\pi}\end{equation}
 Para obter
 \begin{eqnarray*}
 \Gamma(3/2)&=&\Gamma(1+1/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt{\pi}}{2}\\

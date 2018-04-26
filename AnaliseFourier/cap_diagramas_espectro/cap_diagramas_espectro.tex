@@ -89,7 +89,7 @@ $$
 \end{ex}
 \section{Forma exponencial}
 A forma exponencial de uma série de Fourier é obtida quando se substiuem as funções trigonométricas $\sen(w_nt)$ e $\cos(w_nt)$ por suas representações em termos de exponenciais complexos, isto é
-$$\cos(w_nt)=\frac{e^{iw_nt}+ e^{-iw_nt}}{2}~~~\hbox{e}~~~\sen(w_nt)=\frac{e^{iw_nt}- e^{-iw_nt}}{2i}$$
+\begin{equation}\cos(w_nt)=\frac{e^{iw_nt}+ e^{-iw_nt}}{2}~~~\hbox{e}~~~\sen(w_nt)=\frac{e^{iw_nt}- e^{-iw_nt}}{2i}\end{equation}
 \begin{eqnarray*}
 f(t)&=&\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(w_n t)+\sum_{n=1}^\infty b_n\sen(w_n t)\\
 &=&\frac{a_0}{2}+\sum_{n=1}^\infty a_n\left(\frac{e^{iw_nt}+ e^{-iw_nt}}{2}\right)+\sum_{n=1}^\infty b_n\left(\frac{e^{iw_nt}- e^{-iw_nt}}{2i}\right)\\
@@ -105,7 +105,7 @@ Agora observamos que as definições \ref{coef} dadas por
    b_n&=& \frac{2}{T}\int_0^T f(t)\sen(w_n t)dt = \frac{2}{T}\int_{-T/2}^{T/2} f(t)\sen(w_nt)dt
   \end{eqnarray*}
 Embora estas expressões estejam definadas apenas para $n>0$, elas fazem sentidos para qualquer $n$ inteiro. Neste caso, valem as seguintes identidades:
-$$a_{-n}=a_n,~~b_{-n}=-b_{n}~~b_0=0.$$
+\begin{equation}a_{-n}=a_n,~~b_{-n}=-b_{n}~~b_0=0.\end{equation}
 onde se usou que $w_{-n}=\frac{2\pi (-n)}{T}=-\frac{2\pi n}{T}=-w_n$ e a paridade das funções cosseno e seno.
 Estendendo estas definições para qualquer inteiro, introduzimos os coeficientes $C_n$ dados por:
 \begin{equation}\label{def_cn}
@@ -135,17 +135,17 @@ C_n &=& \frac{a_n - ib_n}{2}\\
 &=&\frac{1}{T}\int_0^Tf(t)e^{-iw_nt}dt =\frac{1}{T}\int_{-T/2}^{T/2}f(t)e^{-iw_nt}dt 
 \end{eqnarray*}
 \begin{ex}{\label{ex_exp_1}} A função $f(t)$ dada no exemplo \ref{ex_triangular} pode ser escrita na forma exponencial com os seguintes coeficientes:
-$$C_0=\frac{a_0}{2}=\frac{1}{2}$$
-$$C_n=\frac{a_n-ib_n}{2}=\frac{2\frac{(-1)^n-1}{\pi^2n^2}+0}{2}=\frac{(-1)^n-1}{\pi^2n^2},~~n\neq 0$$
+\begin{equation}C_0=\frac{a_0}{2}=\frac{1}{2}\end{equation}
+\begin{equation}C_n=\frac{a_n-ib_n}{2}=\frac{2\frac{(-1)^n-1}{\pi^2n^2}+0}{2}=\frac{(-1)^n-1}{\pi^2n^2},~~n\neq 0\end{equation}
 \end{ex}
 \begin{ex}{\label{ex_exp_2}} A função $g(t)$,
 $$
 g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)+\cdots\right),
 $$
 calculada no exemplo \ref{ex_quadrada} pode ser escrita na forma exponencial com os seguintes coeficientes:
-$$C_0=\frac{a_0}{2}=0$$
+\begin{equation}C_0=\frac{a_0}{2}=0\end{equation}
 e
-$$C_n=\frac{a_n-ib_n}{2}=\frac{0-i2\frac{1-(-1)^n}{\pi n}}{2}=i\frac{(-1)^n-1}{\pi n},~~n\neq 0.$$
+\begin{equation}C_n=\frac{a_n-ib_n}{2}=\frac{0-i2\frac{1-(-1)^n}{\pi n}}{2}=i\frac{(-1)^n-1}{\pi n},~~n\neq 0.\end{equation}
 Logo,
 $$
 g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\pi}e^{-i\pi t}-\frac{2i}{\pi}e^{i\pi t}-\frac{2i}{3\pi}e^{3i\pi t}-\frac{2i}{5\pi}e^{5i\pi t}-\cdots,
@@ -153,10 +153,10 @@ $$
 \end{ex}
 \section{Diagramas de espectro}
 Diagramas espectro são representações gráficas dos coeficientes de Fourier $C_n$ associados a uma função periódica $f(t)$. Como os coeficientes $C_n$ são números complexos, é comum representá-los na forma de módulo e fase, isto é:
-$$C_n = |C_n|e^{i\phi_n}.$$
+\begin{equation}C_n = |C_n|e^{i\phi_n}.\end{equation}
 O ângulo de fase assim definido coincide com o conceito de argumento do número $C_n$.
 \begin{ex} A função 
-$$f(t)=-1+2\cos(t)+4\sen(2t)$$
+\begin{equation}f(t)=-1+2\cos(t)+4\sen(2t)\end{equation}
 é periódica com periodo fundamental $2\pi$ e pode ser escrita na forma exponencial da seguinte forma:
 \begin{eqnarray*}
 f(t)&=&-1+2\left(\frac{e^{it}+e^{-it}}{2}\right)+4\left(\frac{e^{2it}-e^{-2it}}{2i}\right)\\
@@ -206,22 +206,22 @@ Observação: Considere a fase $\phi$ no intervalo $-\pi< \phi\leq \pi$
 \begin{Answer}
  \begin{itemize}
   \item [a)]
- Observe que $$\sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}$$ e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
+ Observe que \begin{equation}\sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}\end{equation} e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
 
 \includegraphics{cap_diagramas_espectro/pics/figura_6}
 \includegraphics{cap_diagramas_espectro/pics/figura_7}
   \item [b)]
- Observe que $$3\cos(\pi t)=\frac{3}{2}\left(e^{i\pi t}+e^{-i\pi t}\right)= \frac{3}{2}e^{-i\pi t} + \frac{3}{2}e^{i\pi t}$$ e a frequência angular fundamental é $w_F=\pi$. Veja os diagramas de espectro na figura abaixo. 
+ Observe que \begin{equation}3\cos(\pi t)=\frac{3}{2}\left(e^{i\pi t}+e^{-i\pi t}\right)= \frac{3}{2}e^{-i\pi t} + \frac{3}{2}e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$. Veja os diagramas de espectro na figura abaixo. 
 
 \includegraphics{cap_diagramas_espectro/pics/figura_8}
 \includegraphics{cap_diagramas_espectro/pics/figura_9}
 \item [c)]
- Observe que $$1+4\cos(\pi t)=1+2\left(e^{i\pi t}+e^{-i\pi t}\right)= 1+2e^{-i\pi t} + 2e^{i\pi t}$$ e a frequência angular fundamental é $w_F=\pi$.  Veja os diagramas de espectro na figura abaixo. 
+ Observe que \begin{equation}1+4\cos(\pi t)=1+2\left(e^{i\pi t}+e^{-i\pi t}\right)= 1+2e^{-i\pi t} + 2e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$.  Veja os diagramas de espectro na figura abaixo. 
 
 \includegraphics{cap_diagramas_espectro/pics/figura_10}
 \includegraphics{cap_diagramas_espectro/pics/figura_11}
 \item [d)]
- Observe que $$2\cos^2(2\pi t)=2\left(\frac{e^{2i\pi t}+e^{-2i\pi t}}{2}\right)^2= \frac{e^{-4i\pi t} +2+ e^{4i\pi t}}{2}= \frac{1}{2}e^{-4i\pi t} +1+ \frac{1}{2}e^{4i\pi t}$$ e a frequência angular fundamental é $w_F=4\pi$.  Veja os diagramas de espectro na figura abaixo. 
+ Observe que \begin{equation}2\cos^2(2\pi t)=2\left(\frac{e^{2i\pi t}+e^{-2i\pi t}}{2}\right)^2= \frac{e^{-4i\pi t} +2+ e^{4i\pi t}}{2}= \frac{1}{2}e^{-4i\pi t} +1+ \frac{1}{2}e^{4i\pi t}\end{equation} e a frequência angular fundamental é $w_F=4\pi$.  Veja os diagramas de espectro na figura abaixo. 
 
 \includegraphics{cap_diagramas_espectro/pics/figura_12}
 \includegraphics{cap_diagramas_espectro/pics/figura_13}

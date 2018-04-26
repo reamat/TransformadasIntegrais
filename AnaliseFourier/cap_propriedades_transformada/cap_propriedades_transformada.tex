@@ -203,11 +203,11 @@ De fato,
 \begin{prop} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
 \begin{itemize}
 \item[a)] (Convolução no tempo)
-$$\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),$$
+\begin{equation}\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),\end{equation}
 \item[b)] (Convolução na frequência)
-$$(F_1*F_2)(w)=2\pi\mathcal{F}\{f_1(t)f_2(t)\}$$
+\begin{equation}(F_1*F_2)(w)=2\pi\mathcal{F}\{f_1(t)f_2(t)\}\end{equation}
 ou 
-$$\mathcal{F}^{-1}\{(F_1*F_2)(w)\}=2\pi f_1(t)f_2(t),$$
+\begin{equation}\mathcal{F}^{-1}\{(F_1*F_2)(w)\}=2\pi f_1(t)f_2(t),\end{equation}
 \end{itemize}
 onde $*$ indica a convolução de duas funções:
 $$
@@ -291,7 +291,7 @@ $$
 \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
 $$
 \end{ex}
-\begin{prop}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então $$\mathcal{F}\left\{f(-t)\right\}=F(-w).$$
+\begin{prop}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então \begin{equation}\mathcal{F}\left\{f(-t)\right\}=F(-w).\end{equation}
 \end{prop}
 \begin{proof}
 \begin{eqnarray*}
@@ -355,7 +355,7 @@ Em ambos os casos, temos:
 \begin{obs} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
 \end{obs}
 \begin{prop}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
-$$\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw$$
+\begin{equation}\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw\end{equation}
 \end{prop}
 \begin{proof}
 Partimos da representação de $f(t)$ em sua integral de Fourier:
@@ -508,11 +508,11 @@ f_T(t)&=&\sum_{k=-\infty}^\infty f(kT) \delta (t-kT)\\
 &=&f(t)\delta_T(t)
 \end{eqnarray*}
 onde $\delta_T(t)=\sum_{k=-\infty}^\infty \delta (t-kT)$ é uma função periódica cuja série de Fourier é dada por:
-$$\delta_T(t)=\sum_{k=-\infty}^\infty \delta (t-kT)=\sum_{n=-\infty}^\infty C_n e^{iw_n t}$$
+\begin{equation}\delta_T(t)=\sum_{k=-\infty}^\infty \delta (t-kT)=\sum_{n=-\infty}^\infty C_n e^{iw_n t}\end{equation}
 e
-$$C_n=\frac{1}{T}\int_{-T/2}^{T/2}\delta_T(t) e^{-iw_n t}dt=\frac{1}{T}$$
+\begin{equation}C_n=\frac{1}{T}\int_{-T/2}^{T/2}\delta_T(t) e^{-iw_n t}dt=\frac{1}{T}\end{equation}
 assim,
-$$\delta_T(t)=\frac{1}{T}\sum_{n=-\infty}^\infty  e^{iw_n t}$$
+\begin{equation}\delta_T(t)=\frac{1}{T}\sum_{n=-\infty}^\infty  e^{iw_n t}\end{equation}
 e, portanto:
 \begin{eqnarray*}
 f_T(t)&=&f(t)\delta_T(t)\\
@@ -622,8 +622,8 @@ para $w_0\in\mathbb{R}$.
 \item[h)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)|\sen(1000t)|$. [Dica: Use a expansão em Série de Fourier do retificador de onda completa\footnote{$|\sen(x)|=\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2x)}{1\cdot 3}+\frac{\cos(4x)}{3\cdot 5}+\frac{\cos(6x)}{5\cdot 7}+\cdots\right)$}]
 \item[i)] Trace o diagrama de magnitude do espectro de $g(t)=f'(t)$.
 \item[j)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\ast f(t)$.
-\item[k)] Calcule o valor da energia do sinal dada por $$\int_{-\infty}^\infty f(t)^2dt.$$
-\item[l)] Calcule o módulo do valor médio do sinal dado por $$\left|\int_{-\infty}^\infty f(t)dt\right|.$$
+\item[k)] Calcule o valor da energia do sinal dada por \begin{equation}\int_{-\infty}^\infty f(t)^2dt.\end{equation}
+\item[l)] Calcule o módulo do valor médio do sinal dado por \begin{equation}\left|\int_{-\infty}^\infty f(t)dt\right|.\end{equation}
 \end{itemize}
  \end{Exercise}
 \begin{Answer}
@@ -683,7 +683,7 @@ Onde se usou a propriedade \ref{prop_linear}.
 \end{eqnarray*}
 Veja o diagrama de magnitudes no gráfico abaixo.
 \item[h)] 
-$$g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]$$
+\begin{equation}g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]\end{equation}
 \begin{eqnarray*}
 \mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)-\frac{2}{3\pi}(F(w+2000)+F(w-2000))\\&-&\frac{2}{15\pi}(F(w+4000)+F(w-4000))-\frac{2}{35\pi}(F(w+6000)+F(w-6000))+\cdots
 \end{eqnarray*}
@@ -753,7 +753,7 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 \begin{center}
 
 \includegraphics{cap_propriedades_transformada/pics/figura_23}\end{center}
-\item[g)] $$a=\frac{392}{329.6}=1.19$$
+\item[g)] \begin{equation}a=\frac{392}{329.6}=1.19\end{equation}
 \end{itemize}
 \end{Answer}
 \begin{Exercise} Trace o gráfico das seguintes funções, calcule sua transformada de Fourier e trace o diagrama de magnitudes: 

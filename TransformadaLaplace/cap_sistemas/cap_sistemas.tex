@@ -281,7 +281,7 @@ A figura \ref{fig_massa_mola_2_malha} apresenta os gráficos de $x(t)$ e $y(t)$:
 \end{figure}
 \section{Aplicação: reação química}
 Considere o mecanismo simplificado de reação química apresentado a seguir:
-$$R\longrightarrow S \longrightarrow T$$
+\begin{equation}R\longrightarrow S \longrightarrow T\end{equation}
 onde a concentração de $R$, $S$ e $T$ são dadas em $\hbox{mol}/l$ por $x(t)$, $y(t)$ e $z(t)$, respectivamente e são regidas pelo seguinte sistema de equações diferenciais ordinárias:
 \begin{eqnarray*}
 x'(t)&=&-\alpha x(t) \\
@@ -289,7 +289,7 @@ y'(t)&=&\alpha x(t)-\gamma y(t)\\
 z'(t)&=&\gamma y(t),
 \end{eqnarray*} 
 onde $\alpha$ e $\gamma$ são constantes positivas. Sabendo que as concentrações iniciais são dadas por:
-$$x(0)=1,~~~~ y(0)=z(0)=0.$$
+\begin{equation}x(0)=1,~~~~ y(0)=z(0)=0.\end{equation}
 Usando a teoria das Transformadas de Laplace, vamos obter a solução dada pelas funções $x(t)$, $y(t)$ e $z(t)$ quando $\alpha=1$, e $\gamma=2$. Calculamos a Transformada de Laplace do sistema usando a propriedade da linearidade \ref{prop_lin} e da derivada \ref{prop_der}:
 \begin{eqnarray*}
 sX(s)-x(0)&=&-\alpha X(s) \\
@@ -348,13 +348,13 @@ Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
 \end{itemize}
 \end{Exercise}
 \begin{Exercise}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
-$$\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)$$
+\begin{equation}\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)\end{equation}
 onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
 \begin{itemize}
  \item [a)] Mostre que $U(s)=\frac{50}{s}+\frac{Q(s)}{s+4}$.
  \item [b)] Calcule a temperatura $u(t)$ quando  $q(t)=100 \delta(t-1)$. Esboce o gráfico de $u(t)$.
  \item [c)] Suponha, agora, que a temperatura é regulada por um sistema de controle automático que aumenta a potência $q(t)$ sempre que a temperatura está abaixo da temperatura de ajuste e reduz a potência sempre que a temperatura se encontra acima da temperatura de ajuste. O sistema de controle automático reage conforme a seguinte equação:
- $$\frac{dq(t)}{dt} = \eta (u_a-u(t)).$$
+ \begin{equation}\frac{dq(t)}{dt} = \eta (u_a-u(t)).\end{equation}
  onde $u_a$ é a temperatura de ajuste e $\eta$ é uma constante positiva. Calcule o valor de $\eta$ para que o sistema resultante do acoplamente entre o modelo do forno e o sistema de controle automático seja criticamente amortecido. Mostre que $U(s)=\frac{200}{s}-\frac{150}{s+2}-\frac{300}{(s+2)^2}+\frac{q(0)}{(s+2)^2}$.
  \item[d)] Use a propriedade do valor final para obter $\displaystyle\lim_{t\to+\infty} u(t)$ no item c).
  \item[e)] Resolva o problema acoplado usando a constante $\eta$ calculada no item c, considerando $u_a=200$ e $q(0)=600$.

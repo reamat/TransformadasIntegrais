@@ -42,8 +42,8 @@ $$
 f_T(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t},
 $$
 onde 
-$$C_n=\frac{1}{T}\int_{-T/2}^{T/2}f_T(\tau)e^{-iw_n \tau}d\tau=\frac{1}{T}\int_{-T/2}^{T/2}f(\tau)e^{-iw_n \tau}d\tau.$$
-Definimos agora a função $$F_T(w)=\int_{-T/2}^{T/2}f(\tau)e^{-iw \tau}d\tau$$ e escrevemos $f_T(t)$ em termos de $F_T(w)$:
+\begin{equation}C_n=\frac{1}{T}\int_{-T/2}^{T/2}f_T(\tau)e^{-iw_n \tau}d\tau=\frac{1}{T}\int_{-T/2}^{T/2}f(\tau)e^{-iw_n \tau}d\tau.\end{equation}
+Definimos agora a função \begin{equation}F_T(w)=\int_{-T/2}^{T/2}f(\tau)e^{-iw \tau}d\tau\end{equation} e escrevemos $f_T(t)$ em termos de $F_T(w)$:
 \begin{eqnarray}
 \nonumber f_T(t)&=&\sum_{n=-\infty}^\infty \frac{1}{T}F_T(w_n) e^{i w_n t}\\&=& \sum_{n=-\infty}^\infty \frac{w_F}{2\pi}F_T(w_n) e^{i w_n t}
 \\\nonumber &=& \sum_{n=-\infty}^\infty \frac{\Delta w}{2\pi}F_T(w_n) e^{i w_n t}
@@ -58,7 +58,7 @@ $$
 f(t)=\frac{1}{2\pi} \int_{-\infty}^\infty F(w)e^{iw t}dw,
 $$
 onde
-$$F(w)=\int_{-\infty}^{\infty}f(t)e^{-i w t}dt$$
+\begin{equation}F(w)=\int_{-\infty}^{\infty}f(t)e^{-i w t}dt\end{equation}
 \begin{ex} Continuamos com o exemplo \ref{ex_Transf_1}. Dada a função $f(t)=e^{-|t|}$, podemos escrever
 $$
 f(t)=\frac{1}{2\pi} \int_{-\infty}^\infty F(w)e^{iw t}dw,
@@ -183,7 +183,7 @@ onde se usou o item 8 da tabela \ref{tab_int_def}.
 \begin{Exercise} Mostre que se $f(t)$ é uma função real, então sua a parte real da tranformada de Fourier de $f(t)$ é uma função par e a parte imaginária é ímpar.
 \end{Exercise}
 \begin{Exercise} Calcule a transformada de Fourier da função
-$$f(t)=\sum_{j=0}^\infty \delta(t-j) e^{-j}.$$
+\begin{equation}f(t)=\sum_{j=0}^\infty \delta(t-j) e^{-j}.\end{equation}
 \end{Exercise}
 \begin{Answer} 
 \begin{eqnarray*}
