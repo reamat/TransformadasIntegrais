@@ -117,11 +117,11 @@ $$
 \end{ex}
 \section{Transformada de Laplace de funções periódicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
-\begin{prop}{\label{prop_fun_per}}Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
+\begin{teo}{\label{prop_fun_per}}(Propriedade da transformada de funções periódicas) Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
 $$
 \mathcal{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.
 $$
-\end{prop}
+\end{teo}
 \begin{proof}Aplicamos a definição e separamos a integral nos períodos da função $f(t)$ para obter:
 \begin{eqnarray*}
  \mathcal{L}\{f(t)\}&=&\int_0^\infty f(t)e^{-st}dt \\
@@ -339,12 +339,12 @@ $$
 $$
 \end{exer}
 \section{A derivada da transformada de Laplace}
-\begin{prop}{\label{prop_der_transf}}
+\begin{teo}{\label{prop_der_transf}}(Propriedade da derivada da transformada)
 Se $F(s)=\mathcal{L}\{f(t)\}$, então
 \begin{equation}
 \frac{d}{ds}F(s)=-\mathcal{L}\{tf(t)\}.
 \end{equation} 
-\end{prop}
+\end{teo}
 \begin{proof}
 Usando a definição de transformada de Laplace, temos
 \begin{eqnarray*}
@@ -470,7 +470,7 @@ $$
 não usamos-a para calcular a solução. De fato, o problema possui um singularidade na origem que não é percebida pela transformada de Laplace. A solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
 \section{Propriedade da integral da transformada de Laplace}
-\begin{prop}{\label{prop_int_transf}}Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
+\begin{teo}{\label{prop_int_transf}}(Propriedade da integral da transformada) Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
 e o limite
 $$
 \lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau
@@ -479,7 +479,7 @@ existe, então
 \begin{equation}
 \int_s^\infty F(v)dv =\mathcal{L}\left\{\frac{f(t)}{t}\right\}.
 \end{equation}
- \end{prop}
+ \end{teo}
 \begin{proof} Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 \int_s^\infty F(v)dv&=&\int_s^\infty\left(\int_0^\infty f(t)e^{-vt}dt\right)dv\\
@@ -611,7 +611,7 @@ $$
 $$
 \end{ex}
 \section{Propriedades do Valor Inicial e Final}
-\begin{prop}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
+\begin{teo}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
 $$
 \lim_{t\to\infty}f(t)=L,
 $$
@@ -619,7 +619,7 @@ então
 $$
 \lim_{s\to 0^+} sF(s)=L.
 $$
-\end{prop}
+\end{teo}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
@@ -635,7 +635,7 @@ $$
 \lim_{s\to 0^+} sF(s)=L.
 $$ 
 \end{proof}
-\begin{prop}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
+\begin{teo}(Propriedade do Valor Inicial) Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
 $$
 \lim_{t\to 0^+}f(t)=L,
 $$
@@ -643,7 +643,7 @@ então
 $$
 \lim_{s\to \infty} sF(s)=L.
 $$
-\end{prop}
+\end{teo}
 \begin{proof}Usamos a definição de transformada de Laplace para escrever
 \begin{eqnarray*}
 sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
