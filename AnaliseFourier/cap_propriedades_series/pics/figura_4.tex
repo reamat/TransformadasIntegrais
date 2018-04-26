@@ -1,0 +1,35 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{yunit =2cm,xunit=20cm, linewidth=1\pslinewidth}
+\begin{pspicture}(-4.0,-0.5) (3,3.5)
+ \psset{xunit=1,yunit=1}
+  \psaxes[labels]{->}(0,0)(-3.5,-.2)(3.5,3.2)
+  
+	  \psline[linecolor=blue,linewidth=2pt]{-}(-3,0)(-3,1)
+	  	  \psline[linecolor=blue,linewidth=2pt]{-}(-2,0)(-2,.5)
+  \psline[linecolor=blue,linewidth=2pt]{-}(-1,0)(-1,1)
+    \psline[linecolor=blue,linewidth=2pt]{-}(0,0)(0,2)
+    \psline[linecolor=blue,linewidth=2pt]{-}(1,0)(1,1)
+	  \psline[linecolor=blue,linewidth=2pt]{-}(2,0)(2,.5)
+		  \psline[linecolor=blue,linewidth=2pt]{-}(3,0)(3,1)
+  \rput(.4,3.0){$|C_n|$}
+  \rput(3.5,-.3){$w_n$}
+\end{pspicture}
+\end{document}

@@ -19,15 +19,15 @@ para todo $t\in\mathbb{R}.$
 \begin{prop}O período fundamental das funções $f(t)=\sen(wt)$ e $g(t)=\cos(wt)$ é $\frac{2\pi}{w} $. 
 \end{prop}
 \begin{proof} Para provar isso, supomos que $T$ é um período de $f(t)$, isto é, $f(t+T)=f(T)$ para todo $t$. Em especial, para $t=0$, temos: 
-$$
+\begin{equation}
 \sen(wT)=\sen(0)=0.
-$$
+\end{equation}
 Logo, $wT=n\pi$, onde $n$ é um natural positivo. Observe que $\frac{\pi}{w}$ não pode ser o período fundamental, pois tomando $t=\frac{\pi}{2w}$, temos
 \begin{equation}1=\sen\left(w\left(\frac{\pi}{2w}\right)\right)\neq \sen\left(w\left(\frac{\pi}{2w}+\frac{\pi}{w}\right)\right)=-1.\end{equation}
 Como, por construção do círculo trigonomético, temos:
-$$
+\begin{equation}
 \sen\left(w\left(t+\frac{2\pi}{w}\right)\right)=\sen(wt+2\pi)=\sen(wt),
-$$ 
+\end{equation} 
 então $\frac{2\pi}{w}$ é o período fundamental. Observe que $w$ é a frequência angular fundamental. Um raciocínio análogo vale para $g(t)$.
 \end{proof}
 \begin{ex} Vamos calcular o período fundamental da função $f(t)=\sen(w_1t)+\sen(w_2t)$. Ambas as parcelas que compoem $f(t)$ são periódicas, com períodos $T_1=\frac{2\pi}{w_1}n$ e $T_2=\frac{2\pi}{w_2}m$, onde $n$ e $m$ são inteiros positivos. A função $f(t)$ é periódica se existirem $m$ e $n$ tais que $T_1=T_2$, ou seja, $\frac{2\pi}{w_1}n=\frac{2\pi}{w_2}m$. Isso implica em $\frac{w_2}{w_1}=\frac{m}{n}$. Essa identidade só é possível se $\frac{w_1}{w_2}$ for racional, pois $m$ e $n$ são inteiros. Por exemplo, 
@@ -61,6 +61,65 @@ não depende do valor $x$. Em especial, vale a identidade:
   &=&\int_{0}^{T} f(t)dt
   \end{eqnarray*}
 \end{proof}
+
+\subsection*{Exercícios}
+ \begin{exer}Verifique as seguintes afirmações são verdadeiras e justifique:
+\begin{enumerate} 
+\item A soma de funções periódicas é uma função periódica.
+\item Toda função periódica possui uma representação em série de Fourier.
+\item Séries de Fourier convergentes são contínuas.
+\item Seja $f(x)$ uma função real ímpar, então $f(0)=0$.
+\item Seja $f(x)$ uma função real par, então $f(0)=0$.
+\item Seja $f(x)$ uma função real ímpar diferenciável, então $f'(0)=0$.
+\item Seja $f(x)$ uma função real par diferenciável, então $f'(0)=0$.
+\item Seja $f(x)$ uma função real par diferenciável, então $f'(x)$ é uma função ímpar.
+\item Seja $f(x)$ uma função real ímpar diferenciável, então $f'(x)$ é uma função par.
+\item Seja $f(x)$ uma função real par integrável, então $\int_0^xf(s)ds$ é uma função ímpar.
+\item Seja $f(x)$ uma função real ímpar integrável, então $\int_0^xf(s)ds$ é uma função par.
+\item A única função real par e ímpar é a função $f(x)=0$.
+\item Toda função real pode ser escrita de forma única como a soma de uma função ímpar e outra par.
+\end{enumerate}
+\end{exer}
+\begin{resp} São verdadeiras: 4, 7, 8,9,10,11,12 e 13. 
+\end{resp}
+\begin{exer}Identifique a paridade das sequintes funções. Verique quais delas são periódicas. 
+\begin{enumerate} 
+\item $f(x)=\sen(x^2)$.
+\item $f(x)=\sen^2(x)$.
+\item $f(x)=\cos(x)+e^{\sen(x)}$
+\item $f(x)=\cos(\pi x)+e^{\sen(x)}$
+\item $f(x)=2$
+\item $f(x)=(\sen(x)+\cos(x)+1)^5$
+\item $f(x)=(\cos(2x)+1)^7$
+\item $f(x)=\sen^2(\pi x)+\cos(\pi x)$
+\item $f(x)=\sen(x)\cos(x)$
+\item $f(x)=\sen(1+\cos(x))$
+\end{enumerate}
+\end{exer}
+\begin{resp}
+São pares: 1,2,5,7, 8 e 10. É ímpar: 9. São periódicas: 2,3,5,6,7,8, 9 e 10. 
+\end{resp}
+\begin{exer}Seja $f(t)$ um função periódica integrável de período $T$ e $F(t)=\int_0^tf(\tau)d\tau$. Encontre uma condição necessária e suficiente para que $F(t)$ seja periódica de período $T$.
+\end{exer}
+\begin{resp}
+ A condição é $\int_0^Tf(\tau)d\tau=0$. Lembre-se que você deve verificar que esta condição é necessária e suficiente.
+\end{resp}
+ \begin{exer}{\label{freq_fund}} Encontre a frequência angular fundamental das seguintes funções periódicas:
+\begin{itemize}
+\item [a)] $f(t)= \sen(\pi t)$
+\item [b)] $\cos^2(\pi t)$
+\item [c)] $\cos^3(\pi t)$
+\item [d)] $e^{\cos(t)}$
+\item [e)] $\cos(2t)+\cos(4t)$
+\item [f)] $\cos(2t)+\sen(3t)$
+\item [h)] $\cos(6t)+\sen(10t)+\sen(15t)$
+\item [i)] $2+\cos(3t)$
+\end{itemize}
+\end{exer}
+\begin{resp}
+$\pi$, $2\pi$, $\pi$, $1$, $2$, $1$, $1$, $3$
+\end{resp}
+
 \section{Séries de Fourier}
 \begin{defn} Seja $T>0$, definimos polinômio trigonomético de grau $N$ uma função do tipo:
 \begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] \end{equation}
@@ -123,17 +182,17 @@ f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\ri
 onde $w_n=\frac{2\pi n}{T}$.
 \end{teo}
 \begin{proof}Multiplicamos a equação (\ref{serie_Fourier}) por $\cos(w_m t)$ e obtemos
- $$
+ \begin{equation}
  \cos(w_m t)f(t)=\frac{a_0}{2}\cos(w_m t)+ \sum_{n=1}^\infty \left[a_n \cos(w_n t)\cos(w_m t) + b_n \sen(w_n t)\cos(w_m t)\right] .
- $$
+ \end{equation}
 Seguimos integrando em $[0,T]$ e temos:
-$$
+\begin{equation}
  \int_0^T\cos(w_m t)f(t)dt=\int_0^T\frac{a_0}{2}\cos(w_m t)dt+ \sum_{n=1}^\infty \left[a_n \int_0^T\cos(w_n t)\cos(w_m t)dt + b_n \int_0^T\sen(w_n t)\cos(w_m t)dt\right] .
- $$
+ \end{equation}
  Pelo teorema \ref{rel_ortogonalidade}, se $m\neq n$, as parcelas do lado direito são nulas. A única parcela não nula é aquela onde $m=n$. Supondo $m=n\neq 0$, temos:
-$$
+\begin{equation}
  \int_0^T\cos(w_m t)f(t)dt= a_m \frac{T}{2},
- $$
+ \end{equation}
  onde obtemos a expressão (\ref{formula_an}). Supondo $m=n=0$, obtemos a expressão (\ref{formula_a0}). Um argumento análoga para calcular $b_n$.
  \end{proof}
 \begin{obs}Observe que como $\cos(0)=1$, a fórmula de $a_n$ com $n=0$ recai na fórmula para $a_0$.
@@ -142,9 +201,9 @@ $$
  \end{defn}
 Observe que a série de Fourier de uma função $f(t)$ não é necessariamente igual a função $f(t)$. De fato, não se pode se quer garantir que a série de Fourier associada a uma função integrável seja convergente. Estas questões teóricas fogem do escopo do nosso curso e são normalmente tratadas em cursos de análise matemática (veja, por exemplo, \cite{DAVIS}, \cite{TOLSTOV} e \cite{HSU}). 
 \begin{teo}{\label{teo_Dirichlet}} Seja $f$ uma função periódica de período $T$, suave por partes e descontínua no máximo em um número finito de saltos dentro de cada intervalo, então a série de Fourier converge em cada ponto $t$ para
-$$
+\begin{equation}
 \frac{f(t+)+f(t-)}{2},
-$$
+\end{equation}
 onde $f(t+)$ e $f(t-)$ são os limites laterais à direita e à esquerda, respectivamente. Observe que nos pontos $t$ onde $f(t)$ é contínua, então $f(t+)=f(t-)$ e a série de Fourier converge para $f(t)$.
 \end{teo}
 \begin{ex}\label{ex_triangular} Seja $f(t)$ uma função dada por
@@ -174,9 +233,9 @@ onde $T=2$ e $w_n=\frac{2\pi n}{T}=\pi n$. Logo,
    b_n&=&\int_{-1}^{1} |t|\sen(\pi n t)dt=0.
   \end{eqnarray*}
 onde se usou que $|t|$, $|t|\cos(\pi n t)$ são funções pares em $t$ e $|t|\sen(\pi n t)$ é ímpar em $t$. Assim, temos
-$$
+\begin{equation}
 f(t)=\frac{1}{2}-\frac{4}{\pi^2}\left(\cos(\pi t)+\frac{1}{3^2}\cos(3\pi t)+\frac{1}{5^2}\cos(5\pi t)+\cdots\right)
-$$
+\end{equation}
 Observe que, quando $t=0$, obtemos como subproduto da série de Fourier da $f(t)$ a soma da seguinte série numérica:
 \begin{equation}\label{serie_inv_impar}
 1+\frac{1}{3^2}+\frac{1}{5^2}+\cdots=\frac{\pi^2}{8}.
@@ -214,9 +273,9 @@ Observamos que essa é uma função ímpar, ou seja, $f(t)=-f(-t)$. Novamente, u
 	&=&\frac{2}{\pi n}\left[-\cos(\pi n t)\right]_0^1=2\frac{1-(-1)^n}{\pi n}
   \end{eqnarray*}
 Logo,
-$$
+\begin{equation}
 g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)+\cdots\right).
-$$
+\end{equation}
 A figura \ref{fig_conv_quadrangular} apresenta os gráficos da série que representa a função $g(t)$ com um termo, dois termos, três termos e quatro termos.
 \begin{figure}[!ht]
 \begin{center}
@@ -250,122 +309,67 @@ Utilisaremos as fórmulas (\ref{coef}) envolvendo integrais no intervalo $[0,1]$
 	&=&2\left[-\frac{t\cos(2 \pi n t)}{2 \pi n}+\frac{\sen(2 \pi n t)}{4\pi^2 n^2}\right]_0^1=-\frac{1}{\pi n}\\
 	 \end{eqnarray*}
 Logo,
-$$
+\begin{equation}
 h(t)=\frac{1}{2}-\frac{1}{\pi}\left(\sen(2 \pi t)+\frac{1}{2}\sen(4\pi t)+\frac{1}{3}\sen(6\pi t)+\cdots\right).
-$$
+\end{equation}
 \end{ex}
 \begin{obs}{\label{obs_paridade}} Os coeficiente $b_n$ da série de Fourier de uma função par são nulos bem como os coeficiente $a_n$ da série de Fourier de uma função ímpar também o são.
 \end{obs}
 \begin{ex}Demonstre a observação \ref{obs_paridade}.
 \end{ex}
-\section{Exercícios}
- \begin{Exercise}Verifique as seguintes afirmações são verdadeiras e justifique:
-\begin{enumerate} 
-\item A soma de funções periódicas é uma função periódica.
-\item Toda função periódica possui uma representação em série de Fourier.
-\item Séries de Fourier convergentes são contínuas.
-\item Seja $f(x)$ uma função real ímpar, então $f(0)=0$.
-\item Seja $f(x)$ uma função real par, então $f(0)=0$.
-\item Seja $f(x)$ uma função real ímpar diferenciável, então $f'(0)=0$.
-\item Seja $f(x)$ uma função real par diferenciável, então $f'(0)=0$.
-\item Seja $f(x)$ uma função real par diferenciável, então $f'(x)$ é uma função ímpar.
-\item Seja $f(x)$ uma função real ímpar diferenciável, então $f'(x)$ é uma função par.
-\item Seja $f(x)$ uma função real par integrável, então $\int_0^xf(s)ds$ é uma função ímpar.
-\item Seja $f(x)$ uma função real ímpar integrável, então $\int_0^xf(s)ds$ é uma função par.
-\item A única função real par e ímpar é a função $f(x)=0$.
-\item Toda função real pode ser escrita de forma única como a soma de uma função ímpar e outra par.
-\end{enumerate}
-\end{Exercise}
-\begin{Answer} São verdadeiras: 4, 7, 8,9,10,11,12 e 13. 
-\end{Answer}
-\begin{Exercise}Identifique a paridade das sequintes funções. Verique quais delas são periódicas. 
-\begin{enumerate} 
-\item $f(x)=\sen(x^2)$.
-\item $f(x)=\sen^2(x)$.
-\item $f(x)=\cos(x)+e^{\sen(x)}$
-\item $f(x)=\cos(\pi x)+e^{\sen(x)}$
-\item $f(x)=2$
-\item $f(x)=(\sen(x)+\cos(x)+1)^5$
-\item $f(x)=(\cos(2x)+1)^7$
-\item $f(x)=\sen^2(\pi x)+\cos(\pi x)$
-\item $f(x)=\sen(x)\cos(x)$
-\item $f(x)=\sen(1+\cos(x))$
-\end{enumerate}
-\end{Exercise}
-\begin{Answer}
-São pares: 1,2,5,7, 8 e 10. É ímpar: 9. São periódicas: 2,3,5,6,7,8, 9 e 10. 
-\end{Answer}
-\begin{Exercise}Seja $f(t)$ um função periódica integrável de período $T$ e $F(t)=\int_0^tf(\tau)d\tau$. Encontre uma condição necessária e suficiente para que $F(t)$ seja periódica de período $T$.
-\end{Exercise}
-\begin{Answer}
- A condição é $\int_0^Tf(\tau)d\tau=0$. Lembre-se que você deve verificar que esta condição é necessária e suficiente.
-\end{Answer}
- \begin{Exercise}{\label{freq_fund}} Encontre a frequência angular fundamental das seguintes funções periódicas:
-\begin{itemize}
-\item [a)] $f(t)= \sen(\pi t)$
-\item [b)] $\cos^2(\pi t)$
-\item [c)] $\cos^3(\pi t)$
-\item [d)] $e^{\cos(t)}$
-\item [e)] $\cos(2t)+\cos(4t)$
-\item [f)] $\cos(2t)+\sen(3t)$
-\item [h)] $\cos(6t)+\sen(10t)+\sen(15t)$
-\item [i)] $2+\cos(3t)$
-\end{itemize}
-\end{Exercise}
-\begin{Answer}
-$\pi$, $2\pi$, $\pi$, $1$, $2$, $1$, $1$, $3$
-\end{Answer}
- \begin{Exercise}
+\subsection*{Exercícios}
+
+ \begin{exer}
 Considere a função periódica de período $T$ dada na região $(-T/2,T/2)$ por
-$$f(t)=\left\{
+\begin{equation}f(t)=\left\{
 \begin{array}{lc}
 0,&-T/2\leq t < -d/2,\\
 1,&-d/2\leq t \leq d/2,\\
 0,&d/2 < t \leq T/2.
 \end{array}
-\right.$$
+\right.\end{equation}
 onde $d$ é uma constante entre $0$ e $T$.
 Estude a paridade desta função. Encontre sua representação em série de Fourier. 
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{eqnarray*} \frac{a_0}{2}&=&\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt=\frac{1}{T}\int_{-d/2}^{d/2}dt=\frac{d}{T}\\
 a_n&=&\frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(w_nt)dt=\frac{2}{T}\int_{-d/2}^{d/2}\cos(w_nt)dt=\frac{2}{T}\left.\frac{\sen(w_nt)}{w_n}\right|_{-d/2}^{d/2}=\frac{4}{w_nT}\sen(w_nd/2)
 \end{eqnarray*}
 Como
 $w_n=\frac{2\pi n}{T}$, temos $ a_n=\frac{2}{\pi n}\sen\left(\pi n\frac{d}{T}\right)$ e, portanto
 \begin{equation}f(t)=\frac{d}{T}+\sum_{n=1}^\infty a_n \cos(w_n t)=\frac{d}{T}+\frac{2}{\pi}\sum_{n=1}^\infty \frac{1}{n}\sen\left(\frac{\pi n d}{T}\right) \cos(w_n t)\end{equation}
-\end{Answer}
-\begin{Exercise}Calcule a soma da série
+\end{resp}
+\begin{exer}Calcule a soma da série
 \begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)\end{equation}
 onde $0<b<1$ e mostre que
 \begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
 Com base neste resultado, obtenha o valor da integral definida dada por
 \begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt.\end{equation}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
  Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
-\end{Answer}
-\begin{Exercise}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
-$$f(t)=\left\{
+\end{resp}
+\begin{exer}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
+\begin{equation}f(t)=\left\{
 \begin{array}{lc}
 t,&|t|\leq d/2,\\
 0,&d/2<|t|<T/2,\\
 \end{array}
-\right.$$
+\right.\end{equation}
 onde $0<d\leq T$. Calcule sua representação em série de Fourier. Estude o caso particular $d=T$. Dica: $\int u\cos(u)du=\cos(u)+u\sen(u)+C$ e $\int u\sen(u)du=\sen(u)-u\cos(u)+C$
- \end{Exercise}
-\begin{Answer}
+ \end{exer}
+\begin{resp}
  $
 b_n=\frac{4}{T}\int_{0}^{d/2}t\sen(w_nt)dt=\frac{T\sen\left(\frac{\pi d n}{T}\right)-dn\pi\cos\left(\frac{\pi d n}{T}\right)}{\pi^2 n^2}
 $
-\end{Answer}
-\begin{Exercise}{\label{Fourier_8}} Trace o gráfico e obtenha a representação em série de Fourier das seguintes funções:
+\end{resp}
+\begin{exer}{\label{Fourier_8}} Trace o gráfico e obtenha a representação em série de Fourier das seguintes funções:
 \begin{itemize}
  \item [a)] $f(t)=|\sen(\pi t)|$
  \item [b)] $g(t)=\sum_{n=-\infty}^\infty \delta(t-nT)$ onde $T>0$.
 \end{itemize}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{itemize}
  \item [a)] $f(t)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos(2n\pi t)}{4n^2-1}$
 \begin{center}
@@ -376,12 +380,12 @@ $
 
 \includegraphics{cap_series/pics/figura_7}\end{center}
  \end{itemize}
-\end{Answer}
-\begin{Exercise}{\label{Fourier_9}}
+\end{resp}
+\begin{exer}{\label{Fourier_9}}
  Use o item a do exercício anterior para obter uma representação em Série de Fourier da função \begin{equation}h(t)=|\cos(\pi t)|.\end{equation}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
  \begin{eqnarray*}
 h(t)&=&f\left(\frac{1}{2}-t\right)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos\left(n\pi-2n\pi t\right)}{4n^2-1}=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty(-1)^n \frac{\cos\left(2n\pi t\right)}{4n^2-1}
  \end{eqnarray*}
-\end{Answer}
+\end{resp}
