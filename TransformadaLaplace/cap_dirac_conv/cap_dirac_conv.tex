@@ -8,18 +8,18 @@ Muitos fenômenos físicos exigem a representação de uma força muito grande e
  \item um avião é atingido por um raio.
 \end{itemize}
 Para representar essa força, vamos tomar a função pulso unitário em um curto intervalo de tempo $[-\epsilon,\epsilon]$ em torno da origem, isto é, um pulso com integral unitária:
-$$
+\begin{equation}
 \delta_\epsilon(t)=\frac{1}{2\epsilon}\left(u(t+\epsilon)-u(t-\epsilon)\right)=\left\{\begin{array}{ll}0,&t<-\epsilon\\ \frac{1}{2\epsilon},&-\epsilon<t<\epsilon\\0,&t>\epsilon.\end{array}\right.
-$$
+\end{equation}
 Um pulso unitário em torno de $t=a$ é representado por
 \begin{equation}{\label{def_delta_dirac}}
 \delta_\epsilon(t-a)=\frac{1}{2\epsilon}\left(u(t-(a-\epsilon))-u(t-(a+\epsilon))\right)=\left\{\begin{array}{ll}0,&t<a-\epsilon\\ \frac{1}{2\epsilon},&a-\epsilon<t<a+\epsilon\\0,&t>a+\epsilon.\end{array}\right.
 \end{equation}
 Observe que $\int_{-\infty}^\infty\delta_\epsilon(t-a)=1$ para qualquer $\epsilon>0$. A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ para $a>0$ e $\epsilon=1$, $\epsilon=\frac{1}{2}$, $\epsilon=\frac{1}{4}$, $\epsilon=\frac{1}{8}$ e $\epsilon=\frac{1}{12}$.
 A função que representa uma grande força instantânea é chamada de {\bf função impulso} ou {\bf função Delta de Dirac} e pode ser definida pelo limite das funções pulsos:
-$$
+\begin{equation}
 \delta(t-a)=\lim_{\epsilon\to 0}\delta_\epsilon(t-a).
-$$
+\end{equation}
 Este limite não pode ser interpretado pontualmente, isto é, como o limite usual de funções reais, mas apenas no contexto de uma integral, como veremos.
 A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ quando $\epsilon$ diminui e uma representação gráfica para $\delta(t-a)$.
 \begin{figure}[!ht]
@@ -36,18 +36,18 @@ A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ qu
 \caption{\label{fig_delta_dirac}}
 \end{figure}
 \begin{obs}A função delta de Dirac pode ser definida como limite de outras sequências de funções com propriedades análogas a sequência de pulsos. Por exemplo, podemos definir $\delta(t)$ como limite das funções
-$$
+\begin{equation}
 f_\epsilon(t)=\frac{1}{\epsilon\sqrt{\pi}}e^{-\frac{t^2}{\epsilon^2}}
-$$
+\end{equation}
 \end{obs}
 A função Impulso é zero em todo ponto, exceto em $t=a$:
-$$
+\begin{equation}
 \delta(t-a)=\left\{\begin{array}{ll}0,&t\neq a\\\infty,&t=a  \end{array}\right.
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 \int_{-\infty}^\infty\delta(t-a)dt=1
-$$
+\end{equation}
 A função Delta de Dirac deve ser sempre compreendida como o limite de funções reais no contexto de uma integração, isto conduz à chamada  {\bf propriedade da filtragem}, que define totalmente a Delta da Dirac:
 Se $f(t)$ for um função contínua em torno de $t=a$, então
 \begin{equation}{\label{prop_filtragem_dirac}}
@@ -63,35 +63,35 @@ Para chegar a esta conclusão, definimos $F(t)=\int_a^t f(\tau)d\tau$ e calculam
 \end{eqnarray*}
 \subsection{Delta de Dirac como derivada distribucional da função Heaviside}
 Na equação (\ref{def_delta_dirac}) definimos a função Delta de Dirac como
-$$
+\begin{equation}
 \delta(t-a)=\lim_{\epsilon\to 0}\frac{1}{2\epsilon}\left(u(t-(a-\epsilon))-u(t-(a+\epsilon))\right).
-$$
+\end{equation}
 Por outro lado, usamos a definição de derivada para escrever
-$$
+\begin{equation}
 \lim_{\epsilon\to 0}\frac{1}{2\epsilon}\left(u((t-a)+\epsilon))-u((t-a)-\epsilon))\right)=\frac{d}{dt}u(t-a)
-$$
+\end{equation}
 ou seja,
-$$
+\begin{equation}
 \delta(t-a)=\frac{d}{dt}u(t-a).
-$$
+\end{equation}
 Observe que as funções de Heaviside e de Dirac não são funções no sentido do cálculo diferencial e integral. Naturalmente, a derivada acima também vale somente num sentido generalizado, mas é coerente quando olhamos a função de Heaviside como limite de funções rampas (ver figura \ref{fig_Heaviside_1}), pois na origem a derivada tende ao infinito.
 A transformada de Laplace de função Delta de Dirac é obtido pela propriedade da filtragem dada na equação (\ref{prop_filtragem_dirac}):
 \begin{equation}{\label{prop_trans_delta_dirac}}
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
 \begin{exer}Resolva o seguinte problema de valor inicial:
-$$\left\{\begin{array}{l}
+\begin{equation}\left\{\begin{array}{l}
    y''-2y'=1+\delta(t-2)\\
    y(0)=0\\
    y'(0)=1
   \end{array}\right.
- $$
+ \end{equation}
 \end{exer}
 \section{Aplicação: circuito RLC a um pulso de amplitude $V_0$.}{\label{sec_circ_2}}
 Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
-$$
+\begin{equation}
 V(t)=V_0\left(u(t-a)-u(t-b)\right).
-$$
+\end{equation}
 \begin{figure}[!ht]
 \begin{center}
 
@@ -118,19 +118,19 @@ I(s)&=&\frac{V_0\left(e^{-as}-e^{-bs}\right)}{Ls^2+Rs+\frac{1}{C}}\\
 &=&\frac{V_0}{L}\left[\frac{e^{-as}}{\left(s+\frac{R}{2L}\right)^2+\eta}-\frac{e^{-bs}}{\left(s+\frac{R}{2L}\right)^2+\eta}\right]
 \end{eqnarray*}
 onde
-$$
+\begin{equation}
 \eta=\frac{1}{LC}-\left(\frac{R}{2L}\right)^2.
-$$
+\end{equation}
 Vamos exemplificar os casos subamortecido, superamortecido e criticamente amortecido tomando $V_0=10V$, $a=1$ e $b=5$:
 \begin{itemize}
  \item Caso subamortecido ($\eta>0$): escolhemos o caso onde $L=1\ \!$H, $C=\frac{1}{10}\ \!$F e $R=2\Omega$. Nesse caso
- $$
+ \begin{equation}
  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2+9}-\frac{e^{-5s}}{\left(s+1\right)^2+9}\right].
- $$
+ \end{equation}
  Logo,
- $$
+ \begin{equation}
  i(t)=\frac{10}{3}\left(u(t-1)e^{-(t-1)}\sen\left(3 (t-1)\right)-u(t-5) e^{-(t-5)}\sen\left(3 (t-5)\right)\right).
- $$
+ \end{equation}
  O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_1}.
 \begin{figure}[!ht]
 \begin{center}
@@ -139,9 +139,9 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
 \caption{\label{fig_circ_RCL_1}}
 \end{figure}
  \item Caso superamortecido ($\eta<0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=4\Omega$. Nesse caso
- $$
+ \begin{equation}
  I(s)=10\left[\frac{e^{-s}}{\left(s+2\right)^2-3 }-\frac{e^{-5s}}{\left(s+2\right)^2-3}\right].
- $$
+ \end{equation}
  Logo,
  \begin{eqnarray*}
  i(t)&=&10\left(u(t-1)\frac{e^{-2(t-1)}}{ \sqrt{3}}\senh\left(\sqrt{3} (t-1)\right)-u(t-5)\frac{e^{-2(t-5)}}{\sqrt{3} }\senh\left(\sqrt{3}  (t-5)\right)\right)\\
@@ -156,13 +156,13 @@ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amorte
 \caption{\label{fig_circ_RCL_2}}
 \end{figure}
 \item Caso criticamente amortecido ($\eta=0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=2\Omega$. Nesse caso
- $$
+ \begin{equation}
  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2}-\frac{e^{-5s}}{\left(s+1\right)^2}\right].
- $$
+ \end{equation}
  Logo,
- $$
+ \begin{equation}
  i(t)=10\left(u(t-1)e^{-(t-1)} (t-1)-u(t-5)e^{-(t-5)} (t-5)\right).
- $$
+ \end{equation}
 O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_3}.
 \begin{figure}[!ht]
 \begin{center}
@@ -177,9 +177,9 @@ Considere uma viga elástica horizontal de comprimento $L$ sob a ação de forç
 k(x)=\frac{d\theta(x)}{dx}.
 \end{equation}
 Como
-$$
+\begin{equation}
 \frac{dy(x)}{dx}=\tan(\theta(x))
-$$
+\end{equation}
 e, para $\theta(x)$ pequeno, $\tan(\theta(x))\approx \theta(x)$, temos:
 \begin{equation}{\label{def_viga02}}
 \frac{dy(x)}{dx}=\theta(x),
@@ -193,13 +193,13 @@ Por outro lado, a lei de Hooke para materiais nos dá $k(x)=\frac{M(x)}{EI}$, on
 \frac{d^2y(x)}{dx^2}=\frac{M(x)}{EI}.
 \end{equation}
 A variação do momento de inércia $M(x)$ é a força de cisalamento $V(x)$:
-$$
+\begin{equation}
 \frac{d}{dx}M(x)=V(x)
-$$
+\end{equation}
 e a variação da força de cisalamento é a carga:
-$$
+\begin{equation}
 \frac{d}{dx}V(x)=W(x).
-$$
+\end{equation}
 Logo,
 \begin{equation}{\label{def_viga05}}
 \frac{d^2}{dx^2}M(x)=W(x).
@@ -208,26 +208,26 @@ Derivamos a equação (\ref{def_viga04}) duas vezes e substituímos na equação
 \begin{equation}
 \label{eq}\frac{d^4}{dx^4}y(x)=\frac{1}{EI}W(x).
 \end{equation}
-Consideraremos aqui uma viga engastada, ou seja: $$y(0)=y'(0)=y(L)=y'(L)=0.$$
+Consideraremos aqui uma viga engastada, ou seja: \begin{equation}y(0)=y'(0)=y(L)=y'(L)=0.\end{equation}
 A carga está concentrada na posição $x=\frac{L}{3}$ e tem intensidade $P_0$, sendo modelada pela seguinte expressão:
-$$W(x)=P_0\delta\left(x-\frac{L}{3}\right).$$
+\begin{equation}W(x)=P_0\delta\left(x-\frac{L}{3}\right).\end{equation}
 Aplicando a transformada de Laplace em (\ref{eq}) e usando o fato que $\mathcal{L}\left(\delta\left(x-\frac{L}{3}\right)\right)=e^{-\frac{L}{3}s}$, obtemos
-$$s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)=\frac{P_0}{EI}e^{-\frac{L}{3}s}$$
+\begin{equation}s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)=\frac{P_0}{EI}e^{-\frac{L}{3}s}\end{equation}
 Substituimos $y(0)=y'(0)=0$, $y''(0)=C_1$ e $y'''(0)=C_2$ onde $C_1$ e $C_2$ são constantes a determinar:
-$$s^4Y(s)-sC_1-C_2=\frac{P_0}{EI}e^{-\frac{L}{3}s}$$
+\begin{equation}s^4Y(s)-sC_1-C_2=\frac{P_0}{EI}e^{-\frac{L}{3}s}\end{equation}
 finalmente:
-$$Y(s)=\frac{C_1}{s^3}+\frac{C_2}{s^4}+\frac{P_0}{EI}\frac{e^{-\frac{L}{3}s}}{s^4}$$
+\begin{equation}Y(s)=\frac{C_1}{s^3}+\frac{C_2}{s^4}+\frac{P_0}{EI}\frac{e^{-\frac{L}{3}s}}{s^4}\end{equation}
 e recuperamos a solução do domínio $x$ através da transformada inversa de Laplace:
-$$y(x)=\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!}u(x-L/3).$$
+\begin{equation}y(x)=\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!}u(x-L/3).\end{equation}
 A expressão para $y(x)$ pode ser escrita como função definida por partes na forma:
-$$y(x)=\left\{\begin{array}{ll}\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3,&0\leq x\leq\frac{L}{3} \\ \frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!},&\frac{L}{3}<x\leq L .\end{array}\right.$$
+\begin{equation}y(x)=\left\{\begin{array}{ll}\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3,&0\leq x\leq\frac{L}{3} \\ \frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!},&\frac{L}{3}<x\leq L .\end{array}\right.\end{equation}
 Para calcular o valor das constantes $C_1$ e $C_2$ calculamos  $y(L)$ e $y'(L)$ usando a segunda parte da função $y(x)$:
 \begin{eqnarray*}
 0=y(L)&=&\frac{C_1}{2}L^2+\frac{C_2}{6}L^3+\frac{4}{81}\frac{P_0}{EI}L^3\\
 0=y'(L)&=&C_1 L+\frac{C_2}{2}L^2+\frac{2}{9}\frac{P_0}{EI}L^2
 \end{eqnarray*}
 Colocando na forma matricial:
-$$\left[\begin{array}{cc}
+\begin{equation}\left[\begin{array}{cc}
 \frac{L^2}{2} & \frac{L^3}{6}\\
 L & \frac{L^2}{2}\\
 \end{array}
@@ -238,9 +238,9 @@ C_2\end{array}
 -\frac{4}{81}\frac{P_0}{EI}L^3\\
 -\frac{2}{9}\frac{P_0}{EI}L^2\end{array}.
 \right]
-$$
+\end{equation}
  Invertemos a matriz do sistema para obter as constantes $C_1$ e $C_2$:
-$$\left[\begin{array}{c}
+\begin{equation}\left[\begin{array}{c}
 C_1\\
 C_2\end{array}
 \right]=
@@ -253,7 +253,7 @@ C_2\end{array}
 -\frac{4}{81}\frac{P_0}{EI}L^3\\
 -\frac{2}{9}\frac{P_0}{EI}L^2\end{array}
 \right],
-$$
+\end{equation}
 o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figura \ref{viga} apresenta o gráfico da função $y(x)$ quando $L=5$ e $\frac{P_0}{EI}=1$.
 \begin{figure}[!ht]
 \begin{center}
@@ -269,22 +269,22 @@ Durante um período de consumo de uma medicação, a concentração da substânc
   \item As doses de medicamento são liberadas e entra na corrente sanguinea instantaneamente e homogeneamente.
 \end{itemize}
 O modelo que descreve esse fenômeno é
-$$
+\begin{equation}
 c'(t)+\frac{1}{\tau}c(t)=x(t),\qquad t>0
-$$
+\end{equation}
 onde $c(t)$ é a concentração e $x(t)$ representa a dosagem ao longo do tempo $t$. Em geral, as dosagens não são únicas e são tomadas periodicamente. Seja $c_0$ a concentração administrada instantaneamente a cada período $T$, então
-$$
+\begin{equation}
 x(t)=c_0\left(\delta(t)+\delta(t-T)+\delta(t-2T)+\delta(t-3T)+\cdots\right)
-$$
+\end{equation}
 Supondo que $c(0)=0$, ou seja, inicialmente não havia substância no organismo, vamos calcular $c(t)$. 
 Começamos aplicando a transformada de Laplace:
-$$
+\begin{equation}
 sC(s)+\frac{1}{\tau}C(s)=c_0\left(1+e^{-sT}+e^{-2sT}+e^{-3sT}+\cdots\right)=c_0\sum_{n=0}^\infty\left( e^{-sT}\right)^n.
-$$
+\end{equation}
 e encontramos:
-$$
+\begin{equation}
 C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\right)^n.
-$$
+\end{equation}
 Calculamos a transformada inversa usando a propriedade do deslocamento no eixo $s$.
 \begin{eqnarray*}
 c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
@@ -326,10 +326,10 @@ Tomando a Transformada de Laplace, temos:
 sY(s)-y(0)+Y(s)=1
 \end{equation*}
 ou seja, $Y(s)=\frac{1}{s+1}$, o que implica
-$$y(t)=e^{-t}.$$
+\begin{equation}y(t)=e^{-t}.\end{equation}
 Observamos que $y(0)=1\neq 0$, ou seja, a condição inicial não é satisfeita.
 Para entendermos o que está acontecendo, devemos lembrar que a Transformada de Laplace só produz a solução para $t>0$ e interpretar $y(t)$ como
-$$y(t)=u(t)e^{-t}.$$
+\begin{equation}y(t)=u(t)e^{-t}.\end{equation}
 Desta forma $y(0)$ simplesmente não está definido. De fato, para compreender esse comportamento, vamos definir um problema auxiliar colocando no lugar da função delta de Dirac uma função pulso:
 \begin{equation*}
 \left\{
@@ -339,27 +339,27 @@ y(0)&=&0
 \end{array}
 \right.
 \end{equation*}
-onde $\varepsilon$ é uma constante positiva pequena. Sabemos que o termo $$\frac{u(t)-u(t-\varepsilon)}{\varepsilon}$$ converge para $\delta(t)$ quando $\varepsilon \to 0+$. Aplicando a Transformada de Laplace e resolvendo para $Y(s)$, temos:
-$$Y(s)=\frac{1}{s(s+1)}\frac{1-e^{-\varepsilon s}}{\varepsilon}=\left(\frac{1}{s}-\frac{1}{s+1}\right)\frac{1-e^{-\varepsilon s}}{\varepsilon},$$
+onde $\varepsilon$ é uma constante positiva pequena. Sabemos que o termo \begin{equation}\frac{u(t)-u(t-\varepsilon)}{\varepsilon}\end{equation} converge para $\delta(t)$ quando $\varepsilon \to 0+$. Aplicando a Transformada de Laplace e resolvendo para $Y(s)$, temos:
+\begin{equation}Y(s)=\frac{1}{s(s+1)}\frac{1-e^{-\varepsilon s}}{\varepsilon}=\left(\frac{1}{s}-\frac{1}{s+1}\right)\frac{1-e^{-\varepsilon s}}{\varepsilon},\end{equation}
 ou seja,
-$$y(t)=\frac{1-e^{-t}}{\varepsilon}u(t)-u(t-\varepsilon)\frac{1-e^{-(t-\varepsilon)}}{\varepsilon}.$$
+\begin{equation}y(t)=\frac{1-e^{-t}}{\varepsilon}u(t)-u(t-\varepsilon)\frac{1-e^{-(t-\varepsilon)}}{\varepsilon}.\end{equation}
 Esta solução pode ser escrita como uma função contínua:
-$$y(t)=\left\{\begin{array}{ll}
+\begin{equation}y(t)=\left\{\begin{array}{ll}
 0,&t\leq 0,\\~\\
 \frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\~\\
 \frac{e^{\varepsilon}-1}{\varepsilon}~\!
 e^{-t},&t\geq \varepsilon.
 \end{array}
-\right.$$
+\right.\end{equation}
 Para $\varepsilon>0$ pequeno podemos usar a seguinte aproximação:
-$$e^t=1+t+\frac{t^2}{2}+\frac{t^3}{3!}+\ldots \approx 1+t$$
+\begin{equation}e^t=1+t+\frac{t^2}{2}+\frac{t^3}{3!}+\ldots \approx 1+t\end{equation}
 Assim, temos:
-$$y(t)\approx\left\{\begin{array}{ll}
+\begin{equation}y(t)\approx\left\{\begin{array}{ll}
 0,&t\leq 0,\\~\\
 \frac{t}{\varepsilon},&0<t\leq \varepsilon,\\~\\
 e^{-t},&t\geq \varepsilon.
 \end{array}
-\right.$$
+\right.\end{equation}
 Ou seja, existe uma pequena região de transição entre $0$ e $\varepsilon$ onde a solução $y(t)$ sobe rapidamente. O gráfico apresentado na figura \ref{concentracao_2} mostra o comportamento de $y(t)$ para $\varepsilon=0.2$, $\varepsilon=0.1$ e $\varepsilon=0.05$ em azul, vermelho e verde, respectivamente, assim como a solução limite $e^{-t}u(t)$ em preto.
 \begin{figure}[!ht]
 \begin{center}
@@ -392,13 +392,13 @@ ou
 \end{equation}
 \end{teo}
 \begin{proof}Partimos da definição das transformadas:
-$$
+\begin{equation}
 F(s)=\mathcal{L}\{f(t) \}=\int_0^\infty f(t)e^{-st}dt
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 G(s)=\mathcal{L}\{g(\tau) \}=\int_0^\infty g(\tau)e^{-s\tau}d\tau.
-$$
+\end{equation}
 Logo,
 \begin{eqnarray*}
  F(s)G(s)&=&\int_0^\infty f(t)e^{-st}dt\int_0^\infty g(\tau)e^{-s\tau}d\tau\\
@@ -417,44 +417,44 @@ Agora, vamos mudar a ordem de integração na região que é a metade inferior d
 \end{eqnarray*}
 \end{proof}
 \begin{ex}Vamos calcular a transformada inversa de $\frac{s}{(s-1)(s^2+1)}$. Primeiro observamos que a expressão pode ser escrita como um produto de duas funções tabelas:
-$$
+\begin{equation}
 \frac{s}{(s-1)(s^2+1)}=\frac{1}{s-1}\frac{s}{s^2+1},
-$$
+\end{equation}
  onde $\mathcal{L}^{-1}\left\{\frac{1}{s-1}\right\}=e^t$ e $\mathcal{L}^{-1}\left\{\frac{s}{s^2+1}\right\}=\cos(t)$. Usando a propriedade \ref{prop_conv} da convolução, temos
- $$
+ \begin{equation}
  \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}=\int_0^t e^\tau \cos(t-\tau)d\tau.
- $$
+ \end{equation}
  A convolução acima foi calculada no exemplo \ref{ex_conv_1}, logo
-$$
+\begin{equation}
  \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}= \frac{1}{2}\left(e^t-\cos(t)+\sen(t)  \right).
- $$
+ \end{equation}
  \end{ex}
  A propriedade \ref{prop_conv} da convolução pode ser útil para resolver equações integrais, como veremos no próximo exemplo.
  \begin{ex} Vamos resolver a seguinte equação integral:
- $$
+ \begin{equation}
  y(t)=4+9\int_0^t y(\tau)(t-\tau)d\tau.
- $$
+ \end{equation}
  Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convolução com $f(t)=y(t)$ e $g(t)=t$ para obter:
- $$
+ \begin{equation}
  \mathcal{L}\{y(t)\}=\frac{4}{s}+9\mathcal{L}\{y(t)\}\mathcal{L}\{t\}
- $$
+ \end{equation}
  ou seja,
- $$
+ \begin{equation}
  Y(s)=\frac{4}{s}+9Y(s)\frac{1}{s^2}.
- $$
+ \end{equation}
  Logo,
- $$
+ \begin{equation}
  Y(s)=\frac{s^2}{s^2-9}\frac{4}{s}=\frac{4s}{s^2-9}.
- $$
+ \end{equation}
  Portanto,
- $$
+ \begin{equation}
  y(t)=4\cosh(3t)
- $$
+ \end{equation}
 \end{ex}
 \begin{exer}Resolva a seguinte equação integral:
-$$
+\begin{equation}
 y(t)=t+\int_0^t y(\tau)\sen(t-\tau)d\tau
-$$
+\end{equation}
 \end{exer}
 \section{Exercícios}
 \begin{Exercise}{\label{ex_delta_dirac0}} Considere as funções $f_\varepsilon (t)$  e $g_\varepsilon (t)$ dadas por
@@ -505,14 +505,14 @@ Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça se
 \end{resp}
 \begin{Exercise}
 Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
-$$
+\begin{equation}
 V(t) = \left\{
                                                \begin{array}{ll}
                                                  1, & \hbox{se } t\in (0,2) \\
                                                  0, & \hbox{se } t>2
                                                \end{array}
                                              \right.
-$$
+\end{equation}
 \begin{figure}[!ht]
 \begin{center}
 
@@ -640,9 +640,9 @@ Justifique as seguintes propriedades da operação de convolução:
 \end{resp}
 \begin{Exercise}
 A equação do movimento de um OHS não amortecido sujeito a oscilações forçadas pode ser escrita como
-$$
+\begin{equation}
 y''(t) + \omega^2 y(t) = r(t), \quad \hbox{ onde } \ \omega= \sqrt{\frac{k}{m}} \ \hbox{ e } \ r(t) = \frac{f(t)}{m}.
-$$
+\end{equation}
 \begin{itemize}
   \item[a)] Pelo método da transformada de Laplace, encontre $Y(s) = \mathcal{L} \left\{y(t)\right\}$.
   \item[b)] Com o auxílio do Teorema da Convolução, encontre $y(t)$ (em termos de $R = \mathcal{L}\{r\}$).
@@ -655,7 +655,7 @@ $$
 \end{itemize}
 \end{resp}
 \begin{Exercise}
-Use o Teorema da Convolução para calcular $$\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).$$
+Use o Teorema da Convolução para calcular \begin{equation}\mathcal{L}^{-1} \left( \frac{1}{(s+1)(s^2+1)} \right).\end{equation}
 \end{Exercise}
 \begin{resp}
  $\displaystyle \frac{1}{2} \big[ \sen t - \cos t + e^{-t} \big] $

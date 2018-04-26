@@ -119,17 +119,17 @@ Esse resultado é consequência da propriedade de linearidade \ref{prop_lin}:
 \begin{itemize}
  \item[a)] Use a definição para mostrar que $\mathcal{L}\{e^{zt}\}=\frac{1}{s-z}$, $z\in\mathbb{C}$.
  \item[b)] Use a fórmula do item a) para concluir que
- $$
+ \begin{equation}
  \mathcal{L}\{e^{(a+ib)t}\}=\frac{s-a+ib}{(s-a)^2+b^2}
- $$
+ \end{equation}
  \item[c)] Use a fórmula de Euler e o item b) para concluir que
- $$
+  \begin{equation}
  \mathcal{L}\{e^{at}\cos(bt)\}=\frac{s-a}{(s-a)^2+b^2}
- $$
+ \end{equation}
  e
- $$
+  \begin{equation}
  \mathcal{L}\{e^{at}\sen(bt)\}=\frac{b}{(s-a)^2+b^2}
- $$
+ \end{equation}
 \end{itemize}
 \end{exer}
 \section{A transformada de Laplace da derivada de uma função}
@@ -160,51 +160,51 @@ Analogamente, se $f(t),\ f'(t), \cdots, f^{(n-1)}(t)$ são contínuas e $f^{(n)}
 \end{eqnarray}
 Vamos usar a propriedade \ref{prop_der} da transformada da derivada para calcular transformadas de Laplace.
 \begin{ex}Vamos calcular a transformada de $f(t)=\cos(t)$ usando a propriedade \ref{prop_der}. Observe as derivadas:
- $$
+  \begin{equation}
  f(t)=\cos(t),\qquad f'(t)=-\sen(t)\qquad\hbox{e}\qquad f''(t)=-\cos(t).
-$$
+\end{equation}
 Logo, 
-$$
+ \begin{equation}
 f''(t)=-f(t).
-$$
+\end{equation}
 Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_der}:
-$$
+ \begin{equation}
 s^2F(s)-sf(0)-f'(0)=-F(s).
-$$
+\end{equation}
 Usamos o fato que $f(0)=\cos(0)=1$ e $f'(0)=-\sen(0)=0$ e obtemos
-$$
+ \begin{equation}
 s^2F(s)-s=-F(s),
-$$
+\end{equation}
 ou seja,
-$$
+ \begin{equation}
 F(s)=\frac{s}{s^2+1},
-$$
+\end{equation}
 que confere com o item 14 da tabela \ref{tab_trans_Lap_1}.
 \end{ex}
 \begin{ex}Agora, vamos calcular a transformada de $g(t)=t\cos(t)$ usando a propriedade \ref{prop_der} da transformada da derivada . Observe as derivadas:
-$$
+ \begin{equation}
 g'(t)=-t\sen(t)+\cos(t)
-$$
+\end{equation}
 e
-$$
+ \begin{equation}
 g''(t)=-t\cos(t)-\sen(t)-\sen(t),
-$$
+\end{equation}
 ou seja,
-$$
+ \begin{equation}
 g''(t)=-g(t)-2\sen(t).
-$$
+\end{equation}
 Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_der}:
-$$
+ \begin{equation}
 s^2G(s)-sg(0)-g'(0)=-G(s)-2\mathcal{L}\{\sen(t)\}.
-$$
+\end{equation}
 Usamos o fato que $g(0)=0\cdot\cos(0)=0$, $g'(0)=-0\cdot \sen(0)+\cos(0)=1$ e $\mathcal{L}\{\sen(t)\}=\frac{1}{s^2+1}$ e obtemos
-$$
+ \begin{equation}
 s^2G(s)-1=-G(s)-\frac{2}{s^2+1},
-$$
+\end{equation}
 isto é,
-$$
+ \begin{equation}
 G(s)=\frac{s^2-1}{(s^2+1)^2},
-$$
+\end{equation}
 \end{ex}
 
 \subsection*{Exercícios}
@@ -231,17 +231,17 @@ y(0)&=&y_0\\
 y'(0)&=&y_0'
 \end{eqnarray*}
 com $a$, $b$, $y_0$ e $y_0'$ constantes. A aplicação da transformada de Laplace nos dá
-$$
+ \begin{equation}
  \mathcal{L}\{y''(t)\}+a \mathcal{L}\{y'(t)\}+b \mathcal{L}\{y(t)\}= \mathcal{L}\{f(t)\}.
-$$
+\end{equation}
 Usando a propriedade \ref{prop_der}, obtemos a seguinte equação subsidiária
-$$
+ \begin{equation}
  s^2\mathcal{L}\{y(t)\}-sy(0)-y'(0)+a s\mathcal{L}\{y(t)\}-ay(0)+b \mathcal{L}\{y(t)\}= \mathcal{L}\{f(t)\}
-$$
+\end{equation}
 ou seja,
-$$
+ \begin{equation}
  Y(s)=\frac{F(s)+sy_0+y_0'+ay_0}{(s^2+as+b)}
-$$
+\end{equation}
 onde $\mathcal{L}\{y(t)\}=Y(s)$ e $\mathcal{L}\{f(t)\}=F(s)$. A solução do problema de valor inicial é  $y(t)=\mathcal{L}^{-1}\{Y(s)\}$.
 \begin{ex}Vamos resolver o problema de valor inicial
 \begin{eqnarray*}
@@ -250,47 +250,47 @@ y(0)&=&2\\
 y'(0)&=&1
 \end{eqnarray*}
 Primeiro aplicamos a transformada de Laplace na equação diferencial:
- $$
+  \begin{equation}
  \mathcal{F}\{y''(t)\}+\mathcal{F}\{y(t)\}=\mathcal{F}\{2t\}
- $$
+ \end{equation}
  Em seguida, usamos a equação \ref{prop_der_2} para obter
- $$
+  \begin{equation}
 s^2 \mathcal{L }\{ y(t)\}-sy(0)-y'(0)+\mathcal{F}\{y(t)\}=2\mathcal{F}\{t\}.
- $$
+ \end{equation}
  Agora, usamos a notação $\mathcal{L }\{ y(t)\}=Y(s)$ e o fato que $\mathcal{F}\{t\}=\frac{1}{s^2}$ para escrever
- $$
+  \begin{equation}
 s^2 Y(s)-sy(0)-y'(0)+Y(s)=\frac{2}{s^2}.
- $$
+ \end{equation}
  Obtemos a equação subsidiária quando substituímos $y(0)=2$ e $y'(0)=1$:
- $$
+  \begin{equation}
 s^2 Y(s)-2s-1+Y(s)=\frac{2}{s^2}.
- $$
+ \end{equation}
  O próximo passo é resolver a equação algébrica para $Y(s)$
- $$
+  \begin{equation}
  Y(s)\left(s^2+1\right)=\frac{2}{s^2}+2s+1,
- $$
+ \end{equation}
  isto é,
- $$
+  \begin{equation}
  Y(s)=\frac{2}{s^2\left(s^2+1\right)}+\frac{2s}{\left(s^2+1\right)}+\frac{1}{\left(s^2+1\right)}.
- $$
+ \end{equation}
  A solução do problema de valor inicial pode ser escrita como
-$$
+ \begin{equation}
 y(t)=\mathcal{L}^{-1}\left\{\frac{2}{s^2\left(s^2+1\right)}\right\}+\mathcal{L}^{-1}\left\{\frac{2s}{\left(s^2+1\right)}\right\}+\mathcal{L}^{-1}\left\{\frac{1}{\left(s^2+1\right)}\right\}.
-$$
+\end{equation}
  Obtemos as transformadas inversas olhando a tabela \ref{tab_trans_Lap_1} do apêndice \ref{ap_A}, itens 20, 14 e 13:
- $$
- \mathcal{L}^{-1}\left\{\frac{1}{s^2\left(s^2+1\right)}\right\}=t-\sen(t),\qquad w=1\ \hbox{no item 20 da tabela \ref{tab_trans_Lap_1}}, $$
- $$
+  \begin{equation}
+ \mathcal{L}^{-1}\left\{\frac{1}{s^2\left(s^2+1\right)}\right\}=t-\sen(t),\qquad w=1\ \hbox{no item 20 da tabela \ref{tab_trans_Lap_1}}, \end{equation}
+  \begin{equation}
  \mathcal{L}^{-1}\left\{\frac{s}{\left(s^2+1\right)}\right\}=\cos(t),\qquad w=1\ \hbox{no item 14 da tabela \ref{tab_trans_Lap_1}}
- $$
+ \end{equation}
  e
- $$
+  \begin{equation}
  \mathcal{L}^{-1}\left\{\frac{1}{\left(s^2+1\right)}\right\}=\sen(t),\qquad w=1\ \hbox{no item 13 da tabela \ref{tab_trans_Lap_1}}
- $$
+ \end{equation}
  Combinando a propriedade da linearidade \ref{prop_lin}, temos:
- $$
+  \begin{equation}
 y(t)=2t-2\sen(t)+2\cos(t)+\sen(t)=2t+2\cos(t)-\sen(t)
-$$
+\end{equation}
  \end{ex}
 \begin{exer}Resolva o seguinte problema de valor inicial
 \begin{eqnarray*}
@@ -326,9 +326,9 @@ y'(0)&=&1
 
 \section{Método das frações parciais para calcular transformadas inversas}
 Suponha que $P(x)$ e $Q(x)$ são polinômios tais que o grau de $P$ é menor que o grau de $Q$. O polinômio $Q(x)$ pode ser fatorado em polinômios de graus um e dois:
-$$
+ \begin{equation}
 Q(x) = (a_1x + b_1)^{l_1}\cdots (a_nx + b_n)^{l_n}(c_1x^2 + d_1x + e_1)^{p_1}\cdots (c_m x^2 + d_m x + e_m)^{p_m}.
-$$
+\end{equation}
 Com isso, podemos encontrar constantes $A_{1,1}, \ldots, A_{n,l_1\cdots l_n}$, $B_{1,1}, \ldots, B_{m,p_1\cdots p_n}$ e $C_{1,1}, \ldots, C_{m,p_1\cdots p_n}$ tais que:
 \begin{eqnarray*}
 \frac{P(x)}{Q(x)} &=& \sum_{k=0}^{l_1-1} \frac{A_{1,k}}{(a_1x + b_1)^{l1-k}} + \cdots + \sum_{k=0}^{l_n-1}\frac{A_{n,k}}{(a_nx + b_n)^{l_n-k}} \\&+& \sum_{k=0}^{p_1-1} \frac{B_{1,k}x + C_{1,k}}{(c_1 x^2 + d_1 x + e_1)^{p_1-k}} + \cdots + \sum_{k=0}^{p_m-1} \frac{B_{m,k}x + C_{m,k}}{(c_mx^2 + d_mx + e_m)^{p_m-k}}.
@@ -346,22 +346,22 @@ B-C&=&0\\
 A-B&=&1
 \end{eqnarray*}
 que tem solução $B=C=-\frac{1}{2}$ e $A=\frac{1}{2}$. Logo,
-$$
+ \begin{equation}
 F(s)=\frac{1}{2}\left(\frac{1}{s-1}-\frac{s+1}{s^2+1}\right).
-$$
+\end{equation}
 Escrevendo em uma forma conveniente, temos
-$$
+ \begin{equation}
 F(s)=\frac{1}{2}\left(\frac{1}{s-1}-\frac{s}{s^2+1}-\frac{1}{s^2+1}\right).
-$$
+\end{equation}
 A transformada inversa é
-$$
+ \begin{equation}
 f(t)=\frac{1}{2}\left(e^{t}-\cos(t)-\sen(t)\right).
-$$
+\end{equation}
 \end{ex}
 \begin{exer}Calcule a transformada inversa de Laplace da função 
-$$
+ \begin{equation}
 F(s)=\frac{3s^2-2s-1}{(s-3)(s^2+1)}.
-$$
+\end{equation}
 \end{exer}
 \subsection*{Exercícios}
 
@@ -447,7 +447,7 @@ C&=&4\\
 D&=&\frac{1}{3}
 \end{eqnarray*}
 Portanto
-$$f(t)=-\frac{1}{3}e^{-t}+\left(-\frac{7}{2}t^2+4t+\frac{1}{3}\right)e^{2t}$$
+ \begin{equation}f(t)=-\frac{1}{3}e^{-t}+\left(-\frac{7}{2}t^2+4t+\frac{1}{3}\right)e^{2t}\end{equation}
  \item [e)]
 \begin{eqnarray*}
 F(s)&=&\frac{3s^2-2s-1}{(s-3)(s^2+1)}=\frac{A}{s-3}+\frac{Bs+C}{s^2+1}
