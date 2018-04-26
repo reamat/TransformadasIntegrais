@@ -90,6 +90,8 @@ Aqui usamos a seguinte propriedade de integral: $\int_a^b f(t)dt=\int_a^x f(t)dt
 &=&\left.-\frac{5e^{-st}}{s}\right|_4^\infty=\frac{5e^{-4s}}{s}
 \end{eqnarray*}
 \end{ex}
+
+\subsection*{Exercícios}
 \begin{exer}Calcule a transforma de Laplace da função $f(t)=\cos(wt)$ usando a definição. 
 \end{exer}
 \begin{exer}Calcule a transforma de Laplace da função $f(t)$ definida por partes:
@@ -98,6 +100,54 @@ f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 3\\ 1, & 3\leq t\leq 5,\\0,&t>5.
 \end{array}\right.
 $$
 \end{exer}
+\begin{exer}{\label{ex_cap_3_1}} Use a definição de transformada de Laplace para calcular as transformadas das funções dadas nos gráficos abaixo:
+\begin{center}
+
+\includegraphics{cap_definicao/pics/figura_4}
+\includegraphics{cap_definicao/pics/figura_5}
+\includegraphics{cap_definicao/pics/figura_6}
+\includegraphics{cap_definicao/pics/figura_7}
+\includegraphics{cap_definicao/pics/figura_8}\end{center}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\displaystyle F(s)=\frac{k}{s}e^{-sc}$
+  \item[b)] $\displaystyle F(s)=\frac{k}{s}\left(1-e^{-sc}\right)$ 
+  \item[c)] $\displaystyle F(s)=\frac{k}{s}e^{-sc}\left(1-e^{-sb}\right)$ 
+  \item[d)] $\displaystyle F(s)=-\frac{k}{c}\left(\frac{c}{s}e^{-sc}+\frac{1}{s^2}\left(e^{-sc}-1\right)\right)$
+  \item[e)] $\displaystyle F(s)=\frac{k}{cs^2}\left(1-2e^{-cs}+e^{-2cs}\right)$
+ \end{itemize}
+\end{resp}
+\begin{exer}Use a definição de transformada de Laplace para calcular as transformadas das funções dadas a seguir:
+ \begin{itemize}
+  \item[a)] $f(t)=at$
+  \item[b)] $f(t)=\left\{\begin{array}{ll}0, & 0\leq t< 2\\2,&  2\leq t< 3\\0,&t>3 \end{array}\right.$
+  \item[c)] $f(t)=a^t,~~a>0$
+  \item[d)] $f(t)=\cos(wt)$ 
+  \item[e)] $f(t)=\cosh(at)$ 
+  \item[f)] $f(t)=te^{2t}$ 
+  \item[g)] $f(t)=e^{-t+4}$ 
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $F(s)=\frac{a}{s^2}$
+  \item[b)] $F(s)=\frac{2}{s}e^{-2s}\left(1-e^{-s}\right)$ 
+  \item[c)] $F(s)=\frac{1}{s-\ln(a)}$
+  \item[d)] $F(s)=\frac{s}{s^2+w^2}$ 
+  \item[e)] $F(s)=\frac{s}{s^2-a^2}$ 
+  \item[f)] $F(s)=\frac{1}{(s-2)^2}$ 
+  \item[g)] $F(s)=\frac{e^{4}}{s+1}$ 
+  \end{itemize}
+\end{resp}
+ \begin{exer}\label{inducao_tn}(Princípio da Indução) Mostre que $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ seguindo os seguintes passos:
+ \begin{itemize}
+  \item[a)] Mostre que a fórmula é válida para $n=0,\ 1,\ 2$ e $3$.\footnote{De fato, bastaria mostrar para $n=0$.}
+  \item[b)] Mostre que $\displaystyle\mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^{n}}$ é válida, então $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ também o é.
+ \end{itemize}
+ \end{exer}
+
+ 
 \section{Condição de existência da transformada de Laplace}
 A integral que define a transformada de Laplace nem sempre converge e, nesse caso, dizemos que a função não possui transformada de Laplace. As funções $f(t)=e^{t^2}$ e $f(t)=\frac{1}{t}$ são alguns exemplo de funções que não possuem transformada de Laplace. Nessa seção, vamos introduzir uma família de funções que possuem transformada de Laplace. Neste contexto, vamos considerar as funções que são contínuas por partes, ou seja, aquelas que possui um número finito de descontinuidade.
 \begin{defn}Dizemos que uma função $f(t)$ é de ordem exponencial $c$ se existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. 
@@ -122,14 +172,13 @@ A figura \ref{ordem_exp} ilustra o crescimento de $f$, $g$ e $h$
 \caption{\label{ordem_exp}}
 \end{figure}
 \end{ex}
-\begin{teo}\label{ordem_exp_exist} Se $f(t)$ é contínua por partes no intervalo $[0,\infty)$ e de ordem exponencial $c$, então a transformada de Laplace de $f(t)$ existe para $s>c$.
+\begin{teo}\label{ordem_exp_exist} Se $f(t)$ é integrável em cada intervalo $[a,b]\subset[0,\infty)$ e de ordem exponencial $c$, então a transformada de Laplace de $f(t)$ existe para $s>c$.
 \end{teo}
 \begin{proof}Como a função $f(t)$ é de ordem exponencial $c$, então existem constantes $c$, $M>0$ e $T>0$ tal que $|f(t)|\leq M e^{ct}$ para todo $t>T$. Assim, se $\hat{T}$ é maior ou igual a $T$, a transformada de Laplace  pode ser escrita como a seguinte soma:
 $$
 \mathcal{L}\{f(t)\}=\int_0^\infty f(t)e^{-st}dt=\int_0^{\hat{T}} f(t)e^{-st}dt+\int_{\hat{T}}^\infty f(t)e^{-st}dt.
 $$
-A primeira parcela do lado direito é uma integral definida de uma função contínua por partes, logo está bem definida para qualquer $\hat{T}$.
-Agora, como $\hat{T}\geq T$, podemos estimar
+A primeira parcela do lado direito é a integral do produto de duas funções integráveis no intervalo $[0, \hat{T}]$, logo, está bem definido. Agora, como $\hat{T}\geq T$, podemos estimar
 \begin{eqnarray*}
 \left|\int_{\hat{T}}^\infty f(t)e^{-st}dt\right|&\leq& \int_{\hat{T}}^\infty \left|f(t)\right|e^{-st}dt\leq \int_{\hat{T}}^\infty M e^{ct}e^{-st}dt\\
 &=&M \int_{\hat{T}}^\infty e^{-(s-c)t}dt
@@ -162,6 +211,30 @@ $$
 \lim_{s\to\infty}F(s)=0.
 $$
 \end{proof}
+
+\subsection*{Exercícios}
+\begin{exer}Identifique quais funções são integráveis por partes e de ordem exponencial, isto é, se enquadram nas hipóteses do teorema \ref{ordem_exp_exist}.
+\begin{itemize}
+ \item[a)] $f(t)=e^{30t}$.
+ \item[b)] $f(t)=e^{-5t}\cos(t) $.
+ \item[c)] $f(t)=\frac{1}{t}$.
+ \item[d)] $f(t)=\ln(t)$.
+ \item[e)] $f(t)=\frac{1}{t^2}$.
+  \item[f)] $f(t)=t^{5}+1$.
+  \item[g)] $f(t)=e^{-t^2}$.
+  \item[h)] $f(t)=e^{t^2}$.
+
+  
+  \item[i)] $
+f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 3\\ 1, & 3\leq t\leq 5,\\0,&t>5.
+\end{array}\right.
+$
+\end{itemize}
+
+
+\end{exer}
+
+
 \section{A transformada inversa de Laplace}
 Se $F(s)=\mathcal{L}\{ f(t)\}$ é a transformada de Laplace de $f(t)$, então dizemos que $f(t)=\mathcal{L}^{-1}\{ F(s)\}$ é a transformada inversa de Laplace da função $F(s)$. Essa definição só faz sentido se a transformação definida no conjunto de funções que possuem transformada de Laplace for "bijetora", ou seja, cada função $f(t)$ está relacionada a uma única transformada $F(s)$. É fácil observar que duas funções iguais a partir de $t=0$ possuem a mesma transformada de Laplace. Porém, se duas transformadas são iguais para $s>s_0$, por exemplo, $F(s)=G(s)$, então
 $$
@@ -236,54 +309,9 @@ $$
 \mathcal{L }^{-1}\left\{ \frac{1}{s^{30}}\right\}=\frac{t^{29}}{29!}.
 $$
 \end{ex}
-\section{Exercícios}
-\begin{Exercise}{\label{ex_cap_3_1}} Use a definição de transformada de Laplace para calcular as transformadas das funções dadas nos gráficos abaixo:
-\begin{center}
+\subsection*{Exercícios}
 
-\includegraphics{cap_definicao/pics/figura_4}
-\includegraphics{cap_definicao/pics/figura_5}
-\includegraphics{cap_definicao/pics/figura_6}
-\includegraphics{cap_definicao/pics/figura_7}
-\includegraphics{cap_definicao/pics/figura_8}\end{center}
-\end{Exercise}
-\begin{resp}
- \begin{itemize}
-  \item[a)] $\displaystyle F(s)=\frac{k}{s}e^{-sc}$
-  \item[b)] $\displaystyle F(s)=\frac{k}{s}\left(1-e^{-sc}\right)$ 
-  \item[c)] $\displaystyle F(s)=\frac{k}{s}e^{-sc}\left(1-e^{-sb}\right)$ 
-  \item[d)] $\displaystyle F(s)=-\frac{k}{c}\left(\frac{c}{s}e^{-sc}+\frac{1}{s^2}\left(e^{-sc}-1\right)\right)$
-  \item[e)] $\displaystyle F(s)=\frac{k}{cs^2}\left(1-2e^{-cs}+e^{-2cs}\right)$
- \end{itemize}
-\end{resp}
-\begin{Exercise}Use a definição de transformada de Laplace para calcular as transformadas das funções dadas a seguir:
- \begin{itemize}
-  \item[a)] $f(t)=at$
-  \item[b)] $f(t)=\left\{\begin{array}{ll}0, & 0\leq t< 2\\2,&  2\leq t< 3\\0,&t>3 \end{array}\right.$
-  \item[c)] $f(t)=a^t,~~a>0$
-  \item[d)] $f(t)=\cos(wt)$ 
-  \item[e)] $f(t)=\cosh(at)$ 
-  \item[f)] $f(t)=te^{2t}$ 
-  \item[g)] $f(t)=e^{-t+4}$ 
- \end{itemize}
-\end{Exercise}
-\begin{resp}
- \begin{itemize}
-  \item[a)] $F(s)=\frac{a}{s^2}$
-  \item[b)] $F(s)=\frac{2}{s}e^{-2s}\left(1-e^{-s}\right)$ 
-  \item[c)] $F(s)=\frac{1}{s-\ln(a)}$
-  \item[d)] $F(s)=\frac{s}{s^2+w^2}$ 
-  \item[e)] $F(s)=\frac{s}{s^2-a^2}$ 
-  \item[f)] $F(s)=\frac{1}{(s-2)^2}$ 
-  \item[g)] $F(s)=\frac{e^{4}}{s+1}$ 
-  \end{itemize}
-\end{resp}
- \begin{Exercise}\label{inducao_tn}(Princípio da Indução) Mostre que $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ seguindo os seguintes passos:
- \begin{itemize}
-  \item[a)] Mostre que a fórmula é válida para $n=0,\ 1,\ 2$ e $3$.\footnote{De fato, bastaria mostrar para $n=0$.}
-  \item[b)] Mostre que $\displaystyle\mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^{n}}$ é válida, então $\displaystyle\mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$ também o é.
- \end{itemize}
- \end{Exercise}
- \begin{Exercise}Use a tabela \ref{tab_trans_Lap_1} para calcular a transformada Inversa de Laplace das funções:
+ \begin{exer}Use a tabela \ref{tab_trans_Lap_1} para calcular a transformada Inversa de Laplace das funções:
  \begin{itemize}
   \item[a)] $F(s)=\frac{1}{s^2+4}$
   \item[b)] $F(s)=\frac{1}{s^2-4}$
@@ -291,7 +319,7 @@ $$
   \item[d)] $F(s)=-\frac{s}{s^2+2s+1}-\frac{1}{s^2+2s+1}$ 
   \item[e)] $F(s)=\frac{1}{(s^2+2s+1)(s+1)}$ 
  \end{itemize}
-\end{Exercise}
+\end{exer}
 \begin{resp}
  \begin{itemize}
   \item[a)] $f(t)=\frac{1}{2}\sen(2t)$

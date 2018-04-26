@@ -5,8 +5,8 @@
 A modelagem de muitos problemas encontrados na física, química e engenharias tais como massa-mola, ou circuitos em série, envolve funç\~{o}es descontínuas. Um exemplo disso é uma função do tipo chave liga/desliga, que é zero o início do fenômeno, depois sobe instantaneamente a um valor constante durante algum tempo e, finalmente, zero novamente. Métodos analíticos para resolver equações diferenciais, como fator integrante, separação de variáveis, coeficientes a determinar e variação de parâmetros, funcionam bem quando as funções e envolvidas são contínuas. O método que vamos introduzir aqui, chamado de transformada de Laplace, resolve esse tipo de problema. Essencialmente, a transformada de Laplace é uma transformação similar a derivação ou integração, pois leva função em outra função. Alem disso, essa transformação leva a derivada de uma função em produtos da função original. Isso significa que essa transformação leva uma equação diferencial a uma nova equação em termos da funç\~{a}o transformada que é algébrica e pode ser resolvida facilmente. Uma vez que a transformada de Laplace é conhecida, temos que calcular a transformada inversa para obter a solução do problema (\cite{ZILL} and \cite{STRAUCH}). 
 
 Para cursar essas disciplina o estudante deve conhecer técnicas básicas estudadas em disciplinas como Cálculo Diferencial e Integral e Equações Diferenciais. Nesse sentido, propomos alguns exercícios revisando algumas técnicas úteis.
-\section{Exercícios de Revisão}
-\begin{Exercise}
+\section*{Exercícios}
+\begin{exer}
 Use as expressões $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}$, $\cos x=\frac{e^{ix}+e^{-ix}}{2}$ e $\sen x=\frac{e^{ix}-e^{-ix}}{2i}$  para calcular as seguintes integrais:
 \begin{itemize}
 \item[a)] $\int_{0}^{\infty} \sen(t)e^{-t}dt$
@@ -17,7 +17,7 @@ Use as expressões $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}
 \item[f)] $\int_{0}^{\infty} \cosh(t)e^{-2t}dt$
 \end{itemize}
  
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
 \item[a)] $\frac{1}{2}$
@@ -32,40 +32,40 @@ Use as expressões $\cosh x=\frac{e^x+e^{-x}}{2}$, $\senh x=\frac{e^x-e^{-x}}{2}
 
 
 
-\begin{Exercise}
+\begin{exer}
  Calcule o valor da integral
 $$\int_0^\infty \sen(wt) e^{-st}dt$$
 como uma função de $w$ e $s$ sabendo que $s$ e $w$ são constantes reais positivas.
-\end{Exercise}
+\end{exer}
 \begin{resp}
  $\frac{w}{s^2+w^2}$
 \end{resp}
 
 
-\begin{Exercise} Calcule o valor da integral
+\begin{exer} Calcule o valor da integral
 $$\int_0^a  e^{-st}dt$$
 como uma função de $a$ e $s$ sabendo que $a$ e $s$ são constantes reais positivas.
-\end{Exercise}
+\end{exer}
 \begin{resp}
  $\frac{1-e^{-as}}{s}$
 \end{resp}
 
 
-\begin{Exercise}  Mostre que se $|x|<1$ então
+\begin{exer}  Mostre que se $|x|<1$ então
 \begin{itemize}
 \item[a)] $\sum_{k=0}^\infty x^k=\frac{1}{1-x}$
 \item[b)] $\sum_{k=0}^\infty kx^k=\frac{x}{(1-x)^2}$
 \end{itemize}
-\end{Exercise}
+\end{exer}
 
-\begin{Exercise} Use o resultado anterior para resolver os seguintes somatórios
+\begin{exer} Use o resultado anterior para resolver os seguintes somatórios
 \begin{itemize}
 \item[a)]$\sum_{k=0}^\infty e^{-sk}$
 \item[b)]$\sum_{k=0}^\infty (-1)^ke^{-sk}$
 \item[c)]$\sum_{k=0}^\infty ke^{-sk}$
 \end{itemize}
 onde $s$ é uma constante real positiva. 
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
   \item[a)]$\frac{1}{1-e^{-s}}$
@@ -76,12 +76,12 @@ onde $s$ é uma constante real positiva.
 
 
 
-\begin{Exercise} Use a técnica de integração por partes para realizar as seguintes integrais:
+\begin{exer} Use a técnica de integração por partes para realizar as seguintes integrais:
 \begin{itemize}
 \item[a)]$\int_0^\infty t e^{-t}dt$
 \item[b)]$\int_0^\infty t^2 e^{-t} dt$
 \end{itemize}
-\end{Exercise}
+\end{exer}
 
 \begin{resp}
 \begin{itemize}
@@ -91,11 +91,11 @@ onde $s$ é uma constante real positiva.
 \end{resp}
 
 
-\begin{Exercise} Calcule a integral
+\begin{exer} Calcule a integral
 $$I=\int_0^\infty \left|\sen(\pi t)\right| e^{-t}dt$$
 escrevendo-o como o somatório
 $$I=\sum_{k=0}^\infty(-1)^k\int_{k}^{k+1} \sen(\pi t) e^{-t}dt.$$
-\end{Exercise}
+\end{exer}
 
 \begin{resp}
 \begin{eqnarray*}
