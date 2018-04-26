@@ -51,8 +51,8 @@ cotangente de $\theta$ por
 \item[g)] $\cos(2x)=\cos^2(x)-\sen^2(x)$
 \item[h)] $\tan(x+y)=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)},\qquad x\neq \frac{\pi}{2}+k\pi,\ k\in\mathbb{Z}.$
 \item[i)] As séries de Taylor do seno e cosseno são dadas por
-$$\sen(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k+1}}{(2k+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots $$
-$$\cos(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k}}{(2k)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots $$
+\begin{equation}\sen(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k+1}}{(2k+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots \end{equation}
+\begin{equation}\cos(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k}}{(2k)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots \end{equation}
 \end{itemize}
 \end{prop}
 \section{Números complexos e fórmula de Euler}
@@ -79,44 +79,44 @@ O conjunto dos números complexos é denotado por $\mathbb{C}$.
 Observe que este sistema possui infinitas soluções. Ademais, se $\theta_1$ e $\theta_2$ são duas soluções, então diferem por um múltiplo inteiro de $2\pi$, isto é, $\theta_1-\theta_2=2n\pi$, $n$ inteiro.
 \end{defn}
 Observe que uma possível solução, com $-\frac{\pi}{2}<\theta\leq \frac{3\pi}{2}$ é dada por
-$$
+\begin{equation}
 \theta=\left\{\begin{array}{cc}\tan^{-1}\left(\frac{b}{a}\right)&\hbox{se}\ a>0\\[5pt]
 \frac{\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b>0\\[5pt]
 \frac{3\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b<0 \\[5pt] 
 \tan^{-1}\left(\frac{b}{a}\right)+\pi&\hbox{se}\ a<0\end{array}\right.
-$$
+\end{equation}
 Se desejamos $\frac{\pi}{2}\leq \theta < \frac{\pi}{2}$, podemos usar a seguinte expressão:
-$$\theta=\begin{cases}
+\begin{equation}\theta=\begin{cases}
 \tan^{-1}(\frac b a) &\text{se } a > 0, \\[5pt]
 \tan^{-1}(\frac b a) + \pi &\text{se } a < 0 \text{ e } b \ge 0, \\[5pt]
 \tan^{-1}(\frac b a) - \pi &\text{se } a < 0 \text{ e } b < 0, \\[5pt]
 +\frac{\pi}{2} &\text{se } a = 0 \text{ e } b > 0, \\[5pt]
 -\frac{\pi}{2} &\text{se } a = 0 \text{ e } b < 0, \\[5pt]
-\end{cases}$$
+\end{cases}
+\end{equation}
 A representação geométrica de $|z|$ e $\theta$ está na figura \ref{num_complexo}.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_num_complexos/pics/figura_1}\end{center}
 \caption{\label{num_complexo}}
 \end{figure}
 \begin{defn}A forma trigonométrica de um número complexo $z=a+bi$ é 
-$$
+\begin{equation}
 z=|z|\left(\cos(\theta)+i\sen(\theta)\right),
-$$
+\end{equation}
 onde $|z|=\sqrt{a^2+b^2}$ é o módulo de $z$ e $\theta$ satisfazendo $a=|z|\cos(\theta)$ e $b=|z|\sen(\theta)$ é o argumento.
 \end{defn}
 \begin{ex}Para escrever o número $z=2-2i$ na forma trigonométrica, calculamos o módulo $|z|=\sqrt{2^2+(-2)^2}=2\sqrt{2}$ e o argumento, que satisfaz $\sen(\theta)=-\frac{2}{2\sqrt{2}}=-\frac{\sqrt{2}}{2}$ e $\cos(\theta)=\frac{2}{2\sqrt{2}}=\frac{\sqrt{2}}{2}$, ou seja, $\theta=\frac{7\pi}{4}$. Logo, $z=2\sqrt{2}\left(\cos\left(\frac{7\pi}{4}\right)+i\sen\left(\frac{7\pi}{4}\right)\right)$. 
 \end{ex}
 \begin{defn}Dado $z\in\mathbb{C}$, definimos exponencial de $z$ por
-$$
+\begin{equation}
 e^z=1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\frac{z^4}{4!}+\cdots=1+\sum_{k=1}^\infty \frac{z^k}{k!}
-$$
+\end{equation}
 \end{defn}
 \begin{prop}(Fórmula de Euler) Dado $\theta\in\mathbb{R}$, vale a identidade
-$$
+\begin{equation}
 e^{i\theta}=\cos(\theta)+i\sen(\theta).
-$$
+\end{equation}
 \end{prop}
 \begin{proof}
 De fato,
@@ -128,22 +128,21 @@ e^{i\theta}&=&1+i\theta+\frac{(i \theta)^2}{2!}+\frac{(i\theta)^3}{3!}+\frac{(i\
 \end{eqnarray*}
 \end{proof}
 \begin{defn}A forma exponencial de um número complexo $z=a+bi$ é 
-$$
+\begin{equation}
 z=|z|e^{i\theta},
-$$
+\end{equation}
 onde $|z|=\sqrt{a^2+b^2}$ é o módulo de $z$ e $\theta$ satisfazendo $a=|z|\cos(\theta)$ e $b=|z|\sen(\theta)$ é o argumento.
 \end{defn}
 \begin{ex}Para escrever o número $z=2-2i$ na forma exponencial, calculamos o módulo $|z|=2\sqrt{2}$ e o argumento $\theta=\frac{7\pi}{4}$ e escrevemos $z=2\sqrt{2}e^{i\frac{7\pi}{4}}$. 
 \end{ex}
 \begin{ex}{\label{prob_sin_euler}}Mostre que
-$$
+\begin{equation}
 \sen(\theta)=\frac{e^{i\theta}-e^{-i\theta}}{2i}
-$$
+\end{equation}
 e
-$$
+\begin{equation}
 \cos(\theta)=\frac{e^{i\theta}+e^{-i\theta}}{2}
-$$
-
+\end{equation}
 Observe que pela fórmula de Euler vale
 \begin{equation}{\label{Euler_1}}
 e^{i\theta}=\cos(\theta)+i\sen(\theta)
@@ -166,7 +165,7 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 \section{Exercícios}
 \begin{Exercise}
 Relacione $A$ e $\theta$ com os valores conhecidos de $B$ e $C$ que satisfazem a identidade
-$$A\cos(x-\theta)=B\cos(x)+C\sen(x),~~~~\forall x\in\mathbb{R}$$
+\begin{equation}A\cos(x-\theta)=B\cos(x)+C\sen(x),~~~~\forall x\in\mathbb{R}\end{equation}
 sabendo que $0\leq \theta<2\pi$ e $A\geq 0$.
 \end{Exercise}
 \begin{Answer}
@@ -258,18 +257,18 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \end{itemize}
 \end{Answer}
 \begin{Exercise}Mostre a identidade 
-$$\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)$$
+\begin{equation}\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)\end{equation}
 diretamente a partir das identidades trigonométricas para soma de ângulos.
 \end{Exercise}
 \begin{Exercise}Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moîvre:
-$$\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta)$$
+\begin{equation}\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta)\end{equation}
 \end{Exercise}
 \begin{Exercise}Use a identidade anterior para calcular a razão
-$$\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta)$$
+\begin{equation}\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta)\end{equation}
 sem usar a exponencial complexa.
 \end{Exercise}
 \begin{Exercise}Repita os três problemas anteriores usando a exponencial complexa dada por
-$$e^{i\theta}=\cos(\theta)+i\sen(\theta).$$
+\begin{equation}e^{i\theta}=\cos(\theta)+i\sen(\theta).\end{equation}
 \end{Exercise}
 \begin{Exercise} Calcule
 \begin{itemize}
@@ -291,7 +290,7 @@ $$e^{i\theta}=\cos(\theta)+i\sen(\theta).$$
 Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  binômio de Newton 
 \end{Exercise}
 \begin{Exercise}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma 
-$$\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]$$
+\begin{equation}\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]\end{equation}
 \end{Exercise}
 \begin{Exercise} Deduza as seguintes identidades trigonométricas
 \begin{itemize}

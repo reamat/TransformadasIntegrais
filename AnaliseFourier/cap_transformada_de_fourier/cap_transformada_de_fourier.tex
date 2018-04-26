@@ -10,16 +10,15 @@ Podemos construir uma representação em séries de Fourier para um função $f(
 \begin{ex}{\label{ex_Transf_1}} Considerando a função $f(t)=e^{-|t|}$, definimos funções $f_T(t)$ como na equação (\ref{T-period}) e apresentamos os gráficos de $f(t)$ e $f_T(t)$ para $T=2$ e $T=4$ na figura \ref{fig_T_tenda}.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_transformada_de_fourier/pics/figura_1}
 \includegraphics{cap_transformada_de_fourier/pics/figura_2}
 \includegraphics{cap_transformada_de_fourier/pics/figura_3}\end{center}
 \caption{\label{fig_T_tenda}}
 \end{figure}
 Observe que a função $f_T(t)$ carrega consigo informação sobre a função $f(t)$. Naturalmente, gostaríamos de poder obter o limite $T\to \infty$, a fim de aproximar $f_T(t)$ tanto quando possível de $f(t)$. Como $T$ representa o período da função $f_T(t)$, quando $T$ cresce a frequência fundamental $w_F$ descresce. A função $f_T(t)$ possui série de Fourier da forma
-$$
+\begin{equation}
 f_T(t)=\sum_{n=-\infty}^\infty C_n e^{iw_n t},
-$$
+\end{equation}
 onde
 \begin{eqnarray}
  \nonumber C_n&=&\frac{1}{T}\int_{-T/2}^{T/2}e^{-|t|}e^{-iw_nt}dt = \frac{1}{T}\int_{-T/2}^{T/2}e^{-|t|}\left(\cos(w_nt)-i\sen(w_nt)\right)dt\\
@@ -31,38 +30,37 @@ onde
  \end{eqnarray}
 Observemos os diagramas de especto para $f_T(t)$ multiplicado por $T$ quando $T=2$, $T=4$ e $T=8$ na figura \ref{dia_espc_tenda}.
  \begin{figure}[!ht]
-
 \includegraphics{cap_transformada_de_fourier/pics/figura_4}
 \includegraphics{cap_transformada_de_fourier/pics/figura_5}
 \includegraphics{cap_transformada_de_fourier/pics/figura_6}\caption{\label{dia_espc_tenda}}
 \end{figure}
  \end{ex}
 Como a distância entre duas raias espectrais é igual a frequência fundamental $w_F=w_1$, a densidade de raias aumenta, tornando mais densa na reta. A serie de Fourier da função $f_T(t)$ é dada por
-$$
+\begin{equation}
 f_T(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t},
-$$
+\end{equation}
 onde 
-$$C_n=\frac{1}{T}\int_{-T/2}^{T/2}f_T(\tau)e^{-iw_n \tau}d\tau=\frac{1}{T}\int_{-T/2}^{T/2}f(\tau)e^{-iw_n \tau}d\tau.$$
-Definimos agora a função $$F_T(w)=\int_{-T/2}^{T/2}f(\tau)e^{-iw \tau}d\tau$$ e escrevemos $f_T(t)$ em termos de $F_T(w)$:
+\begin{equation}C_n=\frac{1}{T}\int_{-T/2}^{T/2}f_T(\tau)e^{-iw_n \tau}d\tau=\frac{1}{T}\int_{-T/2}^{T/2}f(\tau)e^{-iw_n \tau}d\tau.\end{equation}
+Definimos agora a função \begin{equation}F_T(w)=\int_{-T/2}^{T/2}f(\tau)e^{-iw \tau}d\tau\end{equation} e escrevemos $f_T(t)$ em termos de $F_T(w)$:
 \begin{eqnarray}
 \nonumber f_T(t)&=&\sum_{n=-\infty}^\infty \frac{1}{T}F_T(w_n) e^{i w_n t}\\&=& \sum_{n=-\infty}^\infty \frac{w_F}{2\pi}F_T(w_n) e^{i w_n t}
 \\\nonumber &=& \sum_{n=-\infty}^\infty \frac{\Delta w}{2\pi}F_T(w_n) e^{i w_n t}
 \\{\label{f_T}}&=&\frac{1}{2\pi} \sum_{n=-\infty}^\infty F_T(w_n) e^{i w_n t}\Delta w
 \end{eqnarray}
 Observe que a função $F_T(w)$ converge para cada frequência $w$ para a função 
-$$
+\begin{equation}
 F(w)=\int_{-\infty}^\infty f(t) e^{-iw t}dt.
-$$
+\end{equation}
 Fazendo $T\to \infty$, a soma a direita na equação (\ref{f_T}) é uma soma de Riemann que converge para uma integral:
-$$
+\begin{equation}
 f(t)=\frac{1}{2\pi} \int_{-\infty}^\infty F(w)e^{iw t}dw,
-$$
+\end{equation}
 onde
-$$F(w)=\int_{-\infty}^{\infty}f(t)e^{-i w t}dt$$
+\begin{equation}F(w)=\int_{-\infty}^{\infty}f(t)e^{-i w t}dt\end{equation}
 \begin{ex} Continuamos com o exemplo \ref{ex_Transf_1}. Dada a função $f(t)=e^{-|t|}$, podemos escrever
-$$
+\begin{equation}
 f(t)=\frac{1}{2\pi} \int_{-\infty}^\infty F(w)e^{iw t}dw,
-$$
+\end{equation}
 onde
 \begin{eqnarray*}
 F(w)&=&\lim_{T\to\infty}\int_{-T/2}^{T/2}e^{-|t|} e^{-i w t}dt\\
@@ -78,14 +76,14 @@ onde usamos a expressão para $TC_n$ dada por (\ref{TCn}). De fato, usando uma t
 \end{ex}
 \section{Transformada de Fourier}
 \begin{defn}Seja $f(t)$ uma função real (ou complexa), define-se a transformada de Fourier $F(w)$ de $f(t)$ como:
-$$
+\begin{equation}
 F(w)=\mathcal{F}\{f(t)\}=\int_{-\infty}^\infty f(t)e^{-iwt}dt.
-$$
+\end{equation}
 \end{defn}
 \begin{defn}Seja $F(w)$ uma função real (ou complexa), define-se a transformada inversa de Fourier $f(t)$ de $F(w)$ como:
-$$
+\begin{equation}
 f(t)=\mathcal{F}^{-1}\{F(w)\}=\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw.
-$$
+\end{equation}
 \end{defn}
 \begin{obs}É costumeiro em Física e Engenharia usar a variável $k$ na transformada de Fourier de função em $x$, isto é,
 \begin{eqnarray*}
@@ -95,14 +93,13 @@ f(x)&=&\mathcal{F}^{-1}\{F(k)\}=\frac{1}{2\pi}\int_{-\infty}^\infty F(k)e^{ikx}d
 Os pares de variáveis $t$-$w$ e $x$-$k$ são chamados de pares de variáveis recíprocas. A letra $k$ é o número de onda, conceito análogo no espaço ao conceito de frequência angular no tempo, isto é, enquanto $w=\frac{2\pi}{T}$, $k=\frac{2\pi}{\lambda}$, onde $\lambda$ é o comprimento de onda.	
 \end{obs}
 \begin{ex} Seja 
-$$f(t)=\left\{\begin{array}{cc}e^{at}&\hbox{se}\ t<0\\
+\begin{equation}f(t)=\left\{\begin{array}{cc}e^{at}&\hbox{se}\ t<0\\
 e^{-bt}&\hbox{se}\ t>0
 \end{array}\right.
-$$
+\end{equation}
 onde $a$ e $b$ são constantes positivas. A figura \ref{fig_trans_1} mostra o gráfico de $f(t)$ para $a=1$ e $b=3$.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_transformada_de_fourier/pics/figura_7}\end{center}
 \caption{\label{fig_trans_1} Gráfico de $f(t)=e^{t}$, se $t<0$ ou $f(t)=e^{-3t}$ se $t>0$.  }
 \end{figure}
@@ -124,10 +121,10 @@ F(w)=\mathcal{F}\{\delta(t-a)\}&=&\int_{-\infty}^\infty \delta(t-a) e^{-i w t}dt
 \end{eqnarray*}
 \end{ex}
 \begin{ex} Considere a função dada por
-$$f(x)=\left\{\begin{array}{cc}1&\hbox{se}\ |x|<\ell \\
+\begin{equation}f(x)=\left\{\begin{array}{cc}1&\hbox{se}\ |x|<\ell \\
 0&\hbox{se}\ |x|\geq \ell
 \end{array}\right.
-$$
+\end{equation}
 A transformada de Fourier desta função é dada por:
 \begin{eqnarray*}
 F(k)&=&\int_{-\infty}^\infty f(x)e^{-ikx}dx
@@ -143,7 +140,6 @@ F(k)&=&\int_{-\infty}^\infty f(x)e^{-ikx}dx
 \end{Exercise}
 \begin{Answer}
 \begin{center}
-
 \includegraphics{cap_transformada_de_fourier/pics/figura_8}\end{center}
 \begin{eqnarray*}
 F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
@@ -157,7 +153,6 @@ onde se usou os itens 1 e 2 da tabela \ref{tab_int_def}.
 \end{Exercise}
 \begin{Answer}
 \begin{center}
-
 \includegraphics{cap_transformada_de_fourier/pics/figura_9}\end{center}
 \begin{eqnarray*}
 F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
@@ -183,7 +178,7 @@ onde se usou o item 8 da tabela \ref{tab_int_def}.
 \begin{Exercise} Mostre que se $f(t)$ é uma função real, então sua a parte real da tranformada de Fourier de $f(t)$ é uma função par e a parte imaginária é ímpar.
 \end{Exercise}
 \begin{Exercise} Calcule a transformada de Fourier da função
-$$f(t)=\sum_{j=0}^\infty \delta(t-j) e^{-j}.$$
+\begin{equation}f(t)=\sum_{j=0}^\infty \delta(t-j) e^{-j}.\end{equation}
 \end{Exercise}
 \begin{Answer} 
 \begin{eqnarray*}
