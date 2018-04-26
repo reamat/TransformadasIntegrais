@@ -1,30 +1,35 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 \chapter{Tabelas}
+\label{tab_int_def}Tabela de integrais definidas, ver \cite{DWIGHT}):
 
-\begin{table}
-\begin{small}
-\begin{center}
-{\renewcommand{\arraystretch}{2}%
-\begin{tabular}{|c|c|}
-\hline  
-$\displaystyle \int_0^\infty e^{-ax}\cos(mx)dx=\frac{a}{a^2+m^2}\qquad (a>0) $& $\displaystyle  \int_0^\infty e^{-ax}\sen(mx)dx=\frac{m}{a^2+m^2}\qquad (a>0) $ \\[2ex]   \hline
-$\displaystyle \int_0^\infty \frac{\cos(mx)}{a^2+x^2}dx=\frac{\pi}{2a}e^{-ma}\qquad (a>0,\ m\geq 0) $& $\displaystyle \int_0^\infty \frac{x\sen(mx)}{a^2+x^2}dx=\frac{\pi}{2}e^{-ma}\qquad (a\geq0,\ m> 0) $ \\[2ex] \hline
-$\displaystyle \int_0^\infty \frac{\sen(mx)\cos(nx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ n<m\\\frac{\pi }{4},\ \ n=m,\ \begin{array}{c} \!\!(m>0,\\[-2ex] \ n>0)\end{array}\\ 0,\ \ n>m \end{array}\right. $& $\displaystyle \int_0^\infty \frac{\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ m>0\\ 0,\ \ m=0\\-\frac{\pi }{2},\ \ m<0 \end{array}\right. $ \\[2ex] \hline
-$\displaystyle \int_0^\infty e^{-r^2x^2}dx=\frac{\sqrt{\pi}}{2r}\qquad (r>0) $& $\displaystyle \int_0^\infty e^{-a^2x^2}\cos(mx)dx=\frac{\sqrt{\pi}}{2a}e^{-\frac{m^2}{4a^2}}\qquad (a>0) $ \\[2ex] \hline
-$\displaystyle \int_0^\infty xe^{-ax}\sen(mx)dx=\frac{2am}{(a^2+m^2)^2}\qquad (a>0) $& \begin{tabular}{l}$\displaystyle \int_0^\infty e^{-ax}\sen(mx)\cos(nx)dx=$ \\\hspace{30pt}$\displaystyle=\frac{m(a^2+m^2-n^2)}{(a^2+(m-n)^2)(a^2+(m+n)^2)}\quad (a>0) $\end{tabular} \\[2ex]\hline
-$\displaystyle \int_0^\infty xe^{-ax}\cos(mx)dx=\frac{a^2-m^2}{(a^2+m^2)^2}\qquad (a>0) $&$\displaystyle \int_0^\infty \frac{\cos(mx)}{x^4+4a^4}dx=\frac{\pi}{8a^3}e^{-ma}(\sen(ma)+\cos(ma)) $ \\[2ex] \hline
-$\displaystyle \int_0^\infty \frac{\sen^2(mx)}{x^2}dx=|m|\frac{\pi}{2} $& $\displaystyle 14.\ erf(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-z^2}dz $ \\[2ex] \hline
-$\displaystyle \int_0^\infty \frac{\sen^2(ax)\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{4},\ (0<m<2a)\\\\\frac{\pi }{8},\ (0<2a=m)\\\\ 0,\ (0<2a<m) \end{array}\right. $& $\displaystyle \int_0^\infty \frac{\sen(mx)\sen(nx)}{x^2}dx=\left\{\begin{array}{l}\frac{\pi m}{2},\ (0<m\leq n)\\\\\frac{\pi n}{2},\ (0<n\leq m) \end{array}\right. $ \\[2ex] \hline
-$\displaystyle \int_0^\infty x^2e^{-ax}\sen(mx)dx=\frac{2m(3a^2-m^2)}{(a^2+m^2)^3}\qquad (a>0) $& $\displaystyle \int_0^\infty x^2e^{-ax}\cos(mx)dx=\frac{2a(a^2-3m^2)}{(a^2+m^2)^3}\quad (a>0) $ \\[2ex] \hline
-$\displaystyle \int_0^\infty \frac{\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a^3}(1+ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $& $\displaystyle \int_0^\infty \frac{x\sen(mx)}{(a^2+x^2)^2}dx=\frac{\pi m}{4a}e^{-ma} \quad (a>0,\ m>0) $ \\[2ex] \hline
-$\displaystyle \int_0^\infty \frac{x^2\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a}(1-ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $& $\displaystyle \int_0^\infty xe^{-a^2x^2}\sen(mx)dx=\frac{ m \sqrt{\pi}}{4a^3}e^{-\frac{m^2}{4a^2}} \quad (a>0) $\\ \hline
-\end{tabular}}
+%itemize e enumerate falham no html
+\indent 1. $\displaystyle \int_0^\infty e^{-ax}\cos(mx)dx=\frac{a}{a^2+m^2}\qquad (a>0) $\\
+\indent 2. $\displaystyle  \int_0^\infty e^{-ax}\sen(mx)dx=\frac{m}{a^2+m^2}\qquad (a>0) $ \\
+\indent 3. $\displaystyle \int_0^\infty \frac{\cos(mx)}{a^2+x^2}dx=\frac{\pi}{2a}e^{-ma}\qquad (a>0,\ m\geq 0) $\\
+\indent 4. $\displaystyle \int_0^\infty \frac{x\sen(mx)}{a^2+x^2}dx=\frac{\pi}{2}e^{-ma}\qquad (a\geq0,\ m> 0) $ \\
+\indent 5. $\displaystyle \int_0^\infty \frac{\sen(mx)\cos(nx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ n<m\\\frac{\pi }{4},\ \ n=m,\  (m>0, ~n>0)\\ 0,\ \ n>m \end{array}\right. $\\
+\indent 6. $\displaystyle \int_0^\infty \frac{\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{2},\ \ m>0\\ 0,\ \ m=0\\-\frac{\pi }{2},\ \ m<0 \end{array}\right. $ \\
+\indent 7. $\displaystyle \int_0^\infty e^{-r^2x^2}dx=\frac{\sqrt{\pi}}{2r}\qquad (r>0) $\\
+\indent 8. $\displaystyle \int_0^\infty e^{-a^2x^2}\cos(mx)dx=\frac{\sqrt{\pi}}{2a}e^{-\frac{m^2}{4a^2}}\qquad (a>0) $ \\
+\indent 9. $\displaystyle \int_0^\infty xe^{-ax}\sen(mx)dx=\frac{2am}{(a^2+m^2)^2}\qquad (a>0) $\\
+\indent 10. $\displaystyle \int_0^\infty e^{-ax}\sin(mx)\cos(nx)dx =\frac{m(a^2+m^2-n^2)}{(a^2+(m-n)^2)(a^2+(m+n)^2)}\quad (a>0) $\\
+\indent 11. $\displaystyle \int_0^\infty xe^{-ax}\cos(mx)dx=\frac{a^2-m^2}{(a^2+m^2)^2}\qquad (a>0) $\\
+\indent 12. $\displaystyle \int_0^\infty \frac{\cos(mx)}{x^4+4a^4}dx=\frac{\pi}{8a^3}e^{-ma}(\sen(ma)+\cos(ma)) $ \\
+\indent 13. $\displaystyle \int_0^\infty \frac{\sen^2(mx)}{x^2}dx=|m|\frac{\pi}{2} $\\
+\indent 14. $\displaystyle \erf(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-z^2}dz $\\
+\indent 15. $\displaystyle \int_0^\infty \frac{\sen^2(ax)\sen(mx)}{x}dx=\left\{\begin{array}{l}\frac{\pi }{4},\ (0<m<2a)\\\\\frac{\pi }{8},\ (0<2a=m)\\\\ 0,\ (0<2a<m) \end{array}\right. $\\
+\indent 16. $\displaystyle \int_0^\infty \frac{\sen(mx)\sen(nx)}{x^2}dx=\left\{\begin{array}{l}\frac{\pi m}{2},\ (0<m\leq n)\\\\\frac{\pi n}{2},\ (0<n\leq m) \end{array}\right. $ \\
+\indent 17. $\displaystyle \int_0^\infty x^2e^{-ax}\sen(mx)dx=\frac{2m(3a^2-m^2)}{(a^2+m^2)^3}\qquad (a>0) $\\
+\indent 18. $\displaystyle \int_0^\infty x^2e^{-ax}\cos(mx)dx=\frac{2a(a^2-3m^2)}{(a^2+m^2)^3}\quad (a>0) $ \\
+\indent 19. $\displaystyle \int_0^\infty \frac{\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a^3}(1+ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $\\
+\indent 20. $\displaystyle \int_0^\infty \frac{x\sen(mx)}{(a^2+x^2)^2}dx=\frac{\pi m}{4a}e^{-ma} \quad (a>0,\ m>0) $ \\
+\indent 21. $\displaystyle \int_0^\infty \frac{x^2\cos(mx)}{(a^2+x^2)^2}dx=\frac{\pi}{4a}(1-ma)e^{-ma}\quad \begin{array}{l}\!\!(a>0,\\ \ m\geq 0)\end{array} $\\
+\indent 22. $\displaystyle \int_0^\infty xe^{-a^2x^2}\sen(mx)dx=\frac{ m \sqrt{\pi}}{4a^3}e^{-\frac{m^2}{4a^2}} \quad (a>0) $
+%  \end{itemize}
 
-\caption{\label{tab_int_def}Tabela de integrais definidas (ver \cite{DWIGHT})}
-\end{center}
-\end{small}
-\end{table}
+
+
 
 \begin{table}
 \begin{center}
