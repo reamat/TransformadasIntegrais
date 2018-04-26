@@ -2,9 +2,9 @@
 Neste capítulo apresentaremos as representações da transformada de Fourier e introduziremos o conceito de diagramas de espectro.
 \section{Forma trigonométrica}
 A forma exponencial da transformada de Fourier de uma função $f(t)$ foi definida no capítulo \ref{trans_Fourier} e é dada por
-$$
+\begin{equation}
 F(w)=\mathcal{F}\{f(t)\}=\int_{-\infty}^\infty f(t)e^{-iwt}dt.
-$$
+\end{equation}
 Se $f(t)$ é uma função real, então podemos separar a parte real e imaginária da transformada de Fourier, conforme a seguir:
 \begin{eqnarray*}
 F(w)&=&\mathcal{F}\{f(t)\}=\int_{-\infty}^\infty f(t)e^{-iwt}dt\\
@@ -29,14 +29,14 @@ f(t)&=&\frac{1}{2\pi}\int_{-\infty}^\infty\left(A(w)\cos(wt)+ B(w)\sen(wt)\right
 &=&\frac{1}{\pi}\int_{0}^\infty\left( A(w)\cos(wt)+ B(w)\sen(wt)\right)dw
 \end{eqnarray*}
 A tabela abaixo compara as formas trigonométrica e exponencial das séries e transformadas de Fourier
-$$
+\begin{equation}
 \begin{array}{|c|c|c|}
 \hline &&\\
 &\hbox{Forma exponencial}&\hbox{Forma trigonométrica}\\&&\\  \hline &&\\
 \hbox{Série de Fourier}&\displaystyle f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t} & \displaystyle  f(t)=\frac{a_0}{2}+\sum_{n=1}^\infty\left( a_n \cos(w_nt)+b_n\sen(w_nt)\right)   \\&&\\\hline &&\\
 \hbox{Transformada de Fourier} &\displaystyle f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw &\displaystyle f(t)=\frac{1}{\pi}\int_{0}^\infty \left( A(w)\cos(wt)+ B(w)\sen(wt)\right)dw \\   &&\\\hline
 \end{array}
-$$
+\end{equation}
 \begin{ex}{\label{ex_trans_rep_1}} Considere a função $f(t)=e^{-at}u(t)$ onde $a$ é uma constante positiva e $u(t)$ é a função Heaviside. A transformada de Fourier $F(w)$ de $f(t)$ foi calculada no exercício \ref{transf_exp_heav} da página \pageref{transf_exp_heav} e é dada por:
 \begin{equation*}
 F(w)=\frac{a}{a^2+w^2}-\frac{iw}{a^2+w^2}.
@@ -53,17 +53,16 @@ B(w)&=&\frac{w}{a^2+w^2}
 \end{ex}
 \section{Diagramas de espectro}
 Diagrama de espectro da transformada de Fourier é a representação gráfica da transformada de Fourier $F(w)$ associadas a uma função $f(t)$. Da mesma forma como o diagrama de espectro da série de Fourier se divide em amplitude e fase, o diagrama de espectro da transformada de Fourier se divide em magnitude e fase. Ou seja, o gráfico de $|F(w)|$ é a diagrama de magnitude e o gráfico de $\phi(w)$ é o diagrama de fase, onde
-$$
+\begin{equation}
 F(w)=|F(w)|e^{i\phi(w)},
-$$
+\end{equation}
 \begin{ex}No exemplo \ref{ex_Transf_1} da página \pageref{ex_Transf_1} calculamos a transformada de Fourier da função $f(t)=e^{-|t|}$:
-$$
+\begin{equation}
 F(w)=\frac{2}{w^2+1}.
-$$
+\end{equation}
 O gráfico da magnitude $|F(w)|$ é dado na figura \ref{diag_espec_trans_1}. Devido o fato de $F(w)$ ser real, a fase é uma função nula.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_1}\end{center}
 \caption{\label{diag_espec_trans_1}}
 \end{figure}
@@ -78,13 +77,12 @@ Observe que
 &=&\sqrt{\frac{a^2+w^2}{\left(a^2+w^2\right)^2}}\\&=&\frac{1}{\sqrt{a^2+w^2}}
 \end{eqnarray*}
 e, como $a>0$, temos $\frac{a}{a^2+w^2}>0$. Portanto,
-$$
+\begin{equation}
 \phi(w)=\tan^{-1}\left(\frac{-\frac{w}{a^2+w^2}}{\frac{a}{a^2+w^2}}\right)=-\tan^{-1}\left(\frac{w}{a}\right).
-$$
+\end{equation}
 A figura \ref{diag_espec_trans_2} apresenta o diagrama de espectro de magnitude e fase da transformada $F(w)$ de $f(t)$ quando $a=1$.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_2}
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_3}\end{center}
 \caption{\label{diag_espec_trans_2}}
@@ -120,7 +118,6 @@ onde
 \end{eqnarray*}
 Veja o diagrama de espectro na figura abaixo.
 \begin{center}
-
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_4}
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_5}\end{center}
 \end{Answer}

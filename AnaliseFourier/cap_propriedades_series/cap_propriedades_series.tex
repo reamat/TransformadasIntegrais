@@ -15,31 +15,31 @@ Define-se a potência média de um função periódica $f(t)$ como
 \begin{equation}\cos^2(x)=\left(\frac{e^{ix}+e^{-ix}}{2}\right)^2=\frac{e^{2ix}+2+e^{-2ix}}{4}=\frac{\cos(2x)+1}{2}.\end{equation}
  \end{ex}
 \begin{ex} Seja $V(t)=A\cos(wt)$ uma fonte de tensão com frequência $w=60$\ \!\!Hz $=120\pi$\ \!\!rad/s ligado a um resistor de resitência $R\Omega$. A potência no resistor é
-$$
+\begin{equation}
 P(t)=\frac{V(t)^2}{R}
-$$
+\end{equation}
 e a potência média $P_m$ é
-$$
+\begin{equation}
 P_m=\frac{1}{T}\int_0^TP(t)dt=\frac{1}{T}\int_0^T\frac{V(t)^2}{R}dt,
-$$
+\end{equation}
 onde $T=\frac{1}{60}s$. Por outro lado, a potência média é calculada em termos da tensão média por
-$$
+\begin{equation}
 P_m=\frac{V_m^2}{R},
-$$
+\end{equation}
 ou seja,
 \begin{equation}{\label{valor_RMS}}
 V_m^2=\frac{1}{T}\int_0^T V(t)^2 dt.
 \end{equation}
 O exemplo \ref{ex_1_cap_5} nos dá o valor da potência média do sinal $V(t)=A\cos(wt)$. Logo,
-$$
+\begin{equation}
 V_m=\frac{A}{\sqrt{2}}.
-$$
+\end{equation}
 Se $V_m=127V$, então a amplitude do sinal é aproximadamente $A\approx 180$.
 \end{ex}
 \begin{obs}Na expressão (\ref{valor_RMS}), $V_m$ também é chamado de valor RMS do sinal $v(t)$ (Root mean square):
-$$
+\begin{equation}
 V_{RMS}=\sqrt{\frac{1}{T}\int_0^T V(t)^2 dt}.
-$$
+\end{equation}
 \end{obs}
 \begin{teo}[Teorema de Parseval] Seja $f(t)$ uma função periódica representável por uma série de Fourier, então vale a seguinte identidade.
 \begin{equation}\label{teo_parseval} 
@@ -75,13 +75,12 @@ g(t+2)&=&g(t),\ \ \forall t\in\mathbb{R}.
 \end{eqnarray*}
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_propriedades_series/pics/figura_1}\end{center}
 \end{figure}
 Vimos no exemplo \ref{ex_quadrada} que sua expansão em série de Fourie é da forma:
-$$
+\begin{equation}
 g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)+\cdots\right).
-$$
+\end{equation}
 Calcularemos agora a potência média desta função através de sua representação no tempo e depois em frequência:
 \begin{eqnarray*}
  \overline{P_f}=\frac{1}{T}\int_0^T |g(t)|^2dt=\frac{1}{2}\int_0^2 |g(t)|^2dt=\frac{1}{2}\int_0^2 1dt=1
@@ -103,11 +102,9 @@ usando a equação (\ref{serie_inv_impar}) da página \pageref{serie_inv_impar},
 A convergência das somas parciais da série de Fourier de uma função suave por partes em torno de um salto apresenta oscilações cujas amplitudes não convergem para zero. A convergência ponto a ponto acontece, mas se olharmos para o valor absoluto da diferença entre a função e soma parcial sempre encontramos um ponto onde esse valor é aproximadamente 8,9\% da amplitude do salto. Esse fenômeno é chamado de Fenômeno de Gibbs
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_propriedades_series/pics/figura_2}\end{center}
 \end{figure}
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_propriedades_series/pics/figura_3}\end{center}
 \end{figure}
