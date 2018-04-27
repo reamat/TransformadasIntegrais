@@ -1,11 +1,11 @@
 \chapter{Propriedades da transformada de Fourier}
 \section{Propriedades}
-\begin{prop}[Linearidade ou superposição]\label{prop_linear}
+\begin{teo}[Linearidade ou superposição]\label{prop_linear}
 Dadas duas funções $f(t)$ e $g(t)$ com transformadas de Fourier $F(w)$ e $G(w)$, respectivamente, e $\alpha$ e $\beta$ duas constantes reais ou complexas, então
 \begin{equation}
 \mathcal{F}\left\{\alpha f(t)+\beta g(t)\right\}=\alpha \mathcal{F}\{ f(t)\}+\beta\mathcal{F}\{ g(t)\}=\alpha F(w)+\beta G(w)
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 O resultado é direto da linearidade da integral:
 \begin{eqnarray*}
@@ -20,14 +20,14 @@ O resultado é direto da linearidade da integral:
 \mathcal{F}\left\{5 f(t)-3 g(t)\right\}=5 \frac{2}{w^2+1}-3e^{-w^2}
 \end{equation}
 \end{ex}
-\begin{prop}[Transformada da derivada]{\label{prop_der}} Dada uma função diferenciável $f(t)$ tal que 
+\begin{teo}[Transformada da derivada]{\label{prop_der}} Dada uma função diferenciável $f(t)$ tal que 
 \begin{equation}\lim_{t\to \pm \infty}f(t)=0
 \end{equation}
 e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\{f'(t)\}=iw F(w)
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 De fato, usando integração por partes, temos
 \begin{eqnarray*}
@@ -72,18 +72,11 @@ De modo geral,
 \mathcal{F}\{f^{(n)}(t)\}=(iw)^nF(w).
 \end{eqnarray*}
 \end{obs}
-\begin{exer}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_1}\end{center}
-\caption{\label{fig_graf_1}}
-\end{figure}
-\end{exer}
-\begin{prop}[Deslocamento no eixo $w$]\label{prop_desl_w} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{teo}[Deslocamento no eixo $w$]\label{prop_desl_w} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\left\{e^{at}f(t)\right\}=F(w+ia).
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -119,11 +112,11 @@ Veja os diagramas de espectro de $G(w)$ quando $a=b=1$ na figura \ref{diag_espec
 \caption{\label{diag_espec_trans_4}}
 \end{figure}
 \end{ex}
-\begin{prop}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{teo}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\left\{f(t-a)\right\}=e^{-iaw}F(w).
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -141,11 +134,11 @@ G(w)=\frac{2}{w^2+1}e^{-2iw}
 \end{ex}
 \begin{obs} Um deslocamento real no tempo não altera o módulo da transformada de Fourier, pois $|e^{-iaw}|=1$ sempre que $a$ e $w$ são reais.
 \end{obs}
-\begin{prop}[Transformada da integral]\label{prop_int} Dada uma função integrável $f(t)$ tal que sua transformada de Fourier $F(w)$ satisfaça $F(0)=0$, então
+\begin{teo}[Transformada da integral]\label{prop_int} Dada uma função integrável $f(t)$ tal que sua transformada de Fourier $F(w)$ satisfaça $F(0)=0$, então
 \begin{equation}
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau \right\}=\frac{1}{iw}F(w).
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 Definimos $g(t)=\int_{-\infty}^t f(\tau)d\tau$ e, usando o teorema fundamental do cálculo, temos $g'(t)=f(t)$. Aplicamos a transformada de Fourier na igualdade e temos:
 \begin{equation}
@@ -176,12 +169,12 @@ Portanto,
 \mathcal{F}\left\{\int_{-\infty}^t f(\tau)d\tau\right\}=\frac{1}{iw}F(w).
 \end{equation}
 \end{proof}
-\begin{prop}[Teorema da modulação]\label{prop_mod}  Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{teo}[Teorema da modulação]\label{prop_mod}  Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\left\{f(t)\cos(w_0t) \right\}=\frac{1}{2}F(w-w_0)+\frac{1}{2}F(w+w_0),
 \end{equation}
 para $w_0\in\mathbb{R}$.
-\end{prop}
+\end{teo}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -198,7 +191,7 @@ De fato,
 &=&\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}
 \end{eqnarray*}
 \end{ex}
-\begin{prop} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
+\begin{teo} [Teorema da convolução]\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
 \begin{itemize}
 \item[a)] (Convolução no tempo)
 \begin{equation}\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),\end{equation}
@@ -211,7 +204,7 @@ onde $*$ indica a convolução de duas funções:
 \begin{equation}
 (f_1*f_2)(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 \begin{itemize}
 \item[a)] Usando as definições de transformada de Fourier e convolução de duas funções, temos:
@@ -263,11 +256,11 @@ h(t)=\int_{-\infty}^\infty f(t-\tau)g(\tau)d\tau=\int_{-\infty}^\infty (t-\tau)e
 H(w)=F(w)G(w)=-iwa\frac{\sqrt{\pi}}{w^2+a^2}e^{-\frac{w^2}{4}}
 \end{equation}
 \end{ex}
-\begin{prop}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{teo}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \overline{F(w)}=F(-w)
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 De fato,
 \begin{eqnarray*}
@@ -289,8 +282,8 @@ e
 \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
 \end{equation}
 \end{ex}
-\begin{prop}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então \begin{equation}\mathcal{F}\left\{f(-t)\right\}=F(-w).\end{equation}
-\end{prop}
+\begin{teo}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então \begin{equation}\mathcal{F}\left\{f(-t)\right\}=F(-w).\end{equation}
+\end{teo}
 \begin{proof}
 \begin{eqnarray*}
 \mathcal{F}\left\{f(-t)\right\}=\int_{-\infty}^\infty f(-t) e^{-iwt}dt
@@ -304,11 +297,11 @@ procedemos com a mudança de variáveis $\tau=-t$:
 &=&F(-w)
 \end{eqnarray*}
 \end{proof}
-\begin{prop}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+\begin{teo}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 \begin{equation}
 f(-w)=\frac{1}{2\pi}\mathcal{F}\{F(t)\}
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof} Da definição de transformada de Fourier, temos
 \begin{equation}
 f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(w)e^{iwt}dw
@@ -322,11 +315,11 @@ Ou seja,
 f(-w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{-itw}dt=\frac{1}{2\pi}\mathcal{F}\{F(t)\}.
 \end{equation}
 \end{proof}
-\begin{prop}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+\begin{teo}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
 \begin{equation}
 \mathcal{F}\{f(at)\}=\frac{1}{|a|}F\left(\frac{w}{a}\right),~~ \forall a\neq 0.
 \end{equation}
-\end{prop}
+\end{teo}
 \begin{proof} Da definição de transformada de Fourier, temos
 \begin{equation}
 \mathcal{F}\{f(at)\}=\int_{-\infty}^{\infty} f(at)e^{-iwt}dt
@@ -352,9 +345,214 @@ Em ambos os casos, temos:
 \end{proof}
 \begin{obs} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
 \end{obs}
-\begin{prop}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
+\subsection*{Exercícios}
+\begin{exer}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_1}\end{center}
+\caption{\label{fig_graf_1}}
+\end{figure}
+\end{exer}
+\begin{exer}Faça o diagrama de espectro da transformada de Fourier do exemplo \ref{ex_desloc_tempo} da página \pageref{ex_desloc_tempo}.
+\end{exer}
+\begin{resp}Ver figura abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_11}
+\includegraphics{cap_propriedades_transformada/pics/figura_12}\end{center}
+\end{resp}
+\begin{exer} Em geral não é verdade que módulo da soma é igual a soma dos módulos, isto é, $|x+y|=|x|+|y|$, $x,y\in\mathbb{C}$.
+\begin{itemize}
+\item[a)] Encontre um caso particular onde $|x+y|=|x|+|y|$ com $|x|\neq 0$ e $|y|\neq 0$.
+\item[b)] Encontre um caso particular onde $|x+y|=0$ com $|x|\neq 0$ e $|y|\neq 0$. Mostre que, nesse caso, $x=-y$.
+\item[c)] Encontre um caso particular onde $|x+y|=1$ com $|x|=|y|=1$.
+\item[d)] Mostre que $|x+y|=|x|+|y|$ sempre que $xy=0$.
+\end{itemize}
+Observe que não é possível, em geral, conhecer o diagrama de magnitudes da soma de duas funções, $F(w)$ e $G(w)$, conhecendo apenas seus diagramas de magnitudes. As fases precisam ser levadas em conta. Um exceção é quando, para todos $w$, ou $F(w)=0$ ou $G(w)=0$.
+\end{exer}
+\begin{exer}{\label{ex_mod_sin}}Mostre que, dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
+\begin{equation}
+\mathcal{F}\left\{f(t)\sen(w_0t) \right\}=\frac{i}{2}F(w+w_0)-\frac{i}{2 }F(w-w_0),
+\end{equation}
+para $w_0\in\mathbb{R}$.
+\end{exer}
+\begin{exer}Considere uma função real $f(t)$ tal que o diagrama de magnitude é dado na figura abaixo. 
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_13}\end{center}
+\begin{itemize}
+\item[a)] Trace o diagrama de magnitude do espectro de $g(t)=f(t-a)$ onde $a$ é uma constante real.
+\item[b)] Trace o diagrama de magnitude do espectro de $g(t)=f(2t)$.
+\item[c)] Trace o diagrama de magnitude do espectro de $g(t)=f(-t)$.
+\item[d)] Trace o diagrama de magnitude do espectro de $g(t)=3f(t)$.
+\item[e)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos(1000t)$.
+\item[f)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos^2(1000t)$.
+\item[g)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\sen(1000t)$.
+\item[h)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)|\sen(1000t)|$. [Dica: Use a expansão em Série de Fourier do retificador de onda completa\footnote{$|\sen(x)|=\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2x)}{1\cdot 3}+\frac{\cos(4x)}{3\cdot 5}+\frac{\cos(6x)}{5\cdot 7}+\cdots\right)$}]
+\item[i)] Trace o diagrama de magnitude do espectro de $g(t)=f'(t)$.
+\item[j)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\ast f(t)$.
+\item[k)] Calcule o valor da energia do sinal dada por \begin{equation}\int_{-\infty}^\infty f(t)^2dt.\end{equation}
+\item[l)] Calcule o módulo do valor médio do sinal dado por \begin{equation}\left|\int_{-\infty}^\infty f(t)dt\right|.\end{equation}
+\end{itemize}
+ \end{exer}
+\begin{resp}
+\begin{itemize}
+\item[a)]
+ \begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t-a)\right\}=\mathcal{F}\left\{f(t)\right\}e^{-iaw}\\
+\left|\mathcal{F}\left\{g(t)\right\}\right|&=&|F(w)|~|e^{-iaw}|=|F(w)|
+\end{eqnarray*}
+Onde se usou a propriedade \ref{prop_desl_t}
+Logo o diagrama de magnitude é o mesmo do de $f(t)$.
+\item[b)] 
+ \begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(2t)\right\}=\frac{1}{2}F\left(\frac{w}{2}\right)\\
+\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\frac{1}{2}\left|F\left(\frac{w}{2}\right)\right|.
+\end{eqnarray*}
+Onde se usou a propriedade \ref{prop_mud_esc}.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_14}\end{center}
+\item[c)] 
+ \begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(-t)\right\}=F\left(-w\right)\\
+\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\left|F\left(-w\right)\right|=\left|\overline{F\left(w\right)}\right|=\left|F\left(w\right)\right|.
+\end{eqnarray*}
+Onde se usou a propriedade \ref{prop_inv_temp} e, depois, \ref{prop_conj}.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_15}\end{center}
+\item[d)] 
+ \begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{3f(t)\right\}=3F\left(w\right)\\
+\left|\mathcal{F}\left\{g(t)\right\}\right|&=&3\left|F\left(w\right)\right|.
+\end{eqnarray*}
+Onde se usou a propriedade \ref{prop_linear}.
+\item[e)] 
+ \begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos(1000t)\right\}\\
+&=&\frac{1}{2}\left[F(w-1000)+F(w+1000)\right]\\
+\end{eqnarray*}
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_16}\end{center}
+\item[f)] 
+\begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos^2(1000t)\right\}\\
+&=&\mathcal{F}\left\{f(t)\frac{\left(1+\cos(2000t)\right)}{2}\right\}\\
+&=&\frac{1}{2}F(w) + \frac{1}{4}\left[F(w-2000)+F(w+2000)\right]
+\end{eqnarray*}
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_17}\end{center}
+\item[g)]
+\begin{eqnarray*}
+\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
+&=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
+\end{eqnarray*}
+Veja o diagrama de magnitudes no gráfico abaixo.
+\item[h)] 
+\begin{equation}g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]\end{equation}
+\begin{eqnarray*}
+\mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)-\frac{2}{3\pi}(F(w+2000)+F(w-2000))\\&-&\frac{2}{15\pi}(F(w+4000)+F(w-4000))-\frac{2}{35\pi}(F(w+6000)+F(w-6000))+\cdots
+\end{eqnarray*}
+Veja o diagrama de magnitudes no gráfico abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_18}\end{center}
+\item[i)] Usamos a propriedade \ref{prop_der} para obter
+\begin{eqnarray*}
+\mathcal{F}\{g(t)\}=iwF(w).
+\end{eqnarray*}
+Veja o diagrama de magnitudes no gráfico abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_19}\end{center}
+\item[j)] 
+\begin{eqnarray*}
+\mathcal{F}\{g(t)\}&=&\mathcal{F}\{f(t)\ast f(t)\}=F(w)^2 \\
+|G(w)|&=&|F(w)|^2.
+\end{eqnarray*}
+Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama de magnitudes no gráfico abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_20}\end{center}
+\item[k)] 
+\begin{eqnarray*}
+\int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw\\
+&=&\frac{1}{\pi}\int_{0}^{250} 10\left(1-\frac{w}{250}\right)^2dw\\
+&=&\frac{100}{\pi}\int_{1}^{0}  u^2\left(-250\right)du\\
+&=&\frac{25000}{\pi}\int_{0}^{1}  u^2du\\
+&=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
+&=&\frac{25000}{3\pi}
+\end{eqnarray*}
+\item[l)] 
+\begin{eqnarray*}
+\int_{-\infty}^\infty f(t)dt&=& F(0)\\
+\left|\int_{-\infty}^\infty f(t)dt\right|&=& |F(0)|=10
+\end{eqnarray*}
+\end{itemize}
+\end{resp}
+\begin{exer} Considere o sinal $f(t)$ associado ao seguinte diagrama de espectro:
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_21}\end{center}
+\begin{itemize}
+\item[a)] Calcule o valor de $\int_{-\infty}^\infty f(t) dt$.
+\item[b)] Obtenha o valor aproximado da frequência fundamental em $Hz$ e identifique a nota.
+\item[c)] Trace o diagrama de amplitudes do sinal $g(t)=\frac{f'(t)}{5000}$
+\item[d)] Trace o diagrama de amplitudes do sinal $g(t)=f(-t)$.
+\item[e)] Trace o diagrama de amplitudes do sinal $g(t)=f(t-2)$.
+\item[f)] Trace o diagrama de amplitudes do sinal $g(t)=f(1.12t)$, obtenha o valor aproximado da frequência fundamental em $Hz$ e identifique a nota.
+\item[g)] Calcule o valor da "taxa de aceleração", $a>0$, para que o sinal $g(t)=f(at)$ represente a nota sol na mesma oitava.
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+\item[a)] 0
+\item[b)] $f_f=2070 \hbox{rad/s}=329.6 \hbox{Hz}$, equivalente à nota mi.
+\item[c)] O diagrama é dada na figura abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_22}\end{center}
+\item[d)] Idêntico ao original.
+\item[e)] Idêntico ao original.
+\item[f)] Veja o diagrama abaixo.
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_23}\end{center}
+\item[g)] \begin{equation}a=\frac{392}{329.6}=1.19\end{equation}
+\end{itemize}
+\end{resp}
+\begin{exer} Trace o gráfico das seguintes funções, calcule sua transformada de Fourier e trace o diagrama de magnitudes: 
+\begin{itemize}
+\item[a)] $f(t)=e^{-|t|}\cos(10t)$.
+\item[b)] $g(t)=e^{-t^2/2}\cos(10t)$.
+\item[c)] $h(t)=\left\{
+\begin{array}{ll}
+0, &t<-4,\\
+\cos(10t), &-4\leq t \leq 4,\\
+0,&t>4.
+\end{array} \right.$
+\end{itemize}
+\end{exer}
+\begin{resp}
+ Use o teorema da modulação. No caso c), considere $h(t)=\left[u(t-4)-u(t+4)\right]\cos(10t)$.
+\end{resp}
+\begin{exer} Considere uma aproximação do diagrama de espectro de magnitudes de uma nota tocada por um instrumento musical e representado por uma função $f(t)$:
+\begin{center}
+\includegraphics{cap_propriedades_transformada/pics/figura_24}\end{center}
+\begin{itemize}
+ \item[a)] Identifique a frequência fundamental $w_f$ (em rad/s) e $f_f$ (em Hz).
+ \item[b)] Identifique a nota musical correspondente a acelerar em $1,5$ a velocidade de reprodução do sinal.
+ \item[c)] Identifique a nota musical correspondente a modular o sinal na frequência $1110\pi$ rad/s ($f(t)\cos(1100\pi t)$).
+ \item[d)] Identifique a nota musical correspondente à função $f(2t)$.
+ \item[e)] Identifique a nota musical correspondente à função $g(t)=f(t)+f(2t)$. Qual a sensação fisiológica produzida?
+ \end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item[a)] $w_f=220\pi$ rad/s e $f_f=110$ Hz, equivalente ao Lá da escala 1.
+ \item[b)] Mi da escala 2.
+ \item[c)] Lá da escala 1.
+ \item[d)] Lá da escala 2.
+ \item[e)] Lá da escala 1. Percebe-se alteração na composição harmônica da nota, isto é, identicamos como uma alteração de timbre.
+ \end{itemize}
+\end{resp}
+
+\section{O teorema de Parseval e o princípio da Incerteza}
+\begin{teo}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
 \begin{equation}\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw\end{equation}
-\end{prop}
+\end{teo}
 \begin{proof}
 Partimos da representação de $f(t)$ em sua integral de Fourier:
 \begin{eqnarray*}
@@ -399,12 +597,12 @@ Portanto,
 \frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw=\frac{4a^2}{\pi}\frac{\pi}{4a^3}=\frac{1}{a}.
 \end{eqnarray*}
 \end{ex}
-\begin{prop}[Princípio da Incerteza*]\label{prop_princ_incert} Seja $f(t)$ uma função real que satisfaz $\lim_{t\to\pm\infty}f(t)=0$ e $F(w)=\mathcal{F}\{f(t)\}$ sua transformada de Fourier. Então vale a seguinte estimativa:
+\begin{teo}[Princípio da Incerteza*]\label{prop_princ_incert} Seja $f(t)$ uma função real que satisfaz $\lim_{t\to\pm\infty}f(t)=0$ e $F(w)=\mathcal{F}\{f(t)\}$ sua transformada de Fourier. Então vale a seguinte estimativa:
 \begin{eqnarray*}
 \int_{-\infty}^\infty  | tf(t)|^2dt\cdot \int_{-\infty}^\infty \left|w F(w)\right|^2dw\geq \frac{\pi}{2}
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
-\end{prop}
+\end{teo}
 \begin{proof}
 Primeiro observamos que
 \begin{eqnarray*}
@@ -433,6 +631,9 @@ e, finalmente,
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
 \end{proof}
+%\subsection*{Exercícios}
+
+
 \section{Passagem do contínuo para o discreto}
 Nesta seção vamos calcular a transformada de Fourier de uma função periódica $f(t)$ que possui representação em série de Fourier. Para esse propósito, observe que, colocando $F(w)=2\pi \delta(w-w_0)$, temos 
 \begin{equation*}
@@ -483,6 +684,8 @@ e a curva $G(w)$ converge para 0, exceto em $w=w_0$ e $w=-w_0$. Portanto o limit
 \caption{\label{diag_espec_05}}
 \end{figure}
 \end{ex}
+
+
 \section{Aplicação: Sinais Discretos}
 Nessa seção vamos discutir sobre discretização de sinais, em especial, pretendemos responder com que frequência precisamos amostrar um sinal real para podermos reconstruí-lo. Vamos considerar que o espectro da função $f(t)$ é composto apenas por frequências inferiores a $w_c$, onde $w_c$ é chamado de frequência de corte. Mostraremos que se conhecermos apenas os valores de $f(t)$ para $t=kT$, $k\in\mathbb{Z}$, onde $T$ é o período de amostragem e $w_a:=\frac{2\pi }{T}>2w_c$  é a frequência de amostragem, então podemos reconstruir exatamente $f(t)$ em todos instantes de tempo.
 Considere $f(t)$ uma função real, definiremos $f_T(t)$ uma versão discretizada deste sinal da seguinte forma:
@@ -575,199 +778,6 @@ Substituindo $n$ por $-n$ obtemos a expressão:
 f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{w_a(t-nT)}.
 \end{equation}
 \end{proof}
-\section{Exercícios}
-\begin{Exercise}Faça o diagrama de espectro da transformada de Fourier do exemplo \ref{ex_desloc_tempo} da página \pageref{ex_desloc_tempo}.
-\end{Exercise}
-\begin{Answer}Ver figura abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_11}
-\includegraphics{cap_propriedades_transformada/pics/figura_12}\end{center}
-\end{Answer}
-\begin{Exercise} Em geral não é verdade que módulo da soma é igual a soma dos módulos, isto é, $|x+y|=|x|+|y|$, $x,y\in\mathbb{C}$.
-\begin{itemize}
-\item[a)] Encontre um caso particular onde $|x+y|=|x|+|y|$ com $|x|\neq 0$ e $|y|\neq 0$.
-\item[b)] Encontre um caso particular onde $|x+y|=0$ com $|x|\neq 0$ e $|y|\neq 0$. Mostre que, nesse caso, $x=-y$.
-\item[c)] Encontre um caso particular onde $|x+y|=1$ com $|x|=|y|=1$.
-\item[d)] Mostre que $|x+y|=|x|+|y|$ sempre que $xy=0$.
-\end{itemize}
-Observe que não é possível, em geral, conhecer o diagrama de magnitudes da soma de duas funções, $F(w)$ e $G(w)$, conhecendo apenas seus diagramas de magnitudes. As fases precisam ser levadas em conta. Um exceção é quando, para todos $w$, ou $F(w)=0$ ou $G(w)=0$.
-\end{Exercise}
-\begin{Exercise}{\label{ex_mod_sin}}Mostre que, dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
-\begin{equation}
-\mathcal{F}\left\{f(t)\sen(w_0t) \right\}=\frac{i}{2}F(w+w_0)-\frac{i}{2 }F(w-w_0),
-\end{equation}
-para $w_0\in\mathbb{R}$.
-\end{Exercise}
-\begin{Exercise}Considere uma função real $f(t)$ tal que o diagrama de magnitude é dado na figura abaixo. 
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_13}\end{center}
-\begin{itemize}
-\item[a)] Trace o diagrama de magnitude do espectro de $g(t)=f(t-a)$ onde $a$ é uma constante real.
-\item[b)] Trace o diagrama de magnitude do espectro de $g(t)=f(2t)$.
-\item[c)] Trace o diagrama de magnitude do espectro de $g(t)=f(-t)$.
-\item[d)] Trace o diagrama de magnitude do espectro de $g(t)=3f(t)$.
-\item[e)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos(1000t)$.
-\item[f)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos^2(1000t)$.
-\item[g)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\sen(1000t)$.
-\item[h)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)|\sen(1000t)|$. [Dica: Use a expansão em Série de Fourier do retificador de onda completa\footnote{$|\sen(x)|=\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2x)}{1\cdot 3}+\frac{\cos(4x)}{3\cdot 5}+\frac{\cos(6x)}{5\cdot 7}+\cdots\right)$}]
-\item[i)] Trace o diagrama de magnitude do espectro de $g(t)=f'(t)$.
-\item[j)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\ast f(t)$.
-\item[k)] Calcule o valor da energia do sinal dada por \begin{equation}\int_{-\infty}^\infty f(t)^2dt.\end{equation}
-\item[l)] Calcule o módulo do valor médio do sinal dado por \begin{equation}\left|\int_{-\infty}^\infty f(t)dt\right|.\end{equation}
-\end{itemize}
- \end{Exercise}
-\begin{Answer}
-\begin{itemize}
-\item[a)]
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t-a)\right\}=\mathcal{F}\left\{f(t)\right\}e^{-iaw}\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&|F(w)|~|e^{-iaw}|=|F(w)|
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_desl_t}
-Logo o diagrama de magnitude é o mesmo do de $f(t)$.
-\item[b)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(2t)\right\}=\frac{1}{2}F\left(\frac{w}{2}\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\frac{1}{2}\left|F\left(\frac{w}{2}\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_mud_esc}.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_14}\end{center}
-\item[c)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(-t)\right\}=F\left(-w\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\left|F\left(-w\right)\right|=\left|\overline{F\left(w\right)}\right|=\left|F\left(w\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_inv_temp} e, depois, \ref{prop_conj}.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_15}\end{center}
-\item[d)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{3f(t)\right\}=3F\left(w\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&3\left|F\left(w\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_linear}.
-\item[e)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos(1000t)\right\}\\
-&=&\frac{1}{2}\left[F(w-1000)+F(w+1000)\right]\\
-\end{eqnarray*}
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_16}\end{center}
-\item[f)] 
-\begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos^2(1000t)\right\}\\
-&=&\mathcal{F}\left\{f(t)\frac{\left(1+\cos(2000t)\right)}{2}\right\}\\
-&=&\frac{1}{2}F(w) + \frac{1}{4}\left[F(w-2000)+F(w+2000)\right]
-\end{eqnarray*}
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_17}\end{center}
-\item[g)]
-\begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
-&=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
-\end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
-\item[h)] 
-\begin{equation}g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]\end{equation}
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)-\frac{2}{3\pi}(F(w+2000)+F(w-2000))\\&-&\frac{2}{15\pi}(F(w+4000)+F(w-4000))-\frac{2}{35\pi}(F(w+6000)+F(w-6000))+\cdots
-\end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_18}\end{center}
-\item[i)] Usamos a propriedade \ref{prop_der} para obter
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}=iwF(w).
-\end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_19}\end{center}
-\item[j)] 
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}&=&\mathcal{F}\{f(t)\ast f(t)\}=F(w)^2 \\
-|G(w)|&=&|F(w)|^2.
-\end{eqnarray*}
-Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_20}\end{center}
-\item[k)] 
-\begin{eqnarray*}
-\int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
-&=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw\\
-&=&\frac{1}{\pi}\int_{0}^{250} 10\left(1-\frac{w}{250}\right)^2dw\\
-&=&\frac{100}{\pi}\int_{1}^{0}  u^2\left(-250\right)du\\
-&=&\frac{25000}{\pi}\int_{0}^{1}  u^2du\\
-&=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
-&=&\frac{25000}{3\pi}
-\end{eqnarray*}
-\item[l)] 
-\begin{eqnarray*}
-\int_{-\infty}^\infty f(t)dt&=& F(0)\\
-\left|\int_{-\infty}^\infty f(t)dt\right|&=& |F(0)|=10
-\end{eqnarray*}
-\end{itemize}
-\end{Answer}
-\begin{Exercise} Considere o sinal $f(t)$ associado ao seguinte diagrama de espectro:
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_21}\end{center}
-\begin{itemize}
-\item[a)] Calcule o valor de $\int_{-\infty}^\infty f(t) dt$.
-\item[b)] Obtenha o valor aproximado da frequência fundamental em $Hz$ e identifique a nota.
-\item[c)] Trace o diagrama de amplitudes do sinal $g(t)=\frac{f'(t)}{5000}$
-\item[d)] Trace o diagrama de amplitudes do sinal $g(t)=f(-t)$.
-\item[e)] Trace o diagrama de amplitudes do sinal $g(t)=f(t-2)$.
-\item[f)] Trace o diagrama de amplitudes do sinal $g(t)=f(1.12t)$, obtenha o valor aproximado da frequência fundamental em $Hz$ e identifique a nota.
-\item[g)] Calcule o valor da "taxa de aceleração", $a>0$, para que o sinal $g(t)=f(at)$ represente a nota sol na mesma oitava.
-\end{itemize}
-\end{Exercise}
-\begin{Answer}
-\begin{itemize}
-\item[a)] 0
-\item[b)] $f_f=2070 \hbox{rad/s}=329.6 \hbox{Hz}$, equivalente à nota mi.
-\item[c)] O diagrama é dada na figura abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_22}\end{center}
-\item[d)] Idêntico ao original.
-\item[e)] Idêntico ao original.
-\item[f)] Veja o diagrama abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_23}\end{center}
-\item[g)] \begin{equation}a=\frac{392}{329.6}=1.19\end{equation}
-\end{itemize}
-\end{Answer}
-\begin{Exercise} Trace o gráfico das seguintes funções, calcule sua transformada de Fourier e trace o diagrama de magnitudes: 
-\begin{itemize}
-\item[a)] $f(t)=e^{-|t|}\cos(10t)$.
-\item[b)] $g(t)=e^{-t^2/2}\cos(10t)$.
-\item[c)] $h(t)=\left\{
-\begin{array}{ll}
-0, &t<-4,\\
-\cos(10t), &-4\leq t \leq 4,\\
-0,&t>4.
-\end{array} \right.$
-\end{itemize}
-\end{Exercise}
-\begin{resp}
- Use o teorema da modulação. No caso c), considere $h(t)=\left[u(t-4)-u(t+4)\right]\cos(10t)$.
-\end{resp}
-\begin{Exercise} Considere uma aproximação do diagrama de espectro de magnitudes de uma nota tocada por um instrumento musical e representado por uma função $f(t)$:
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_24}\end{center}
-\begin{itemize}
- \item[a)] Identifique a frequência fundamental $w_f$ (em rad/s) e $f_f$ (em Hz).
- \item[b)] Identifique a nota musical correspondente a acelerar em $1,5$ a velocidade de reprodução do sinal.
- \item[c)] Identifique a nota musical correspondente a modular o sinal na frequência $1110\pi$ rad/s ($f(t)\cos(1100\pi t)$).
- \item[d)] Identifique a nota musical correspondente à função $f(2t)$.
- \item[e)] Identifique a nota musical correspondente à função $g(t)=f(t)+f(2t)$. Qual a sensação fisiológica produzida?
- \end{itemize}
-\end{Exercise}
-\begin{Answer}
-\begin{itemize}
- \item[a)] $w_f=220\pi$ rad/s e $f_f=110$ Hz, equivalente ao Lá da escala 1.
- \item[b)] Mi da escala 2.
- \item[c)] Lá da escala 1.
- \item[d)] Lá da escala 2.
- \item[e)] Lá da escala 1. Percebe-se alteração na composição harmônica da nota, isto é, identicamos como uma alteração de timbre.
- \end{itemize}
-\end{Answer}
+
+
+

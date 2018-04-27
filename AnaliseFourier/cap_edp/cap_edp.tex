@@ -102,6 +102,35 @@ Usando a propriedade da filtragem, temos:
 \rho(x,t)=\frac{Q}{A\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}.
 \end{equation*}
 \end{ex}
+
+\subsection*{Exercícios}
+
+\begin{exer}No exemplo \ref{ex_eq_dif_2}, mostre que a solução satisfaz a condição inicial: 
+\begin{equation}
+\lim_{t\to 0}u(x,t)=\frac{Q}{A}\delta(x-x_0)
+\end{equation}
+e, como esperado, vale zero nos limites para infinito:
+\begin{equation}
+\lim_{x\to\pm\infty}u(x,t)=0.
+\end{equation}
+\end{exer}
+\begin{resp}
+\begin{eqnarray*}
+\lim_{t\to 0} u(x,t)&=&\frac{Q}{A}\lim_{t\to 0} \frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}\\
+&=&\left\{\begin{array}{ll}0,&x\neq x_0\\ \infty, &x=x_0\end{array}\right.
+\end{eqnarray*}
+Como,
+\begin{eqnarray*}
+\int_{-\infty}^\infty\frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}dx&=&\frac{2}{\sqrt{4\pi \mu t}}\int_{0}^\infty e^{-\frac{x^2}{4\mu t}}dx\\
+&=&\frac{2}{\sqrt{4\pi \mu t}}\frac{\sqrt{\pi} \sqrt{4\mu t}}{2}=1,
+\end{eqnarray*}
+onde se usou item 8 da tabela de integrais \ref{tab_int_def} com $a=\frac{1}{\sqrt{4\mu t}}$, então
+\begin{equation}
+\lim_{t\to 0} u(x,t)=\frac{Q}{A} \delta(x-x_0)
+\end{equation}
+\end{resp}
+
+
 \section{Equação do calor com termo fonte}
 Considere o problema evolutivo de difusão de temperatura numa barra infinita com um termo fonte
 \begin{eqnarray*}
@@ -147,6 +176,35 @@ e^{-\mu k^2 (t-\tau)}\right\}\ast f(x,\tau)\right)d\tau\\
 &=&\int_0^t \left[\left(\frac{1}{\sqrt{4\pi\mu (t-\tau)}} e^{-\frac{x^2}{4\mu (t-\tau)}}\right) \ast f(x,\tau)\right]d\tau\\
 &=&\frac{1}{\sqrt{4\pi\mu}}\int_0^t \left[\frac{1}{\sqrt{ (t-\tau)}} \int_{-\infty}^\infty e^{-\frac{(x-y)^2}{4\mu (t-\tau)}}f(y,\tau)dy\right]d\tau.\\
 \end{eqnarray*}
+
+\subsection*{Exercícios}
+\begin{exer}
+Um fluido se desloca em um tubo termicamente isolado com velocidade constante $v$ de forma que a evolução da temperatura $u(x,t)$ como uma função da coordenada $x$ e do tempo é descrita pelo seguinte modelo simplificado:
+\begin{equation}u_t-vu_x-u_{xx}=0.\end{equation}
+Sabendo que no instante $t=0$, a temperatura foi bruscamente aquecida em uma região muito pequena, de forma que podemos considerar
+\begin{equation}u(x,0)=500 \delta(x).\end{equation} 
+Use a técnica das transformadas de Fourier para obter a solução desta equação diferencial quando $v=1m/s$.
+\end{exer}
+\begin{resp}
+Aplicamos a transforma de Fourier na variável $x$, obtemos a seguinte expressão para a equação transformada
+\begin{equation}U_t(k,t)-v(ik)U(k,t)-(ik)^2U(k,t)=0\end{equation}
+onde foi usada a propriedade da derivada.
+A condição inicial se torna:
+\begin{equation}U(k,0)=500\int_{-\infty}^\infty \delta(x)e^{-ikx}=500\end{equation}
+Portanto temos o seguinte problema de valor inicial:
+\begin{equation}U_t(k,t)=(-k^2+ivk)U(k,t)\end{equation}
+\begin{equation}U(k,0)=500\end{equation}
+cuja solução é
+\begin{equation}U(k,t)=500e^{(-k^2+ivk)t}=500 e^{ivkt}e^{-k^2t}\end{equation}
+A multiplicação por $e^{ivtk}$ indica um deslocamento no eixo $x$. Logo precisamos calcular:
+\begin{eqnarray*}
+\mathcal{F}^{-1}_x\left\{e^{-k^2t}\right\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty e^{-k^2t} e^{ikx}dk=\frac{1}{\pi}\int_{0}^\infty e^{-k^2t} \cos({ikx})dk\\
+&=&\frac{1}{\pi}\frac{\sqrt{\pi}}{2\sqrt{t}}e^{-\frac{x^2}{4t}}=\frac{1}{2\sqrt{\pi t}}e^{-\frac{x^2}{4t}}
+\end{eqnarray*}
+Portanto
+\begin{equation}u(x,t)=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+vt)^2}{4t}}=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+t)^2}{4t}}\end{equation}
+\end{resp}
+
 \section{Equação da Onda}
 Considere a equação da onda dada por
 \begin{eqnarray*}
@@ -213,6 +271,36 @@ Portanto,
 y(x,t)=\frac{1}{2} \left( f(x+ct)+f(x-ct)
 \right)+\frac{1}{2c}\int_{x-ct}^{x+ct}g(\eta)d\eta.
 \end{equation*}
+\subsection*{Exercícios}
+
+\begin{exer} Enconte a solução da equação da onda dada
+\begin{eqnarray*}
+&&\frac{\partial^2 y}{\partial t^2}=\frac{\partial^2
+y}{\partial x^2},\quad -\infty<x<\infty,\ \ t>0\\
+&&y(x,0)=f(x)\\
+&&\frac{\partial y}{\partial t}(x,0)=g(x).
+\end{eqnarray*}
+\begin{itemize}
+ \item[a)] Dados $f(x)=e^{-|x|}$ e $g(x)=0$.
+  \item[b)] Dados $f(x)=e^{-3|x|}$ e $g(x)=e^{-x^2}$.
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item [a)] 
+ \begin{equation*}
+y(x,t)=\frac{1}{2} \left( e^{-|x+t|}+e^{-|x-t|}
+\right).
+\end{equation*}
+\item [b)]
+ \begin{equation*}
+y(x,t)=\frac{1}{2} \left(  e^{-3|x+t|}+e^{-3|x-t|}
+\right)+\frac{1}{2}\int_{x-t}^{x+t}e^{-\eta^2}d\eta.
+\end{equation*}
+\end{itemize}
+\end{resp}
+
+
 \section{Vibrações livres transversais} 
 Considere o problema de vibrações livres transversais de uma barra infinita governada por
 \begin{eqnarray*}
@@ -293,92 +381,17 @@ f(x-2u a^{\frac{1}{2}}t^{\frac{1}{2}})\left(\cos (u^2)+\sen (u^2)\right)du-\\
 &-&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty g(x-2u
 a^{\frac{1}{2}}t^{\frac{1}{2}})\left(\sen (u^2)-\cos (u^2)\right)du.
 \end{eqnarray*}
-\section{Exercícios}
-\begin{Exercise}
-Um fluido se desloca em um tubo termicamente isolado com velocidade constante $v$ de forma que a evolução da temperatura $u(x,t)$ como uma função da coordenada $x$ e do tempo é descrita pelo seguinte modelo simplificado:
-\begin{equation}u_t-vu_x-u_{xx}=0.\end{equation}
-Sabendo que no instante $t=0$, a temperatura foi bruscamente aquecida em uma região muito pequena, de forma que podemos considerar
-\begin{equation}u(x,0)=500 \delta(x).\end{equation} 
-Use a técnica das transformadas de Fourier para obter a solução desta equação diferencial quando $v=1m/s$.
-\end{Exercise}
-\begin{Answer}
-Aplicamos a transforma de Fourier na variável $x$, obtemos a seguinte expressão para a equação transformada
-\begin{equation}U_t(k,t)-v(ik)U(k,t)-(ik)^2U(k,t)=0\end{equation}
-onde foi usada a propriedade da derivada.
-A condição inicial se torna:
-\begin{equation}U(k,0)=500\int_{-\infty}^\infty \delta(x)e^{-ikx}=500\end{equation}
-Portanto temos o seguinte problema de valor inicial:
-\begin{equation}U_t(k,t)=(-k^2+ivk)U(k,t)\end{equation}
-\begin{equation}U(k,0)=500\end{equation}
-cuja solução é
-\begin{equation}U(k,t)=500e^{(-k^2+ivk)t}=500 e^{ivkt}e^{-k^2t}\end{equation}
-A multiplicação por $e^{ivtk}$ indica um deslocamento no eixo $x$. Logo precisamos calcular:
-\begin{eqnarray*}
-\mathcal{F}^{-1}_x\left\{e^{-k^2t}\right\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty e^{-k^2t} e^{ikx}dk=\frac{1}{\pi}\int_{0}^\infty e^{-k^2t} \cos({ikx})dk\\
-&=&\frac{1}{\pi}\frac{\sqrt{\pi}}{2\sqrt{t}}e^{-\frac{x^2}{4t}}=\frac{1}{2\sqrt{\pi t}}e^{-\frac{x^2}{4t}}
-\end{eqnarray*}
-Portanto
-\begin{equation}u(x,t)=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+vt)^2}{4t}}=\frac{250}{\sqrt{\pi t}}e^{-\frac{(x+t)^2}{4t}}\end{equation}
-\end{Answer}
-\begin{Exercise} Enconte a solução da equação da onda dada
-\begin{eqnarray*}
-&&\frac{\partial^2 y}{\partial t^2}=\frac{\partial^2
-y}{\partial x^2},\quad -\infty<x<\infty,\ \ t>0\\
-&&y(x,0)=f(x)\\
-&&\frac{\partial y}{\partial t}(x,0)=g(x).
-\end{eqnarray*}
-\begin{itemize}
- \item[a)] Dados $f(x)=e^{-|x|}$ e $g(x)=0$.
-  \item[b)] Dados $f(x)=e^{-3|x|}$ e $g(x)=e^{-x^2}$.
-\end{itemize}
-\end{Exercise}
-\begin{Answer}
-\begin{itemize}
- \item [a)] 
- \begin{equation*}
-y(x,t)=\frac{1}{2} \left( e^{-|x+t|}+e^{-|x-t|}
-\right).
-\end{equation*}
-\item [b)]
- \begin{equation*}
-y(x,t)=\frac{1}{2} \left(  e^{-3|x+t|}+e^{-3|x-t|}
-\right)+\frac{1}{2}\int_{x-t}^{x+t}e^{-\eta^2}d\eta.
-\end{equation*}
-\end{itemize}
-\end{Answer}
-\begin{Exercise}No exemplo \ref{ex_eq_dif_2}, mostre que a solução satisfaz a condição inicial: 
-\begin{equation}
-\lim_{t\to 0}u(x,t)=\frac{Q}{A}\delta(x-x_0)
-\end{equation}
-e, como esperado, vale zero nos limites para infinito:
-\begin{equation}
-\lim_{x\to\pm\infty}u(x,t)=0.
-\end{equation}
-\end{Exercise}
-\begin{Answer}
-\begin{eqnarray*}
-\lim_{t\to 0} u(x,t)&=&\frac{Q}{A}\lim_{t\to 0} \frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}\\
-&=&\left\{\begin{array}{ll}0,&x\neq x_0\\ \infty, &x=x_0\end{array}\right.
-\end{eqnarray*}
-Como,
-\begin{eqnarray*}
-\int_{-\infty}^\infty\frac{1}{\sqrt{4\pi \mu t}}e^{-\frac{(x-x_0)^2}{4\mu t}}dx&=&\frac{2}{\sqrt{4\pi \mu t}}\int_{0}^\infty e^{-\frac{x^2}{4\mu t}}dx\\
-&=&\frac{2}{\sqrt{4\pi \mu t}}\frac{\sqrt{\pi} \sqrt{4\mu t}}{2}=1,
-\end{eqnarray*}
-onde se usou item 8 da tabela de integrais \ref{tab_int_def} com $a=\frac{1}{\sqrt{4\mu t}}$, então
-\begin{equation}
-\lim_{t\to 0} u(x,t)=\frac{Q}{A} \delta(x-x_0)
-\end{equation}
-\end{Answer}
-\begin{Exercise} Considere uma viga infinita repousada sobre um suporte elástico e $y(x)$ seu deslocamento vertical em cada ponto $x$. Suponha que o suporte exerce uma força de reação proporcional ao deslocamento $y(x)$ e que a viga é carregada em $x=0$ por um força concentrada $P\delta(x)$. A equação que modela o fenômeno é dada por:
+
+\subsection*{Exercícios}
+\begin{exer} Considere uma viga infinita repousada sobre um suporte elástico e $y(x)$ seu deslocamento vertical em cada ponto $x$. Suponha que o suporte exerce uma força de reação proporcional ao deslocamento $y(x)$ e que a viga é carregada em $x=0$ por um força concentrada $P\delta(x)$. A equação que modela o fenômeno é dada por:
 \begin{equation}
 EI\frac{d^4 y}{dx^4}=P\delta(x)-Cy(x),\qquad -\infty<x<\infty,
 \end{equation}
 onde $C$ é uma constante de proporcionalidade relacionada ao suporte, $E$ é o módulo de Young e $I$ é o momento de inércia da viga. Calcule o deslocamento $y(x)$ da viga.
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{eqnarray*}
 y(x)=\frac{P}{EI}\frac{\sqrt{2}}{8a^3}e^{-ax}\sen\left(ax+\frac{\pi}{4}\right),
 \end{eqnarray*}
 onde $a=\left(\frac{C}{4EI}\right)^{\frac{1}{4}}$.
-\end{Answer}
+\end{resp}

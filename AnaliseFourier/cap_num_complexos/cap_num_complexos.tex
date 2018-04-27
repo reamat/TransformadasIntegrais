@@ -55,6 +55,65 @@ cotangente de $\theta$ por
 \begin{equation}\cos(x)=\sum_{k=0}^\infty\frac{(-1)^k x^{2k}}{(2k)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots \end{equation}
 \end{itemize}
 \end{prop}
+
+\subsection*{Exercícios}
+\begin{exer}
+Relacione $A$ e $\theta$ com os valores conhecidos de $B$ e $C$ que satisfazem a identidade
+\begin{equation}A\cos(x-\theta)=B\cos(x)+C\sen(x),~~~~\forall x\in\mathbb{R}\end{equation}
+sabendo que $0\leq \theta<2\pi$ e $A\geq 0$.
+\end{exer}
+\begin{resp}
+$A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\sqrt{B^2+C^2}}$ e $\sen(\theta)=\frac{C}{\sqrt{B^2+C^2}}$.
+\end{resp}
+\begin{exer} Encontre $A$ e $\theta$ com $A\geq 0$ e  $0\leq \theta<2\pi$ tal que
+\begin{itemize}
+ \item [a)] $A\cos(x-\theta)=3\cos(x)+4\sen(x)$
+ \item [b)] $A\cos(x-\theta)=3\cos(x)-4\sen(x)$
+ \item [c)] $A\cos(x-\theta)=-3\cos(x)+4\sen(x)$
+ \item [d)] $A\cos(x-\theta)=-3\cos(x)-4\sen(x)$
+ \item [e)] $A\cos(x-\theta)=\sen(x)$
+ \item [f)] $A\cos(x-\theta)=2\cos(x)$
+ \item [g)] $A\cos(x-\theta)=-2\cos(x)$
+ \end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item [a)] $A=5$, $\theta=\varphi$
+ \item [b)] $A=5$, $\theta=2\pi-\varphi$
+ \item [c)] $A=5$, $\theta=\pi-\varphi$
+ \item [d)] $A=5$, $\theta=\pi+\varphi$
+ \item [e)] $A=1$, $\theta=\frac{\pi}{2}$
+ \item [f)] $A=2$, $\theta=0$
+ \item [g)] $A=2$. $\theta=\pi$
+ \end{itemize}
+ onde $\varphi=\cos^{-1}\left(\frac{3}{5}\right)=\sen^{-1}\left(\frac{4}{5}\right)=\tan^{-1}\left(\frac{4}{3}\right)\approx 0.9272952rad $
+\end{resp}
+\begin{exer} Deduza as seguintes identidades trigonométricas
+\begin{itemize}
+\item[a)] $\cos(x) \cos(y) = \frac {\cos(x+y) + \cos(x-y)}{2}$
+\item[b)] $\sen(x) \sen(y) = \frac {\cos(x-y) - \cos(x+y)}{2}$
+\item[c)] $\sen(x) \cos(y) = \frac {\sen(x+y) + \sen(x-y)}{2}$
+\end{itemize}
+\end{exer}
+\begin{exer}Calcule as seguintes integrais onde $n$ e $m$ são inteiros não negativos.
+\begin{itemize}
+\item [a)] $\int_0^{2\pi}\sen(nx)^2dx$
+\item [b)] $\int_0^{2\pi}\sen(nx)\sen(mx)dx,~~n\neq m$
+\item [c)] $\int_0^{2\pi}\cos(nx)^2dx$
+\item [d)] $\int_0^{2\pi}\cos(nx)\cos(mx)dx,~~n\neq m$
+\item [e)] $\int_0^{2\pi}\sen(nx)\cos(mx)dx$
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+\item [a)] $\pi$ se $n>0$ e $0$ se $n=0$.
+\item [b)] $0$.
+\item [c)] $\pi$ de $n>0$ e $2\pi$ se $n=0$.
+\item [d)] $0$
+\item [e)] $0$
+\end{itemize}
+\end{resp}
+
 \section{Números complexos e fórmula de Euler}
 \begin{defn} Um número complexo é definido pelo par ordenado $(a,b)$ de números reais que satisfazem as seguintes operações de adição e multiplicação:
 \begin{eqnarray*}
@@ -92,8 +151,10 @@ Se desejamos $\frac{\pi}{2}\leq \theta < \frac{\pi}{2}$, podemos usar a seguinte
 \tan^{-1}(\frac b a) - \pi &\text{se } a < 0 \text{ e } b < 0, \\[5pt]
 +\frac{\pi}{2} &\text{se } a = 0 \text{ e } b > 0, \\[5pt]
 -\frac{\pi}{2} &\text{se } a = 0 \text{ e } b < 0, \\[5pt]
+
 \end{cases}
 \end{equation}
+
 A representação geométrica de $|z|$ e $\theta$ está na figura \ref{num_complexo}.
 \begin{figure}[!ht]
 \begin{center}
@@ -143,6 +204,7 @@ e
 \begin{equation}
 \cos(\theta)=\frac{e^{i\theta}+e^{-i\theta}}{2}
 \end{equation}
+
 Observe que pela fórmula de Euler vale
 \begin{equation}{\label{Euler_1}}
 e^{i\theta}=\cos(\theta)+i\sen(\theta)
@@ -162,39 +224,9 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 &=&\frac{1+\cos(2\theta)}{2}
 \end{eqnarray*}
 \end{ex}
-\section{Exercícios}
-\begin{Exercise}
-Relacione $A$ e $\theta$ com os valores conhecidos de $B$ e $C$ que satisfazem a identidade
-\begin{equation}A\cos(x-\theta)=B\cos(x)+C\sen(x),~~~~\forall x\in\mathbb{R}\end{equation}
-sabendo que $0\leq \theta<2\pi$ e $A\geq 0$.
-\end{Exercise}
-\begin{Answer}
-$A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\sqrt{B^2+C^2}}$ e $\sen(\theta)=\frac{C}{\sqrt{B^2+C^2}}$.
-\end{Answer}
-\begin{Exercise} Encontre $A$ e $\theta$ com $A\geq 0$ e  $0\leq \theta<2\pi$ tal que
-\begin{itemize}
- \item [a)] $A\cos(x-\theta)=3\cos(x)+4\sen(x)$
- \item [b)] $A\cos(x-\theta)=3\cos(x)-4\sen(x)$
- \item [c)] $A\cos(x-\theta)=-3\cos(x)+4\sen(x)$
- \item [d)] $A\cos(x-\theta)=-3\cos(x)-4\sen(x)$
- \item [e)] $A\cos(x-\theta)=\sen(x)$
- \item [f)] $A\cos(x-\theta)=2\cos(x)$
- \item [g)] $A\cos(x-\theta)=-2\cos(x)$
- \end{itemize}
-\end{Exercise}
-\begin{Answer}
-\begin{itemize}
- \item [a)] $A=5$, $\theta=\varphi$
- \item [b)] $A=5$, $\theta=2\pi-\varphi$
- \item [c)] $A=5$, $\theta=\pi-\varphi$
- \item [d)] $A=5$, $\theta=\pi+\varphi$
- \item [e)] $A=1$, $\theta=\frac{\pi}{2}$
- \item [f)] $A=2$, $\theta=0$
- \item [g)] $A=2$. $\theta=\pi$
- \end{itemize}
- onde $\varphi=\cos^{-1}\left(\frac{3}{5}\right)=\sen^{-1}\left(\frac{4}{5}\right)=\tan^{-1}\left(\frac{4}{3}\right)\approx 0.9272952rad $
-\end{Answer}
-\begin{Exercise}Escreva os seguintes números complexos na forma exponencial. Calcule também o complexo conjugado de cada um. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
+\subsection*{Exercícios}
+
+\begin{exer}Escreva os seguintes números complexos na forma exponencial. Calcule também o complexo conjugado de cada um. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
 \begin{itemize}
 \item[a)] $2+3i$
 \item[b)] $-2+3i$
@@ -205,8 +237,8 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[g)] $-5$
 \item[h)] $-4i$
 \end{itemize}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{itemize}
 \item[a)] $\sqrt{13}e^{i\theta}$, $\theta=\tan^{-1}\left(\frac{3}{2}\right)$
 \item[b)] $\sqrt{13}e^{i\theta}$, $\theta=\pi-\tan^{-1}\left(\frac{3}{2}\right)$
@@ -217,8 +249,8 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[f)] $5e^{i\pi}$
 \item[g)] $4e^{i\frac{3\pi}{2}}$
 \end{itemize}
-\end{Answer}
-\begin{Exercise}Escreva os seguintes números complexos na forma retangular. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
+\end{resp}
+\begin{exer}Escreva os seguintes números complexos na forma retangular. Represente-os no plano complexo e identifique no gráfico as partes real e complexa, o argumento e o módulo.
 \begin{itemize}
 \item[a)] $e^{5\pi i}$
 \item[b)] $e^{3\pi i+2}$
@@ -227,8 +259,8 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[e)] $4e^{-\frac{\pi}{4}i}$
 \item[f)] $5e^{\frac{\pi}{4}i}$
 \end{itemize}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{itemize}
 \item[a)] $-1$
 \item[b)] $-e^2$
@@ -237,8 +269,8 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[e)] $2\sqrt{2}\left(1-i\right)$
 \item[f)] $\frac{5\sqrt{2}}{2}\left(1+i\right)$
 \end{itemize}
- \end{Answer}
-\begin{Exercise}Calcule e escreva na forma retangular.
+ \end{resp}
+\begin{exer}Calcule e escreva na forma retangular.
 \begin{itemize}
 \item[a)] $(2-3i)(4+2i)-e^{i\pi }(2i+1)$
 \item[b)] $\left(\frac{\sqrt{2}}{2}+i\frac{\sqrt{2}}{2}\right)^3$
@@ -246,8 +278,8 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item[d)] $\frac{5+5i}{3-4i}+\frac{20}{4+3i}$
 \item[e)] $\frac{3i^{30}-i^{19}}{2i-1}$
 \end{itemize}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
 \begin{itemize}
 \item [a)]$15-6i$
 \item [b)]$\left(e^{i\frac{\pi}{4}}\right)^3=e^{i\frac{3\pi}{4}}=-\frac{\sqrt{2}}{2}+i\frac{\sqrt{2}}{2}$
@@ -255,69 +287,45 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \item [d)]$3-i$
 \item [e)]$\frac{3i^{2}-i^{3}}{2i-1}=\frac{-3+i}{2i-1}=1+i$
 \end{itemize}
-\end{Answer}
-\begin{Exercise}Mostre a identidade 
+\end{resp}
+\begin{exer}Mostre a identidade 
 \begin{equation}\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)\end{equation}
 diretamente a partir das identidades trigonométricas para soma de ângulos.
-\end{Exercise}
-\begin{Exercise}Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moîvre:
+\end{exer}
+\begin{exer}Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moivre:
 \begin{equation}\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta)\end{equation}
-\end{Exercise}
-\begin{Exercise}Use a identidade anterior para calcular a razão
+\end{exer}
+\begin{exer}Use a identidade anterior para calcular a razão
 \begin{equation}\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta)\end{equation}
 sem usar a exponencial complexa.
-\end{Exercise}
-\begin{Exercise}Repita os três problemas anteriores usando a exponencial complexa dada por
+\end{exer}
+\begin{exer}Repita os três problemas anteriores usando a exponencial complexa dada por
 \begin{equation}e^{i\theta}=\cos(\theta)+i\sen(\theta).\end{equation}
-\end{Exercise}
-\begin{Exercise} Calcule
+\end{exer}
+\begin{exer} Calcule
 \begin{itemize}
 \item[a)] $\frac{\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)}{\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)}$
 \item[b)] $\left[\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)\right]\left[\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)\right]^3$
 \end{itemize}
-\end{Exercise}
-\begin{Answer} 
+\end{exer}
+\begin{resp} 
 \begin{itemize}
 \item[a)] $\cos\left(\frac{\pi}{12}\right)+i\sen\left(\frac{\pi}{12}\right)$
 \item[b)] $\cos\left(\frac{3\pi}{4}\right)+i\sen\left(\frac{3\pi}{4}\right)$
 \end{itemize}
-\end{Answer}
-\begin{Exercise}Mostre as seguintes identidades:
+\end{resp}
+\begin{exer}Mostre as seguintes identidades:
 \begin{eqnarray*}
 \sen^3\theta&=&\frac{3}{4}\sen\theta-\frac{1}{4}\sen 3\theta\\
 \cos^4\theta&=&\frac{1}{8}\cos 4\theta+\frac{1}{2}\cos 2\theta+\frac{3}{8}
 \end{eqnarray*}
 Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  binômio de Newton 
-\end{Exercise}
-\begin{Exercise}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma 
+\end{exer}
+\begin{exer}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma 
 \begin{equation}\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]\end{equation}
-\end{Exercise}
-\begin{Exercise} Deduza as seguintes identidades trigonométricas
-\begin{itemize}
-\item[a)] $\cos(x) \cos(y) = \frac {\cos(x+y) + \cos(x-y)}{2}$
-\item[b)] $\sen(x) \sen(y) = \frac {\cos(x-y) - \cos(x+y)}{2}$
-\item[c)] $\sen(x) \cos(y) = \frac {\sen(x+y) + \sen(x-y)}{2}$
-\end{itemize}
-\end{Exercise}
-\begin{Exercise}Calcule as seguintes integrais onde $n$ e $m$ são inteiros não negativos.
-\begin{itemize}
-\item [a)] $\int_0^{2\pi}\sen(nx)^2dx$
-\item [b)] $\int_0^{2\pi}\sen(nx)\sen(mx)dx,~~n\neq m$
-\item [c)] $\int_0^{2\pi}\cos(nx)^2dx$
-\item [d)] $\int_0^{2\pi}\cos(nx)\cos(mx)dx,~~n\neq m$
-\item [e)] $\int_0^{2\pi}\sen(nx)\cos(mx)dx$
-\end{itemize}
-\end{Exercise}
-\begin{Answer}
-\begin{itemize}
-\item [a)] $\pi$ se $n>0$ e $0$ se $n=0$.
-\item [b)] $0$.
-\item [c)] $\pi$ de $n>0$ e $2\pi$ se $n=0$.
-\item [d)] $0$
-\item [e)] $0$
-\end{itemize}
-\end{Answer}
-\begin{Exercise}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras:
+\end{exer}
+
+\begin{exer}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras:
 \begin{itemize}
  \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
  \item [a)] $e^{-ix}=\cos(x)-i\sen(x).$
@@ -327,8 +335,8 @@ Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  
  \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
  \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
  \end{itemize}
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
  \begin{itemize}
  \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
  \item [c)] $|e^{i\theta}|=|\cos(x)+i\sen(x)|= \sqrt{\cos^2(\theta)+\sin^2(\theta)}=1$
@@ -337,6 +345,5 @@ Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  
  \item [f)] Considere $e^{ix}+e^{-ix}$.
  \item [g)] Considere $e^{ix}-e^{-ix}$.
  \end{itemize}
-\end{Answer}
-\begin{Exercise} Certifique-se que você fez o exercício \ref{familiarize} cuidadosamente.
-\end{Exercise}
+\end{resp}
+

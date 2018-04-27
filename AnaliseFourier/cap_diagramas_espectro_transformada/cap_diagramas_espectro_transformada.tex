@@ -51,6 +51,18 @@ A(w)&=&\frac{a}{a^2+w^2}\\
 B(w)&=&\frac{w}{a^2+w^2}
 \end{eqnarray*}
 \end{ex}
+\subsection*{Exercícios}
+\begin{exer}Mostre que a representação trigonométrica da transformada de Fourier $F(w)$ de uma função real $f(t)$ separa-a em parte ímpar e parte par. Isto é,
+\begin{eqnarray*}
+\frac{1}{\pi}\int_{0}^\infty A(w)\cos(wt)dw=\frac{f(t)+f(-t)}{2}
+\end{eqnarray*}
+e
+\begin{eqnarray*}
+\frac{1}{\pi}\int_{0}^\infty B(w)\sen(wt)dw=\frac{f(t)-f(-t)}{2}.
+\end{eqnarray*}
+\end{exer}
+\begin{exer}Mostre que se $f(t)$ é real, $F(-w)=\overline{F(w)}$.
+\end{exer}
 \section{Diagramas de espectro}
 Diagrama de espectro da transformada de Fourier é a representação gráfica da transformada de Fourier $F(w)$ associadas a uma função $f(t)$. Da mesma forma como o diagrama de espectro da série de Fourier se divide em amplitude e fase, o diagrama de espectro da transformada de Fourier se divide em magnitude e fase. Ou seja, o gráfico de $|F(w)|$ é a diagrama de magnitude e o gráfico de $\phi(w)$ é o diagrama de fase, onde
 \begin{equation}
@@ -88,21 +100,11 @@ A figura \ref{diag_espec_trans_2} apresenta o diagrama de espectro de magnitude 
 \caption{\label{diag_espec_trans_2}}
 \end{figure}
 \end{ex}
-\section{Exercícios}
-\begin{Exercise}Mostre que a representação trigonométrica da transformada de Fourier $F(w)$ de uma função real $f(t)$ separa-a em parte ímpar e parte par. Isto é,
-\begin{eqnarray*}
-\frac{1}{\pi}\int_{0}^\infty A(w)\cos(wt)dw=\frac{f(t)+f(-t)}{2}
-\end{eqnarray*}
-e
-\begin{eqnarray*}
-\frac{1}{\pi}\int_{0}^\infty B(w)\sen(wt)dw=\frac{f(t)-f(-t)}{2}.
-\end{eqnarray*}
-\end{Exercise}
-\begin{Exercise}Mostre que se $f(t)$ é real, $F(-w)=\overline{F(w)}$.
-\end{Exercise}
-\begin{Exercise}{\label{exer_te_t2}} Calcule a transformada de Fourier e trace o diagrama de espectro da função $f(t)=te^{-t^2}$. [Dica: Use integração por partes para transformar a integral dada numa integral tabelada].
-\end{Exercise}
-\begin{Answer}
+\subsection*{Exercícios}
+
+\begin{exer}{\label{exer_te_t2}} Calcule a transformada de Fourier e trace o diagrama de espectro da função $f(t)=te^{-t^2}$. [Dica: Use integração por partes para transformar a integral dada numa integral tabelada.
+\end{exer}
+\begin{resp}
 \begin{eqnarray*}
 F(w)=\int_{-\infty}^\infty te^{-t^2}e^{-iwt}dt&=&-2i\int_{0}^\infty te^{-t^2}\sen(wt)dt\\
 &=&-2i\left[-\frac{e^{-t^2}}{2}\sen(wt) \right]_0^\infty+2i\int_{0}^\infty \left(-\frac{e^{-t^2}}{2}\right)w\cos(wt)dt\\
@@ -120,4 +122,4 @@ Veja o diagrama de espectro na figura abaixo.
 \begin{center}
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_4}
 \includegraphics{cap_diagramas_espectro_transformada/pics/figura_5}\end{center}
-\end{Answer}
+\end{resp}

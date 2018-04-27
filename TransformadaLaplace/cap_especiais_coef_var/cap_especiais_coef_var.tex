@@ -11,7 +11,7 @@ Fazemos a mudança de variável $x=st$ para obter:
  \mathcal{L}\{t^{k-1} \}&=&\int_0^\infty \frac{x^{k-1}}{s^{k-1}}e^{-x}\frac{dx}{s}\\
  &=&\frac{1}{s^k}\int_0^\infty x^{k-1}e^{-x} dx.
  \end{eqnarray*}
-A função que aparece acima é a multiplicação de $\frac{1}{s^k}$ por uma que não depende de $s$, chamada de função Gama e denotada por $\Gamma(k)$. Portanto, demonstramos o item (6) da tabela \ref{tab_trans_Lap_1}:
+A função que aparece acima é a multiplicação de $\frac{1}{s^k}$ por uma que não depende de $s$, chamada de função Gama e denotada por $\Gamma(k)$. Portanto, demonstramos o item 6 da tabela \ref{tab_trans_Lap_1}:
 \begin{equation}
 \mathcal{L}\{t^{k-1} \}=\frac{\Gamma(k)}{s^k},\qquad k>0,
 \end{equation}
@@ -116,6 +116,20 @@ Essa constante $\gamma$ é chamada de constante de Euler - Mascheroni. Finalment
 \mathcal{L}\{\ln(t)\}=\frac{\gamma-\ln(s)}{s}
 \end{equation}
 \end{ex}
+
+\subsection*{Exercícios}
+\begin{exer}
+Demonstre o item (32) da tabela usando os itens (4) e (5) e a propriedade \ref{prop_trans_s} do deslocamento no eixo $s$. 
+\end{exer}
+\begin{exer}
+Use a tabela da transformada de Laplace para mostrar que:
+\begin{itemize}
+  \item[a)] $\displaystyle \mathcal{L} \big\{ t^{1/2}+ t^{-1/2} \big\} = \frac{\sqrt{\pi}(2s+1)}{2s^{3/2}}$
+  \item[b)] $\displaystyle \mathcal{L} \bigg\{ \frac{e^{-2t}}{\sqrt{t}} \bigg\} = \sqrt{\frac{\pi}{s+2}}$
+  \item[c)] $\displaystyle \mathcal{L} \bigg\{ \frac{\cos(2\sqrt{t}) }{\sqrt{t}} \bigg\} = e^{-1/s}\sqrt{\frac{\pi}{s}}$
+\end{itemize}
+\end{exer}
+
 \section{Transformada de Laplace de funções periódicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
 \begin{teo}{\label{prop_fun_per}}(Propriedade da transformada de funções periódicas) Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
@@ -262,6 +276,29 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 &=&\frac{1}{as^2}-\frac{e^{-sa} }{s\left(1-e^{-sa}\right)}.
 \end{eqnarray*}
 \end{ex}
+
+\subsection*{Exercícios}
+\begin{exer}
+Faça o gráfico de $f(t)$ e calcule $\mathcal{L}\big\{f(t)\big\}$.
+\begin{itemize}
+  \item[a)] $f$ periódica de período $p=4$ e $\displaystyle f(t) = \left\{
+                                                                      \begin{array}{ll}
+                                                                        3t, & \hbox{ se } t \in (0,2) \\
+                                                                        6, & \hbox{ se } t \in (2,4)
+                                                                      \end{array}
+                                                                    \right.
+$
+  \item[b)] $f$ periódica de período $p=2\pi$ e $\displaystyle f(t) = e^t$, para $t \in (0,2\pi)$.
+  \item[b)] $\displaystyle f(t) = |\sen (\omega t)|$.
+\end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{8} \Big( 1 - \cos \big(2(t-a)\big) \Big)u(t-a) $
+  \item[b)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{4} \sen(2t)$
+ \end{itemize}
+\end{resp}
+
 \section{Séries de potências}
 \subsection{Transformada de Laplace inversa de funções envolvendo expansão em séries de potências}
 Em algumas situações, é conveniente expandir em séries de potência um termo de uma função para calcular sua transformada inversa. Vejamos alguns exemplos.
@@ -334,11 +371,49 @@ A série acima está apresentada no item 3 da tabela \ref{series_de_potencias}, 
 \mathcal{L}\left\{J_0(2\sqrt{kt})\right\}&=&\frac{1}{s}e^{-\frac{k}{s}}
 \end{eqnarray*}
 \end{ex}
+
+\subsection*{Exercícios}
 \begin{exer}Use o método das séries de potência e as propriedades da função $\Gamma$ para mostrar que
 \begin{equation}
 \mathcal{L}\left\{\frac{\cos(2\sqrt{t})}{\sqrt{t}}\right\}=\frac{\sqrt{\pi}}{\sqrt{s}}e^{-\frac{1}{s}}.
 \end{equation}
 \end{exer}
+
+\begin{exer}
+Use o método das séries de potências para mostrar que \[\mathcal{L} \{\sen \sqrt{t} \} =  \frac{\sqrt{\pi} e^{-1/4s}}{2s^{3/2}}.\]
+\emph{Sugestão}: Use que \[\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}.\]
+\end{exer}
+\begin{resp}
+ \begin{eqnarray*}
+f(t)&=&\sin\sqrt{t}= \sum_{n=0}^{\infty}(-1)^n\frac{t^{(2n+1)/2}}{(2n+1)!}\\
+F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\Gamma\left((2n+3)/2\right)\frac{1}{s^{(2n+3)/2}}\\
+&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\frac{(2n+1)!}{n!}\frac{\sqrt{\pi}}{2^{2n+1}}\frac{1}{s^{(2n+3)/2}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}{(-1)^n}\frac{1}{n!}\frac{1}{2^{2n}}\frac{1}{s^{n}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}\frac{1}{n!}{\left(-\frac{1}{4s}\right)^{n}}\\
+&=&\frac{\sqrt{\pi}}{2s^{3/2}}e^{-\frac{1}{4s}}
+\end{eqnarray*}
+Para mostrar a identidade $\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}$ , usamos a relação de recorrência
+\begin{equation}\Gamma(x+1)=x\Gamma(x)\end{equation}
+e o fato bem conhecido  de que
+\begin{equation}\Gamma(1/2)=\sqrt{\pi}\end{equation}
+Para obter
+\begin{eqnarray*}
+\Gamma(3/2)&=&\Gamma(1+1/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt{\pi}}{2}\\
+\Gamma(5/2)&=&\Gamma(1+3/2)=\frac{3}{2}\Gamma(3/2)=\frac{3\sqrt{\pi}}{2^2}\\
+\Gamma(7/2)&=&\Gamma(1+5/2)=\frac{5}{2}\Gamma(5/2)=\frac{5 \cdot 3\sqrt{\pi}}{2^3}\\
+\Gamma(9/2)&=&\Gamma(1+7/2)=\frac{7}{2}\Gamma(7/2)=\frac{7\cdot 5 \cdot 3\sqrt{\pi}}{2^4}\\
+\end{eqnarray*}
+E generalizando, temos:
+\begin{eqnarray*}
+\Gamma\left(\frac{2n+1}{2}\right)&=&\Gamma\left(1+\frac{2n-1}{2}\right)=\frac{2n-1}{2}\Gamma\left(\frac{2n-1}{2}\right)={(2n-1)(2n-3)\cdots 3}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{(2n-2)(2n-4)\cdots 2}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{2^{n-1}(n-1)(n-2)\cdots 1}\frac{\sqrt{\pi}}{2^{n}}\\
+&=&\frac{(2n-1)!}{(n-1)!}\frac{\sqrt{\pi}}{2^{2n-1}}
+\end{eqnarray*}
+\end{resp}
+
 \section{A derivada da transformada de Laplace}
 \begin{teo}{\label{prop_der_transf}}(Propriedade da derivada da transformada)
 Se $F(s)=\mathcal{L}\{f(t)\}$, então
@@ -364,8 +439,28 @@ Usando a definição de transformada de Laplace, temos
 &=&\frac{s^2-w^2}{(s^2+w^2)^2}\\
 \end{eqnarray*}
 \end{ex}
+
+\subsection*{Exercícios}%prop derivada da transformada
+
 \begin{exer}Calcule $\mathcal{L}\{t^2\sen(wt)\}$ usando a propriedade \ref{prop_der_transf}.
 \end{exer}
+\begin{exer}
+Use a propriedade da derivada da transformada para calcular $\displaystyle \mathcal{L}\{ t \cos (\omega t) \}$. A partir desta, prove que \begin{equation} \mathcal{L}\{ \sen (\omega t) - \omega t \cos (\omega t) \} = \frac{2 \omega^3 }{(s^2 + \omega^2)^2}. \end{equation}
+\end{exer}
+\begin{exer}
+Usando a derivada da transformada de Laplace, calcule:
+\begin{itemize}
+  \item[a)] $\displaystyle \mathcal{L} \{ t \senh (at) \}$
+  \item[b)] $\displaystyle \mathcal{L} \{ t \cosh (at) \}$
+\end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\displaystyle \frac{2as}{(s^2 - a^2)^2}$
+  \item[b)] $\displaystyle \frac{s^2 + 9}{(s^2 - 9)^2}$
+ \end{itemize}
+\end{resp}
+
 \section{Equações diferenciais com coeficientes não constantes}
 A propriedade \ref{prop_der_transf} da derivada da transformada de Laplace tem uma aplicação importante na solução de equações diferenciais com coeficientes variáveis.
 \begin{ex}Vamos resolver o seguinte problema de valor inicial
@@ -470,6 +565,37 @@ y'(0)=0-2=-2,
 \end{equation}
 não usamos-a para calcular a solução. De fato, o problema possui um singularidade na origem que não é percebida pela transformada de Laplace. A solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
 \end{ex}
+
+\subsection*{Exercícios}
+\begin{exer}
+Usando a derivada da transformada de Laplace, calcule:
+\begin{itemize}
+  \item[a)] $\displaystyle \mathcal{L} \{ t \senh (at) \}$
+  \item[b)] $\displaystyle \mathcal{L} \{ t \cosh (at) \}$
+\end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\displaystyle \frac{2as}{(s^2 - a^2)^2}$
+  \item[b)] $\displaystyle \frac{s^2 + 9}{(s^2 - 9)^2}$
+ \end{itemize}
+\end{resp}
+\begin{exer}
+Resolva
+\[
+\left\{
+  \begin{array}{ll}
+    ty'' (t) + 2y'(t) +ty(t) = 0 \\
+    y(0)=1, \quad y(\pi) = 0
+  \end{array}
+\right.
+\] \emph{Sugestão}: Utilize que $\displaystyle \lim_{s\to + \infty} Y(s) = 0.$
+\end{exer}
+\begin{resp}
+ $\displaystyle y(t) = \frac{\sen t}{t}$
+\end{resp}
+
+
 \section{Propriedade da integral da transformada de Laplace}
 \begin{teo}{\label{prop_int_transf}}(Propriedade da integral da transformada) Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
 e o limite
@@ -568,8 +694,6 @@ Na penúltima igualdade usamos o seguinte limite no infinito:
 \end{eqnarray*}
 Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
 \end{ex}
-\begin{exer}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
-\end{exer}
 \begin{ex}{\label{ex_sint_t}}Vamos demonstrar o item 42 da tabela \ref{tab_trans_Lap_2}:
 \begin{equation}
 \mathcal{L}\left\{\frac{1}{t}\sen(wt)\right\}=\arctan\left(\frac{w}{s}\right).
@@ -611,6 +735,26 @@ Em seguida usamos o resultado do exemplo \ref{ex_sint_t} (ou item 42 da tabela \
 \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\arctan\left(\frac{1}{s}\right)=\frac{1}{s}\cot^{-1}\left(s\right).
 \end{equation}
 \end{ex}
+
+\subsection*{Exercícios}%prop integral da transformada
+\begin{exer}Demonstre o item 41 da tabela usando os itens 1 e 16 juntamente com a propriedade \ref{prop_int_transf}.
+\end{exer}
+\begin{exer}
+Utilize a integral da transformada de Laplace para demonstrar que:
+\begin{itemize}
+  \item[a)] $\displaystyle \mathcal{L}\bigg\{ \frac{\senh t}{t} \bigg\} = \frac{1}{2} \ln \bigg(\frac{s+1}{s-1}\bigg)$
+  \item[b)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cos (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 + \omega^2}{s^2}\bigg)$
+  \item[c)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cosh (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 - \omega^2}{s^2}\bigg)$
+\end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\displaystyle \frac{ 3 - 3 e^{-2s} - 6s e^{-4s} }{s^2 (1 - e^{-4s})}$
+  \item[b)] $\displaystyle \frac{  e^{2\pi(1-s)} -1 }{(1-s) (1 - e^{-2\pi s})}$
+  \item[c)] $\displaystyle \frac{\omega}{s^2 + \omega^2} \coth \bigg(\frac{\pi s}{2 \omega^2} \bigg)$
+ \end{itemize}
+\end{resp}
+
 \section{Propriedades do Valor Inicial e Final}
 \begin{teo}(Propriedade do Valor Final) Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
 \begin{equation}
@@ -672,14 +816,11 @@ Como $e^{-as}\to 0$ quando $s\to \infty$, então
 \lim_{s\to \infty} sF(s)=L.
 \end{equation} 
 \end{proof}
+
+
 \section{Exercícios}
-\begin{Exercise}
- Demonstre o item (32) da tabela usando os itens (4) e (5) e a propriedade \ref{prop_trans_s} do deslocamento no eixo $s$. 
-\end{Exercise}
-\begin{Exercise}
-Use a propriedade da derivada da transformada para calcular $\displaystyle \mathcal{L}\{ t \cos (\omega t) \}$. A partir desta, prove que \begin{equation} \mathcal{L}\{ \sen (\omega t) - \omega t \cos (\omega t) \} = \frac{2 \omega^3 }{(s^2 + \omega^2)^2}. \end{equation}
-\end{Exercise}
-\begin{Exercise}
+
+\begin{exer}
 Encontre a transformada inversa das funções abaixo utlizando o método que achar adequado.
 \begin{itemize}
 \item[a)] $\displaystyle F(s)= \frac{3s + 7}{s^2 - 2 s - 3}$.
@@ -695,7 +836,7 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
 \item[k)] $\displaystyle F(s)= \frac{2s^2 -4}{(s+1)(s-2)(s-3)}$.
 \item[l)] $\displaystyle F(s)= \frac{1}{(s^2+4)(s^2 +1)}$.
 \end{itemize}
-\end{Exercise}
+\end{exer}
 \begin{resp}
 \begin{itemize}
   \item[a)] $\displaystyle f(t) = 4e^{3t} - e^{-t}$
@@ -712,138 +853,9 @@ Encontre a transformada inversa das funções abaixo utlizando o método que ach
   \item[l)] $\displaystyle f(t) = \frac{1}{3} \bigg[ \sen t - \frac{1}{2}\sen(2t) \bigg]$
 \end{itemize}
 \end{resp}
-\begin{Exercise}
-Use a tabela da transformada de Laplace para mostrar que:
-\begin{itemize}
-  \item[a)] $\displaystyle \mathcal{L} \big\{ t^{1/2}+ t^{-1/2} \big\} = \frac{\sqrt{\pi}(2s+1)}{2s^{3/2}}$
-  \item[b)] $\displaystyle \mathcal{L} \bigg\{ \frac{e^{-2t}}{\sqrt{t}} \bigg\} = \sqrt{\frac{\pi}{s+2}}$
-  \item[c)] $\displaystyle \mathcal{L} \bigg\{ \frac{\cos(2\sqrt{t}) }{\sqrt{t}} \bigg\} = e^{-1/s}\sqrt{\frac{\pi}{s}}$
-\end{itemize}
-\end{Exercise}
-\begin{Exercise}
-Use o método das séries de potências para mostrar que \[\mathcal{L} \{\sen \sqrt{t} \} =  \frac{\sqrt{\pi} e^{-1/4s}}{2s^{3/2}}.\]
-\emph{Sugestão}: Use que \[\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}.\]
-\end{Exercise}
-\begin{resp}
- \begin{eqnarray*}
-f(t)&=&\sin\sqrt{t}= \sum_{n=0}^{\infty}(-1)^n\frac{t^{(2n+1)/2}}{(2n+1)!}\\
-F(s)&=&\mathcal{L}\left\{f(t)\right\}=\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
-&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\mathcal{L}\left\{{t^{(2n+1)/2}}\right\}\\
-&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\Gamma\left((2n+3)/2\right)\frac{1}{s^{(2n+3)/2}}\\
-&=&\sum_{n=0}^{\infty}\frac{(-1)^n}{{(2n+1)!}}\frac{(2n+1)!}{n!}\frac{\sqrt{\pi}}{2^{2n+1}}\frac{1}{s^{(2n+3)/2}}\\
-&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}{(-1)^n}\frac{1}{n!}\frac{1}{2^{2n}}\frac{1}{s^{n}}\\
-&=&\frac{\sqrt{\pi}}{2s^{3/2}}\sum_{n=0}^{\infty}\frac{1}{n!}{\left(-\frac{1}{4s}\right)^{n}}\\
-&=&\frac{\sqrt{\pi}}{2s^{3/2}}e^{-\frac{1}{4s}}
-\end{eqnarray*}
-Para mostrar a identidade $\Gamma\bigg( n + \frac{3}{2} \bigg) = \frac{ (2n+1)!}{ n! 2^{2n+1}}\sqrt{\pi}$ , usamos a relação de recorrência
-\begin{equation}\Gamma(x+1)=x\Gamma(x)\end{equation}
-e o fato bem conhecido  de que
-\begin{equation}\Gamma(1/2)=\sqrt{\pi}\end{equation}
-Para obter
-\begin{eqnarray*}
-\Gamma(3/2)&=&\Gamma(1+1/2)=\frac{1}{2}\Gamma(1/2)=\frac{\sqrt{\pi}}{2}\\
-\Gamma(5/2)&=&\Gamma(1+3/2)=\frac{3}{2}\Gamma(3/2)=\frac{3\sqrt{\pi}}{2^2}\\
-\Gamma(7/2)&=&\Gamma(1+5/2)=\frac{5}{2}\Gamma(5/2)=\frac{5 \cdot 3\sqrt{\pi}}{2^3}\\
-\Gamma(9/2)&=&\Gamma(1+7/2)=\frac{7}{2}\Gamma(7/2)=\frac{7\cdot 5 \cdot 3\sqrt{\pi}}{2^4}\\
-\end{eqnarray*}
-E generalizando, temos:
-\begin{eqnarray*}
-\Gamma\left(\frac{2n+1}{2}\right)&=&\Gamma\left(1+\frac{2n-1}{2}\right)=\frac{2n-1}{2}\Gamma\left(\frac{2n-1}{2}\right)={(2n-1)(2n-3)\cdots 3}\frac{\sqrt{\pi}}{2^{n}}\\
-&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{(2n-2)(2n-4)\cdots 2}\frac{\sqrt{\pi}}{2^{n}}\\
-&=&\frac{(2n-1)(2n-2)(2n-3)\cdots 3\cdot 2 \cdot 1}{2^{n-1}(n-1)(n-2)\cdots 1}\frac{\sqrt{\pi}}{2^{n}}\\
-&=&\frac{(2n-1)!}{(n-1)!}\frac{\sqrt{\pi}}{2^{2n-1}}
-\end{eqnarray*}
-\end{resp}
-\begin{Exercise}
-Usando a derivada da transformada de Laplace, calcule:
-\begin{itemize}
-  \item[a)] $\displaystyle \mathcal{L} \{ t \senh (at) \}$
-  \item[b)] $\displaystyle \mathcal{L} \{ t \cosh (at) \}$
-\end{itemize}
-\end{Exercise}
-\begin{resp}
- \begin{itemize}
-  \item[a)] $\displaystyle \frac{2as}{(s^2 - a^2)^2}$
-  \item[b)] $\displaystyle \frac{s^2 + 9}{(s^2 - 9)^2}$
- \end{itemize}
-\end{resp}
-\begin{Exercise}
-Resolva
-\[
-\left\{
-  \begin{array}{ll}
-    ty'' (t) + 2y'(t) +ty(t) = 0 \\
-    y(0)=1, \quad y(\pi) = 0
-  \end{array}
-\right.
-\] \emph{Sugestão}: Utilize que $\displaystyle \lim_{s\to + \infty} Y(s) = 0.$
-\end{Exercise}
-\begin{resp}
- $\displaystyle y(t) = \frac{\sen t}{t}$
-\end{resp}
-\begin{Exercise}
-Utilize a integral da transformada de Laplace para demonstrar que:
-\begin{itemize}
-  \item[a)] $\displaystyle \mathcal{L}\bigg\{ \frac{\senh t}{t} \bigg\} = \frac{1}{2} \ln \bigg(\frac{s+1}{s-1}\bigg)$
-  \item[b)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cos (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 + \omega^2}{s^2}\bigg)$
-  \item[c)] $\displaystyle \mathcal{L}\bigg\{ \frac{2}{t} \big( 1 - \cosh (\omega t) \big) \bigg\} = \ln \bigg(\frac{s^2 - \omega^2}{s^2}\bigg)$
-\end{itemize}
-\end{Exercise}
-\begin{resp}
- \begin{itemize}
-  \item[a)] $\displaystyle \frac{ 3 - 3 e^{-2s} - 6s e^{-4s} }{s^2 (1 - e^{-4s})}$
-  \item[b)] $\displaystyle \frac{  e^{2\pi(1-s)} -1 }{(1-s) (1 - e^{-2\pi s})}$
-  \item[c)] $\displaystyle \frac{\omega}{s^2 + \omega^2} \coth \bigg(\frac{\pi s}{2 \omega^2} \bigg)$
- \end{itemize}
-\end{resp}
-\begin{Exercise}
-Faça o gráfico de $f(t)$ e calcule $\mathcal{L}\big\{f(t)\big\}$.
-\begin{itemize}
-  \item[a)] $f$ periódica de período $p=4$ e $\displaystyle f(t) = \left\{
-                                                                      \begin{array}{ll}
-                                                                        3t, & \hbox{ se } t \in (0,2) \\
-                                                                        6, & \hbox{ se } t \in (2,4)
-                                                                      \end{array}
-                                                                    \right.
-$
-  \item[b)] $f$ periódica de período $p=2\pi$ e $\displaystyle f(t) = e^t$, para $t \in (0,2\pi)$.
-  \item[b)] $\displaystyle f(t) = |\sen (\omega t)|$.
-\end{itemize}
-\end{Exercise}
-\begin{resp}
- \begin{itemize}
-  \item[a)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{8} \Big( 1 - \cos \big(2(t-a)\big) \Big)u(t-a) $
-  \item[b)] $\displaystyle y(t) = 10 \cos (2t) + \frac{k}{4} \sen(2t)$
- \end{itemize}
-\end{resp}
-\begin{Exercise}
-Para $k$ constante, encontre a solução de
-\begin{itemize}
-  \item[a)] $\displaystyle \left\{
-                              \begin{array}{ll}
-                                2y''(t) + 8 y(t) = k u(t-a) \\
-                                y(0)=10, y'(0)=0
-                              \end{array}
-                            \right.
-$
-  \item[b)] $\displaystyle \left\{
-                              \begin{array}{ll}
-                                2y''(t) + 8 y(t) = k \delta(t) \\
-                                y(0)=10, y'(0)=0
-                              \end{array}
-                            \right.
-$
-\end{itemize}
-\end{Exercise}
-\begin{Exercise}
-Considere o OHS não amortecido representado na figura \ref{massa-mola-1}. Suponha que, em $t=0$, a massa $m$ está em sua posição de equilíbrio. Encontre o deslocamento $x(t)$ para $t>0$, se uma força $F_0 \delta(t)$ é aplicada.
-\begin{figure}[!ht]
-\begin{center}
 
-\includegraphics{cap_especiais_coef_var/pics/figura_8}\end{center}
-\caption{\label{massa-mola-1}}
-\end{figure} 
-\end{Exercise}
-\begin{resp}
-  $\displaystyle y(t) = \frac{F_0}{\sqrt{km}} \sen \left(\sqrt{\frac{k}{m}} t\right)$
-\end{resp}
+
+
+
+
+

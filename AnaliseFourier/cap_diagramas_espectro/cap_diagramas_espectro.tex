@@ -44,8 +44,12 @@ Observe que sempre é possível converter uma forma na outra e os ângulos de fa
 Os coeficientes de Fourier são dados por 
 \begin{eqnarray*}
 \frac{a_0}{2}&=&\frac{1}{4}\int_0^4f(t)dt=\frac{1}{4}\int_0^1 1 dt=\frac{1}{4}\\[10pt]
-a_n&=&\frac{2}{4}\int_0^4f(t)\cos(w_n t)dt=\frac{1}{2}\int_0^1\cos\left(\frac{\pi n}{2} t\right)dt=\frac{1}{\pi n}\left[\sen\left(\frac{\pi n}{2} t\right)\right]_0^1=\left\{\begin{array}{ll} 0,&n\ \hbox{par}\\[8pt]\frac{1}{\pi n}(-1)^{\frac{n-1}{2}}&n\ \hbox{ímpar}  \end{array}\right.\\[10pt]
-b_n&=&\frac{2}{4}\int_0^4f(t)\sen(w_n t)dt=\frac{1}{2}\int_0^1\sen\left(\frac{\pi n}{2} t\right)dt=\frac{1}{\pi n}\left[-\cos\left(\frac{\pi n}{2} t\right)\right]_0^1=\left\{\begin{array}{ll} \frac{1}{\pi n},&n\ \hbox{ímpar}\\[8pt] \frac{1}{\pi n}\left(1-(-1)^{\frac{n}{2}}\right)&n\ \hbox{par}  \end{array}\right.\\
+\end{eqnarray*}
+\begin{eqnarray*}
+a_n&=&\frac{2}{4}\int_0^4f(t)\cos(w_n t)dt=\frac{1}{2}\int_0^1\cos\left(\frac{\pi n}{2} t\right)dt\\&=&\frac{1}{\pi n}\left[\sen\left(\frac{\pi n}{2} t\right)\right]_0^1\\&=&\left\{\begin{array}{ll} 0,&n\ \hbox{par}\\[8pt]\frac{1}{\pi n}(-1)^{\frac{n-1}{2}}&n\ \hbox{ímpar}  \end{array}\right.
+\end{eqnarray*}
+\begin{eqnarray*}
+b_n&=&\frac{2}{4}\int_0^4f(t)\sen(w_n t)dt=\frac{1}{2}\int_0^1\sen\left(\frac{\pi n}{2} t\right)dt\\&=&\frac{1}{\pi n}\left[-\cos\left(\frac{\pi n}{2} t\right)\right]_0^1\\&=&\left\{\begin{array}{ll} \frac{1}{\pi n},&n\ \hbox{ímpar}\\[8pt] \frac{1}{\pi n}\left(1-(-1)^{\frac{n}{2}}\right)&n\ \hbox{par}  \end{array}\right.\\
 \end{eqnarray*}
 \begin{table}[ht] 
 \begin{center}
@@ -82,9 +86,10 @@ b_n&=&\frac{2}{4}\int_0^4f(t)\sen(w_n t)dt=\frac{1}{2}\int_0^1\sen\left(\frac{\p
    \end{center}
 \end{table}
 Para escrever a forma harmônica da série de Fourier da função $f(t)$ calculamos as amplitudes $A_n$ e as fases $\theta_n$. Para $n=0$, temos $a_0=\frac{1}{2}$ e, portanto, $A_0=\frac{a_0}{2}=\frac{1}{4}$. Para $n=1$, temos $a_1=b_1=\frac{1}{\pi}$ e, consequentemente, $A_1=\sqrt{\frac{1}{\pi^2}+\frac{1}{\pi^2}}=\frac{\sqrt{2}}{\pi}$ e $\theta_1=\frac{\pi}{4}$. Os cálculos foram repetidos de forma análoga para $n=2,\ 3,\ 4$ e $5$ e apresentados na tabela \ref{tab_exponential_form}. Portanto,
-\begin{equation}
-f(t)=\frac{1}{4}+\frac{1}{\pi}\left[\sqrt{2}\cos\left(\frac{\pi }{2} t-\frac{\pi}{4}\right)+\cos\left(\pi  t-\frac{\pi}{2}\right)+\frac{\sqrt{2}}{3}\cos\left(\frac{3 \pi }{2} t-\frac{3\pi}{4}\right)+\frac{\sqrt{2}}{5}\cos\left(\frac{5 \pi }{2} t-\frac{\pi }{4}\right)+\cdots   \right]
-\end{equation}
+\begin{eqnarray*}
+f(t)&=&\frac{1}{4}+\frac{1}{\pi}\left[\sqrt{2}\cos\left(\frac{\pi }{2} t-\frac{\pi}{4}\right)+\cos\left(\pi  t-\frac{\pi}{2}\right)+\right.\\&+&\left.\frac{\sqrt{2}}{3}\cos\left(\frac{3 \pi }{2} t-\frac{3\pi}{4}\right)+\frac{\sqrt{2}}{5}\cos\left(\frac{5 \pi }{2} t-\frac{\pi }{4}\right)+\cdots   \right]
+\end{eqnarray*}
+
 \end{ex}
 \section{Forma exponencial}
 A forma exponencial de uma série de Fourier é obtida quando se substiuem as funções trigonométricas $\sen(w_nt)$ e $\cos(w_nt)$ por suas representações em termos de exponenciais complexos, isto é
@@ -150,6 +155,11 @@ Logo,
 g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\pi}e^{-i\pi t}-\frac{2i}{\pi}e^{i\pi t}-\frac{2i}{3\pi}e^{3i\pi t}-\frac{2i}{5\pi}e^{5i\pi t}-\cdots,
 \end{equation}
 \end{ex}
+
+\subsection*{Exercícios}
+\begin{exer} Mostre que se $f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t}$ é uma função real, então $C_{-n}=\overline{C_n}$. Em especial, $|C_{-n}|=|C_n|$.
+\end{exer}
+
 \section{Diagramas de espectro}
 Diagramas espectro são representações gráficas dos coeficientes de Fourier $C_n$ associados a uma função periódica $f(t)$. Como os coeficientes $C_n$ são números complexos, é comum representá-los na forma de módulo e fase, isto é:
 \begin{equation}C_n = |C_n|e^{i\phi_n}.\end{equation}
@@ -187,8 +197,8 @@ são dados na figura a seguir
 \includegraphics{cap_diagramas_espectro/pics/figura_5}
 \end{figure}
 \end{ex}
-\section{Exercícios}
-\begin{Exercise}
+\subsection*{Exercícios}
+\begin{exer}
 Esboce os diagramas de amplitude e fase do espectro das seguintes funções periódicas:
 \begin{itemize}
 \item[a)] $f(t)=\sen(t)$\
@@ -199,8 +209,8 @@ Esboce os diagramas de amplitude e fase do espectro das seguintes funções peri
 \item[f)] $f(t)=\sen(2\pi t)+\cos(3\pi t)$
 \end{itemize}
 Observação: Considere a fase $\phi$ no intervalo $-\pi< \phi\leq \pi$
-\end{Exercise}
-\begin{Answer}
+\end{exer}
+\begin{resp}
  \begin{itemize}
   \item [a)]
  Observe que \begin{equation}\sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}\end{equation} e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
@@ -236,15 +246,15 @@ e a frequência angular fundamental é $w_F=\pi$ (ver exercício \ref{freq_fund}
 \includegraphics{cap_diagramas_espectro/pics/figura_16}
 \includegraphics{cap_diagramas_espectro/pics/figura_17}
 \end{itemize}
-\end{Answer}
-\begin{Exercise}
+\end{resp}
+\begin{exer}
 Esboce os diagramas de amplitude e fase do espectro, indicando pelo menos as cinco primeiras raias positivas e negativas, das seguintes funções periódicas:
 \begin{itemize}
 \item[a)] $f(t)=\sum_{n=-\infty}^\infty \frac{e^{i \pi n t}}{n^2+1}$
 \item[b)] $f(t)=\sum_{n=1}^\infty \frac{\sen(nt)}{n^2}$
 \end{itemize}
-\end{Exercise}
-\begin{Answer} 
+\end{exer}
+\begin{resp} 
 \begin{itemize}
 \item [a)] Observe que $f(t)$ já está na forma exponencial e a frequência fundamental é $w_F=\pi$. Também temos:
 \begin{equation}
@@ -319,10 +329,10 @@ Veja os diagramas de espectro na figura abaixo.
 \includegraphics{cap_diagramas_espectro/pics/figura_19}
 \includegraphics{cap_diagramas_espectro/pics/figura_20}
 \end{itemize}
-\end{Answer}
-\begin{Exercise}Esboce os diagramas de espectro das séries de Fourier dos problemas \ref{Fourier_8} e \ref{Fourier_9} da página \pageref{Fourier_8}.
-\end{Exercise}
-\begin{Answer}
+\end{resp}
+\begin{exer}Esboce os diagramas de espectro das séries de Fourier dos problemas \ref{Fourier_8} e \ref{Fourier_9} da página \pageref{Fourier_8}.
+\end{exer}
+\begin{resp}
 \begin{itemize}
 \item[a)] Problema \ref{Fourier_8} item a:
 \begin{eqnarray*}
@@ -343,8 +353,7 @@ h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{
 \includegraphics{cap_diagramas_espectro/pics/figura_23}
 \includegraphics{cap_diagramas_espectro/pics/figura_24}
 \end{itemize}
-\end{Answer}
-\begin{Exercise} Mostre que se $f(t)$ é uma função real, então $C_{-n}=\overline{C_n}$. Em especial, $|C_{-n}|=|C_n|$.
-\end{Exercise}
-\begin{Exercise} Mostre que se $f(t)$ é um deslocamento no tempo de $g(t)$, isto é, $f(t)=g(t-k)$, então os coeficiente de Fourier $C_n^f$ da função $f$ e $C_n^g$ da função $g$ são iguais em módulo e, portanto, possuem o mesmo diagrama de espectro de amplitude.
-\end{Exercise}
+\end{resp}
+
+\begin{exer} Mostre que se $f(t)$ é um deslocamento no tempo de $g(t)$, isto é, $f(t)=g(t-k)$, então os coeficiente de Fourier $C_n^f$ da função $f$ e $C_n^g$ da função $g$ são iguais em módulo e, portanto, possuem o mesmo diagrama de espectro de amplitude.
+\end{exer}
