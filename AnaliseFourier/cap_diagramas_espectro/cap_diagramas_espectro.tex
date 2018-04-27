@@ -38,7 +38,6 @@ Observe que sempre é possível converter uma forma na outra e os ângulos de fa
 \begin{ex}Considere um função periódica ($T=4$) dada pelo gráfico
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_diagramas_espectro/pics/figura_1}
 \end{center}
 \end{figure}
@@ -90,6 +89,7 @@ Para escrever a forma harmônica da série de Fourier da função $f(t)$ calcula
 \begin{eqnarray*}
 f(t)&=&\frac{1}{4}+\frac{1}{\pi}\left[\sqrt{2}\cos\left(\frac{\pi }{2} t-\frac{\pi}{4}\right)+\cos\left(\pi  t-\frac{\pi}{2}\right)+\right.\\&+&\left.\frac{\sqrt{2}}{3}\cos\left(\frac{3 \pi }{2} t-\frac{3\pi}{4}\right)+\frac{\sqrt{2}}{5}\cos\left(\frac{5 \pi }{2} t-\frac{\pi }{4}\right)+\cdots   \right]
 \end{eqnarray*}
+
 \end{ex}
 \section{Forma exponencial}
 A forma exponencial de uma série de Fourier é obtida quando se substiuem as funções trigonométricas $\sen(w_nt)$ e $\cos(w_nt)$ por suas representações em termos de exponenciais complexos, isto é
@@ -183,7 +183,6 @@ Assim, identificamos cinco coeficientes não nulos:
  \end{equation*}
 Os digramas de espectro de amplitude e fase são dados a seguir:
 \begin{figure}[!ht]
-
 \includegraphics{cap_diagramas_espectro/pics/figura_2}
 \includegraphics{cap_diagramas_espectro/pics/figura_3}
 \end{figure}
@@ -194,7 +193,6 @@ g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\p
 \end{equation}
 são dados na figura a seguir
 \begin{figure}[!ht] 
-
 \includegraphics{cap_diagramas_espectro/pics/figura_4}
 \includegraphics{cap_diagramas_espectro/pics/figura_5}
 \end{figure}
@@ -216,22 +214,18 @@ Observação: Considere a fase $\phi$ no intervalo $-\pi< \phi\leq \pi$
  \begin{itemize}
   \item [a)]
  Observe que \begin{equation}\sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}\end{equation} e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_6}
 \includegraphics{cap_diagramas_espectro/pics/figura_7}
   \item [b)]
  Observe que \begin{equation}3\cos(\pi t)=\frac{3}{2}\left(e^{i\pi t}+e^{-i\pi t}\right)= \frac{3}{2}e^{-i\pi t} + \frac{3}{2}e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$. Veja os diagramas de espectro na figura abaixo. 
-
 \includegraphics{cap_diagramas_espectro/pics/figura_8}
 \includegraphics{cap_diagramas_espectro/pics/figura_9}
 \item [c)]
  Observe que \begin{equation}1+4\cos(\pi t)=1+2\left(e^{i\pi t}+e^{-i\pi t}\right)= 1+2e^{-i\pi t} + 2e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$.  Veja os diagramas de espectro na figura abaixo. 
-
 \includegraphics{cap_diagramas_espectro/pics/figura_10}
 \includegraphics{cap_diagramas_espectro/pics/figura_11}
 \item [d)]
  Observe que \begin{equation}2\cos^2(2\pi t)=2\left(\frac{e^{2i\pi t}+e^{-2i\pi t}}{2}\right)^2= \frac{e^{-4i\pi t} +2+ e^{4i\pi t}}{2}= \frac{1}{2}e^{-4i\pi t} +1+ \frac{1}{2}e^{4i\pi t}\end{equation} e a frequência angular fundamental é $w_F=4\pi$.  Veja os diagramas de espectro na figura abaixo. 
-
 \includegraphics{cap_diagramas_espectro/pics/figura_12}
 \includegraphics{cap_diagramas_espectro/pics/figura_13}
 \item [e)]
@@ -240,7 +234,6 @@ Observação: Considere a fase $\phi$ no intervalo $-\pi< \phi\leq \pi$
 8\sen^3(2\pi t)+2\cos(6\pi t)&=&8\left(\frac{e^{2i\pi t}-e^{-2i\pi t}}{2i}\right)^3+2\left(\frac{e^{6i\pi t}+e^{-6i\pi t}}{2}\right)\\&=& (i+1)e^{6i\pi t}-3 i e^{2i\pi t}+3 i e^{-2i\pi t}+(1-i)e^{-6i\pi t}\\&=&\sqrt{2}e^{\frac{\pi}{4}i} e^{6i\pi t}+3e^{-\frac{\pi}{2}i} e^{2i\pi t}+3 e^{\frac{\pi}{2}i} e^{-2i\pi t}+\sqrt{2}e^{-\frac{\pi}{4}i}e^{-6i\pi t} 
 \end{eqnarray*}
 e a frequência angular fundamental é $w_F=2\pi$.  Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_14}
 \includegraphics{cap_diagramas_espectro/pics/figura_15}
 \item [f)]
@@ -250,7 +243,6 @@ e a frequência angular fundamental é $w_F=2\pi$.  Veja os diagramas de espectr
 &=& -\frac{i}{2}e^{2i\pi t}+\frac{i}{2}e^{-2i\pi t}+\frac{1}{2}e^{3i\pi t}+\frac{1}{2}e^{-3i\pi t}
 \end{eqnarray*}
 e a frequência angular fundamental é $w_F=\pi$ (ver exercício \ref{freq_fund} na página \pageref{freq_fund}).  Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_16}
 \includegraphics{cap_diagramas_espectro/pics/figura_17}
 \end{itemize}
@@ -295,7 +287,6 @@ n&\omega_n&|C_n|&\phi_n\\
 \end{array}
 \end{equation}
 Veja o diagrama de amplitude na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_18}
 \item [b)]
  Começamos escrevendo a função $f(t)=\sum_{n=1}^\infty \frac{\sen(nt)}{n^2}$ na forma exponencial:
@@ -335,9 +326,7 @@ A frequência angular fundamental é $w_F=1$ e as amplitudes e fases são dados 
 \end{array}
 \end{equation}
 Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_19}
-
 \includegraphics{cap_diagramas_espectro/pics/figura_20}
 \end{itemize}
 \end{resp}
@@ -352,7 +341,6 @@ f(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos(2n\pi t)}{4n^2-1
 &=&\frac{2}{\pi}- \sum_{n=1}^\infty \frac{2}{\pi(4n^2-1)}e^{2 n\pi it}- \sum_{n=-1}^{-\infty} \frac{2}{\pi(4n^2-1)}e^{2n\pi it}
   \end{eqnarray*}
 Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_21}
 \includegraphics{cap_diagramas_espectro/pics/figura_22}
 \item[b)] Problema \ref{Fourier_9} item
@@ -362,7 +350,6 @@ h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{
 &=&\frac{2}{\pi}- \sum_{n=1}^\infty \frac{2(-1)^n}{\pi(4n^2-1)}e^{2 n\pi it}- \sum_{n=-1}^{-\infty} \frac{2(-1)^n}{\pi(4n^2-1)}e^{2n\pi it}
   \end{eqnarray*}
 	Veja os diagramas de espectro na figura abaixo.
-
 \includegraphics{cap_diagramas_espectro/pics/figura_23}
 \includegraphics{cap_diagramas_espectro/pics/figura_24}
 \end{itemize}

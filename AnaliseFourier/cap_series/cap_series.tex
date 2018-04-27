@@ -213,7 +213,6 @@ f(t+2)&=&f(t),\ \ \forall t\in\mathbb{R}.
 \end{eqnarray*}
 Essa função é suave por partes e contínua em todos os pontos. Portanto se aplica o teorema \ref{teo_Dirichlet}.
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_1}\end{center}
 Observamos que essa é uma função par, ou seja, $f(t)=f(-t)$. A fim de explorar essa simetria, utilisaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas, isto é,
   \begin{eqnarray*}
@@ -243,7 +242,6 @@ Observe que, quando $t=0$, obtemos como subproduto da série de Fourier da $f(t)
 A figura \ref{fig_conv_triangular} apresenta os gráficos da série que representa a função $f(t)$ com um termo, dois termos e três termos.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_2}\end{center}
 \caption{\label{fig_conv_triangular}Gráficos de $f_0(t)=\frac{1}{2}$ (azul), $f_1(t)=\frac{1}{2}-\frac{4}{\pi^2}\cos(\pi t)$ (verde) e $f_2(t)=\frac{1}{2}-\frac{4}{\pi^2}\left(\cos(\pi t)+\frac{1}{3^2}\cos(3\pi t)\right)$ (vermelho).}
 \end{figure}
@@ -258,7 +256,6 @@ g(t+2)&=&g(t),\ \ \forall t\in\mathbb{R}.
 Essa função é suave por partes e contínua em todos os pontos exceto por saltos nos inteiros, onde a função vale a média aritmética dos limites laterais. Portanto se aplica o teorema \ref{teo_Dirichlet}.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_3}\end{center}
 \end{figure}
 Observamos que essa é uma função ímpar, ou seja, $f(t)=-f(-t)$. Novamente, utilisaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas:
@@ -279,7 +276,6 @@ g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi
 A figura \ref{fig_conv_quadrangular} apresenta os gráficos da série que representa a função $g(t)$ com um termo, dois termos, três termos e quatro termos.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_4}\end{center}
 \caption{\label{fig_conv_quadrangular}Gráficos de $g_0(t)=\frac{4}{\pi}\sen(\pi t)$ (azul), $g_1(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)\right)$ (verde), $g_2(t)=g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)\right)$ (vermelho) e $g_3(t)=g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)+\frac{1}{7}\sen(7\pi t)\right)$ (preto).}
 \end{figure}
@@ -293,7 +289,6 @@ f(t+1)&=&f(t),\ \ \forall t\in\mathbb{R}.
 Essa função é suave por partes e contínua exceto por salto nos inteiros onde $h(t)$ assume o valor médio dos limites laterais. Portanto se aplica o teorema \ref{teo_Dirichlet}.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_5}\end{center}
 \end{figure}
 Utilisaremos as fórmulas (\ref{coef}) envolvendo integrais no intervalo $[0,1]$, isto é,
@@ -327,7 +322,8 @@ Considere a função periódica de período $T$ dada na região $(-T/2,T/2)$ por
 1,&-d/2\leq t \leq d/2,\\
 0,&d/2 < t \leq T/2.
 \end{array}
-\right.\end{equation}
+\right.
+\end{equation}
 onde $d$ é uma constante entre $0$ e $T$.
 Estude a paridade desta função. Encontre sua representação em série de Fourier. 
 \end{exer}
@@ -348,14 +344,24 @@ Com base neste resultado, obtenha o valor da integral definida dada por
 \end{exer}
 \begin{resp}
  Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+<<<<<<< HEAD:AnaliseFourier/cap_series/cap_series_de_fourier.tex
 \end{resp}
 \begin{exer}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
+=======
+\end{Answer}
+\begin{Exercise}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
+>>>>>>> 9fb4936d6fd48c6a51241157d08f09689b3c4631:AnaliseFourier/cap_series/cap_series.tex
 \begin{equation}f(t)=\left\{
 \begin{array}{lc}
 t,&|t|\leq d/2,\\
 0,&d/2<|t|<T/2,\\
 \end{array}
+<<<<<<< HEAD:AnaliseFourier/cap_series/cap_series_de_fourier.tex
 \right.\end{equation}
+=======
+\right.
+\end{equation}
+>>>>>>> 9fb4936d6fd48c6a51241157d08f09689b3c4631:AnaliseFourier/cap_series/cap_series.tex
 onde $0<d\leq T$. Calcule sua representação em série de Fourier. Estude o caso particular $d=T$. Dica: $\int u\cos(u)du=\cos(u)+u\sen(u)+C$ e $\int u\sen(u)du=\sen(u)-u\cos(u)+C$
  \end{exer}
 \begin{resp}
@@ -373,11 +379,9 @@ $
 \begin{itemize}
  \item [a)] $f(t)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos(2n\pi t)}{4n^2-1}$
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_6}\end{center}
  \item [b)] $g(t)=\frac{1}{T}+ \frac{2}{T} \sum_{n=1}^\infty \cos\left(\frac{2\pi n}{T} t\right)$
 \begin{center}
-
 \includegraphics{cap_series/pics/figura_7}\end{center}
  \end{itemize}
 \end{resp}
