@@ -135,10 +135,11 @@ F(k)&=&\int_{-\infty}^\infty f(x)e^{-ikx}dx
  = \frac{2\sen(k\ell)}{k}
 \end{eqnarray*}
 \end{ex}
-\section{Exercícios}
-\begin{Exercise}{\label{transf_exp_heav}} Considere a função $f(t)=e^{-at}u(t)$ onde $a$ é uma constante positiva e $u(t)$ é a função Heaviside. Trace o gráfico de $f(t)$ e obtenha sua transformada de Fourier  (use $a=1$ no gráfico).
-\end{Exercise}
-\begin{Answer}
+
+\subsection*{Exercícios}
+\begin{exer}{\label{transf_exp_heav}} Considere a função $f(t)=e^{-at}u(t)$ onde $a$ é uma constante positiva e $u(t)$ é a função Heaviside. Trace o gráfico de $f(t)$ e obtenha sua transformada de Fourier  (use $a=1$ no gráfico).
+\end{exer}
+\begin{resp}
 \begin{center}
 \includegraphics{cap_transformada_de_fourier/pics/figura_8}\end{center}
 \begin{eqnarray*}
@@ -148,10 +149,10 @@ F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
 &=&\frac{a}{a^2+w^2}-\frac{iw}{a^2+w^2}\\
 \end{eqnarray*}
 onde se usou os itens 1 e 2 da tabela \ref{tab_int_def}.
-\end{Answer}
-\begin{Exercise}{\label{Exer_trans_exp_t2}} Considere a função $f(t)=e^{-at^2}$ onde $a$ é uma constante positiva. Trace o gráfico de $f(t)$ e obtenha sua transformada de Fourier (use $a=1$ no gráfico).
-\end{Exercise}
-\begin{Answer}
+\end{resp}
+\begin{exer}{\label{Exer_trans_exp_t2}} Considere a função $f(t)=e^{-at^2}$ onde $a$ é uma constante positiva. Trace o gráfico de $f(t)$ e obtenha sua transformada de Fourier (use $a=1$ no gráfico).
+\end{exer}
+\begin{resp}
 \begin{center}
 \includegraphics{cap_transformada_de_fourier/pics/figura_9}\end{center}
 \begin{eqnarray*}
@@ -162,25 +163,25 @@ F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
 &=&\frac{\sqrt{\pi}}{\sqrt{a}}e^{-\frac{w^2}{4a}}
 \end{eqnarray*}
 onde se usou o item 8 da tabela \ref{tab_int_def}.
-\end{Answer}
-\begin{Exercise} {\label{ex_trans_Fou_0}}Calcule a transformada inversa da função $F(w)=\delta(w-w_0)+\delta(w+w_0)$
-\end{Exercise}
-\begin{Answer} $f(t)=\frac{1}{\pi}\cos(w_0t)$
-\end{Answer}
-\begin{Exercise}{\label{ex_inv_exp_kk}} Calcule a transformada inversa da função $F(k)=e^{-k^2}$
-\end{Exercise}
-\begin{Answer} $f(x)=\frac{1}{2\sqrt{\pi}} e^{-\frac{x^2}{4}}$
-\end{Answer}
-\begin{Exercise} Mostre que se $f(t)$ é uma função real par, então sua transformada de Fourier é uma função real.
-\end{Exercise}
-\begin{Exercise} Mostre que se $f(t)$ é uma função real ímpar, então sua transformada de Fourier é uma função imaginária.
-\end{Exercise}
-\begin{Exercise} Mostre que se $f(t)$ é uma função real, então sua a parte real da tranformada de Fourier de $f(t)$ é uma função par e a parte imaginária é ímpar.
-\end{Exercise}
-\begin{Exercise} Calcule a transformada de Fourier da função
+\end{resp}
+\begin{exer} {\label{ex_trans_Fou_0}}Calcule a transformada inversa da função $F(w)=\delta(w-w_0)+\delta(w+w_0)$
+\end{exer}
+\begin{resp} $f(t)=\frac{1}{\pi}\cos(w_0t)$
+\end{resp}
+\begin{exer}{\label{ex_inv_exp_kk}} Calcule a transformada inversa da função $F(k)=e^{-k^2}$
+\end{exer}
+\begin{resp} $f(x)=\frac{1}{2\sqrt{\pi}} e^{-\frac{x^2}{4}}$
+\end{resp}
+\begin{exer} Mostre que se $f(t)$ é uma função real par, então sua transformada de Fourier é uma função real.
+\end{exer}
+\begin{exer} Mostre que se $f(t)$ é uma função real ímpar, então sua transformada de Fourier é uma função imaginária.
+\end{exer}
+\begin{exer} Mostre que se $f(t)$ é uma função real, então sua a parte real da tranformada de Fourier de $f(t)$ é uma função par e a parte imaginária é ímpar.
+\end{exer}
+\begin{exer} Calcule a transformada de Fourier da função
 \begin{equation}f(t)=\sum_{j=0}^\infty \delta(t-j) e^{-j}.\end{equation}
-\end{Exercise}
-\begin{Answer} 
+\end{exer}
+\begin{resp} 
 \begin{eqnarray*}
 F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
 &=&\int_{-\infty}^\infty \left[\sum_{j=0}^\infty\delta(t-j)e^{-j}\right] e^{-i w t}dt\\
@@ -192,4 +193,4 @@ F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
 &=&\frac{1-e^{-1}\cos(w)+ie^{-1}\sen(w)}{\left(1-e^{-1}\cos(w)\right)^2+e^{-2}\sen^2(w)}\\
 &=&\frac{1-e^{-1}\cos(w)+ie^{-1}\sen(w)}{1-2e^{-1}\cos(w)+e^{-2}}\\
 \end{eqnarray*}
-\end{Answer}
+\end{resp}

@@ -186,9 +186,9 @@ onde $w_n=\frac{2\pi n}{T}$.
  \cos(w_m t)f(t)=\frac{a_0}{2}\cos(w_m t)+ \sum_{n=1}^\infty \left[a_n \cos(w_n t)\cos(w_m t) + b_n \sen(w_n t)\cos(w_m t)\right] .
  \end{equation}
 Seguimos integrando em $[0,T]$ e temos:
-\begin{equation}
- \int_0^T\cos(w_m t)f(t)dt=\int_0^T\frac{a_0}{2}\cos(w_m t)dt+ \sum_{n=1}^\infty \left[a_n \int_0^T\cos(w_n t)\cos(w_m t)dt + b_n \int_0^T\sen(w_n t)\cos(w_m t)dt\right] .
- \end{equation}
+\begin{eqnarray*}
+ \int_0^T\cos(w_m t)f(t)dt&=&\int_0^T\frac{a_0}{2}\cos(w_m t)dt+ \sum_{n=1}^\infty \left[a_n \int_0^T\cos(w_n t)\cos(w_m t)dt \right.\\ &+&\left. b_n \int_0^T\sen(w_n t)\cos(w_m t)dt\right] .
+ \end{eqnarray*}
  Pelo teorema \ref{rel_ortogonalidade}, se $m\neq n$, as parcelas do lado direito são nulas. A única parcela não nula é aquela onde $m=n$. Supondo $m=n\neq 0$, temos:
 \begin{equation}
  \int_0^T\cos(w_m t)f(t)dt= a_m \frac{T}{2},
@@ -225,7 +225,7 @@ onde $T=2$ e $w_n=\frac{2\pi n}{T}=\pi n$. Logo,
    a_0= \int_{-1}^{1} |t| dt=2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1\\
 	\end{equation*}
 	\begin{eqnarray*}
-   a_n=  \int_{-1}^{1} |t|\cos(\pi n t)dt=2 \int_{0}^{1} t\cos(\pi n t)dt&=&2\left[\frac{t\sen(\pi n t)}{\pi n}\right]_0^1-2\int_0^1\frac{\sen(\pi n t)}{\pi n}dt\\
+   a_n=  \int_{-1}^{1} |t|\cos(\pi n t)dt&=&2 \int_{0}^{1} t\cos(\pi n t)dt\\&=&2\left[\frac{t\sen(\pi n t)}{\pi n}\right]_0^1-2\int_0^1\frac{\sen(\pi n t)}{\pi n}dt\\
 	&=&2\left[\frac{t\sen(\pi n t)}{\pi n}+\frac{\cos(\pi n t)}{\pi^2 n^2}\right]_0^1=2\frac{(-1)^n-1}{\pi^2n^2}\\
 	 \end{eqnarray*}
 	\begin{eqnarray*}
@@ -344,24 +344,15 @@ Com base neste resultado, obtenha o valor da integral definida dada por
 \end{exer}
 \begin{resp}
  Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
-<<<<<<< HEAD:AnaliseFourier/cap_series/cap_series_de_fourier.tex
 \end{resp}
 \begin{exer}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
-=======
-\end{Answer}
-\begin{Exercise}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
->>>>>>> 9fb4936d6fd48c6a51241157d08f09689b3c4631:AnaliseFourier/cap_series/cap_series.tex
 \begin{equation}f(t)=\left\{
 \begin{array}{lc}
 t,&|t|\leq d/2,\\
 0,&d/2<|t|<T/2,\\
 \end{array}
-<<<<<<< HEAD:AnaliseFourier/cap_series/cap_series_de_fourier.tex
-\right.\end{equation}
-=======
 \right.
 \end{equation}
->>>>>>> 9fb4936d6fd48c6a51241157d08f09689b3c4631:AnaliseFourier/cap_series/cap_series.tex
 onde $0<d\leq T$. Calcule sua representação em série de Fourier. Estude o caso particular $d=T$. Dica: $\int u\cos(u)du=\cos(u)+u\sen(u)+C$ e $\int u\sen(u)du=\sen(u)-u\cos(u)+C$
  \end{exer}
 \begin{resp}
