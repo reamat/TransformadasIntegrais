@@ -1,4 +1,4 @@
-#Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+#Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 ########################################
 #
@@ -8,68 +8,52 @@
 #
 ########################################
 
-########################################
-# FORMATO LIVRO PDF
-########################################
 
 pdf: main.tex
-	cp config-book.knd config.knd
-	pdflatex main
-	bibtex main
-	makeindex main
-	pdflatex main
-	pdflatex main
+	cp config-pdf.knd config.knd
+	latex 	main
+	bibtex 	main
+#	makeindex main
+	latex 	main
+	latex 	main
+	dvips 	main.dvi
+	ps2pdf	main.ps
 
 
-########################################
-# FORMATO LIVRO DVI
-########################################
+ps: main.tex
+	cp config-pdf.knd config.knd
+	latex 	main
+	bibtex 	main
+#	makeindex main
+	latex 	main
+	latex 	main
+	dvips 	main.dvi
 
 dvi: main.tex
-	cp config-book.knd config.knd
-	latex main
-	bibtex main
-	makeindex main
-	latex main
-	latex main
-	cp config-book.knd config.knd
-
-
-########################################
-# FORMATO HTML
-########################################
+	cp config-pdf.knd config.knd
+	latex 	main
+	bibtex 	main
+#	makeindex main
+	latex 	main
+	latex 	main
 
 html: main.html
 
 main.html: main.tex
 	cp config-html.knd config.knd
-	mkdir -p ./html
-	rm -f ./html/*
+	rm -f html/*
+	mkdir -p html
 	latex main
-	bibtex main
 	latex main
 	latex main
 	htlatex main.tex "myconfig.cfg,3,notoc*" " -cunihtf" "-d./html/"
-	cp config-book.knd config.knd
-
-########################################
-# TODOS AS VERSÕES EM FORMATO PDF
-########################################
-
-all: main.tex
-	make clean
-	make pdf
-	make clean
-	make dvi
-	make clean
-	make html
+#	mk4ht htlatex main "myconfig,3,notoc*" "-cunihtf" "-d./html/"
+#	htlatex main 'xhtml,mathml,charset=utf-8' ' -cunihtf'
+	cp config-pdf.knd config.knd
 
 
-.PHONY: clean
+clean: 
+	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
+	rm -rf */*.aux */*.log */*.out */*.toc */*.bbl */*.idx */*.ilg */*.ind */*.blg */*.backup 
+	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup *.html *.4ct *.4tc *.lg *.tmp *.xref
 
-clean:
-	rm -f *.aux */*.aux *.log *.out *.toc *.bbl */*.bbl \
-	      *.idx *.ilg *.ind *.blg *.backup \
-	      *.4tc *.lg *.tmp *.xref *.png *.html \
-	      *.4ct *.css *.idv *.maf *.mtc *.mtc0 \
-	      *.xml
