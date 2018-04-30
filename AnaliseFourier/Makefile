@@ -44,6 +44,7 @@ main.html: main.tex
 	rm -f html/*
 	mkdir -p html
 	latex main
+	bibtex main
 	latex main
 	latex main
 	mk4ht htlatex main "myconfig,3,notoc*" "" "-d./html/"
