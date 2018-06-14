@@ -115,7 +115,7 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
 \end{itemize}
   \end{resp}
 \section{Aplicação: Oscilador Harmônico}
-Uma mola elástica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Conside que o corpo esteja sujeito a uma força de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e a que mola obedeça a lei de Hooke com constante $k$.
+Uma mola elástica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Considere que o corpo esteja sujeito a uma força de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e a que mola obedeça a lei de Hooke com constante $k$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -169,12 +169,12 @@ Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}.
 \begin{equation}
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2-\frac{\gamma^2}{4m} +k},
 \end{equation}
-onde $-\frac{\gamma^2}{4m} +k>0$. Olhando os itens 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluímos que as soluções são são senos e cossenos multiplicados por exponenciais.
+onde $-\frac{\gamma^2}{4m} +k>0$. Olhando os itens 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluímos que as soluções são senos e cossenos multiplicados por exponenciais.
 \item[iv)] Oscilador harmônico superamortecido: quando $\gamma^2> 4mk$. No caso $F(s)=0$, temos:
 \begin{equation}
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2-\frac{\gamma^2}{4m} +k},
 \end{equation}
-onde $-\frac{\gamma^2}{4m} +k<0$. Olhando os itens 15 e 16 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluímos que as soluções são são senos e cossenos hiperbólicos multiplicados por exponenciais, ou seja, somas de exponenciais puras (lembre-se que $\displaystyle 2\senh(at)=e^{at}-e^{-at}$ e $\displaystyle2\cosh(at)=e^{at}+e^{-at}$).
+onde $-\frac{\gamma^2}{4m} +k<0$. Olhando os itens 15 e 16 da tabela de transformada \ref{tab_trans_Lap_1} e combinando com a propriedade \ref{prop_trans_s}, concluímos que as soluções são senos e cossenos hiperbólicos multiplicados por exponenciais, ou seja, somas de exponenciais puras (lembre-se que $\displaystyle 2\senh(at)=e^{at}-e^{-at}$ e $\displaystyle2\cosh(at)=e^{at}+e^{-at}$).
 \item[v)] Oscilador harmônico criticamente amortecido: quando $\gamma^2= 4mk$. No caso $F(s)=0$, temos:
 \begin{equation}
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}=\frac{msy_0+my_0'+\gamma y_0}{m\left(s+\frac{\gamma}{2m}\right)^2},
@@ -357,7 +357,7 @@ A figura \ref{fig_Heaviside_2} apresenta uma representação gráfica para a fun
 \includegraphics{cap_trans_int/pics/figura_6}\end{center}
 \caption{\label{fig_Heaviside_2}}
 \end{figure}
-A função pulso normalmente é representada em termos da diferença de duas função de Heaviside:
+A função pulso normalmente é representada em termos da diferença de duas funções de Heaviside:
 \begin{equation}
 f_p(t)=u(t-a)-u(t-b),\qquad a<b.
 \end{equation}
