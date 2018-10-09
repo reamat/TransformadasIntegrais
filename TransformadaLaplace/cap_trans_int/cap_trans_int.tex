@@ -697,9 +697,9 @@ Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $
 \end{exer}
 
 \section{Aplicação: circuito RC a um pulso de amplitude $V_0$.}{\label{sec_circ}}
-Considere o circuito Resistor/Capacitor representado na figura \ref{fig_circ} com uma tensão $V(t)$ aplicada do tipo pulso,
+Considere o circuito resistor-capacitor representado na figura \ref{fig_circ} com uma tensão $V(t)$ aplicada do tipo pulso,
 \begin{equation}
-V(t)=V_0\left(u(t-a)-u(t-b)\right).
+v(t)=V_0\left(u(t-a)-u(t-b)\right).
 \end{equation}
 ou seja, o circuito estava em repouso até $t=a$ e foi aplicada a tensão $V_0$ entre $t=a$ e $t=b$.
 \begin{figure}[!ht]
@@ -710,7 +710,7 @@ ou seja, o circuito estava em repouso até $t=a$ e foi aplicada a tensão $V_0$ 
 \end{figure}
 O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
 \begin{equation}{\label{modelo_corrente_0}}
- Ri(t)+\frac{1}{C}q(t)=V(t),
+ Ri(t)+\frac{1}{C}q(t)=v(t),
 \end{equation}
 onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor de capacitância $C$ e $Ri(t)$ é a tensão no resistor de resistência $R$. Usando o fato que $q(t)=\int_0^t i(\tau)d\tau$, obtemos uma equação integral para $i(t)$:
 \begin{equation}
