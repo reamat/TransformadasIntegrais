@@ -235,7 +235,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \begin{eqnarray*}
 \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
 &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
-&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
 &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
 &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
 \end{eqnarray*}
