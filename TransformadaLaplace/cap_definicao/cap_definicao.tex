@@ -1,13 +1,14 @@
 \setlength{\headheight}{30pt} % Veja https://nw360.blogspot.com/2006/11/latex-headheight-is-too-small.html
 \chapter{Transformada de Laplace}
 \section{Definição de transformada de Laplace}{\label{sec_1}}
-\begin{defn}Seja $f(t)$ uma função definida nos reais não negativos. Quando a integral
+\begin{defn}Seja $f(t)$ uma função definida nos reais não negativos. A transformada de laplace de $f(t)$ é dada pela seguinte integral imprópria:
 \begin{equation}
 {\mathcal{L}}\{f(t)\}=\int_0^\infty f(t)e^{-st}dt
 \end{equation}
-for convergente, ela será chamada de transformada de Laplace da função $f(t)$.
+para os valores complexos de $s$ para os quais ela for convergente.
 \end{defn}
 A transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma função $f(t)$ é uma função da variável $s$. A notação usual neste contexto é letra minúscula para a função e letra maiúscula para a transformada: $\mathcal{L}\{f(t)\}=F(s)$, $\mathcal{L}\{g(t)\}=G(s)$, $\mathcal{L}\{h(t)\}=H(s)$.
+Por questões didáticas e sem prejuízo para o exposto nesse texto, trataremos apenas o caso em que $s$ é real. 
 Nos próximos exemplos, vamos aplicar a definição para calcular a transformadas de Laplace de algumas funções.
 \begin{ex}\label{ex1} Vamos calcular a transformada de Laplace da função $f(t)=1$:
 \begin{eqnarray*}
