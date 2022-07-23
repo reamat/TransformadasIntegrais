@@ -1,3 +1,4 @@
+% !TEX root = ../main.tex
 \chapter{A função Delta de Dirac e a propriedade da convolução}
 \section{A função Delta de Dirac}
 Muitos fenômenos físicos exigem a representação de uma força muito grande em um intervalo de tempo muito pequeno, por exemplo:
@@ -495,7 +496,8 @@ C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\r
 \end{equation}
 Calculamos a transformada inversa usando a propriedade do deslocamento no eixo $s$.
 \begin{eqnarray*}
-c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
+c(t) &=& c_0\sum_{n=0}^\infty e^{\frac{t-nT}{\tau}}u(t-nT)\\
+&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
 &=&c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}u(t-T)+e^{\frac{2T}{\tau}}u(t-2T)+e^{\frac{3T}{\tau}}u(t-3T)+\cdots\right)
 \end{eqnarray*}
  O gráfico da concentração é apresentado na figura \ref{concentracao}, usando $c_0=1$, $\tau=1$ e $T=1$.
