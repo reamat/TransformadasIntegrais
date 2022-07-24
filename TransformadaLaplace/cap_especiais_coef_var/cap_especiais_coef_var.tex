@@ -328,7 +328,7 @@ O gráfico desta função é apresentado na figura \ref{fig_exp_iterada}.
 Agora observamos que se $g(t)=\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}$, então:
 \begin{eqnarray*}
  g(t)&=&\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}=\mathcal{L}^{-1}\left\{\frac{e^{-s}\left(1-2e^{-s}+e^{-2s}\right) }{s^2} \right\}\\
- &=&\mathcal{L}^{-1}\left\{\frac{e^{-s}-2e^{-2s}+e^{-3s}}{s^2} \right\} = u(t-1) (t-1) + u(t-2) (4-2t) + u(t-3) (2t-4)
+ &=&\mathcal{L}^{-1}\left\{\frac{e^{-s}-2e^{-2s}+e^{-3s}}{s^2} \right\} = u(t-1) (t-1) + u(t-2) (4-2t) + u(t-3) (t-3)
 \end{eqnarray*}
 Desta forma, pela propriedade do deslocamento em $t$, podemos escrever
 \begin{eqnarray*}
@@ -336,7 +336,7 @@ f(t)&=&g(t)+u(t-3)g(t-3)+u(t-6)g(t-6)+u(t-9)g(t-9)+\cdots\\
 &=&g(t)+g(t-3)+g(t-6)+g(t-9)+\cdots= \sum_{k=0}^\infty g(t-3k)
 \end{eqnarray*}
 o que implica
-\begin{equation}f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (2t-4-6k)\right]\end{equation}
+\begin{equation}f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (t-3-3k)\right]\end{equation}
 O gráfico desta função é apresentado na figura \ref{fig_trian_periodica}.
  \begin{figure}[!ht]
 \begin{center}
