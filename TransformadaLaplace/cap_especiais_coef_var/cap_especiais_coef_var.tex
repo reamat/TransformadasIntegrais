@@ -25,9 +25,11 @@ Observe que o item 3 da tabela é
 \mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^n}, \qquad n\in \mathbb{N}.
 \end{equation}
 Isso nos indica que, para que os itens 3 e 6 sejam consistentes, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$. De fato, primeiro observe que, se $k=(n+1)\in\mathbb{N}$, temos:
-\begin{equation}
-\Gamma(n+1)=\int_0^\infty e^{-x}x^{n}dx=\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx=n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
-\end{equation}
+\begin{eqnarray*}
+\Gamma(n+1)&=&\int_0^\infty e^{-x}x^{n}dx\\
+&=&\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx\\
+&=&n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
+\end{eqnarray*}
 Como 
 \begin{equation}
 \Gamma(1)=\int_0^\infty e^{-x}dx=\left[-e^{-x}\right]_0^\infty=1,
