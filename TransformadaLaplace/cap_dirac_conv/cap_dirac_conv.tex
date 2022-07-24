@@ -496,7 +496,7 @@ C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\r
 \end{equation}
 Calculamos a transformada inversa usando a propriedade do deslocamento no eixo $s$.
 \begin{eqnarray*}
-c(t) &=& c_0\sum_{n=0}^\infty e^{\frac{t-nT}{\tau}}u(t-nT)\\
+c(t) &=& c_0\sum_{n=0}^\infty e^{-\frac{t-nT}{\tau}}u(t-nT)\\
 &=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
 &=&c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}u(t-T)+e^{\frac{2T}{\tau}}u(t-2T)+e^{\frac{3T}{\tau}}u(t-3T)+\cdots\right)
 \end{eqnarray*}
@@ -507,7 +507,7 @@ c(t) &=& c_0\sum_{n=0}^\infty e^{\frac{t-nT}{\tau}}u(t-nT)\\
 \includegraphics{cap_dirac_conv/pics/figura_12}\end{center}
 \caption{\label{concentracao}}
 \end{figure}
-O salto em cada descontinuidade é exatamente $c_0$, pois os limites laterais são
+O salto em cada descontinuidade é exatamente $c_0$, pois os limites laterais são:
 \begin{eqnarray*}
 \lim_{t\to nT^-}c(t)&=&\lim_{t\to nT^-}\left(c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
@@ -517,13 +517,52 @@ e
 \begin{eqnarray*}
 \lim_{t\to nT^+}c(t)&=&\lim_{t\to nT^+}\left(c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}+ e^{\frac{nT}{\tau}}\right)\right)\\
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}+ e^{\frac{nT}{\tau}}\right)\right)\\
-&=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),\\
+&=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),
 \end{eqnarray*}
 que possuem diferença igual a $c_0$. 
-Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
+Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma descontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
+\begin{exeresol}
+  Dada a função $$c(t) = c_0\sum_{n=0}^\infty e^{-\frac{t-nT}{\tau}}u(t-nT).$$
+  Seja $a$ constante e $0<a <T$, calcule o limite:
+  $$\lim_{k\to +\infty} c(a+kT)$$
+\end{exeresol}
+\begin{resol}
+Primeiro observamos que $a+kT-nT<0$ se $n>k$ porque $a<T$, assim como $a+kT-nT>0 $ se $n\leq k$ porque $a>0$, portanto:
+\begin{eqnarray*}
+    c(a+kT) &=& c_0\sum_{n=0}^k e^{-\frac{a+kT-nT}{\tau}}\\
+    &=& c_0e^{-\frac{a+kT}{\tau}}\sum_{n=0}^k e^{\frac{nT}{\tau}}
+  \end{eqnarray*}
+Usamos a soma dos (finitos) termos de uma progressão geométrica:
+  \begin{eqnarray*}
+    c(a+kT)&=& c_0e^{-\frac{a+kT}{\tau}}\frac{e^{\frac{(k+1)T}{\tau}}-1}{e^{\frac{T}{\tau}}-1}\\
+    &=& c_0e^{-\frac{a}{\tau}}\frac{e^{\frac{T}{\tau}}-e^{-\frac{kT}{\tau}}}{e^{\frac{T}{\tau}}-1}
+\end{eqnarray*}
+Tomando o limite $k\to +\infty$, temos:
+\begin{eqnarray*}
+  \lim_{k \to +\infty}c(a+kT)
+  &=& c_0e^{-\frac{a}{\tau}}\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}\\
+  &=& A e^{-\frac{a}{\tau}}, ~~~A = c_0\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}.
+\end{eqnarray*}
+\end{resol}
+\begin{exeresol}
+  Usando o resultado anterior, calcule o valor médio da solução assintótica (no infinito), isto é:
+  $$\mu:=\frac{1}{T}\int_0^T \left[\lim_{k \to +\infty}c(a+kT)\right]da.$$
+\end{exeresol}
+\begin{resol}
+  \begin{eqnarray*}
+    \mu&=&\frac{1}{T}\int_0^T Ae^{-\frac{a}{\tau}}da=\frac{A\tau}{T}\left(1-e^{-\frac{T}{\tau}}\right)\\
+    &=&\frac{c_0\tau}{T}\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}\left(1-e^{-\frac{T}{\tau}}\right)\\
+    &=&\frac{c_0\tau}{T}\frac{1}{e^{\frac{T}{\tau}}-1}\left(e^{\frac{T}{\tau}}-1\right)=\frac{c_0\tau}{T}.
+  \end{eqnarray*}
+\end{resol}
 
-
-
+\begin{exer}
+  Seja a função $$c(t) = \sum_{n=0}^\infty e^{-\frac{t-2n}{2}}u(t-2n).$$
+  Encontre os valores de $f(1)$ e $f(3)$.
+\end{exer}
+\begin{resp}
+  $f(1)=e^{-\frac{1}{2}}, ~~~ f(3) = e^{-\frac{3}{2}} + e^{-\frac{1}{2}}.$
+\end{resp}
 \section{Problemas na origem}\label{problemas_na_origem}
 Para entender melhor esse fenômeno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
 \begin{equation*}
