@@ -110,10 +110,16 @@
 \newcommand{\field}[1]{\mathbb{#1}}
 %emphasis \emph
 \DeclareTextFontCommand{\emph}{\bfseries}
-\newcommand{\sen}{\operatorname{sen}\,}
-\newcommand{\senh}{\operatorname{senh}\,}
-\renewcommand{\sin}{\operatorname{sen}\,}
-\renewcommand{\sinh}{\operatorname{senh}\,}
+%\newcommand{\sen}{\operatorname{sen}\,}
+\DeclareMathOperator*{\sen}{sen}
+\DeclareMathOperator*{\senh}{senh}
+%\DeclareMathOperator*{\sin}{sen}
+%\DeclareMathOperator*{\sinh}{senh}
+
+
+%\newcommand{\senh}{\operatorname{senh}\,}
+\renewcommand{\sin}{\operatorname{\sen}}
+\renewcommand{\sinh}{\operatorname{\senh}}
 \newcommand{\tg}{\operatorname{tg}\,}
 \newcommand{\p}{\partial}
 \newcommand{\Dom}{\operatorname{Dom}\,}
