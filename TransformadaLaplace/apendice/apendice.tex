@@ -30,55 +30,56 @@ J_0(x)=1-\frac{x^2}{2^2(1!)^2}+\frac{x^4}{2^4(2!)^2}-\frac{x^6}{2^6(3!)^2}+\cdot
 \begin{small}
 \begin{center}
 {\renewcommand{\arraystretch}{1.9}%
-\begin{tabular}{|c|c|}
+\resizebox*{!}{\dimexpr\textheight-2\baselineskip-8pt\relax}{
+\begin{tabular}{|l|c|c|}
 \hline
- $\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\[1ex]
+ & $\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\[1ex]
 \hline 
- $\displaystyle \frac{1}{s} $&$\displaystyle  1$ \\[1ex] 
+ 1& $\displaystyle \frac{1}{s} $&$\displaystyle  1$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^2} $&$\displaystyle  t$ \\[1ex] 
+2& $\displaystyle \frac{1}{s^2} $&$\displaystyle  t$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^n}, \qquad (n=1,2,3,...) $&$\displaystyle  \frac{t^{n-1}}{(n-1)!}$ \\[1ex]
+3& $\displaystyle \frac{1}{s^n}, \qquad (n=1,2,3,...) $&$\displaystyle  \frac{t^{n-1}}{(n-1)!}$ \\[1ex]
 \hline 
- $\displaystyle \frac{1}{\sqrt{s}}, $&$\displaystyle  \frac{1}{\sqrt{\pi t}}$ \\[1ex] 
+4& $\displaystyle \frac{1}{\sqrt{s}}, $&$\displaystyle  \frac{1}{\sqrt{\pi t}}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^{\frac{3}{2}}}, $&$\displaystyle  2\sqrt{\frac{t}{\pi}}$ \\[1ex] 
+5& $\displaystyle \frac{1}{s^{\frac{3}{2}}}, $&$\displaystyle  2\sqrt{\frac{t}{\pi}}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^{k}},\qquad (k>0)  $&$\displaystyle  \frac{t^{k-1}}{\Gamma(k)}$ \\[1ex] 
+6& $\displaystyle \frac{1}{s^{k}},\qquad (k>0)  $&$\displaystyle  \frac{t^{k-1}}{\Gamma(k)}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s-a} $&$\displaystyle  e^{ at}$ \\[1ex] 
+7& $\displaystyle \frac{1}{s-a} $&$\displaystyle  e^{ at}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{(s-a)^2} $&$\displaystyle  te^{at}$ \\[1ex] 
+8& $\displaystyle \frac{1}{(s-a)^2} $&$\displaystyle  te^{at}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{(s-a)^n},\qquad (n=1,2,3...) $&$\displaystyle  \frac{1}{(n-1)!}t^{n-1}e^{at}$ \\[1ex] 
+9& $\displaystyle \frac{1}{(s-a)^n},\qquad (n=1,2,3...) $&$\displaystyle  \frac{1}{(n-1)!}t^{n-1}e^{at}$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{(s-a)^k},\qquad (k>0) $&$\displaystyle  \frac{1}{\Gamma(k)}t^{k-1}e^{at}$ \\[1ex] 
+10& $\displaystyle \frac{1}{(s-a)^k},\qquad (k>0) $&$\displaystyle  \frac{1}{\Gamma(k)}t^{k-1}e^{at}$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(e^{at}-e^{bt}\right)$ \\[1ex] 
+11& $\displaystyle \frac{1}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(e^{at}-e^{bt}\right)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{s}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(ae^{at}-be^{bt}\right)$ \\[1ex] 
+12& $\displaystyle \frac{s}{(s-a)(s-b)},\qquad (a\neq b) $&$\displaystyle  \frac{1}{a-b}\left(ae^{at}-be^{bt}\right)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^2+w^2} $&$\displaystyle  \frac{1}{w}\sen(wt)$ \\[1ex] 
+13& $\displaystyle \frac{1}{s^2+w^2} $&$\displaystyle  \frac{1}{w}\sen(wt)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{s}{s^2+w^2} $&$\displaystyle  \cos(wt)$ \\[1ex] 
+14& $\displaystyle \frac{s}{s^2+w^2} $&$\displaystyle  \cos(wt)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{s^2-a^2} $&$\displaystyle   \frac{1}{a}\senh(at)$ \\[1ex] 
+15& $\displaystyle \frac{1}{s^2-a^2} $&$\displaystyle   \frac{1}{a}\senh(at)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{s}{s^2-a^2} $&$\displaystyle  \cosh(at)$ \\[1ex] 
+16& $\displaystyle \frac{s}{s^2-a^2} $&$\displaystyle  \cosh(at)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{1}{(s-a)^2+w^2} $&$\displaystyle  \frac{1}{w}e^{at}\sen(wt)$ \\[1ex] 
+17& $\displaystyle \frac{1}{(s-a)^2+w^2} $&$\displaystyle  \frac{1}{w}e^{at}\sen(wt)$ \\[1ex] 
 \hline 
- $\displaystyle \frac{s-a}{(s-a)^2+w^2} $&$\displaystyle  e^{at}\cos(wt)$ \\[1ex] 
+18& $\displaystyle \frac{s-a}{(s-a)^2+w^2} $&$\displaystyle  e^{at}\cos(wt)$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s(s^2+w^2)} $&$\displaystyle  \frac{1}{w^2}(1-\cos(wt))$ \\[1ex] 
+ 19& $\displaystyle \frac{1}{s(s^2+w^2)} $&$\displaystyle  \frac{1}{w^2}(1-\cos(wt))$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s^2(s^2+w^2)} $&$\displaystyle  \frac{1}{w^3}(wt-\sen(wt))$ \\[1ex] 
+20& $\displaystyle \frac{1}{s^2(s^2+w^2)} $&$\displaystyle  \frac{1}{w^3}(wt-\sen(wt))$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w^3}(\sen(wt)-wt\cos(wt))$ \\[1ex] 
+21& $\displaystyle \frac{1}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w^3}(\sen(wt)-wt\cos(wt))$ \\[1ex] 
 \hline
- $\displaystyle \frac{s}{(s^2+w^2)^2} $&$\displaystyle  \frac{t}{2w}\sen(wt)$ \\[1ex] 
+22& $\displaystyle \frac{s}{(s^2+w^2)^2} $&$\displaystyle  \frac{t}{2w}\sen(wt)$ \\[1ex] 
 \hline
-\end{tabular}}
+\end{tabular}} }
 \caption{\label{tab_trans_Lap_1}Tabela de transformadas de Laplace - parte 1}
 \end{center}
 \end{small}
@@ -88,53 +89,54 @@ J_0(x)=1-\frac{x^2}{2^2(1!)^2}+\frac{x^4}{2^4(2!)^2}-\frac{x^6}{2^6(3!)^2}+\cdot
 \begin{small}
 \begin{center}
 {\renewcommand{\arraystretch}{1.9}%
-\begin{tabular}{|c|c|}
+\resizebox*{!}{\dimexpr\textheight-2\baselineskip-8pt\relax}{
+\begin{tabular}{|l|c|c|}
 \hline
- $\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\
+ &$\displaystyle F(s)=\mathcal{L }\{f(t)\} $&$\displaystyle  f(t)=\mathcal{L }^{-1}\{F(s)\}$ \\
 \hline
- $\displaystyle \frac{s^2}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w}(\sen(wt)+wt\cos(wt))$ \\[1ex] 
+ 23&$\displaystyle \frac{s^2}{(s^2+w^2)^2} $&$\displaystyle  \frac{1}{2w}(\sen(wt)+wt\cos(wt))$ \\[1ex] 
 \hline
- $\displaystyle \frac{s}{(s^2+a^2)(s^2+b^2)},\qquad (a^2\neq b^2) $&$\displaystyle  \frac{1}{b^2-a^2}(\cos(at)-\cos(bt))$ \\[1ex] 
+ 24&$\displaystyle \frac{s}{(s^2+a^2)(s^2+b^2)},\qquad (a^2\neq b^2) $&$\displaystyle  \frac{1}{b^2-a^2}(\cos(at)-\cos(bt))$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{(s^4+4a^4)}$&$\displaystyle  \frac{1}{4a^3}(\sen(at)\cosh(at)-\cos(at)\senh(at))$ \\[1ex] 
+ 25&$\displaystyle \frac{1}{(s^4+4a^4)}$&$\displaystyle  \frac{1}{4a^3}(\sen(at)\cosh(at)-\cos(at)\senh(at))$ \\[1ex] 
 \hline
-$\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sen(at)\senh(at))$ \\[2ex] 
+26&$\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sen(at)\senh(at))$ \\[2ex] 
 \hline
- $\displaystyle \frac{1}{(s^4-a^2)} $&$\displaystyle  \frac{1}{2a^3}(\senh(at)-\sen(at))$ \\[1ex] 
+ 27&$\displaystyle \frac{1}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^3}(\senh(at)-\sen(at))$ \\[1ex] 
 \hline
- $\displaystyle \frac{s}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^2}(\cosh(at)-\cos(at))$ \\[1ex] 
+ 28&$\displaystyle \frac{s}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^2}(\cosh(at)-\cos(at))$ \\[1ex] 
 \hline
- $\displaystyle \sqrt{s-a}-\sqrt{s-b} $&$ \displaystyle  \frac{1}{2\sqrt{\pi t^3}}(e^{bt}-e^{at})$ \\[1ex] 
+ 29&$\displaystyle \sqrt{s-a}-\sqrt{s-b} $&$ \displaystyle  \frac{1}{2\sqrt{\pi t^3}}(e^{bt}-e^{at})$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{\sqrt{s+a}\sqrt{s+b}} $&$\displaystyle  e^{\frac{-(a+b)t}{2}}I_0\left(\frac{a-b}{2}t\right)$ \\[1ex] 
+ 30&$\displaystyle \frac{1}{\sqrt{s+a}\sqrt{s+b}} $&$\displaystyle  e^{\frac{-(a+b)t}{2}}I_0\left(\frac{a-b}{2}t\right)$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{\sqrt{s^2+a^2}} $&$\displaystyle  J_0(at)$ \\[1ex] 
+ 31&$\displaystyle \frac{1}{\sqrt{s^2+a^2}} $&$\displaystyle  J_0(at)$ \\[1ex] 
 \hline
- $\displaystyle \frac{s}{(s-a)^{\frac{3}{2}}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}e^{at}(1+2at)$ \\[1ex] 
+ 32&$\displaystyle \frac{s}{(s-a)^{\frac{3}{2}}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}e^{at}(1+2at)$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{(s^2-a^2)^k},\qquad (k>0) $&$\displaystyle  \frac{\sqrt{\pi}}{\Gamma(k)}\left(\frac{t}{2a}\right)^{k-\frac{1}{2}}I_{k-\frac{1}{2}}(at)$ \\[1ex] 
+ 33&$\displaystyle \frac{1}{(s^2-a^2)^k},\qquad (k>0) $&$\displaystyle  \frac{\sqrt{\pi}}{\Gamma(k)}\left(\frac{t}{2a}\right)^{k-\frac{1}{2}}I_{k-\frac{1}{2}}(at)$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s}e^{-\frac{k}{s}},\qquad (k>0)$&$\displaystyle  J_0(2\sqrt{kt})$ \\[1ex] 
+ 34&$\displaystyle \frac{1}{s}e^{-\frac{k}{s}},\qquad (k>0)$&$\displaystyle  J_0(2\sqrt{kt})$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{\sqrt{s}}e^{-\frac{k}{s}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}\cos(2\sqrt{k t})$ \\[1ex] 
+ 35&$\displaystyle \frac{1}{\sqrt{s}}e^{-\frac{k}{s}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}\cos(2\sqrt{k t})$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\senh(2\sqrt{k t})$ \\[1ex] 
+ 36&$\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\senh(2\sqrt{k t})$ \\[1ex] 
 \hline
- $\displaystyle e^{-k\sqrt{s}},\qquad (k>0) $&$\displaystyle  \frac{k}{2\sqrt{\pi t^3}}e^{-\frac{k^2}{4t}}$ \\[1ex] 
+ 37&$\displaystyle e^{-k\sqrt{s}},\qquad (k>0) $&$\displaystyle  \frac{k}{2\sqrt{\pi t^3}}e^{-\frac{k^2}{4t}}$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s}\ln(s)$&$\displaystyle  -\ln(t)-\gamma,\qquad (\gamma\approx 0,5772) $  \\[1ex] 
+ 38&$\displaystyle \frac{1}{s}\ln(s)$&$\displaystyle  -\ln(t)-\gamma,\qquad (\gamma\approx 0,5772) $  \\[1ex] 
 \hline
- $\displaystyle \ln\left(\frac{s-a}{s-b}\right) $&$\displaystyle  \frac{1}{t}\left(e^{bt}-e^{at}\right)$ \\[1ex] 
+ 39&$\displaystyle \ln\left(\frac{s-a}{s-b}\right) $&$\displaystyle  \frac{1}{t}\left(e^{bt}-e^{at}\right)$ \\[1ex] 
 \hline
- $\displaystyle \ln\left(\frac{s^2+w^2}{s^2}\right) $&$\displaystyle  \frac{2}{t}\left(1-\cos(wt)\right)$ \\[1ex] 
+ 40&$\displaystyle \ln\left(\frac{s^2+w^2}{s^2}\right) $&$\displaystyle  \frac{2}{t}\left(1-\cos(wt)\right)$ \\[1ex] 
 \hline
- $\displaystyle \ln\left(\frac{s^2-a^2}{s^2}\right)$&$\displaystyle  \frac{2}{t}\left(1-\cosh(at)\right)$ \\[1ex] 
+ 41&$\displaystyle \ln\left(\frac{s^2-a^2}{s^2}\right)$&$\displaystyle  \frac{2}{t}\left(1-\cosh(at)\right)$ \\[1ex] 
 \hline
- $\displaystyle \tan^{-1}\left(\frac{w}{s}\right)$&$\displaystyle  \frac{1}{t}\sen(wt)$ \\[1ex] 
+ 42&$\displaystyle \tan^{-1}\left(\frac{w}{s}\right)$&$\displaystyle  \frac{1}{t}\sen(wt)$ \\[1ex] 
 \hline
- $\displaystyle \frac{1}{s}\cot^{-1}(s) $&$\displaystyle  \hbox{Si}\ \!(t)$ \\[1ex] 
+ 43&$\displaystyle \frac{1}{s}\cot^{-1}(s) $&$\displaystyle  \hbox{Si}\ \!(t)$ \\[1ex] 
 \hline
-\end{tabular}}
+\end{tabular}}}
 \caption{\label{tab_trans_Lap_2}Tabela de transformadas de Laplace - parte 2}
 \end{center}
 \end{small}
@@ -144,10 +146,11 @@ $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sen(at)\sen
 \section{Tabela de propriedades da transformada de Laplace}{\label{ap_A2}}
 A tabela \ref{prop_transf_Lap} apresenta as principais propriedades da transformada de Laplace.
 
-\begin{table}%[H]
+\begin{table}[hb]
 \begin{small}
 \begin{center}
 {\renewcommand{\arraystretch}{2}%
+\resizebox*{!}{.9\textwidth}{
 \begin{tabular}{|c|c|}
 \hline
  Linearidade &$\displaystyle \mathcal{L}\left\{\alpha f(t)+\beta g(t)\right\}=\alpha\mathcal{L}\left\{ f(t)\right\}+\beta\mathcal{L}\left\{g(t)\right\}$ \\[2ex] 
@@ -170,7 +173,7 @@ A tabela \ref{prop_transf_Lap} apresenta as principais propriedades da transform
 \hline
  Integral da transformada &$\displaystyle \mathcal{L}\left\{\frac{f(t)}{t}\right\}=\int_s^\infty F(\hat{s})d\hat{s} $ \\ 
 \hline
-\end{tabular}}
+\end{tabular}}}
 \caption{\label{prop_transf_Lap}Tabela de séries de potências}
 \end{center}
 \end{small}
@@ -180,10 +183,12 @@ A tabela \ref{prop_transf_Lap} apresenta as principais propriedades da transform
 \section{Tabela de séries de potência}{\label{ap_A3}}
 A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis.
 
-\begin{table}%[H]
+\begin{table}[hb]
 \begin{small}
 \begin{center}
 {\renewcommand{\arraystretch}{2}%
+\resizebox*{!}{\dimexpr\textheight-2\baselineskip-7cm\relax}{
+
 \begin{tabular}{|c|c|}
 \hline
  Série &Intervalo de convergência \\ 
@@ -208,7 +213,7 @@ A tabela \ref{series_de_potencias} apresenta algumas séries de potência úteis
 \hline
  $\displaystyle (1+x)^m=1+\sum_{n=1}^\infty \frac{m(m-1)\cdots (m-n+1)}{n!}x^n$ &$\displaystyle -1<x<1$, $m\neq 0,1,2,...$ \\[2ex] 
 \hline
-\end{tabular}}
+\end{tabular}}}
 \caption{\label{series_de_potencias}Tabela de séries de potências}
 \end{center}
 \end{small}

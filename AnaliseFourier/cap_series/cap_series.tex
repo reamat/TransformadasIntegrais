@@ -5,7 +5,7 @@ Neste capítulo, apresentamos o conceito de Série de Fourier de uma função pe
 \begin{equation}f(t)=f(t+T)\end{equation}
 para todo $t\in\mathbb{R}.$
 \end{defn}
-\begin{obs} Se uma função $f$ é periódica de período $T$, então, $f$ também é periódica de período $nT$ onde $n\in\mathbb{N}.$, já que
+\begin{obs} Se uma função $f$ é periódica de período $T$, então, $f$ também é periódica de período $nT$ onde $n\in\mathbb{N}$, já que
 \begin{equation}f(t)=f(t+T)=f(t+2T)=f(t+3T)=\cdots =f(t+nT).\end{equation}
  \end{obs}
  \begin{ex}
@@ -16,24 +16,24 @@ para todo $t\in\mathbb{R}.$
  \end{ex}
 \begin{defn} Algumas funções periódicas admitem um menor período, chamado de período fundamental. A frequência fundamental é então dada por $f_f=\frac{1}{T}$ e a frequência angular fundamental é dada por $w_f=\frac{2\pi}{T}$.
  \end{defn}
-\begin{prop}O período fundamental das funções $f(t)=\sen(wt)$ e $g(t)=\cos(wt)$ é $\frac{2\pi}{w} $. 
+\begin{prop}O período fundamental das funções $f(t)=\sen(wt)$ e $g(t)=\cos(wt)$ é $\frac{2\pi}{w} $.
 \end{prop}
-\begin{proof} Para provar isso, supomos que $T$ é um período de $f(t)$, isto é, $f(t+T)=f(T)$ para todo $t$. Em especial, para $t=0$, temos: 
+\begin{proof} Para provar isso, supomos que $T$ é um período de $f(t)$, isto é, $f(t+T)=f(t)$ para todo $t$. Em especial, para $t=0$, temos:
 \begin{equation}
 \sen(wT)=\sen(0)=0.
 \end{equation}
 Logo, $wT=n\pi$, onde $n$ é um natural positivo. Observe que $\frac{\pi}{w}$ não pode ser o período fundamental, pois tomando $t=\frac{\pi}{2w}$, temos
 \begin{equation}1=\sen\left(w\left(\frac{\pi}{2w}\right)\right)\neq \sen\left(w\left(\frac{\pi}{2w}+\frac{\pi}{w}\right)\right)=-1.\end{equation}
-Como, por construção do círculo trigonomético, temos:
+Como, por construção do círculo trigonométrico, temos:
 \begin{equation}
 \sen\left(w\left(t+\frac{2\pi}{w}\right)\right)=\sen(wt+2\pi)=\sen(wt),
-\end{equation} 
+\end{equation}
 então $\frac{2\pi}{w}$ é o período fundamental. Observe que $w$ é a frequência angular fundamental. Um raciocínio análogo vale para $g(t)$.
 \end{proof}
-\begin{ex} Vamos calcular o período fundamental da função $f(t)=\sen(w_1t)+\sen(w_2t)$. Ambas as parcelas que compoem $f(t)$ são periódicas, com períodos $T_1=\frac{2\pi}{w_1}n$ e $T_2=\frac{2\pi}{w_2}m$, onde $n$ e $m$ são inteiros positivos. A função $f(t)$ é periódica se existirem $m$ e $n$ tais que $T_1=T_2$, ou seja, $\frac{2\pi}{w_1}n=\frac{2\pi}{w_2}m$. Isso implica em $\frac{w_2}{w_1}=\frac{m}{n}$. Essa identidade só é possível se $\frac{w_1}{w_2}$ for racional, pois $m$ e $n$ são inteiros. Por exemplo, 
+\begin{ex} Vamos calcular o período fundamental da função $f(t)=\sen(w_1t)+\sen(w_2t)$. Ambas as parcelas que compõem $f(t)$ são periódicas, com períodos $T_1=\frac{2\pi}{w_1}n$ e $T_2=\frac{2\pi}{w_2}m$, onde $n$ e $m$ são inteiros positivos. A função $f(t)$ é periódica se existirem $m$ e $n$ tais que $T_1=T_2$, ou seja, $\frac{2\pi}{w_1}n=\frac{2\pi}{w_2}m$. Isso implica em $\frac{w_2}{w_1}=\frac{m}{n}$. Essa identidade só é possível se $\frac{w_1}{w_2}$ for racional, pois $m$ e $n$ são inteiros. Por exemplo,
 \begin{itemize}
- \item[i)] se $w_1=\frac{2}{3}$ e $w_2=\frac{3}{2}$, então $\frac{3/2}{2/3}=\frac{9}{4}=\frac{m}{n}$ e os menores inteiros positivos que satisfazem a identidade são $m=9$ e $n=4$. Logo, o período fundamental da função $f(t)=\sen\left(\frac{2}{3}t\right)+\sen\left(\frac{3}{2}t\right)$ é $\frac{2\pi}{2/3}\cdot 4= 12\pi$ e a frequência angular fundamental é $\frac{2\pi}{12\pi}=\frac{1}{6}$; 
- \item[ii)] se $w_1=\sqrt{3}$ e $w_2=\sqrt{\frac{4}{3}}$, então $\frac{\sqrt{4/3}}{\sqrt{3}}=\frac{2}{3}=\frac{m}{n}$ e os menores inteiros positivos que satisfazem a identidade são $m=2$ e $n=3$. Logo, o período fundamental da função $f(t)=\sen\left(\sqrt{3}t\right)+\sen\left(\sqrt{\frac{4}{3}}t\right)$ é $\frac{2\pi}{\sqrt{3}}\cdot 3= \frac{6\pi}{\sqrt{3}}$ e a frequência angular fundamental é $\frac{\sqrt{3}}{3}$; 
+ \item[i)] se $w_1=\frac{2}{3}$ e $w_2=\frac{3}{2}$, então $\frac{3/2}{2/3}=\frac{9}{4}=\frac{m}{n}$ e os menores inteiros positivos que satisfazem a identidade são $m=9$ e $n=4$. Logo, o período fundamental da função $f(t)=\sen\left(\frac{2}{3}t\right)+\sen\left(\frac{3}{2}t\right)$ é $\frac{2\pi}{2/3}\cdot 4= 12\pi$ e a frequência angular fundamental é $\frac{2\pi}{12\pi}=\frac{1}{6}$;
+ \item[ii)] se $w_1=\sqrt{3}$ e $w_2=\sqrt{\frac{4}{3}}$, então $\frac{\sqrt{4/3}}{\sqrt{3}}=\frac{2}{3}=\frac{m}{n}$ e os menores inteiros positivos que satisfazem a identidade são $m=2$ e $n=3$. Logo, o período fundamental da função $f(t)=\sen\left(\sqrt{3}t\right)+\sen\left(\sqrt{\frac{4}{3}}t\right)$ é $\frac{2\pi}{\sqrt{3}}\cdot 3= \frac{6\pi}{\sqrt{3}}$ e a frequência angular fundamental é $\frac{\sqrt{3}}{3}$;
  \item[iii)] a função $f(t)=\sen\left(2t\right)+\sen\left(\pi t\right)$ não é periódica, pois não existem inteiros positivos $n$ e $m$ que satisfazem $\frac{2}{\pi}=\frac{m}{n}$.
  \end{itemize}
 \end{ex}
@@ -64,7 +64,7 @@ não depende do valor $x$. Em especial, vale a identidade:
 
 \subsection*{Exercícios}
  \begin{exer}Verifique as seguintes afirmações são verdadeiras e justifique:
-\begin{enumerate} 
+\begin{enumerate}
 \item A soma de funções periódicas é uma função periódica.
 \item Toda função periódica possui uma representação em série de Fourier.
 \item Séries de Fourier convergentes são contínuas.
@@ -80,10 +80,10 @@ não depende do valor $x$. Em especial, vale a identidade:
 \item Toda função real pode ser escrita de forma única como a soma de uma função ímpar e outra par.
 \end{enumerate}
 \end{exer}
-\begin{resp} São verdadeiras: 4, 7, 8,9,10,11,12 e 13. 
+\begin{resp} São verdadeiras: 4, 7, 8,9,10,11,12 e 13.
 \end{resp}
-\begin{exer}Identifique a paridade das sequintes funções. Verique quais delas são periódicas. 
-\begin{enumerate} 
+\begin{exer}Identifique a paridade das seguintes funções. Verifique quais delas são periódicas.
+\begin{enumerate}
 \item $f(x)=\sen(x^2)$.
 \item $f(x)=\sen^2(x)$.
 \item $f(x)=\cos(x)+e^{\sen(x)}$
@@ -97,7 +97,7 @@ não depende do valor $x$. Em especial, vale a identidade:
 \end{enumerate}
 \end{exer}
 \begin{resp}
-São pares: 1,2,5,7, 8 e 10. É ímpar: 9. São periódicas: 2,3,5,6,7,8, 9 e 10. 
+São pares: 1,2,5,7, 8 e 10. É ímpar: 9. São periódicas: 2,3,5,6,7,8, 9 e 10.
 \end{resp}
 \begin{exer}Seja $f(t)$ um função periódica integrável de período $T$ e $F(t)=\int_0^tf(\tau)d\tau$. Encontre uma condição necessária e suficiente para que $F(t)$ seja periódica de período $T$.
 \end{exer}
@@ -121,7 +121,7 @@ $\pi$, $2\pi$, $\pi$, $1$, $2$, $1$, $1$, $3$
 \end{resp}
 
 \section{Séries de Fourier}
-\begin{defn} Seja $T>0$, definimos polinômio trigonomético de grau $N$ uma função do tipo:
+\begin{defn} Seja $T>0$, definimos polinômio trigonométrico de grau $N$ uma função do tipo:
 \begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] \end{equation}
 onde $w_n=\frac{2\pi n}{T}$.
 \end{defn}
@@ -162,14 +162,14 @@ com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
 Caso $n=m= 0$, então $\cos\left(\frac{2\pi nt}{T}\right)=1$, isto é:
 \begin{equation}\int_0^T\cos\left(\frac{2\pi nt}{T}\right)\cos\left(\frac{2\pi mt}{T}\right)dt=\int_0^T 1dt=T\end{equation}
  Para obter (\ref{rel_ort_cs}), usamos a seguinte identidade trigonométrica:
-\begin{equation}\cos(a)\sen(b)=\frac{\sen(a+b)+\sen(a-b)}{2}\end{equation} 
+\begin{equation}\cos(a)\sen(b)=\frac{\sen(a+b)+\sen(a-b)}{2}\end{equation}
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
  \begin{equation}\cos\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\sen\left(\frac{2\pi (n+m)t}{T}\right)+\sen\left(\frac{2\pi (n-m)t}{T}\right)}{2}\end{equation}
 E integrando conforme feito para os casos anteriores, temos o resultado.
  \end{proof}
  \begin{teo} Seja $f(t)$ uma função definida por uma série trigonométrica da forma
  \begin{equation}{\label{serie_Fourier}}
-f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right]   
+f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right]
  \end{equation}
  Então sob determinadas hipóteses de convergência, os coeficientes $a_n$ e $b_n$ são dados pelas seguintes expressões:
  \begin{subequations}{\label{coef}}
@@ -197,9 +197,9 @@ Seguimos integrando em $[0,T]$ e temos:
  \end{proof}
 \begin{obs}Observe que como $\cos(0)=1$, a fórmula de $a_n$ com $n=0$ recai na fórmula para $a_0$.
  \end{obs}
- \begin{defn} Seja $f(t)$ uma função $T$-periódica integrável em $[0,T]$. Definimos como a série de Fourier associada à função $f$, a série trigonométrica cujos coeficientes são dados por (\ref{coef}). 
+ \begin{defn} Seja $f(t)$ uma função $T$-periódica integrável em $[0,T]$. Definimos como a série de Fourier associada à função $f$, a série trigonométrica cujos coeficientes são dados por (\ref{coef}).
  \end{defn}
-Observe que a série de Fourier de uma função $f(t)$ não é necessariamente igual a função $f(t)$. De fato, não se pode se quer garantir que a série de Fourier associada a uma função integrável seja convergente. Estas questões teóricas fogem do escopo do nosso curso e são normalmente tratadas em cursos de análise matemática (veja, por exemplo, \cite{DAVIS}, \cite{TOLSTOV} e \cite{HSU}). 
+Observe que a série de Fourier de uma função $f(t)$ não é necessariamente igual a função $f(t)$. De fato, não se pode se quer garantir que a série de Fourier associada a uma função integrável seja convergente. Estas questões teóricas fogem do escopo do nosso curso e são normalmente tratadas em cursos de análise matemática (veja, por exemplo, \cite{DAVIS}, \cite{TOLSTOV} e \cite{HSU}).
 \begin{teo}{\label{teo_Dirichlet}} Seja $f$ uma função periódica de período $T$, suave por partes e descontínua no máximo em um número finito de saltos dentro de cada intervalo, então a série de Fourier converge em cada ponto $t$ para
 \begin{equation}
 \frac{f(t+)+f(t-)}{2},
@@ -214,7 +214,7 @@ f(t+2)&=&f(t),\ \ \forall t\in\mathbb{R}.
 Essa função é suave por partes e contínua em todos os pontos. Portanto se aplica o teorema \ref{teo_Dirichlet}.
 \begin{center}
 \includegraphics{cap_series/pics/figura_1}\end{center}
-Observamos que essa é uma função par, ou seja, $f(t)=f(-t)$. A fim de explorar essa simetria, utilisaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas, isto é,
+Observamos que essa é uma função par, ou seja, $f(t)=f(-t)$. A fim de explorar essa simetria, utilizaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas, isto é,
   \begin{eqnarray*}
    a_0&=& \frac{2}{T}\int_{-T/2}^{T/2} f(t)dt\\
    a_n&=&  \frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(w_nt)dt\\
@@ -258,7 +258,7 @@ Essa função é suave por partes e contínua em todos os pontos exceto por salt
 \begin{center}
 \includegraphics{cap_series/pics/figura_3}\end{center}
 \end{figure}
-Observamos que essa é uma função ímpar, ou seja, $f(t)=-f(-t)$. Novamente, utilisaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas:
+Observamos que essa é uma função ímpar, ou seja, $f(t)=-f(-t)$. Novamente, utilizaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas:
   \begin{equation*}
    a_0= \int_{-1}^{1} g(t) dt=0\\
 	\end{equation*}
@@ -291,7 +291,7 @@ Essa função é suave por partes e contínua exceto por salto nos inteiros onde
 \begin{center}
 \includegraphics{cap_series/pics/figura_5}\end{center}
 \end{figure}
-Utilisaremos as fórmulas (\ref{coef}) envolvendo integrais no intervalo $[0,1]$, isto é,
+Utilizaremos as fórmulas (\ref{coef}) envolvendo integrais no intervalo $[0,1]$, isto é,
   \begin{equation*}
    a_0= 2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1\\
 	\end{equation*}
@@ -325,7 +325,7 @@ Considere a função periódica de período $T$ dada na região $(-T/2,T/2)$ por
 \right.
 \end{equation}
 onde $d$ é uma constante entre $0$ e $T$.
-Estude a paridade desta função. Encontre sua representação em série de Fourier. 
+Estude a paridade desta função. Encontre sua representação em série de Fourier.
 \end{exer}
 \begin{resp}
 \begin{eqnarray*} \frac{a_0}{2}&=&\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt=\frac{1}{T}\int_{-d/2}^{d/2}dt=\frac{d}{T}\\

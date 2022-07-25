@@ -1,6 +1,8 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{Funções especiais e equações com coeficientes variáveis}
 \section{Transformada de Laplace de Funções Especiais}
-Nesse capítulo discutiremos a transformada de Laplace envolvendo funções especiais, tais como função de Bessel, função Gama e funções Seno Integrado. Também, desenvolveremos ferramentas capaz de resolver alguns problemas de valor iniciais com coeficientes não constantes.
+Nesse capítulo discutiremos a transformada de Laplace envolvendo funções especiais, tais como função de Bessel, função Gama e funções Seno Integrado. Também, desenvolveremos ferramentas capazes de resolver alguns problemas de valor iniciais com coeficientes não constantes.
 Para iniciar as discussões vamos demonstrar o item 6 da tabela \ref{tab_trans_Lap_1} no próximo exemplo.
 \begin{ex}Vamos calcular a transformada de Laplace da funçao $t^{k-1}$, dada por:
 \begin{equation}
@@ -25,9 +27,11 @@ Observe que o item 3 da tabela é
 \mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^n}, \qquad n\in \mathbb{N}.
 \end{equation}
 Isso nos indica que, para que os itens 3 e 6 sejam consistentes, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$. De fato, primeiro observe que, se $k=(n+1)\in\mathbb{N}$, temos:
-\begin{equation}
-\Gamma(n+1)=\int_0^\infty e^{-x}x^{n}dx=\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx=n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
-\end{equation}
+\begin{eqnarray*}
+\Gamma(n+1)&=&\int_0^\infty e^{-x}x^{n}dx\\
+&=&\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx\\
+&=&n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
+\end{eqnarray*}
 Como 
 \begin{equation}
 \Gamma(1)=\int_0^\infty e^{-x}dx=\left[-e^{-x}\right]_0^\infty=1,
@@ -235,7 +239,7 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 \begin{eqnarray*}
 \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
 &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
-&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
 &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
 &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
 \end{eqnarray*}
@@ -286,14 +290,14 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com
 Faça o gráfico de $f(t)$ e calcule $\mathcal{L}\big\{f(t)\big\}$.
 \begin{itemize}
   \item[a)] $f$ periódica de período $p=4$ e $\displaystyle f(t) = \left\{
-                                                                      \begin{array}{ll}
-                                                                        3t, & \hbox{ se } t \in (0,2) \\
-                                                                        6, & \hbox{ se } t \in (2,4)
-                                                                      \end{array}
-                                                                    \right.
+    \begin{array}{ll}
+      3t, & \hbox{ se } t \in (0,2) \\
+      6, & \hbox{ se } t \in (2,4)
+    \end{array}
+  \right.
 $
   \item[b)] $f$ periódica de período $p=2\pi$ e $\displaystyle f(t) = e^t$, para $t \in (0,2\pi)$.
-  \item[b)] $\displaystyle f(t) = |\sen (\omega t)|$.
+  \item[c)] $\displaystyle f(t) = |\sen (\omega t)|$.
 \end{itemize}
 \end{exer}
 \begin{resp}

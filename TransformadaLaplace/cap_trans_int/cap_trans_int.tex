@@ -1,6 +1,8 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{As propriedades de translação e da transformada da integral}
-\section{Propriedade de translação no eixo $s$}
-Nessa seção vamos calcular a transformada inversa do deslocamento $F(s-a)$ sabendo a transformada inversa de $F(s)$. %O gráfico da figura \ref{fig_trans_1} mostra um exemplo de função com deslocamentos à direita e à esqueda.
+\section{Propriedade de translação no eixo s}
+Nessa seção vamos calcular a transformada inversa do deslocamento $F(s-a)$ sabendo a transformada inversa de $F(s)$. %O gráfico da figura \ref{fig_trans_1} mostra um exemplo de função com deslocamentos à direita e à esquerda.
 
 \begin{teo}{\label{prop_trans_s}}(Propriedade da translação no eixo $s$) Se $F(s)$ é a transformada de Laplace de $f(t)$ definida para $s>s_0$, então $e^{at}f(t)$ é a transformada inversa de $F(s-a)$, isto é
 \begin{equation}
@@ -9,7 +11,7 @@ Nessa seção vamos calcular a transformada inversa do deslocamento $F(s-a)$ sab
 ou
 \begin{equation}{\label{eq_trans_s_inv}}
 \mathcal{L}^{-1} \left\{F(s-a)\right\} =e^{at}f(t),\qquad s>s_0+a.
-\end{equation} 
+\end{equation}
 \end{teo}
 \begin{proof}É direto da aplicação da definição da transformada de Laplace $F(s-a)$:
 \begin{eqnarray*}
@@ -115,20 +117,20 @@ Utilize a propriedade do deslocamento no eixo $s$ para encontrar a transformada 
 \end{itemize}
   \end{resp}
 \section{Aplicação: Oscilador Harmônico}
-Uma mola elástica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Considere que o corpo esteja sujeito a uma força de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e a que mola obedeça a lei de Hooke com constante $k$.
+Uma mola elástica com uma extremidade fixada prende um corpo de massa $m$ na outra extremidade (veja figura (\ref{massa-mola})). Considere que o corpo esteja sujeito a uma força de atrito proporcional a velocidade com constante de amortecimento $\gamma$ e que a mola obedeça a lei de Hooke com constante $k$.
 \begin{figure}[!ht]
 \begin{center}
 
 \includegraphics{cap_trans_int/pics/figura_1}\end{center}
 \caption{\label{massa-mola}}
-\end{figure} 
+\end{figure}
 Seja $y(t)$ o deslocamento do corpo da sua posição de equilíbrio estático em função do tempo $t$. A equação do movimento é obtida a partir da segunda lei de Newton:
 \begin{equation}
 ma=\sum_i f_i,
 \end{equation}
 onde $a=y''(t)$ é a aceleração e $\sum_i \vec{f}_i$ representa a soma de todas as forças. No caso tratado aqui, existem apenas três forças, a saber:
 \begin{itemize}
- \item[i)] a força da mola, que é proporcional ao descocamento (lei de Hooke), com constante de proporcionalidade $k$, $f_1=-k y(t)$,
+ \item[i)] a força da mola, que é proporcional ao deslocamento (lei de Hooke), com constante de proporcionalidade $k$, $f_1=-k y(t)$,
  \item[ii)] a força de atrito, que é proporcional a velocidade, com constante de amortecimento $\gamma$, $f_2=-\gamma y'(t)$, e
  \item[iii)] a força externa, $f_3(t)=f(t)$
 \end{itemize}
@@ -140,7 +142,7 @@ ou seja, a equação para o deslocamento $y(t)$ é dada por
 \begin{equation}{\label{eq_massa_mola}}
 my''(t)+\gamma y'(t)+ky(t)=f(t).
 \end{equation}
-O modelo fica completo quando impomos as condições iniciais $y(0)=y_0$ e $y'(0)=y_0'$. 
+O modelo fica completo quando impomos as condições iniciais $y(0)=y_0$ e $y'(0)=y_0'$.
 Agora, vamos usar o método da transformada de Laplace para resolver a equação. Aplicamos a transformada de Laplace na equação (\ref{eq_massa_mola}) e obtemos:
 \begin{equation}
 m\mathcal{L}\{y''(t)\}+\gamma \mathcal{L}\{y'(t)\}+k\mathcal{L}\{y(t)\}=\mathcal{L}\{f(t)\}.
@@ -157,10 +159,10 @@ onde $F(s)=\mathcal{L}\{f(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$. Resolvemos a equa�
 \begin{equation}
 Y(s)=\frac{F(s)+msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}.
 \end{equation}
-A solução do problema pode ser representado por $y(t)=\mathcal{L}^{-1}\{Y(s)\}$. 
+A solução do problema pode ser representado por $y(t)=\mathcal{L}^{-1}\{Y(s)\}$.
 O sistema massa mola pode ser classificado das seguintes formas:
 \begin{itemize}
- \item[i)] Oscilador harmonico forçado: quando a força externa não é nula.
+ \item[i)] Oscilador harmônico forçado: quando a força externa não é nula.
  \item[ii)] Oscilador harmônico livre: quando não há força externa, ou seja, $f(t)=0$, o que implica em $F(s)=0$. Nesse caso
 \begin{equation}
 Y(s)=\frac{msy_0+my_0'+\gamma y_0}{ms^2+\gamma s +k}.
@@ -186,7 +188,7 @@ Y(s)=\frac{msy_0+my_0'}{ms^2 +k}=\frac{sy_0+y_0'}{s^2+\frac{k}{m}},
 \end{equation}
 Olhando os items 13 e 14 da tabela de transformada \ref{tab_trans_Lap_1} concluímos que as soluções são senos e cossenos puros.
 \end{itemize}
-Para ilustrar, tomemos um caso subamortecido, por exemplo, $\gamma=2$, $m=1$ e $k=5$, sujeitos às condições iniciais $y_0=1$ e $y_0'=-2$. A função $Y(s)$ toma a forma: 
+Para ilustrar, tomemos um caso subamortecido, por exemplo, $\gamma=2$, $m=1$ e $k=5$, sujeitos às condições iniciais $y_0=1$ e $y_0'=-2$. A função $Y(s)$ toma a forma:
 \begin{equation}
 Y(s)=\frac{s}{s^2+2 s +5}.
 \end{equation}
@@ -300,7 +302,7 @@ Onde $f(t)$ é a força externa e a condições iniciais $y(0)$ e $y'(0)$ são n
   \item [a)] Encontre o conjunto de valores $\alpha$ para que o sistema seja amortecido.
   \item [b)] Encontre o conjunto de valores $\alpha$ para que o sistema seja sub-amortecido.
   \item [c)] Encontre o conjunto de valores $\alpha$ para que o sistema seja criticamente amortecido.
-  \item [d)] Encontre o conjunto de valores $\alpha$ para que o sistema seja superamortecido. 
+  \item [d)] Encontre o conjunto de valores $\alpha$ para que o sistema seja superamortecido.
   \item [e)] Encontre a resposta $y(t)$ do sistema criticamente amortecido quando $f(t)=\delta(t-1)$.
  \end{itemize}
 \end{exer}
@@ -374,7 +376,7 @@ A função pulso geralmente indica uma chave ``liga-desliga''. Por exemplo, o pr
 
 \includegraphics{cap_trans_int/pics/figura_8}\end{center}
 \caption{\label{fig_Heaviside_4}}
-\end{figure} 
+\end{figure}
 Observe que podemos representar $f(t)$ da seguinte forma:
 \begin{equation}
  f(t)=\left\{ \begin{array}{ll} 0, &t<1\\2,&1<t<3\\-3,& 3<t<5\\0,&t>5. \end{array}\right.
@@ -405,7 +407,7 @@ Se $a<0$, então
 
 \includegraphics{cap_trans_int/pics/figura_9}\end{center}
 \caption{\label{fig_Heaviside_prob}}
-\end{figure} 
+\end{figure}
 \end{exer}
 
 \begin{exer}{\label{ex_Heaviside0}}Esboce o gráfico das seguintes funções:
@@ -413,7 +415,7 @@ Se $a<0$, então
  \item [a)] $\displaystyle (t-\pi)u(t-\pi)$
  \item [b)] $\displaystyle t \ u(t-2)$
  \item [c)] $\displaystyle (\sen t) u(t-\pi)$
- \item [d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
+ \item [d)] $f(t)=u(t-1)+3u(t-3)-4u(t-5)$
  \item [e)] $f(t)=tu(t)+(t^2-t)u(t-1)+(6-t-t^2)u(t-2)+(t-6)u(t-6)$
  \item [f)] $f(t)=\left[u(t)+u(t-1)\right]^2$
  \item [g)] $f(t)=u(t-1)\left[1-u(t-2)\right] $
@@ -433,7 +435,7 @@ Se $a<0$, então
  \begin{center}
 
 \includegraphics{cap_trans_int/pics/figura_15}\end{center}
-\item[d)]$f(t)=u(t-1)+3u(t-3)-4u(t-5)$ 
+\item[d)]$f(t)=u(t-1)+3u(t-3)-4u(t-5)$
 \begin{center}
 
 \includegraphics{cap_trans_int/pics/figura_16}\end{center}
@@ -478,11 +480,11 @@ Se $a<0$, então
   \item[a)] $f(t)=u(t-1)-3u(t-3)+2u(t-5)$
     \item[b)] $f(t)=tu(t)+(1-t)u(t-1)+\left(-\frac{3}{2}t+\frac{9}{2}\right)u(t-3)+\left(\frac{3}{2}t-\frac{11}{2}\right)u(t-5)$
         \item[c)] $f(t)=\sum_{n=0}^\infty (-1)^n u(t-n)$
-        \item[d)] $f(t)=\sum_{n=0}^\infty  u(t-2n)$ 
+        \item[d)] $f(t)=\sum_{n=0}^\infty  u(t-2n)$
  \end{itemize}
 \end{resp}
 
- \section{Propriedade do deslocamento no eixo $t$}
+ \section{Propriedade do deslocamento no eixo t}
 \begin{teo}{\label{prop_trans_t}}(Propriedade do deslocamento no eixo $t$) Se $F(s)$ é a transformada de $f(t)$, então $f(t-a)u(t-a)$ é a transformada inversa de $e^{-as}F(s)$, isto é
 \begin{equation}
 \mathcal{L}\left\{u(t-a)f(t-a)\right\} =e^{-as}F(s),\qquad a>0
@@ -490,7 +492,7 @@ Se $a<0$, então
 ou
 \begin{equation}{\label{eq_trans_t_inv}}
 \mathcal{L}^{-1} \left\{e^{-as}F(s)\right\} =u(t-a)f(t-a),\qquad a>0.
-\end{equation} 
+\end{equation}
 \end{teo}
 \begin{proof}Aplicamos a definição da transformada de Laplace e obtemos:
 \begin{eqnarray*}
@@ -548,9 +550,9 @@ Depois usamos a propriedade \ref{prop_trans_t} para concluir
  \item [b)] $F(s)=\displaystyle e^{-2s}\bigg(\frac{1}{s^2}  + \frac{2}{s}\bigg)$
  \item [c)] $F(s)=\displaystyle - \frac{e^{-\pi s}}{s^2 +1}$
  \item [d)] $F(s)=\frac{1}{s}\left(e^{-s}+3e^{-3s}-4e^{-5s}\right)$
- \item [e)] $F(s)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$ 
+ \item [e)] $F(s)=\frac{1}{s^2}+\left(\frac{2}{s^3}+\frac{1}{s^2}\right)e^{-s}+\left(-\frac{2}{s^3}-\frac{5}{s^2}\right)e^{-2s}+\frac{1}{s^2}e^{-6s}$
  \item [f)]$F(s) = \frac{1+3e^{-s}}{s}$
- \item [g)] $F(s) = \frac{e^{-s}-e^{-2s}}{s}$ 
+ \item [g)] $F(s) = \frac{e^{-s}-e^{-2s}}{s}$
  \end{itemize}
 \end{resp}
 \begin{exer} Calcule a transformada de Laplace para cada item do exercício \ref{ex_Heaviside1}.
@@ -560,7 +562,7 @@ Depois usamos a propriedade \ref{prop_trans_t} para concluir
   \item[a)] $F(s)=\frac{1}{s}\left(e^{-s}-3e^{-3s}+2e^{-5s}\right)$
     \item[b)] $F(s)=\frac{1}{s^2}\left(1-e^{-s}-\frac{3}{2}e^{-3s}+\frac{3}{2}e^{-5s}+2se^{-5s}\right)$
         \item[c)] $F(s)=\frac{1}{s(1+e^{-s})}$
-        \item[d)] $F(s)=\frac{1}{s(1-e^{-2s})}$ 
+        \item[d)] $F(s)=\frac{1}{s(1-e^{-2s})}$
  \end{itemize}
 \end{resp}
 \begin{exer} Use os itens c) e d) do exercício \ref{ex_Heaviside1} e a propriedade da translação no eixo $t$ para calcular a transformada de Laplace das seguintes funções:
@@ -578,7 +580,7 @@ Depois usamos a propriedade \ref{prop_trans_t} para concluir
 \begin{resp}
  \begin{itemize}
         \item[a)] $\displaystyle F(s)=\frac{e^{-s}}{s(1+e^{-s})}$
-        \item[b)] $\displaystyle F(s)=\frac{e^{-2s}}{s(1-e^{-2s})}$ 
+        \item[b)] $\displaystyle F(s)=\frac{e^{-2s}}{s(1-e^{-2s})}$
  \end{itemize}
 \end{resp}
 
@@ -594,12 +596,12 @@ Depois usamos a propriedade \ref{prop_trans_t} para concluir
 \end{exer}
 \begin{resp}
 \begin{itemize}
-  \item[a)] $\displaystyle f(t)=\left(2\cos(2t)-\sen(2t)\right)e^{-t}$ 
-      \item[b)] $\displaystyle f(t)=\frac{2e^{t}}{5}\left(\cos(2t)-\cos(3t)\right)$ 
-        \item[c)] $\displaystyle f(t)=u(t-4)\senh(2(t-4))$ 
-      \item[d)] $\displaystyle f(t)=u(t-2)\left(e^{3(t-2)}-e^{(t-2)}\right)$ 
-        \item[e)] $\displaystyle f(t)=u(t-1)e^{-(t-1)}\left(2\cos(2(t-1))-\sen(2(t-1))\right)$ 
-      \item[f)] $\displaystyle f(t)=2\frac{u(t-3)e^{t-3}}{5}\left(\cos(2(t-3))-\cos(3(t-3))\right)$ 
+  \item[a)] $\displaystyle f(t)=\left(2\cos(2t)-\sen(2t)\right)e^{-t}$
+      \item[b)] $\displaystyle f(t)=\frac{2e^{t}}{5}\left(\cos(2t)-\cos(3t)\right)$
+        \item[c)] $\displaystyle f(t)=u(t-4)\senh(2(t-4))$
+      \item[d)] $\displaystyle f(t)=u(t-2)\left(e^{3(t-2)}-e^{(t-2)}\right)$
+        \item[e)] $\displaystyle f(t)=u(t-1)e^{-(t-1)}\left(2\cos(2(t-1))-\sen(2(t-1))\right)$
+      \item[f)] $\displaystyle f(t)=2\frac{u(t-3)e^{t-3}}{5}\left(\cos(2(t-3))-\cos(3(t-3))\right)$
  \end{itemize}
 \end{resp}
 \begin{exer}Esboce o gráfico e calcule a transformada de Laplace das seguintes funções:
@@ -621,8 +623,8 @@ Mostre que:
   \item[b)] $\displaystyle \mathcal{L} \{ \senh (at) \cos (at) \} = \frac{a (s^2 - 2 a^2)}{s^4 + 4a^4}$
   \item[c)] $\displaystyle \mathcal{L} \{ \senh (at) \sen (at) \} = \frac{2 a^2 s}{s^4 + 4a^4}$
 \end{itemize}
- \noindent A partir destas, mostre que 
- \begin{equation}\mathcal{L}^{-1}\left\{ \frac{1}{s^4 + 4a^4}\right\} = \frac{1}{4a^3} \left[\cosh (at) \sen (at) - \senh (at) \cos(at)\right].   
+ \noindent A partir destas, mostre que
+ \begin{equation}\mathcal{L}^{-1}\left\{ \frac{1}{s^4 + 4a^4}\right\} = \frac{1}{4a^3} \left[\cosh (at) \sen (at) - \senh (at) \cos(at)\right].
  \end{equation}
 
 \end{exer}
@@ -662,7 +664,7 @@ Encontre $g(t)$ e faça um esboço de seu gráfico, sendo $\mathcal{L}\{ g(t)\}$
   \item[e)] $\displaystyle (t-1)u(t-1) + (t-2)u(t-2) -3(t-3)u(t-3) + 6(t-6)u(t-6)$
 \end{itemize}
 \end{resp}
-  
+
 \section{A propriedade da transformada de Laplace da integral de uma função}
 \begin{teo}{\label{prop_trans_int}}(Propriedade da transformada da integral) Se $F(s)$ é a transformada de Laplace de uma função contínua por partes $f(t)$, então $\int_0^tf(\tau)d\tau$ é a transformada inversa de $\frac{1}{s}F(s)$, isto é
 \begin{equation}{\label{eq_trans_int}}
@@ -671,7 +673,7 @@ Encontre $g(t)$ e faça um esboço de seu gráfico, sendo $\mathcal{L}\{ g(t)\}$
 ou
 \begin{equation}{\label{eq_trans_int_inv}}
 \mathcal{L}^{-1} \left\{\frac{1}{s}F(s)\right\} =\int_0^tf(\tau)d\tau.
-\end{equation} 
+\end{equation}
 \end{teo}
 \begin{proof}Seja $g(t)=\int_0^tf(\tau)d\tau$. Então $g'(t)=f(t)$. Aplicamos a propriedade da transformada da derivada \ref{prop_der} e temos:
 \begin{equation}
@@ -696,7 +698,7 @@ Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $
 \end{itemize}
 \end{exer}
 
-\section{Aplicação: circuito RC a um pulso de amplitude $V_0$.}{\label{sec_circ}}
+\section{Aplicação: resposta de um circuito RC a um pulso}{\label{sec_circ}}
 Considere o circuito resistor-capacitor representado na figura \ref{fig_circ} com uma tensão $V(t)$ aplicada do tipo pulso,
 \begin{equation}
 v(t)=V_0\left(u(t-a)-u(t-b)\right).
@@ -716,7 +718,7 @@ onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor
 \begin{equation}
 Ri(t)+\frac{1}{C}\int_0^t i(\tau)d\tau=V_0\left(u(t-a)-u(t-b)\right).
 \end{equation}
-Para resolver esse problema de valor incial, aplicamos a transformada de Laplace na equação acima e usamos a propriedade \ref{prop_trans_int}:
+Para resolver esse problema de valor inicial, aplicamos a transformada de Laplace na equação acima e usamos a propriedade \ref{prop_trans_int}:
 \begin{equation}
 \mathcal{L}\left\{i(t)\right\}+\frac{1}{sRC}\mathcal{L}\left\{i(t)\right\}=\frac{V_0}{Rs}\left(e^{-as}-e^{-bs}\right),
 \end{equation}
@@ -739,7 +741,7 @@ i(t)&=&\mathcal{L}^{-1}\left\{\frac{V_0}{R}\frac{1}{s+\frac{1}{RC}}\left(e^{-as}
 &=&\frac{V_0}{R}\left[u(t-a)e^{-\frac{(t-a)}{RC}}-u(t-b)e^{-\frac{(t-b)}{RC}}\right]\\
 &=&\frac{V_0}{R}\left[u(t-a)e^{\frac{a}{RC}}-u(t-b)e^{\frac{b}{RC}}\right]e^{-\frac{t}{RC}}.
 \end{eqnarray*}
-Olhando numa notação de função definida por partes, podemos escrecer
+Olhando numa notação de função definida por partes, podemos escrever
 \begin{equation}
 i(t)=\left\{\begin{array}{ll}0,&t<a  \\A e^{-\frac{t}{RC}}, &a<t<b, \\ \left(A-B\right)e^{-\frac{t}{RC}}, &t>b, \end{array}\right.
 \end{equation}
@@ -754,7 +756,7 @@ Para obter a carga no capacitor usamos $q(t)=\int_0^t i(\tau)d\tau$ e obtemos a 
 q(t)=\left\{\begin{array}{ll}0,&t<a  \\ CV_0\left(1-e^{-\frac{t-a}{CR}}\right), &a<t<b, \\ CV_0\left(e^{-\frac{t-b}{CR}}-e^{-\frac{t-a}{CR}} \right), &t>b, \end{array}\right.
 \end{equation}
 
-A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$. Observe a consitência com o gráfico da figura \ref{fig_circ_1}.
+A figura \ref{fig_circ_10} apresenta um gráfico da carga quando $a=0.5$, $b=2$, $R=1\Omega$, $C=1\ \!$F e $V_0=3V$. Observe a consistência com o gráfico da figura \ref{fig_circ_1}.
 
 
 \begin{figure}[!ht]
@@ -790,11 +792,11 @@ onde $Q(s)=\mathcal{L}\{q(t)\}$. Como o fenômeno estava em repouso no início, 
 \begin{equation}
 Q(s)=\frac{C}{RCs+1}\frac{V_0}{s}\left(e^{-as}-e^{-bs}\right)=\frac{V_0}{R}\frac{1}{s\left(s+\frac{1}{CR}\right)}\left(e^{-as}-e^{-bs}\right).
 \end{equation}
-O item 11 da tabela \ref{tab_trans_Lap_1} nos dá 
+O item 11 da tabela \ref{tab_trans_Lap_1} nos dá
 \begin{equation}
 \mathcal{L}^{-1}\left\{\frac{1}{(s-d_1)(s-d_2)}\right\}=\frac{1}{d_1-d_2}\left(e^{d_1t}-e^{d_2t}\right).
 \end{equation}
-Colocamos $d_1=0$, $d_2=-\frac{1}{CR}$ 
+Colocamos $d_1=0$, $d_2=-\frac{1}{CR}$
 \begin{equation}
 \mathcal{L}^{-1}\left\{\frac{1}{s\left(s+\frac{1}{CR}\right)}\right\}=CR\left(1-e^{-\frac{t}{CR}}\right).
 \end{equation}

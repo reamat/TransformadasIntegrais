@@ -1,3 +1,6 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
+
 \chapter{Sistemas de equações diferenciais ordinárias}
 \section{Transformada de Laplace para resolver sistemas}
 O método de transformada de Laplace pode ser aplicado para resolver sistemas de equações diferenciais. Para isso, aplica-se a transformada de Laplace a todas equações envolvidas, levando o sistema de equações diferenciais em um sistema de equações algébricas. Depois de resolver o sistema de equações algébricas no espaço de transformadas, calcula-se as transformadas inversas para obter a solução.
@@ -331,14 +334,91 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
  onde usamos a propriedade da convolução \ref{prop_conv} na passagem da primeira para a segunda linha. A figura \ref{reacao} apresenta o gráfico de das funções $x(t)$, $y(t)$ e $z(t)$.
  \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_sistemas/pics/figura_4}\end{center}
 \caption{\label{reacao}}
 \end{figure}
 
 
-
 \section*{Exercícios finais}
+\begin{exeresol}
+Considere o sistema de equações diferenciais criticamente amortecido dado por:
+$$
+f(t) = 
+\begin{cases}
+u'(t) & = -4\,u(t)+q(t) \\
+q'(t) &= a\,(25-u(t))-6\,u'(t)
+\end{cases}
+$$
+onde $u(0) = 0$ e $q(0) = 263$. 
+\begin{itemize}
+ \item[a)] Calcule o valor de $a$ que satisfaz a condição de criticamente amortecido.
+ \item[b)] Usando o teorema do valor final e supondo que o limite existe, encontre $\displaystyle\lim_{t \to \infty} u(t)$.
+ \item[c]  Usando o teorema do valor final e supondo que o limite existe, encontre  $\displaystyle\lim_{t \to \infty} q(t)$.
+ \item[d)] Encontre $u(t)$.
+ \item[e)] Encontre o valor de $t$, $t_\ast$, tal que $u(t)$ é máximo.
+ \item[f)] Encontre o valor máximo de $u(t)$, isto é, $u_{max}:=u(t_\ast)$.
+ \item[g)] Trace o gráfico da temperatura.
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+\begin{itemize}
+\item [a)] Tomando a transformada de Laplace no sistema temos
+\begin{eqnarray*}
+sU(s) &=& -4 U(s) + Q(s)\\
+sQ(s)-263 &=& \frac{25a}{s}-aU(s)-6sU(s)
+\end{eqnarray*}
+Multiplicando a primeira equação por $s$,
+\begin{eqnarray*}
+s^2U(s) &=& -4s U(s) + 263 + \frac{25a}{s}-a U(s)-6 s U(s)\\
+\left(s^2+10s+a\right)U(s) &=& 263 + \frac{25a}{s}\\
+U(s) &=& \frac{25a +263s}{s(s^2+10s+a)}
+\end{eqnarray*}
+Para que o sistema seja criticamente amortecido o discriminate de $s^2+10\,s+a$ deve ser nulo, donde $a=25$. Assim:
+$$U(s) = \frac{625 +263s}{s^2+10s+25}$$
+\item[b)] Supondo a existência do limite vale:
+\begin{eqnarray*}
+       \lim_{t \to \infty} u(t)&=&\lim_{s \to 0+} sU(s)\\
+       &=&\lim_{s \to 0+} \left( \frac{625 +263s}{s^2+10s+25}\right)=25
+\end{eqnarray*}
+
+\item[c)] Como $Q(S)=(s+4)U(s)$, temos:
+\begin{eqnarray*}
+ \lim_{t\to\infty}q(t)&=&\lim_{s\to 0^+}sQ(s)\\
+ &=&\lim_{s\to 0^+}\frac{(s+4)(625 +263\,s)}{s^2+10\,s+25}\\
+ &=&100.
+\end{eqnarray*}
+
+\item[d)] Aplicamos o procedimente de decomposição em frações parciais:
+\begin{eqnarray*}
+U(s)&=&\frac{625+263\,s}{s(s^2+10\,s+25)}\\
+&=&\frac{625+263\,s}{s(s+5)^2}\\
+&=&\frac{25}{s}-\frac{25}{s+5}+\frac{138}{(s+5)^2}.
+\end{eqnarray*}
+Daí que $u(t)=25-25e^{-5t}+138te^{-5t}$.
+
+\item[e)] Da condição de máximo, procuramos por $u'(t_\ast)=0$,
+$$
+  \left(125+138-690\,t_\ast\right)\,e^{-5\,t_\ast}=0
+  \Longrightarrow t_\ast=\frac{263}{690}.
+$$
+Observamos que $t_\ast$ é, de fato, ponto de máximo pois 
+\begin{eqnarray*}
+       u''(t_\ast)&=&\left(-2005+3450\,t_\ast\right)\,e^{-5\,t_\ast}\\
+       &=&-690e^{-\frac{263}{138}}<0
+\end{eqnarray*}
+
+\item[f)] Basta calcular:
+\begin{eqnarray*}
+ u_{max}&=&u(t_\ast)= 25-25e^{-5t_\ast}+ 138 t_\ast e^{-5t_\ast}\\
+&=&25+ \frac{138}{5} e^{-\frac{263}{138}}.
+\end{eqnarray*}
+\item[g)] 
+
+\begin{center}\includegraphics[width=8cm]{cap_sistemas/pics/figura_7}\end{center}
+\end{itemize}
+
+\end{resol}
+
 \begin{exer}
 Considere o seguinte problema de valor inicial:
 \begin{eqnarray*}
@@ -410,9 +490,11 @@ Considere o seguinte problema de valor inicial:
 x'(t)&=&- x(t) -2 y(t)+\delta(t)\\
 y'(t)&=& x(t) - y(t)+\delta(t),
 \end{eqnarray*}
-com $x(0)=0$ e $y(0)=0$.\\
- \indent  {a)}  Calcule as transformadas de Laplace $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$.
- \indent  {b)}  Calcule as transformadas inversas de Laplace $x(t)$ e $y(t)$.
-\indent  {c)} Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.\\
-
+com $x(0)=0$ e $y(0)=0$.
+\begin{itemize}
+       
+ \item[a)] Calcule as transformadas de Laplace $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$.
+ \item[b)] Calcule as transformadas inversas de Laplace $x(t)$ e $y(t)$.
+ \item[c)] Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.\\
+\end{itemize}
 \end{exer}

@@ -1,3 +1,5 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{A propriedade de linearidade e a transformada da derivada}
 \section{Linearidade da transformada de Laplace}
 \begin{teo}{\label{prop_lin}}(Propriedade da linearidade)
@@ -5,7 +7,7 @@ A transformada de Laplace é uma transformação linear, isto é,
 \begin{equation}
 \mathcal{L }\left\{\alpha f(t)+\beta g(t)\right\}=\alpha \mathcal{L }\left\{ f(t)\right\}+\beta\mathcal{L }\left\{g(t)\right\}
 \end{equation}
-sempre que cada uma das transformadas existirem. 
+sempre que cada uma das transformadas existirem.
 \end{teo}
 \begin{proof}
 Isso vem direto da propriedade de linearidade da integral:
@@ -26,7 +28,7 @@ As duas expressões podem ser resolvidas em termos do seno e do cosseno para obt
 \begin{eqnarray}
 {\label{ex_sen}} \sen(wt)&=&\frac{e^{iwt}-e^{-iwt}}{2i}\\
 {\label{ex_cos}} \cos(wt)&=&\frac{e^{iwt}+e^{-iwt}}{2}
-\end{eqnarray} 
+\end{eqnarray}
 Agora podemos calcular a transformada de Laplace do seno usando a expressão (\ref{ex_sen}).
 \begin{eqnarray*}
 \mathcal{L }\{\sen(wt)\}&=&\mathcal{L }\left\{\frac{e^{iwt}-e^{-iwt}}{2i}\right\}\\
@@ -35,13 +37,13 @@ Agora podemos calcular a transformada de Laplace do seno usando a expressão (\r
 &=&\frac{1}{2i}\left( \frac{s+iw-(s-iw)}{(s-iw)(s+iw)}\right)\\
 &=&\frac{1}{2i}\left( \frac{2iw}{s^2+w^2}\right)\\
 &=&\frac{w}{s^2+w^2}
-\end{eqnarray*} 
+\end{eqnarray*}
 \end{ex}
 \begin{ex} A transformada de Laplace da função $f(t)=\senh(wt)$ pode ser calculada usando o resultado do exemplo \ref{ex_trans_exp} e as expressões em termos de exponenciais:
 \begin{eqnarray}
 {\label{ex_senh}} \senh(at)&=&\frac{e^{at}-e^{-at}}{2}\\
 {\label{ex_cosh}} \cosh(at)&=&\frac{e^{at}+e^{-at}}{2}.
-\end{eqnarray} 
+\end{eqnarray}
 Aplicamos a propriedade \ref{prop_lin} a expressão (\ref{ex_senh}) e temos:
 \begin{eqnarray*}
 \mathcal{L }\{\senh(at)\}&=&\mathcal{L }\left\{\frac{e^{at}-e^{-at}}{2}\right\}\\
@@ -50,7 +52,7 @@ Aplicamos a propriedade \ref{prop_lin} a expressão (\ref{ex_senh}) e temos:
 &=&\frac{1}{2}\left( \frac{s+a-(s-a)}{(s-a)(s+a)}\right)\\
 &=&\frac{1}{2}\left( \frac{2a}{s^2-a^2}\right)\\
 &=&\frac{a}{s^2-a^2}
-\end{eqnarray*} 
+\end{eqnarray*}
 \end{ex}
 \begin{ex}Vamos calcular a tranformada de Laplace da função $f(t)=wt-\sen(wt)$ usando propriedade de linearidade \ref{prop_lin} e o exemplo \ref{ex_trans_sin_2}:
 \begin{eqnarray*}
@@ -58,7 +60,7 @@ Aplicamos a propriedade \ref{prop_lin} a expressão (\ref{ex_senh}) e temos:
 &=&\frac{w}{s^2}-\frac{w}{s^2+w^2}\\
 &=&\frac{w(s^2+w^2)-ws^2}{s^2(s^2+w^2)}\\
 &=&\frac{w(s^2+w^2)-ws^2}{s^2(s^2+w^2)}=\frac{w^3}{s^2(s^2+w^2)}\\
-\end{eqnarray*} 
+\end{eqnarray*}
 \end{ex}
 \begin{obs}A transformada inversa de Laplace também é uma transformação linear, isto é,
 \begin{equation}{\label{prop_lin_inv}}
@@ -75,13 +77,13 @@ Esse resultado é consequência da propriedade de linearidade \ref{prop_lin}:
 \begin{eqnarray*}
 \mathcal{L }^{-1}\left\{\frac{2}{s}+\frac{4}{s^2}-\frac{1}{s-1}\right\}&=& 2\mathcal{L }^{-1}\left\{\frac{1}{s}\right\}+4\mathcal{L }^{-1}\left\{\frac{1}{s^2}\right\}-\mathcal{L }^{-1}\left\{\frac{1}{s-1}\right\}\\
 &=&2+4t-e^t
-\end{eqnarray*} 
+\end{eqnarray*}
 \end{ex}
 
 \subsection*{Exercícios}
 \begin{exer} Use a propriedade de linearidade \ref{prop_lin} para calcular a transformada de Laplace das seguintesfunções
  \begin{itemize}
-  \item[a)] $f(t)=-8t+2\sen(5t)$ 
+  \item[a)] $f(t)=-8t+2\sen(5t)$
   \item[b)] $f(t)=-3t^2(t-2)$
   \item[c)] $f(t)=(2t-3)^3$
   \item[d)] $f(t)=\cos(t)^2$
@@ -95,7 +97,7 @@ Esse resultado é consequência da propriedade de linearidade \ref{prop_lin}:
  \end{exer}
 \begin{resp}
  \begin{itemize}
-  \item[a)] $F(s)=-\frac{8}{s^2}+\frac{10}{s^2+25}$ 
+  \item[a)] $F(s)=-\frac{8}{s^2}+\frac{10}{s^2+25}$
   \item[b)] $F(s)=-\frac{18}{s^4}+\frac{12}{s^3}$
   \item[c)] $F(s)=\frac{48}{s^4}-\frac{72}{s^3}+\frac{54}{s^2}-\frac{27}{s}$
   \item[d)] $F(s)=\frac{s^2+2}{s^3+4s}$
@@ -105,7 +107,7 @@ Esse resultado é consequência da propriedade de linearidade \ref{prop_lin}:
 \end{resp}
 \begin{exer} Use a linearidade da transformada inversa para calcular a transformada inversa de Laplace das seguintes funções
  \begin{itemize}
-  \item[a)] $F(s)=\frac{2s-8}{s^2+4}$ 
+  \item[a)] $F(s)=\frac{2s-8}{s^2+4}$
   \item[b)] $F(s)=2s\left(\frac{1}{s^2-4}+\frac{1}{s(s^2-4)}\right)$
  \end{itemize}
  \end{exer}
@@ -139,7 +141,7 @@ Esse resultado é consequência da propriedade de linearidade \ref{prop_lin}:
 \end{equation}
 \end{teo}
 \begin{proof}
-Primeiro considere $f(t)$ e $f'(t)$ contínuas nos reais não negativos. Usando integração por partes na definição de transformada de Laplace, temos 
+Primeiro considere $f(t)$ e $f'(t)$ contínuas nos reais não negativos. Usando integração por partes na definição de transformada de Laplace, temos
 \begin{eqnarray*}
  \mathcal{L}\{f'(t)\}&=&\int_0^\infty e^{-st} f'(t)dt\\
  &=&\left.e^{-st}f(t)\right|_0^\infty-  \int_0^\infty (-se^{-st}) f(t)dt\\
@@ -150,20 +152,20 @@ Se $f'(t)$ for contínua por partes, então separamos as integrais em somas de t
 \end{proof}
 Considere $f(t)$ e $f'(t)$ contínuas e $f''(t)$ contínua por partes. Então podemos aplicar a expressão \ref{prop_der_1} duas vezes e obter:
 \begin{eqnarray}
-\nonumber \mathcal{L }\{f''(t)\}&=&s \mathcal{L }\{ f'(t)\}-f'(0)\\ 
+\nonumber \mathcal{L }\{f''(t)\}&=&s \mathcal{L }\{ f'(t)\}-f'(0)\\
 \nonumber &=&s\left( s \mathcal{L }\{ f(t)\}-f(0)\right)-f'(0)\\
 &=& s^2 \mathcal{L }\{ f(t)\}-sf(0)-f'(0). {\label{prop_der_2}}
 \end{eqnarray}
 Analogamente, se $f(t),\ f'(t), \cdots, f^{(n-1)}(t)$ são contínuas e $f^{(n)}(t) $ é contínua por partes, então
 \begin{eqnarray}{\label{prop_der_n}}
- \mathcal{L }\{f^{(n)}(t)\}= s^n \mathcal{L }\{ f(t)\}-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots-f^{(n-1)}(0). 
+ \mathcal{L }\{f^{(n)}(t)\}= s^n \mathcal{L }\{ f(t)\}-s^{n-1}f(0)-s^{n-2}f'(0)-\cdots-f^{(n-1)}(0).
 \end{eqnarray}
 Vamos usar a propriedade \ref{prop_der} da transformada da derivada para calcular transformadas de Laplace.
 \begin{ex}Vamos calcular a transformada de $f(t)=\cos(t)$ usando a propriedade \ref{prop_der}. Observe as derivadas:
   \begin{equation}
  f(t)=\cos(t),\qquad f'(t)=-\sen(t)\qquad\hbox{e}\qquad f''(t)=-\cos(t).
 \end{equation}
-Logo, 
+Logo,
  \begin{equation}
 f''(t)=-f(t).
 \end{equation}
@@ -209,7 +211,7 @@ G(s)=\frac{s^2-1}{(s^2+1)^2},
 
 \subsection*{Exercícios}
 \begin{exer}
-Dado $f(t)=\cosh(at)$, sabemos que $f''(t)=f(t)$, $f(0)=\cosh(0)=1$ e $f'(0)=a\sinh(0)=0$. Use essas informações e a propriedade da transformada da derivada para calcular $\mathcal{L}\{f(t)\}$.
+Dado $f(t)=\cosh(at)$, sabemos que $f''(t)=a^2f(t)$, $f(0)=\cosh(0)=1$ e $f'(0)=a\sinh(0)=0$. Use essas informações e a propriedade da transformada da derivada para calcular $\mathcal{L}\{f(t)\}$.
 \end{exer}
 \begin{exer} Use a propriedade da transformada da derivada para calcular a transformada das seguintes funções:
 \begin{center}
@@ -251,13 +253,13 @@ y'(0)&=&1
 \end{eqnarray*}
 Primeiro aplicamos a transformada de Laplace na equação diferencial:
   \begin{equation}
- \mathcal{F}\{y''(t)\}+\mathcal{F}\{y(t)\}=\mathcal{F}\{2t\}
+ \mathcal{L}\{y''(t)\}+\mathcal{L}\{y(t)\}=\mathcal{L}\{2t\}
  \end{equation}
  Em seguida, usamos a equação \ref{prop_der_2} para obter
   \begin{equation}
-s^2 \mathcal{L }\{ y(t)\}-sy(0)-y'(0)+\mathcal{F}\{y(t)\}=2\mathcal{F}\{t\}.
+s^2 \mathcal{L }\{ y(t)\}-sy(0)-y'(0)+\mathcal{L}\{y(t)\}=2\mathcal{L}\{t\}.
  \end{equation}
- Agora, usamos a notação $\mathcal{L }\{ y(t)\}=Y(s)$ e o fato que $\mathcal{F}\{t\}=\frac{1}{s^2}$ para escrever
+ Agora, usamos a notação $\mathcal{L }\{ y(t)\}=Y(s)$ e o fato que $\mathcal{L}\{t\}=\frac{1}{s^2}$ para escrever
   \begin{equation}
 s^2 Y(s)-sy(0)-y'(0)+Y(s)=\frac{2}{s^2}.
  \end{equation}
@@ -358,14 +360,8 @@ A transformada inversa é
 f(t)=\frac{1}{2}\left(e^{t}-\cos(t)-\sen(t)\right).
 \end{equation}
 \end{ex}
-\begin{exer}Calcule a transformada inversa de Laplace da função 
- \begin{equation}
-F(s)=\frac{3s^2-2s-1}{(s-3)(s^2+1)}.
-\end{equation}
-\end{exer}
+
 \subsection*{Exercícios}
-
-
 \begin{exer}{\label{frac_parciais}} Realize a expansão em frações parciais das seguintes funções racionais $F(s)$ e calcule as respectivas transformadas inversas $f(t)=\mathcal{L}^{-1}\{F(s)\}$.
 \begin{itemize}
 \item[a)]$F(s)=\frac{s^2-6s+4}{s^3-3s^2+2s}$
@@ -480,7 +476,7 @@ A+C&=&0\\
 A&=&0  \\
 B&=&\frac{1}{3}  \\
 C&=& 0 \\
-D&=&\frac{2}{3}  
+D&=&\frac{2}{3}
 \end{eqnarray*}
 \begin{eqnarray*}
 F(s)&=&\frac{1}{3}\frac{1}{s^2+2s+2}+\frac{2}{3}\frac{1}{s^2+2s+5}\\
