@@ -17,17 +17,20 @@ def casa_brackets(text, sub=b"{"):
     return pos_ini, pos
 
 
-def extrai_exercicios(arq):
+def extrai_exercicios(arq, exer, exeresol, converte):
     texto = b""
-    blocos = [rb"exer", rb"resp", rb"exeresol", rb"resol"]
+
+    blocos = ([rb"exer", rb"resp"] if exer else [])\
+           + ([rb"exeresol", rb"resol"] if exeresol else [])
     aberturas = [rb"\begin{" + l + rb"}" for l in blocos]
     fechamentos = [rb"\end{" + l + rb"}" for l in blocos]
-    tags = [rb"\chapter{", rb"\section{"]#, rb"\subsection{"]
+    tags = [rb"\chapter{", rb"\section{"] #  , rb"\subsection{"]
     contagem = 0
     dentro_de_bloco = False
     with open(arq, 'rb') as f: 
         for linha in f.readlines():
-            linha = linha.replace(rb"{exeresol}", rb"{exer}").replace(rb"{resol}", rb"{resp}")
+            if converte:
+                linha = linha.replace(rb"{exeresol}", rb"{exer}").replace(rb"{resol}", rb"{resp}")
             if any([s in linha for s in tags]):
                 texto += linha
 
@@ -43,7 +46,24 @@ def extrai_exercicios(arq):
             if any([s in linha for s in fechamentos]):
                 dentro_de_bloco = False
 
-    return texto.decode() if contagem>0 else ""
+    return contagem, texto.decode() if contagem>0 else ""
+
+
+def abre_arquivos(exer, exeresol, converte):
+    texto = ""
+    with open("main.tex", "rb") as f:
+        for linha in f.readlines():
+            if linha.strip()[0:9] == rb"\include{":
+                # print(linha)
+                s, e = casa_brackets(linha)
+                arq = linha[s+1 : e-1].decode() + ".tex"
+                print(r"%Extraindo de " + arq)
+                texto = texto + r"%%%% Extraído de " + arq + "\n"
+                contagem, conteudo = extrai_exercicios(arq,
+                     exer, exeresol, converte)
+                texto = texto + conteudo
+                # print(texto)
+    return texto
 
 cabecalho = r"""\documentclass[12pt]{book}
 \input preambulo.tex
@@ -52,43 +72,18 @@ cabecalho = r"""\documentclass[12pt]{book}
 \externaldocument{main}
 \begin{document}"""
 
-print(cabecalho)
+receitas = [("exercicios_resolvidos.tex", (False, True,  False)),
+            ("exercicios.tex",            (True,  False, False)),
+            ("exercicios_todos.tex",      (True,  True,  False))]
 
+for arq, receita in receitas:
+    if receita[0] or receita[2]:
+        rodape = r"\include{respostas}" + '\n' + r"\end{document}"
+    else:
+        rodape = r"\end{document}"
 
+    texto = cabecalho + abre_arquivos(*receita) + rodape
+    with open(arq, "w") as f:
+        f.write(texto)
 
-with open("main.tex", "rb") as f:
-    for linha in f.readlines():
-        if linha.strip()[0:9] == rb"\include{":
-            # print(linha)
-            s, e = casa_brackets(linha)
-            arq = linha[s+1 : e-1].decode() + ".tex"
-            # print(s, e)
-            #print(arq)
-            print(r"%%%% Extraído de " + arq)
-            texto = extrai_exercicios(arq)
-            print(texto)
-
-
-print(r"\include{respostas}")
-print(r"\end{document}")
-quit()
-
-cabecalho = r"""\documentclass[12pt]{book}
-\input preambulo.tex
-\setlength{\headheight}{30pt}
-\begin{document}"""
-
-print(cabecalho)
-
-diretorio = "./"
-for (dirpath, dirnames, filenames) in os.walk (diretorio):
-    #print(filenames)
-    for arq in filenames:
-        if arq[-4:] == r".tex":
-            nome_com_caminho = os.path.join(dirpath, arq)
-            print(r"%%%% Extraído de " + nome_com_caminho)
-            texto = extrai_exercicios(os.path.join(dirpath, arq))
-            print(texto)
-
-print(r"\include{respostas}")
-print(r"\end{document}")
+# print(texto)
