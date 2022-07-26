@@ -41,12 +41,13 @@ def extrai_exercicios(arq, exer, exeresol, converte):
             if dentro_de_bloco:
                 # if rb"ref{" in linha:
                 #   print(linha)
-                texto += linha
+                if linha.strip() != b'':
+                    texto += linha 
 
             if any([s in linha for s in fechamentos]):
                 dentro_de_bloco = False
 
-    return contagem, texto.decode() if contagem>0 else ""
+    return contagem, limpa_secoes_vazias(texto.decode()) if contagem>0 else ""
 
 
 def abre_arquivos(exer, exeresol, converte):
@@ -64,6 +65,22 @@ def abre_arquivos(exer, exeresol, converte):
                 texto = texto + conteudo
                 # print(texto)
     return texto
+
+def limpa_secoes_vazias(texto):
+    tag = r"\section"
+    tags = [tag, r"\chapter", r"%%%% Extraído de"]
+    linhas = texto.splitlines() + [""]
+    
+    texto = ""
+    for i, linha in enumerate(linhas):
+        if (tag in linha and all(t not in linhas[i+1] for t in tags) and linhas[i+1] != "") or tag not in linha:
+            texto += linha+"\n"
+        elif tag in linha:
+            texto += r"\stepcounter{section}"
+            print("Seção vazia")
+
+    return texto.strip()
+        
 
 cabecalho = r"""\documentclass[12pt]{book}
 \input preambulo.tex
