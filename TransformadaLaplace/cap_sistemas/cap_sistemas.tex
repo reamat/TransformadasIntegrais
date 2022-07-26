@@ -428,17 +428,14 @@ Considere o seguinte problema de valor inicial:
 x'(t)&=&-2x(t) +  y(t)\\
 y'(t)&=&\alpha x(t) - 2y(t)\\
 \end{eqnarray*}
-Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
+Com $x(0)=0$ e $y(0)=2$, onde $\alpha$ é uma constante real.
 \begin{itemize}
- \item[a)] Assinale a alternativa que indica o tipo de amortecimento do sistema dado para os valores de $\alpha$ dados respectivamente por $-1$, $0$, $1$ e $2$:
- \subitem(~~) Sem amortecimento, subamortecido, criticamente amortecido e superamortecido.
- \subitem(~~) Subamortecido, subamortecido, criticamente amortecido e superamortecido.
- \subitem(~~) Subamortecido, criticamente amortecido, superamortecido e superamortecido.
- \subitem(~~) Superamortecido, superamortecido, criticamente amortecido e subamortecido.
- \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e subamortecido.
- \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e sem amortecimento.
-\item [b)] Use a técnica da Transformada de Laplace para encontrar uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
+ \item[a)] Obtenha tipo de amortecimento do sistema dado para os valores de $\alpha$ dados respectivamente por $-1$, $0$, $1$ e $2$:
+ \item [b)] Encontre uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
+ 
+ Subamortecido, criticamente amortecido, superamortecido e superamortecido. $x(t)=e^{-t}-e^{-3t}$ e $y(t)=e^{-t}+e^{-3t}$.
 \end{itemize}
+
 \end{exer}
 \begin{exer}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
 \begin{equation}\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)\end{equation}
@@ -501,3 +498,30 @@ com $x(0)=0$ e $y(0)=0$.
  \item[c)] Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.
 \end{itemize}
 \end{exer}
+
+\begin{exer} Considere o seguinte problema de valor inicial:
+\begin{eqnarray*}
+      x'(t)&=&-x(t)+ y(t)+\delta(t) \\
+      y(t)&=& -\int_0^t e^{(t-\tau)} y(\tau)d\tau+x(t),
+\end{eqnarray*}
+Com $x(0)=0$. Calcule $x(t)$ e $y(t)$.
+\end{exer}
+\begin{resp}
+ $X(s)=\frac{s}{\left(s^2+1\right)}$, $Y(s)=\frac{s-1}{\left(s^2+1\right)}$, $x(t)=\cos(t)$ e $y(t)=\cos(t)-\sin(t)$
+\end{resp}
+
+\begin{exer}As concentrações de três reagentes $A$, $B$ e $C$ são dadas por $x(t)$, $y(t)$ e $z(t)$, respectivamente. Considere a reação dada por $A \longleftrightarrow B \longleftrightarrow C$ e modelada por:
+\begin{eqnarray*}
+       x'(t) &=& -2 x(t) + 2 y(t)+6\\
+       y'(t) &=& 2 x(t) - 5 y(t)\\
+       z'(t) &=& 3  y(t)-6
+\end{eqnarray*}
+com $x(0)=11$, $y(0)=0$ e $z(0)=1$. Calcule $x(t)$, $y(t)$ e $z(t)$;
+$$X(s)=\frac{11s^2+61s+30}{s(s+1)(s+6)}$$
+$$Y(s)=\frac{22s^2+121s+60}{s(s+1)(s+5)(s+6)}=\frac{22 s + 12}{s (s + 1) (s + 6)}$$
+$$Z(s)=\frac{24-6s}{s(s+1)(s+6)}$$
+$$x(t)= 2 e^{-6 t} + 4 e^{-t} + 5$$
+$$y(t) = -4 e^{-6 t} + 2e^{-t} + 2$$
+$$z(t) = 2 e^{-6 t} -6e^{-t} + 4$$
+\end{exer}
+       
