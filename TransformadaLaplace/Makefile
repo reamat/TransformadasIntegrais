@@ -52,6 +52,18 @@ main.html: main.tex
 #	htlatex main 'xhtml,mathml,charset=utf-8' ' -cunihtf'
 	cp config-pdf.knd config.knd
 
+exer:
+	python3 extrai_exercicios.py
+	cp config-pdf.knd config.knd
+	latex main
+	latex exercicios
+	latex exercicios_resolvidos
+	latex exercicios_todos
+	pdflatex exercicios
+	pdflatex exercicios_resolvidos
+	pdflatex exercicios_todos
+
+
 
 clean: 
 	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
