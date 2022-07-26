@@ -53,7 +53,7 @@ main.html: main.tex
 	cp config-pdf.knd config.knd
 
 exer:
-	python3 extrai_exercicios.py
+	python3 ../extrai_exercicios.py
 	cp config-pdf.knd config.knd
 	latex main
 	latex exercicios

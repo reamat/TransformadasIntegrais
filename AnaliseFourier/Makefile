@@ -50,6 +50,17 @@ main.html: main.tex
 	mk4ht htlatex main "myconfig,3,notoc*" "" "-d./html/"
 	cp config-pdf.knd config.knd
 
+exer:
+	python3 ../extrai_exercicios.py
+	cp config-pdf.knd config.knd
+	latex main
+	latex exercicios
+	latex exercicios_resolvidos
+	latex exercicios_todos
+	pdflatex exercicios
+	pdflatex exercicios_resolvidos
+	pdflatex exercicios_todos
+
 
 clean: 
 	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
