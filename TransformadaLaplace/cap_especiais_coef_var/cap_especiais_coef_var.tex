@@ -138,7 +138,7 @@ Use a tabela da transformada de Laplace para mostrar que:
 \end{itemize}
 \end{exer}
 
-\section{Transformada de Laplace de funções periódicas}
+\section{Transformada de Laplace de funções periódicas}\label{sec_periodicas}
 Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
 \begin{teo}{\label{prop_fun_per}}(Propriedade da transformada de funções periódicas) Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
 \begin{equation}
@@ -842,7 +842,34 @@ Como $e^{-as}\to 0$ quando $s\to \infty$, então
 
 \begin{exer} Verifique para $F(s)=\frac{s+10}{s^2+4}$ que o limite $\lim_{s\to 0+}sF(s)$ existe mesmo quando $\displaystyle\lim_{t\to +\infty} f(t)$ não existe.
 \end{exer}
-
+\begin{exer}
+  Seja $f(t)$ uma função periódica de período $T$, cuja transformada é dada por:
+$$F(s)=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.$$
+Mostre que:
+$$\lim_{s\to 0+}sF(s)=\mu,$$
+onde $\mu$ é o valor médio de $f(t)$, dado por:
+$$\mu = \frac{1}{T}\int_0^Tf(t)dt.$$
+\end{exer}
+\begin{resp}Basta escrever o limite como:
+  $$\lim_{s\to 0+}sF(s)=\left(\lim_{s\to 0+}\frac{1}{1-e^{-sT}}\right)\left(\lim_{s\to 0+} \int_0^Tf(t)e^{-st}dt\right).$$
+\end{resp}
+\begin{exer}
+  Na Seção~\ref{sec_remedio}, trabalhamos com a função $$c(t) = c_0\sum_{n=0}^\infty e^{-\frac{t-nT}{\tau}}u(t-nT),$$
+  cuja transformada de Laplace é dada por:
+  \begin{equation*}
+    C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\right)^n = \left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\frac{1}{1-e^{-sT}}
+  \end{equation*}
+    e cujo valor médio da solução assintótica foi calculado no Exercício Resolvido~\ref{remedio_valor_medio} e é dado por:
+    $$\mu:=\frac{1}{T}\int_0^T \left[\lim_{k \to +\infty}c(a+kT)\right]da=\frac{c_0\tau}{T}.$$
+    Mostre que $\displaystyle\lim_{s\to 0+}sF(s)=\mu$.
+  \end{exer}
+\begin{resp}Basta simplificar e aplicar o teorema de L'Hôpital:
+  \begin{eqnarray*}
+    \lim_{s\to 0+}sF(s)&=&\lim_{s\to 0+}\left(\frac{c_0}{ s+\frac{1}{\tau}}\cdot \frac{s}{1-e^{-sT}}\right)\\
+    &=&c_0\tau\lim_{s\to 0+}\left(\frac{s}{1-e^{-sT}}\right)\\
+    &=&c_0\tau\lim_{s\to 0+}\left(\frac{1}{Te^{-sT}}\right)=\frac{c_0\tau}{T}=\mu
+  \end{eqnarray*}
+\end{resp}
 \begin{exer}
 Encontre a transformada inversa das funções abaixo utlizando o método que achar adequado.
 \begin{itemize}

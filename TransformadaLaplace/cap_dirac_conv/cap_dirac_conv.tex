@@ -470,7 +470,7 @@ Calcule a solução dos seguintes problemas de valor inicial:
 \end{itemize}
 \end{resp}
 
-\section{Aplicação: metabolismo de uma medicação}
+\section{Aplicação: metabolismo de uma medicação}\label{sec_remedio}
 Durante um período de consumo de uma medicação, a concentração da substância ingerida na corrente sanguinea evolui segundo um modelo simples da seguinte forma:
 \begin{itemize}
  \item No caso de ausência de dosagens, a variação da concentração é proporcional a concentração.
@@ -544,7 +544,7 @@ Tomando o limite $k\to +\infty$, temos:
   &=& A e^{-\frac{a}{\tau}}, ~~~A = c_0\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}.
 \end{eqnarray*}
 \end{resol}
-\begin{exeresol}
+\begin{exeresol}\label{remedio_valor_medio}
   Usando o resultado anterior, calcule o valor médio da solução assintótica (no infinito), isto é:
   $$\mu:=\frac{1}{T}\int_0^T \left[\lim_{k \to +\infty}c(a+kT)\right]da.$$
 \end{exeresol}
@@ -554,6 +554,25 @@ Tomando o limite $k\to +\infty$, temos:
     &=&\frac{c_0\tau}{T}\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}\left(1-e^{-\frac{T}{\tau}}\right)\\
     &=&\frac{c_0\tau}{T}\frac{1}{e^{\frac{T}{\tau}}-1}\left(e^{\frac{T}{\tau}}-1\right)=\frac{c_0\tau}{T}.
   \end{eqnarray*}
+\end{resol}
+\begin{exeresol}
+  Um certo medicamento é absorvido instantaneamente e permanece homogeneamente distribuído na corrente sanguínea depois de administrado. A variação de concentração desse medicamento é proporcional à concentração $c(t)$ com uma taxa de proporcionalidade de $\tau=1$s. Considere a situação onde a concentração inicial era nula, isto é, $c(0)=0$ e o indivíduo tomou três doses da substância, a primeira em $t=0$, a segunda em $t=2$ e a última em $t=5$, todas com concentração $c_0=2$ mg/l. Construa o modelo matemático para a concentração $c(t)$ e resolva problema obtido.
+\end{exeresol}
+\begin{resol}
+  Considerando que a variação de concentração desse medicamento é proporcional à concentração $c(t)$ com uma taxa de proporcionalidade de $\tau=1$s, concluímos que a parte homogênea da equação é $c'(t)=-c(t)$. Adicionando os termos forçantes, temos: $c(t)+c'(t)=2\delta(t)+2\delta(t-2)+2\delta(t-5)$. 
+
+  Agora, aplicamos a transformada de Laplace para resolver o problema. Temos
+  $$
+  (s+1)C(s)=2+2e^{-2s}+2e^{-5s},
+  $$
+  isto é,
+  $$
+  C(s)=\frac{2+2e^{-2s}+2e^{-5s}}{s+1}.
+  $$
+  A tranformada inversa é calculada pelo item 7 da tabela, combinada com a propriedade da translação em $t$:
+  $$
+  c(t)=2u(t)e^{-t}+2u(t-2)e^{-(t-2)}+2u(t-5)e^{-(t-5)}.
+  $$
 \end{resol}
 
 \begin{exer}
@@ -597,8 +616,8 @@ ou seja,
 \begin{equation}y(t)=\frac{1-e^{-t}}{\varepsilon}u(t)-u(t-\varepsilon)\frac{1-e^{-(t-\varepsilon)}}{\varepsilon}.\end{equation}
 Esta solução pode ser escrita como uma função contínua:
 \begin{equation}y(t)=\left\{\begin{array}{ll}
-0,&t\leq 0,\\~\\
-\frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\~\\
+0,&t\leq 0,\\
+\frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\
 \frac{e^{\varepsilon}-1}{\varepsilon}~\!
 e^{-t},&t\geq \varepsilon.
 \end{array}
@@ -607,8 +626,8 @@ Para $\varepsilon>0$ pequeno podemos usar a seguinte aproximação:
 \begin{equation}e^t=1+t+\frac{t^2}{2}+\frac{t^3}{3!}+\ldots \approx 1+t\end{equation}
 Assim, temos:
 \begin{equation}y(t)\approx\left\{\begin{array}{ll}
-0,&t\leq 0,\\~\\
-\frac{t}{\varepsilon},&0<t\leq \varepsilon,\\~\\
+0,&t\leq 0,\\
+\frac{t}{\varepsilon},&0<t\leq \varepsilon,\\
 e^{-t},&t\geq \varepsilon.
 \end{array}
 \right.\end{equation}
