@@ -55,17 +55,11 @@
 
 %%%% graphics %%%%
 \usepackage{graphics}
-%\usepackage{graphicx}
-%\usepackage{caption}z
-\usepackage[normalem]{ulem}
-%\usepackage{pstricks,pst-plot}
-\usepackage[dvips]{graphicx}%
-%\usepackage{pst-math}
-%\usepackage{pst-plot}
-%\usepackage{pst-circ}
+\usepackage{graphicx}
+%\usepackage{caption}
 
 %%%% links %%%%
-\usepackage[pdfborder={0 0 0 [0 0]},colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[breaklinks,pdfborder={0 0 0 [0 0]},colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
 
 %%%% copy and paste from PDF (correctly) %%%%
 \usepackage{upquote}
@@ -98,8 +92,8 @@
 \renewcommand{\arraystretch}{1.5} %space between rows in tables
 \usepackage{array,booktabs}
 \usepackage{xcolor}
-\usepackage{tikz}
-
+%\usepackage{tikz}
+\usepackage{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MACROS E NOVOS COMANDOS
@@ -116,11 +110,16 @@
 \newcommand{\field}[1]{\mathbb{#1}}
 %emphasis \emph
 \DeclareTextFontCommand{\emph}{\bfseries}
-\newcommand{\sen}{\operatorname{sen}\,}
-\newcommand{\senh}{\operatorname{senh}\,}
-\renewcommand{\sin}{\operatorname{sen}\,}
-\renewcommand{\sinh}{\operatorname{senh}\,}
-\newcommand{\erf}{\operatorname{erf}\,}
+%\newcommand{\sen}{\operatorname{sen}\,}
+\DeclareMathOperator*{\sen}{sen}
+\DeclareMathOperator*{\senh}{senh}
+%\DeclareMathOperator*{\sin}{sen}
+%\DeclareMathOperator*{\sinh}{senh}
+
+
+%\newcommand{\senh}{\operatorname{senh}\,}
+\renewcommand{\sin}{\operatorname{\sen}}
+\renewcommand{\sinh}{\operatorname{\senh}}
 \newcommand{\tg}{\operatorname{tg}\,}
 \newcommand{\p}{\partial}
 \newcommand{\Dom}{\operatorname{Dom}\,}
