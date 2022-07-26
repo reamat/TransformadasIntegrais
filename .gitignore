@@ -19,3 +19,6 @@ html
 *.lg
 *.tmp
 *.xref
+*.fdb_latexmk
+*.fls
+*.synctex.gz

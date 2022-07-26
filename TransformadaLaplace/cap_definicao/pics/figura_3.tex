@@ -1,10 +1,10 @@
 \documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1.5cm,yunit=1cm, linewidth=1\pslinewidth}
  \begin{pspicture}(-1.0,-1.0)(2.5,4.0)
- \psaxes[labels]{->}(0,0)(-0.5,-0.5)(1.5,3.5)
+ \psaxes[labels,showorigin=false]{->}(0,0)(-0.5,-0.5)(1.5,3.5)
 \psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{1.5}{2.72 x -1 mul exp}
-\psplot[linecolor=red,plotstyle=curve,plotpoints=200]{0.0}{1.5}{2.72 x exp}
-\rput(1.7,.3){$t$}
-\rput(1.5,3.9){$e^t$}
+\psplot[linecolor=red,plotstyle=curve,plotpoints=200]{0.0}{1.2}{2.72 x exp}
+\rput(1.6,.1){$t$}
+\rput(1.2,2.8){$e^t$}
 \rput(1.2,0.7){$e^{-t}$}
 \end{pspicture}
 \end{document}
