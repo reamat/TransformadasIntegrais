@@ -362,6 +362,36 @@ f(t)=\frac{1}{2}\left(e^{t}-\cos(t)-\sen(t)\right).
 \end{ex}
 
 \subsection*{Exercícios}
+\begin{exeresol}
+  Calcule a transformada inversa da função dada por:
+  $$F(s)=\frac{s^2+5s+5}{(s+1)^2(s+2)}$$ 
+\end{exeresol}
+\begin{resol}
+  Primeiro usamos frações parciais para escrever $F(s)$ na forma desejada. Fazemos
+  \begin{align*}
+  F(s)&=\frac{s^2+5s+5}{(s+1)^2(s+2)}\\
+  &=\frac{A}{(s+1)^2}+\frac{B}{s+1}+\frac{C}{s+2}\\
+  &=\frac{A(s+2)+B(s+1)(s+2)+C(s+1)^2}{(s+1)^2(s+2)} \\
+  &=\frac{s^2(B+C)+s(A+3B+2C)+2A+2B+C }{(s+1)^2(s+2)} 
+  \end{align*}
+  para obter o sistema
+  $$\left\{\begin{array}{l}
+     B+C=1\\
+     A+3B+2C=5\\
+     2A+2B+C=5.
+    \end{array}\right.
+  $$
+  Substituímos $C=1-B$ nas duas últimas equações e obtermos
+  $$\left\{\begin{array}{l}
+     A+B=3\\
+     2A+B=4.
+    \end{array}\right.,
+  $$
+  cuja solução é $A=1$ e $B=2$. Portanto, $C=-1$.
+  
+  A transformada inversa pode ser obtida diretamente dos itens 7 e 8 da tabela:
+  $$f(t)=(2+t)e^{-t}-e^{-2t}.$$
+\end{resol}
 \begin{exer}{\label{frac_parciais}} Realize a expansão em frações parciais das seguintes funções racionais $F(s)$ e calcule as respectivas transformadas inversas $f(t)=\mathcal{L}^{-1}\{F(s)\}$.
 \begin{itemize}
 \item[a)]$F(s)=\frac{s^2-6s+4}{s^3-3s^2+2s}$
