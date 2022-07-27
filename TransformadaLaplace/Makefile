@@ -59,10 +59,11 @@ exer:
 	latex exercicios
 	latex exercicios_resolvidos
 	latex exercicios_todos
+	latex exercicios_todos_com_exemplos
 	pdflatex exercicios
 	pdflatex exercicios_resolvidos
 	pdflatex exercicios_todos
-
+	pdflatex exercicios_todos_com_exemplos
 
 
 clean: 
