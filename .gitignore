@@ -22,3 +22,11 @@ html
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+AnaliseFourier/exercicios_resolvidos.tex
+AnaliseFourier/exercicios_todos_com_exemplos.tex
+AnaliseFourier/exercicios_todos.tex
+AnaliseFourier/exercicios.tex
+TransformadaLaplace/exercicios_resolvidos.tex
+TransformadaLaplace/exercicios_todos_com_exemplos.tex
+TransformadaLaplace/exercicios_todos.tex
+TransformadaLaplace/exercicios.tex
