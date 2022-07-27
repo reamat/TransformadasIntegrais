@@ -44,10 +44,12 @@ main.html: main.tex
 	rm -f html/*
 	mkdir -p html
 	latex main
-	bibtex main
+	bibtex 	main
 	latex main
 	latex main
-	mk4ht htlatex main "myconfig,3,notoc*" "" "-d./html/"
+	htlatex main.tex "myconfig.cfg,3,notoc*" " -cunihtf" "-d./html/"
+#	mk4ht htlatex main "myconfig,3,notoc*" "-cunihtf" "-d./html/"
+#	htlatex main 'xhtml,mathml,charset=utf-8' ' -cunihtf'
 	cp config-pdf.knd config.knd
 
 exer:
@@ -57,13 +59,15 @@ exer:
 	latex exercicios
 	latex exercicios_resolvidos
 	latex exercicios_todos
+	latex exercicios_todos_com_exemplos
 	pdflatex exercicios
 	pdflatex exercicios_resolvidos
 	pdflatex exercicios_todos
+	pdflatex exercicios_todos_com_exemplos
 
 
 clean: 
 	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
 	rm -rf */*.aux */*.log */*.out */*.toc */*.bbl */*.idx */*.ilg */*.ind */*.blg */*.backup 
-	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup *.html *.4ct *.4tc *.css *.idv *.lg *.tmp 
+	rm -f *.aux *.log *.out *.toc *.bbl *.idx *.ilg *.ind *.blg *.backup *.html *.4ct *.4tc *.lg *.tmp *.xref
 
