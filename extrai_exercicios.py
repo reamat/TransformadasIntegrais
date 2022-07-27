@@ -17,11 +17,12 @@ def casa_brackets(text, sub=b"{"):
     return pos_ini, pos
 
 
-def extrai_exercicios(arq, exer, exeresol, converte):
+def extrai_exercicios(arq, exer, exeresol, exemplo):
     texto = b""
 
     blocos = ([rb"exer", rb"resp"] if exer else [])\
-           + ([rb"exeresol", rb"resol"] if exeresol else [])
+           + ([rb"exeresol", rb"resol"] if exeresol else [])\
+           + ([rb"ex"] if exemplo else [])
     aberturas = [rb"\begin{" + l + rb"}" for l in blocos]
     fechamentos = [rb"\end{" + l + rb"}" for l in blocos]
     tags = [rb"\chapter{", rb"\section{"] #  , rb"\subsection{"]
@@ -29,8 +30,8 @@ def extrai_exercicios(arq, exer, exeresol, converte):
     dentro_de_bloco = False
     with open(arq, 'rb') as f: 
         for linha in f.readlines():
-            if converte:
-                linha = linha.replace(rb"{exeresol}", rb"{exer}").replace(rb"{resol}", rb"{resp}")
+            # if converte:
+            #    linha = linha.replace(rb"{exeresol}", rb"{exer}").replace(rb"{resol}", rb"{resp}")
             if any([s in linha for s in tags]):
                 texto += linha
 
@@ -46,11 +47,11 @@ def extrai_exercicios(arq, exer, exeresol, converte):
 
             if any([s in linha for s in fechamentos]):
                 dentro_de_bloco = False
-
+    #return contagem, texto.decode() if contagem>0 else ""
     return contagem, limpa_secoes_vazias(texto.decode()) if contagem>0 else ""
 
 
-def abre_arquivos(exer, exeresol, converte):
+def abre_arquivos(receita):
     texto = ""
     with open("main.tex", "rb") as f:
         for linha in f.readlines():
@@ -60,8 +61,7 @@ def abre_arquivos(exer, exeresol, converte):
                 arq = linha[s+1 : e-1].decode() + ".tex"
                 print(r"%Extraindo de " + arq)
                 texto = texto + r"%%%% Extraído de " + arq + "\n"
-                contagem, conteudo = extrai_exercicios(arq,
-                     exer, exeresol, converte)
+                contagem, conteudo = extrai_exercicios(arq, *receita)
                 texto = texto + conteudo
                 # print(texto)
     return texto
@@ -82,16 +82,17 @@ def limpa_secoes_vazias(texto):
     return texto.strip()
         
 
-cabecalho = r"""\documentclass[12pt]{book}
+cabecalho = r"""\documentclass[10pt]{book}
 \input preambulo.tex
 \setlength{\headheight}{30pt}
 \usepackage{xr}
 \externaldocument{main}
 \begin{document}"""
 
-receitas = [("exercicios_resolvidos.tex", (False, True,  False)),
-            ("exercicios.tex",            (True,  False, False)),
-            ("exercicios_todos.tex",      (True,  True,  False))]
+receitas = [("exercicios_resolvidos.tex",         (False, True,  False)),
+            ("exercicios.tex",                    (True,  False, False)),
+            ("exercicios_todos.tex",              (True,  True,  False)),
+            ("exercicios_todos_com_exemplos.tex", (True,  True,  True ))]
 
 for arq, receita in receitas:
     if receita[0] or receita[2]:
@@ -99,7 +100,7 @@ for arq, receita in receitas:
     else:
         rodape = r"\end{document}"
 
-    texto = cabecalho + abre_arquivos(*receita) + rodape
+    texto = cabecalho + abre_arquivos(receita) + rodape
     with open(arq, "w") as f:
         f.write(texto)
 
