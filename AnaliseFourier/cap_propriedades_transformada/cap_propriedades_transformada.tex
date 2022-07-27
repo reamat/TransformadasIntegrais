@@ -107,11 +107,13 @@ onde
 Veja os diagramas de espectro de $G(w)$ quando $a=b=1$ na figura \ref{diag_espec_trans_4}.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_2}
-\includegraphics{cap_propriedades_transformada/pics/figura_3}\end{center}
+\includegraphics[width=\textwidth]{cap_propriedades_transformada/pics/figura_2}\vspace{10pt}
+\includegraphics[width=\textwidth]{cap_propriedades_transformada/pics/figura_3}
+[width=textwidth]\end{center}
 \caption{\label{diag_espec_trans_4}}
 \end{figure}
 \end{ex}
+
 \begin{teo}[Deslocamento no eixo $t$]\label{prop_desl_t} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\left\{f(t-a)\right\}=e^{-iaw}F(w).
@@ -677,13 +679,14 @@ Comparando com o exemplo \ref{ex_ant}, é esperado que $G(w)$ convirja para $F(w
 e a curva $G(w)$ converge para 0, exceto em $w=w_0$ e $w=-w_0$. Portanto o limite de $G(w)$ é $F(w)$. Os diagramas de magnitude de $F(w)$ e de $G(w)$ para alguns valores de $a>0$ e $w_0=1$ são apresentados na figura \ref{diag_espec_05}.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_4}
-\includegraphics{cap_propriedades_transformada/pics/figura_5}
-\includegraphics{cap_propriedades_transformada/pics/figura_6}
-\includegraphics{cap_propriedades_transformada/pics/figura_7}\end{center}
+\includegraphics[width=.48\textwidth]{cap_propriedades_transformada/pics/figura_4}
+\includegraphics[width=.48\textwidth]{cap_propriedades_transformada/pics/figura_5}\vspace{30pt}
+\includegraphics[width=.48\textwidth]{cap_propriedades_transformada/pics/figura_6}
+\includegraphics[width=.48\textwidth]{cap_propriedades_transformada/pics/figura_7}
+\end{center}
 \caption{\label{diag_espec_05}}
 \end{figure}
-\end{ex}
+\end{ex}~
 
 
 \section{Aplicação: Sinais Discretos}
@@ -692,13 +695,13 @@ Considere $f(t)$ uma função real, definiremos $f_T(t)$ uma versão discretizad
 \begin{equation}
 f_T(t)=\sum_{k=-\infty}^\infty f(kT) \delta (t-kT),
 \end{equation}
-assim $f_T(t)$ é um trem de Dirac's cujas amplitudes coincidem com o valor da função $f(t)$ nos pontos de amostragem $kT$. Veja um exemplo na figura \ref{sinal_discreto}.
+assim $f_T(t)$ é um trem de Dirac, cujas amplitudes coincidem com o valor da função $f(t)$ nos pontos de amostragem $kT$. Veja um exemplo na figura \ref{sinal_discreto}.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_8}\end{center}
+\includegraphics[width=\textwidth]{cap_propriedades_transformada/pics/figura_8}\end{center}
 \caption{\label{sinal_discreto}}
 \end{figure}
-A fim de calcularmos a transforma de Fourier de $f_T(t)$, observamos que:
+A fim de calcularmos a transformada de Fourier de $f_T(t)$, observamos que:
 \begin{eqnarray*}
 f_T(t)&=&\sum_{k=-\infty}^\infty f(kT) \delta (t-kT)\\
 &=&\sum_{k=-\infty}^\infty f(t) \delta (t-kT)\\
@@ -726,9 +729,8 @@ F_T(w)&=&\mathcal{F}\left\{f_T(t)\right\}\\
 onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja um exemplo na figura \ref{sinal_discreto1}.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_9}
-\hspace{10pt}
-\includegraphics{cap_propriedades_transformada/pics/figura_10}\end{center}
+\includegraphics[width=.2\textwidth]{cap_propriedades_transformada/pics/figura_9}\vspace{10pt}
+\includegraphics[width=\textwidth]{cap_propriedades_transformada/pics/figura_10}\end{center}
 \caption{\label{sinal_discreto1}}
 \end{figure}
 \begin{obs}Observamos que se a frequência de amostragem $w_a$ for superior a $2w_c$, então $F_T(w)=\frac{1}{T}F(w)$ no intervalo $[-w_c,w_c]$ e, portanto, toda a informação de $f(t)$ é preservada. De fato, neste caso, podemos escrever:

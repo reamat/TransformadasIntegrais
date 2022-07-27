@@ -33,9 +33,9 @@
 
 \begin{table}
 \begin{center}
-
+{%\renewcommand{\arraystretch}{2}%
+    \resizebox*{!}{\dimexpr\textheight-2\baselineskip-3.4pt\relax}{
  \begin{tabular}{ccc}
-
 
 \begin{tabular}{|c|c|c|}
 \hline
@@ -53,8 +53,6 @@ Sol $\sharp$	&	103,8	&	9631	\\ \hline
 L\'{a}	&	110,0	&	9091	\\ \hline
 L\'{a} $\sharp$	&	116,5	&	8581	\\ \hline
 Si	&	123,5	&	8099	\\ \hline
-
-
  \end{tabular}&
 
 \begin{tabular}{|c|c|c|}
@@ -151,7 +149,7 @@ L\'{a} $\sharp$	&	3729	&	268,1	\\ \hline
 Si	&	3951	&	253,1	\\ \hline
 
  \end{tabular}
- \end{tabular}
+ \end{tabular}}}
  \caption{\label{tab_notas}Tabela de notas musicais}
 \end{center}
 \end{table}

@@ -151,7 +151,9 @@ com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
 Se $n=m\neq 0$, temos:
  \begin{equation}\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[1-\cos\left(\frac{4\pi nt}{T}\right)\right]dt=\frac{T}{2}\end{equation}
  Se $n\neq m$, temos:
- \begin{equation}\int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt=\frac{1}{2}\int_0^T\left[\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)\right]dt=0\end{equation}
+ \begin{equation}
+   \int_0^T\sen\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)dt = \frac{1}{2}\int_0^T\left[\cos\left(\frac{2\pi (n-m)t}{T}\right)-\cos\left(\frac{2\pi (n+m)t}{T}\right)\right]dt=0
+\end{equation}
  Para obter (\ref{rel_ort_cc}), usamos a seguinte identidade trigonométrica:
  \begin{equation}\cos(a)\cos(b)=\frac{\cos(a-b)+\cos(a+b)}{2}\end{equation}
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
@@ -213,7 +215,8 @@ f(t+2)&=&f(t),\ \ \forall t\in\mathbb{R}.
 \end{eqnarray*}
 Essa função é suave por partes e contínua em todos os pontos. Portanto se aplica o teorema \ref{teo_Dirichlet}.
 \begin{center}
-\includegraphics{cap_series/pics/figura_1}\end{center}
+\includegraphics{cap_series/pics/figura_1}
+\end{center}
 Observamos que essa é uma função par, ou seja, $f(t)=f(-t)$. A fim de explorar essa simetria, utilizaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas, isto é,
   \begin{eqnarray*}
    a_0&=& \frac{2}{T}\int_{-T/2}^{T/2} f(t)dt\\
@@ -239,7 +242,7 @@ Observe que, quando $t=0$, obtemos como subproduto da série de Fourier da $f(t)
 \begin{equation}\label{serie_inv_impar}
 1+\frac{1}{3^2}+\frac{1}{5^2}+\cdots=\frac{\pi^2}{8}.
 \end{equation}
-A figura \ref{fig_conv_triangular} apresenta os gráficos da série que representa a função $f(t)$ com um termo, dois termos e três termos.
+A figura \ref{fig_conv_triangular} apresenta os gráficos da série que representa a função $f(t)$ calculada com a séria truncada com um termo, com dois termos e com três termos.
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics{cap_series/pics/figura_2}\end{center}
@@ -340,10 +343,12 @@ $w_n=\frac{2\pi n}{T}$, temos $ a_n=\frac{2}{\pi n}\sen\left(\pi n\frac{d}{T}\ri
 onde $0<b<1$ e mostre que
 \begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
 Com base neste resultado, obtenha o valor da integral definida dada por
-\begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt.\end{equation}
+\begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt, ~~ k=1,2,3,\ldots.
+\end{equation}
+Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
 \end{exer}
 \begin{resp}
- Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+ $\pi b^k$ 
 \end{resp}
 \begin{exer}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
 \begin{equation}f(t)=\left\{

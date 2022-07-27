@@ -33,8 +33,11 @@ A tabela abaixo compara as formas trigonométrica e exponencial das séries e tr
 \begin{array}{|c|c|c|}
 \hline &&\\
 &\hbox{Forma exponencial}&\hbox{Forma trigonométrica}\\&&\\  \hline &&\\
-\hbox{Série de Fourier}&\displaystyle f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t} & \displaystyle  f(t)=\frac{a_0}{2}+\sum_{n=1}^\infty\left( a_n \cos(w_nt)+b_n\sen(w_nt)\right)   \\&&\\\hline &&\\
-\hbox{Transformada de Fourier} &\displaystyle f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw &\displaystyle f(t)=\frac{1}{\pi}\int_{0}^\infty \left( A(w)\cos(wt)+ B(w)\sen(wt)\right)dw \\   &&\\\hline
+\hbox{Série de Fourier}&\displaystyle f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t} & \begin{array}{ll} f(t)=\frac{a_0}{2}&+\sum_{n=1}^\infty a_n \cos(w_nt)\\ &+\sum_{n=1}^\infty b_n \sin(w_nt) \end{array}   \\&&\\\hline &&\\
+\begin{array}{c}
+    \hbox{Transformada}\\
+    \hbox{de Fourier}
+\end{array} &\displaystyle f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw & \begin{array}{ll} f(t)&=\frac{1}{\pi}\int_{0}^\infty \left( A(w)\cos(wt)\right)dw\\&+~\frac{1}{\pi}\int_{0}^\infty \left( B(w)\sin(wt)\right)dw \end{array} \\   &&\\\hline
 \end{array}
 \end{equation}
 \begin{ex}{\label{ex_trans_rep_1}} Considere a função $f(t)=e^{-at}u(t)$ onde $a$ é uma constante positiva e $u(t)$ é a função Heaviside. A transformada de Fourier $F(w)$ de $f(t)$ foi calculada no exercício \ref{transf_exp_heav} da página \pageref{transf_exp_heav} e é dada por:
@@ -95,8 +98,8 @@ e, como $a>0$, temos $\frac{a}{a^2+w^2}>0$. Portanto,
 A figura \ref{diag_espec_trans_2} apresenta o diagrama de espectro de magnitude e fase da transformada $F(w)$ de $f(t)$ quando $a=1$.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics{cap_diagramas_espectro_transformada/pics/figura_2}
-\includegraphics{cap_diagramas_espectro_transformada/pics/figura_3}\end{center}
+\includegraphics[width=\textwidth]{cap_diagramas_espectro_transformada/pics/figura_2}\vspace{30pt}
+\includegraphics[width=\textwidth]{cap_diagramas_espectro_transformada/pics/figura_3}\end{center}
 \caption{\label{diag_espec_trans_2}}
 \end{figure}
 \end{ex}
