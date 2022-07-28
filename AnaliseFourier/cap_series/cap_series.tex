@@ -338,18 +338,6 @@ Como
 $w_n=\frac{2\pi n}{T}$, temos $ a_n=\frac{2}{\pi n}\sen\left(\pi n\frac{d}{T}\right)$ e, portanto
 \begin{equation}f(t)=\frac{d}{T}+\sum_{n=1}^\infty a_n \cos(w_n t)=\frac{d}{T}+\frac{2}{\pi}\sum_{n=1}^\infty \frac{1}{n}\sen\left(\frac{\pi n d}{T}\right) \cos(w_n t)\end{equation}
 \end{resp}
-\begin{exer}Calcule a soma da série
-\begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)\end{equation}
-onde $0<b<1$ e mostre que
-\begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
-Com base neste resultado, obtenha o valor da integral definida dada por
-\begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt, ~~ k=1,2,3,\ldots.
-\end{equation}
-Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
-\end{exer}
-\begin{resp}
- $\pi b^k$ 
-\end{resp}
 \begin{exer}Considere a função periódica de período $T$ dada para $-T/2<t<T/2$ por
 \begin{equation}f(t)=\left\{
 \begin{array}{lc}
@@ -389,3 +377,16 @@ $
 h(t)&=&f\left(\frac{1}{2}-t\right)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos\left(n\pi-2n\pi t\right)}{4n^2-1}=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty(-1)^n \frac{\cos\left(2n\pi t\right)}{4n^2-1}
  \end{eqnarray*}
 \end{resp}
+\begin{exer}Calcule a soma da série
+   \begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)\end{equation}
+   onde $0<b<1$ e mostre que
+   \begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
+   Com base neste resultado, obtenha o valor da integral definida dada por
+   \begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt, ~~ k=1,2,3,\ldots.
+   \end{equation}
+   Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+   \end{exer}
+   \begin{resp}
+    $\pi b^k$ 
+ \end{resp}
+   
