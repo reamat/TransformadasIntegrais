@@ -1,3 +1,4 @@
+!TEX root = ../main.tex
 \chapter{Séries de Fourier} %Forma trigonométrica, amplitude-fase e exponencial. Diagrama de espectro de amplitude e fase.
 Neste capítulo, apresentamos o conceito de Série de Fourier de uma função periódica $f(t)$ e apresentamos exemplos de expansão. A brevidade da apresentação se deve ao fato que esperamos que o estudante já tenha tido um contato prévio com o conceito.
 \section{Funções periódicas}
@@ -166,8 +167,9 @@ Caso $n=m= 0$, então $\cos\left(\frac{2\pi nt}{T}\right)=1$, isto é:
  Para obter (\ref{rel_ort_cs}), usamos a seguinte identidade trigonométrica:
 \begin{equation}\cos(a)\sen(b)=\frac{\sen(a+b)+\sen(a-b)}{2}\end{equation}
 com $a=\frac{2\pi nt}{T}$ e $b=\frac{2\pi mt}{T}$, isto é:
- \begin{equation}\cos\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\sen\left(\frac{2\pi (n+m)t}{T}\right)+\sen\left(\frac{2\pi (n-m)t}{T}\right)}{2}\end{equation}
-E integrando conforme feito para os casos anteriores, temos o resultado.
+ \begin{equation}\cos\left(\frac{2\pi nt}{T}\right)\sen\left(\frac{2\pi mt}{T}\right)=\frac{\sen\left(\frac{2\pi (n+m)t}{T}\right)+\sen\left(\frac{2\pi (n-m)t}{T}\right)}{2}.
+\end{equation}
+Finalmente, integramos conforme feito para os casos anteriores e temos o resultado.
  \end{proof}
  \begin{teo} Seja $f(t)$ uma função definida por uma série trigonométrica da forma
  \begin{equation}{\label{serie_Fourier}}
@@ -219,24 +221,24 @@ Essa função é suave por partes e contínua em todos os pontos. Portanto se ap
 \end{center}
 Observamos que essa é uma função par, ou seja, $f(t)=f(-t)$. A fim de explorar essa simetria, utilizaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas, isto é,
   \begin{eqnarray*}
-   a_0&=& \frac{2}{T}\int_{-T/2}^{T/2} f(t)dt\\
-   a_n&=&  \frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(w_nt)dt\\
-   b_n&=&\frac{2}{T}\int_{-T/2}^{T/2} f(t)\sen(w_nt)dt
+   a_0&=& \frac{2}{T}\int_{-T/2}^{T/2} f(t)dt,\\
+   a_n&=&  \frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(w_nt)dt,\\
+   b_n&=&\frac{2}{T}\int_{-T/2}^{T/2} f(t)\sen(w_nt)dt,
   \end{eqnarray*}
 onde $T=2$ e $w_n=\frac{2\pi n}{T}=\pi n$. Logo,
   \begin{equation*}
-   a_0= \int_{-1}^{1} |t| dt=2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1\\
+   a_0= \int_{-1}^{1} |t| dt=2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1,
 	\end{equation*}
 	\begin{eqnarray*}
    a_n=  \int_{-1}^{1} |t|\cos(\pi n t)dt&=&2 \int_{0}^{1} t\cos(\pi n t)dt\\&=&2\left[\frac{t\sen(\pi n t)}{\pi n}\right]_0^1-2\int_0^1\frac{\sen(\pi n t)}{\pi n}dt\\
-	&=&2\left[\frac{t\sen(\pi n t)}{\pi n}+\frac{\cos(\pi n t)}{\pi^2 n^2}\right]_0^1=2\frac{(-1)^n-1}{\pi^2n^2}\\
+	&=&2\left[\frac{t\sen(\pi n t)}{\pi n}+\frac{\cos(\pi n t)}{\pi^2 n^2}\right]_0^1=2\frac{(-1)^n-1}{\pi^2n^2},
 	 \end{eqnarray*}
 	\begin{eqnarray*}
    b_n&=&\int_{-1}^{1} |t|\sen(\pi n t)dt=0.
   \end{eqnarray*}
 onde se usou que $|t|$, $|t|\cos(\pi n t)$ são funções pares em $t$ e $|t|\sen(\pi n t)$ é ímpar em $t$. Assim, temos
 \begin{equation}
-f(t)=\frac{1}{2}-\frac{4}{\pi^2}\left(\cos(\pi t)+\frac{1}{3^2}\cos(3\pi t)+\frac{1}{5^2}\cos(5\pi t)+\cdots\right)
+f(t)=\frac{1}{2}-\frac{4}{\pi^2}\left(\cos(\pi t)+\frac{1}{3^2}\cos(3\pi t)+\frac{1}{5^2}\cos(5\pi t) + \cdots\right).
 \end{equation}
 Observe que, quando $t=0$, obtemos como subproduto da série de Fourier da $f(t)$ a soma da seguinte série numérica:
 \begin{equation}\label{serie_inv_impar}
@@ -251,9 +253,9 @@ A figura \ref{fig_conv_triangular} apresenta os gráficos da série que represen
 \end{ex}
 \begin{ex}\label{ex_quadrada} Seja $g(t)$ uma função dada por
 \begin{eqnarray*}
-g(t)&=&-1, \ \ -1< t<0\\
-g(t)&=&0, \ \ t=0\ \hbox{ou}\ t=1\\
-g(t)&=&1, \ \ 0< t<1\\
+g(t)&=&-1, \ \ -1< t<0,\\
+g(t)&=&0, \ \ t=0\ \hbox{ou}\ t=1,\\
+g(t)&=&1, \ \ 0< t<1,\\
 g(t+2)&=&g(t),\ \ \forall t\in\mathbb{R}.
 \end{eqnarray*}
 Essa função é suave por partes e contínua em todos os pontos exceto por saltos nos inteiros, onde a função vale a média aritmética dos limites laterais. Portanto se aplica o teorema \ref{teo_Dirichlet}.
@@ -262,15 +264,14 @@ Essa função é suave por partes e contínua em todos os pontos exceto por salt
 \includegraphics{cap_series/pics/figura_3}\end{center}
 \end{figure}
 Observamos que essa é uma função ímpar, ou seja, $f(t)=-f(-t)$. Novamente, utilizaremos as fórmulas (\ref{coef}) envolvendo integrais simétricas:
-  \begin{equation*}
-   a_0= \int_{-1}^{1} g(t) dt=0\\
-	\end{equation*}
-	\begin{eqnarray*}
-   a_n=  \int_{-1}^{1} g(t)\cos(\pi n t)dt=0\\
-	 \end{eqnarray*}
-	\begin{eqnarray*}
-   b_n=\int_{-1}^{1} g(t)\sen(\pi n t)dt=2\int_{0}^{1} g(t)\sen(\pi n t)dt&=&2\int_{0}^{1} \sen(\pi n t)dt\\
-	&=&\frac{2}{\pi n}\left[-\cos(\pi n t)\right]_0^1=2\frac{1-(-1)^n}{\pi n}
+  \begin{eqnarray*}
+   a_0 &=& \int_{-1}^{1} g(t) dt=0,\\
+	a_n &=&  \int_{-1}^{1} g(t)\cos(\pi n t)dt=0\\
+   b_n &=& \int_{-1}^{1} g(t)\sen(\pi n t)dt\\
+       &=& 2\int_{0}^{1} g(t)\sen(\pi n t)dt\\
+       &=&2\int_{0}^{1} \sen(\pi n t)dt\\
+	&=&\frac{2}{\pi n}\left[-\cos(\pi n t)\right]_0^1\\
+   &=& 2\frac{1-(-1)^n}{\pi n}.
   \end{eqnarray*}
 Logo,
 \begin{equation}
@@ -295,16 +296,14 @@ Essa função é suave por partes e contínua exceto por salto nos inteiros onde
 \includegraphics{cap_series/pics/figura_5}\end{center}
 \end{figure}
 Utilizaremos as fórmulas (\ref{coef}) envolvendo integrais no intervalo $[0,1]$, isto é,
-  \begin{equation*}
-   a_0= 2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1\\
-	\end{equation*}
-	\begin{eqnarray*}
-   a_n=  2\int_{0}^{1} t\cos(2 \pi n t)dt=&=&2\left[\frac{t\sen(2 \pi n t)}{2 \pi n}\right]_0^1-2\int_0^1\frac{\sen(2 \pi n t)}{2 \pi n}dt\\
-	&=&2\left[\frac{t\sen(2 \pi n t)}{2 \pi n}+\frac{\cos(2 \pi n t)}{4\pi^2 n^2}\right]_0^1=0\\
-	 \end{eqnarray*}
-	\begin{eqnarray*}
-   b_n=  2\int_{0}^{1} t\sen(2 \pi n t)dt=&=&2\left[-\frac{t\cos(2 \pi n t)}{2 \pi n}\right]_0^1+2\int_0^1\frac{\cos(2 \pi n t)}{2 \pi n}dt\\
-	&=&2\left[-\frac{t\cos(2 \pi n t)}{2 \pi n}+\frac{\sen(2 \pi n t)}{4\pi^2 n^2}\right]_0^1=-\frac{1}{\pi n}\\
+  \begin{eqnarray*}
+   a_0&=& 2\int_{0}^{1} t dt=2\left[\frac{t^2}{2}\right]_0^1=1,\\
+	a_n&=&  2\int_{0}^{1} t\cos(2 \pi n t)dt\\
+   &=&2\left[\frac{t\sen(2 \pi n t)}{2 \pi n}\right]_0^1-2\int_0^1\frac{\sen(2 \pi n t)}{2 \pi n}dt\\
+	&=&2\left[\frac{t\sen(2 \pi n t)}{2 \pi n}+\frac{\cos(2 \pi n t)}{4\pi^2 n^2}\right]_0^1=0m\\
+	 b_n&=&  2\int_{0}^{1} t\sen(2 \pi n t)dt\\
+    &=&2\left[-\frac{t\cos(2 \pi n t)}{2 \pi n}\right]_0^1+2\int_0^1\frac{\cos(2 \pi n t)}{2 \pi n}dt\\
+	&=&2\left[-\frac{t\cos(2 \pi n t)}{2 \pi n}+\frac{\sen(2 \pi n t)}{4\pi^2 n^2}\right]_0^1=-\frac{1}{\pi n}.
 	 \end{eqnarray*}
 Logo,
 \begin{equation}
@@ -378,13 +377,13 @@ h(t)&=&f\left(\frac{1}{2}-t\right)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty
  \end{eqnarray*}
 \end{resp}
 \begin{exer}Calcule a soma da série
-   \begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)\end{equation}
+   \begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt)n=,\end{equation}
    onde $0<b<1$ e mostre que
    \begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
    Com base neste resultado, obtenha o valor da integral definida dada por
    \begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt, ~~ k=1,2,3,\ldots.
    \end{equation}
-   Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+   Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}.$
    \end{exer}
    \begin{resp}
     $\pi b^k$ 
