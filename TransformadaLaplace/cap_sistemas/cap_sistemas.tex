@@ -338,7 +338,7 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
 \end{figure}
 
 
-\section{Aplicação: sistema de controle automático com ação integral}
+\section{Aplicação: sistema de controle automático com ação integral}\label{sec:controle_integral}
 A temperatura numa sala climatizada evolui no tempo conforme o seguinte modelo simplificado: 
 \begin {equation}
   \frac {d v(t)}{dt}=-\lambda (v(t)-v_{amb}) + q(t)
@@ -380,9 +380,20 @@ Substituindo $sQ(s)$, temos:
 \end {eqnarray*}
 
 Portanto:
+\begin {eqnarray*}
+V(s) &=& \frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}
+\end {eqnarray*}
+
+Simplificamos essa expressão usando a seguinte identidade para frações parciais:
+\begin {eqnarray*}
+\frac{\eta v_a }{s\left(s^2+\lambda s+\eta\right)} = v_a\left[\frac{1}{ s}-\frac{s+\lambda}{(s^2+\lambda s + \eta)}\right]
+\end {eqnarray*}
+
+Para obter:
 \begin {eqnarray}
-V(s)=\frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}.\label{forno_VS}
+V(s) = \frac{s(v(0)-v_a)+\lambda ({v_{amb}}-v_a) +q(0)}{s^2+\lambda s+\eta} +  \frac{v_a}{s}.\label{forno_VS_isolado}
 \end {eqnarray}
+
 
 Como as contantes $\lambda$ e $\eta$ são estritamente positivas, o sistema é amortecido. Independemente do regime de amortecimento, é lícito assumir a existência do limite $v_\infty:=\lim_{t\to \infty} v(t)$ e calculá-lo pelo teorema do valor final:
 $$v_\infty:=\lim_{s\to 0+} sV(s)=v_a.$$
@@ -403,8 +414,31 @@ $$q(t) = q(0) -\eta \int_0^t \left(v(\tau)-v_a\right)d\tau,$$
 razão pela qual, esse sistema de controle automático é dito ter \emph{ação integral}.
 \end{obs}
 
-Fixamos agora $\lambda=4$ e analisamos três possíveis valores de $\eta$: $\eta=3$, $\eta=4$ e $\eta=8$, que conduzem aos três regimes de amortecimento. 
+Fixamos agora $\lambda=4$ e analisamos três possíveis valores de $\eta$: $\eta=3$, $\eta=4$ e $\eta= 13$, que conduzem aos três regimes de amortecimento. Também fixamos as seguintes constantes:
+$$q(0)=0,~~~~ v(0)=v_{amb}=20, ~~~\hbox{ e }~~~  v_a = 100. $$ 
 
+A Equação~\ref{forno_VS_isolado} assume a seguinte forma:
+\begin{eqnarray*}
+V(s) = \frac{-80s- 320 }{s^2 + 4 s+\eta} +  \frac{100}{s}.
+\end{eqnarray*}
+
+\begin{itemize}
+       \item[i.] Superamortecido com $\eta=3$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s+1)(s+3)} +  \frac{100}{s},\\
+              v(t) &=& 100 + 40 e^{-3 t} - 120 e^{-t}.
+        \end{eqnarray*}
+        \item[ii.] Criticamente amortecido com $\eta=4$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s+2)^2} +  \frac{100}{s},\\
+              v(t) &=& 100 - 80 ( 2t - 1) e^{-2 t}.
+       \end{eqnarray*}
+       \item[iii.] Subamortecido com $\eta=13$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s-2)^2+3^2} +  \frac{100}{s},\\
+              v(t) &=& 100 - \frac{80}{3} e^{-2 t} \left(3 \cos(3 t) + 2 \sin(3 t)\right).
+        \end{eqnarray*}
+\end{itemize}
 
 \section*{Exercícios}
 \begin{exeresol}
@@ -501,6 +535,16 @@ Com $x(0)=0$ e $y(0)=2$, onde $\alpha$ é uma constante real.
 \end{itemize}
 
 \end{exer}
+
+\begin{exer}
+       Encontre a solução $q(t)$ para o problema de controle automático apresentado na Seção~\ref{sec:controle_integral} para o caso superamortecido, substituindo na expressão:
+       \begin {equation}
+        \frac {d v(t)}{dt}=-\lambda (v(t)-v_{amb}) + q(t)
+      \end {equation}
+\end{exer}
+\begin{resp}
+       $q(t)=320 + 40 e^(-3 t) - 360 e^(-t)$
+\end{resp}
 \begin{exer}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
 \begin{equation}\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)\end{equation}
 onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
