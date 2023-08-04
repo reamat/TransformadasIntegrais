@@ -380,9 +380,9 @@ Substituindo $sQ(s)$, temos:
 \end {eqnarray*}
 
 Portanto:
-\begin {eqnarray*}
-V(s)=\frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}.
-\end {eqnarray*}
+\begin {eqnarray}
+V(s)=\frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}.\label{forno_VS}
+\end {eqnarray}
 
 Como as contantes $\lambda$ e $\eta$ são estritamente positivas, o sistema é amortecido. Independemente do regime de amortecimento, é lícito assumir a existência do limite $v_\infty:=\lim_{t\to \infty} v(t)$ e calculá-lo pelo teorema do valor final:
 $$v_\infty:=\lim_{s\to 0+} sV(s)=v_a.$$
@@ -402,6 +402,9 @@ Portanto:
 $$q(t) = q(0) -\eta \int_0^t \left(v(\tau)-v_a\right)d\tau,$$
 razão pela qual, esse sistema de controle automático é dito ter \emph{ação integral}.
 \end{obs}
+
+Fixamos agora $\lambda=4$ e analisamos três possíveis valores de $\eta$: $\eta=3$, $\eta=4$ e $\eta=8$, que conduzem aos três regimes de amortecimento. 
+
 
 \section*{Exercícios}
 \begin{exeresol}
