@@ -338,6 +338,71 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
 \end{figure}
 
 
+\section{Aplicação: sistema de controle automático com ação integral}
+A temperatura numa sala climatizada evolui no tempo conforme o seguinte modelo simplificado: 
+\begin {equation}
+  \frac {d v(t)}{dt}=-\lambda (v(t)-v_{amb}) + q(t)
+ \end {equation}
+  onde \(v(t)\) representa a temperatura medida, \(v_{amb}\) é temperatura ambiente, \(q(t)\) é a potência de um aquecedor e \(\lambda \) é uma constante positiva relacionada às trocas de calor. 
+  
+  Um sistema de controle automático define qual deve ser a potência do aquecedor em cada momento $t$ e objetiva que a temperatura medida $v(t)$ convirja para um valor previamente definido $v_a$.
+
+  A ideia central do projeto é que a potência seja aumentada sempre que $v(t)>v_a$, que potência seja mantida quando $v(t)=v_a$ e que a potência seja reduzida quando $v(t)<v_a$.
+
+  Uma solução de projeto é implementar a seguinte equação diferencial para $q(t)$ de forma a vincular a derivada da potência ao \emph{erro} $v(t)-v_a$.
+    \begin {equation} \label{forno_eq_pot}
+    \frac{dq(t)}{dt} =-\eta \left(v(t)-v_a\right).
+   \end {equation} 
+   Aqui $\eta$ é uma constante positiva.
+
+
+   Para analisar o problema, resolvemos o sistema de equações diferenciais associado.
+Tomando a transformada de Laplace das  equações, encontramos:
+  \begin{eqnarray*}
+   sV(s)-v(0) &=& -\lambda \left(V(s)-\frac{v_{amb}}{s}\right) + Q(s),\\
+   sQ(s)-q(0) &=& -\eta \left(V(s)-\frac{v_a}{s}\right).
+   \end{eqnarray*}
+
+  Isolando $V(s)$ e multiplicando por $s$, temos:
+
+ \begin {eqnarray}\label{forno_Vs}
+   s(s+\lambda)V(s)=sv(0)+\lambda {v_{amb}} + sQ(s).
+ \end {eqnarray}
+   
+Substituindo $sQ(s)$, temos:
+
+ \begin {eqnarray*}
+   s(s+\lambda)V(s)=sv(0)+\lambda {v_{amb}} +q(0)-\eta \left(V(s)-\frac{v_a}{s}\right).
+\end {eqnarray*}
+
+\begin {eqnarray*}
+\left(s^2+\lambda s+\eta\right)V(s)=sv(0)+\lambda {v_{amb}} +q(0) + \eta \frac{v_a}{s}.
+\end {eqnarray*}
+
+Portanto:
+\begin {eqnarray*}
+V(s)=\frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}.
+\end {eqnarray*}
+
+Como as contantes $\lambda$ e $\eta$ são estritamente positivas, o sistema é amortecido. Independemente do regime de amortecimento, é lícito assumir a existência do limite $v_\infty:=\lim_{t\to \infty} v(t)$ e calculá-lo pelo teorema do valor final:
+$$v_\infty:=\lim_{s\to 0+} sV(s)=v_a.$$
+
+Disso concluímos que a temperatura, de fato, converge para o valor desejado. Para calcular o comportamento assintótico da potência, retornamos à Equação~\ref{forno_Vs}:
+\begin{eqnarray*}
+\lim_{s\to 0+ }sQ(s) &=& \lim_{s\to 0+ }\left[-sv(0)-\lambda {v_{amb}} + s(s+\lambda)V(s)\right]\\
+&=& \lim_{s\to 0+ }(s+\lambda) \lim_{s\to 0+ }sV(s) = \lambda v_\infty = \lambda v_a.
+\end{eqnarray*}
+Portanto:
+\begin{eqnarray*}
+ \lim_{t\to \infty }q(t) = \lambda v_a.
+\end{eqnarray*}
+       
+\begin{obs} A Equação~\ref{forno_eq_pot} pode ser escrita como:
+       
+$$q(t) = q(0) -\eta \int_0^t \left(v(\tau)-v_a\right)d\tau,$$
+razão pela qual, esse sistema de controle automático é dito ter \emph{ação integral}.
+\end{obs}
+
 \section*{Exercícios}
 \begin{exeresol}
 Considere o sistema de equações diferenciais criticamente amortecido dado por:
