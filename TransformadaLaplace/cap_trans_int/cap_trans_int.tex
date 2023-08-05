@@ -864,6 +864,24 @@ q(t)=CV_0\left(u(t-a)\left(1-e^{-\frac{t-a}{CR}}\right)-u(t-b)\left(1-e^{-\frac{
 que coincide com a solução dada na equação \eqref{eq:sol_carga}.
 \end{resp}
 
+\begin{exer}
+  Considere a função $f(t)$ dada por:
+  $$f(t) = u(t) + t u(t-1) + g(t)u(t-2) $$
+  Sabe-se que $f(t)$ é dada por partes como:
+  $$f(t) = \left\{
+      \begin{array}{ll}
+          f_1(t), &0<t<1,\\
+          f_2(t), &1<t<2,\\
+          2,      &t>2.
+      \end{array}
+  \right.
+  $$
+  Em que $f_1(t)$ e $f_2(t)$ são funções definidas nos respectivos intervalos e $g(t)$ está definida para $t\geq 0$. Obtenha expressões para $f_1(t)$, $f_2(t)$, $g(t)$, $I:=\int_0^3f(t)^2dt$ e $F(s):=\mathcal{L}\{f(t)\}$.
+\end{exer}
+\begin{resp}
+  $f_1(t)=u(t)=1$, $f_2(t)=1+t$, $g(t)=1-t$, $I={34}/{3}$ e $F(s)=\frac{s+(1+s)e^{-s}-(1+s)e^{-2s}}{s^2}$.
+\end{resp}
+
 
 
 
