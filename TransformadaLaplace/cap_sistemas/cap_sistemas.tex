@@ -545,6 +545,16 @@ Com $x(0)=0$ e $y(0)=2$, onde $\alpha$ é uma constante real.
 \begin{resp}
        $q(t)=320 + 40 e^(-3 t) - 360 e^(-t)$
 \end{resp}
+
+\begin{exer}
+       Encontre a solução $v(t)$ para o problema de controle automático apresentado na Seção~\ref{sec:controle_integral} para o caso subamortecido com $\eta=20$. Encontre o primeiro ponto de máximo de $v(t)$ para $t>0$.
+\end{exer}
+\begin{resp}
+       $v(t) = 100 - 40e^{-2*t}*\left(2\cos(4t) + sin(4t)\right)$
+       $v'(t) = 400 e^(-2 t) sin(4 t)$
+       O valor máximo é  $100 + 80e^{-\pi/4} $ em $t=\pi/4$.
+\end{resp}
+
 \begin{exer}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
 \begin{equation}\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)\end{equation}
 onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
@@ -581,7 +591,7 @@ onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura a
  x'(t) +x(t) = 2 y(t)\\
  x(t) = \int_0^t y(\tau) d\tau + 1
 \end{eqnarray*}
-com $x(0)=0$. Usando a teoria das Transformadas de Laplace, resolve o sistema, obtendo $x(t)$ e $y(t)$.
+com $x(0)=0$. Usando a teoria das Transformadas de Laplace, resolva o sistema, obtendo $x(t)$ e $y(t)$.
 {\bf Obs:}  Este sistema apresenta ``problemas na origem''. 
 \end{exer}
 \begin{resp}
