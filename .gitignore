@@ -22,6 +22,7 @@ html
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.vscode
 AnaliseFourier/exercicios_resolvidos.tex
 AnaliseFourier/exercicios_todos_com_exemplos.tex
 AnaliseFourier/exercicios_todos.tex
