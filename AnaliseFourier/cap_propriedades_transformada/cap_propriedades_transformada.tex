@@ -446,11 +446,16 @@ Onde se usou a propriedade \ref{prop_linear}.
 \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
 &=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
 \end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
+O diagrama de magnitudes é o mesmo do item e.
 \item[h)] 
-\begin{equation}g(t)=f(t)|\sen(1000x)|=f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]\end{equation}
+\begin{eqnarray*}g(t)&=&f(t)|\sen(1000x)|\\
+    &=&f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]
+\end{eqnarray*}
 \begin{eqnarray*}
-\mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)-\frac{2}{3\pi}(F(w+2000)+F(w-2000))\\&-&\frac{2}{15\pi}(F(w+4000)+F(w-4000))-\frac{2}{35\pi}(F(w+6000)+F(w-6000))+\cdots
+\mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)\\
+&-&\frac{2}{3\pi}\left[F(w+2000)+F(w-2000)\right]\\
+&-&\frac{2}{15\pi}\left[ F(w+4000)+F(w-4000)\right]\\
+&-&\frac{2}{35\pi}\left[ F(w+6000)+F(w-6000)\right]+\cdots
 \end{eqnarray*}
 Veja o diagrama de magnitudes no gráfico abaixo.
 \begin{center}
