@@ -1,3 +1,4 @@
+% !TEX root = ../main.tex
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 \chapter{Representações da série de Fourier e diagramas de espectro}
@@ -157,6 +158,38 @@ Logo,
 g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\pi}e^{-i\pi t}-\frac{2i}{\pi}e^{i\pi t}-\frac{2i}{3\pi}e^{3i\pi t}-\frac{2i}{5\pi}e^{5i\pi t}-\cdots,
 \end{equation}
 \end{ex}
+
+\subsection*{Exercícios resolvidos}
+\begin{exeresol}
+
+  Considere a função $f(t)=8\cos^4(t)$. 
+
+\begin{itemize}
+ \item[a)] Obtenha a frequência fundamental.
+ \item[b)] Obtenha o período fundamental.
+ \item[c)] Construa forma trigonométrica da série de Fourier de $f(t)$.
+ \item[d)] Construa a forma exponencial da série de Fourier de $f(t)$.
+ \item[e)] Esboce os diagramas de espectro.
+\end{itemize}
+\begin{resol}
+Usando o binômio de Newton, obtemos a seguinte identidade trigonométrica:
+\begin{eqnarray*}
+8\cos^4(t)&=&8\left(\frac{e^{it}+e^{-it}}{2}\right)^4\\
+&=&\frac{e^{4it}+ 4 e^{3it}e^{-it}+ 6 e^{2it}e^{-2it}+ 4 e^{it}e^{-3it} +e^{-4it} }{2} \\
+&=&\frac{1}{2}e^{-4it}+2 e^{-2it}+3  + 2 e^{2it} +\frac{1}{2}e^{4it} \quad \hbox{(forma exponencial)}\\
+&=&3+\frac{e^{4it}+e^{-4it} }{2}+4\frac{  e^{2it}+  e^{-2it} }{2}\\
+&=&3+4\cos(2t)+\cos(4t)\quad \hbox{(forma trigonométrica)}\\
+\end{eqnarray*}
+
+Observe que a frequência fundamental é $w=2$ e o período fundamental é $\pi$. O diagrama de espectro de fase é zero em todas as frequências e o diagrama de espectro de amplitudes é dado no gráfico abaixo:
+
+\begin{center}
+  \includegraphics{cap_diagramas_espectro/pics/diagrama_3}
+\end{center}
+\end{resol}
+
+
+\end{exeresol}
 
 \subsection*{Exercícios}
 \begin{exer} Mostre que se $f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t}$ é uma função real, então $C_{-n}=\overline{C_n}$. Em especial, $|C_{-n}|=|C_n|$.

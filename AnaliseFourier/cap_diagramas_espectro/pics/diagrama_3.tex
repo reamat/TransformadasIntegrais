@@ -1,0 +1,47 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+\begin{document}
+   \begin{pspicture}(-2.5,-0.6) (2.7,3.7)
+ \psset{xunit=1,yunit=1}
+  \psaxes[labels=none]{->}(0,0)(-2.5,-0.4)(2.5,3.3)
+  \psset{linecolor=blue}
+ 
+  \rput(.5,3.3){$|C_n|$}
+  \rput(2.5,-.2){$w_n$}
+  \rput(-.5,1.0){$1$}
+  \rput(-.5,2.0){$2$}
+  \rput(-.5,3.0){$3$}
+  \rput(-2.2,-.4){$-4$}
+  \rput(-1.2,-.4){$-2$}
+  \rput(1,-.4){$2$}
+  \rput(2,-.4){$4$}
+
+  
+  \psline[plotstyle=curve,linewidth=2pt](0,0)(0,3)
+  \psline[plotstyle=curve,linewidth=2pt](-1,0)(-1,2)
+  \psline[plotstyle=curve,linewidth=2pt](1,0)(1,2)
+  \psline[plotstyle=curve,linewidth=2pt](-2,0)(-2,0.5)
+  \psline[plotstyle=curve,linewidth=2pt](2,0)(2,0.5) 
+  
+    \psline[plotstyle=curve,plotpoints=1000,linestyle=dashed](-2,0.5)(2,0.5)
+    \psline[plotstyle=curve,plotpoints=1000,linestyle=dashed](-1,2)(1,2)
+  \end{pspicture}                   
+\end{document}
+
