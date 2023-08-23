@@ -1,3 +1,6 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
+
 \chapter{Propriedades das Séries de Fourier}
 \section{Teorema de Parseval}
 \begin{defn} 
@@ -99,6 +102,32 @@ usando a equação (\ref{serie_inv_impar}) da página \pageref{serie_inv_impar},
 \end{eqnarray*}
 \end{ex}
 
+\subsection*{Exercícios resolvidos}
+\begin{exeresol}
+    Considere a função dada por:
+$$
+f(t)=\sum_{n=1}^\infty \frac{\cos(nt)}{n^2}.
+$$
+
+Sabendo que $\sum_{n=1}^\infty \frac{1}{n^4}=\frac{\pi^4}{90}$, calcule o valor médio e a potência média.
+\end{exeresol}
+\begin{resol}
+O valor médio é dado por
+$$
+C_0=\frac{a_0}{2}=0.
+$$
+
+Para calcular a potência média, usamos o teorema de Parseval:
+$$
+\frac{1}{T}\int_0^T|f(t)|^2dt=\sum_{n=-\infty}^\infty |C_n|^2
+$$
+Usando que $C_0=0$ e $C_n=\frac{a_n-ib_n}{2}=\frac{1}{2n^2}$ para $n\neq 0$, temos $|C_n|=\frac{1}{2n^2}$ e $|C_n|^2=\frac{1}{4n^4}$. Portanto,
+$$
+\frac{1}{T}\int_0^T|f(t)|^2dt=|C_0|^2+2\sum_{n=1}^\infty \frac{1}{4n^4}=\frac{1}{2}\frac{\pi^4}{90}=\frac{\pi^4}{180}.
+$$
+\end{resol}
+
+
 \subsection*{Exercícios}
 \begin{exer}Dado o diagrama de espectro de amplitude de uma função periódica $f(t)$, encontre, respectivamente, o módulo do valor médio e a potência média da função $\left(\left|\frac{1}{T}\int_0^Tf(t)dt\right|\quad\text{e}\quad \frac{1}{T}\int_0^T|f(t)|^2dt\right)$.\\
 \begin{figure}[!ht]
@@ -134,6 +163,10 @@ usando a equação (\ref{serie_inv_impar}) da página \pageref{serie_inv_impar},
 \end{exer}
 \begin{resp} 2 e 8,5.
 \end{resp}
+
+
+
+
 \section{Fenômeno de Gibbs}
 A convergência das somas parciais da série de Fourier de uma função suave por partes em torno de um salto apresenta oscilações cujas amplitudes não convergem para zero. A convergência ponto a ponto acontece, mas se olharmos para o valor absoluto da diferença entre a função e soma parcial sempre encontramos um ponto onde esse valor é aproximadamente 8,9\% da amplitude do salto. Esse fenômeno é chamado de Fenômeno de Gibbs
 \begin{figure}[!ht]
