@@ -118,13 +118,19 @@ C_0=\frac{a_0}{2}=0.
 $$
 
 Para calcular a potência média, usamos o teorema de Parseval:
-$$
-\frac{1}{T}\int_0^T|f(t)|^2dt=\sum_{n=-\infty}^\infty |C_n|^2
-$$
+\begin{eqnarray*}
+\bar{P}_f &=& \frac{1}{T}\int_0^T|f(t)|^2dt=\sum_{n=-\infty}^\infty |C_n|^2\\
+&=&\sum_{n=-\infty}^{-1} |C_n|^2 + |C_0|^2 + \sum_{n=1}^\infty |C_n|^2
+\end{eqnarray*}
+
 Usando que $C_0=0$ e $C_n=\frac{a_n-ib_n}{2}=\frac{1}{2n^2}$ para $n\neq 0$, temos $|C_n|=\frac{1}{2n^2}$ e $|C_n|^2=\frac{1}{4n^4}$. Portanto,
-$$
-\frac{1}{T}\int_0^T|f(t)|^2dt=|C_0|^2+2\sum_{n=1}^\infty \frac{1}{4n^4}=\frac{1}{2}\frac{\pi^4}{90}=\frac{\pi^4}{180}.
-$$
+\begin{eqnarray*}
+\bar{P}_f
+&=&\sum_{n=-\infty}^{-1} |C_n|^2 + |C_0|^2 + \sum_{n=1}^\infty |C_n|^2\\
+&=&\sum_{n=-\infty}^{-1} \left|\frac{1}{2n^2}\right|^2 + |0|^2 + \sum_{n=1}^\infty \left|\frac{1}{2n^2}\right|^2\\
+&=&+2\sum_{n=1}^\infty \frac{1}{4n^4}=\frac{1}{2}\frac{\pi^4}{90}=\frac{\pi^4}{180}.
+\end{eqnarray*}
+
 \end{resol}
 
 
