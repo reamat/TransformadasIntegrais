@@ -1,3 +1,5 @@
+% !TEX root = ../main.tex
+
 \chapter{Propriedades da transformada de Fourier}
 \section{Propriedades}
 \begin{teo}[Linearidade ou superposição]\label{prop_linear}
@@ -479,7 +481,7 @@ Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama
 \begin{eqnarray*}
 \int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
 &=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw\\
-&=&\frac{1}{\pi}\int_{0}^{250} 10\left(1-\frac{w}{250}\right)^2dw\\
+&=&\frac{1}{\pi}\int_{0}^{250} \left|10\left(1-\frac{w}{250}\right)\right|^2dw\\
 &=&\frac{100}{\pi}\int_{1}^{0}  u^2\left(-250\right)du\\
 &=&\frac{25000}{\pi}\int_{0}^{1}  u^2du\\
 &=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
