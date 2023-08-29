@@ -414,5 +414,12 @@ h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{
 \end{itemize}
 \end{resp}
 
-\begin{exer} Mostre que se $f(t)$ é um deslocamento no tempo de $g(t)$, isto é, $f(t)=g(t-k)$, então os coeficiente de Fourier $C_n^f$ da função $f$ e $C_n^g$ da função $g$ são iguais em módulo e, portanto, possuem o mesmo diagrama de espectro de amplitude.
+\begin{exer} Seja $f(t)$ dada por sua representação em série de Fourier:
+  $$f(t)=\sum_{n=-\infty}^\infty C_n e^{iw_n t }$$
+e  $g(t)$ é a função $f(t)$ deslocada, isto é, $f(t)=g(t-k)$ e é dada por:
+$$g(t)=\sum_{n=-\infty}^\infty D_n e ^{iw_n t }.$$
+  Calcule os coeficiente de Fourier $D_n$ em termos de $C_n$. Verifique que $|C_n|=|D_n|$ e que , portanto, possuem o mesmo diagrama de espectro de amplitude.
 \end{exer}
+\begin{resp}
+  $C_n = D_n e^{-iw_n k}$
+\end{resp}

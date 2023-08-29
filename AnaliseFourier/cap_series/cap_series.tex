@@ -345,11 +345,15 @@ t,&|t|\leq d/2,\\
 \end{array}
 \right.
 \end{equation}
-onde $0<d\leq T$. Calcule sua representação em série de Fourier. Estude o caso particular $d=T$. Dica: $\int u\cos(u)du=\cos(u)+u\sen(u)+C$ e $\int u\sen(u)du=\sen(u)-u\cos(u)+C$
+onde $0<d\leq T$. Calcule sua representação em série de Fourier. Estude o caso particular $d=T$. Dica: $\int u\cos(u)du=\cos(u)+u\sen(u)+C$ e $\int u\sen(u)du=\sen(u)-u\cos(u)+C$.
  \end{exer}
 \begin{resp}
  $
-b_n=\frac{4}{T}\int_{0}^{d/2}t\sen(w_nt)dt=\frac{T\sen\left(\frac{\pi d n}{T}\right)-dn\pi\cos\left(\frac{\pi d n}{T}\right)}{\pi^2 n^2}
+b_n=\frac{4}{T}\int_{0}^{d/2}t\sen(w_nt)dt=\frac{T\sen\left(\frac{\pi d n}{T}\right)-dn\pi\cos\left(\frac{\pi d n}{T}\right)}{\pi^2 n^2},~~n\geq 1.
+$
+e
+$
+b_n=\frac{T}{\pi n}(-1)^{n+1},~~n\geq 1,~~d=T.
 $
 \end{resp}
 \begin{exer}{\label{Fourier_8}} Trace o gráfico e obtenha a representação em série de Fourier das seguintes funções:
@@ -376,14 +380,14 @@ $
 h(t)&=&f\left(\frac{1}{2}-t\right)=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos\left(n\pi-2n\pi t\right)}{4n^2-1}=\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty(-1)^n \frac{\cos\left(2n\pi t\right)}{4n^2-1}
  \end{eqnarray*}
 \end{resp}
-\begin{exer}Calcule a soma da série
+\begin{exer}Calcule a soma da série:
    \begin{equation}f(t)=\sum_{n=0}^\infty b^{n}\sen(nt),\end{equation}
-   onde $0<b<1$ e mostre que
+   onde $0<b<1$ e mostre que:
    \begin{equation}f(t)=\frac{b\sen(t)}{1-2b\cos(t)+b^2}.\end{equation}
    Com base neste resultado, obtenha o valor da integral definida dada por
    \begin{equation}\int_0^{2\pi}\frac{b\sen(t)\sen(kt)}{1-2b\cos(t)+b^2}dt, ~~ k=1,2,3,\ldots.
    \end{equation}
-   Dica: Lembre que $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}.$
+   Dica: Lembre-se de $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$ e de $\sum_{x=0}^\infty x^n = \frac{1}{1-x}$ para $|x|<1$.
    \end{exer}
    \begin{resp}
     $\pi b^k$ 
