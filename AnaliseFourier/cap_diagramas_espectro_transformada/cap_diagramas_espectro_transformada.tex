@@ -134,15 +134,13 @@ Veja o diagrama de espectro na figura abaixo.
     \begin{center}
     \includegraphics{cap_diagramas_espectro_transformada/pics/figura_6}
     \end{center}        
-    Observe que a fase não é fornecida. Dê um exemplo de função par, $f_p(t)$, e um exemplo de função ímpar, $f_i(t)$, cujo diagrama de magnitudes coincide com o de $f(t)$. 
-
-
+    Observe que a fase não é fornecida. Dê um exemplo de função par, $f_p(t)$, e um exemplo de função ímpar, $f_i(t)$, cujo diagrama de magnitudes coincide com o de $f(t)$. Dica: Considere $F_p(w)$ uma função puramente real e $F_i(w)$, uma função puramente imaginária.
 \end{exer}
 
 \begin{resp}
-    $f_p = \frac{1}{2\pi}\int_{-1}^1F_p(w)e^{iwt}dw=\frac{1}{\pi}\int_{-1}^1F_p(w)\cos{wt}dw=\frac{1}{\pi}\frac{\sin(w)}{w}.$
+    $f_p = \frac{1}{2\pi}\int_{-1}^1F_p(w)e^{iwt}dw=\frac{1}{\pi}\int_{-1}^1\cos{wt}dw=\frac{1}{\pi}\frac{\sin(w)}{w}.$
     
     e 
     
-    $f_i = \frac{1}{2\pi}\int_{-1}^1F_p(w)e^{iwt}dw=\frac{i}{\pi}\int_{-1}^1F_p(w)\sin{wt}dw=\frac{1}{\pi}\frac{1-\cos(w)}{w}.$
+    $f_i = \frac{1}{2\pi}\int_{-1}^1F_i(w)e^{iwt}dw=\frac{i}{\pi}\int_{-1}^1(i)\sin{wt}dw=\frac{1}{\pi}\frac{\cos(w)-1}{w}.$
 \end{resp}
