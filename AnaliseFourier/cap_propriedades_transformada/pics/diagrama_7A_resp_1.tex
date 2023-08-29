@@ -1,0 +1,47 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+\begin{document}
+\psset{unit =1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-8.5,-0.7)(9.3,2.0)
+ \psaxes[labels]{->}(0,0)(-8.5,-.1)(8.7,1.5)
+\psset{linecolor=blue}
+
+%  \psplot[plotstyle=curve,plotpoints=1000]{-6.4}{-6.0}{0}
+    \psplot[plotstyle=curve,plotpoints=1000]{-7.0}{-6.0}{x 4 add 3 add x 4 add mul -1 mul 2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{-6.0}{-5.0}{-1 x 4 add sub x 4 add mul -1 mul 2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{-5.0}{-4.0}{x 4 add 1 add x 4 add mul -1 mul 2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{-4.0}{-3.0}{1 x 4 add sub x 4 add mul  2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{-3.0}{-2.0}{x 4 add 1 sub x 4 add mul  2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{-2.0}{-1.0}{3 x 4 add sub x 4 add mul  2 div}
+
+    \psplot[plotstyle=curve,plotpoints=1000]{1.0}{2.0}{x 4 sub 3 add x 4 sub mul -1 mul 2 div}
+    
+    \psplot[plotstyle=curve,plotpoints=1000]{2.0}{3.0}{-1 x 4 sub  sub x 4 sub  mul -1 mul 2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{3.0}{4.0}{x 4 sub 1 add x 4 sub mul -1 mul 2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{4.0}{5.0}{1 x 4 sub  sub x 4 sub  mul  2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{5.0}{6.0}{x 4 sub  1 sub x 4 sub  mul  2 div}
+    \psplot[plotstyle=curve,plotpoints=1000]{6.0}{7.0}{3 x 4 sub  sub x 4 sub  mul  2 div}
+    
+
+\rput(0,1.7){$|G(w)|$}
+\rput(8.8,-.2){$w$}
+\end{pspicture}
+\end{document}
+
