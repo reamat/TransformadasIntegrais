@@ -318,6 +318,29 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 \end{itemize}
 \end{resp}
 
+\begin{exer}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras (este problema é realmente muito importante):
+    \begin{itemize}
+     \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
+     \item [a)] $e^{-ix}=\cos(x)-i\sen(x).$
+     \item [c)] $|e^{i\theta}|=1, ~~ \forall \theta\in\mathbb{R}.$
+     \item [d)] $\overline{e^{i\theta}}=e^{-i\theta}, ~~ \forall \theta\in\mathbb{R}.$
+     \item [e)] $|e^{z}|=e^{\text{Re}~\!( z)}.$
+     \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
+     \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+     \end{itemize}
+    \end{exer}
+    \begin{resp}
+     \begin{itemize}
+     \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
+     \item [c)] $|e^{i\theta}|=|\cos(x)+i\sen(x)|= \sqrt{\cos^2(\theta)+\sin^2(\theta)}=1$
+     \item [d)] $\overline{e^{i\theta}}=\overline{\cos(x)+i\sen(x)}=\cos(x)-i\sen(x)=e^{-i\theta}.$
+     \item [e)] $|e^{z}|=|e^{\text{Re}~\!( z)}e^{\text{Im}~\!( z)}|=|e^{\text{Re}~\!( z)}|~|e^{\text{Im}~\!( z)}|=e^{\text{Re}~\!( z)}.$, pois $e^x>0$ para todo $x$ real.
+     \item [f)] Considere $e^{ix}+e^{-ix}$.
+     \item [g)] Considere $e^{ix}-e^{-ix}$.
+     \end{itemize}
+ \end{resp}
+    
+
 \begin{exer} Sejam $Z_1=Ae^{i\phi_a}$ e $Z_2=Be^{i\phi_b}$ com $A$ e $B$ positivos. Verifique que $|Z_1+Z_2|=|A+Be^{i\phi}|$ com $\phi=\phi_b-\phi_a$. Obtenha que $|Z_1+Z_2| = \sqrt{A^2+2AB\cos(\phi)+B^2}$. Conclua que $|Z_1+Z_2|=A+B$ só acontece quando $\cos(\phi)=1$. Qual a intepretação geométrica? 
 \end{exer}
 \begin{resp}
@@ -353,25 +376,4 @@ sem usar a exponencial complexa.
 \begin{equation}\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]\end{equation}
 \end{exer}
 
-\begin{exer}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras:
-\begin{itemize}
- \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
- \item [a)] $e^{-ix}=\cos(x)-i\sen(x).$
- \item [c)] $|e^{i\theta}|=1, ~~ \forall \theta\in\mathbb{R}.$
- \item [d)] $\overline{e^{i\theta}}=e^{-i\theta}, ~~ \forall \theta\in\mathbb{R}.$
- \item [e)] $|e^{z}|=e^{\text{Re}~\!( z)}.$
- \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
- \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
- \end{itemize}
-\end{exer}
-\begin{resp}
- \begin{itemize}
- \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
- \item [c)] $|e^{i\theta}|=|\cos(x)+i\sen(x)|= \sqrt{\cos^2(\theta)+\sin^2(\theta)}=1$
- \item [d)] $\overline{e^{i\theta}}=\overline{\cos(x)+i\sen(x)}=\cos(x)-i\sen(x)=e^{-i\theta}.$
- \item [e)] $|e^{z}|=|e^{\text{Re}~\!( z)}e^{\text{Im}~\!( z)}|=|e^{\text{Re}~\!( z)}|~|e^{\text{Im}~\!( z)}|=e^{\text{Re}~\!( z)}.$, pois $e^x>0$ para todo $x$ real.
- \item [f)] Considere $e^{ix}+e^{-ix}$.
- \item [g)] Considere $e^{ix}-e^{-ix}$.
- \end{itemize}
-\end{resp}
 
