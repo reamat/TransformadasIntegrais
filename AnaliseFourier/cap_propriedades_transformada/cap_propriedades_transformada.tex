@@ -386,121 +386,6 @@ Observe que não é possível, em geral, conhecer o diagrama de magnitudes da so
 \end{equation}
 para $w_0\in\mathbb{R}$.
 \end{exer}
-\begin{exer}Considere uma função real $f(t)$ tal que o diagrama de magnitude é dado na figura abaixo. 
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_13}\end{center}
-\begin{itemize}
-\item[a)] Trace o diagrama de magnitude do espectro de $g(t)=f(t-a)$ onde $a$ é uma constante real.
-\item[b)] Trace o diagrama de magnitude do espectro de $g(t)=f(2t)$.
-\item[c)] Trace o diagrama de magnitude do espectro de $g(t)=f(-t)$.
-\item[d)] Trace o diagrama de magnitude do espectro de $g(t)=3f(t)$.
-\item[e)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos(1000t)$.
-\item[f)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos^2(1000t)$.
-\item[g)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\sen(1000t)$.
-\item[h)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)|\sen(1000t)|$. [Dica: Use a expansão em Série de Fourier do retificador de onda completa\footnote{$|\sen(x)|=\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2x)}{1\cdot 3}+\frac{\cos(4x)}{3\cdot 5}+\frac{\cos(6x)}{5\cdot 7}+\cdots\right)$}]
-\item[i)] Trace o diagrama de magnitude do espectro de $g(t)=f'(t)$.
-\item[j)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\ast f(t)$.
-\item[k)] Calcule o valor da energia do sinal dada por \begin{equation}\int_{-\infty}^\infty f(t)^2dt.\end{equation}
-\item[l)] Calcule o módulo do valor médio do sinal dado por \begin{equation}\left|\int_{-\infty}^\infty f(t)dt\right|.\end{equation}
-\end{itemize}
- \end{exer}
-\begin{resp}
-\begin{itemize}
-\item[a)]
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t-a)\right\}=\mathcal{F}\left\{f(t)\right\}e^{-iaw}\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&|F(w)|~|e^{-iaw}|=|F(w)|
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_desl_t}
-Logo o diagrama de magnitude é o mesmo do de $f(t)$.
-\item[b)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(2t)\right\}=\frac{1}{2}F\left(\frac{w}{2}\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\frac{1}{2}\left|F\left(\frac{w}{2}\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_mud_esc}.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_14}\end{center}
-\item[c)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(-t)\right\}=F\left(-w\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&\left|F\left(-w\right)\right|=\left|\overline{F\left(w\right)}\right|=\left|F\left(w\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_inv_temp} e, depois, \ref{prop_conj}.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_15}\end{center}
-\item[d)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{3f(t)\right\}=3F\left(w\right)\\
-\left|\mathcal{F}\left\{g(t)\right\}\right|&=&3\left|F\left(w\right)\right|.
-\end{eqnarray*}
-Onde se usou a propriedade \ref{prop_linear}.
-\item[e)] 
- \begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos(1000t)\right\}\\
-&=&\frac{1}{2}\left[F(w-1000)+F(w+1000)\right]\\
-\end{eqnarray*}
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_16}\end{center}
-\item[f)] 
-\begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos^2(1000t)\right\}\\
-&=&\mathcal{F}\left\{f(t)\frac{\left(1+\cos(2000t)\right)}{2}\right\}\\
-&=&\frac{1}{2}F(w) + \frac{1}{4}\left[F(w-2000)+F(w+2000)\right]
-\end{eqnarray*}
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_17}\end{center}
-\item[g)]
-\begin{eqnarray*}
-\mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
-&=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
-\end{eqnarray*}
-O diagrama de magnitudes é o mesmo do item e.
-\item[h)] 
-\begin{eqnarray*}g(t)&=&f(t)|\sen(1000x)|\\
-    &=&f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]
-\end{eqnarray*}
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)\\
-&-&\frac{2}{3\pi}\left[F(w+2000)+F(w-2000)\right]\\
-&-&\frac{2}{15\pi}\left[ F(w+4000)+F(w-4000)\right]\\
-&-&\frac{2}{35\pi}\left[ F(w+6000)+F(w-6000)\right]+\cdots
-\end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_18}\end{center}
-\item[i)] Usamos a propriedade \ref{prop_der} para obter
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}=iwF(w).
-\end{eqnarray*}
-Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_19}\end{center}
-\item[j)] 
-\begin{eqnarray*}
-\mathcal{F}\{g(t)\}&=&\mathcal{F}\{f(t)\ast f(t)\}=F(w)^2 \\
-|G(w)|&=&|F(w)|^2.
-\end{eqnarray*}
-Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama de magnitudes no gráfico abaixo.
-\begin{center}
-\includegraphics{cap_propriedades_transformada/pics/figura_20}\end{center}
-\item[k)] 
-\begin{eqnarray*}
-\int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
-&=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw\\
-&=&\frac{1}{\pi}\int_{0}^{250} \left|10\left(1-\frac{w}{250}\right)\right|^2dw\\
-&=&\frac{100}{\pi}\int_{1}^{0}  u^2\left(-250\right)du\\
-&=&\frac{25000}{\pi}\int_{0}^{1}  u^2du\\
-&=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
-&=&\frac{25000}{3\pi}
-\end{eqnarray*}
-\item[l)] 
-\begin{eqnarray*}
-\int_{-\infty}^\infty f(t)dt&=& F(0)\\
-\left|\int_{-\infty}^\infty f(t)dt\right|&=& |F(0)|=10
-\end{eqnarray*}
-\end{itemize}
-\end{resp}
 \begin{exer} Considere o sinal $f(t)$ associado ao seguinte diagrama de espectro:
 \begin{center}
 \includegraphics{cap_propriedades_transformada/pics/figura_21}\end{center}
@@ -664,8 +549,149 @@ e, finalmente,
 \left|\int_{-\infty}^\infty |f(t)|^2dt\right|^2 
 \end{eqnarray*}
 \end{proof}
-%\subsection*{Exercícios}
+\subsection*{Exercícios}
+\begin{exer} Calcule a energia total de $f(t)=e^{-|t|}$. 
+\end{exer}
+\begin{resp}$E=1.$
+\end{resp}
 
+\begin{exer} Seja $f(t)$ uma função que possui transformada de Fourier $F(w)=\mathcal{F}\{f(t)\}$. O gráfico abaixo apresenta o diagrama de espectro de magnitudes de $F(w)$. Calcule a energia total $E$ de $f(t)$.
+\begin{center}
+     \includegraphics{cap_propriedades_transformada/pics/diagrama_7A}
+\end{center}
+\end{exer}
+\begin{resp}
+    $E=\frac{1}{\pi}.$
+\end{resp}
+
+\begin{exer} Considere os diagramas de espectro de magnititudes das função $f(t)$ dada.
+Sabendo que $f(t)$ representa uma função real, calcule uma estimativa para a energia total dada por $E:=\int_{-\infty}^\infty |f(t)|^2dt$:
+
+\begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/diagrama_FG_2}
+\end{center}
+\end{exer}
+\begin{resp}
+    $E\approx 330.$
+\end{resp}
+
+
+\begin{exer}Considere uma função real $f(t)$ tal que o diagrama de magnitude é dado na figura abaixo. 
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_13}\end{center}
+    \begin{itemize}
+    \item[a)] Trace o diagrama de magnitude do espectro de $g(t)=f(t-a)$ onde $a$ é uma constante real.
+    \item[b)] Trace o diagrama de magnitude do espectro de $g(t)=f(2t)$.
+    \item[c)] Trace o diagrama de magnitude do espectro de $g(t)=f(-t)$.
+    \item[d)] Trace o diagrama de magnitude do espectro de $g(t)=3f(t)$.
+    \item[e)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos(1000t)$.
+    \item[f)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\cos^2(1000t)$.
+    \item[g)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\sen(1000t)$.
+    \item[h)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)|\sen(1000t)|$. [Dica: Use a expansão em Série de Fourier do retificador de onda completa\footnote{$|\sen(x)|=\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2x)}{1\cdot 3}+\frac{\cos(4x)}{3\cdot 5}+\frac{\cos(6x)}{5\cdot 7}+\cdots\right)$}]
+    \item[i)] Trace o diagrama de magnitude do espectro de $g(t)=f'(t)$.
+    \item[j)] Trace o diagrama de magnitude do espectro de $g(t)=f(t)\ast f(t)$.
+    \item[k)] Calcule o valor da energia do sinal dada por \begin{equation}\int_{-\infty}^\infty f(t)^2dt.\end{equation}
+    \item[l)] Calcule o módulo do valor médio do sinal dado por \begin{equation}\left|\int_{-\infty}^\infty f(t)dt\right|.\end{equation}
+    \end{itemize}
+     \end{exer}
+    \begin{resp}
+    \begin{itemize}
+    \item[a)]
+     \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t-a)\right\}=\mathcal{F}\left\{f(t)\right\}e^{-iaw}\\
+    \left|\mathcal{F}\left\{g(t)\right\}\right|&=&|F(w)|~|e^{-iaw}|=|F(w)|
+    \end{eqnarray*}
+    Onde se usou a propriedade \ref{prop_desl_t}
+    Logo o diagrama de magnitude é o mesmo do de $f(t)$.
+    \item[b)] 
+     \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(2t)\right\}=\frac{1}{2}F\left(\frac{w}{2}\right)\\
+    \left|\mathcal{F}\left\{g(t)\right\}\right|&=&\frac{1}{2}\left|F\left(\frac{w}{2}\right)\right|.
+    \end{eqnarray*}
+    Onde se usou a propriedade \ref{prop_mud_esc}.
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_14}\end{center}
+    \item[c)] 
+     \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(-t)\right\}=F\left(-w\right)\\
+    \left|\mathcal{F}\left\{g(t)\right\}\right|&=&\left|F\left(-w\right)\right|=\left|\overline{F\left(w\right)}\right|=\left|F\left(w\right)\right|.
+    \end{eqnarray*}
+    Onde se usou a propriedade \ref{prop_inv_temp} e, depois, \ref{prop_conj}.
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_15}\end{center}
+    \item[d)] 
+     \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{3f(t)\right\}=3F\left(w\right)\\
+    \left|\mathcal{F}\left\{g(t)\right\}\right|&=&3\left|F\left(w\right)\right|.
+    \end{eqnarray*}
+    Onde se usou a propriedade \ref{prop_linear}.
+    \item[e)] 
+     \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos(1000t)\right\}\\
+    &=&\frac{1}{2}\left[F(w-1000)+F(w+1000)\right]\\
+    \end{eqnarray*}
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_16}\end{center}
+    \item[f)] 
+    \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\cos^2(1000t)\right\}\\
+    &=&\mathcal{F}\left\{f(t)\frac{\left(1+\cos(2000t)\right)}{2}\right\}\\
+    &=&\frac{1}{2}F(w) + \frac{1}{4}\left[F(w-2000)+F(w+2000)\right]
+    \end{eqnarray*}
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_17}\end{center}
+    \item[g)]
+    \begin{eqnarray*}
+    \mathcal{F}\left\{g(t)\right\}&=&\mathcal{F}\left\{f(t)\sen(1000t)\right\}\\
+    &=&\frac{i}{2}\left[F(w+1000)-F(w-1000)\right]\\
+    \end{eqnarray*}
+    O diagrama de magnitudes é o mesmo do item e.
+    \item[h)] 
+    \begin{eqnarray*}g(t)&=&f(t)|\sen(1000x)|\\
+        &=&f(t)\left[\frac{2}{\pi}-\frac{4}{\pi}\left(\frac{\cos(2000x)}{1\cdot 3}+\frac{\cos(4000x)}{3\cdot 5}+\frac{\cos(6000x)}{5\cdot 7}+\cdots\right)\right]
+    \end{eqnarray*}
+    \begin{eqnarray*}
+    \mathcal{F}\{g(t)\}&=&\frac{2}{\pi}F(w)\\
+    &-&\frac{2}{3\pi}\left[F(w+2000)+F(w-2000)\right]\\
+    &-&\frac{2}{15\pi}\left[ F(w+4000)+F(w-4000)\right]\\
+    &-&\frac{2}{35\pi}\left[ F(w+6000)+F(w-6000)\right]+\cdots
+    \end{eqnarray*}
+    Veja o diagrama de magnitudes no gráfico abaixo.
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_18}\end{center}
+    \item[i)] Usamos a propriedade \ref{prop_der} para obter
+    \begin{eqnarray*}
+    \mathcal{F}\{g(t)\}=iwF(w).
+    \end{eqnarray*}
+    Veja o diagrama de magnitudes no gráfico abaixo.
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_19}\end{center}
+    \item[j)] 
+    \begin{eqnarray*}
+    \mathcal{F}\{g(t)\}&=&\mathcal{F}\{f(t)\ast f(t)\}=F(w)^2 \\
+    |G(w)|&=&|F(w)|^2.
+    \end{eqnarray*}
+    Onde se usou a propriedade da convolução  \ref{prop_teo_conv}. Veja o diagrama de magnitudes no gráfico abaixo.
+    \begin{center}
+    \includegraphics{cap_propriedades_transformada/pics/figura_20}\end{center}
+    \item[k)] 
+    \begin{eqnarray*}
+    \int_{-\infty}^\infty f(t)^2dt&=&\int_{-\infty}^\infty |f(t)|^2dt\\
+    &=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw\\
+    &=&\frac{1}{\pi}\int_{0}^{250} \left|10\left(1-\frac{w}{250}\right)\right|^2dw\\
+    &=&\frac{100}{\pi}\int_{1}^{0}  u^2\left(-250\right)du\\
+    &=&\frac{25000}{\pi}\int_{0}^{1}  u^2du\\
+    &=&\frac{25000}{\pi}\left[\frac{u^3}{3}\right]_{0}^{1}dw\\
+    &=&\frac{25000}{3\pi}
+    \end{eqnarray*}
+    \item[l)] 
+    \begin{eqnarray*}
+    \int_{-\infty}^\infty f(t)dt&=& F(0)\\
+    \left|\int_{-\infty}^\infty f(t)dt\right|&=& |F(0)|=10
+    \end{eqnarray*}
+    \end{itemize}
+    \end{resp}
+    
 
 \section{Passagem do contínuo para o discreto}
 Nesta seção vamos calcular a transformada de Fourier de uma função periódica $f(t)$ que possui representação em série de Fourier. Para esse propósito, observe que, colocando $F(w)=2\pi \delta(w-w_0)$, temos 
@@ -813,28 +839,3 @@ f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{
 \end{proof}
 
 
-\subsection*{Exercícios}
-\begin{exer} Calcule a energia total de $f(t)=e^{-|t|}$. 
-\end{exer}
-\begin{resp}$E=1.$
-\end{resp}
-
-\begin{exer} Seja $f(t)$ uma função que possui transformada de Fourier $F(w)=\mathcal{F}\{f(t)\}$. O gráfico abaixo apresenta o diagrama de espectro de magnitudes de $F(w)$. Calcule a energia total $E$ de $f(t)$.
-\begin{center}
-     \includegraphics{cap_propriedades_transformada/pics/diagrama_7A}
-\end{center}
-\end{exer}
-\begin{resp}
-    $E=\frac{1}{\pi}.$
-\end{resp}
-
-\begin{exer} Considere os diagramas de espectro de magnititudes das função $f(t)$ dada.
-Sabendo que $f(t)$ representa uma função real, calcule uma estimativa para a energia total dada por $E:=\int_{-\infty}^\infty |f(t)|^2dt$:
-
-\begin{center}
-    \includegraphics{cap_propriedades_transformada/pics/diagrama_FG_2}
-\end{center}
-\end{exer}
-\begin{resp}
-    $E\approx 330.$
-\end{resp}
