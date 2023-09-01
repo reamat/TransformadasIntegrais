@@ -128,47 +128,90 @@ Usando que $C_0=0$ e $C_n=\frac{a_n-ib_n}{2}=\frac{1}{2n^2}$ para $n\neq 0$, tem
 \bar{P}_f
 &=&\sum_{n=-\infty}^{-1} |C_n|^2 + |C_0|^2 + \sum_{n=1}^\infty |C_n|^2\\
 &=&\sum_{n=-\infty}^{-1} \left|\frac{1}{2n^2}\right|^2 + |0|^2 + \sum_{n=1}^\infty \left|\frac{1}{2n^2}\right|^2\\
-&=&+2\sum_{n=1}^\infty \frac{1}{4n^4}=\frac{1}{2}\frac{\pi^4}{90}=\frac{\pi^4}{180}.
+&=&2\sum_{n=1}^\infty \frac{1}{4n^4}=\frac{1}{2}\frac{\pi^4}{90}=\frac{\pi^4}{180}.
 \end{eqnarray*}
+
+\end{resol}
+
+
+\begin{exeresol} Seja a função periódica $f(t)$ dada no gráfico abaixo.
+    \begin{center}
+        \includegraphics[width=\textwidth]{cap_propriedades_series/pics/func_impar_1}
+    \end{center}
+        
+    Considere sua expansão em série de Fourier na seguinte forma: 
+$$
+f(t)= \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(w_n t)+b_n\sin(w_nt)=\sum_{n=-\infty}^\infty C_n e^{iw_n t}.
+$$
+\begin{itemize}
+    \item[a)] Calcule o período fundamental e a frequência fundamental, $w_1$ e indique se a função é par, ímpar ou nenhum dos dois.
+  \item[b)]  Calcule a potência média $\bar{P}_f$ 
+  \item[c)]  Calcule os coeficientes $a_n$ e $b_n$. 
+  \item[d)]  Calcule a potência média, $\bar{P}_{f_4}$ da série truncada de $f(t)$ dada por:
+  $f_4(t)=\sum_{n=-4}^4 C_n e^{iw_n t}$.
+  \item[e)] Calcule a razão $\frac{\bar{P}_{f_4}}{\bar{P}_f}$.
+  \end{itemize}
+\end{exeresol}
+\begin{resol}
+  
+  Vemos do gráfico que o período fundamental é $T_f=4$, logo a frequência fundamental é $f_f = \frac{1}{4}$. A função é ímpar.
+
+  A potência média é mais facilmente obtida da definição:
+  \begin{eqnarray*}
+      \bar{P}_f&=&\frac{1}{T}\int_{-T/2}^{T/2}|f(t)|^2dt
+      =\frac{2}{T}\int_{0}^{T/2}|f(t)|^2dt
+      =\frac{1}{2}\int_{0}^{2}|f(t)|^2dt\\
+      &=&\frac{1}{2}\left[3^2+1^2\right]=\frac{10}{2}=5.
+  \end{eqnarray*}
+  Aqui se usou que $|f(t)|$ é uma função par.
+  
+  Como $f(t)$ é ímpar, temos que $a_n=0$ para todo $n$.
+  
+  Para calcular $b_n$ para $n\geq 1$, vemos que:
+  \begin{eqnarray*}
+     b_n&=&\frac{2}{T}\int_{-2}^2f(t)\sin(w_n t)dt\\
+     &=&\int_{0}^2f(t)\sin(w_n t)dt\\
+     &=&\int_{0}^1\sin(w_n t)dt+\int_{1}^2\sin(w_n t)dt\\
+     &=&\frac{1}{\omega_n}\left[-3\left.\cos(w_n)\right|_0^1-\left.\cos(w_n)\right|_1^2\right]\\
+  \end{eqnarray*}
+  Como $w_n = \frac{2\pi n}{4}=\frac{\pi n}{2}$, temos:
+  \begin{eqnarray*}
+      b_n    &=&\frac{2}{\pi n}\left[-3\left.\cos\left(\frac{n\pi t}{2}\right)\right|_0^1-\left.\cos\left(\frac{n\pi t}{2}\right)\right|_1^2\right]\\
+             &=&\frac{2}{\pi n}\left[-3\cos\left(\frac{n\pi }{2}\right)+3-\cos\left({n\pi }\right) + \cos\left(\frac{n\pi }{2}\right)\right]\\            
+             &=&\frac{2}{\pi n}\left[3-(-1)^n-2\cos\left(\frac{n\pi }{2}\right) \right]
+   \end{eqnarray*}
+  Portanto:
+  \begin{eqnarray*}
+      b_1    =\frac{8}{\pi},\qquad
+      b_2    =\frac{4}{\pi},\qquad
+      b_3    =\frac{8}{3\pi},\qquad
+      b_4    =0.
+   \end{eqnarray*}
+   
+   Para calcular a potência média de $f_4(t)$, usamos:
+   \begin{eqnarray*}
+      \bar{P}_{f_4} &=& \sum_{n=-4}^n|C_n|^2 = |C_0|^2+2\left[|C_1|^2+|C_2|^2+|C_3|^2+|C_4|^2\right]\\
+      &=&2\left[\left(\frac{4}{\pi}\right)^2 + \left(\frac{2}{\pi}\right)^2+ \left(\frac{4}{3\pi}\right)^2\right]\\
+      &=&\frac{2}{\pi^2}\left[16+4+\frac{16}{9}\right]=\frac{392}{9\pi^2}\\
+   \end{eqnarray*}
+
+   Por fim, temos:
+   $$\frac{\bar{P}_{f_4}}{\bar{P}_f}=\frac{392}{45\pi^2}\approx 0.883$$
 
 \end{resol}
 
 
 \subsection*{Exercícios}
 \begin{exer}Dado o diagrama de espectro de amplitude de uma função periódica $f(t)$, encontre, respectivamente, o módulo do valor médio e a potência média da função $\left(\left|\frac{1}{T}\int_0^Tf(t)dt\right|\quad\text{e}\quad \frac{1}{T}\int_0^T|f(t)|^2dt\right)$.\\
-\begin{figure}[!ht]
+%\begin{figure}[!ht]
 \begin{center}
 \includegraphics{cap_propriedades_series/pics/figura_4}
 \end{center}
-\end{figure}
-
-%\begin{minipage}{8cm}
-%{Valor Médio}
-% \begin{itemize}
-% \item[a)] 0
-% \item[b)] 0.5
-% \item[c)] 1
-% \item[d)] 1.5
-% \item[e)] 2 %esta
-% \item[f)] 2.5
-% \item[g)] 3
-% \end{itemize}
-%\end{minipage}
-%\begin{minipage}{8cm}
-%{Potência Média}
-% \begin{itemize}
-%\item[a)]  11.5
-% \item[b)] 10
-% \item[c)] 8.5 %esta
-% \item[d)] 6
-% \item[e)] 4.5
-% \item[f)] 3
-% \item[g)] 0.5
-% \end{itemize}
-%\end{minipage}
+%\end{figure}
 \end{exer}
 \begin{resp} 2 e 8,5.
 \end{resp}
+
 
 
 
