@@ -352,7 +352,6 @@ Em ambos os casos, temos:
 \subsection*{Exercícios}
 \begin{exer}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura abaixo. Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
 %\begin{figure}[!ht]
-\newpage
     \begin{center}
 \includegraphics{cap_propriedades_transformada/pics/figura_1}
     \end{center}
@@ -380,12 +379,14 @@ Em ambos os casos, temos:
 \end{itemize}
 Observe que não é possível, em geral, conhecer o diagrama de magnitudes da soma de duas funções, $F(w)$ e $G(w)$, conhecendo apenas seus diagramas de magnitudes. As fases precisam ser levadas em conta. Um exceção é quando, para todos $w$, ou $F(w)=0$ ou $G(w)=0$.
 \end{exer} 
+
 \begin{exer}{\label{ex_mod_sin}}Mostre que, dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
 \begin{equation}
 \mathcal{F}\left\{f(t)\sen(w_0t) \right\}=\frac{i}{2}F(w+w_0)-\frac{i}{2 }F(w-w_0),
 \end{equation}
 para $w_0\in\mathbb{R}$.
 \end{exer}
+
 \begin{exer} Considere o sinal $f(t)$ associado ao seguinte diagrama de espectro:
 \begin{center}
 \includegraphics{cap_propriedades_transformada/pics/figura_21}\end{center}
@@ -414,6 +415,7 @@ para $w_0\in\mathbb{R}$.
 \item[g)] \begin{equation}a=\frac{392}{329.6}=1.19\end{equation}
 \end{itemize} 
 \end{resp}
+
 \begin{exer} Trace o gráfico das seguintes funções, calcule sua transformada de Fourier e trace o diagrama de magnitudes: 
 \begin{itemize}
 \item[a)] $f(t)=e^{-|t|}\cos(10t)$.
@@ -429,6 +431,7 @@ para $w_0\in\mathbb{R}$.
 \begin{resp}
  Use o teorema da modulação. No caso c), considere $h(t)=\left[u(t-4)-u(t+4)\right]\cos(10t)$.
 \end{resp}
+
 \begin{exer} Considere uma aproximação do diagrama de espectro de magnitudes de uma nota tocada por um instrumento musical e representado por uma função $f(t)$:
 \begin{center}
 \includegraphics{cap_propriedades_transformada/pics/figura_24}\end{center}
@@ -465,7 +468,7 @@ para $w_0\in\mathbb{R}$.
     \end{center}
 \end{resp}
            
-    
+
 
 \section{O teorema de Parseval e o princípio da Incerteza}
 \begin{teo}[Teorema de Parseval]\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
