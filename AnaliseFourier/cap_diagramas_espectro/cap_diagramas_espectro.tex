@@ -233,8 +233,74 @@ Observe que a frequência fundamental é $w=2$ e o período fundamental é $\pi$
 \end{resol}
 
 
-\begin{exeresol}a
+\begin{exeresol}Considere a função periódica $f(t)$ dada no gráfico
+
+  \begin{center}
+    \includegraphics{cap_diagramas_espectro/pics/grafico_func_quadrada_sem_paridade}
+  \end{center}
+  
+  
+  e sua série de Fourier dada por
+  $$
+  f(t)= \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(w_n t)+b_b\sin(w_nt).$$
+  \begin{itemize}
+    \item[a)]  Calcule o período fundamental e a frequência fundamental.
+     \item[b)]  Calcule os coeficientes $a_0$ e $a_n$ e $b_n$, $n\geq 1$. 
+      \item[c)]  Simplifique as expressões dos coeficientes $a_n$ e $b_n$ com $n\in\{1,2,3\}$.
+      \item[d)] Calcule $C_n$ com $n\in\{1,2,3\}$ e escreva a forma exponencial $C_n=|C_n|e^{i\phi_n}$ 
+  \end{itemize}
 \end{exeresol}
+
+\begin{resol}
+
+  O período fundamental é $T=6$ e a frequência angular fundamental é $w_f=\frac{2\pi }{6}=\frac{\pi}{3}$. 
+
+  O coeficiente $a_0$ é dado por:
+  \begin{eqnarray*}
+  a_0=\frac{2}{6}\int_{-1}^5 f(t) dt=1
+  \end{eqnarray*}
+  
+  Os coeficientes $a_n$ são dados por:
+  \begin{eqnarray*}
+  a_n&=&\frac{2}{6}\int_{-1}^5 f(t)\cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ \frac{\sin((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{\sin(2\pi n/3)-\sin(-\pi n/3) }{\pi n}\\
+  &=&\frac{\sin(2\pi n/3)+\sin(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os coeficientes $b_n$ são dados por:
+  \begin{eqnarray*}
+  b_n&=&\frac{2}{6}\int_{-1}^5 f(t)\sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ -\frac{\cos((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{-\cos(2\pi n/3)-(-\cos(-\pi n/3)) }{\pi n}\\
+  &=&\frac{-\cos(2\pi n/3)+\cos(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os valores numéricos dos primeitos coeficientes são dados por:
+  \begin{eqnarray*}
+  a_1&=&\frac{\sin(2\pi /3)+\sin(\pi /3) }{\pi }=\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=\frac{\sqrt{3}}{\pi}\\
+  a_2&=&\frac{\sin(4\pi /3)+\sin(2\pi /3) }{2\pi }=-\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=0\\
+  a_3&=&\frac{\sin(6\pi /3)+\sin(3\pi /3) }{3\pi }=0
+  \end{eqnarray*}
+  \begin{eqnarray*}
+  b_1&=&\frac{-\cos(2\pi /3)+\cos(\pi /3) }{\pi }=-\left(-\frac{1}{2\pi}\right)+\frac{1}{2\pi}=\frac{1}{\pi}\\
+  b_2&=&\frac{-\cos(4\pi /3)+\cos(2\pi /3) }{2\pi }=-\left(-\frac{1}{4\pi}\right)-\frac{1}{4\pi}=0\\
+  b_3&=&\frac{-\cos(6\pi /3)+\cos(3\pi /3) }{3\pi }=-\frac{1}{3\pi}-\frac{1}{3\pi}=-\frac{2}{3\pi}
+  \end{eqnarray*}
+
+  E finalmente, temos:
+  \begin{eqnarray*}
+   C_1&=&a_1-ib_1=\frac{\sqrt{3}-i}{2\pi}=\frac{1}{\pi}e^{-i\pi/6}\\
+    C_2&=&a_2-ib_2=0\\
+    C_3&=&a_3-ib_3=\frac{i}{3\pi}=\frac{1}{3\pi}e^{i\pi/2} 
+  \end{eqnarray*}
+  
+  
+  
+\end{resol}
+
 
 
 \subsection*{Exercícios}
