@@ -158,34 +158,6 @@ g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\p
 \end{equation}
 \end{ex}
 
-\subsection*{Exercícios resolvidos}
-\begin{exeresol}
- Considere a função $f(t)=8\cos^4(t)$. 
-\begin{itemize}
- \item[a)] Obtenha a frequência fundamental.
- \item[b)] Obtenha o período fundamental.
- \item[c)] Construa forma trigonométrica da série de Fourier de $f(t)$.
- \item[d)] Construa a forma exponencial da série de Fourier de $f(t)$.
- \item[e)] Esboce os diagramas de espectro.
-\end{itemize}
-\end{exeresol}
-\begin{resol}
-Usando o binômio de Newton, obtemos a seguinte identidade trigonométrica:
-\begin{eqnarray*}
-8\cos^4(t)&=&8\left(\frac{e^{it}+e^{-it}}{2}\right)^4\\
-&=&\frac{e^{4it}+ 4 e^{3it}e^{-it}+ 6 e^{2it}e^{-2it}+ 4 e^{it}e^{-3it} +e^{-4it} }{2} \\
-&=&\frac{1}{2}e^{-4it}+2 e^{-2it}+3  + 2 e^{2it} +\frac{1}{2}e^{4it} \quad \hbox{(forma exponencial)}\\
-&=&3+\frac{e^{4it}+e^{-4it} }{2}+4\frac{  e^{2it}+  e^{-2it} }{2}\\
-&=&3+4\cos(2t)+\cos(4t)\quad \hbox{(forma trigonométrica)}\\
-\end{eqnarray*}
-
-Observe que a frequência fundamental é $w=2$ e o período fundamental é $\pi$. O diagrama de espectro de fase é zero em todas as frequências e o diagrama de espectro de amplitudes é dado no gráfico abaixo:
-
-\begin{center}
-  \includegraphics{cap_diagramas_espectro/pics/diagrama_3}
-\end{center}
-\end{resol}
-
 
 
 
@@ -229,6 +201,108 @@ são dados na figura a seguir:
 \includegraphics{cap_diagramas_espectro/pics/figura_5}
 \end{figure}
 \end{ex}
+
+
+
+\subsection*{Exercícios resolvidos}
+\begin{exeresol}
+ Considere a função $f(t)=8\cos^4(t)$. 
+\begin{itemize}
+ \item[a)] Obtenha a frequência fundamental.
+ \item[b)] Obtenha o período fundamental.
+ \item[c)] Construa forma trigonométrica da série de Fourier de $f(t)$.
+ \item[d)] Construa a forma exponencial da série de Fourier de $f(t)$.
+ \item[e)] Esboce os diagramas de espectro.
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+Usando o binômio de Newton, obtemos a seguinte identidade trigonométrica:
+\begin{eqnarray*}
+8\cos^4(t)&=&8\left(\frac{e^{it}+e^{-it}}{2}\right)^4\\
+&=&\frac{e^{4it}+ 4 e^{3it}e^{-it}+ 6 e^{2it}e^{-2it}+ 4 e^{it}e^{-3it} +e^{-4it} }{2} \\
+&=&\frac{1}{2}e^{-4it}+2 e^{-2it}+3  + 2 e^{2it} +\frac{1}{2}e^{4it} \quad \hbox{(forma exponencial)}\\
+&=&3+\frac{e^{4it}+e^{-4it} }{2}+4\frac{  e^{2it}+  e^{-2it} }{2}\\
+&=&3+4\cos(2t)+\cos(4t)\quad \hbox{(forma trigonométrica)}\\
+\end{eqnarray*}
+
+Observe que a frequência fundamental é $w=2$ e o período fundamental é $\pi$. O diagrama de espectro de fase é nulo em todas as frequências e o diagrama de espectro de amplitudes é dado no gráfico abaixo:
+
+\begin{center}
+  \includegraphics{cap_diagramas_espectro/pics/diagrama_3}
+\end{center}
+\end{resol}
+
+
+\begin{exeresol}Considere a função periódica $f(t)$ dada no gráfico
+
+  \begin{center}
+    \includegraphics{cap_diagramas_espectro/pics/grafico_func_quadrada_sem_paridade}
+  \end{center}
+  
+  
+  e sua série de Fourier dada por
+  $$
+  f(t)= \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(w_n t)+b_b\sin(w_nt).$$
+  \begin{itemize}
+    \item[a)]  Calcule o período fundamental e a frequência fundamental.
+     \item[b)]  Calcule os coeficientes $a_0$ e $a_n$ e $b_n$, $n\geq 1$. 
+      \item[c)]  Simplifique as expressões dos coeficientes $a_n$ e $b_n$ com $n\in\{1,2,3\}$.
+      \item[d)] Calcule $C_n$ com $n\in\{1,2,3\}$ e escreva a forma exponencial $C_n=|C_n|e^{i\phi_n}$ 
+  \end{itemize}
+\end{exeresol}
+
+\begin{resol}
+
+  O período fundamental é $T=6$ e a frequência angular fundamental é $w_f=\frac{2\pi }{6}=\frac{\pi}{3}$. 
+
+  O coeficiente $a_0$ é dado por:
+  \begin{eqnarray*}
+  a_0=\frac{2}{6}\int_{-1}^5 f(t) dt=1
+  \end{eqnarray*}
+  
+  Os coeficientes $a_n$ são dados por:
+  \begin{eqnarray*}
+  a_n&=&\frac{2}{6}\int_{-1}^5 f(t)\cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ \frac{\sin((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{\sin(2\pi n/3)-\sin(-\pi n/3) }{\pi n}\\
+  &=&\frac{\sin(2\pi n/3)+\sin(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os coeficientes $b_n$ são dados por:
+  \begin{eqnarray*}
+  b_n&=&\frac{2}{6}\int_{-1}^5 f(t)\sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ -\frac{\cos((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{-\cos(2\pi n/3)-(-\cos(-\pi n/3)) }{\pi n}\\
+  &=&\frac{-\cos(2\pi n/3)+\cos(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os valores numéricos dos primeitos coeficientes são dados por:
+  \begin{eqnarray*}
+  a_1&=&\frac{\sin(2\pi /3)+\sin(\pi /3) }{\pi }=\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=\frac{\sqrt{3}}{\pi}\\
+  a_2&=&\frac{\sin(4\pi /3)+\sin(2\pi /3) }{2\pi }=-\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=0\\
+  a_3&=&\frac{\sin(6\pi /3)+\sin(3\pi /3) }{3\pi }=0
+  \end{eqnarray*}
+  \begin{eqnarray*}
+  b_1&=&\frac{-\cos(2\pi /3)+\cos(\pi /3) }{\pi }=-\left(-\frac{1}{2\pi}\right)+\frac{1}{2\pi}=\frac{1}{\pi}\\
+  b_2&=&\frac{-\cos(4\pi /3)+\cos(2\pi /3) }{2\pi }=-\left(-\frac{1}{4\pi}\right)-\frac{1}{4\pi}=0\\
+  b_3&=&\frac{-\cos(6\pi /3)+\cos(3\pi /3) }{3\pi }=-\frac{1}{3\pi}-\frac{1}{3\pi}=-\frac{2}{3\pi}
+  \end{eqnarray*}
+
+  E finalmente, temos:
+  \begin{eqnarray*}
+   C_1&=&a_1-ib_1=\frac{\sqrt{3}-i}{2\pi}=\frac{1}{\pi}e^{-i\pi/6}\\
+    C_2&=&a_2-ib_2=0\\
+    C_3&=&a_3-ib_3=\frac{i}{3\pi}=\frac{1}{3\pi}e^{i\pi/2} 
+  \end{eqnarray*}
+  
+  
+  
+\end{resol}
+
+
+
 \subsection*{Exercícios}
 \begin{exer}
 Esboce os diagramas de amplitude e fase do espectro das seguintes funções periódicas:
@@ -412,6 +486,8 @@ h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{
 
 \end{itemize}
 \end{resp}
+
+
 
 \begin{exer} Seja $f(t)$ dada por sua representação em série de Fourier:
   $$f(t)=\sum_{n=-\infty}^\infty C_n e^{iw_n t }$$

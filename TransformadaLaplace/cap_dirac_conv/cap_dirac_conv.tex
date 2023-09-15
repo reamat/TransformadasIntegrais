@@ -81,6 +81,8 @@ A transformada de Laplace de função Delta de Dirac é obtido pela propriedade 
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
 
+
+
 \subsection*{Exercícios}%Delta
 
 \begin{exer}
@@ -735,6 +737,67 @@ Agora, vamos mudar a ordem de integração na região que é a metade inferior d
  y(t)=4\cosh(3t)
  \end{equation}
 \end{ex}
+
+
+\subsection{Exercícios resolvidos}
+
+\begin{exeresol}
+  Considere o problema íntegro-diferencial dado abaixo:
+$$ y''(t) = a+ \int_0^t(y(\tau))(t-\tau)d\tau $$
+com $y'(0)=3$, $y''(0)=-4$ e $y(1)=3$
+
+\begin{itemize}
+\item[a)] Obtenha o valor de $a$.
+\item[b)] Obtenha o valor de $y(0)$.
+\end{itemize}
+\end{exeresol}
+
+\begin{resol}
+ ~
+  \begin{itemize}
+    \item[a)] Fazendo $t=0$ na equação íntegro-diferencial, temos:
+    $$ y''(0) = a+ \int_0^0(y(\tau))(t-\tau)d\tau. $$
+    Logo $a=y''(0)=-4$.
+    \item[b)] Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convolução com $f(t)=y(t)$ e $g(t)=t$ para obter:
+ 
+    $$
+    s^2Y(s)-sy(0)-3 = -\frac{4}{s}+\frac{Y(s)}{s^2}.
+    $$
+    Assim,
+    $$
+    \left(s^2-\frac{1}{s^2}\right)Y(s) = sy(0)+3-\frac{4}{s}.
+    $$
+    Resolvemos a transformada de Laplace $Y(s)$
+    $$
+    Y(s) = \frac{s^3y(0)}{s^4-1}+\frac{3s^2}{s^4-1}-\frac{4s}{s^4-1}.
+    $$
+    A transformada inversa da última parcela é dado pelo item 28 da tabela:
+    $$
+    \mathcal{L}^{-1}\left(\frac{s}{s^4-1}\right)=\frac{1}{2}\left(\cosh(t)-\cos(t)\right)
+    $$
+    Usando a propriedade da transformada da derivada e, contanto que a função vale zero na origem, temos:
+    $$
+    \mathcal{L}^{-1}\left(\frac{s^2}{s^4-1}\right)=\frac{1}{2}\left(\sinh(t)+\sin(t)\right)
+    $$
+    $$
+    \mathcal{L}^{-1}\left(\frac{s^3}{s^4-1}\right)=\frac{1}{2}\left(\cosh(t)+\cos(t)\right)
+    $$
+    Logo,
+    $$
+    y(t) =\frac{y(0)}{ 2}\left(\cosh(t)+\cos(t)\right)+\frac{3}{2}\left(\sinh(t)+\sin(t)\right)-2\left(\cosh(t)-\cos(t)\right).
+    $$
+    Usando que $y(1)=3$, temos:
+    $$
+    3 =\frac{y(0)}{ 2}\left(\cosh(1)+\cos(1)\right)+\frac{3}{2}\left(\sinh(1)+\sin(1)\right)-2\left(\cosh(1)-\cos(1)\right),
+    $$
+    ou seja,
+    $$
+    y(0)=\frac{-3\left(\sinh(1)+\sin(1)\right)+4\left(\cosh(1)-\cos(1)\right)+6}{\left(\cosh(1)+\cos(1)\right)}=1,9012811822.
+    $$
+    
+  \end{itemize}
+\end{resol}
+
 
 \subsection*{Exercícios}%convolução
 \begin{exer}
