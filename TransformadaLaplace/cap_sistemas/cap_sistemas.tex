@@ -481,13 +481,12 @@ s^2U(s) &=& -4s U(s) + 263 + \frac{25a}{s}-a U(s)-6 s U(s)\\
 U(s) &=& \frac{25a +263s}{s(s^2+10s+a)}
 \end{eqnarray*}
 Para que o sistema seja criticamente amortecido o discriminate de $s^2+10\,s+a$ deve ser nulo, donde $a=25$. Assim:
-$$U(s) = \frac{625 +263s}{s^2+10s+25}$$
-\item[b)] Supondo a existência do limite vale:
+$$U(s) = \frac{625 +263s}{s(s^2+10s+25)}$$
+\item[b)] Supondo a existência do limite, temos:
 \begin{eqnarray*}
        \lim_{t \to \infty} u(t)&=&\lim_{s \to 0+} sU(s)\\
        &=&\lim_{s \to 0+} \left( \frac{625 +263s}{s^2+10s+25}\right)=25
 \end{eqnarray*}
-
 \item[c)] Como $Q(S)=(s+4)U(s)$, temos:
 \begin{eqnarray*}
  \lim_{t\to\infty}q(t)&=&\lim_{s\to 0^+}sQ(s)\\
