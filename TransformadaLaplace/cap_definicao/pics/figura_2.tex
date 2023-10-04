@@ -1,6 +1,6 @@
 \documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document}\psset{xunit =1cm,yunit=.5cm, linewidth=1\pslinewidth}
  \begin{pspicture}(-1.0,-5.5)(4.0,5.5)
- \psaxes[labels]{->}(0,0)(-0.5,-5.0)(3.5,5.0)
+ \psaxes[labels,Dy=2, showorigin=false]{->}(0,0)(-0.5,-5.0)(3.5,5.0)
 \psplot[linecolor=blue,plotstyle=curve,plotpoints=200]{0.0}{3.5}{180 x mul 3.14 div cos 5 mul}
 \psplot[linecolor=red,plotstyle=curve,plotpoints=200]{0.0}{1.7}{2.72 x exp}
 \rput(3.7,.3){$t$}

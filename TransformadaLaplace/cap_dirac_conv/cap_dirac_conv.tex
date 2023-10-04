@@ -1,3 +1,4 @@
+% !TEX root = ../main.tex
 \chapter{A função Delta de Dirac e a propriedade da convolução}
 \section{A função Delta de Dirac}
 Muitos fenômenos físicos exigem a representação de uma força muito grande em um intervalo de tempo muito pequeno, por exemplo:
@@ -25,12 +26,12 @@ A figura \ref{fig_delta_dirac} apresenta o gráfico de $\delta_\epsilon(t-a)$ qu
 \begin{figure}[!ht]
 \begin{center}
 
-\includegraphics{cap_dirac_conv/pics/figura_1}\hspace{20pt}
-\includegraphics{cap_dirac_conv/pics/figura_2}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_1}\hfill
+\includegraphics{cap_dirac_conv/pics/figura_2}\hfill
 \includegraphics{cap_dirac_conv/pics/figura_3}
 
-\includegraphics{cap_dirac_conv/pics/figura_4}\hspace{20pt}
-\includegraphics{cap_dirac_conv/pics/figura_5}\hspace{20pt}
+\includegraphics{cap_dirac_conv/pics/figura_4}\hfill
+\includegraphics{cap_dirac_conv/pics/figura_5}\hfill
 \includegraphics{cap_dirac_conv/pics/figura_6}
 \end{center}
 \caption{\label{fig_delta_dirac}}
@@ -80,13 +81,15 @@ A transformada de Laplace de função Delta de Dirac é obtido pela propriedade 
 \mathcal{L}\{\delta(t-a)\}=\int_0^\infty \delta(t-a)e^{-st}dt=e^{-as}.
 \end{equation}
 
+
+
 \subsection*{Exercícios}%Delta
 
 \begin{exer}
 Encontre
 \begin{itemize}
-  \item[a)] $\displaystyle \mathcal{L} \big\{ t u(t-1) + t^2 \delta(t-1) \big\}$
-  \item[b)] $\displaystyle \mathcal{L} \big\{ (\cos t) ( \ln t ) \delta(t-\pi) \big\}$
+  \item[a)] $\displaystyle \mathcal{L} \left\{ t u(t-1) + t^2 \delta(t-1) \right\}$
+  \item[b)] $\displaystyle \mathcal{L} \left\{ (\cos t) ( \ln t ) \delta(t-\pi) \right\}$
   \item[c)] $\displaystyle \mathcal{L}\left\{ \delta(t-1) e^t \right\}$
 \end{itemize}
 \end{exer}
@@ -123,9 +126,9 @@ onde $\varepsilon$ é um parâmetro positivo.
 
 
 \section{Aplicação: circuito RLC}{\label{sec_circ_2}}
-Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
+Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $v(t)$ aplicada do tipo pulso,
 \begin{equation}
-V(t)=V_0\left(u(t-a)-u(t-b)\right).
+v(t)=V_0\left(u(t-a)-u(t-b)\right).
 \end{equation}
 \begin{figure}[!ht]
 \begin{center}
@@ -221,7 +224,7 @@ Um capacitor de capacitância $C$ está inicialmente carregado de forma que seu 
  $\displaystyle q(t) = C V_0 e^{-t/RC}$
 \end{resp}
 \begin{exer}
-Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $V(t) = u(t) - u(t-a)$.
+Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça seu gráfico, assumindo $L = 1$ H, $C = 1$ F, corrente inicial nula, carga inicial no capacitor nula e $v(t) = u(t) - u(t-a)$.
 \begin{figure}[!ht]
 \begin{center}
 
@@ -235,7 +238,7 @@ Dado o circuito LC da figura \ref{circ_2}, encontre a corrente $i(t)$ e faça se
 \begin{exer}
 Dado o circuito RLC da figura \ref{circ_3}, encontre a corrente $i(t)$, assumindo que a corrente e a carga iniciais sejam nulas e que $R= 2 \ \Omega$, $L = 1$ H, $C = 1/2$ F e 
 \begin{equation}
-V(t) = \left\{
+v(t) = \left\{
                                                \begin{array}{ll}
                                                  1, & \hbox{se } t\in (0,2) \\
                                                  0, & \hbox{se } t>2
@@ -469,7 +472,7 @@ Calcule a solução dos seguintes problemas de valor inicial:
 \end{itemize}
 \end{resp}
 
-\section{Aplicação: metabolismo de uma medicação}
+\section{Aplicação: metabolismo de uma medicação}\label{sec_remedio}
 Durante um período de consumo de uma medicação, a concentração da substância ingerida na corrente sanguinea evolui segundo um modelo simples da seguinte forma:
 \begin{itemize}
  \item No caso de ausência de dosagens, a variação da concentração é proporcional a concentração.
@@ -495,17 +498,17 @@ C(s)=\left(\frac{c_0}{ s+\frac{1}{\tau}}\right)\sum_{n=0}^\infty\left( e^{-sT}\r
 \end{equation}
 Calculamos a transformada inversa usando a propriedade do deslocamento no eixo $s$.
 \begin{eqnarray*}
-c(t)&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
+c(t) &=& c_0\sum_{n=0}^\infty e^{-\frac{t-nT}{\tau}}u(t-nT)\\
+&=&c_0\left(e^{-\frac{t}{\tau}}+e^{-\frac{t-T}{\tau}}u(t-T)+e^{-\frac{t-2T}{\tau}}u(t-2T)+e^{-\frac{t-3T}{\tau}}u(t-3T)+\cdots\right) \\
 &=&c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}u(t-T)+e^{\frac{2T}{\tau}}u(t-2T)+e^{\frac{3T}{\tau}}u(t-3T)+\cdots\right)
 \end{eqnarray*}
  O gráfico da concentração é apresentado na figura \ref{concentracao}, usando $c_0=1$, $\tau=1$ e $T=1$.
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_dirac_conv/pics/figura_12}\end{center}
 \caption{\label{concentracao}}
 \end{figure}
-O salto em cada descontinuidade é exatamente $c_0$, pois os limites laterais são
+O salto em cada descontinuidade é exatamente $c_0$, pois os limites laterais são:
 \begin{eqnarray*}
 \lim_{t\to nT^-}c(t)&=&\lim_{t\to nT^-}\left(c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}\right)\right)\\
@@ -515,15 +518,73 @@ e
 \begin{eqnarray*}
 \lim_{t\to nT^+}c(t)&=&\lim_{t\to nT^+}\left(c_0e^{-\frac{t}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}+ e^{\frac{nT}{\tau}}\right)\right)\\
 &=&\left(c_0e^{-\frac{nT}{\tau}}\left(1+e^{\frac{T}{\tau}}+e^{\frac{2T}{\tau}}+\cdots+ e^{\frac{(n-1)T}{\tau}}+ e^{\frac{nT}{\tau}}\right)\right)\\
-&=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),\\
+&=&\left(c_0\left(e^{-\frac{nT}{\tau}}+e^{-\frac{(n-1)T}{\tau}}+e^{-\frac{(n-2)T}{\tau}}+\cdots+ e^{-\frac{T}{\tau}}+1\right)\right),
 \end{eqnarray*}
 que possuem diferença igual a $c_0$. 
-Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma discontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
+Observe que quando calculamos o limite $\displaystyle \lim_{t\to 0^+}c(t)$ obtemos $c(0^+)=c_0$, valor diferente da condição inicial dada, que é $c(0)=0$. Apesar de parecer estranho, não está errado. Tudo é consequência da presença do Dirac em $t=0$, que produz uma descontinuidade na origem. Este assunto será discutido na seção \ref{problemas_na_origem}.
+\begin{exeresol}
+  Dada a função $$c(t) = c_0\sum_{n=0}^\infty e^{-\frac{t-nT}{\tau}}u(t-nT).$$
+  Seja $a$ constante e $0<a <T$, calcule o limite:
+  $$\lim_{k\to +\infty} c(a+kT)$$
+\end{exeresol}
+\begin{resol}
+Primeiro observamos que $a+kT-nT<0$ se $n>k$ porque $a<T$, assim como $a+kT-nT>0 $ se $n\leq k$ porque $a>0$, portanto:
+\begin{eqnarray*}
+    c(a+kT) &=& c_0\sum_{n=0}^k e^{-\frac{a+kT-nT}{\tau}}\\
+    &=& c_0e^{-\frac{a+kT}{\tau}}\sum_{n=0}^k e^{\frac{nT}{\tau}}
+  \end{eqnarray*}
+Usamos a soma dos (finitos) termos de uma progressão geométrica:
+  \begin{eqnarray*}
+    c(a+kT)&=& c_0e^{-\frac{a+kT}{\tau}}\frac{e^{\frac{(k+1)T}{\tau}}-1}{e^{\frac{T}{\tau}}-1}\\
+    &=& c_0e^{-\frac{a}{\tau}}\frac{e^{\frac{T}{\tau}}-e^{-\frac{kT}{\tau}}}{e^{\frac{T}{\tau}}-1}
+\end{eqnarray*}
+Tomando o limite $k\to +\infty$, temos:
+\begin{eqnarray*}
+  \lim_{k \to +\infty}c(a+kT)
+  &=& c_0e^{-\frac{a}{\tau}}\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}\\
+  &=& A e^{-\frac{a}{\tau}}, ~~~A = c_0\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}.
+\end{eqnarray*}
+\end{resol}
+\begin{exeresol}\label{remedio_valor_medio}
+  Usando o resultado anterior, calcule o valor médio da solução assintótica (no infinito), isto é:
+  $$\mu:=\frac{1}{T}\int_0^T \left[\lim_{k \to +\infty}c(a+kT)\right]da.$$
+\end{exeresol}
+\begin{resol}
+  \begin{eqnarray*}
+    \mu&=&\frac{1}{T}\int_0^T Ae^{-\frac{a}{\tau}}da=\frac{A\tau}{T}\left(1-e^{-\frac{T}{\tau}}\right)\\
+    &=&\frac{c_0\tau}{T}\frac{e^{\frac{T}{\tau}}}{e^{\frac{T}{\tau}}-1}\left(1-e^{-\frac{T}{\tau}}\right)\\
+    &=&\frac{c_0\tau}{T}\frac{1}{e^{\frac{T}{\tau}}-1}\left(e^{\frac{T}{\tau}}-1\right)=\frac{c_0\tau}{T}.
+  \end{eqnarray*}
+\end{resol}
+\begin{exeresol}
+  Um certo medicamento é absorvido instantaneamente e permanece homogeneamente distribuído na corrente sanguínea depois de administrado. A variação de concentração desse medicamento é proporcional à concentração $c(t)$ com uma taxa de proporcionalidade de $\tau=1$s. Considere a situação onde a concentração inicial era nula, isto é, $c(0)=0$ e o indivíduo tomou três doses da substância, a primeira em $t=0$, a segunda em $t=2$ e a última em $t=5$, todas com concentração $c_0=2$ mg/l. Construa o modelo matemático para a concentração $c(t)$ e resolva problema obtido.
+\end{exeresol}
+\begin{resol}
+  Considerando que a variação de concentração desse medicamento é proporcional à concentração $c(t)$ com uma taxa de proporcionalidade de $\tau=1$s, concluímos que a parte homogênea da equação é $c'(t)=-c(t)$. Adicionando os termos forçantes, temos: $c(t)+c'(t)=2\delta(t)+2\delta(t-2)+2\delta(t-5)$. 
 
+  Agora, aplicamos a transformada de Laplace para resolver o problema. Temos
+  $$
+  (s+1)C(s)=2+2e^{-2s}+2e^{-5s},
+  $$
+  isto é,
+  $$
+  C(s)=\frac{2+2e^{-2s}+2e^{-5s}}{s+1}.
+  $$
+  A tranformada inversa é calculada pelo item 7 da tabela, combinada com a propriedade da translação em $t$:
+  $$
+  c(t)=2u(t)e^{-t}+2u(t-2)e^{-(t-2)}+2u(t-5)e^{-(t-5)}.
+  $$
+\end{resol}
 
-
+\begin{exer}
+  Seja a função $$c(t) = \sum_{n=0}^\infty e^{-\frac{t-2n}{2}}u(t-2n).$$
+  Encontre os valores de $f(1)$ e $f(3)$.
+\end{exer}
+\begin{resp}
+  $f(1)=e^{-\frac{1}{2}}, ~~~ f(3) = e^{-\frac{3}{2}} + e^{-\frac{1}{2}}.$
+\end{resp}
 \section{Problemas na origem}\label{problemas_na_origem}
-Para entender melhor esse fenômeno, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
+Para entender melhor o fenômeno surgido no problema do medicamento em que a condição inicial não parece ser satisfeita, vamos considerar um problema um pouco mais simples, dado pelo seguinte problema de valor inicial:
 \begin{equation*}
 \left\{
 \begin{array}{rcl}
@@ -556,8 +617,8 @@ ou seja,
 \begin{equation}y(t)=\frac{1-e^{-t}}{\varepsilon}u(t)-u(t-\varepsilon)\frac{1-e^{-(t-\varepsilon)}}{\varepsilon}.\end{equation}
 Esta solução pode ser escrita como uma função contínua:
 \begin{equation}y(t)=\left\{\begin{array}{ll}
-0,&t\leq 0,\\~\\
-\frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\~\\
+0,&t\leq 0,\\
+\frac{1-e^{-t}}{\varepsilon},&0<t\leq \varepsilon,\\
 \frac{e^{\varepsilon}-1}{\varepsilon}~\!
 e^{-t},&t\geq \varepsilon.
 \end{array}
@@ -566,8 +627,8 @@ Para $\varepsilon>0$ pequeno podemos usar a seguinte aproximação:
 \begin{equation}e^t=1+t+\frac{t^2}{2}+\frac{t^3}{3!}+\ldots \approx 1+t\end{equation}
 Assim, temos:
 \begin{equation}y(t)\approx\left\{\begin{array}{ll}
-0,&t\leq 0,\\~\\
-\frac{t}{\varepsilon},&0<t\leq \varepsilon,\\~\\
+0,&t\leq 0,\\
+\frac{t}{\varepsilon},&0<t\leq \varepsilon,\\
 e^{-t},&t\geq \varepsilon.
 \end{array}
 \right.\end{equation}
@@ -583,16 +644,16 @@ Ou seja, existe uma pequena região de transição entre $0$ e $\varepsilon$ ond
 \begin{exer}
 Considere o seguinte problema de valor inicial:
  \begin{eqnarray*}
-x''(t)-3x'(t)+2x(t)=\delta(t)\\
-x(0)&=& 0\\
-x'(0)&=& 0\\
+x''(t)-3x'(t)+2x(t)&=&\delta(t)\\
+x(0)&=&0\\
+x'(0)&=& 0
 \end{eqnarray*}
- \indent  {a)}  Calcule a transformada de Laplace $X(s)=\mathcal{L}\{x(t)\}$.
-\indent  {b)}  Calcule a transformada inversa e escreva $x(t)$.
-\indent  {c)} Aplique sua solução do item b) nas condições inciais.\\
-
+\begin{itemize}
+ \item[a)] Calcule a transformada de Laplace $X(s)=\mathcal{L}\{x(t)\}$.
+ \item[b)] Calcule a transformada inversa e escreva $x(t)$.
+ \item[c)] Aplique sua solução do item b) nas condições inciais.
+\end{itemize}
 \end{exer}
-
 
 \section{Propriedade da convolução}
 Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f$ e $g$ denotada por $f*g$ é definida pela integral
@@ -677,6 +738,67 @@ Agora, vamos mudar a ordem de integração na região que é a metade inferior d
  \end{equation}
 \end{ex}
 
+
+\subsection{Exercícios resolvidos}
+
+\begin{exeresol}
+  Considere o problema íntegro-diferencial dado abaixo:
+$$ y''(t) = a+ \int_0^t(y(\tau))(t-\tau)d\tau $$
+com $y'(0)=3$, $y''(0)=-4$ e $y(1)=3$
+
+\begin{itemize}
+\item[a)] Obtenha o valor de $a$.
+\item[b)] Obtenha o valor de $y(0)$.
+\end{itemize}
+\end{exeresol}
+
+\begin{resol}
+ ~
+  \begin{itemize}
+    \item[a)] Fazendo $t=0$ na equação íntegro-diferencial, temos:
+    $$ y''(0) = a+ \int_0^0(y(\tau))(t-\tau)d\tau. $$
+    Logo $a=y''(0)=-4$.
+    \item[b)] Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convolução com $f(t)=y(t)$ e $g(t)=t$ para obter:
+ 
+    $$
+    s^2Y(s)-sy(0)-3 = -\frac{4}{s}+\frac{Y(s)}{s^2}.
+    $$
+    Assim,
+    $$
+    \left(s^2-\frac{1}{s^2}\right)Y(s) = sy(0)+3-\frac{4}{s}.
+    $$
+    Resolvemos a transformada de Laplace $Y(s)$
+    $$
+    Y(s) = \frac{s^3y(0)}{s^4-1}+\frac{3s^2}{s^4-1}-\frac{4s}{s^4-1}.
+    $$
+    A transformada inversa da última parcela é dado pelo item 28 da tabela:
+    $$
+    \mathcal{L}^{-1}\left(\frac{s}{s^4-1}\right)=\frac{1}{2}\left(\cosh(t)-\cos(t)\right)
+    $$
+    Usando a propriedade da transformada da derivada e, contanto que a função vale zero na origem, temos:
+    $$
+    \mathcal{L}^{-1}\left(\frac{s^2}{s^4-1}\right)=\frac{1}{2}\left(\sinh(t)+\sin(t)\right)
+    $$
+    $$
+    \mathcal{L}^{-1}\left(\frac{s^3}{s^4-1}\right)=\frac{1}{2}\left(\cosh(t)+\cos(t)\right)
+    $$
+    Logo,
+    $$
+    y(t) =\frac{y(0)}{ 2}\left(\cosh(t)+\cos(t)\right)+\frac{3}{2}\left(\sinh(t)+\sin(t)\right)-2\left(\cosh(t)-\cos(t)\right).
+    $$
+    Usando que $y(1)=3$, temos:
+    $$
+    3 =\frac{y(0)}{ 2}\left(\cosh(1)+\cos(1)\right)+\frac{3}{2}\left(\sinh(1)+\sin(1)\right)-2\left(\cosh(1)-\cos(1)\right),
+    $$
+    ou seja,
+    $$
+    y(0)=\frac{-3\left(\sinh(1)+\sin(1)\right)+4\left(\cosh(1)-\cos(1)\right)+6}{\left(\cosh(1)+\cos(1)\right)}=1,9012811822.
+    $$
+    
+  \end{itemize}
+\end{resol}
+
+
 \subsection*{Exercícios}%convolução
 \begin{exer}
 Encontre por integração:
@@ -703,7 +825,7 @@ Justifique as seguintes propriedades da operação de convolução:
   \item[c)] $f\ast (g + h) = f\ast g + f\ast h$
   \item[d)] $(\delta\ast f)(t) = f(t)$
 \end{itemize}
-{\it [Dica: cuidado para não confundir as variáveis de integração que aparecerão no item (b).}
+{\it [Dica: cuidado para não confundir as variáveis de integração que aparecerão no item (b).]}
 \end{exer}
 \begin{resp}
 \begin{itemize}

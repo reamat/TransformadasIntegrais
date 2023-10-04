@@ -1,12 +1,16 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
+\setlength{\headheight}{30pt} % Veja https://nw360.blogspot.com/2006/11/latex-headheight-is-too-small.html
 \chapter{Transformada de Laplace}
 \section{Definição de transformada de Laplace}{\label{sec_1}}
-\begin{defn}Seja $f(t)$ uma função definida nos reais não negativos. Quando a integral
+\begin{defn}Seja $f(t)$ uma função definida nos reais não negativos. A transformada de laplace de $f(t)$ é dada pela seguinte integral imprópria:
 \begin{equation}
 {\mathcal{L}}\{f(t)\}=\int_0^\infty f(t)e^{-st}dt
 \end{equation}
-for convergente, ela será chamada de transformada de Laplace da função $f(t)$.
+para os valores complexos de $s$ para os quais ela for convergente.
 \end{defn}
 A transformada de Laplace $\mathcal{L}\{f(t)\}$ de uma função $f(t)$ é uma função da variável $s$. A notação usual neste contexto é letra minúscula para a função e letra maiúscula para a transformada: $\mathcal{L}\{f(t)\}=F(s)$, $\mathcal{L}\{g(t)\}=G(s)$, $\mathcal{L}\{h(t)\}=H(s)$.
+Por questões didáticas e sem prejuízo para o exposto nesse texto, trataremos apenas o caso em que $s$ é real. 
 Nos próximos exemplos, vamos aplicar a definição para calcular a transformadas de Laplace de algumas funções.
 \begin{ex}\label{ex1} Vamos calcular a transformada de Laplace da função $f(t)=1$:
 \begin{eqnarray*}
@@ -92,11 +96,11 @@ Aqui usamos a seguinte propriedade de integral: $\int_a^b f(t)dt=\int_a^x f(t)dt
 \end{ex}
 
 \subsection*{Exercícios}
-\begin{exer}Calcule a transforma de Laplace da função $f(t)=\cos(wt)$ usando a definição. 
+\begin{exer}Calcule a transformada de Laplace da função $f(t)=\cos(wt)$ usando a definição. 
 \end{exer}
-\begin{exer}Calcule a transforma de Laplace da função $f(t)$ definida por partes:
+\begin{exer}Calcule a transformada de Laplace da função $f(t)$ definida por partes:
 \begin{equation}
-f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 3\\ 1, & 3\leq t\leq 5,\\0,&t>5.
+f(t)=\left\{\begin{array}{ll} 0, &0\leq t\leq 3\\ 1, & 3< t\leq 5,\\0,&t>5.
 \end{array}\right.
 \end{equation}
 \end{exer}
@@ -166,8 +170,8 @@ A figura \ref{ordem_exp} ilustra o crescimento de $f$, $g$ e $h$
 \begin{figure}[!ht]
 \begin{center}
 
-\includegraphics{cap_definicao/pics/figura_1}
-\includegraphics{cap_definicao/pics/figura_2}
+\includegraphics{cap_definicao/pics/figura_1}\hfill
+\includegraphics{cap_definicao/pics/figura_2}\hfill
 \includegraphics{cap_definicao/pics/figura_3}\end{center}
 \caption{\label{ordem_exp}}
 \end{figure}

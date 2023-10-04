@@ -1,3 +1,6 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
+
 \chapter{Sistemas de equações diferenciais ordinárias}
 \section{Transformada de Laplace para resolver sistemas}
 O método de transformada de Laplace pode ser aplicado para resolver sistemas de equações diferenciais. Para isso, aplica-se a transformada de Laplace a todas equações envolvidas, levando o sistema de equações diferenciais em um sistema de equações algébricas. Depois de resolver o sistema de equações algébricas no espaço de transformadas, calcula-se as transformadas inversas para obter a solução.
@@ -82,7 +85,6 @@ x(t)&=&\frac{t^4}{36}+\frac{2t^3}{9}+2\\
 y(t)&=&\frac{t^4}{36}-\frac{4t^3}{9}+10t-1.
 \end{eqnarray*}
 \end{ex}
-
 
 \section{Aplicação: circuito de duas malhas}
 Considere o circuito da figura \ref{fig_circ_2_malha}, constituído de duas malhas com correntes $i_1$ e $i_2$, respectivamente. Vamos modelar $i_1$ e $i_2$ considerando $i_1(0)=i_2(0)=0$. 
@@ -331,32 +333,233 @@ z(t)=\mathcal{L}^{-1}\left\{Z(s)\right\}&=&2\mathcal{L}^{-1}\left\{\frac{Y(s)}{s
  onde usamos a propriedade da convolução \ref{prop_conv} na passagem da primeira para a segunda linha. A figura \ref{reacao} apresenta o gráfico de das funções $x(t)$, $y(t)$ e $z(t)$.
  \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_sistemas/pics/figura_4}\end{center}
 \caption{\label{reacao}}
 \end{figure}
 
 
+\section{Aplicação: sistema de controle automático com ação integral}\label{sec:controle_integral}
+A temperatura numa sala climatizada evolui no tempo conforme o seguinte modelo simplificado: 
+\begin {equation}
+  \frac {d v(t)}{dt}=-\lambda (v(t)-v_{amb}) + q(t)
+ \end {equation}
+  onde \(v(t)\) representa a temperatura medida, \(v_{amb}\) é temperatura ambiente, \(q(t)\) é a potência de um aquecedor e \(\lambda \) é uma constante positiva relacionada às trocas de calor. 
+  
+  Um sistema de controle automático define qual deve ser a potência do aquecedor em cada momento $t$ e objetiva que a temperatura medida $v(t)$ convirja para um valor previamente definido $v_a$.
 
-\subsection*{Exercícios}
+  A ideia central do projeto é que a potência seja aumentada sempre que $v(t)>v_a$, que potência seja mantida quando $v(t)=v_a$ e que a potência seja reduzida quando $v(t)<v_a$.
+
+  Uma solução de projeto é implementar a seguinte equação diferencial para $q(t)$ de forma a vincular a derivada da potência ao \emph{erro} $v(t)-v_a$.
+    \begin {equation} \label{forno_eq_pot}
+    \frac{dq(t)}{dt} =-\eta \left(v(t)-v_a\right).
+   \end {equation} 
+   Aqui $\eta$ é uma constante positiva.
+
+
+   Para analisar o problema, resolvemos o sistema de equações diferenciais associado.
+Tomando a transformada de Laplace das  equações, encontramos:
+  \begin{eqnarray*}
+   sV(s)-v(0) &=& -\lambda \left(V(s)-\frac{v_{amb}}{s}\right) + Q(s),\\
+   sQ(s)-q(0) &=& -\eta \left(V(s)-\frac{v_a}{s}\right).
+   \end{eqnarray*}
+
+  Isolando $V(s)$ e multiplicando por $s$, temos:
+
+ \begin {eqnarray}\label{forno_Vs}
+   s(s+\lambda)V(s)=sv(0)+\lambda {v_{amb}} + sQ(s).
+ \end {eqnarray}
+   
+Substituindo $sQ(s)$, temos:
+
+ \begin {eqnarray*}
+   s(s+\lambda)V(s)=sv(0)+\lambda {v_{amb}} +q(0)-\eta \left(V(s)-\frac{v_a}{s}\right).
+\end {eqnarray*}
+
+\begin {eqnarray*}
+\left(s^2+\lambda s+\eta\right)V(s)=sv(0)+\lambda {v_{amb}} +q(0) + \eta \frac{v_a}{s}.
+\end {eqnarray*}
+
+Portanto:
+\begin {eqnarray*}
+V(s) &=& \frac{sv(0)+\lambda {v_{amb}} +q(0)}{s^2+\lambda s+\eta} +  \frac{\eta v_a}{s\left(s^2+\lambda s+\eta\right)}
+\end {eqnarray*}
+
+Simplificamos essa expressão usando a seguinte identidade para frações parciais:
+\begin {eqnarray*}
+\frac{\eta v_a }{s\left(s^2+\lambda s+\eta\right)} = v_a\left[\frac{1}{ s}-\frac{s+\lambda}{(s^2+\lambda s + \eta)}\right]
+\end {eqnarray*}
+
+Para obter:
+\begin {eqnarray}
+V(s) = \frac{s(v(0)-v_a)+\lambda ({v_{amb}}-v_a) +q(0)}{s^2+\lambda s+\eta} +  \frac{v_a}{s}.\label{forno_VS_isolado}
+\end {eqnarray}
+
+
+Como as contantes $\lambda$ e $\eta$ são estritamente positivas, o sistema é amortecido. Independemente do regime de amortecimento, é lícito assumir a existência do limite $v_\infty:=\lim_{t\to \infty} v(t)$ e calculá-lo pelo teorema do valor final:
+$$v_\infty:=\lim_{s\to 0+} sV(s)=v_a.$$
+
+Disso concluímos que a temperatura, de fato, converge para o valor desejado. Para calcular o comportamento assintótico da potência, retornamos à Equação~\ref{forno_Vs}:
+\begin{eqnarray*}
+\lim_{s\to 0+ }sQ(s) &=& \lim_{s\to 0+ }\left[-sv(0)-\lambda {v_{amb}} + s(s+\lambda)V(s)\right]\\
+&=& \lim_{s\to 0+ }(s+\lambda) \lim_{s\to 0+ }sV(s) = \lambda v_\infty = \lambda v_a.
+\end{eqnarray*}
+Portanto:
+\begin{eqnarray*}
+ \lim_{t\to \infty }q(t) = \lambda v_a.
+\end{eqnarray*} 
+       
+\begin{obs} A Equação~\ref{forno_eq_pot} pode ser escrita como:
+       
+$$q(t) = q(0) -\eta \int_0^t \left(v(\tau)-v_a\right)d\tau,$$
+razão pela qual, esse sistema de controle automático é dito ter \emph{ação integral}.
+\end{obs}
+
+Fixamos agora $\lambda=4$ e analisamos três possíveis valores de $\eta$: $\eta=3$, $\eta=4$ e $\eta= 13$, que conduzem aos três regimes de amortecimento. Também fixamos as seguintes constantes:
+$$q(0)=0,~~~~ v(0)=v_{amb}=20, ~~~\hbox{ e }~~~  v_a = 100. $$ 
+
+A Equação~\ref{forno_VS_isolado} assume a seguinte forma:
+\begin{eqnarray*}
+V(s) = \frac{-80s- 320 }{s^2 + 4 s+\eta} +  \frac{100}{s}.
+\end{eqnarray*}
+
+\begin{itemize}
+       \item[i.] Superamortecido com $\eta=3$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s+1)(s+3)} +  \frac{100}{s},\\
+              v(t) &=& 100 + 40 e^{-3 t} - 120 e^{-t}.
+        \end{eqnarray*}
+        \item[ii.] Criticamente amortecido com $\eta=4$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s+2)^2} +  \frac{100}{s},\\
+              v(t) &=& 100 - 80 (2t + 1) e^{-2 t}.
+       \end{eqnarray*}
+       \item[iii.] Subamortecido com $\eta=13$, temos:
+        \begin{eqnarray*}
+              V(s) &=& \frac{-80s- 320 }{(s-2)^2+3^2} +  \frac{100}{s},\\
+              v(t) &=& 100 - \frac{80}{3} e^{-2 t} \left(3 \cos(3 t) + 2 \sin(3 t)\right).
+        \end{eqnarray*}
+\end{itemize}
+
+
+\begin{center}
+       \includegraphics[width=\textwidth]{cap_sistemas/pics/figura_controlador_integral}
+\end{center}
+   
+
+\section*{Exercícios}
+\begin{exeresol}
+Considere o sistema de equações diferenciais criticamente amortecido dado por:
+$$
+f(t) = 
+\begin{cases}
+u'(t) & = -4\,u(t)+q(t) \\
+q'(t) &= a\,(25-u(t))-6\,u'(t)
+\end{cases}
+$$
+onde $u(0) = 0$ e $q(0) = 263$. 
+\begin{itemize}
+ \item[a)] Calcule o valor de $a$ que satisfaz a condição de criticamente amortecido.
+ \item[b)] Usando o teorema do valor final e supondo que o limite existe, encontre $\displaystyle\lim_{t \to \infty} u(t)$.
+ \item[c)]  Usando o teorema do valor final e supondo que o limite existe, encontre  $\displaystyle\lim_{t \to \infty} q(t)$.
+ \item[d)] Encontre $u(t)$.
+ \item[e)] Encontre o valor de $t$, $t_\ast$, tal que $u(t)$ é máximo.
+ \item[f)] Encontre o valor máximo de $u(t)$, isto é, $u_{max}:=u(t_\ast)$.
+ \item[g)] Trace o gráfico da temperatura.
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+\begin{itemize}
+\item [a)] Tomando a transformada de Laplace no sistema temos
+\begin{eqnarray*}
+sU(s) &=& -4 U(s) + Q(s)\\
+sQ(s)-263 &=& \frac{25a}{s}-aU(s)-6sU(s)
+\end{eqnarray*}
+Multiplicando a primeira equação por $s$,
+\begin{eqnarray*}
+s^2U(s) &=& -4s U(s) + 263 + \frac{25a}{s}-a U(s)-6 s U(s)\\
+\left(s^2+10s+a\right)U(s) &=& 263 + \frac{25a}{s}\\
+U(s) &=& \frac{25a +263s}{s(s^2+10s+a)}
+\end{eqnarray*}
+Para que o sistema seja criticamente amortecido o discriminate de $s^2+10\,s+a$ deve ser nulo, donde $a=25$. Assim:
+$$U(s) = \frac{625 +263s}{s(s^2+10s+25)}$$
+\item[b)] Supondo a existência do limite, temos:
+\begin{eqnarray*}
+       \lim_{t \to \infty} u(t)&=&\lim_{s \to 0+} sU(s)\\
+       &=&\lim_{s \to 0+} \left( \frac{625 +263s}{s^2+10s+25}\right)=25
+\end{eqnarray*}
+\item[c)] Como $Q(S)=(s+4)U(s)$, temos:
+\begin{eqnarray*}
+ \lim_{t\to\infty}q(t)&=&\lim_{s\to 0^+}sQ(s)\\
+ &=&\lim_{s\to 0^+}\frac{(s+4)(625 +263\,s)}{s^2+10\,s+25}\\
+ &=&100.
+\end{eqnarray*}
+
+\item[d)] Aplicamos o procedimente de decomposição em frações parciais:
+\begin{eqnarray*}
+U(s)&=&\frac{625+263\,s}{s(s^2+10\,s+25)}\\
+&=&\frac{625+263\,s}{s(s+5)^2}\\
+&=&\frac{25}{s}-\frac{25}{s+5}+\frac{138}{(s+5)^2}.
+\end{eqnarray*}
+Daí que $u(t)=25-25e^{-5t}+138te^{-5t}$.
+
+\item[e)] Da condição de máximo, procuramos por $u'(t_\ast)=0$,
+$$
+  \left(125+138-690\,t_\ast\right)\,e^{-5\,t_\ast}=0
+  \Longrightarrow t_\ast=\frac{263}{690}.
+$$
+Observamos que $t_\ast$ é, de fato, ponto de máximo pois 
+\begin{eqnarray*}
+       u''(t_\ast)&=&\left(-2005+3450\,t_\ast\right)\,e^{-5\,t_\ast}\\
+       &=&-690e^{-\frac{263}{138}}<0
+\end{eqnarray*}
+
+\item[f)] Basta calcular:
+\begin{eqnarray*}
+ u_{max}&=&u(t_\ast)= 25-25e^{-5t_\ast}+ 138 t_\ast e^{-5t_\ast}\\
+&=&25+ \frac{138}{5} e^{-\frac{263}{138}}.
+\end{eqnarray*}
+\item[g)] 
+
+\begin{center}\includegraphics[width=8cm]{cap_sistemas/pics/figura_7}\end{center}
+\end{itemize}
+
+\end{resol}
+
 \begin{exer}
 Considere o seguinte problema de valor inicial:
 \begin{eqnarray*}
 x'(t)&=&-2x(t) +  y(t)\\
 y'(t)&=&\alpha x(t) - 2y(t)\\
 \end{eqnarray*}
-Com $x(0)=0$ e $y(0)=3$, onde $\alpha$ é uma constante real.
+Com $x(0)=0$ e $y(0)=2$, onde $\alpha$ é uma constante real.
 \begin{itemize}
- \item[a)] Assinale a alternativa que indica o tipo de amortecimento do sistema dado para os valores de $\alpha$ dados respectivamente por $-1$, $0$, $1$ e $2$:
- \subitem(~~) Sem amortecimento, subamortecido, criticamente amortecido e superamortecido.
- \subitem(~~) Subamortecido, subamortecido, criticamente amortecido e superamortecido.
- \subitem(~~) Subamortecido, criticamente amortecido, superamortecido e superamortecido.
- \subitem(~~) Superamortecido, superamortecido, criticamente amortecido e subamortecido.
- \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e subamortecido.
- \subitem(~~) Superamortecido, criticamente amortecido, subamortecido e sem amortecimento.
-\item [b)] Use a técnica da Transformada de Laplace para encontrar uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
+ \item[a)] Obtenha tipo de amortecimento do sistema dado para os valores de $\alpha$ dados respectivamente por $-1$, $0$, $1$ e $2$:
+ \item [b)] Encontre uma expressão para $x(t)$ e $y(t)$ quando $\alpha=1$. 
+ 
+ Subamortecido, criticamente amortecido, superamortecido e superamortecido. $x(t)=e^{-t}-e^{-3t}$ e $y(t)=e^{-t}+e^{-3t}$.
 \end{itemize}
+
 \end{exer}
+
+\begin{exer}
+       Encontre a solução $q(t)$ para o problema de controle automático apresentado na Seção~\ref{sec:controle_integral} para o caso superamortecido, substituindo na expressão:
+       \begin {equation}
+        \frac {d v(t)}{dt}=-\lambda (v(t)-v_{amb}) + q(t)
+      \end {equation}
+\end{exer}
+\begin{resp}
+       $q(t)=320 + 40 e^(-3 t) - 360 e^(-t)$
+\end{resp}
+
+\begin{exer}
+       Encontre a solução $v(t)$ para o problema de controle automático apresentado na Seção~\ref{sec:controle_integral} para o caso subamortecido com $\eta=20$. Encontre o primeiro ponto de máximo de $v(t)$ para $t>0$.
+\end{exer}
+\begin{resp}
+       $v(t) = 100 - 40e^{-2*t}*\left(2\cos(4t) + sin(4t)\right)$
+       $v'(t) = 400 e^(-2 t) sin(4 t)$
+       O valor máximo é  $100 + 80e^{-\pi/4} $ em $t=\pi/4$.
+\end{resp}
+
 \begin{exer}A temperatura em um forno industrial evolui no tempo conforme o seguinte modelo simplificado:
 \begin{equation}\frac{d u(t)}{dt}=-\lambda (u(t)-u_{amb}) + q(t)\end{equation}
 onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura ambiente, considerada constante, $q(t)$ é a potência de aquecimento e $\lambda$ é uma constante relacionada às trocas de calor. Considere $u(0)=50$, $u_{amb}=50$ e $\lambda=4$. Usando a técnicas das transformadas de Laplace, faça o que se pede:
@@ -393,7 +596,7 @@ onde $u(t)$ representa a temperatura medida no forno, $u_{amb}$ é temperatura a
  x'(t) +x(t) = 2 y(t)\\
  x(t) = \int_0^t y(\tau) d\tau + 1
 \end{eqnarray*}
-com $x(0)=0$. Usando a teoria das Transformadas de Laplace, resolve o sistema, obtendo $x(t)$ e $y(t)$.
+com $x(0)=0$. Usando a teoria das Transformadas de Laplace, resolva o sistema, obtendo $x(t)$ e $y(t)$.
 {\bf Obs:}  Este sistema apresenta ``problemas na origem''. 
 \end{exer}
 \begin{resp}
@@ -410,9 +613,41 @@ Considere o seguinte problema de valor inicial:
 x'(t)&=&- x(t) -2 y(t)+\delta(t)\\
 y'(t)&=& x(t) - y(t)+\delta(t),
 \end{eqnarray*}
-com $x(0)=0$ e $y(0)=0$.\\
- \indent  {a)}  Calcule as transformadas de Laplace $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$.
- \indent  {b)}  Calcule as transformadas inversas de Laplace $x(t)$ e $y(t)$.
-\indent  {c)} Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.\\
-
+com $x(0)=0$ e $y(0)=0$.
+\begin{itemize}
+       
+ \item[a)] Calcule as transformadas de Laplace $X(s)=\mathcal{L}\{x(t)\}$ e $Y(s)=\mathcal{L}\{y(t)\}$.
+ \item[b)] Calcule as transformadas inversas de Laplace $x(t)$ e $y(t)$.
+ \item[c)] Aplique sua solução do item b) nas condições inciais e justifique o resultado encontrado.
+\end{itemize}
 \end{exer}
+
+\begin{exer} Considere o seguinte problema de valor inicial:
+\begin{eqnarray*}
+      x'(t)&=&-x(t)+ y(t)+\delta(t) \\
+      y(t)&=& -\int_0^t e^{(t-\tau)} y(\tau)d\tau+x(t),
+\end{eqnarray*}
+Com $x(0)=0$. Calcule $x(t)$ e $y(t)$.
+\end{exer}
+\begin{resp}
+ $X(s)=\frac{s}{\left(s^2+1\right)}$, $Y(s)=\frac{s-1}{\left(s^2+1\right)}$, $x(t)=\cos(t)$ e $y(t)=\cos(t)-\sin(t)$
+\end{resp}
+
+\begin{exer}As concentrações de três reagentes $A$, $B$ e $C$ são dadas por $x(t)$, $y(t)$ e $z(t)$, respectivamente. Considere a reação dada por $A \longleftrightarrow B \longleftrightarrow C$ e modelada por:
+\begin{eqnarray*}
+       x'(t) &=& -2 x(t) + 2 y(t)+6\\
+       y'(t) &=& 2 x(t) - 5 y(t)\\
+       z'(t) &=& 3  y(t)-6
+\end{eqnarray*}
+com $x(0)=11$, $y(0)=0$ e $z(0)=1$. Calcule $x(t)$, $y(t)$ e $z(t)$.
+\end{exer}
+
+\begin{resp}
+$$X(s)=\frac{11s^2+61s+30}{s(s+1)(s+6)}$$
+$$Y(s)=\frac{22s^2+121s+60}{s(s+1)(s+5)(s+6)}=\frac{22 s + 12}{s (s + 1) (s + 6)}$$
+$$Z(s)=\frac{24-6s}{s(s+1)(s+6)}$$
+$$x(t)= 2 e^{-6 t} + 4 e^{-t} + 5$$
+$$y(t) = -4 e^{-6 t} + 2e^{-t} + 2$$
+$$z(t) = 2 e^{-6 t} -6e^{-t} + 4$$
+\end{resp}
+       

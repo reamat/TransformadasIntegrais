@@ -1,0 +1,40 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+\begin{document}
+\psset{unit =1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-1.0,-0.7)(7.0,3.1)
+ \psaxes[labels]{->}(0,0)(-0.7,-.1)(6.5,2.5)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=1000]{1.0}{3.0}{2}
+
+\psplot[plotstyle=curve,plotpoints=1000]{4.0}{6.0}{2}
+
+\psline[linestyle=dashed](1,0)(1,2)
+\psline[linestyle=dashed](3,0)(3,2)
+\psline[linestyle=dashed](4,0)(4,2)
+\psline[linestyle=dashed](6,0)(6,2)
+
+
+
+\rput(0,2.8){$|F(w)|$}
+\rput(6.5,-.2){$w$}
+\end{pspicture}
+\end{document}
+

@@ -1,0 +1,40 @@
+
+ \documentclass{standalone}
+ \usepackage{pstricks-add}
+ \usepackage{pstricks,pst-plot}
+ \usepackage[dvips]{graphicx}
+ \usepackage{pst-math}
+ \usepackage{pst-plot}
+ \usepackage{pst-circ}
+ \usepackage[brazil]{babel}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{mathtools}
+ \newcommand{\sen}{\operatorname{sen}\,}
+ \newcommand{\senh}{\operatorname{senh}\,}
+ \renewcommand{\sin}{\operatorname{sen}\,}
+ \renewcommand{\sinh}{\operatorname{senh}\,}
+ \begin{document}\psset{unit =1cm, linewidth=1\pslinewidth}
+ \begin{pspicture}(-5.3,-.8)(5.5,3.1)
+ \psaxes{->}(0,0)(-5.0,-.1)(5.3,2.6)
+\psset{linecolor=blue}
+\psplot[plotstyle=curve,plotpoints=200]{-5}{-3}{0}
+\psplot[plotstyle=curve,plotpoints=200]{-3}{-2}{x 3 add x mul -1 mul}
+\psplot[plotstyle=curve,plotpoints=200]{-2}{-1}{x -1 mul}
+\psplot[plotstyle=curve,plotpoints=200]{-1}{0}{x -1 mul x mul -1 mul}
+\psplot[plotstyle=curve,plotpoints=200]{0}{1}{x x mul}
+\psplot[plotstyle=curve,plotpoints=200]{1}{2}{x}
+\psplot[plotstyle=curve,plotpoints=200]{2}{3}{3 x sub  x mul}
+\psplot[plotstyle=curve,plotpoints=200]{3}{5.3}{0}
+\psline[linestyle=dotted](-2,0)(-2,2)
+\psline[linestyle=dotted](-1,0)(-1,1)
+\psline[linestyle=dotted](2,0)(2,2)
+\psline[linestyle=dotted](1,0)(1,1)
+
+\rput(0,2.8){$|\mathcal{F}\left\{f'(t)\right\}|$}
+\rput(5.2,.3){$w$}
+\end{pspicture}
+\end{document}

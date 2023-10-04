@@ -1,5 +1,7 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{As propriedades de translação e da transformada da integral}
-\section{Propriedade de translação no eixo $s$}
+\section{Propriedade de translação no eixo s}
 Nessa seção vamos calcular a transformada inversa do deslocamento $F(s-a)$ sabendo a transformada inversa de $F(s)$. %O gráfico da figura \ref{fig_trans_1} mostra um exemplo de função com deslocamentos à direita e à esquerda.
 
 \begin{teo}{\label{prop_trans_s}}(Propriedade da translação no eixo $s$) Se $F(s)$ é a transformada de Laplace de $f(t)$ definida para $s>s_0$, então $e^{at}f(t)$ é a transformada inversa de $F(s-a)$, isto é
@@ -74,6 +76,7 @@ Observe no item 16 da tabela que $\displaystyle\mathcal{L}\left\{\frac{1}{2}\sen
 \end{equation}
 \end{ex}
 \subsection*{Exercícios}
+
 \begin{exer}Use a propriedade \ref{prop_trans_s} e as tabelas \ref{tab_trans_Lap_1} e \ref{tab_trans_Lap_2} para calcular as seguintes transformadas de Laplace
 \begin{itemize}
  \item[a)] $\displaystyle \mathcal{L}\left\{\frac{1}{(n-1)!}t^{n-1}e^{at}\right\}$\qquad (usando o item 3 da tabela)
@@ -225,9 +228,9 @@ o que implica em $\delta\approx 0,463648\ \hbox{rad} \approx 26,57^0$. Portanto,
 y(t)=\frac{\sqrt{5}}{2}e^{-t}\cos(2t+0,463648).
 \end{equation}
 A figura \ref{fig_massa_mola} ilustra o gráfico de $y(t)$.
+
 \begin{figure}[!ht]
 \begin{center}
-
 \includegraphics{cap_trans_int/pics/figura_2}\end{center}
 {\caption{\label{fig_massa_mola}}}
 \end{figure}
@@ -482,7 +485,7 @@ Se $a<0$, então
  \end{itemize}
 \end{resp}
 
- \section{Propriedade do deslocamento no eixo $t$}
+ \section{Propriedade do deslocamento no eixo t}
 \begin{teo}{\label{prop_trans_t}}(Propriedade do deslocamento no eixo $t$) Se $F(s)$ é a transformada de $f(t)$, então $f(t-a)u(t-a)$ é a transformada inversa de $e^{-as}F(s)$, isto é
 \begin{equation}
 \mathcal{L}\left\{u(t-a)f(t-a)\right\} =e^{-as}F(s),\qquad a>0
@@ -696,10 +699,10 @@ Use a propriedade da transformada da integral para calcular $f(t)$ sabendo que $
 \end{itemize}
 \end{exer}
 
-\section{Aplicação: circuito RC a um pulso de amplitude $V_0$.}{\label{sec_circ}}
-Considere o circuito Resistor/Capacitor representado na figura \ref{fig_circ} com uma tensão $V(t)$ aplicada do tipo pulso,
+\section{Aplicação: resposta de um circuito RC a um pulso}{\label{sec_circ}}
+Considere o circuito resistor-capacitor representado na figura \ref{fig_circ} com uma tensão $v(t)$ aplicada do tipo pulso,
 \begin{equation}
-V(t)=V_0\left(u(t-a)-u(t-b)\right).
+v(t)=V_0\left(u(t-a)-u(t-b)\right).
 \end{equation}
 ou seja, o circuito estava em repouso até $t=a$ e foi aplicada a tensão $V_0$ entre $t=a$ e $t=b$.
 \begin{figure}[!ht]
@@ -710,7 +713,7 @@ ou seja, o circuito estava em repouso até $t=a$ e foi aplicada a tensão $V_0$ 
 \end{figure}
 O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
 \begin{equation}{\label{modelo_corrente_0}}
- Ri(t)+\frac{1}{C}q(t)=V(t),
+ Ri(t)+\frac{1}{C}q(t)=v(t),
 \end{equation}
 onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor de capacitância $C$ e $Ri(t)$ é a tensão no resistor de resistência $R$. Usando o fato que $q(t)=\int_0^t i(\tau)d\tau$, obtemos uma equação integral para $i(t)$:
 \begin{equation}
@@ -803,6 +806,24 @@ Agora usamos a propriedade \ref{prop_trans_t} da translação no eixo $t$ e obte
 q(t)=CV_0\left(u(t-a)\left(1-e^{-\frac{t-a}{CR}}\right)-u(t-b)\left(1-e^{-\frac{t-b}{CR}}\right) \right),
 \end{equation}
 que coincide com a solução dada na equação \eqref{eq:sol_carga}.
+\end{resp}
+
+\begin{exer}
+  Considere a função $f(t)$ dada por:
+  $$f(t) = u(t) + t u(t-1) + g(t)u(t-2) $$
+  Sabe-se que $f(t)$ é dada por partes como:
+  $$f(t) = \left\{
+      \begin{array}{ll}
+          f_1(t), &0<t<1,\\
+          f_2(t), &1<t<2,\\
+          2,      &t>2.
+      \end{array}
+  \right.
+  $$
+  Em que $f_1(t)$ e $f_2(t)$ são funções definidas nos respectivos intervalos e $g(t)$ está definida para $t\geq 0$. Obtenha expressões para $f_1(t)$, $f_2(t)$, $g(t)$, $I:=\int_0^3f(t)^2dt$ e $F(s):=\mathcal{L}\{f(t)\}$.
+\end{exer}
+\begin{resp}
+  $f_1(t)=u(t)=1$, $f_2(t)=1+t$, $g(t)=1-t$, $I={34}/{3}$ e $F(s)=\frac{s+(1+s)e^{-s}-(1+s)e^{-2s}}{s^2}$.
 \end{resp}
 
 

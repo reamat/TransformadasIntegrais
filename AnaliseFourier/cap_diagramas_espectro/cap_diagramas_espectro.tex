@@ -1,3 +1,5 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{Representações da série de Fourier e diagramas de espectro}
 No capítulo anterior, vimos que uma função periódica pode ser representa como uma série trigonométrica. No entanto, sobretudo em aplicações em Física e Engenharia, a série de Fourier é apresentada em outras formas, a forma harmônica (ou amplitude-fase) e a forma exponencial. Neste capítulo veremos como construir estas representações e introduziremos o conceito de diagramas de espectro de uma função periódica.
 \section{Forma harmônica}
@@ -13,7 +15,7 @@ com $a=w_n t$ e $b=\theta_n$. Assim temos:
 \begin{eqnarray*}
 f(t)&=&A_0+\sum_{n=1}^\infty A_n\cos(w_n t-\theta_n)\\
 &=&A_0+\sum_{n=1}^\infty A_n\left[\cos(w_n t)\cos(\theta_n)+\sen(w_n t)\sen(\theta_n)\right]\\
-&=&\underbrace{A_0}_{a_0/2}+\sum_{n=1}^\infty[ \underbrace{A_n\cos(\theta_n)}_{a_n} \cos(w_n t)+\underbrace{A_n\sen(\theta_n)}_{b_n}\sen(w_n t)]
+&=&\underbrace{A_0}_{a_0/2}+\sum_{n=1}^\infty[ \underbrace{A_n\cos(\theta_n)}_{a_n} \cos(w_n t)+\underbrace{A_n\sen(\theta_n)}_{b_n}\sen(w_n t)].
 \end{eqnarray*}
 Comparando os termos da representação trigonométrica, temos que:
 \begin{eqnarray*}
@@ -23,9 +25,9 @@ b_n&=&A_n\sen(\theta_n)\\
 \end{eqnarray*}
 Observe que
 \begin{equation}
-a_n^2+b_n^2=A_n^2
+a_n^2+b_n^2=A_n^2.
 \end{equation}
-e, como $A_n\geq 0$ por hipótese, temos que 
+Como $A_n\geq 0$ por hipótese, temos que 
 \begin{equation}
 A_n=\sqrt{a_n^2+b_n^2}.
 \end{equation}
@@ -87,7 +89,7 @@ b_n&=&\frac{2}{4}\int_0^4f(t)\sen(w_n t)dt=\frac{1}{2}\int_0^1\sen\left(\frac{\p
 \end{table}
 Para escrever a forma harmônica da série de Fourier da função $f(t)$ calculamos as amplitudes $A_n$ e as fases $\theta_n$. Para $n=0$, temos $a_0=\frac{1}{2}$ e, portanto, $A_0=\frac{a_0}{2}=\frac{1}{4}$. Para $n=1$, temos $a_1=b_1=\frac{1}{\pi}$ e, consequentemente, $A_1=\sqrt{\frac{1}{\pi^2}+\frac{1}{\pi^2}}=\frac{\sqrt{2}}{\pi}$ e $\theta_1=\frac{\pi}{4}$. Os cálculos foram repetidos de forma análoga para $n=2,\ 3,\ 4$ e $5$ e apresentados na tabela \ref{tab_exponential_form}. Portanto,
 \begin{eqnarray*}
-f(t)&=&\frac{1}{4}+\frac{1}{\pi}\left[\sqrt{2}\cos\left(\frac{\pi }{2} t-\frac{\pi}{4}\right)+\cos\left(\pi  t-\frac{\pi}{2}\right)+\right.\\&+&\left.\frac{\sqrt{2}}{3}\cos\left(\frac{3 \pi }{2} t-\frac{3\pi}{4}\right)+\frac{\sqrt{2}}{5}\cos\left(\frac{5 \pi }{2} t-\frac{\pi }{4}\right)+\cdots   \right]
+f(t)&=&\frac{1}{4}+\frac{1}{\pi}\left[\sqrt{2}\cos\left(\frac{\pi }{2} t-\frac{\pi}{4}\right)+\cos\left(\pi  t-\frac{\pi}{2}\right)+\right.\\&+&\left.\frac{\sqrt{2}}{3}\cos\left(\frac{3 \pi }{2} t-\frac{3\pi}{4}\right)+\frac{\sqrt{2}}{5}\cos\left(\frac{5 \pi }{2} t-\frac{\pi }{4}\right)+\cdots   \right].
 \end{eqnarray*}
 
 \end{ex}
@@ -156,6 +158,9 @@ g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\p
 \end{equation}
 \end{ex}
 
+
+
+
 \subsection*{Exercícios}
 \begin{exer} Mostre que se $f(t)=\sum_{n=-\infty}^\infty C_n e^{i w_n t}$ é uma função real, então $C_{-n}=\overline{C_n}$. Em especial, $|C_{-n}|=|C_n|$.
 \end{exer}
@@ -181,22 +186,123 @@ Assim, identificamos cinco coeficientes não nulos:
  C_{2}&=&-2i=2e^{\frac{-i\pi}{2}} &\Longrightarrow& |C_{2}|=2, ~~ &\phi_2=-\frac{\pi}{2}
 \end{array}
  \end{equation*}
-Os digramas de espectro de amplitude e fase são dados a seguir:
-\begin{figure}[!ht]
-\includegraphics{cap_diagramas_espectro/pics/figura_2}
-\includegraphics{cap_diagramas_espectro/pics/figura_3}
-\end{figure}
+Os diagramas de espectro de amplitude e fase são dados a seguir:
+
+\includegraphics{cap_diagramas_espectro/pics/figura_2}~\includegraphics{cap_diagramas_espectro/pics/figura_3}
+
 \end{ex}
-\begin{ex} As primeiras raias do digrama de espectro da função do exemplo \ref{ex_exp_2},
+\begin{ex} As primeiras raias do diagrama de espectro da função do exemplo \ref{ex_exp_2},
 \begin{equation}
 g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\pi}e^{-i\pi t}-\frac{2i}{\pi}e^{i\pi t}-\frac{2i}{3\pi}e^{3i\pi t}-\frac{2i}{5\pi}e^{5i\pi t}-\cdots,
 \end{equation}
-são dados na figura a seguir
+são dados na figura a seguir:
 \begin{figure}[!ht] 
 \includegraphics{cap_diagramas_espectro/pics/figura_4}
 \includegraphics{cap_diagramas_espectro/pics/figura_5}
 \end{figure}
 \end{ex}
+
+
+
+\subsection*{Exercícios resolvidos}
+\begin{exeresol}
+ Considere a função $f(t)=8\cos^4(t)$. 
+\begin{itemize}
+ \item[a)] Obtenha a frequência fundamental.
+ \item[b)] Obtenha o período fundamental.
+ \item[c)] Construa forma trigonométrica da série de Fourier de $f(t)$.
+ \item[d)] Construa a forma exponencial da série de Fourier de $f(t)$.
+ \item[e)] Esboce os diagramas de espectro.
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+Usando o binômio de Newton, obtemos a seguinte identidade trigonométrica:
+\begin{eqnarray*}
+8\cos^4(t)&=&8\left(\frac{e^{it}+e^{-it}}{2}\right)^4\\
+&=&\frac{e^{4it}+ 4 e^{3it}e^{-it}+ 6 e^{2it}e^{-2it}+ 4 e^{it}e^{-3it} +e^{-4it} }{2} \\
+&=&\frac{1}{2}e^{-4it}+2 e^{-2it}+3  + 2 e^{2it} +\frac{1}{2}e^{4it} \quad \hbox{(forma exponencial)}\\
+&=&3+\frac{e^{4it}+e^{-4it} }{2}+4\frac{  e^{2it}+  e^{-2it} }{2}\\
+&=&3+4\cos(2t)+\cos(4t)\quad \hbox{(forma trigonométrica)}\\
+\end{eqnarray*}
+
+Observe que a frequência fundamental é $w=2$ e o período fundamental é $\pi$. O diagrama de espectro de fase é nulo em todas as frequências e o diagrama de espectro de amplitudes é dado no gráfico abaixo:
+
+\begin{center}
+  \includegraphics{cap_diagramas_espectro/pics/diagrama_3}
+\end{center}
+\end{resol}
+
+
+\begin{exeresol}Considere a função periódica $f(t)$ dada no gráfico
+
+  \begin{center}
+    \includegraphics{cap_diagramas_espectro/pics/grafico_func_quadrada_sem_paridade}
+  \end{center}
+  
+  
+  e sua série de Fourier dada por
+  $$
+  f(t)= \frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(w_n t)+b_b\sin(w_nt).$$
+  \begin{itemize}
+    \item[a)]  Calcule o período fundamental e a frequência fundamental.
+     \item[b)]  Calcule os coeficientes $a_0$ e $a_n$ e $b_n$, $n\geq 1$. 
+      \item[c)]  Simplifique as expressões dos coeficientes $a_n$ e $b_n$ com $n\in\{1,2,3\}$.
+      \item[d)] Calcule $C_n$ com $n\in\{1,2,3\}$ e escreva a forma exponencial $C_n=|C_n|e^{i\phi_n}$ 
+  \end{itemize}
+\end{exeresol}
+
+\begin{resol}
+
+  O período fundamental é $T=6$ e a frequência angular fundamental é $w_f=\frac{2\pi }{6}=\frac{\pi}{3}$. 
+
+  O coeficiente $a_0$ é dado por:
+  \begin{eqnarray*}
+  a_0=\frac{2}{6}\int_{-1}^5 f(t) dt=1
+  \end{eqnarray*}
+  
+  Os coeficientes $a_n$ são dados por:
+  \begin{eqnarray*}
+  a_n&=&\frac{2}{6}\int_{-1}^5 f(t)\cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \cos((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ \frac{\sin((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{\sin(2\pi n/3)-\sin(-\pi n/3) }{\pi n}\\
+  &=&\frac{\sin(2\pi n/3)+\sin(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os coeficientes $b_n$ são dados por:
+  \begin{eqnarray*}
+  b_n&=&\frac{2}{6}\int_{-1}^5 f(t)\sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\int_{-1}^2 \sin((\pi n/3) t) dt\\
+  &=&\frac{1}{3}\left[ -\frac{\cos((\pi n/3) t)}{\pi n/3} \right]_{-1}^2\\
+  &=&\frac{-\cos(2\pi n/3)-(-\cos(-\pi n/3)) }{\pi n}\\
+  &=&\frac{-\cos(2\pi n/3)+\cos(\pi n/3) }{\pi n}\\
+  \end{eqnarray*}
+  
+  Os valores numéricos dos primeitos coeficientes são dados por:
+  \begin{eqnarray*}
+  a_1&=&\frac{\sin(2\pi /3)+\sin(\pi /3) }{\pi }=\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=\frac{\sqrt{3}}{\pi}\\
+  a_2&=&\frac{\sin(4\pi /3)+\sin(2\pi /3) }{2\pi }=-\frac{\sqrt{3}}{2\pi}+\frac{\sqrt{3}}{2\pi}=0\\
+  a_3&=&\frac{\sin(6\pi /3)+\sin(3\pi /3) }{3\pi }=0
+  \end{eqnarray*}
+  \begin{eqnarray*}
+  b_1&=&\frac{-\cos(2\pi /3)+\cos(\pi /3) }{\pi }=-\left(-\frac{1}{2\pi}\right)+\frac{1}{2\pi}=\frac{1}{\pi}\\
+  b_2&=&\frac{-\cos(4\pi /3)+\cos(2\pi /3) }{2\pi }=-\left(-\frac{1}{4\pi}\right)-\frac{1}{4\pi}=0\\
+  b_3&=&\frac{-\cos(6\pi /3)+\cos(3\pi /3) }{3\pi }=-\frac{1}{3\pi}-\frac{1}{3\pi}=-\frac{2}{3\pi}
+  \end{eqnarray*}
+
+  E finalmente, temos:
+  \begin{eqnarray*}
+   C_1&=&a_1-ib_1=\frac{\sqrt{3}-i}{2\pi}=\frac{1}{\pi}e^{-i\pi/6}\\
+    C_2&=&a_2-ib_2=0\\
+    C_3&=&a_3-ib_3=\frac{i}{3\pi}=\frac{1}{3\pi}e^{i\pi/2} 
+  \end{eqnarray*}
+  
+  
+  
+\end{resol}
+
+
+
 \subsection*{Exercícios}
 \begin{exer}
 Esboce os diagramas de amplitude e fase do espectro das seguintes funções periódicas:
@@ -213,29 +319,49 @@ Observação: Considere a fase $\phi$ no intervalo $-\pi< \phi\leq \pi$
 \begin{resp}
  \begin{itemize}
   \item [a)]
- Observe que \begin{equation}\sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}\end{equation} e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
-\includegraphics{cap_diagramas_espectro/pics/figura_6}
-\includegraphics{cap_diagramas_espectro/pics/figura_7}
-  \item [b)]
- Observe que \begin{equation}3\cos(\pi t)=\frac{3}{2}\left(e^{i\pi t}+e^{-i\pi t}\right)= \frac{3}{2}e^{-i\pi t} + \frac{3}{2}e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$. Veja os diagramas de espectro na figura abaixo. 
-\includegraphics{cap_diagramas_espectro/pics/figura_8}
-\includegraphics{cap_diagramas_espectro/pics/figura_9}
+ Observe que: 
+ \begin{equation}
+  \sen(t)=\frac{1}{2i}\left(e^{it}-e^{-it}\right)= \frac{i}{2}e^{-it} - \frac{i}{2}e^{it}
+\end{equation} 
+e a frequência angular fundamental é $w_F=1$. Veja os diagramas de espectro na figura abaixo.
+
+\includegraphics{cap_diagramas_espectro/pics/figura_6}~\includegraphics{cap_diagramas_espectro/pics/figura_7}
+
+
+\item [b)]
+ Observe que:
+ \begin{equation}3\cos(\pi t)=\frac{3}{2}\left(e^{i\pi t}+e^{-i\pi t}\right)= \frac{3}{2}e^{-i\pi t} + \frac{3}{2}e^{i\pi t}
+\end{equation} 
+ e a frequência angular fundamental é $w_F=\pi$. Veja os diagramas de espectro na figura abaixo. 
+
+\includegraphics{cap_diagramas_espectro/pics/figura_8}~\includegraphics{cap_diagramas_espectro/pics/figura_9}
+
 \item [c)]
- Observe que \begin{equation}1+4\cos(\pi t)=1+2\left(e^{i\pi t}+e^{-i\pi t}\right)= 1+2e^{-i\pi t} + 2e^{i\pi t}\end{equation} e a frequência angular fundamental é $w_F=\pi$.  Veja os diagramas de espectro na figura abaixo. 
-\includegraphics{cap_diagramas_espectro/pics/figura_10}
-\includegraphics{cap_diagramas_espectro/pics/figura_11}
+Observe que:
+ \begin{equation}
+  1+4\cos(\pi t)=1+2\left(e^{i\pi t}+e^{-i\pi t}\right)= 1+2e^{-i\pi t} + 2e^{i\pi t}\end{equation}
+  
+  e a frequência angular fundamental é $w_F=\pi$.  Veja os diagramas de espectro na figura abaixo. 
+
+\includegraphics{cap_diagramas_espectro/pics/figura_10}~\includegraphics{cap_diagramas_espectro/pics/figura_11}
+
 \item [d)]
- Observe que \begin{equation}2\cos^2(2\pi t)=2\left(\frac{e^{2i\pi t}+e^{-2i\pi t}}{2}\right)^2= \frac{e^{-4i\pi t} +2+ e^{4i\pi t}}{2}= \frac{1}{2}e^{-4i\pi t} +1+ \frac{1}{2}e^{4i\pi t}\end{equation} e a frequência angular fundamental é $w_F=4\pi$.  Veja os diagramas de espectro na figura abaixo. 
-\includegraphics{cap_diagramas_espectro/pics/figura_12}
-\includegraphics{cap_diagramas_espectro/pics/figura_13}
+ Observe que:
+ \begin{equation}
+  2\cos^2(2\pi t)=2\left(\frac{e^{2i\pi t}+e^{-2i\pi t}}{2}\right)^2= \frac{e^{-4i\pi t} +2+ e^{4i\pi t}}{2}= \frac{1}{2}e^{-4i\pi t} +1+ \frac{1}{2}e^{4i\pi t}\end{equation} 
+  e a frequência angular fundamental é $w_F=4\pi$.  Veja os diagramas de espectro na figura abaixo. 
+
+  \includegraphics{cap_diagramas_espectro/pics/figura_12}~\includegraphics{cap_diagramas_espectro/pics/figura_13}
+
 \item [e)]
  Observe que 
 \begin{eqnarray*}
 8\sen^3(2\pi t)+2\cos(6\pi t)&=&8\left(\frac{e^{2i\pi t}-e^{-2i\pi t}}{2i}\right)^3+2\left(\frac{e^{6i\pi t}+e^{-6i\pi t}}{2}\right)\\&=& (i+1)e^{6i\pi t}-3 i e^{2i\pi t}+3 i e^{-2i\pi t}+(1-i)e^{-6i\pi t}\\&=&\sqrt{2}e^{\frac{\pi}{4}i} e^{6i\pi t}+3e^{-\frac{\pi}{2}i} e^{2i\pi t}+3 e^{\frac{\pi}{2}i} e^{-2i\pi t}+\sqrt{2}e^{-\frac{\pi}{4}i}e^{-6i\pi t} 
 \end{eqnarray*}
 e a frequência angular fundamental é $w_F=2\pi$.  Veja os diagramas de espectro na figura abaixo.
-\includegraphics{cap_diagramas_espectro/pics/figura_14}
-\includegraphics{cap_diagramas_espectro/pics/figura_15}
+
+\includegraphics{cap_diagramas_espectro/pics/figura_14}~\includegraphics{cap_diagramas_espectro/pics/figura_15}
+
 \item [f)]
  Observe que 
 \begin{eqnarray*}
@@ -287,6 +413,7 @@ n&\omega_n&|C_n|&\phi_n\\
 \end{array}
 \end{equation}
 Veja o diagrama de amplitude na figura abaixo.
+
 \includegraphics{cap_diagramas_espectro/pics/figura_18}
 \item [b)]
  Começamos escrevendo a função $f(t)=\sum_{n=1}^\infty \frac{\sen(nt)}{n^2}$ na forma exponencial:
@@ -326,8 +453,11 @@ A frequência angular fundamental é $w_F=1$ e as amplitudes e fases são dados 
 \end{array}
 \end{equation}
 Veja os diagramas de espectro na figura abaixo.
+
 \includegraphics{cap_diagramas_espectro/pics/figura_19}
+
 \includegraphics{cap_diagramas_espectro/pics/figura_20}
+
 \end{itemize}
 \end{resp}
 \begin{exer}Esboce os diagramas de espectro das séries de Fourier dos problemas \ref{Fourier_8} e \ref{Fourier_9} da página \pageref{Fourier_8}.
@@ -341,8 +471,9 @@ f(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty \frac{\cos(2n\pi t)}{4n^2-1
 &=&\frac{2}{\pi}- \sum_{n=1}^\infty \frac{2}{\pi(4n^2-1)}e^{2 n\pi it}- \sum_{n=-1}^{-\infty} \frac{2}{\pi(4n^2-1)}e^{2n\pi it}
   \end{eqnarray*}
 Veja os diagramas de espectro na figura abaixo.
-\includegraphics{cap_diagramas_espectro/pics/figura_21}
-\includegraphics{cap_diagramas_espectro/pics/figura_22}
+
+\includegraphics{cap_diagramas_espectro/pics/figura_21}~\includegraphics{cap_diagramas_espectro/pics/figura_22}
+
 \item[b)] Problema \ref{Fourier_9} item
 \begin{eqnarray*}
 h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{4n^2-1}\\
@@ -350,10 +481,20 @@ h(t)&=&\frac{2}{\pi}- \frac{4}{\pi}\sum_{n=1}^\infty (-1)^n\frac{\cos(2n\pi t)}{
 &=&\frac{2}{\pi}- \sum_{n=1}^\infty \frac{2(-1)^n}{\pi(4n^2-1)}e^{2 n\pi it}- \sum_{n=-1}^{-\infty} \frac{2(-1)^n}{\pi(4n^2-1)}e^{2n\pi it}
   \end{eqnarray*}
 	Veja os diagramas de espectro na figura abaixo.
-\includegraphics{cap_diagramas_espectro/pics/figura_23}
-\includegraphics{cap_diagramas_espectro/pics/figura_24}
+
+\includegraphics{cap_diagramas_espectro/pics/figura_23}~\includegraphics{cap_diagramas_espectro/pics/figura_24}
+
 \end{itemize}
 \end{resp}
 
-\begin{exer} Mostre que se $f(t)$ é um deslocamento no tempo de $g(t)$, isto é, $f(t)=g(t-k)$, então os coeficiente de Fourier $C_n^f$ da função $f$ e $C_n^g$ da função $g$ são iguais em módulo e, portanto, possuem o mesmo diagrama de espectro de amplitude.
+
+
+\begin{exer} Seja $f(t)$ dada por sua representação em série de Fourier:
+  $$f(t)=\sum_{n=-\infty}^\infty C_n e^{iw_n t }$$
+e  $g(t)$ é a função $f(t)$ deslocada, isto é, $f(t)=g(t-k)$ e é dada por:
+$$g(t)=\sum_{n=-\infty}^\infty D_n e ^{iw_n t }.$$
+  Calcule os coeficiente de Fourier $D_n$ em termos de $C_n$. Verifique que $|C_n|=|D_n|$ e que , portanto, possuem o mesmo diagrama de espectro de amplitude.
 \end{exer}
+\begin{resp}
+  $C_n = D_n e^{-iw_n k}$
+\end{resp}

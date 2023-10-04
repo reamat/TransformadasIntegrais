@@ -18,8 +18,8 @@
  \renewcommand{\sin}{\operatorname{sen}\,}
  \renewcommand{\sinh}{\operatorname{senh}\,}
  \begin{document}\psset{unit =1cm, linewidth=1\pslinewidth}
- \begin{pspicture}(-5.3,-.3)(5.5,1.6)
- \psaxes[labels=y]{->}(0,0)(-5.0,-.1)(5.3,1.4)
+ \begin{pspicture}(-5.3,-.7)(5.5,1.9)
+ \psaxes{->}(0,0)(-5.0,-.1)(5.3,1.4)
 \psset{linecolor=blue}
 \psplot[plotstyle=curve,plotpoints=200]{-5}{5.3}{3.14 sqrt 2 div 2.72 -1 x x mul mul 4 div exp mul x abs mul}
 \rput(0,1.6){$|F(w)|$}

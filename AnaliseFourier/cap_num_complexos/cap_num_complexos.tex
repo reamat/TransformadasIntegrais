@@ -1,3 +1,4 @@
+% !TEX root = ../main.tex
 \chapter{Revisão de números complexos e funções trigonométricas} %Relação de Euler
 \section{Funções trigonométricas}
 \begin{defn}
@@ -117,18 +118,32 @@ $A=\sqrt{B^2+C^2}$ e $\theta$ satisfaz simultaneamente $\cos(\theta)=\frac{B}{\s
 \section{Números complexos e fórmula de Euler}
 \begin{defn} Um número complexo é definido pelo par ordenado $(a,b)$ de números reais que satisfazem as seguintes operações de adição e multiplicação:
 \begin{eqnarray*}
-(a_1,b_1)+(a_2,b_2)&=&(a_1+a_2,b_1+b_2)\\
+(a_1,b_1) \pm (a_2,b_2)&=&(a_1 \pm a_2,b_1 \pm b_2)\\
 (a_1,b_1)\cdot(a_2,b_2)&=&(a_1a_2-b_1b_2,a_1b_2+a_2b_1).
 \end{eqnarray*}
 O conjunto dos números complexos é denotado por $\mathbb{C}$.
 \end{defn}
-\begin{obs}(Números complexos)
+
+\begin{obs}[Números complexos] Sobre a notação, vale observar:~
 \begin{itemize} 
-\item[a)] Os números complexos da forma $(a,0)$ são identificados com os números reais $(a,0)\equiv a$.
-\item[b)] O número complexo $(0,1)$ é chamado de unidade imaginária e denotada por $i$. Observe que $i^2=-1$
-\item[c)] Os números complexos da forma $z=(a,b)$ são rotineiramente denotados na sua forma retangular por $z=a+bi$, onde $a$ é a parte real de $z$ (Re\ \!$(z)=a$ ) e $b$ é a parte imaginária de $z$ (Im\ \!$(z)=b$ ).
+\item[a)] Os números complexos da forma $(a,0)$ são identificados com os números reais $(a,0)\equiv a$. 
+\item[b)] O número complexo $(0,1)$ é chamado de unidade imaginária e denotada por $i$. Observe que $i^2=-1$. 
+\item[c)] Os números complexos da forma $Z=(a,b)$ são rotineiramente denotados na sua forma retangular por $Z=a+bi$, onde $a$ é a parte real de $z$ (Re\ \!$(z)=a$ ) e $b$ é a parte imaginária de $Z$ (Im\ \!$(z)=b$ ).
 \item[d)] A representação geométrica do número $z=a+bi$ no plano complexo é dada por um plano cartesiano onde um eixo marca a parte real e o outro marca a parte imaginária (veja figura \ref{num_complexo}).
+\item[e)] Dizemos que $Z$ é nulo se tanto a parte imaginária como a real são nulas. 
+\item[f] Se $Z=a+bi$, definimos o complexto conjugado de $Z$, $Z*$ ou $\bar{Z}$ de $a-bi$. É fácil ver que $Z+\bar{Z}=2a$ e $Z\bar{Z}=a^2+b^2$, isto é, números reais puros.
 \end{itemize}
+\end{obs}
+
+\begin{obs}[Potências da unidade imaginária] Sobre as potências de $i$, vale observar:
+    \begin{itemize}
+       \item[a)] $i^3$ = $i^2i = (-1)i = -i$
+       \item[b)] $i^4$ = $i^3i = (-i)i = -i^2=1$
+    \end{itemize}
+\end{obs}
+
+\begin{obs}[Divisão de números complexo] A multiplicação de números complexos adimite uma operação inversa, isto é para todo complexo $Z=a+bi$ não nulo, existe um único número complexo $Z^{-1}$ tal que $ZZ^{-1}Z^{-1}Z=1$. Este número complexo é dado por:
+    $$Z^{-1} = \frac{a}{a^2+b^2} -\frac{b}{a^2+b^2}i . $$
 \end{obs}
 \begin{defn}Dado um número complexo $z=a+bi$, definimos módulo de $z$ ($|z|$) por $|z|=\sqrt{a^2+b^2}$. Também definimos argumento $\theta$ para $z\neq 0$ como qualquer  solução do sistema
 \begin{eqnarray}
@@ -139,10 +154,11 @@ Observe que este sistema possui infinitas soluções. Ademais, se $\theta_1$ e $
 \end{defn}
 Observe que uma possível solução, com $-\frac{\pi}{2}<\theta\leq \frac{3\pi}{2}$ é dada por
 \begin{equation}
-\theta=\left\{\begin{array}{cc}\tan^{-1}\left(\frac{b}{a}\right)&\hbox{se}\ a>0\\[5pt]
-\frac{\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b>0\\[5pt]
-\frac{3\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b<0 \\[5pt] 
-\tan^{-1}\left(\frac{b}{a}\right)+\pi&\hbox{se}\ a<0\end{array}\right.
+\theta=\left\{\begin{array}{cc}\tan^{-1}\left(\frac{b}{a}\right)&\hbox{se}\ a>0, \\[5pt]
+\frac{\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b>0, \\[5pt]
+\frac{3\pi}{2}&\hbox{se}\ a=0\ \hbox{e}\ b<0,  \\[5pt] 
+\tan^{-1}\left(\frac{b}{a}\right)+\pi&\hbox{se}\ a<0.
+\end{array}\right.
 \end{equation}
 Se desejamos $\frac{\pi}{2}\leq \theta < \frac{\pi}{2}$, podemos usar a seguinte expressão:
 \begin{equation}\theta=\begin{cases}
@@ -185,7 +201,7 @@ De fato,
 e^{i\theta}&=&1+i\theta+\frac{(i \theta)^2}{2!}+\frac{(i\theta)^3}{3!}+\frac{(i\theta)^4}{4!}+\frac{(i\theta)^5}{5!}+\cdots\\
 &=&1+i\theta-\frac{\theta^2}{2!}-i\frac{\theta^3}{3!}+\frac{\theta^4}{4!}+i\frac{\theta^5}{5!}+\cdots\\
 &=&1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!}+\cdots    +i\left(\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}+\cdots\right)\\
-&=&\cos(\theta)    +i\sen(\theta)
+&=&\cos(\theta)  + i\sen(\theta).
 \end{eqnarray*}
 \end{proof}
 \begin{defn}A forma exponencial de um número complexo $z=a+bi$ é 
@@ -202,7 +218,7 @@ onde $|z|=\sqrt{a^2+b^2}$ é o módulo de $z$ e $\theta$ satisfazendo $a=|z|\cos
 \end{equation}
 e
 \begin{equation}
-\cos(\theta)=\frac{e^{i\theta}+e^{-i\theta}}{2}
+\cos(\theta)=\frac{e^{i\theta}+e^{-i\theta}}{2}.
 \end{equation}
 
 Observe que pela fórmula de Euler vale
@@ -269,7 +285,7 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 \item[e)] $2\sqrt{2}\left(1-i\right)$
 \item[f)] $\frac{5\sqrt{2}}{2}\left(1+i\right)$
 \end{itemize}
- \end{resp}
+\end{resp}
 \begin{exer}Calcule e escreva na forma retangular.
 \begin{itemize}
 \item[a)] $(2-3i)(4+2i)-e^{i\pi }(2i+1)$
@@ -288,21 +304,8 @@ A diferença das equações (\ref{Euler_1}) e (\ref{Euler_2}) nos dá a express�
 \item [e)]$\frac{3i^{2}-i^{3}}{2i-1}=\frac{-3+i}{2i-1}=1+i$
 \end{itemize}
 \end{resp}
-\begin{exer}Mostre a identidade 
-\begin{equation}\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)\end{equation}
-diretamente a partir das identidades trigonométricas para soma de ângulos.
-\end{exer}
-\begin{exer}Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moivre:
-\begin{equation}\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta)\end{equation}
-\end{exer}
-\begin{exer}Use a identidade anterior para calcular a razão
-\begin{equation}\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta)\end{equation}
-sem usar a exponencial complexa.
-\end{exer}
-\begin{exer}Repita os três problemas anteriores usando a exponencial complexa dada por
-\begin{equation}e^{i\theta}=\cos(\theta)+i\sen(\theta).\end{equation}
-\end{exer}
-\begin{exer} Calcule
+
+\begin{exer} Simplique as expressões numéricas.
 \begin{itemize}
 \item[a)] $\frac{\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)}{\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)}$
 \item[b)] $\left[\cos\left(\frac{\pi}{4}\right)+i\sen\left(\frac{\pi}{4}\right)\right]\left[\cos\left(\frac{\pi}{6}\right)+i\sen\left(\frac{\pi}{6}\right)\right]^3$
@@ -314,36 +317,63 @@ sem usar a exponencial complexa.
 \item[b)] $\cos\left(\frac{3\pi}{4}\right)+i\sen\left(\frac{3\pi}{4}\right)$
 \end{itemize}
 \end{resp}
-\begin{exer}Mostre as seguintes identidades:
+
+\begin{exer}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras (este problema é realmente muito importante):
+    \begin{itemize}
+     \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
+     \item [a)] $e^{-ix}=\cos(x)-i\sen(x).$
+     \item [c)] $|e^{i\theta}|=1, ~~ \forall \theta\in\mathbb{R}.$
+     \item [d)] $\overline{e^{i\theta}}=e^{-i\theta}, ~~ \forall \theta\in\mathbb{R}.$
+     \item [e)] $|e^{z}|=e^{\text{Re}~\!( z)}.$
+     \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
+     \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
+     \end{itemize}
+    \end{exer}
+    \begin{resp}
+     \begin{itemize}
+     \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
+     \item [c)] $|e^{i\theta}|=|\cos(x)+i\sen(x)|= \sqrt{\cos^2(\theta)+\sin^2(\theta)}=1$
+     \item [d)] $\overline{e^{i\theta}}=\overline{\cos(x)+i\sen(x)}=\cos(x)-i\sen(x)=e^{-i\theta}.$
+     \item [e)] $|e^{z}|=|e^{\text{Re}~\!( z)}e^{\text{Im}~\!( z)}|=|e^{\text{Re}~\!( z)}|~|e^{\text{Im}~\!( z)}|=e^{\text{Re}~\!( z)}.$, pois $e^x>0$ para todo $x$ real.
+     \item [f)] Considere $e^{ix}+e^{-ix}$.
+     \item [g)] Considere $e^{ix}-e^{-ix}$.
+     \end{itemize}
+ \end{resp}
+    
+
+\begin{exer} Sejam $Z_1=Ae^{i\phi_a}$ e $Z_2=Be^{i\phi_b}$ com $A$ e $B$ positivos. Verifique que $|Z_1+Z_2|=|A+Be^{i\phi}|$ com $\phi=\phi_b-\phi_a$. Obtenha que $|Z_1+Z_2| = \sqrt{A^2+2AB\cos(\phi)+B^2}$. Conclua que $|Z_1+Z_2|=A+B$ só acontece quando $\cos(\phi)=1$. Qual a intepretação geométrica? 
+\end{exer}
+\begin{resp}
+    A interpretação geométrica é que o módulo da soma é igual à soma dos módulos somente quando $Z_1$ e $Z_2$ têm a mesma direção e sentido no plano complexo.
+\end{resp}
+
+\begin{exer} Calcule o produto e simplifique usando as fórmulas da soma de arco para o seno e o cosseno.
+\begin{equation}\left[\cos(\theta_1)+i\sen(\theta_1)\right]\cdot\left[\cos(\theta_2)+i\sen(\theta_2)\right]=\cos(\theta_1+\theta_2)+i\sen(\theta_1+\theta_2)\end{equation}
+diretamente a partir das identidades trigonométricas para soma de ângulos.
+\end{exer}
+
+\begin{exer} Use a identidade anterior e o princípio da indução matemática para mostrar a fórmula de De Moivre:
+\begin{equation}\left[\cos(\theta)+i\sen(\theta)\right]^n=\cos(n\theta)+i\sen(n\theta), ~n=0,1,2,3,\ldots
+\end{equation}
+\end{exer}
+\begin{exer} Use a identidade anterior para calcular a razão
+\begin{equation}\frac{1}{\left[\cos(\theta)+i\sen(\theta)\right]^n}=\cos(n\theta)-i\sen(n\theta), ~n=0,1,2,3,\ldots
+\end{equation}
+sem usar a exponencial complexa.
+\end{exer}
+\begin{exer} Repita os três problemas anteriores usando a exponencial complexa dada por:
+\begin{equation}e^{i\theta}=\cos(\theta)+i\sen(\theta).\end{equation}
+\end{exer}
+
+\begin{exer}Expresse as funções trigonométricas em termos de exponenciais e use o binômio de Newton para obter as sequintes expressões. 
 \begin{eqnarray*}
 \sen^3\theta&=&\frac{3}{4}\sen\theta-\frac{1}{4}\sen 3\theta\\
 \cos^4\theta&=&\frac{1}{8}\cos 4\theta+\frac{1}{2}\cos 2\theta+\frac{3}{8}
 \end{eqnarray*}
-Dica: Expresse as funções trigonométricas em termos de exponenciais e use o  binômio de Newton 
+
 \end{exer}
-\begin{exer}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma 
+\begin{exer}Use o binômio de Newton para verificar que as funções $\sen^n(t)$ e $\cos^n(t)$ podem ser escritas na forma: 
 \begin{equation}\frac{a_0}{2}+\sum_{k=1}^n \left[a_k\cos(kt)+b_k\sen(kt)\right]\end{equation}
 \end{exer}
 
-\begin{exer}\label{familiarize} Entenda e familiarize-se com as seguintes identidades e observe a primeira identidade implica todas as outras:
-\begin{itemize}
- \item [a)] $e^{ix}=\cos(x)+i\sen(x).$
- \item [a)] $e^{-ix}=\cos(x)-i\sen(x).$
- \item [c)] $|e^{i\theta}|=1, ~~ \forall \theta\in\mathbb{R}.$
- \item [d)] $\overline{e^{i\theta}}=e^{-i\theta}, ~~ \forall \theta\in\mathbb{R}.$
- \item [e)] $|e^{z}|=e^{\text{Re}~\!( z)}.$
- \item [f)] $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
- \item [g)] $\sen(x)=\frac{e^{ix}-e^{-ix}}{2i}$
- \end{itemize}
-\end{exer}
-\begin{resp}
- \begin{itemize}
- \item [b)] $e^{-ix}=\cos(-x)+i\sen(-x)=e^{-ix}=\cos(x)-i\sen(x)$
- \item [c)] $|e^{i\theta}|=|\cos(x)+i\sen(x)|= \sqrt{\cos^2(\theta)+\sin^2(\theta)}=1$
- \item [d)] $\overline{e^{i\theta}}=\overline{\cos(x)+i\sen(x)}=\cos(x)-i\sen(x)=e^{-i\theta}.$
- \item [e)] $|e^{z}|=|e^{\text{Re}~\!( z)}e^{\text{Im}~\!( z)}|=|e^{\text{Re}~\!( z)}|~|e^{\text{Im}~\!( z)}|=e^{\text{Re}~\!( z)}.$, pois $e^x>0$ para todo $x$ real.
- \item [f)] Considere $e^{ix}+e^{-ix}$.
- \item [g)] Considere $e^{ix}-e^{-ix}$.
- \end{itemize}
-\end{resp}
 

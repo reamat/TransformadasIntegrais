@@ -1,11 +1,11 @@
 %!PS-Adobe-2.0 EPSF-2.0
-%%BoundingBox: 13 0 300 180
-%%HiResBoundingBox: 13.500000 0.000000 299.500000 179.500000
-%%Creator: dvips(k) 5.995 Copyright 2015 Radical Eye Software
+%%BoundingBox: 13 10 300 199
+%%HiResBoundingBox: 13.500000 10.500000 299.500000 199.000000
+%%Creator: dvips(k) 5.999 Copyright 2019 Radical Eye Software
 %%Title: figura_1.dvi
-%%CreationDate: Fri Apr 20 14:46:51 2018
+%%CreationDate: Mon Jul 25 14:33:01 2022
 %%PageOrder: Ascend
-%%DocumentFonts: CMR10 CMMI10 CMSY10 SFRM1000 CMR7
+%%DocumentFonts: CMR10 CMMI10 CMSY10 CMR7
 %%EndComments
 % EPSF created by ps2eps 1.68
 %%BeginProlog
@@ -18,9 +18,9 @@ newpath
 %%EndProlog
 %%Page 1 1
 %DVIPSWebPage: (www.radicaleye.com)
-%DVIPSCommandLine: dvips figura_1.dvi
+%DVIPSCommandLine: /usr/bin/dvips -o figura_1.ps figura_1.dvi
 %DVIPSParameters: dpi=600
-%DVIPSSource:  TeX output 2018.04.20:1446
+%DVIPSSource:  TeX output 2022.07.25:1133
 %%BeginProcSet: tex.pro 0 0
 %!
 /TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
@@ -69,10 +69,10 @@ B/g{0 M}B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p
 0 S rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
 %%EndProcSet
 %%BeginProcSet: pstricks.pro 0 0
-% $Id: pstricks.pro 919 2014-05-19 18:42:47Z herbert $
+% $Id: pstricks.pro 872 2018-12-21 20:39:31Z herbert $
 %
 %% PostScript prologue for pstricks.tex.
-%% Version 1.23, 2014/07/31
+%% Version 1.30, 2018/12/17
 %%
 %% This program can be redistributed and/or modified under the terms
 %% of the LaTeX Project Public License Distributed from CTAN archives
@@ -117,6 +117,20 @@ tx@Dict begin
   pop pop 0 }{ sqrt exch atan} ifelse 
   y 0 lt { 180 add } if
 } def
+/Power { %  a^b   latest ghostscript don't allow -4^-3.1
+  2 dict begin	% hold all local
+  /b ED
+  /a ED
+  a 0 lt % prevent something like (-4)^(-3.1)=> 1/(-4)^3
+    { b 0 lt 
+      { a b cvi exp }
+      { a b exp } ifelse 
+    }
+    { a 0 eq { 0 }{ a b exp } ifelse
+    } ifelse
+  end
+} def
+%
 /NET { neg exch neg exch T } def	      	% change coordinate system to the negative one		
 /Pyth { dup mul exch dup mul add sqrt } def   	% Pythagoras, expects 2 parameter
 /Pyth2 {					% Pythagoras, xA yA xB yB
@@ -125,8 +139,14 @@ tx@Dict begin
   3 1 roll 		% yB-yA xA xB
   sub			% yB-yA xA-xB
   Pyth } def
-/PtoC { 2 copy cos mul 3 1 roll sin mul } def % Polar to Cartesian
+/PtoC { 2 copy cos mul 3 1 roll sin mul } def % Polar to Cartesian (origimal)
+/PtoCrel { pst@angleunit PtoC } def % Polar to Cartesian with \degrees[??]
 /PtoCab { dup cos 4 -1 roll mul 3 1 roll sin mul } def % Polar to Cartesian (Ellipse) a b phi-> x y 
+/AnytoDeg { pst@angleunit } def 
+/DegtoAny { 1 pst@angleunit div} def
+/AnytoRad { AnytoDeg DegtoRad } def 
+/RadtoAny { RadtoDeg DegtoAny } def
+%
 %/Rand { rand 4294967295 div } def		% a real random number
 /Rand { rand 2147483447 div } def		% a real random number between 0 and 1
 %----------------- hv added 20050516 ---------------
@@ -910,10 +930,14 @@ gsave
 %
 /Rect { 
   x1 y1 y2 add 2 div moveto 
+%  x1 y2 lineto 
+%  x2 y2 lineto 
+%  x2 y1 lineto
+%  x1 y1 lineto 
+  x1 y1 lineto  % counter clockwise path
+  x2 y1 lineto 
+  x2 y2 lineto
   x1 y2 lineto 
-  x2 y2 lineto 
-  x2 y1 lineto
-  x1 y1 lineto 
   closepath 
 } def
 %
@@ -1047,8 +1071,12 @@ gsave
   /w x2 x1 sub 0 gt { 1 } { -1 } ifelse def 
   b 0 gt { 
     /z1 b 4 div CLW 2 div add def
-%    /Helvetica findfont b scalefont setfont 
-    /b b .95 mul CLW 2 div add def } if 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    Helvetica findfont b scalefont setfont 
+%    is set in pstricks.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%     /NimbusSanL-Regu findfont b scalefont setfont   
+  /b b .95 mul CLW 2 div add def } if 
   systemdict /setstrokeadjust known 
     { true setstrokeadjust /t { } def }
     { /t { transform 0.25 sub round 0.25 add exch 0.25 sub round 0.25 add
@@ -1058,7 +1086,7 @@ gsave
   /f y1 dy mul n 0 gt { dy n div 2 div h mul sub } if def 
   /g y2 dy mul n 0 gt { dy n div 2 div h mul add } if def 
   x2 x1 sub w mul 1 add dup 1000 gt { pop 1000 } if 
-  { i dx mul dup y0 moveto 
+  { i dx mul dup xGridOffset add y0 moveto 
     b 0 gt 
       { gsave c i a cvs dup stringwidth pop 
         /z2 ED w 0 gt {z1} {z1 z2 add neg} ifelse 
@@ -1080,7 +1108,7 @@ gsave
   /f x1 dx mul n 0 gt { dx n div 2 div w mul sub } if def 
   /g x2 dx mul n 0 gt { dx n div 2 div w mul add } if def 
   y2 y1 sub h mul 1 add dup 1000 gt { pop 1000 } if 
-  { newpath i dy mul dup x0 exch moveto 
+  { newpath i dy mul dup yGridOffset add x0 exch moveto 
     b 0 gt { gsave c i a cvs dup stringwidth pop 
       /z2 ED 
       w 0 gt {z1 z2 add neg} {z1} ifelse 
@@ -1274,7 +1302,7 @@ end
 % END pstricks.pro
 %%EndProcSet
 %%BeginProcSet: pst-algparser.pro 0 0
-% $Id: pst-algparser.pro 919 2014-05-19 18:42:47Z herbert $
+% $Id: pst-algparser.pro 446 2017-04-19 11:40:55Z herbert $
 %%
 %% PostScript prologue for PSTricks algorithm parser
 %% Version 0.07, 2014/08/01
@@ -2051,7 +2079,7 @@ end
 % $Id: pst-tools.pro 842 2013-10-26 10:25:41Z herbert $
 %
 %% PostScript tools prologue for pstricks.tex.
-%% Version 0.04, 2013/10/26
+%% Version 0.06, 2017/12/03
 %%
 %% This program can be redistributed and/or modified under the terms
 %% of the LaTeX Project Public License Distributed from CTAN archives
@@ -2259,6 +2287,38 @@ end
   pop  
 } bind def
 %
+/concatstrings{ % (a) (b) -> (ab)  
+  1 dict begin
+  exch dup length    
+  2 index length add string    
+  dup dup 4 2 roll copy length
+  4 -1 roll putinterval
+  end
+} def
+%
+/reversestring { % (aBC) -> (CBa)
+  5 dict begin
+  /str exch def
+  /L str length def
+  /strTemp L string def
+  /i 0 def
+  L { 
+    /I L 1 sub i sub def
+    strTemp i str I 1 getinterval putinterval
+    /i i 1 add def
+  } repeat
+  strTemp
+  end
+} def
+%
+/concatarray{ % [a c] [b d] -> [a c b d]  
+  2 dict begin
+  /a2 exch def
+  /a1 exch def
+  [ a1 aload pop a2 aload pop ]
+  end
+} def
+%
 /dot2comma {% on stack a string (...) 
   2 dict begin
   /Output exch def
@@ -2314,7 +2374,7 @@ end
 % END pst-tools.pro
 %%EndProcSet
 %%BeginProcSet: pst-dots.pro 0 0
-% $Id: pst-dots.pro 801 2013-07-09 18:10:41Z herbert $
+% $Id: pst-dots.pro 446 2017-04-19 11:40:55Z herbert $
 %
 %% PostScript prologue for pstricks.tex.
 %% Version 2.02,  2009/06/16
@@ -2489,7 +2549,7 @@ end
 %% end
 %%EndProcSet
 %%BeginProcSet: pst-node.pro 0 0
-% $Id: pst-node.pro 40 2014-07-25 06:46:27Z herbert $
+% $Id: pst-node.pro 395 2017-03-21 09:24:38Z herbert $
 %%
 %% PostScript prologue for pst-node.tex.
 %% Version 1.15, 2014/01/27.
@@ -2498,7 +2558,7 @@ end
 %% of the LaTeX Project Public License Distributed from CTAN archives
 %% in directory macros/latex/base/lppl.txt.
 %
-%%%%  EMPTY lines are not aload!!! Problem with pst-eps -> \par
+%%%%  EMPTY lines are not alowed!!! Problem with pst-eps -> \par
 %
 %
 tx@Dict begin 			% from main pstricks dict
@@ -3195,8 +3255,8 @@ end % of tx@3Ddict
 %
 % Author          : Christophe JORSSEN 
 % Author          : Herbert Voß <hvoss@tug.org>
-% Last Mod        : $Date: 2014/07/30 $
-% Version         : 0.63 $
+% Last Mod        : $Date: 2018/12/16 $
+% Version         : 0.65 $
 %
 /PI 3.14159265359 def
 /ENeperian 2.71828182846 def
@@ -3634,7 +3694,7 @@ end
 %%EndProcSet
 %%BeginProcSet: pst-circ.pro 0 0
 %!
-% $Id: pst-circ.pro 3 2007-12-23 16:23:22Z herbert $
+% $Id: pst-circ.pro 646 2017-11-16 09:46:12Z herbert $
 %
 % PostScript prologue for pst-circ.tex.
 % version 0.01 2007-03-23 (hv)
@@ -3661,297 +3721,408 @@ end
   ifelse  } bind def
 % END pst-circ.pro
 %%EndProcSet
-%%BeginProcSet: cm-super-t1.enc 0 0
-% This file is generated from `T1uni.map' and `glyphlist.txt', `gl-other.txt'
-%
-% LIGKERN hyphen hyphen =: endash ; endash hyphen =: emdash ;
-% LIGKERN quoteleft quoteleft =: quotedblleft ;
-% LIGKERN quoteright quoteright =: quotedblright ;
-% LIGKERN comma comma =: quotedblbase ; less less =: guillemotleft ;
-% LIGKERN greater greater =: guillemotright ;
-% LIGKERN f f =: ff ; f i =: fi ; f l =: fl ; ff i =: ffi ; ff l =: ffl ;
-%
-% LIGKERN space {} * ; * {} space ; zero {} * ; * {} zero ;
-% LIGKERN one {} * ; * {} one ; two {} * ; * {} two ;
-% LIGKERN three {} * ; * {} three ; four {} * ; * {} four ;
-% LIGKERN five {} * ; * {} five ; six {} * ; * {} six ;
-% LIGKERN seven {} * ; * {} seven ; eight {} * ; * {} eight ;
-% LIGKERN nine {} * ; * {} nine ;
-%
-/T1Encoding [
-% 0x00
-/grave
-/acute
-/circumflex
-/tilde
-/dieresis
-/hungarumlaut
-/ring
-/caron
-/breve
-/macron
-/dotaccent
-/cedilla
-/ogonek
-/quotesinglbase
-/guilsinglleft
-/guilsinglright
-% 0x10
-/quotedblleft
-/quotedblright
-/quotedblbase
-/guillemotleft
-/guillemotright
-/endash
-/emdash
-/afii61664
-/perthousandzero % PERTHOUSAND ZERO
-/dotlessi
-/dotlessj
-/ff
-/fi
-/fl
-/ffi
-/ffl
-% 0x20
-/uni2423
-/exclam
-/quotedbl
-/numbersign
-/dollar
-/percent
-/ampersand
-/quoteright
-/parenleft
-/parenright
-/asterisk
-/plus
-/comma
-/hyphen
-/period
-/slash
-% 0x30
-/zero
-/one
-/two
-/three
-/four
-/five
-/six
-/seven
-/eight
-/nine
-/colon
-/semicolon
-/less
-/equal
-/greater
-/question
-% 0x40
-/at
-/A
-/B
-/C
-/D
-/E
-/F
-/G
-/H
-/I
-/J
-/K
-/L
-/M
-/N
-/O
-% 0x50
-/P
-/Q
-/R
-/S
-/T
-/U
-/V
-/W
-/X
-/Y
-/Z
-/bracketleft
-/backslash
-/bracketright
-/asciicircum
-/underscore
-% 0x60
-/quoteleft
-/a
-/b
-/c
-/d
-/e
-/f
-/g
-/h
-/i
-/j
-/k
-/l
-/m
-/n
-/o
-% 0x70
-/p
-/q
-/r
-/s
-/t
-/u
-/v
-/w
-/x
-/y
-/z
-/braceleft
-/bar
-/braceright
-/asciitilde
-/hyphen.alt % HANGING HYPHEN
-% 0x80
-/Abreve
-/Aogonek
-/Cacute
-/Ccaron
-/Dcaron
-/Ecaron
-/Eogonek
-/Gbreve
-/Lacute
-/Lcaron
-/Lslash
-/Nacute
-/Ncaron
-/Eng
-/Ohungarumlaut
-/Racute
-% 0x90
-/Rcaron
-/Sacute
-/Scaron
-/Scedilla
-/Tcaron
-/Tcommaaccent
-/Uhungarumlaut
-/Uring
-/Ydieresis
-/Zacute
-/Zcaron
-/Zdotaccent
-/IJ
-/Idotaccent
-/dcroat
-/section
-% 0xA0
-/abreve
-/aogonek
-/cacute
-/ccaron
-/dcaron
-/ecaron
-/eogonek
-/gbreve
-/lacute
-/lcaron
-/lslash
-/nacute
-/ncaron
-/eng
-/ohungarumlaut
-/racute
-% 0xB0
-/rcaron
-/sacute
-/scaron
-/scedilla
-/tcaron
-/tcommaaccent
-/uhungarumlaut
-/uring
-/ydieresis
-/zacute
-/zcaron
-/zdotaccent
-/ij
-/exclamdown
-/questiondown
-/sterling
-% 0xC0
-/Agrave
-/Aacute
-/Acircumflex
-/Atilde
-/Adieresis
-/Aring
-/AE
-/Ccedilla
-/Egrave
-/Eacute
-/Ecircumflex
-/Edieresis
-/Igrave
-/Iacute
-/Icircumflex
-/Idieresis
-% 0xD0
-/Eth
-/Ntilde
-/Ograve
-/Oacute
-/Ocircumflex
-/Otilde
-/Odieresis
-/OE
-/Oslash
-/Ugrave
-/Uacute
-/Ucircumflex
-/Udieresis
-/Yacute
-/Thorn
-/SS % Germandbls
-% 0xE0
-/agrave
-/aacute
-/acircumflex
-/atilde
-/adieresis
-/aring
-/ae
-/ccedilla
-/egrave
-/eacute
-/ecircumflex
-/edieresis
-/igrave
-/iacute
-/icircumflex
-/idieresis
-% 0xF0
-/eth
-/ntilde
-/ograve
-/oacute
-/ocircumflex
-/otilde
-/odieresis
-/oe
-/oslash
-/ugrave
-/uacute
-/ucircumflex
-/udieresis
-/yacute
-/thorn
-/germandbls % or /germandbls.alt
-] def
+%%BeginProcSet: l3backend-dvips.pro 0 0
+%%
+%% This is file `l3backend-dvips.pro',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% l3backend-header.dtx  (with options: `header,dvips')
+%% 
+%% Copyright (C) 1990-2020 The LaTeX3 Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3backend bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: l3backend-header.dtx
+true setglobal
+/pdf.globaldict 4 dict def
+false setglobal
+/pdf.cvs { 65534 string cvs } def
+/pdf.dvi.pt { 72.27 mul Resolution div } def
+/pdf.pt.dvi { 72.27 div Resolution mul } def
+/pdf.rect.ht { dup 1 get neg exch 3 get add } def
+/pdf.linkmargin { 1 pdf.pt.dvi } def
+/pdf.linkdp.pad { 0 } def
+/pdf.linkht.pad { 0 } def
+/pdf.rect
+  { /Rect [ pdf.llx pdf.lly pdf.urx pdf.ury ] } def
+/pdf.save.ll
+  {
+    currentpoint
+    /pdf.lly exch def
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.ur
+  {
+    currentpoint
+    /pdf.ury exch def
+    /pdf.urx exch def
+  }
+    def
+/pdf.save.linkll
+  {
+    currentpoint
+    pdf.linkmargin add
+    pdf.linkdp.pad add
+    /pdf.lly exch def
+    pdf.linkmargin sub
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.linkur
+  {
+    currentpoint
+    pdf.linkmargin sub
+    pdf.linkht.pad sub
+    /pdf.ury exch def
+    pdf.linkmargin add
+    /pdf.urx exch def
+  }
+    def
+/pdf.dest.anchor
+  {
+    currentpoint exch
+    pdf.dvi.pt 72 add
+    /pdf.dest.x exch def
+    pdf.dvi.pt
+    vsize 72 sub exch sub
+    /pdf.dest.y exch def
+  }
+    def
+/pdf.dest.point
+  { pdf.dest.x pdf.dest.y } def
+/pdf.dest2device
+  {
+    /pdf.dest.y exch def
+    /pdf.dest.x exch def
+    matrix currentmatrix
+    matrix defaultmatrix
+    matrix invertmatrix
+    matrix concatmatrix
+    cvx exec
+    /pdf.dev.y exch def
+    /pdf.dev.x exch def
+    /pdf.tmpd exch def
+    /pdf.tmpc exch def
+    /pdf.tmpb exch def
+    /pdf.tmpa exch def
+    pdf.dest.x pdf.tmpa mul
+      pdf.dest.y pdf.tmpc mul add
+      pdf.dev.x add
+    pdf.dest.x pdf.tmpb mul
+     pdf.dest.y pdf.tmpd mul add
+     pdf.dev.y add
+  }
+    def
+/pdf.bordertracking false def
+/pdf.bordertracking.begin
+  {
+    SDict /pdf.bordertracking true put
+    SDict /pdf.leftboundary undef
+    SDict /pdf.rightboundary undef
+    /a where
+      {
+        /a
+          {
+            currentpoint pop
+            SDict /pdf.rightboundary known dup
+              {
+                SDict /pdf.rightboundary get 2 index lt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.rightboundary exch put }
+            ifelse
+            moveto
+            currentpoint pop
+            SDict /pdf.leftboundary known dup
+              {
+                SDict /pdf.leftboundary get 2 index gt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.leftboundary exch put }
+            ifelse
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.bordertracking.end
+  {
+    /a where { /a { moveto } put } if
+    /x where { /x { 0 exch rmoveto } put } if
+    SDict /pdf.leftboundary known
+      { pdf.outerbox 0 pdf.leftboundary put }
+    if
+    SDict /pdf.rightboundary known
+      { pdf.outerbox 2 pdf.rightboundary put }
+    if
+    SDict /pdf.bordertracking false put
+  }
+    def
+  /pdf.bordertracking.endpage
+{
+  pdf.bordertracking
+    {
+      pdf.bordertracking.end
+      true setglobal
+      pdf.globaldict
+        /pdf.brokenlink.rect [ pdf.outerbox aload pop ] put
+      pdf.globaldict
+        /pdf.brokenlink.skip pdf.baselineskip put
+      pdf.globaldict
+        /pdf.brokenlink.dict
+          pdf.link.dict pdf.cvs put
+      false setglobal
+      mark pdf.link.dict cvx exec /Rect
+        [
+          pdf.llx
+          pdf.lly
+          pdf.outerbox 2 get pdf.linkmargin add
+          currentpoint exch pop
+          pdf.outerbox pdf.rect.ht sub pdf.linkmargin sub
+        ]
+      /ANN pdf.pdfmark
+    }
+  if
+}
+  def
+/pdf.bordertracking.continue
+  {
+    /pdf.link.dict pdf.globaldict
+      /pdf.brokenlink.dict get def
+    /pdf.outerbox pdf.globaldict
+      /pdf.brokenlink.rect get def
+    /pdf.baselineskip pdf.globaldict
+      /pdf.brokenlink.skip get def
+    pdf.globaldict dup dup
+    /pdf.brokenlink.dict undef
+    /pdf.brokenlink.skip undef
+    /pdf.brokenlink.rect undef
+    currentpoint
+    /pdf.originy exch def
+    /pdf.originx exch def
+    /a where
+      {
+        /a
+          {
+            moveto
+            SDict
+            begin
+            currentpoint pdf.originy ne exch
+              pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+    /x where
+      {
+        /x
+          {
+            0 exch rmoveto
+            SDict~
+            begin
+            currentpoint
+            pdf.originy ne exch pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.breaklink
+  {
+    pop
+    counttomark 2 mod 0 eq
+      {
+        counttomark /pdf.count exch def
+          {
+           pdf.count 0 eq { exit } if
+           counttomark 2 roll
+           1 index /Rect eq
+             {
+               dup 4 array copy
+               dup dup
+                 1 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add sub
+                 3 exch put
+               dup
+                 pdf.outerbox 2 get
+                 pdf.linkmargin add
+                 2 exch put
+               dup dup
+                 3 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add add
+                 1 exch put
+               /pdf.currentrect exch  def
+               pdf.breaklink.write
+                 {
+                   pdf.currentrect
+                   dup
+                     pdf.outerbox 0 get
+                     pdf.linkmargin sub
+                     0 exch put
+                   dup
+                     pdf.outerbox 2 get
+                     pdf.linkmargin add
+                     2 exch put
+                   dup dup
+                     1 get
+                     pdf.baselineskip add
+                     1 exch put
+                   dup dup
+                     3 get
+                     pdf.baselineskip add
+                     3 exch put
+                   /pdf.currentrect exch def
+                   pdf.breaklink.write
+                  }
+                1 index 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                2 index 1 get sub
+                pdf.baselineskip div round cvi 1 sub
+                exch
+              repeat
+              pdf.currentrect
+              dup
+                pdf.outerbox 0 get
+                pdf.linkmargin sub
+                0 exch put
+              dup dup
+                1 get
+                pdf.baselineskip add
+                1 exch put
+              dup dup
+                3 get
+                pdf.baselineskip add
+                3 exch put
+              dup 2 index 2 get  2 exch put
+              /pdf.currentrect exch def
+              pdf.breaklink.write
+              SDict /pdf.pdfmark.good false put
+              exit
+            }
+            { pdf.count 2 sub /pdf.count exch def }
+          ifelse
+        }
+      loop
+    }
+  if
+  /ANN
+}
+  def
+/pdf.breaklink.write
+  {
+    counttomark 1 sub
+    index /_objdef eq
+      {
+        counttomark -2 roll
+        dup wcheck
+          {
+            readonly
+            counttomark 2 roll
+          }
+          { pop pop }
+        ifelse
+      }
+    if
+    counttomark 1 add copy
+    pop pdf.currentrect
+    /ANN pdfmark
+  }
+    def
+/pdf.pdfmark
+  {
+    SDict /pdf.pdfmark.good true put
+    dup /ANN eq
+      {
+        pdf.pdfmark.store
+        pdf.pdfmark.dict
+          begin
+            Subtype /Link eq
+            currentdict /Rect known and
+            SDict /pdf.outerbox known and
+            SDict /pdf.baselineskip known and
+              {
+                Rect 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                Rect 1 get sub
+                pdf.baselineskip div round cvi 0 gt
+                  { pdf.breaklink }
+                if
+              }
+            if
+          end
+        SDict /pdf.outerbox undef
+        SDict /pdf.baselineskip undef
+        currentdict /pdf.pdfmark.dict undef
+      }
+    if
+    pdf.pdfmark.good
+      { pdfmark }
+      { cleartomark }
+    ifelse
+  }
+    def
+/pdf.pdfmark.store
+  {
+    /pdf.pdfmark.dict 65534 dict def
+    counttomark 1 add copy
+    pop
+      {
+        dup mark eq
+          {
+            pop
+            exit
+          }
+          {
+            pdf.pdfmark.dict
+            begin def end
+          }
+        ifelse
+      }
+    loop
+}
+  def
+%% 
+%%
+%% End of file `l3backend-dvips.pro'.
 %%EndProcSet
 %%BeginProcSet: texps.pro 0 0
 %!
@@ -4305,78 +4476,6 @@ C001351BCC357E49F8A94A7481991B6239C7D48C5D55D3FED290DF6AFB2E23EF
 0000000000000000000000000000000000000000000000000000000000000000
 cleartomark
 {restore}if
-%%BeginFont: SFRM1000
-%!FontType1-1.0: SFRM1000 0.3
-%%CreationDate: Wed Sep 12 2001
-% Copyright (c) 2001 Vladimir Volovich <vvv@vsu.ru>.
-% See the file COPYING (GNU General Public License) for license conditions.
-% Converted from METAFONT EC/TC and LH fonts:
-% ecrm1000, tcrm1000, larm1000, lbrm1000, lcrm1000, rxrm1000.
-11 dict begin
-/FontInfo 6 dict dup begin
-/version (0.3) def
-/FullName (Computer Modern Roman) def
-/FamilyName (Computer Modern) def
-/ItalicAngle 0 def
-/isFixedPitch false def
-/Weight (Medium) def
-end readonly def
-/FontName /SFRM1000 def
-/Encoding StandardEncoding def
-/PaintType 0 def
-/FontType 1 def
-/FontMatrix [0.001 0 0 0.001 0 0] def
-/FontBBox{-189 -321 1456 937}readonly def
-currentdict end
-currentfile eexec
-D9D66F633B846A97B686A97E45A3D0AA052BD0CE60552BD63101D7CDBEEF5B11
-69C468645FE4ED1AF2541AA0770C1DCF81623DE0ECDF49F2B522618F650CE6CB
-CC8C21885DD61AF8A523AA677EAEDDFA51A1F9B1885EEE0456196D634E04EF89
-F17499DAD982502ACC349B9EEAAE4A71A73D1147318C60A8BAC10510DE90D8D3
-F46E47295D27129A5AFE0C65E22BAD10D06885A2EE623FF8E1D90287A083E00C
-EF25195F68A2A98170E48759F267FE330B57DF626EBF73D2779A4A6B462AE6E5
-19E5878939A488F2FE1094A76925CD24DAD4573AD3CF34E426708CF06E7EBFFC
-BEF5595408106E2189F418D17AD510ED5B6A528E8902AA3A5F0FF52AE3DEAB07
-32F06B63E28BB88229E046F4FF8A356BBDDE82DF2A197F2E26CA00D5594725A1
-83A89A36487EAAE1AC312C929CDCE50722FA6C596C261E4D78D6C6ABF77F5CCE
-0E410ED74287A0F201140F8D9674A7AC585D3CBC72CCB824F9E1CEBD08AEDB3A
-A4015CADF471F7ABD9B0F0AF73A8274FD441BC1988A61799856E4770155341D6
-516CD0E25BFA59B67AB7E0571DF3F5BA70AB52137D9E6A79EFADBE70CA05AC8D
-991D0895C8FFC747FBC0E9A7212BAE6560B9E2B64FFCC58112E64A3B4CF7ECF7
-595F51C34AD1342F5678FE1E62EC5A389CF04E82B5F832914B91F921F30A7E32
-CA3919F57A2D9DE844CAAAC0DC751C255C9916595E8C9532E7A0A84A0AEFCACD
-83EDE059FD06EEE9951473180B517F25F609F347DBA012AE9F004DC3C771777B
-BE812787C3C50315D67254A384EB65F260943C6E16B2CDC64E15EEEDC67C5544
-8ADE9981A6867405E46222CACCEF79F9DC8674268BBBE1EFEC2187A75FB7FBF8
-CB2DB2134848DEA2F9CED443DCF561E7272B38F830871B2A5196A787924EF556
-4B7E9093ADD414ACBC10147944D216D35011830CDA336A7A2F11AADC42948AFC
-2A806FCCDF6E10175677535AB193ADCC13B34B86F061878D79B5BD236FB5BB43
-2D6B7B739EAAF07B14FD159018685C3780BDE05EF14AA63B1271FD59CAE2BC87
-98E1B1951322D326947C8657B04D9BF2D550511EF456D139738F397564638005
-86DF7F252FCB5C6644D7F6401FF9D7DF6FC40A54C11F5D4E70C3A2F208CA39F3
-3AA5A2E4C38D9E05017070A3CC57A2247327BF3BFB726B177348244746A63F1B
-81D2864B5CE85EB81E8DEF6E720D763CE8BD3371DEEBA956B7C7B254FDDE9574
-C948032EFAC77D1FF72420E1AE6D8C47902FA0B04CD0AB2C90F5886E874F9957
-124AACDD906DC3CE659E921B91C0938433BFE4288CE3DA3B9FF42919F45452B3
-7FB5D921D76795CF774FF1C8E9E3FD10DED4FA86055EE86F9BD5DDE33BC35C59
-2E04E51D4208812DA87B73A75FABD980519180516AD58CAF2CC6F07C7B80CC1A
-4CDE18503304E5BE70F0940B9364F1263F99DE8E1F478A9B5EEA3E9857C987E1
-7B79E1D82B82E0DF60C5BA1F677D1FC5725C3873B3E39B10236EF99F062F0FAB
-AEEDAE6F85019CFCB330356807B14F2808E7EC41B69D2965D49515C0C226123C
-6C700DE2095C4D23041AF4C6F3B2979B799A1EC5FACC7E38F3D00282F71DEBFE
-3F0DB6E9B5931C5DF05F87AADDF5B40D03D6FB9557B9E891E3AA4389E502EB2D
-1C83C84A453562707E33523D905BA0B91A6A6B095EE8321837AD6F06D0143DAD
-8BDEE173579684E0A3DC3894D64F3438F1FA9FA414366112218D57AEEC61C988
-D0CF54DBAC6D83EED7B62C4A4266171998DE4C80CD2905936B2F32D5484F00
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000
-cleartomark
 %%BeginFont: CMSY10
 %!PS-AdobeFont-1.0: CMSY10 003.002
 %%Title: CMSY10
@@ -5144,12 +5243,39 @@ CF34F7EE0279B385675D3C964C29553198
 0000000000000000000000000000000000000000000000000000000000000000
 cleartomark
 {restore}if
-TeXDict begin 20511467 13052749 1000 600 600 (figura_1.dvi)
-@start /Fa 205[33 33 49[{}2 58.1154 /CMR7 rf /Fb 169[62
-13[62 72[{ T1Encoding ReEncodeFont }2 83.022 /SFRM1000
-rf /Fc 255[65{}1 83.022 /CMSY10 rf /Fd 150[29 105[{}1
-83.022 /CMMI10 rf /Fe 202[42 42 1[42 42 42 4[65 32[60
-10[{}7 83.022 /CMR10 rf end
+TeXDict begin 20511467 13425682 1000 600 600 (figura_1.dvi)
+@start /Fa 205[33 33 49[{}2 58.1154 /CMR7 rf
+%DVIPSBitmapFont: Fb ecrm1000 10 2
+/Fb 2 87 df<FFFFFF01FFFFFEFFFFFF01FFFFFEFFFFFF01FFFFFE01FF800003FF0000FF
+000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF00
+0001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF0000
+01FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001
+FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE
+0000FF000001FE0000FFFFFFFFFE0000FFFFFFFFFE0000FFFFFFFFFE0000FF000001FE00
+00FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000
+FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF
+000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF00
+0001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF000001FE0000FF0000
+01FE0000FF000001FE0000FF000001FE0001FF800003FF00FFFFFF01FFFFFEFFFFFF01FF
+FFFEFFFFFF01FFFFFE37397DB83E>72 D<FFFFFC00007FFF80FFFFFC00007FFF80FFFFFC
+00007FFF8003FF8000000FFC0001FF00000007E00001FF00000003C00000FF0000000180
+0000FF800000038000007F800000030000007F800000030000007FC00000030000003FC0
+0000060000003FC00000060000003FE000000E0000001FE000000C0000001FF000000C00
+00000FF00000180000000FF00000180000000FF800001800000007F800003000000007F8
+00003000000007FC00007000000003FC00006000000003FC00006000000001FE0000C000
+000001FE0000C000000001FF0000C000000000FF00018000000000FF00018000000000FF
+800380000000007F800300000000007F800300000000003FC00600000000003FC0060000
+0000003FE00600000000001FE00C00000000001FE00C00000000001FF01C00000000000F
+F01800000000000FF018000000000007F830000000000007F830000000000007FC300000
+00000003FC60000000000003FC60000000000003FEE0000000000001FEC0000000000001
+FEC0000000000000FF80000000000000FF80000000000000FF800000000000007F000000
+000000007F000000000000007F000000000000003E000000000000003E00000000000000
+1C000000000000001C000000000000001C00000000393B7EB83E>86
+D E
+%EndDVIPSBitmapFont
+/Fc 255[65{}1 83.022 /CMSY10 rf /Fd 150[29 105[{}1 83.022
+/CMMI10 rf /Fe 202[42 42 1[42 42 42 4[65 32[60 10[{}7
+83.022 /CMR10 rf end
 %%EndProlog
 %%BeginSetup
 %%Feature: *Resolution 600dpi
@@ -5161,7 +5287,9 @@ setpageparams } stopped end } { true } ifelse { statusdict /setpage known
  end
 %%EndSetup
 %%Page: 1 1
-TeXDict begin 1 0 bop 0 TeXcolorgray Black 0 TeXcolorgray
+TeXDict begin 1 0 bop
+%%HiResBoundingBox: 0 0 312.98016pt 204.85966pt
+ 0 TeXcolorgray Black 0 TeXcolorgray
 -600 -600 a
  /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmykcolor
 load def /pssetGraycolor /setgray load def
@@ -5172,10 +5300,8 @@ tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
 tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  end
  -600 -600 a -600 -600 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -600 -600 a
-%%HiResBoundingBox: 0 0 312.98016pt 199.16919pt
- 0 TeXcolorgray
-0 TeXcolorgray -482 935 a @beginspecial @setspecial
+ -600 -600 a 0 TeXcolorgray
+0 TeXcolorgray -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  [ 0.0 142.26372 0.0 0.0
@@ -5218,14 +5344,14 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 142.26372 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5240,37 +5366,37 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {-21.33955 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin {21.33955 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath 0.8 SLW 0 0 1  setrgbcolor  -21.33955 0.0
 T 3 { gsave  /ArrowA { moveto } def /ArrowB { } def /ArrowInside {
 } def  gsave 1.2 SLW 0 0 1  setrgbcolor  /ArrowA { moveto } def /ArrowB
@@ -5294,18 +5420,18 @@ if   gsave 1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 end
  
 @endspecial
--482 935 a
+-482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 142.26372 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5320,23 +5446,23 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -553 964
-a Fe(40\012)-482 935 y
+ -482 817 a -553 846
+a Fe(40\012)-482 817 y
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -5354,15 +5480,15 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 142.26372 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
 } def /ArrowB { } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor
@@ -5380,14 +5506,14 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 142.26372 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -5403,15 +5529,15 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5426,14 +5552,14 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale  false 0. 1.4 1.5 2. CLW mul add dup 2 div /w ED mul
 dup /h ED mul /a ED { 0 h T 1 -1 scale } if gsave w neg h moveto 0
@@ -5460,19 +5586,19 @@ pop pop } repeat } ifelse pop pop Lineto } repeat }{ ArrowA /n n 2
 sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0  setgray  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 142.26372 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -5488,15 +5614,15 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935
-a 0 TeXcolorgray -496 963 a Fd(i)p 0 TeXcolorgray -482
-935 a
+ -482 817
+a 0 TeXcolorgray -496 845 a Fd(i)p 0 TeXcolorgray -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  [ 170.71646 142.26372 113.81097
@@ -5518,24 +5644,24 @@ if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
 @endspecial
--482 935 a
+-482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 170.71646 142.26372 3 -1
 roll add 3 1 roll add exch } false /N@A 10 {InitPnode } /NodeScale
 {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 227.62195 142.26372 3 -1
 roll add 3 1 roll add exch } false /N@B 10 {InitPnode } /NodeScale
 {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@A
 known { /N@A load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@B
 known { /N@B load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5550,98 +5676,98 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {-14.22636 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {14.22636 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  1.2 SLW 0 0 1  setrgbcolor   0.0 0.0 2 copy moveto
-14.22636 0 CLW mul sub dup 0 rmoveto 0 360 arc closepath  gsave 1.2
-SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin 0  setlinecap
-stroke  grestore end
+14.22636 0 CLW mul round sub dup 0 rmoveto 0 360 arc closepath  gsave
+1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin 0
+ setlinecap stroke  grestore end
  
 @endspecial
--482 935 a
+-482 817 a
 tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 90. def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin { -14.22636 0.0 } PutCoor PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin 90.  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin { 2.84544 7.7778 5.83333 0.83333 0.  90.  sub Uput UUput
 } PutCoor PutBegin  end
- -482 935
-a -514 956 a Fc(\000)-482 935 y
+ -482 817
+a -514 838 a Fc(\000)-482 817 y
 tx@Dict begin  PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
--482 935 a -482 935 a
+-482 817 a -482 817 a
 tx@Dict begin  PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 90. def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin 90.  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin { 2.84544 7.7778 5.83333 0.83333 0.  90.  sub Uput UUput
 } PutCoor PutBegin  end
- -482 935 a -514 956 a Fe(+)-482
-935 y
+ -482 817 a -514 838 a Fe(+)-482
+817 y
 tx@Dict begin  PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  PutEnd  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@A
 known { /N@A load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@B
 known { /N@B load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5657,23 +5783,23 @@ def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -596
-964 a Fe(110)40 b Fb(V)-482 935 y
+ -482 817 a -596
+846 a Fe(110)40 b Fb(V)-482 817 y
 tx@Dict begin PutEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@A
 known { /N@A load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -5691,16 +5817,16 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@B
 known { /N@B load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
@@ -5719,16 +5845,16 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@A
 known { /N@A load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@B
 known { /N@B load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5743,7 +5869,7 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  [ 284.52744 142.26372 227.62195
@@ -5786,14 +5912,14 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5808,37 +5934,37 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {-21.33955 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin {21.33955 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath 0.8 SLW 0 0 1  setrgbcolor  -21.33955 0.0
 T 3 { gsave  /ArrowA { moveto } def /ArrowB { } def /ArrowInside {
 } def  gsave 1.2 SLW 0 0 1  setrgbcolor  /ArrowA { moveto } def /ArrowB
@@ -5862,18 +5988,18 @@ if   gsave 1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 end
  
 @endspecial
--482 935 a
+-482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5888,23 +6014,23 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -533 964
-a Fe(5\012)-482 935 y
+ -482 817 a -533 846
+a Fe(5\012)-482 817 y
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -5922,15 +6048,15 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
 } def /ArrowB { } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor
@@ -5948,14 +6074,14 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -5971,15 +6097,15 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -5994,14 +6120,14 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale  false 0. 1.4 1.5 2. CLW mul add dup 2 div /w ED mul
 dup /h ED mul /a ED { 0 h T 1 -1 scale } if gsave w neg h moveto 0
@@ -6028,19 +6154,19 @@ pop pop } repeat } ifelse pop pop Lineto } repeat }{ ArrowA /n n 2
 sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0  setgray  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6056,15 +6182,15 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935
-a 0 TeXcolorgray -515 957 a Fd(i)-486 969 y Fa(1)p 0
-TeXcolorgray -482 935 a
+ -482 817
+a 0 TeXcolorgray -515 838 a Fd(i)-486 850 y Fa(1)p 0
+TeXcolorgray -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  [ 170.71646 71.13185 113.81097
@@ -6084,14 +6210,14 @@ pop pop } repeat } ifelse pop pop Lineto } repeat }{ ArrowA /n n 2
 sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6106,29 +6232,29 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935
+ -482 817
 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  1.2 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6163,26 +6289,26 @@ a @beginspecial @setspecial
  gsave 1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {-28.45274 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {28.45274 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6197,22 +6323,22 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -541 964 a Fe(1)14 b Fb(H)-482 935 y
+ -482 817 a -541 846 a Fe(1)14 b Fb(H)-482 817 y
 tx@Dict begin PutEnd  end
--482 935 a -482 935 a
+-482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -6230,15 +6356,15 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {170.71646 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
 } def /ArrowB { } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor
@@ -6256,14 +6382,14 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 71.13185 } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 71.13185 } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6278,7 +6404,7 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a @beginspecial
+ -482 817 a @beginspecial
 @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6322,13 +6448,13 @@ n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop } if   gsave
  setlinecap stroke  grestore end
  
 @endspecial
--482 935 a
+-482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6344,36 +6470,36 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {-21.33955 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {21.33955 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath 0.8 SLW 0 0 1  setrgbcolor  -21.33955 0.0
 T 3 { gsave  /ArrowA { moveto } def /ArrowB { } def /ArrowInside {
 } def  gsave 1.2 SLW 0 0 1  setrgbcolor  /ArrowA { moveto } def /ArrowB
@@ -6395,18 +6521,18 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore grestore grestore 14.22636 0.0 T } repeat
 end
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6422,22 +6548,22 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935
-a -553 964 a Fe(10\012)-482 935 y
+ -482 817
+a -553 846 a Fe(10\012)-482 817 y
 tx@Dict begin PutEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -6455,15 +6581,15 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
@@ -6482,14 +6608,14 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {56.90549 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6504,15 +6630,15 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6527,14 +6653,14 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a @beginspecial
+ -482 817 a @beginspecial
 @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale  false 0. 1.4 1.5 2. CLW mul add dup 2 div /w ED mul
@@ -6563,20 +6689,20 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0  setgray  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {113.81097 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6591,15 +6717,15 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a 0 TeXcolorgray -515 957 a Fd(i)-486 969
-y Fa(2)p 0 TeXcolorgray -482 935 a
+ -482 817 a 0 TeXcolorgray -515 838 a Fd(i)-486 850
+y Fa(2)p 0 TeXcolorgray -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a @beginspecial
+ -482 817 a @beginspecial
 @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6621,14 +6747,14 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {170.71646 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6643,30 +6769,30 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@dipole@M 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a @beginspecial @setspecial
+ -482 817 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  1.2 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  [ -14.22636 0.0 -21.33955
@@ -6700,26 +6826,26 @@ tx@Dict begin NAngle  RotBegin  end
  gsave 1.2 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {-28.45274 0.0 } false /N@dipole@1
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {28.45274 0.0 } false /N@dipole@2
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6734,23 +6860,23 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a -541 964 a Fe(2)g Fb(H)-482 935 y
+ -482 817 a -541 846 a Fe(2)g Fb(H)-482 817 y
 tx@Dict begin PutEnd  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@1
 known { /N@dipole@1 load GetCenter } { 0 0 } ifelse end } false /N@@@B
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow
  } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA {
@@ -6768,15 +6894,15 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@dipole@2
 known { /N@dipole@2 load GetCenter } { 0 0 } ifelse end } false /N@@@A
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { BeginArrow 1.  1.  scale
 2 setlinecap 0 0 moveto 0 0.1 L stroke 0 0 moveto  EndArrow  moveto
 } def /ArrowB { } def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor
@@ -6794,14 +6920,14 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha
   0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {227.62195 0.0 } false /N@@@A 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  tx@NodeDict begin {170.71646 0.0 } false /N@@@B 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6816,7 +6942,7 @@ pop } loop }{/ArrowPos 0.  def /dArrowPos 1. 1 gt {1.0 1. 1.0 add div
 x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a @beginspecial
+ -482 817 a @beginspecial
 @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
@@ -6838,14 +6964,14 @@ sub def n { Lineto } repeat } ifelse CP 4 2 roll ArrowB L pop pop }
 if   gsave 0.8 SLW 0 0 1  setrgbcolor  1. .setopacityalpha   0  setlinejoin
 0  setlinecap stroke  grestore end
  
-@endspecial -482 935 a
+@endspecial -482 817 a
 tx@Dict begin  tx@NodeDict begin {284.52744 142.26372 } false /N@pst@tempa
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {284.52744 85.35823 } false /N@pst@tempb
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6860,38 +6986,38 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t 0.05 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@@M1 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t 0.95 def LPut end PutBegin  end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@@M2 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale  false 0. 1.4 1.5 2. CLW mul add dup 2 div /w ED mul
 dup /h ED mul /a ED { 0 h T 1 -1 scale } if gsave w neg h moveto 0
@@ -6914,16 +7040,16 @@ dArrowPos add def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos
 mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0  setgray  1. .setopacityalpha  
 0  setlinejoin 0  setlinecap stroke  grestore  grestore end
- -482 935 a -482 935
+ -482 817 a -482 817
 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@@M1
 known { /N@@M1 load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@@M2
 known { /N@@M2 load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6938,22 +7064,22 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935
-a -482 935 a
+ -482 817
+a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
- -482 935 a 0 TeXcolorgray
-0 TeXcolorgray -482 935 a
+ -482 817 a 0 TeXcolorgray
+0 TeXcolorgray -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {284.52744 71.13185 } false /N@pst@tempa
 10 {InitPnode } /NodeScale {} def NewNode end  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {284.52744 14.22636 } false /N@pst@tempb
 10 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -6968,38 +7094,38 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t 0.05 def LPut end PutBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@@M1 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t 0.95 def LPut end PutBegin  end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin NAngle  RotBegin  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {0.0 0.0 } false /N@@M2 10 {InitPnode
 } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin RotEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin PutEnd  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { BeginArrow
 1.  1.  scale  false 0. 1.4 1.5 2. CLW mul add dup 2 div /w ED mul
 dup /h ED mul /a ED { 0 h T 1 -1 scale } if gsave w neg h moveto 0
@@ -7023,16 +7149,16 @@ mul y1 add ArrowInside pop pop } repeat } ifelse pop pop lineto pop
 pop end  } if end  gsave 0.8 SLW 0  setgray  1. .setopacityalpha  
 0  setlinejoin 0  setlinecap stroke  grestore  grestore end
  -482
-935 a -482 935 a
+817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@@M1
 known { /N@@M1 load GetCenter } { 0 0 } ifelse end } false /N@@@A 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin {tx@NodeDict begin tx@NodeDict /N@@M2
 known { /N@@M2 load GetCenter } { 0 0 } ifelse end } false /N@@@B 10
 {InitPnode } /NodeScale {} def NewNode end  end
- -482 935 a -482
-935 a
+ -482 817 a -482
+817 a
 tx@Dict begin gsave STV newpath /ArrowA { moveto } def /ArrowB { }
 def /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
 } def /ArrowB { } def /ArrowInside { } def  /NCLW CLW def tx@NodeDict
@@ -7047,14 +7173,14 @@ div }{ 0.5 } ifelse def 1.  cvi { /ArrowPos ArrowPos dArrowPos add
 def x2 x1 sub ArrowPos mul x1 add y2 y1 sub ArrowPos mul y1 add ArrowInside
 pop pop } repeat } ifelse pop pop lineto pop pop end  } if end   grestore
 end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
- -482 935 a -482 935 a
+ -482 817 a -482 817 a
 tx@Dict begin  tx@NodeDict begin /t .5 def LPut end PutBegin  end
  -482
-935 a 0 TeXcolorgray 0 TeXcolorgray -482 935 a
+817 a 0 TeXcolorgray 0 TeXcolorgray -482 817 a
 tx@Dict begin PutEnd  end
- -482 935
+ -482 817
 a @beginspecial @setspecial
   tx@Dict begin STP newpath /ArrowA { moveto } def /ArrowB { } def
 /ArrowInside { } def  0.8 SLW 0 0 1  setrgbcolor  /ArrowA { moveto
